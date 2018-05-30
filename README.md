@@ -1,10 +1,9 @@
 <!--h-->
-# Laravel Enso
-[![StyleCI](https://styleci.io/repos/95136264/shield?branch=master)](https://styleci.io/repos/95136264)
-[![Waffle.io - Columns and their card count](https://badge.waffle.io/laravel-enso/Enso.svg?columns=all)](https://waffle.io/laravel-enso/Enso)
+# Laravel Genealogy - Built with Enso
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/laravel-genealogy/Genealogy.svg?columns=all)](https://waffle.io/laravel-genealogy/genealogy)
 <!--/h-->
 
-*Hit the ground running when building your new Laravel SPA project with boilerplate and extra functionality out of the box!*
+Genealogy website software - work in progress. This is under development and it is not intended to be used in a production environment yet.
 
 &nbsp;
 
@@ -14,26 +13,19 @@
 
 ### Important
 
-If you are using this project please consult the **[changelog](https://github.com/laravel-enso/Enso/blob/master/CHANGELOG.md)** on every update.
-
-For the v1.x / adminlte version, take a look at the **[adminlte](https://github.com/laravel-enso/Enso/tree/adminlte)** branch.
+If you are using this project please consult the **[changelog](https://github.com/laravel-genealogy/genealogy/blob/master/CHANGELOG.md)** on every update.
 
 <!--h-->
-### Official Documentation
+### Official Enso Documentation
 
 The documentation is available [here](https://docs.laravel-enso.com).
 Note that most sections have short demo clips.
 
 <!--/h-->
 
-### Take It For A Spin
-
-You may try out a live demo installation by visiting [laravel-enso.com](https://www.laravel-enso.com) 
-and logging in with `admin@laravel-enso.com` and `password`. 
-
 ### Installation Steps
 
-1. Download the project with `git clone https://github.com/laravel-enso/Enso.git`
+1. Download the project with `git clone https://github.com/laravel-genealogy/genealogy.git`
 
 2. Run in the project folder `composer install`
 
@@ -275,7 +267,7 @@ Built with with <span style="color:red"> &#10084;&#65039;</span>, crafted on Lar
 [Nprogress.js](http://ricostacruz.com/nprogress), [Vue-multiselect](https://github.com/monterail/vue-multiselect),
 [Intro.js](http://introjs.com/),  [Chart.js](http://chartjs.org), [Flatpickr](https://chmln.github.io/flatpickr/), 
 
-Special thanks to [Taylor Otwell](https://laravel.com/), [Jeffrey Way](https://laracasts.com), [Evan You](https://vuejs.org/) and [Jeremy Thomas](https://bulma.io).
+Special thanks to [Laravel Enso](https://laravel-enso.com) [Taylor Otwell](https://laravel.com/), [Jeffrey Way](https://laracasts.com), [Evan You](https://vuejs.org/) and [Jeremy Thomas](https://bulma.io).
 
 <!--h-->
 ### Contributions
