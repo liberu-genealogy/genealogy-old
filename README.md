@@ -1,5 +1,6 @@
 <!--h-->
 # Laravel Genealogy - Built with Enso
+[![StyleCI](https://github.styleci.io/repos/135390590/shield?branch=master)](https://github.styleci.io/repos/135390590)
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/laravel-genealogy/Genealogy.svg?columns=all)](https://waffle.io/laravel-genealogy/genealogy)
 <!--/h-->
 
