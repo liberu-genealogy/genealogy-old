@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\CommentsManager\app\Traits\Commentable;
-use LaravelEnso\DocumentsManager\app\Traits\Documentable;
 use LaravelEnso\AddressesManager\app\Traits\Addressable;
+use LaravelEnso\DocumentsManager\app\Traits\Documentable;
 
 class Event extends Model
 {
     use Commentable, Documentable, Addressable;
 
-    protected $fillable = ['name', 'description', 'is_active','date'];
+    protected $fillable = ['name', 'description', 'is_active', 'date'];
 
     protected $attributes = ['is_active' => false];
 
