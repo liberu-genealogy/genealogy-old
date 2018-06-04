@@ -5,18 +5,11 @@
             <vue-form-ss class="box animated fadeIn"
                 :route-params="[$route.name, $route.params.id, false]"
                 ref="form"
-                @loaded="pivotParams.owners.id = $refs.form.field('owner_id').value">
-                <template slot="owner_id" slot-scope="{ field, errors }">
+                @loaded="pivotParams.events.id = $refs.form.field('event_id').value">
+                <template slot="event_id" slot-scope="{ field, errors }">
                     <vue-select v-model="field.value"
                         :has-error="errors.has(field.name)"
-                        @input="pivotParams.owners.id=$event;errors.clear(field.name)"
-                        :source="field.meta.source"/>
-                </template>
-                <template slot="role_id" slot-scope="{ field, errors }">
-                    <vue-select v-model="field.value"
-                        :pivot-params="pivotParams"
-                        :has-error="errors.has(field.name)"
-                        @input="errors.clear(field.name);"
+                        @input="pivotParams.events.id=$event;errors.clear(field.name)"
                         :source="field.meta.source"/>
                 </template>
             </vue-form-ss>
@@ -35,7 +28,7 @@ export default {
 
     data() {
         return {
-            pivotParams: { owners: { id: null } },
+            pivotParams: { events: { id: null } },
         };
     },
 };

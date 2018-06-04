@@ -4,17 +4,10 @@
         <div class="column is-three-quarters">
             <vue-form-ss class="box animated fadeIn"
                 :route-params="[$route.name, null, false]">
-                <template slot="family_id" slot-scope="{ field, errors }">
-                    <vue-select v-model="field.value"
-                        :has-error="errors.has(field.name)"
-                        @input="pivotParams.families.id=$event;errors.clear(field.name)"
-                        :source="field.meta.source"/>
-                </template>
                 <template slot="event_id" slot-scope="{ field, errors }">
                     <vue-select v-model="field.value"
-                        :pivot-params="pivotParams"
                         :has-error="errors.has(field.name)"
-                        @input="errors.clear(field.name);"
+                        @input="pivotParams.events.id=$event;errors.clear(field.name)"
                         :source="field.meta.source"/>
                 </template>
             </vue-form-ss>
@@ -33,7 +26,7 @@ export default {
 
     data() {
         return {
-            pivotParams: { families: { id: null } },
+            pivotParams: { events: { id: null } },
         };
     },
 };

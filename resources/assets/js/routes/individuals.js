@@ -4,7 +4,7 @@ const routes = routeImporter(require.context('./individuals', false, /.*\.js$/))
 const RouterView = () => import('../pages/layout/Router.vue');
 
 export default {
-    path: 'individuals/',
+    path: '/individuals/',
     component: RouterView,
     meta: {
         breadcrumb: 'individuals',

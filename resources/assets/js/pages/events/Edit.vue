@@ -23,7 +23,6 @@
 
 import DocumentsCard from '../../components/enso/documents/DocumentsCard.vue';
 import CommentsCard from '../../components/enso/comments/CommentsCard.vue';
-import Contacts from '../../components/enso/contacts/Contacts.vue';
 import Addresses from '../../components/enso/addresses/Addresses.vue';
 import VueFormSs from '../../components/enso/vueforms/VueFormSs.vue';
 
