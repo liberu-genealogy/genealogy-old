@@ -19,11 +19,11 @@ class Family extends Model
 
     public function individuals()
     {
-        return $this->hasMany(App\Individual::class);
+        return $this->hasMany(Individual::class);
     }
 
     public function events()
     {
-        return $this->belongsTo(App\Family::class);
+        return $this->belongsTo(Family::class);
     }
 }

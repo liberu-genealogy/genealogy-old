@@ -1,11 +1,11 @@
-const UserShow = () => import('../../pages/events/Show.vue');
+const EventsShow = () => import('../../pages/events/Show.vue');
 
 export default {
-    name: 'administration.users.show',
+    name: 'event.show',
     path: ':id',
-    component: UserShow,
+    component: EventShow,
     meta: {
         breadcrumb: 'show',
-        title: 'User Profile',
+        title: 'Event Profile',
     },
 };

@@ -1,11 +1,11 @@
-const UserEdit = () => import('../../pages/events/Edit.vue');
+const EventsEdit = () => import('../../pages/events/Edit.vue');
 
 export default {
-    name: 'administration.users.edit',
+    name: 'events.edit',
     path: ':id/edit',
-    component: UserEdit,
+    component: EventsEdit,
     meta: {
         breadcrumb: 'edit',
-        title: 'Edit User',
+        title: 'Edit Event',
     },
 };

@@ -3,3 +3,6 @@
         Event
     </div>
 </template>
+<script>
+
+</script>

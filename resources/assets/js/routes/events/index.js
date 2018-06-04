@@ -1,11 +1,11 @@
-const UsersIndex = () => import('../../pages/events/Index.vue');
+const EventsIndex = () => import('../../pages/events/Index.vue');
 
 export default {
-    name: 'administration.users.index',
+    name: 'events.index',
     path: '',
-    component: UsersIndex,
+    component: EventsIndex,
     meta: {
         breadcrumb: 'index',
-        title: 'Users Index',
+        title: 'Events Index',
     },
 };

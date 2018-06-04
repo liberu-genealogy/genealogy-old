@@ -20,11 +20,11 @@ class Individual extends Model
 
     public function events()
     {
-        return $this->hasMany(App\Event::class);
+        return $this->hasMany(Event::class);
     }
 
     public function families()
     {
-        return $this->belongsTo(App\Family::class);
+        return $this->belongsTo(Family::class);
     }
 }

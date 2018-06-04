@@ -1,11 +1,11 @@
-const UserCreate = () => import('../../pages/events/Create.vue');
+const EventsCreate = () => import('../../pages/events/Create.vue');
 
 export default {
-    name: 'administration.users.create',
+    name: 'events.create',
     path: 'create',
-    component: UserCreate,
+    component: EventsCreate,
     meta: {
         breadcrumb: 'create',
-        title: 'Create User',
+        title: 'Create Event',
     },
 };
