@@ -3,32 +3,41 @@
     <div class="columns is-centered">
         <div class="column is-three-quarters">
             <vue-form-ss class="box animated fadeIn"
-                :route-params="[$route.name, $route.params.id, false]"
-                ref="form"
-                @loaded="pivotParams.events.id = $refs.form.field('event_id').value">
-                <template slot="event_id" slot-scope="{ field, errors }">
-                    <vue-select v-model="field.value"
-                        :has-error="errors.has(field.name)"
-                        @input="pivotParams.events.id=$event;errors.clear(field.name)"
-                        :source="field.meta.source"/>
-                </template>
-            </vue-form-ss>
+                         :route-params="[$route.name, $route.params.id, false]"
+                         @loaded="initialised = true"
+                         ref="form"/>
+            <div v-if="initialised">
+
+
+                <contacts type="individual" :id="$route.params.id" :open="true" />
+
+                <documents-card :id="$route.params.id"
+                                type="individual"/>
+                <addresses :id="$route.params.id"
+                           type="individual"/>
+                <comments-card :id="$route.params.id"
+                               type="individual"
+                                :open="true"/>
+            </div>
         </div>
     </div>
 
 </template>
 
 <script>
-
+import DocumentsCard from '../../components/enso/documents/DocumentsCard.vue';
+import CommentsCard from '../../components/enso/comments/CommentsCard.vue';
+import Addresses from '../../components/enso/addresses/Addresses.vue';
+import Contacts from '../../components/enso/contacts/Contacts.vue';
 import VueFormSs from '../../components/enso/vueforms/VueFormSs.vue';
 import VueSelect from '../../components/enso/select/VueSelect.vue';
 
 export default {
-    components: { VueFormSs, VueSelect },
+    components: { VueFormSs, VueSelect, DocumentsCard, CommentsCard, Addresses, Contacts },
 
     data() {
         return {
-            pivotParams: { events: { id: null } },
+            initialised: false,
         };
     },
 };

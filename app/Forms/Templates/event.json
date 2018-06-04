@@ -15,22 +15,18 @@
             "disabled": false
           }
         },{
-        {
           "label": "Description",
           "name": "description",
+          "column" : 3,
           "value": null,
           "meta": {
             "type": "input",
             "content": "text"
           }
-        },
-
-        }
-      ]
-    },
     }, {
       "label": "Active",
       "name": "is_active",
+      "column": 3,
       "value": false,
       "meta": {
         "type": "input",
