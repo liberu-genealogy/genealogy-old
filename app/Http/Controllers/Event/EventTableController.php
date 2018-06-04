@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Administration\Event;
+namespace App\Http\Controllers\Event;
 
 use App\Tables\Builders\EventTable;
 use App\Http\Controllers\Controller;
