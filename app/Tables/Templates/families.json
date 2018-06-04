@@ -1,0 +1,35 @@
+{
+  "routePrefix": "families",
+  "readSuffix": "getTableData",
+  "writeSuffix": null,
+  "name": "Families",
+  "icon": "users",
+  "crtNo": true,
+  "buttons": ["excel", "create", "action", "show", "edit", "destroy"],
+  "columns": [
+    {
+      "label": "Description",
+      "name": "description",
+      "data": "events.description",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Individual 1",
+      "name": "individual_1",
+      "data": "families.individual_1",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Individual 2",
+      "name": "individual_2",
+      "data": "families.individual_2",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Active",
+      "name": "is_active",
+      "data": "users.is_active",
+      "meta": ["boolean"]
+    }
+  ]
+}

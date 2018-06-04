@@ -1,0 +1,56 @@
+{
+  "routePrefix": "family.owners",
+  "sections": [{
+    "columns": "2",
+    "fields": [
+      {
+        "label": "Description",
+        "name": "description",
+        "value": null,
+        "meta": {
+          "type": "input",
+          "content": "text"
+        }
+      },
+      {
+        "label": "Individual",
+        "name": "individual_id_1",
+        "value": null,
+        "meta": {
+          "custom": true,
+          "type": "select",
+          "multiple": false,
+          "options": [],
+          "source": "individuals.selectOptions"
+        }
+      }, {
+      "label": "Individual",
+      "name": "individual_id_2",
+      "value": null,
+      "meta": {
+        "custom": true,
+        "type": "select",
+        "multiple": false,
+        "options": [],
+        "source": "individuals.selectOptions"
+      }
+    }, {
+      "label": "Children",
+      "name": "childrenList",
+      "value": [],
+      "meta": {
+        "type": "select",
+        "multiple": true,
+        "options": []
+      }
+    }, {
+      "label": "Active",
+      "name": "is_active",
+      "value": true,
+      "meta": {
+        "type": "input",
+        "content": "checkbox"
+      }
+    }]
+  }]
+}

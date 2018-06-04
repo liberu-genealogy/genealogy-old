@@ -1,0 +1,42 @@
+{
+  "routePrefix": "individuals",
+  "sections": [{
+    "columns": "2",
+    "fields": [{
+      "label": "First Name",
+      "name": "first_name",
+      "value": null,
+      "meta": {
+        "type": "input",
+        "content": "text"
+      }
+    }, {
+      "label": "Last Name",
+      "name": "last_name",
+      "value": null,
+      "meta": {
+        "type": "input",
+        "content": "text"
+      }
+    }, {
+      "label": "Event",
+      "name": "event_id",
+      "value": null,
+      "meta": {
+        "custom": true,
+        "type": "select",
+        "multiple": true,
+        "options": [],
+        "source": "event.selectOptions"
+      }
+    }, {
+      "label": "Active",
+      "name": "is_active",
+      "value": false,
+      "meta": {
+        "type": "input",
+        "content": "checkbox"
+      }
+    }]
+  }]
+}

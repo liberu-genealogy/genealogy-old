@@ -3,6 +3,9 @@
 return [
     'addressables' => [
         'owner' => App\Owner::class,
+        'family' => App\Family::class,
+        'individual' => App\Individual::class,
+        'event' => App\Event::class,
     ],
     'streetTypes' => [
         'Street' => 'Street',

@@ -1,0 +1,41 @@
+{
+  "routePrefix": "events",
+  "sections": [{
+      "columns": "custom",
+      "fields": [
+        {
+          "label": "Date",
+          "name": "date",
+          "value": null,
+          "column": 3,
+          "meta": {
+            "custom": false,
+            "type": "datepicker",
+            "content": "date",
+            "disabled": false
+          }
+        },{
+        {
+          "label": "Description",
+          "name": "description",
+          "value": null,
+          "meta": {
+            "type": "input",
+            "content": "text"
+          }
+        },
+
+        }
+      ]
+    },
+    }, {
+      "label": "Active",
+      "name": "is_active",
+      "value": false,
+      "meta": {
+        "type": "input",
+        "content": "checkbox"
+      }
+    }]
+  }]
+}

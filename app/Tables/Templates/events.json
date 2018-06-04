@@ -1,0 +1,29 @@
+{
+  "routePrefix": "events",
+  "readSuffix": "getTableData",
+  "writeSuffix": null,
+  "name": "Events",
+  "icon": "users",
+  "crtNo": true,
+  "buttons": ["excel", "create", "action", "show", "edit", "destroy"],
+  "columns": [
+    {
+      "label": "Description",
+      "name": "description",
+      "data": "events.description",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Date",
+      "name": "date",
+      "data": "events.date",
+      "meta": ["searchable", "sortable", "date"]
+    },
+    {
+      "label": "Active",
+      "name": "is_active",
+      "data": "events.is_active",
+      "meta": ["boolean"]
+    }
+  ]
+}

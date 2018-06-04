@@ -1,0 +1,29 @@
+{
+  "routePrefix": "individuals",
+  "readSuffix": "getTableData",
+  "writeSuffix": null,
+  "name": "Individuals",
+  "icon": "users",
+  "crtNo": true,
+  "buttons": ["excel", "create", "action", "show", "edit", "destroy"],
+  "columns": [
+    {
+      "label": "First name",
+      "name": "first_name",
+      "data": "individuals.first_name",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Last name",
+      "name": "last_name",
+      "data": "individuals.last_name",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Active",
+      "name": "is_active",
+      "data": "users.is_active",
+      "meta": ["boolean"]
+    }
+  ]
+}

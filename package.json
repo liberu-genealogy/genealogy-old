@@ -68,6 +68,7 @@
         "intro.js": "^2.9.3",
         "laravel-echo": "^1.4.0",
         "lodash": "^4.17.10",
+        "npm": "^6.1.0",
         "nprogress": "^0.2.0",
         "popper.js": "^1.14.3",
         "pusher-js": "^4.2.2",
