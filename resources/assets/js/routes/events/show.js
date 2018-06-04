@@ -1,9 +1,9 @@
 const EventsShow = () => import('../../pages/events/Show.vue');
 
 export default {
-    name: 'event.show',
+    name: 'events.show',
     path: ':id',
-    component: EventShow,
+    component: EventsShow,
     meta: {
         breadcrumb: 'show',
         title: 'Event Profile',
