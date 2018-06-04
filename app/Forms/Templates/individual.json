@@ -21,13 +21,13 @@
     }, {
       "label": "Event",
       "name": "event_id",
-      "value": null,
+      "value": [],
       "meta": {
         "custom": true,
         "type": "select",
         "multiple": true,
         "options": [],
-        "source": "event.selectOptions"
+        "source": "events.selectOptions"
       }
     }, {
       "label": "Active",

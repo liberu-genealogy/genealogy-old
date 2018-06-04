@@ -11,8 +11,8 @@ class FamilyTable extends Table
 
     public function query()
     {
-        return Owner::select(\DB::raw('
-            id as "dtRowId", description, individual_1, individual_2
+        return Family::select(\DB::raw('
+            id as "dtRowId", description, partner_1_id, partner_2_id
         '));
     }
 }

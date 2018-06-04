@@ -13,8 +13,8 @@
         }
       },
       {
-        "label": "Individual",
-        "name": "individual_id_1",
+        "label": "Partner",
+        "name": "partner_id_1",
         "value": null,
         "meta": {
           "custom": true,
@@ -24,8 +24,8 @@
           "source": "individuals.selectOptions"
         }
       }, {
-      "label": "Individual",
-      "name": "individual_id_2",
+      "label": "Partner",
+      "name": "partner_id_2",
       "value": null,
       "meta": {
         "custom": true,

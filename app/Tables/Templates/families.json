@@ -14,15 +14,15 @@
       "meta": ["searchable", "sortable"]
     },
     {
-      "label": "Individual 1",
-      "name": "individual_1",
-      "data": "families.individual_1",
+      "label": "Partner 1",
+      "name": "partner_1_id",
+      "data": "families.partner_1",
       "meta": ["searchable", "sortable"]
     },
     {
-      "label": "Individual 2",
-      "name": "individual_2",
-      "data": "families.individual_2",
+      "label": "Partner 2",
+      "name": "partner_2_id",
+      "data": "families.partner_2",
       "meta": ["searchable", "sortable"]
     },
     {
