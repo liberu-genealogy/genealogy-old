@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Administration\Family;
+namespace App\Http\Controllers\Family;
 
 use App\Family;
 use App\Forms\Builders\FamilyForm;
@@ -23,7 +23,7 @@ class FamilyController extends Controller
 
         return [
             'message' => __('The Family was successfully created'),
-            'redirect' => 'administration.families.edit',
+            'redirect' => 'families.edit',
             'id' => $family->id,
         ];
     }
@@ -49,7 +49,7 @@ class FamilyController extends Controller
 
         return [
             'message' => __('The Family was successfully deleted'),
-            'redirect' => 'administration.families.index',
+            'redirect' => 'families.index',
         ];
     }
 }

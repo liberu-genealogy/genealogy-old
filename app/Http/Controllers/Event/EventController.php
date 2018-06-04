@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Administration\Event;
+namespace App\Http\Controllers\Event;
 
 use App\Event;
 use App\Forms\Builders\EventForm;
@@ -24,7 +24,7 @@ class EventController extends Controller
 
         return [
             'message' => __('The Event was successfully created'),
-            'redirect' => 'administration.events.edit',
+            'redirect' => 'events.edit',
             'id' => $event->id,
         ];
     }
@@ -60,7 +60,7 @@ class EventController extends Controller
 
         return [
             'message' => __('The Event was successfully deleted'),
-            'redirect' => 'administration.events.index',
+            'redirect' => 'events.index',
         ];
     }
 }

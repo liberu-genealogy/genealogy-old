@@ -70,50 +70,51 @@ Route::middleware(['auth', 'core'])
     });
 
 Route::middleware(['auth', 'core'])
+    ->group(function () {
+        Route::namespace('Event')
+            ->prefix('events')->as('events.')
             ->group(function () {
-                Route::namespace('Event')
-                    ->prefix('events')->as('events.')
-                    ->group(function () {
-                        Route::get('initTable', 'EventTableController@init')
-                            ->name('initTable');
-                        Route::get('getTableData', 'EventTableController@data')
-                            ->name('getTableData');
-                        Route::get('exportExcel', 'EventTableController@excel')
-                            ->name('exportExcel');
-
-                        Route::get('selectOptions', 'EventSelectController@options')
-                            ->name('selectOptions');
-                    });
-
-                Route::resource('events', 'Event\EventController', ['except' => ['show']]);
-
-                Route::namespace('Individual')
-                    ->prefix('individuals')->as('individuals.')
-                    ->group(function () {
-                        Route::get('initTable', 'IndividualTableController@init')
-                            ->name('initTable');
-                        Route::get('getTableData', 'IndividualTableController@data')
-                            ->name('getTableData');
-                        Route::get('exportExcel', 'IndividualTableController@excel')
-                            ->name('exportExcel');
-                        Route::get('selectOptions', 'IndividualSelectController@options')
-                            ->name('selectOptions');
-                    });
-
-                Route::resource('individuals', 'Individual\IndividualController');
-
-                Route::namespace('Family')
-                    ->prefix('families')->as('families.')
-                    ->group(function () {
-                        Route::get('initTable', 'FamilyTableController@init')
-                            ->name('initTable');
-                        Route::get('getTableData', 'FamilyTableController@data')
-                            ->name('getTableData');
-                        Route::get('exportExcel', 'FamilyTableController@excel')
-                            ->name('exportExcel');
-                        Route::get('selectOptions', 'FamilySelectController@options')
-                            ->name('selectOptions');
-                    });
-
-                Route::resource('families', 'Family\FamilyController');
+                Route::get('initTable', 'EventTableController@init')
+                    ->name('initTable');
+                Route::get('getTableData', 'EventTableController@data')
+                    ->name('getTableData');
+                Route::get('exportExcel', 'EventTableController@excel')
+                    ->name('exportExcel');
+                Route::get('selectOptions', 'EventSelectController@options')
+                    ->name('selectOptions');
             });
+
+        Route::resource('events', 'Event\EventController');
+
+        Route::namespace('Individual')
+            ->prefix('individuals')->as('individuals.')
+            ->group(function () {
+                Route::get('initTable', 'IndividualTableController@init')
+                    ->name('initTable');
+                Route::get('getTableData', 'IndividualTableController@data')
+                    ->name('getTableData');
+                Route::get('exportExcel', 'IndividualTableController@excel')
+                    ->name('exportExcel');
+                Route::get('selectOptions', 'IndividualSelectController@options')
+                    ->name('selectOptions');
+            });
+
+        Route::resource('individuals', 'Individual\IndividualController');
+
+        Route::namespace('Family')
+            ->prefix('families')->as('families.')
+            ->group(function () {
+                Route::get('initTable', 'FamilyTableController@init')
+                    ->name('initTable');
+                Route::get('getTableData', 'FamilyTableController@data')
+                    ->name('getTableData');
+                Route::get('exportExcel', 'FamilyTableController@excel')
+                    ->name('exportExcel');
+                Route::get('selectOptions', 'FamilySelectController@options')
+                    ->name('selectOptions');
+            });
+
+        Route::resource('families', 'Family\FamilyController');
+
+
+    });

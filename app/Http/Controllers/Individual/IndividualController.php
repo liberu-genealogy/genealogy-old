@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Administration\Individual;
+namespace App\Http\Controllers\Individual;
 
 use App\Individual;
 use App\Forms\Builders\IndividualForm;
@@ -26,7 +26,7 @@ class IndividualController extends Controller
 
         return [
             'message' => __('The Individual was successfully created'),
-            'redirect' => 'administration.individuals.edit',
+            'redirect' => 'individuals.edit',
             'id' => $individual->id,
         ];
     }
