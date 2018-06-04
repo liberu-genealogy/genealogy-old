@@ -115,6 +115,4 @@ Route::middleware(['auth', 'core'])
             });
 
         Route::resource('families', 'Family\FamilyController');
-
-
     });

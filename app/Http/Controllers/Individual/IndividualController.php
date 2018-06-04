@@ -3,14 +3,13 @@
 namespace App\Http\Controllers\Individual;
 
 use App\Individual;
-use App\Forms\Builders\IndividualForm;
 use App\Http\Controllers\Controller;
+use App\Forms\Builders\IndividualForm;
 use App\Http\Requests\ValidateIndividualRequest;
 use LaravelEnso\Core\app\Classes\ProfileBuilder;
 
 class IndividualController extends Controller
 {
-
     public function create(IndividualForm $form)
     {
         return ['form' => $form->create()];

@@ -5,7 +5,7 @@ namespace App\Forms\Builders;
 use App\Event;
 use LaravelEnso\FormBuilder\app\Classes\Form;
 
-class eventForm
+class EventForm
 {
     private const TemplatePath = __DIR__.'/../Templates/event.json';
 

@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\CommentsManager\app\Traits\Commentable;
-use LaravelEnso\DocumentsManager\app\Traits\Documentable;
 use LaravelEnso\AddressesManager\app\Traits\Addressable;
+use LaravelEnso\DocumentsManager\app\Traits\Documentable;
 
 class Family extends Model
 {
     use Commentable, Documentable, Addressable;
 
-    protected $fillable = ['description','individual_1', 'individual_2', 'is_active'];
+    protected $fillable = ['description', 'individual_1', 'individual_2', 'is_active'];
 
     protected $attributes = ['is_active' => false];
 
@@ -24,6 +24,6 @@ class Family extends Model
 
     public function events()
     {
-        return $this->belongsTo(Family::class);
+        return $this->belongsTo(self::class);
     }
 }
