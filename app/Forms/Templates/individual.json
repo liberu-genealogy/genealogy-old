@@ -19,17 +19,6 @@
         "content": "text"
       }
     }, {
-      "label": "Event",
-      "name": "event_id",
-      "value": [],
-      "meta": {
-        "custom": true,
-        "type": "select",
-        "multiple": true,
-        "options": [],
-        "source": "events.selectOptions"
-      }
-    }, {
       "label": "Active",
       "name": "is_active",
       "value": false,

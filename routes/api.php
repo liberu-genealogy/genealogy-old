@@ -69,7 +69,7 @@ Route::middleware(['auth', 'core'])
             });
     });
 
-Route::middleware(['auth', 'core'])
+Route::middleware(['auth'])
     ->group(function () {
         Route::namespace('Event')
             ->prefix('events')->as('events.')

@@ -19,8 +19,6 @@ class IndividualController extends Controller
     {
         $individual = new Individual($request->all());
 
-        $this->authorize('handle', $individual);
-
         $individual->save();
 
         return [
@@ -46,8 +44,6 @@ class IndividualController extends Controller
     {
         $individual->fill($request->all());
 
-        $this->authorize('handle', $individual);
-
         $individual->save();
 
         return ['message' => __('The Individual was successfully updated')];
@@ -55,7 +51,6 @@ class IndividualController extends Controller
 
     public function destroy(Individual $individual)
     {
-        $this->authorize('handle', $individual);
 
         $individual->delete();
 
