@@ -1,5 +1,5 @@
 {
-  "routePrefix": "family.owners",
+  "routePrefix": "families",
   "sections": [{
     "columns": "2",
     "fields": [
@@ -11,39 +11,27 @@
           "type": "input",
           "content": "text"
         }
-      },
-      {
-        "label": "Partner",
-        "name": "partner_id_1",
-        "value": null,
-        "meta": {
-          "custom": true,
-          "type": "select",
-          "multiple": false,
-          "options": [],
-          "source": "individuals.selectOptions"
-        }
       }, {
-      "label": "Partner",
-      "name": "partner_id_2",
-      "value": null,
-      "meta": {
-        "custom": true,
-        "type": "select",
-        "multiple": false,
-        "options": [],
-        "source": "individuals.selectOptions"
-      }
-    }, {
-      "label": "Children",
-      "name": "childrenList",
+       "label": "Individuals",
+      "name": "individual_id",
       "value": [],
       "meta": {
         "type": "select",
         "multiple": true,
         "options": []
       }
-    }, {
+      },
+      {
+        "label": "Types",
+        "name": "type_id",
+        "value": [],
+        "meta": {
+          "type": "select",
+          "multiple": true,
+          "options": []
+        }
+      },
+      {
       "label": "Active",
       "name": "is_active",
       "value": true,

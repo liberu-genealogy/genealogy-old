@@ -13,6 +13,6 @@ class EventSelectController extends Controller
     protected $model = Event::class;
 
     protected $queryAttributes = [
-        'description', 'date',
+        'title', 'description', 'date',
     ];
 }

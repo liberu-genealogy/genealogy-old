@@ -13,6 +13,8 @@ class IndividualSelectController extends Controller
     protected $model = Individual::class;
 
     protected $queryAttributes = [
-        'first_name', 'last_name', 'is_active',
+        'id', 'name', 'first_name', 'last_name', 'is_active',
     ];
+
+
 }

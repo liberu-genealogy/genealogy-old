@@ -14,8 +14,6 @@ class CreateFamiliesTable extends Migration
     {
         Schema::create('families', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('partner_1_id')->index('individuals_partner_1_id_foreign');
-            $table->integer('partner_2_id')->index('individuals_partner_2_id_foreign');
             $table->text('description');
             $table->timestamps();
             $table->integer('is_active');

@@ -11,7 +11,7 @@ class Event extends Model
 {
     use Commentable, Documentable, Addressable;
 
-    protected $fillable = ['name', 'description', 'is_active', 'date'];
+    protected $fillable = ['title', 'description', 'is_active', 'date'];
 
     protected $attributes = ['is_active' => false];
 

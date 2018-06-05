@@ -18,8 +18,6 @@ class EventController extends Controller
     {
         $event = new Event($request->all());
 
-        $this->authorize('handle', $event);
-
         $event->save();
 
         return [
@@ -31,7 +29,6 @@ class EventController extends Controller
 
     public function show(Event $event)
     {
-        (new ProfileBuilder($event))->set();
 
         return ['Event' => $event];
     }
@@ -45,8 +42,6 @@ class EventController extends Controller
     {
         $event->fill($request->all());
 
-        $this->authorize('handle', $event);
-
         $event->save();
 
         return ['message' => __('The Event was successfully updated')];
@@ -54,7 +49,6 @@ class EventController extends Controller
 
     public function destroy(Event $event)
     {
-        $this->authorize('handle', $event);
 
         $event->delete();
 

@@ -25,6 +25,8 @@ class Individual extends Model
 
     public function families()
     {
-        return $this->belongsTo(Family::class);
+        return $this->belongsToMany(Family::class);
     }
+
+
 }
