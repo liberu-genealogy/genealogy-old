@@ -33,7 +33,7 @@ class FamilyForm
 
         return $this->form
             ->options('type_id', IndividualTypes::select())
-            ->options('individualList', Individual::all()->pluck('name', 'id'))
+            ->options('individualList', Individual::get(['first_name', 'individuals.id']))
             ->edit($family);
     }
 }

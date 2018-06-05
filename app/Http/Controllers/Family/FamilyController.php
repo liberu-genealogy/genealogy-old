@@ -35,7 +35,7 @@ class FamilyController extends Controller
 
     public function update(ValidateFamilyRequest $request, Family $family)
     {
-        $family->updateWithChildren(
+        $family->updateWithIndividuals(
             $request->all(),
             $request->get('individualList')
         );

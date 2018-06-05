@@ -30,7 +30,7 @@ class Family extends Model
 
     public function getIndividualListAttribute()
     {
-        return $this->individuals()->pluck('id');
+        return $this->individuals()->pluck('individuals.id');
     }
 
 }
