@@ -54,7 +54,7 @@
         "animate.css": "^3.6.1",
         "axios": "^0.17",
         "bulma": "^0.7.1",
-        "bulma-extensions": "^1.0.31",
+        "bulma-extensions": "^1.0.32",
         "bulmaswatch": "^0.6.2",
         "chart.js": "^2.7.2",
         "chartjs-plugin-datalabels": "^0.3.0",
@@ -77,8 +77,10 @@
         "tooltip.js": "^1.2.0",
         "v-click-outside": "^1.0.4",
         "v-tooltip": "^2.0.0-rc.32",
+        "video.js": "^7.0.3",
         "vue": "^2.5.16",
         "vue-router": "^3.0.1",
+        "vue-video-player": "^5.0.2",
         "vuex": "^3.0.0",
         "zxcvbn": "^4.4.2"
     }
