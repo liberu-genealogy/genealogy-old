@@ -16,9 +16,9 @@ class FamilyController extends Controller
 
     public function store(ValidateFamilyRequest $request, Family $family)
     {
-        $family = $family->storeWithChildren(
+        $family = $family->storeWithIndividuals(
             $request->all(),
-            $request->get('childrenList')
+            $request->get('individualList')
         );
 
         return [
@@ -37,7 +37,7 @@ class FamilyController extends Controller
     {
         $family->updateWithChildren(
             $request->all(),
-            $request->get('childrenList')
+            $request->get('individualList')
         );
 
         return ['message' => __('The Family was successfully updated')];

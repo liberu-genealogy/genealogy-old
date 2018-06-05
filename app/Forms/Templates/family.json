@@ -1,7 +1,7 @@
 {
   "routePrefix": "families",
   "sections": [{
-    "columns": "2",
+    "columns": "3",
     "fields": [
       {
         "label": "Description",
@@ -13,7 +13,7 @@
         }
       }, {
        "label": "Individuals",
-      "name": "individual_id",
+      "name": "individualList",
       "value": [],
       "meta": {
         "type": "select",

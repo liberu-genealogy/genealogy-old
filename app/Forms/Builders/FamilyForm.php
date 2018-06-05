@@ -22,15 +22,18 @@ class FamilyForm
     {
         return $this->form
             ->options('type_id', IndividualTypes::select())
-            ->options('individual_id', Individual::get(['first_name', 'id']))->create();
+//            ->options('individualList', Individual::all()->pluck('name', 'id'))
+            ->options('individualList', Individual::get(['first_name', 'id']))
+            ->create();
     }
 
     public function edit(Family $family)
     {
-        $family->append(['individual_id']);
+        $family->append(['individualList']);
 
         return $this->form
             ->options('type_id', IndividualTypes::select())
-            ->options('individual_id', Individual::get(['first_name', 'id']))->edit($family);
+            ->options('individualList', Individual::all()->pluck('name', 'id'))
+            ->edit($family);
     }
 }

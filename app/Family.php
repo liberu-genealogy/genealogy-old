@@ -32,4 +32,5 @@ class Family extends Model
     {
         return $this->individuals()->pluck('id');
     }
+
 }
