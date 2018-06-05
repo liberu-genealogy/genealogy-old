@@ -11,6 +11,6 @@ class IndividualTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Individual::class, 2500)->create();
+        factory(App\Individual::class, 250)->create();
     }
 }

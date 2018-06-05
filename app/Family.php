@@ -12,7 +12,7 @@ class Family extends Model
 {
     use Commentable, Documentable, Addressable, HasIndividuals;
 
-    protected $fillable = ['description', 'is_active'];
+    protected $fillable = ['description', 'is_active', 'type_id'];
 
     protected $attributes = ['is_active' => false];
 
@@ -20,7 +20,7 @@ class Family extends Model
 
     public function individuals()
     {
-        return $this->hasMany(Individual::class);
+        return $this->belongsToMany(Individual::class);
     }
 
     public function events()

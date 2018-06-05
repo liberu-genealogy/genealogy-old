@@ -17,6 +17,7 @@ class CreateFamiliesTable extends Migration
             $table->text('description');
             $table->timestamps();
             $table->integer('is_active');
+            $table->integer('type_id');
         });
     }
 

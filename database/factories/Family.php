@@ -15,5 +15,6 @@ $factory->define(App\Family::class, function (Faker\Generator $faker) {
     return [
         'description' => $faker->text,
         'is_active' => $faker->boolean,
+        'type_id'=> 1,
     ];
 });

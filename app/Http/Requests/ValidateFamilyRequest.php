@@ -19,8 +19,6 @@ class ValidateFamilyRequest extends FormRequest
         return [
             'is_active' => 'boolean',
             'description' => 'required|max:500',
-            'partner_1_id' => 'required|exists:individuals,id',
-            'partner_2_id' => 'required|exists:individuals,id',
         ];
     }
 }

@@ -24,10 +24,10 @@
       {
         "label": "Types",
         "name": "type_id",
-        "value": [],
+        "value": null,
         "meta": {
           "type": "select",
-          "multiple": true,
+          "multiple": false,
           "options": []
         }
       },

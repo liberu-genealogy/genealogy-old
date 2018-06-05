@@ -18,9 +18,9 @@ class CreateFamilyIndividualTable extends Migration
             $table->foreign('family_id')->references('id')->on('families');
             $table->integer('individual_id')->unsigned()->index('individual_id');
             $table->foreign('individual_id')->references('id')->on('individuals');
-            $table->integer('type_id');
+            $table->integer('type_id')->default('0');
             $table->timestamps();
-            $table->integer('is_active');
+            $table->integer('is_active')->default('1');
         });
     }
 
