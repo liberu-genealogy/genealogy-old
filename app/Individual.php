@@ -14,7 +14,7 @@ class Individual extends Model
 
     protected $appends = ['name'];
 
-    protected $fillable = ['first_name', 'last_name', 'is_active'];
+    protected $fillable = ['first_name', 'last_name', 'is_active', 'gender_id'];
 
     protected $attributes = ['is_active' => false];
 

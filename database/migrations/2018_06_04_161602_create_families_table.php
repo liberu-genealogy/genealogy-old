@@ -18,6 +18,8 @@ class CreateFamiliesTable extends Migration
             $table->timestamps();
             $table->integer('is_active');
             $table->integer('type_id');
+            $table->integer('father_id')->references('id')->on('individuals');
+            $table->integer('mother_id')->references('id')->on('individuals');
         });
     }
 

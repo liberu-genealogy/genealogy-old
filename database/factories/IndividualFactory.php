@@ -12,9 +12,12 @@
  */
 
 $factory->define(App\Individual::class, function (Faker\Generator $faker) {
+    $gender = $faker->randomElement(['male', 'female']);
+
     return [
-        'first_name' => $faker->firstName,
+        'first_name' => $faker->firstName($gender),
         'last_name' => $faker->lastName,
+        'gender' => $gender,
         'is_active' => $faker->boolean,
     ];
 });

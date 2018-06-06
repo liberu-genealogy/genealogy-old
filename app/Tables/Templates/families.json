@@ -10,13 +10,25 @@
     {
       "label": "Description",
       "name": "description",
-      "data": "events.description",
+      "data": "families.description",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Father",
+      "name": "father",
+      "data": "families.father",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Mother",
+      "name": "mother",
+      "data": "families.mother",
       "meta": ["searchable", "sortable"]
     },
     {
       "label": "Active",
       "name": "is_active",
-      "data": "users.is_active",
+      "data": "families.is_active",
       "meta": ["boolean"]
     }
   ]

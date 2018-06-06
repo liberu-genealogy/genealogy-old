@@ -12,7 +12,7 @@ class Family extends Model
 {
     use Commentable, Documentable, Addressable, HasIndividuals;
 
-    protected $fillable = ['description', 'is_active', 'type_id'];
+    protected $fillable = ['description', 'is_active', 'father_id', 'mother_id', 'type_id'];
 
     protected $attributes = ['is_active' => false];
 

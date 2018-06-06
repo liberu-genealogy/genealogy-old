@@ -32,6 +32,28 @@
         }
       },
       {
+        "label": "Father",
+        "name": "father_id",
+        "value": null,
+        "meta": {
+          "type": "select",
+          "multiple": false,
+          "options": [],
+          "source": "individuals.selectOptions"
+        }
+      },
+      {
+        "label": "Mother",
+        "name": "mother_id",
+        "value": null,
+        "meta": {
+          "type": "select",
+          "multiple": false,
+          "options": [],
+          "source": "individuals.selectOptions"
+        }
+      },
+      {
       "label": "Active",
       "name": "is_active",
       "value": true,

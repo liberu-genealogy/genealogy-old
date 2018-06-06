@@ -23,7 +23,9 @@ class FamilyForm
         return $this->form
             ->options('type_id', IndividualTypes::select())
 //            ->options('individualList', Individual::all()->pluck('name', 'id'))
-            ->options('individualList', Individual::get(['first_name', 'id']))
+            ->options('individualList', Individual::get(['first_name', 'individuals.id']))
+            ->options('mother_id', Individual::get(['first_name', 'individuals.id']))
+            ->options('father_id', Individual::get(['first_name', 'individuals.id']))
             ->create();
     }
 
@@ -34,6 +36,8 @@ class FamilyForm
         return $this->form
             ->options('type_id', IndividualTypes::select())
             ->options('individualList', Individual::get(['first_name', 'individuals.id']))
+            ->options('mother_id', Individual::get(['first_name', 'individuals.id']))
+            ->options('father_id', Individual::get(['first_name', 'individuals.id']))
             ->edit($family);
     }
 }
