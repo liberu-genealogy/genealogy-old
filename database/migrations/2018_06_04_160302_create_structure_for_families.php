@@ -15,6 +15,7 @@ class CreateStructureForFamilies extends StructureMigration
         ['name' => 'families.getTableData', 'description' => 'Get table data for families', 'type' => 0, 'is_default' => false],
         ['name' => 'families.exportExcel', 'description' => 'Export excel for families', 'type' => 0, 'is_default' => false],
         ['name' => 'families.selectOptions', 'description' => 'Get family list for vue select', 'type' => 0, 'is_default' => false],
+        ['name' => 'families.show', 'description' => 'Show family', 'type' => 0, 'is_default' => false],
     ];
 
     protected $permissionGroup = [
