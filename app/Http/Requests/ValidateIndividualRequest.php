@@ -20,6 +20,7 @@ class ValidateIndividualRequest extends FormRequest
         return [
             'first_name' => 'required|max:50',
             'last_name' => 'required|max:50',
+            'gender' => 'required',
             'is_active' => 'boolean',
         ];
     }
