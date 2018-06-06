@@ -1,7 +1,13 @@
 <!--h-->
 # Laravel Genealogy - Built with Enso
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/laravel-genealogy/genealogy/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/laravel-genealogy/genealogy/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/laravel-genealogy/genealogy/badges/build.png?b=master)](https://scrutinizer-ci.com/g/laravel-genealogy/genealogy/build-status/master)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/laravel-genealogy/genealogy/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 [![StyleCI](https://github.styleci.io/repos/135390590/shield?branch=master)](https://github.styleci.io/repos/135390590)
+
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/laravel-genealogy/Genealogy.svg?columns=all)](https://waffle.io/laravel-genealogy/genealogy)
 <!--/h-->
 
