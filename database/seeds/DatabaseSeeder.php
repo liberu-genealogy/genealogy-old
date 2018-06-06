@@ -9,5 +9,9 @@ class DatabaseSeeder extends Seeder
         $this->call(IndividualTableSeeder::class);
         $this->call(FamilyTableSeeder::class);
         $this->call(EventTableSeeder::class);
+        $this->call(RepositoryTableSeeder::class);
+        $this->call(SourceTableSeeder::class);
+        $this->call(CitationTableSeeder::class);
+        $this->call(NoteTableSeeder::class);
     }
 }
