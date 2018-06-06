@@ -2,11 +2,11 @@
 
 namespace App;
 
+use App\Traits\HasIndividuals;
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\CommentsManager\app\Traits\Commentable;
 use LaravelEnso\AddressesManager\app\Traits\Addressable;
 use LaravelEnso\DocumentsManager\app\Traits\Documentable;
-use App\Traits\HasIndividuals;
 
 class Family extends Model
 {
@@ -32,5 +32,4 @@ class Family extends Model
     {
         return $this->individuals()->pluck('individuals.id');
     }
-
 }

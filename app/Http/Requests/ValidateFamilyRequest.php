@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ValidateFamilyRequest extends FormRequest
@@ -20,7 +19,7 @@ class ValidateFamilyRequest extends FormRequest
             'is_active' => 'boolean',
             'description' => 'required|max:500',
             'father_id' => 'required|exists:individuals,id',
-            'mother_id' => 'required|exists:individuals,id'
+            'mother_id' => 'required|exists:individuals,id',
         ];
     }
 }
