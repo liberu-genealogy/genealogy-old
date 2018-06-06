@@ -20,6 +20,12 @@
       "meta": ["searchable", "sortable"]
     },
     {
+      "label": "Gender",
+      "name": "gender",
+      "data": "individuals.gender",
+      "meta": ["searchable", "sortable"]
+    },
+    {
       "label": "Active",
       "name": "is_active",
       "data": "users.is_active",

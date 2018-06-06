@@ -12,7 +12,7 @@ class IndividualTable extends Table
     public function query()
     {
         return Individual::select(\DB::raw('
-            id as "dtRowId", first_name, last_name
+            id as "dtRowId", first_name, last_name, gender
         '));
     }
 }

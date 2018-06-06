@@ -22,6 +22,6 @@ class CreateStructureForFamilies extends StructureMigration
     ];
 
     protected $menu = [
-        'name' => 'Families', 'icon' => 'tasks', 'link' => 'families.index', 'order_index' => 999, 'has_children' => false,
+        'name' => 'Families', 'icon' => 'tachometer-alt', 'link' => 'families.index', 'order_index' => 999, 'has_children' => false,
     ];
 }

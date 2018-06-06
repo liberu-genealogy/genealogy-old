@@ -12,7 +12,7 @@ class EventTable extends Table
     public function query()
     {
         return Event::select(\DB::raw('
-            id as "dtRowId", description, is_active, date
+            id as "dtRowId", name, description, is_active, date, created_at
         '));
     }
 }

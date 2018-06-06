@@ -22,6 +22,6 @@ class CreateStructureForEvents extends StructureMigration
     ];
 
     protected $menu = [
-        'name' => 'Events', 'icon' => 'tasks', 'link' => 'events.index', 'order_index' => 999, 'has_children' => false,
+        'name' => 'Events', 'icon' => 'tachometer-alt', 'link' => 'events.index', 'order_index' => 999, 'has_children' => false,
     ];
 }

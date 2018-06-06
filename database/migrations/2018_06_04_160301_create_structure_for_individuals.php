@@ -22,6 +22,6 @@ class CreateStructureForIndividuals extends StructureMigration
     ];
 
     protected $menu = [
-        'name' => 'Individuals', 'icon' => 'tasks', 'link' => 'individuals.index', 'order_index' => 999, 'has_children' => false,
+        'name' => 'Individuals', 'icon' => 'tachometer-alt', 'link' => 'individuals.index', 'order_index' => 999, 'has_children' => false,
     ];
 }

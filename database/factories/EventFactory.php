@@ -13,7 +13,7 @@
 
 $factory->define(App\Event::class, function (Faker\Generator $faker) {
     return [
-        'title' => $faker->sentence,
+        'name' => $faker->sentence,
         'description' => $faker->text,
         'date' => $faker->dateTimeBetween($startDate = '-200 years', $endDate = 'now'),
         'is_active' => $faker->boolean,

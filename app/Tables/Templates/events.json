@@ -8,6 +8,12 @@
   "buttons": ["excel", "create", "action", "show", "edit", "destroy"],
   "columns": [
     {
+      "label": "Name",
+      "name": "name",
+      "data": "events.name",
+      "meta": ["searchable", "sortable"]
+    },
+    {
       "label": "Description",
       "name": "description",
       "data": "events.description",
