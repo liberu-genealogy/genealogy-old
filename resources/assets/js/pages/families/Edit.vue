@@ -7,12 +7,14 @@
                 @loaded="initialised = true"
                 ref="form"/>
             <div v-if="initialised">
-                <comments-card :id="$refs.form.data.params.family_id"
-                    type="family"/>
-                <documents-card :id="$refs.form.data.params.family_id"
-                    type="family"/>
-                <addresses :id="$refs.form.data.params.family_id"
-                    type="family"/>
+
+                <documents-card :id="$route.params.id"
+                                type="family"/>
+                <addresses :id="$route.params.id"
+                           type="family"/>
+                <comments-card :id="$route.params.id"
+                               type="family"
+                               :open="true"/>
             </div>
         </div>
     </div>
