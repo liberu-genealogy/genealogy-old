@@ -11,7 +11,7 @@ class InsertDefaultUser extends Migration
     {
         $user = new User();
         $user->password = '$2y$10$06TrEefmqWBO7xghm2PUzeF/O0wcawFUv8TKYq.NF6Dsa0Pnmd/F2';
-        $user->email = 'admin@laravel-enso.com';
+        $user->email = 'admin@example.net';
         $user->first_name = 'Admin';
         $role = Role::whereName('admin')->first();
         $user->role_id = $role->id;
