@@ -9,6 +9,8 @@ use LaravelEnso\Charts\app\Classes\PolarChart;
 use LaravelEnso\Charts\app\Classes\RadarChart;
 use LaravelEnso\Charts\app\Classes\BubbleChart;
 use LaravelEnso\Charts\app\Classes\DoughnutChart;
+use App\Individual;
+use App\Family;
 
 class ChartController extends Controller
 {
@@ -36,12 +38,13 @@ class ChartController extends Controller
             ])->get();
     }
 
+
     public function pie()
     {
         return (new PieChart())
-            ->title('Pie Chart')
-            ->labels(['Green', 'Red', 'Azzure'])
-            ->datasets([400, 50, 100])
+            ->title('Individuals')
+            ->labels(['Male','Female'])
+            ->datasets([1000, 1000])
             ->get();
     }
 
