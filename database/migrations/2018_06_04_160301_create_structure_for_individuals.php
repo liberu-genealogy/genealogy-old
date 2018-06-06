@@ -15,6 +15,7 @@ class CreateStructureForIndividuals extends StructureMigration
         ['name' => 'individuals.getTableData', 'description' => 'Get table data for individuals', 'type' => 0, 'is_default' => true],
         ['name' => 'individuals.exportExcel', 'description' => 'Export excel for individuals', 'type' => 0, 'is_default' => true],
         ['name' => 'individuals.selectOptions', 'description' => 'Get individuals list for vue select', 'type' => 0, 'is_default' => true],
+        ['name' => 'individuals.show', 'description' => 'Show individual', 'type' => 0, 'is_default' => true],
     ];
 
     protected $permissionGroup = [

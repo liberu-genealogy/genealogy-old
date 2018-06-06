@@ -14,7 +14,8 @@ class CreateStructureForEvents extends StructureMigration
         ['name' => 'events.initTable', 'description' => 'Init table for events', 'type' => 0, 'is_default' => false],
         ['name' => 'events.getTableData', 'description' => 'Get table data for events', 'type' => 0, 'is_default' => false],
         ['name' => 'events.exportExcel', 'description' => 'Export excel for events', 'type' => 0, 'is_default' => false],
-        ['name' => 'events.selectOptions', 'description' => 'Get work order_indexs list for vue select', 'type' => 0, 'is_default' => false],
+        ['name' => 'events.selectOptions', 'description' => 'Get events list for vue select', 'type' => 0, 'is_default' => false],
+        ['name' => 'events.show', 'description' => 'Show event', 'type' => 0, 'is_default' => false],
     ];
 
     protected $permissionGroup = [

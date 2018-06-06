@@ -14,15 +14,27 @@
       "meta": ["searchable", "sortable"]
     },
     {
-      "label": "Father",
-      "name": "father",
-      "data": "families.father",
+      "label": "Father First",
+      "name": "father_first_name",
+      "data": "families.father_first_name",
       "meta": ["searchable", "sortable"]
     },
     {
-      "label": "Mother",
-      "name": "mother",
-      "data": "families.mother",
+      "label": "Father Last",
+      "name": "father_last_name",
+      "data": "families.father_last_name",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Mother First",
+      "name": "mother_first_name",
+      "data": "families.mother_first_name",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Mother Last",
+      "name": "mother_last_name",
+      "data": "families.mother_last_name",
       "meta": ["searchable", "sortable"]
     },
     {
