@@ -15,6 +15,4 @@ class IndividualSelectController extends Controller
     protected $queryAttributes = [
         'id', 'name', 'first_name', 'last_name', 'is_active',
     ];
-
-
 }

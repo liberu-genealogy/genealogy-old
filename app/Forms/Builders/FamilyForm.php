@@ -4,8 +4,8 @@ namespace App\Forms\Builders;
 
 use App\Family;
 use App\Individual;
-use LaravelEnso\FormBuilder\app\Classes\Form;
 use App\Enums\IndividualTypes;
+use LaravelEnso\FormBuilder\app\Classes\Form;
 
 class FamilyForm
 {

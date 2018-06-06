@@ -15,7 +15,7 @@ $factory->define(App\Family::class, function (Faker\Generator $faker) {
     return [
         'description' => $faker->text,
         'is_active' => $faker->boolean,
-        'type_id'=> 1,
+        'type_id' => 1,
         'father_id' => $faker->randomElement(\App\Individual::where('gender', 'male')->pluck('id')->toArray()),
         'mother_id' => $faker->randomElement(\App\Individual::where('gender', 'female')->pluck('id')->toArray()),
 

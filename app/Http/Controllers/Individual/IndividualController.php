@@ -51,7 +51,6 @@ class IndividualController extends Controller
 
     public function destroy(Individual $individual)
     {
-
         $individual->delete();
 
         return [
