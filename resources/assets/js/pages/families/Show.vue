@@ -1,42 +1,71 @@
 <template>
-
-    <div class="columns is-centered">
-        <div class="column is-three-quarters animated fadeIn">
-            <vue-form-ss class="box animated fadeIn"
-                         :route-params="[$route.name, $route.params.id, false]"
-                         @loaded="initialised = true"
-                         ref="form"/>
-            <div v-if="initialised">
-                <comments-card :id="$refs.form.data.params.family_id"
-                               type="family"/>
-                <documents-card :id="$refs.form.data.params.family_id"
-                                type="family"/>
-                <addresses :id="$refs.form.data.params.family_id"
-                           type="family"/>
-            </div>
-        </div>
+    <div>
+        <ul>
+            <li v-for="individual in individuals" :key="individual.id">
+                <a v-bind:href="'/individuals/' + individual.id">
+                {{ individual.first_name }} {{ individual.last_name }}
+                </a>
+        </li>
+        </ul>
     </div>
-
 </template>
 
 <script>
 
-    import DocumentsCard from '../../components/enso/documents/DocumentsCard.vue';
-    import CommentsCard from '../../components/enso/comments/CommentsCard.vue';
-    import Contacts from '../../components/enso/contacts/Contacts.vue';
-    import Addresses from '../../components/enso/addresses/Addresses.vue';
-    import VueFormSs from '../../components/enso/vueforms/VueFormSs.vue';
+import fontawesome from '@fortawesome/fontawesome';
+import {
+    faTrashAlt, faUpload, faSignOutAlt, faEllipsisH,
+    faEye, faPlus, faPencilAlt,
+} from '@fortawesome/fontawesome-free-solid/shakable.es';
 
-    export default {
-        components: {
-            CommentsCard, DocumentsCard, Addresses, VueFormSs,
-        },
+fontawesome.library.add([
+    faTrashAlt, faUpload, faSignOutAlt, faEllipsisH,
+    faEye, faPlus, faPencilAlt,
+]);
 
-        data() {
-            return {
-                initialised: false,
-            };
-        },
-    };
+export default {
+    components: { },
+
+    data() {
+        return {
+            individuals: null,
+        };
+    },
+
+    mounted() {
+        axios.get(route(this.$route.name, this.$route.params.id))
+            .then((response) => {
+                this.individuals = response.data;
+            }).catch(error => this.handleError(error));
+    },
+};
 
 </script>
+
+<style>
+
+    .has-lateral-borders {
+        border-left: 1px solid rgba(0,0,0,0.2);
+        border-right: 1px solid rgba(0,0,0,0.2);
+    }
+
+    .stat-value {
+        font-size: 2em;
+        padding-top: 12px;
+    }
+
+    .stat-key {
+        font-size: 1.4em;
+        font-weight: 200;
+        padding-bottom: 8px;
+    }
+
+    .level.user-controls {
+        margin-bottom: 0;
+    }
+
+    .individual-content {
+        transition:all 1s ease;
+    }
+
+</style>

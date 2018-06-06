@@ -28,6 +28,11 @@ class FamilyController extends Controller
         ];
     }
 
+    public function show(Family $family)
+    {
+        return $family->individuals()->get(array('individuals.id', 'individuals.first_name', 'individuals.last_name'));
+    }
+
     public function edit(Family $family, FamilyForm $form)
     {
         return ['form' => $form->edit($family)];
