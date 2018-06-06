@@ -1,6 +1,9 @@
 /node_modules
 /.vscode
 /packages
+/public/*.js*
+/public/js
+/public/css
 /public/hot
 /public/storage
 /storage/*.key
