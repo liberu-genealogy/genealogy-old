@@ -115,4 +115,5 @@ Route::middleware(['auth'])
             });
 
         Route::resource('families', 'Family\FamilyController');
+        Route::resource('trees', 'Tree\TreeController');
     });
