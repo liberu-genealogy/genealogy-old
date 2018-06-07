@@ -2,7 +2,7 @@
 
 namespace App\Classes;
 
-use LaravelEnso\Contacts\app\Exceptions\ContactConfigException;
+use App\Exceptions\EventConfigException;
 
 class EventConfigMapper
 {
@@ -18,7 +18,7 @@ class EventConfigMapper
         $events = config('enso.events.events.'.$this->type);
 
         if (!$event) {
-            throw new ContactConfigException(__(
+            throw new EventConfigException(__(
                 'Entity :entity does not exist in enso/events.php config file',
                 ['entity' => $this->type]
             ));

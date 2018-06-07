@@ -7,10 +7,11 @@ use LaravelEnso\Contacts\app\Traits\Contactable;
 use LaravelEnso\CommentsManager\app\Traits\Commentable;
 use LaravelEnso\AddressesManager\app\Traits\Addressable;
 use LaravelEnso\DocumentsManager\app\Traits\Documentable;
+use App\Traits\EventTrait;
 
 class Individual extends Model
 {
-    use Contactable, Commentable, Documentable, Addressable;
+    use Contactable, Commentable, Documentable, Addressable,EventTrait;
 
     protected $appends = ['name'];
 

@@ -1,4 +1,4 @@
-ValidateEventRequest.php<?php
+<?php
 
 namespace App\Http\Requests;
 

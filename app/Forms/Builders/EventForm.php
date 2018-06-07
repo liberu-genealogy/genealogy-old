@@ -26,6 +26,7 @@ class EventForm
     public function edit(Event $event)
     {
         return $this->form->options('event_type_id', EventType::with('events')->get(['event_types.name', 'event_types.id']))
+            ->options('individual_id', Event::with('individuals')->get(['individuals.first_name', 'individuals.id']))
             ->edit($event);
     }
 }
