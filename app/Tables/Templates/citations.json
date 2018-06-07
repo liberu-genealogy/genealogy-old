@@ -2,7 +2,7 @@
   "routePrefix": "citations",
   "readSuffix": "getTableData",
   "writeSuffix": null,
-  "name": "Events",
+  "name": "Citations",
   "icon": "users",
   "crtNo": true,
   "buttons": ["excel", "create", "action", "show", "edit", "destroy"],

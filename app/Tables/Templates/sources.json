@@ -2,7 +2,7 @@
   "routePrefix": "sources",
   "readSuffix": "getTableData",
   "writeSuffix": null,
-  "name": "Events",
+  "name": "Sources",
   "icon": "users",
   "crtNo": true,
   "buttons": ["excel", "create", "action", "show", "edit", "destroy"],

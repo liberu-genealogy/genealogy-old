@@ -2,7 +2,7 @@
   "routePrefix": "repositories",
   "readSuffix": "getTableData",
   "writeSuffix": null,
-  "name": "Events",
+  "name": "Repositories",
   "icon": "users",
   "crtNo": true,
   "buttons": ["excel", "create", "action", "show", "edit", "destroy"],

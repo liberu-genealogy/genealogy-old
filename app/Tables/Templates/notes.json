@@ -2,7 +2,7 @@
   "routePrefix": "notes",
   "readSuffix": "getTableData",
   "writeSuffix": null,
-  "name": "Events",
+  "name": "Notes",
   "icon": "users",
   "crtNo": true,
   "buttons": ["excel", "create", "action", "show", "edit", "destroy"],
