@@ -1,10 +1,10 @@
-ValidateEventRequest.php<?php
+<?php
 
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ValidateEventRequest extends FormRequest
+class ValidateRepositoryRequest extends FormRequest
 {
     public function authorize()
     {
@@ -13,7 +13,7 @@ class ValidateEventRequest extends FormRequest
 
     public function rules()
     {
-        $event = $this->route('event');
+        $repository = $this->route('repository');
 
         return [
             'description' => 'required|max:50',

@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Event;
+namespace App\Http\Controllers\Repository;
 
-use App\Event;
+use App\Repository;
 use App\Http\Controllers\Controller;
 use LaravelEnso\Select\app\Traits\OptionsBuilder;
 
-class EventSelectController extends Controller
+class RepositorySelectController extends Controller
 {
     use OptionsBuilder;
 
-    protected $model = Event::class;
+    protected $model = Repository::class;
 
     protected $queryAttributes = [
         'name', 'description', 'date',

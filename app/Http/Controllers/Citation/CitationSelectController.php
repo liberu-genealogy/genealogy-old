@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Event;
+namespace App\Http\Controllers\Citation;
 
-use App\Event;
+use App\Citation;
 use App\Http\Controllers\Controller;
 use LaravelEnso\Select\app\Traits\OptionsBuilder;
 
-class EventSelectController extends Controller
+class CitationSelectController extends Controller
 {
     use OptionsBuilder;
 
-    protected $model = Event::class;
+    protected $model = Citation::class;
 
     protected $queryAttributes = [
         'name', 'description', 'date',
