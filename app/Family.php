@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\Traits\EventTrait;
+use App\Traits\Events;
 use App\Traits\HasIndividuals;
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\CommentsManager\app\Traits\Commentable;
@@ -11,7 +11,7 @@ use LaravelEnso\DocumentsManager\app\Traits\Documentable;
 
 class Family extends Model
 {
-    use Commentable, Documentable, Addressable, HasIndividuals, EventTrait;
+    use Commentable, Documentable, Addressable, HasIndividuals, Events;
 
     protected $fillable = ['description', 'is_active', 'father_id', 'mother_id', 'type_id'];
 

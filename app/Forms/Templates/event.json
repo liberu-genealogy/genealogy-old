@@ -50,6 +50,7 @@
           "column": 3,
           "meta": {
             "custom": false,
+            "disabled": false,
             "type": "select",
             "multiple": false,
             "options": []

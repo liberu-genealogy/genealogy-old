@@ -1,22 +1,22 @@
 <template>
 
     <card :icon="icon"
-        refresh
-        scrollable
-        :search="events.length > 1"
-        :title="title || __('Events')"
-        :overlay="loading"
-        @refresh="get()"
-        :collapsed="!open || isEmpty"
-        ref="card"
-        @query-update="query = $event"
-        @expand="isEmpty
+          refresh
+          scrollable
+          :search="events.length > 1"
+          :title="title || __('Events')"
+          :overlay="loading"
+          @refresh="get()"
+          :collapsed="!open || isEmpty"
+          ref="card"
+          @query-update="query = $event"
+          @expand="isEmpty
             ? $refs.card.collapse()
             : null"
-        :badge="count"
-        :controls="1">
+          :badge="count"
+          :controls="1">
         <card-control slot="control-1"
-            @click="create()">
+                      @click="create()">
             <span class="icon is-small">
                 <fa icon="plus-square"/>
             </span>
@@ -24,24 +24,24 @@
         <div class="has-padding-medium wrapper">
             <div class="columns is-multiline">
                 <event-form
-                    v-if="form"
-                    :id="id"
-                    :type="type"
-                    :form="form"
-                    @close="form = null"
-                    @destroy="get(); form=false"
-                    @submit="get();form=false"/>
+                        v-if="form"
+                        :id="id"
+                        :type="type"
+                        :form="form"
+                        @close="form = null"
+                        @destroy="get(); form=false"
+                        @submit="get();form=false"/>
 
                 <div class="column is-half-widescreen is-one-third-fullhd"
-                    v-for="(event, index) in filteredEvents"
-                    :key="index">
+                     v-for="(event, index) in filteredEvents"
+                     :key="index">
                     <event
-                        :event="event"
-                        @edit="edit(event)"
-                        @delete="destroy(event, index)"
-                        :index="index"
-                        :type="type"
-                        :id="id"/>
+                            :event="event"
+                            @edit="edit(event)"
+                            @delete="destroy(event, index)"
+                            :index="index"
+                            :type="type"
+                            :id="id"/>
                 </div>
             </div>
         </div>
@@ -100,7 +100,7 @@ export default {
             return this.query
                 ? this.events.filter(event => event.first_name.toLowerCase()
                     .indexOf(this.query.toLowerCase()) > -1
-                    || event.last_name.toLowerCase().indexOf(this.query.toLowerCase()) > -1)
+                        || event.last_name.toLowerCase().indexOf(this.query.toLowerCase()) > -1)
                 : this.events;
         },
         count() {

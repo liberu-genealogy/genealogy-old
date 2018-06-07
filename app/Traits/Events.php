@@ -7,6 +7,6 @@ trait Events
 {
     public function events()
     {
-        return $this->morphMany(Event::class, 'events');
+        return $this->morphToMany(Event::class, 'event');
     }
 }

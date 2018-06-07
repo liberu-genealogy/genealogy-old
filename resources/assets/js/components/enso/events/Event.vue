@@ -10,10 +10,10 @@
             </p>
             <p>
                 <span class="icon is-small"
-                    v-if="event.date">
-                    <fa icon="stick-note"/>
+                      v-if="event.event_types_name">
+                    <fa icon="sticky-note"/>
                 </span>
-                {{ event.date }}
+                {{ event.event_types_name }}
             </p>
             <p>
                 <span class="icon is-small"
@@ -21,6 +21,13 @@
                     <fa icon="sticky-note"/>
                 </span>
                 {{ event.description }}
+            </p>
+            <p>
+                <span class="icon is-small"
+                      v-if="event.date">
+                    <fa icon="stick-note"/>
+                </span>
+                {{ event.date }}
             </p>
         </div>
 
