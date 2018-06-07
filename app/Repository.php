@@ -8,7 +8,6 @@ use LaravelEnso\AddressesManager\app\Traits\Addressable;
 
 class Repository extends Model
 {
-
     use Commentable, Addressable;
 
     protected $fillable = ['name', 'description', 'type_id', 'is_active'];
@@ -17,10 +16,8 @@ class Repository extends Model
 
     protected $casts = ['is_active' => 'boolean'];
 
-
     public function sources()
     {
         return $this->hasMany(Source::class);
     }
-
 }

@@ -12,8 +12,6 @@ class CreateEventTypesTable extends Migration
      */
     public function up()
     {
-
-
         Schema::create('event_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
@@ -21,7 +19,6 @@ class CreateEventTypesTable extends Migration
             $table->integer('is_active');
             $table->timestamps();
         });
-
     }
 
     /**

@@ -19,6 +19,4 @@ class Citation extends Model
     {
         return $this->belongsToMany(Source::class);
     }
-
-
 }

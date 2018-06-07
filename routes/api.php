@@ -88,7 +88,6 @@ Route::middleware(['web', 'auth', 'core'])
 
         Route::resource('events', 'Event\EventController');
 
-
         Route::namespace('Individual')
             ->prefix('individuals')->as('individuals.')
             ->group(function () {
