@@ -115,5 +115,66 @@ Route::middleware(['auth'])
             });
 
         Route::resource('families', 'Family\FamilyController');
+
+        Route::namespace('Note')
+            ->prefix('notes')->as('notes.')
+            ->group(function () {
+                Route::get('initTable', 'NoteTableController@init')
+                    ->name('initTable');
+                Route::get('getTableData', 'NoteTableController@data')
+                    ->name('getTableData');
+                Route::get('exportExcel', 'NoteTableController@excel')
+                    ->name('exportExcel');
+                Route::get('selectOptions', 'NoteSelectController@options')
+                    ->name('selectOptions');
+            });
+
+        Route::resource('notes', 'Note\NoteController');
+
+        Route::namespace('Source')
+            ->prefix('sources')->as('sources.')
+            ->group(function () {
+                Route::get('initTable', 'SourceTableController@init')
+                    ->name('initTable');
+                Route::get('getTableData', 'SourceTableController@data')
+                    ->name('getTableData');
+                Route::get('exportExcel', 'SourceTableController@excel')
+                    ->name('exportExcel');
+                Route::get('selectOptions', 'SourceSelectController@options')
+                    ->name('selectOptions');
+            });
+
+        Route::resource('sources', 'Source\SourceController');
+
+        Route::namespace('Citation')
+            ->prefix('citations')->as('citations.')
+            ->group(function () {
+                Route::get('initTable', 'CitationTableController@init')
+                    ->name('initTable');
+                Route::get('getTableData', 'CitationTableController@data')
+                    ->name('getTableData');
+                Route::get('exportExcel', 'CitationTableController@excel')
+                    ->name('exportExcel');
+                Route::get('selectOptions', 'CitationSelectController@options')
+                    ->name('selectOptions');
+            });
+
+        Route::resource('citations', 'Citation\CitationController');
+
+        Route::namespace('Repository')
+            ->prefix('repositories')->as('repositories.')
+            ->group(function () {
+                Route::get('initTable', 'RepositoryTableController@init')
+                    ->name('initTable');
+                Route::get('getTableData', 'RepositoryTableController@data')
+                    ->name('getTableData');
+                Route::get('exportExcel', 'RepositoryTableController@excel')
+                    ->name('exportExcel');
+                Route::get('selectOptions', 'RepositorySelectController@options')
+                    ->name('selectOptions');
+            });
+
+        Route::resource('repositories', 'Repository\RepositoryController');
+
         Route::resource('trees', 'Tree\TreeController');
     });
