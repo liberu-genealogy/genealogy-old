@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Repository;
 
-use App\Tables\Builders\RepositoryTable;
 use App\Http\Controllers\Controller;
+use App\Tables\Builders\RepositoryTable;
 use LaravelEnso\VueDatatable\app\Traits\Excel;
 use LaravelEnso\VueDatatable\app\Traits\Datatable;
 

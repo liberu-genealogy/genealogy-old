@@ -25,6 +25,5 @@ class IndividualForm
     {
         return $this->form->append('individual_id', $individual->id)
             ->edit($individual);
-
     }
 }

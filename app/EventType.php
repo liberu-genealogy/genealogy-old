@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class EventType extends Model
 {
-
     protected $fillable = ['name', 'description', 'is_active'];
 
     protected $attributes = ['is_active' => false];
@@ -17,5 +16,4 @@ class EventType extends Model
     {
         return $this->belongsTo(Event::class);
     }
-
 }

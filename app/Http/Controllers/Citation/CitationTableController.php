@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Citation;
 
-use App\Tables\Builders\CitationTable;
 use App\Http\Controllers\Controller;
+use App\Tables\Builders\CitationTable;
 use LaravelEnso\VueDatatable\app\Traits\Excel;
 use LaravelEnso\VueDatatable\app\Traits\Datatable;
 

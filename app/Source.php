@@ -8,7 +8,6 @@ use LaravelEnso\CommentsManager\app\Traits\Commentable;
 
 class Source extends Model
 {
-
     use Commentable;
     use HasCitations;
 

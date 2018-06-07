@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
@@ -20,7 +21,6 @@ class CreateEventsTable extends Migration
             $table->timestamps();
             $table->integer('is_active');
             $table->integer('event_type_id')->references('id')->on('event_types');
-
         });
     }
 

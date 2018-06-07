@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
 use App\EventType;
+use Illuminate\Database\Seeder;
 
 class EventTableSeeder extends Seeder
 {
@@ -12,11 +12,10 @@ class EventTableSeeder extends Seeder
      */
     public function run()
     {
-
         $categories = ['birth', 'marriage', 'death'];
-        foreach ($categories as $category)
+        foreach ($categories as $category) {
             EventType::create(['name' => $category, 'description' => 'Description of event']);
-
+        }
 
         factory(App\Event::class, 100)->create();
     }
