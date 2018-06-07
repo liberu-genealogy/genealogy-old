@@ -10,8 +10,9 @@ class SourceSelectController extends Controller
 {
     use OptionsBuilder;
 
-    public function query()
-    {
-        return Source::active();
-    }
+    protected $model = Source::class;
+
+    protected $queryAttributes = [
+        'name', 'description', 'date',
+    ];
 }

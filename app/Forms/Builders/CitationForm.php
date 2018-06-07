@@ -3,6 +3,7 @@
 namespace App\Forms\Builders;
 
 use App\Citation;
+use App\Source;
 use LaravelEnso\FormBuilder\app\Classes\Form;
 
 class CitationForm
@@ -18,11 +19,13 @@ class CitationForm
 
     public function create()
     {
-        return $this->form->create();
+        return $this->form->options('sourcesList', Source::get(['sources.name', 'sources.id']))
+            ->create();
     }
 
     public function edit(Citation $citation)
     {
-        return $this->form->edit($citation);
+        return $this->form->options('sourcesList', Source::get(['sources.name', 'sources.id']))
+            ->edit($citation);
     }
 }
