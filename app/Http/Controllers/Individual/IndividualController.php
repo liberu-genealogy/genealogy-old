@@ -6,7 +6,6 @@ use App\Individual;
 use App\Http\Controllers\Controller;
 use App\Forms\Builders\IndividualForm;
 use App\Http\Requests\ValidateIndividualRequest;
-use LaravelEnso\Core\app\Classes\ProfileBuilder;
 
 class IndividualController extends Controller
 {

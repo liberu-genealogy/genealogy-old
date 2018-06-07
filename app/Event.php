@@ -2,12 +2,12 @@
 
 namespace App;
 
+use App\Classes\EventConfigMapper;
 use Illuminate\Database\Eloquent\Model;
+use LaravelEnso\Helpers\app\Traits\IsActive;
 use LaravelEnso\CommentsManager\app\Traits\Commentable;
 use LaravelEnso\AddressesManager\app\Traits\Addressable;
 use LaravelEnso\DocumentsManager\app\Traits\Documentable;
-use LaravelEnso\Helpers\app\Traits\IsActive;
-use App\Classes\EventConfigMapper;
 
 class Event extends Model
 {

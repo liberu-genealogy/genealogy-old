@@ -2,12 +2,12 @@
 
 namespace App;
 
+use App\Traits\Events;
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Contacts\app\Traits\Contactable;
 use LaravelEnso\CommentsManager\app\Traits\Commentable;
 use LaravelEnso\AddressesManager\app\Traits\Addressable;
 use LaravelEnso\DocumentsManager\app\Traits\Documentable;
-use App\Traits\Events;
 
 class Individual extends Model
 {
@@ -20,7 +20,6 @@ class Individual extends Model
     protected $attributes = ['is_active' => false];
 
     protected $casts = ['is_active' => 'boolean'];
-
 
     public function families()
     {

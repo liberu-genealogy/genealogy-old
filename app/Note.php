@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Note extends Model
 {
-
     protected $fillable = ['name', 'description', 'is_active'];
 
     protected $attributes = ['is_active' => false];
@@ -17,6 +16,4 @@ class Note extends Model
     {
         return $this->belongsToMany(Individual::class);
     }
-
-
 }
