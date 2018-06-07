@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use LaravelEnso\CommentsManager\app\Traits\Commentable;
 
 class Source extends Model
 {
+
+    use Commentable;
 
     protected $fillable = ['name', 'description', 'repository_id', 'author_id', 'is_active'];
 
