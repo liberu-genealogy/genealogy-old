@@ -23,6 +23,8 @@ class IndividualForm
 
     public function edit(Individual $individual)
     {
-        return $this->form->edit($individual);
+        return $this->form->append('individual_id', $individual->id)
+            ->edit($individual);
+
     }
 }

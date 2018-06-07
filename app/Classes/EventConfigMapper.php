@@ -15,11 +15,11 @@ class EventConfigMapper
 
     public function class()
     {
-        $events = config('enso.events.events.'.$this->type);
+        $event = config('events.event.'.$this->type);
 
         if (!$event) {
             throw new EventConfigException(__(
-                'Entity :entity does not exist in enso/events.php config file',
+                'Entity :entity does not exist in events.php config file',
                 ['entity' => $this->type]
             ));
         }

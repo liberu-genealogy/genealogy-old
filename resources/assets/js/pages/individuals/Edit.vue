@@ -7,15 +7,15 @@
                          @loaded="initialised = true"
                          ref="form"/>
             <div v-if="initialised">
-                <events type="individual" :id="$route.params.id" :open="true" />
+                <events type="individual" :id="$refs.form.data.params.individual_id" :open="true" />
 
-                <contacts type="individual" :id="$route.params.id" :open="true" />
+                <contacts type="individual" :id="$refs.form.data.params.individual_id" :open="true" />
 
-                <documents-card :id="$route.params.id"
+                <documents-card :id="$refs.form.data.params.individual_id"
                                 type="individual"/>
-                <addresses :id="$route.params.id"
+                <addresses :id="$refs.form.data.params.individual_id"
                            type="individual"/>
-                <comments-card :id="$route.params.id"
+                <comments-card :id="$refs.form.data.params.individual_id"
                                type="individual"
                                 :open="true"/>
             </div>

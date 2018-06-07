@@ -8,11 +8,11 @@
                 ref="form"/>
             <div v-if="initialised">
 
-                <documents-card :id="$route.params.id"
+                <documents-card :id="$refs.form.data.params.family_id"
                                 type="family"/>
-                <addresses :id="$route.params.id"
+                <addresses :id="$refs.form.data.params.family_id"
                            type="family"/>
-                <comments-card :id="$route.params.id"
+                <comments-card :id="$refs.form.data.params.family_id"
                                type="family"
                                :open="true"/>
             </div>

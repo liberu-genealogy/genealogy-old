@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Event;
 
+use Illuminate\Http\Request;
 use App\Event;
 use App\Forms\Builders\EventForm;
 use App\Http\Controllers\Controller;
@@ -24,16 +25,16 @@ class EventController extends Controller
         return ['form' => $form->create()];
     }
 
-    public function store(ValidateEventRequest $request)
+    public function store(ValidateEventRequest $request, Event $event)
     {
-        $event = new Event($request->all());
 
-        $event->save();
+        $event->store(
+        $request->all(),
+        $request->get('_params')
+    );
 
         return [
             'message' => __('The Event was successfully created'),
-            'redirect' => 'events.edit',
-            'id' => $event->id,
         ];
     }
 

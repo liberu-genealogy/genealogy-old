@@ -7,11 +7,11 @@ use LaravelEnso\Contacts\app\Traits\Contactable;
 use LaravelEnso\CommentsManager\app\Traits\Commentable;
 use LaravelEnso\AddressesManager\app\Traits\Addressable;
 use LaravelEnso\DocumentsManager\app\Traits\Documentable;
-use App\Traits\EventTrait;
+use App\Traits\Events;
 
 class Individual extends Model
 {
-    use Contactable, Commentable, Documentable, Addressable,EventTrait;
+    use Contactable, Commentable, Documentable, Addressable, Events;
 
     protected $appends = ['name'];
 
@@ -21,10 +21,6 @@ class Individual extends Model
 
     protected $casts = ['is_active' => 'boolean'];
 
-    public function events()
-    {
-        return $this->hasMany(Event::class);
-    }
 
     public function families()
     {

@@ -8,8 +8,6 @@ mix
     })
     .copyDirectory('resources/assets/images', 'public/images')
 
-//    .js('resources/assets/js/tableExample.js', 'public/js')
-//    .js('resources/assets/js/selectExample.js', 'public/js')
     .js('resources/assets/js/enso.js', 'public/js')
     .sourceMaps()
 

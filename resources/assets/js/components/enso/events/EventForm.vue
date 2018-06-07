@@ -1,10 +1,10 @@
 <template>
     <modal v-on="$listeners"
-        :show="true">
+           :show="true">
         <vue-form class="box"
-            v-on="$listeners"
-            :params="params"
-            :data="form"/>
+                  v-on="$listeners"
+                  :params="params"
+                  :data="form"/>
     </modal>
 </template>
 

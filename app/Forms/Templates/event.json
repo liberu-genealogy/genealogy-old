@@ -1,7 +1,7 @@
 {
   "routePrefix": "events",
   "sections": [{
-      "columns": "custom",
+      "columns": "4",
       "fields": [
         {
           "label": "Date",
@@ -28,7 +28,7 @@
         }, {
           "label": "Description",
           "name": "description",
-          "column" : 6,
+          "column" : 3,
           "value": null,
           "meta": {
             "type": "input",
@@ -47,7 +47,7 @@
           "label": "Type",
           "name": "event_type_id",
           "value": null,
-          "column": 2,
+          "column": 3,
           "meta": {
             "custom": false,
             "type": "select",

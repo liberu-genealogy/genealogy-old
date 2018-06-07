@@ -3,10 +3,10 @@ namespace App\Traits;
 
 use App\Event;
 
-trait EventTrait
+trait Events
 {
     public function events()
     {
-        return $this->morphMany(Event::class, 'event');
+        return $this->morphMany(Event::class, 'events');
     }
 }

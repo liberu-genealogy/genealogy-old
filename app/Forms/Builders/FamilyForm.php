@@ -37,6 +37,7 @@ class FamilyForm
             ->options('individualList', Individual::select("individuals.*", \DB::raw("CONCAT(individuals.first_name, ' ', individuals.last_name)  AS name"), 'individuals.id')->get(['name', 'individuals.id']))
             ->options('mother_id', Individual::get(['first_name', 'individuals.id']))
             ->options('father_id', Individual::get(['first_name', 'individuals.id']))
+            ->append('family_id', $family->id)
             ->edit($family);
     }
 }

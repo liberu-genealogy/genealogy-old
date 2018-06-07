@@ -19,7 +19,7 @@ class EventForm
 
     public function create()
     {
-        return $this->form->options('event_type_id', EventType::with('events')->get(['event_types.name', 'event_types.id']))
+        return $this->form->options('event_type_id', EventType::with('events')->get(['event_types.name', 'event_types.id']))->title('Insert')
             ->create();
     }
 
@@ -27,6 +27,8 @@ class EventForm
     {
         return $this->form->options('event_type_id', EventType::with('events')->get(['event_types.name', 'event_types.id']))
             ->options('individual_id', Event::with('individuals')->get(['individuals.first_name', 'individuals.id']))
+            ->title('Edit')
+            ->actions(['update'])
             ->edit($event);
     }
 }

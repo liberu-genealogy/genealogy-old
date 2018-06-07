@@ -30,8 +30,6 @@ class IndividualController extends Controller
 
     public function show(Individual $individual)
     {
-        (new ProfileBuilder($individual))->set();
-
         return ['Individual' => $individual];
     }
 

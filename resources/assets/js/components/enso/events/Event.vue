@@ -22,13 +22,6 @@
                 </span>
                 {{ event.description }}
             </p>
-            <p>
-                <span class="icon is-small"
-                      v-if="event.type">
-                    <fa icon="sticky-note"/>
-                </span>
-                {{ event.type }}
-            </p>
         </div>
 
         <card-footer slot="footer">

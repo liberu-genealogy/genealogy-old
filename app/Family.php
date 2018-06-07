@@ -24,11 +24,6 @@ class Family extends Model
         return $this->belongsToMany(Individual::class);
     }
 
-    public function events()
-    {
-        return $this->belongsTo(Event::class);
-    }
-
     public function getIndividualListAttribute()
     {
         return $this->individuals()->pluck('individuals.id');

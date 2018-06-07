@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'events' => [
-        'family' => App\Family::class,
+    'event' => [
         'individual' => App\Individual::class,
+        'family' => App\Family::class,
     ],
 ];

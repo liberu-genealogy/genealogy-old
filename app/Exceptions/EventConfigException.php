@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelEnso\Contacts\app\Exceptions;
+namespace App\Exceptions;
 
 use LaravelEnso\Helpers\app\Exceptions\EnsoException;
 
