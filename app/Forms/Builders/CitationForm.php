@@ -19,13 +19,13 @@ class CitationForm
 
     public function create()
     {
-        return $this->form->options('sourcesList', Source::get(['sources.name', 'sources.id']))
+        return $this->form->options('source_id', Source::get(['sources.name', 'sources.id']))
             ->create();
     }
 
     public function edit(Citation $citation)
     {
-        return $this->form->options('sourcesList', Source::get(['sources.name', 'sources.id']))
+        return $this->form->options('source_id', Source::get(['sources.name', 'sources.id']))
             ->edit($citation);
     }
 }

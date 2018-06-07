@@ -63,7 +63,7 @@
           }
         }, {
           "label": "Source",
-          "name": "sourcesList",
+          "name": "source_id",
           "column" : 2,
           "value": null,
           "meta": {
