@@ -1,0 +1,35 @@
+{
+  "routePrefix": "notes",
+  "readSuffix": "getTableData",
+  "writeSuffix": null,
+  "name": "Events",
+  "icon": "users",
+  "crtNo": true,
+  "buttons": ["excel", "create", "action", "show", "edit", "destroy"],
+  "columns": [
+    {
+      "label": "Name",
+      "name": "name",
+      "data": "notes.name",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Description",
+      "name": "description",
+      "data": "notes.description",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Date",
+      "name": "date",
+      "data": "notes.date",
+      "meta": ["searchable", "sortable", "date"]
+    },
+    {
+      "label": "Active",
+      "name": "is_active",
+      "data": "notes.is_active",
+      "meta": ["boolean"]
+    }
+  ]
+}

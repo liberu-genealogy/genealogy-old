@@ -1,0 +1,35 @@
+{
+  "routePrefix": "sources",
+  "readSuffix": "getTableData",
+  "writeSuffix": null,
+  "name": "Events",
+  "icon": "users",
+  "crtNo": true,
+  "buttons": ["excel", "create", "action", "show", "edit", "destroy"],
+  "columns": [
+    {
+      "label": "Name",
+      "name": "name",
+      "data": "sources.name",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Description",
+      "name": "description",
+      "data": "sources.description",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Date",
+      "name": "date",
+      "data": "sources.date",
+      "meta": ["searchable", "sortable", "date"]
+    },
+    {
+      "label": "Active",
+      "name": "is_active",
+      "data": "sources.is_active",
+      "meta": ["boolean"]
+    }
+  ]
+}

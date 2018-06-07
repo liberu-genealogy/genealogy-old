@@ -1,5 +1,5 @@
 {
-  "routePrefix": "events",
+  "routePrefix": "citations",
   "sections": [{
       "columns": "custom",
       "fields": [
@@ -33,6 +33,44 @@
           "meta": {
             "type": "input",
             "content": "text"
+          }
+        }, {
+          "label": "Confidence",
+          "name": "confidence",
+          "column" : 2,
+          "value": null,
+          "meta": {
+            "type": "input",
+            "content": "text"
+          }
+        }, {
+          "label": "Volume",
+          "name": "volume_id",
+          "column" : 2,
+          "value": null,
+          "meta": {
+            "type": "input",
+            "content": "text"
+          }
+        }, {
+          "label": "Page",
+          "name": "page_id",
+          "column" : 2,
+          "value": null,
+          "meta": {
+            "type": "input",
+            "content": "text"
+          }
+        }, {
+          "label": "Source",
+          "name": "source_id",
+          "value": null,
+          "meta": {
+            "custom": true,
+            "type": "select",
+            "multiple": false,
+            "options": [],
+            "source": "sources.selectOptions"
           }
     }, {
       "label": "Active",

@@ -17,11 +17,11 @@ class ChartController extends Controller
     public function line()
     {
         return (new LineChart())
-            ->title('Income')
+            ->title('Events')
             ->labels(['January', 'February', 'March', 'April', 'May', 'June', 'July'])
             ->datasets([
-                'Sales' => [65, 59, 80, 81, 26, 25, 10],
-                'Revenue' => [15, 29, 60, 31, 56, 65, 44],
+                'Marriage' => [65, 59, 80, 81, 26, 25, 10],
+                'Divorce' => [15, 29, 60, 31, 56, 65, 44],
             ])->fill()
             ->get();
     }
@@ -29,7 +29,7 @@ class ChartController extends Controller
     public function bar()
     {
         return (new BarChart())
-            ->title('Sales')
+            ->title('Families')
             ->labels(['Ian', 'Feb', 'Mar'])
             ->datasets([
                 'Vanzari' => [1233, 1231, 3123],
