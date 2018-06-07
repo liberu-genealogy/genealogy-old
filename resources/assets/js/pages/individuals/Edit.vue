@@ -7,7 +7,7 @@
                          @loaded="initialised = true"
                          ref="form"/>
             <div v-if="initialised">
-
+                <events type="individual" :id="$route.params.id" :open="true" />
 
                 <contacts type="individual" :id="$route.params.id" :open="true" />
 
@@ -29,11 +29,12 @@ import DocumentsCard from '../../components/enso/documents/DocumentsCard.vue';
 import CommentsCard from '../../components/enso/comments/CommentsCard.vue';
 import Addresses from '../../components/enso/addresses/Addresses.vue';
 import Contacts from '../../components/enso/contacts/Contacts.vue';
+import Events from '../../components/enso/events/Events.vue';
 import VueFormSs from '../../components/enso/vueforms/VueFormSs.vue';
 import VueSelect from '../../components/enso/select/VueSelect.vue';
 
 export default {
-    components: { VueFormSs, VueSelect, DocumentsCard, CommentsCard, Addresses, Contacts },
+    components: { VueFormSs, VueSelect, DocumentsCard, CommentsCard, Addresses, Contacts, Events },
 
     data() {
         return {

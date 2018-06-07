@@ -43,6 +43,17 @@
         "type": "input",
         "content": "checkbox"
       }
+        }, {
+          "label": "Type",
+          "name": "event_type_id",
+          "value": null,
+          "column": 2,
+          "meta": {
+            "custom": false,
+            "type": "select",
+            "multiple": false,
+            "options": []
+          }
     }]
   }]
 }

@@ -76,6 +76,8 @@ Route::middleware(['auth'])
             ->group(function () {
                 Route::get('initTable', 'EventTableController@init')
                     ->name('initTable');
+                Route::get('form', 'EventTableController@init')
+                     ->name('form');
                 Route::get('getTableData', 'EventTableController@data')
                     ->name('getTableData');
                 Route::get('exportExcel', 'EventTableController@excel')
@@ -85,6 +87,7 @@ Route::middleware(['auth'])
             });
 
         Route::resource('events', 'Event\EventController');
+
 
         Route::namespace('Individual')
             ->prefix('individuals')->as('individuals.')

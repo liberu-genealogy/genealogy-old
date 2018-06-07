@@ -6,7 +6,7 @@ return [
         'family' => App\Family::class,
         'individual' => App\Individual::class,
         'event' => App\Event::class,
-        'repositories' => App\Repositories::class,
+        'repository' => App\Repository::class,
     ],
     'streetTypes' => [
         'Street' => 'Street',

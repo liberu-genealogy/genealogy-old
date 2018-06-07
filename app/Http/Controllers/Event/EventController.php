@@ -9,6 +9,16 @@ use App\Http\Requests\ValidateEventRequest;
 
 class EventController extends Controller
 {
+
+    public function index(Event $event)
+    {
+        return Event::for($event->only([
+            'event_id', 'event_type',
+        ]))->orderBy('created_at', 'desc')
+            ->get();
+    }
+    
+    
     public function create(EventForm $form)
     {
         return ['form' => $form->create()];

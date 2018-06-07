@@ -3,6 +3,7 @@
 namespace App\Forms\Builders;
 
 use App\Event;
+use App\EventType;
 use LaravelEnso\FormBuilder\app\Classes\Form;
 
 class EventForm
@@ -18,11 +19,13 @@ class EventForm
 
     public function create()
     {
-        return $this->form->create();
+        return $this->form->options('event_type_id', EventType::with('events')->get(['event_types.name', 'event_types.id']))
+            ->create();
     }
 
     public function edit(Event $event)
     {
-        return $this->form->edit($event);
+        return $this->form->options('event_type_id', EventType::with('events')->get(['event_types.name', 'event_types.id']))
+            ->edit($event);
     }
 }

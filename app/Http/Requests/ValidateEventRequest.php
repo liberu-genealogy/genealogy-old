@@ -19,6 +19,7 @@ class ValidateEventRequest extends FormRequest
             'description' => 'required|max:50',
             'date' => 'required|max:24',
             'is_active' => 'boolean',
+            'event_type_id' => 'required|exists:event_types,id'
         ];
     }
 }

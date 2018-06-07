@@ -34,7 +34,7 @@ class Event extends Model
         $this->create(
             $attributes + [
                 'event_id' => $params['event_id'],
-                'event_type' => (new ConfigMapper($params['event_type']))
+                'event_type' => (new EventConfigMapper($params['event_type']))
                     ->class(),
             ]
         );
@@ -44,7 +44,7 @@ class Event extends Model
     {
         $query->whereEventableId($request['event_id'])
             ->whereEventableType(
-                (new ConfigMapper($request['event_type']))
+                (new EventConfigMapper($request['event_type']))
                     ->class()
             );
     }

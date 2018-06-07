@@ -26,6 +26,12 @@
       "meta": ["searchable", "sortable", "date"]
     },
     {
+      "label": "Source",
+      "name": "source",
+      "data": "citations.source",
+      "meta": ["searchable", "sortable"]
+    },
+    {
       "label": "Active",
       "name": "is_active",
       "data": "citations.is_active",
