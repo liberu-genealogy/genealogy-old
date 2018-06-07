@@ -22,8 +22,7 @@ class FamilyForm
     {
         return $this->form
             ->options('type_id', IndividualTypes::select())
-//            ->options('individualList', Individual::all()->pluck('name', 'id'))
-            ->options('individualList', Individual::get(['first_name', 'individuals.id']))
+            ->options('individualList', Individual::select("individuals.*", \DB::raw("CONCAT(individuals.first_name, ' ', individuals.last_name)  AS name"), 'individuals.id')->get(['name', 'individuals.id']))
             ->options('mother_id', Individual::get(['first_name', 'individuals.id']))
             ->options('father_id', Individual::get(['first_name', 'individuals.id']))
             ->create();
@@ -35,7 +34,7 @@ class FamilyForm
 
         return $this->form
             ->options('type_id', IndividualTypes::select())
-            ->options('individualList', Individual::get(['first_name', 'individuals.id']))
+            ->options('individualList', Individual::select("individuals.*", \DB::raw("CONCAT(individuals.first_name, ' ', individuals.last_name)  AS name"), 'individuals.id')->get(['name', 'individuals.id']))
             ->options('mother_id', Individual::get(['first_name', 'individuals.id']))
             ->options('father_id', Individual::get(['first_name', 'individuals.id']))
             ->edit($family);
