@@ -71,4 +71,6 @@ export default {
         top: 10px;
         left: 0;
     }
+
+    .node { fill: #88c149;}
 </style>
