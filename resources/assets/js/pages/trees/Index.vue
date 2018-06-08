@@ -1,6 +1,6 @@
 <template>
-    <div>
-    <d3-network :net-nodes="nodes" :net-links="links" :options="options" />
+    <div class="svg-container-responsive">
+    <d3-network ref="net" :net-nodes="nodes" :net-links="links" :options="options" />
     </div>
 </template>
 
@@ -15,28 +15,8 @@ export default {
 
     data() {
         return {
-            nodes: [
-                { id: 1, name: 'my awesome node 1' },
-                { id: 2, name: 'my node 2' },
-                { id: 3, name: 'orange node', _color: 'orange' },
-                { id: 4, _color: '#0022ff' },
-                { id: 5 },
-                { id: 6 },
-                { id: 7 },
-                { id: 8 },
-                { id: 9 },
-            ],
-            links: [
-                { sid: 1, tid: 2 },
-                { sid: 2, tid: 8 },
-                { sid: 3, tid: 4 },
-                { sid: 4, tid: 5 },
-                { sid: 5, tid: 6 },
-                { sid: 7, tid: 8 },
-                { sid: 5, tid: 8 },
-                { sid: 3, tid: 8 },
-                { sid: 7, tid: 9 },
-            ],
+            nodes: [],
+            links: [],
             nodeSize: 20,
             canvas: false,
 
@@ -53,5 +33,37 @@ export default {
             };
         },
     },
+
+    mounted() {
+        axios.get(route('trees.index'))
+            .then((response) => {
+                this.nodes = response.data;
+            }).catch(error => this.handle   Error(error)),
+
+        axios.get(route('trees.links'))
+            .then((response) => {
+                this.links = response.data;
+            }).catch(error => this.handleError(error));
+    },
+
 };
 </script>
+
+<style>
+    .link { stroke: #0b86f3; }
+
+    .svg-container {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        padding-bottom: 100%; /* aspect ratio */
+        vertical-align: top;
+        overflow: hidden;
+    }
+    .svg-content-responsive {
+        display: inline-block;
+        position: absolute;
+        top: 10px;
+        left: 0;
+    }
+</style>

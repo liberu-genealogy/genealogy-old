@@ -178,5 +178,12 @@ Route::middleware(['web', 'auth', 'core'])
 
         Route::resource('repositories', 'Repository\RepositoryController');
 
+        Route::namespace('Tree')
+            ->prefix('trees')->as('trees.')
+            ->group(function () {
+                Route::get('links', 'TreeController@links')
+                    ->name('links');
+            });
+
         Route::resource('trees', 'Tree\TreeController');
     });
