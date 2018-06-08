@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6c2731253db3f62411dc73e39d0c1465",
+    "content-hash": "57fdf95af179bbfbc9206a4183503dc3",
     "packages": [
         {
             "name": "box/spout",
@@ -3890,6 +3890,56 @@
                 "trigger"
             ],
             "time": "2018-05-21T13:25:35+00:00"
+        },
+        {
+            "name": "rachidlaasri/laravel-installer",
+            "version": "4.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RachidLaasri/LaravelInstaller.git",
+                "reference": "8063eda959fdee8b337e6ea543603e169e843897"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RachidLaasri/LaravelInstaller/zipball/8063eda959fdee8b337e6ea543603e169e843897",
+                "reference": "8063eda959fdee8b337e6ea543603e169e843897",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "RachidLaasri\\LaravelInstaller\\Providers\\LaravelInstallerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "RachidLaasri\\LaravelInstaller\\": "src/"
+                },
+                "files": [
+                    "src/Helpers/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rachid Laasri",
+                    "email": "rashidlaasri@gmail.com"
+                },
+                {
+                    "name": "Jeremy Kenedy",
+                    "email": "jeremykenedy@gmail.com"
+                }
+            ],
+            "description": "Laravel web installer",
+            "time": "2018-04-30T18:57:04+00:00"
         },
         {
             "name": "ramsey/uuid",
