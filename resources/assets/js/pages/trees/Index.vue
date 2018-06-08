@@ -1,5 +1,5 @@
 <template>
-    <div class="svg-container-responsive">
+    <div class="svg-container">
     <d3-network ref="net" :net-nodes="nodes" :net-links="links" :options="options" />
     </div>
 </template>
@@ -38,7 +38,7 @@ export default {
         axios.get(route('trees.index'))
             .then((response) => {
                 this.nodes = response.data;
-            }).catch(error => this.handle   Error(error)),
+            }).catch(error => this.handleError(error)),
 
         axios.get(route('trees.links'))
             .then((response) => {
@@ -51,6 +51,11 @@ export default {
 
 <style>
     .link { stroke: #0b86f3; }
+
+    .net-svg {
+        width: 100%;
+        height: 100%;
+    }
 
     .svg-container {
         display: inline-block;
