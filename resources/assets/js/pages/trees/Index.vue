@@ -1,54 +1,57 @@
 <template>
-    <div class="container">
-        <tree class="tree" :identifier="getId" :node-text="text" :data="treeData" :type="'tree'" :duration="5" :margin-y="150"> </tree>
-    </div>
+    <div class="columns is-centered">
+    <d3-network ref="net" :net-nodes="nodes" :net-links="links" :options="options" />
+</div>
 </template>
 
 <script>
-import { tree } from 'vued3tree';
+
+import { D3Network } from 'vue-d3-network';
 
 export default {
     components: {
-        tree,
+        D3Network,
     },
     data() {
         return {
-            text: 'text',
-            treeData: {
-                id: 1,
-                text: 'father',
-                children: [
-                    {
-                        id: 2,
-                        text: 'son1',
-                        children: [
-                            { id: 4, text: 'grandson' },
-                            { id: 5, text: 'grandson2' },
-                        ],
-                    },
-                    {
-                        id: 3,
-                        text: 'son2',
-                        children: [
-                            { id: 6, name: 'grandson3' },
-                            { id: 7, text: 'grandson4' },
-                        ],
-                    },
-                ],
-            },
+            nodes: [
+                { id: 1, name: 'my awesome node 1' },
+                { id: 2, name: 'my node 2' },
+                { id: 3, name: 'orange node', _color: 'orange' },
+                { id: 4, _color: '#0022ff' },
+                { id: 5 },
+                { id: 6 },
+                { id: 7 },
+                { id: 8 },
+                { id: 9 },
+            ],
+            links: [
+                { sid: 1, tid: 2 },
+                { sid: 2, tid: 8 },
+                { sid: 3, tid: 4 },
+                { sid: 4, tid: 5 },
+                { sid: 5, tid: 6 },
+                { sid: 7, tid: 8 },
+                { sid: 5, tid: 8 },
+                { sid: 3, tid: 8 },
+                { sid: 7, tid: 9 },
+            ],
+            nodeSize: 20,
+            canvas: false,
+
         };
     },
-    methods: {
-        getId(node) {
-            return node.id;
+    computed: {
+        options() {
+            return {
+                force: 3000,
+                size: { w: 600, h: 600 },
+                nodeSize: this.nodeSize,
+                nodeLabels: true,
+                canvas: this.canvas,
+            };
         },
     },
 };
 </script>
 
-<style scoped>
-    .tree {
-        height: 600px;
-        width: 1000px;
-    }
-</style>
