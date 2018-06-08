@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Family;
 
 use App\Family;
+use App\Individual;
 use App\Forms\Builders\FamilyForm;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ValidateFamilyRequest;
@@ -20,6 +21,11 @@ class FamilyController extends Controller
             $request->all(),
             $request->get('individualList')
         );
+
+        $id = $request->get('father_id');
+        Individual::find($id)->families()->attach($family->id, ['type_id' => 1]);
+        $id = $request->get('mother_id');
+        Individual::find($id)->families()->attach($family->id, ['type_id' => 2]);
 
         return [
             'message' => __('The Family was successfully created'),
@@ -44,6 +50,11 @@ class FamilyController extends Controller
             $request->all(),
             $request->get('individualList')
         );
+
+        $id = $request->get('father_id');
+        Individual::find($id)->families()->attach($family->id, ['type_id' => 1]);
+        $id = $request->get('mother_id');
+        Individual::find($id)->families()->attach($family->id, ['type_id' => 2]);
 
         return ['message' => __('The Family was successfully updated')];
     }

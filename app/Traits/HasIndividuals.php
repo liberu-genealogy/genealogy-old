@@ -18,13 +18,16 @@ trait HasIndividuals
 
     public function updateWithIndividuals(array $attributes, array $individuals)
     {
+
         tap($this)->update($attributes)
             ->individuals()
             ->sync($individuals);
+
     }
 
     public function storeWithIndividuals(array $attributes, array $individuals)
     {
+
         $this->fill($attributes);
 
         tap($this)->save()

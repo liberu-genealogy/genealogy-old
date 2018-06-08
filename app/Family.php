@@ -21,7 +21,7 @@ class Family extends Model
 
     public function individuals()
     {
-        return $this->belongsToMany(Individual::class);
+        return $this->belongsToMany(Individual::class)->withPivot('type_id');
     }
 
     public function getIndividualListAttribute()
