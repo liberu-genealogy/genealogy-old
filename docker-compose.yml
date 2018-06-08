@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  genealogy-server:
+    build: ./provisioning
+    image: laravel-genealogy
+    depends_on:
+      - mysql
+    volumes:
+      - ./:/application:cached
+
+  horizon:
+    build: ./provisioning
+    image: laravel-genealogy
+    command: php artisan horizon
+    depends_on:
+      - mysql
+    volumes:
+      - ./:/application:cached
+
+  mysql:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=homestead
+    volumes:
+      - ./storage/tmp/db:/var/lib/mysql:cached
+
+  nginx:
+    image: nginx
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./provisioning/nginx.conf:/etc/nginx/conf.d/default.conf:cached
+      - ./:/application:cached
+    depends_on:
+      - genealogy-server
