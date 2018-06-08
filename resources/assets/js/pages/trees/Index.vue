@@ -1,17 +1,18 @@
 <template>
-    <div class="columns is-centered">
-    <d3-network ref="net" :net-nodes="nodes" :net-links="links" :options="options" />
-</div>
+    <div>
+    <d3-network :net-nodes="nodes" :net-links="links" :options="options" />
+    </div>
 </template>
 
 <script>
 
-import { D3Network } from 'vue-d3-network';
+import d3Network from 'vue-d3-network';
 
 export default {
-    components: {
-        D3Network,
-    },
+
+    components: { d3Network },
+
+
     data() {
         return {
             nodes: [
@@ -54,4 +55,3 @@ export default {
     },
 };
 </script>
-
