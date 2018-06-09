@@ -19,8 +19,10 @@ class EventController extends Controller
     {
         return Event::for ($request->only([
             'event_id', 'event_type',
-        ]))->orderBy('created_at', 'desc')
+        ])) {
+            ->orderBy('created_at', 'desc')
             ->get();
+        }
     }
 
     public function create(EventForm $form)
