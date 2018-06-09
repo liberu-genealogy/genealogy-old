@@ -2,6 +2,7 @@
 # Laravel Genealogy - Built with Enso
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+[![Github All Releases](https://img.shields.io/github/downloads/laravel-genealogy/genealogy/total.svg)]()
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/laravel-genealogy/genealogy/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/laravel-genealogy/genealogy/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/laravel-genealogy/genealogy/badges/build.png?b=master)](https://scrutinizer-ci.com/g/laravel-genealogy/genealogy/build-status/master)
