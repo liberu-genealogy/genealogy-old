@@ -17,9 +17,9 @@ class CreateRepositoriesTable extends Migration
             $table->string('name');
             $table->text('description', 65535);
             $table->dateTime('date')->nullable();
-            $table->timestamps();
             $table->integer('is_active');
             $table->integer('type_id');
+            $table->timestamps();
         });
     }
 

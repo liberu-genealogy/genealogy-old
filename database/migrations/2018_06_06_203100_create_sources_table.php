@@ -17,12 +17,12 @@ class CreateSourcesTable extends Migration
             $table->string('name');
             $table->text('description', 65535);
             $table->dateTime('date')->nullable();
-            $table->timestamps();
             $table->integer('is_active');
             $table->integer('author_id');
-            $table->integer('repository_id');
+            $table->integer('repository_id')->references('id')->on('repositories');
             $table->integer('publication_id');
             $table->integer('type_id');
+            $table->timestamps();
         });
     }
 

@@ -17,7 +17,7 @@ class EventController extends Controller
         ]))->orderBy('created_at', 'desc')
             ->get();
     }
-
+    
     public function create(EventForm $form)
     {
         return ['form' => $form->create()];
