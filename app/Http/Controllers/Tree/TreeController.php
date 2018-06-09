@@ -35,7 +35,7 @@ class TreeController extends Controller
                     ->where('families.father_id', '=>', 'parents.id')
                     ->orWhere('families.mother_id', '=>', 'parents.id');
             })
-            ->select('family_individual.*', 'families.*', 'parents.*', 'children.*', 'family_tid.*', \DB::raw("family_tid.individual_id as tid"), \DB::raw("children.id as sid"))->get(array('sid, tid'));
+            ->select(\DB::raw("parents.id as tid"), \DB::raw("children.id as sid"))->get(array('sid, tid'));
 
     }
 
