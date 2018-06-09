@@ -1,7 +1,5 @@
 <template>
-    <div class="parent-div">
-    <d3-network ref="net" :net-nodes="nodes" :net-links="links" :options="options" />
-    </div>
+        <d3-network ref="net" :net-nodes="nodes" :net-links="links" :options="options" />
 </template>
 
 <script>
@@ -26,10 +24,11 @@ export default {
         options() {
             return {
                 force: 3000,
-                size: { w: 600, h: 600 },
+                size: { w: 1000, h: 1000 },
                 nodeSize: this.nodeSize,
                 nodeLabels: true,
                 canvas: this.canvas,
+                linkWidth: 2,
             };
         },
     },
@@ -50,36 +49,27 @@ export default {
 </script>
 
 <style>
-    .link { stroke: #0b86f3; }
-
-    .node { fill: #88c149;}
+    .link {
+        fill: none;
+        stroke: #666;
+        stroke-width: 1.5px;
+    }
+    circle {
+        fill: #ccc;
+        stroke: #333;
+        stroke-width: 1.5px;
+    }
+    text {
+        text-baseline:middle;
+        text-anchor:middle;
+        font: 10px sans-serif;
+        /*pointer-events: none;*/
+        text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+    }
 
     .net-svg {
-        position: fixed;
-        z-index: 1;
-        padding-top: 100px;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        color: black;
-        text-align: left;
+            width: 100%;
+            height: 100%;
     }
 
-    #parentDiv {
-        height: calc(100vh - 100px); /** output container is small for display */
-        width: calc(100vw - 100px);
-        display: block;
-        border: 1px solid red;
-    }
-
-    .modal-content {
-        background-color: #fefefe;
-        margin: auto;
-        padding: 20px;
-        border-radius: 3px;
-        border: 1px solid #888;
-        width: 60%;
-    }
 </style>
