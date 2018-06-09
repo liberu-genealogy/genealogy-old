@@ -48,7 +48,7 @@ If you are using this project please consult the **[changelog](https://github.co
 ### Based on Laravel Enso
 A solid starting project, based on [Laravel](https://laravel.com) 5.6, [VueJS](https://vuejs.org) 2, 
 [Bulma](https://bulma.io), integrated themes from [Bulmaswatch](https://jenil.github.io/bulmaswatch), 
-all the VueJS goodies such as [VueEx](https://vuex.vuejs.org/en) and [VueRouter](https://router.vuejs.org/en), 
+all the VueJS goodies such as [Vuex](https://vuex.vuejs.org/en) and [VueRouter](https://router.vuejs.org/en), 
 with features like: 
 
 See more information in the ENSO-README.md 
