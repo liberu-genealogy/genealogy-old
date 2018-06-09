@@ -10,6 +10,10 @@ use App\Http\Requests\ValidateEventRequest;
 
 class EventController extends Controller
 {
+    /**
+     * @param Request $request
+     * @return mixed
+     */
     public function index(Request $request)
     {
         return Event::for($request->only([
