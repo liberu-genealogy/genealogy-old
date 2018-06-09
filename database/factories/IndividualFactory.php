@@ -20,4 +20,5 @@ $factory->define(App\Individual::class, function (Faker\Generator $faker) {
         'gender' => $gender,
         'is_active' => $faker->boolean,
     ];
+
 });
