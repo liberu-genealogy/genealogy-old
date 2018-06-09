@@ -22,10 +22,19 @@ class FamilyController extends Controller
             $request->get('individualList')
         );
 
-        $id = $request->get('father_id');
-        Individual::find($id)->families()->attach($family->id, ['type_id' => 1]);
-        $id = $request->get('mother_id');
-        Individual::find($id)->families()->attach($family->id, ['type_id' => 2]);
+        $individualsList = $request->get('individualList');
+
+        $father_id = $request->get('father_id');
+        $mother_id = $request->get('mother_id');
+
+        Individual::find($father_id)->families()->attach($family->id, ['type_id' => 1]);
+        $individuals = Individual::findOrFail($father_id);
+        $individuals->parents()->attach($individualsList);
+
+        $individuals = Individual::findOrFail($mother_id);
+        $individuals->parents()->attach($individualsList);
+        Individual::find($mother_id)->families()->attach($family->id, ['type_id' => 2]);
+
 
         return [
             'message' => __('The Family was successfully created'),
@@ -51,10 +60,18 @@ class FamilyController extends Controller
             $request->get('individualList')
         );
 
-        $id = $request->get('father_id');
-        Individual::find($id)->families()->attach($family->id, ['type_id' => 1]);
-        $id = $request->get('mother_id');
-        Individual::find($id)->families()->attach($family->id, ['type_id' => 2]);
+        $individualsList = $request->get('individualList');
+
+        $father_id = $request->get('father_id');
+        $mother_id = $request->get('mother_id');
+
+        Individual::find($father_id)->families()->attach($family->id, ['type_id' => 1]);
+        $individuals = Individual::findOrFail($father_id);
+        $individuals->parents()->attach($individualsList);
+
+        $individuals = Individual::findOrFail($mother_id);
+        $individuals->parents()->attach($individualsList);
+        Individual::find($mother_id)->families()->attach($family->id, ['type_id' => 2]);
 
         return ['message' => __('The Family was successfully updated')];
     }

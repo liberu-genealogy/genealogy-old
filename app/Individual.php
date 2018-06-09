@@ -26,6 +26,15 @@ class Individual extends Model
         return $this->belongsToMany(Family::class);
     }
 
+    public function children()
+    {
+        return $this->belongsToMany(Individual::class, 'child_parent', 'child_id', 'parent_id');
+    }
+    public function parents()
+    {
+        return $this->belongsToMany(Individual::class, 'child_parent', 'parent_id', 'child_id');
+    }
+
     public function getNameAttribute()
     {
         return "{$this->first_name} {$this->last_name}";
