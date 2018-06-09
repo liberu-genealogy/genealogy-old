@@ -35,7 +35,6 @@ class FamilyController extends Controller
         $individuals->parents()->attach($individualsList);
         Individual::find($mother_id)->families()->attach($family->id, ['type_id' => 2]);
 
-
         return [
             'message' => __('The Family was successfully created'),
             'redirect' => 'families.edit',
