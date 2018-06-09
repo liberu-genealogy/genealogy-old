@@ -14,6 +14,6 @@ class TreeController extends Controller
 
     public function links()
     {
-       return $individual = \DB::table('child_parent')->select(\DB::raw('child_id as sid'), (\DB::raw('parent_id as tid')))->get('sid', 'tid');
+        return $individual = \DB::table('child_parent')->select(\DB::raw('child_id as sid'), (\DB::raw('parent_id as tid')))->get('sid', 'tid');
     }
 }
