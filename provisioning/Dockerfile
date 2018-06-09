@@ -9,7 +9,8 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     locales \
     zip \
-    jpegoptim optipng pngquant gifsicle
+    jpegoptim optipng pngquant gifsicle \
+    git-core
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
