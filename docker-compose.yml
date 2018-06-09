@@ -9,15 +9,6 @@ services:
     volumes:
       - ./:/application:cached
 
-  horizon:
-    build: ./provisioning
-    image: laravel-genealogy
-    command: php artisan horizon
-    depends_on:
-      - mysql
-    volumes:
-      - ./:/application:cached
-
   mysql:
     image: mysql:5.7
     ports:
