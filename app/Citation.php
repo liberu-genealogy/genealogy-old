@@ -9,7 +9,7 @@ class Citation extends Model
 {
     use Commentable;
 
-    protected $fillable = ['name', 'description', 'repository_id', 'volume_id', 'page_id',  'is_active', 'confidence', 'source_id'];
+    protected $fillable = ['name', 'description', 'repository_id', 'volume_id', 'page_id', 'is_active', 'confidence', 'source_id'];
 
     protected $attributes = ['is_active' => false];
 
