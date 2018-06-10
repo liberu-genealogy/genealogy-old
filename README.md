@@ -11,7 +11,7 @@
 
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/laravel-genealogy/Genealogy.svg?columns=all)](https://waffle.io/laravel-genealogy/genealogy)
 
-[![CodeFactor](https://www.codefactor.io/repository/github/laravel-genealogy/genealogy/badge/master)](https://www.codefactor.io/repository/github/laravel-genealogy/genealogy/overview/master)
+[![CodeFactor](https://www.codefactor.io/repository/github/laravel-genealogy/genealogy/badge/master)](https://www.codefactor.io/repository/github/laravel-genealogy/genealogy/overview/master) [![Greenkeeper badge](https://badges.greenkeeper.io/laravel-genealogy/genealogy.svg)](https://greenkeeper.io/)
 
 
 <!--/h-->
