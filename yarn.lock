@@ -1441,7 +1441,7 @@ builtins@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/builtins/-/builtins-1.0.3.tgz#cb94faeb61c8696451db36534e1422f94f0aee88"
 
-bulma-extensions@^1.0.34:
+bulma-extensions@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/bulma-extensions/-/bulma-extensions-1.1.0.tgz#eb09b3b5c8c9fc1f37f613604d4a6d024a45676d"
 
