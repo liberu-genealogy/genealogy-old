@@ -183,6 +183,8 @@ Route::middleware(['web', 'auth', 'core'])
             ->group(function () {
                 Route::get('links', 'TreeController@links')
                     ->name('links');
+                Route::get('pedigree', 'TreeController@links')
+                    ->name('pedigree');
             });
 
         Route::resource('trees', 'Tree\TreeController');
