@@ -3,10 +3,6 @@
 </template>
 <style>
 
-    body {
-        text-align: center;
-    }
-
     svg {
         margin-top: 32px;
         border: 1px solid #aaa;
