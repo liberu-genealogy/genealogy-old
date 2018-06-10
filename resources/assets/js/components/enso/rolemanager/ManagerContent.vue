@@ -18,7 +18,7 @@
                         <span class="icon is-small has-text-info has-margin-left-medium"
                             v-if="entry.default"
                             v-tooltip="__('Default')">
-                            <fa icon="exclamation-triangle"></fa>
+                            <fa icon="exclamation-triangle"/>
                         </span>
                     </label>
             </div>
