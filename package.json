@@ -52,7 +52,7 @@
         "@fortawesome/vue-fontawesome": "0.0.23",
         "accounting-js": "^1.1.1",
         "animate.css": "^3.6.1",
-        "axios": "^0.17.0",
+        "axios": "^0.18.0",
         "bulma": "^0.7.0",
         "bulma-extensions": "^1.1.0",
         "bulmaswatch": "^0.6.0",
