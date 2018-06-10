@@ -10,6 +10,10 @@
 [![StyleCI](https://github.styleci.io/repos/135390590/shield?branch=master)](https://github.styleci.io/repos/135390590)
 
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/laravel-genealogy/Genealogy.svg?columns=all)](https://waffle.io/laravel-genealogy/genealogy)
+
+[![CodeFactor](https://www.codefactor.io/repository/github/laravel-genealogy/genealogy/badge/master)](https://www.codefactor.io/repository/github/laravel-genealogy/genealogy/overview/master)
+
+
 <!--/h-->
 
 Free and open source genealogy data / family tree management system. Under development currently,

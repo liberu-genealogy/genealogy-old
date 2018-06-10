@@ -44,8 +44,8 @@
 
 </style>
 <script>
-import vueD3 from 'vue-d3';
-const d3 = this.$d3;
+import * as d3 from 'd3';
+window.d3 = d3;
 import dTree from 'd3-dtree';
 import lodash from 'lodash';
 
@@ -53,11 +53,11 @@ import lodash from 'lodash';
 
 export default {
     components: {
-        vueD3, dTree, lodash,
+        dTree, lodash,
     },
 
     mounted() {
-        axios.get(route('trees.index'))
+        axios.get(route('trees.pedigree'))
             .then((response) => {
                 this.data = response.data;
             }).catch(error => this.handleError(error)),
@@ -67,7 +67,7 @@ export default {
                 this.links = response.data;
             }).catch(error => this.handleError(error));
 
-        dTree.init(this.data, this.links);
+        dTree.init(this.data);
     },
 
 };
