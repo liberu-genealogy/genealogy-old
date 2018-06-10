@@ -12,6 +12,7 @@ before_script:
 
 before_install:
   - mysql -e 'CREATE DATABASE homestead;'
+  - npm install
   - npm run dev
 script:
   - phpunit
