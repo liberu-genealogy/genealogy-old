@@ -12,7 +12,7 @@
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/laravel-genealogy/Genealogy.svg?columns=all)](https://waffle.io/laravel-genealogy/genealogy)
 
 [![CodeFactor](https://www.codefactor.io/repository/github/laravel-genealogy/genealogy/badge/master)](https://www.codefactor.io/repository/github/laravel-genealogy/genealogy/overview/master)
-
+[![codebeat badge](https://codebeat.co/badges/911f9e33-212a-4dfa-a860-751cdbbacff7)](https://codebeat.co/projects/github-com-laravel-genealogy-genealogy-master)
 
 <!--/h-->
 
