@@ -9,9 +9,9 @@ class OwnerImporter extends Importer
 {
     public function run()
     {
-        \DB::transaction(function () {
+        \DB::transaction(function() {
             $this->rowsFromSheet('owners')
-                ->each(function ($row) {
+                ->each(function($row) {
                     $this->importRow($row);
                 });
         });
