@@ -1,5 +1,7 @@
-<template/>
-<style>
+<template>
+
+</template>
+<style scoped>
 
     svg {
         margin-top: 32px;
@@ -42,13 +44,16 @@
 
 </style>
 <script>
+import vueD3 from 'vue-d3';
+const d3 = this.$d3;
 import dTree from 'd3-dtree';
 import lodash from 'lodash';
-import vueD3 from 'vue-d3';
+
+
 
 export default {
     components: {
-        dTree, lodash, vueD3,
+        vueD3, dTree, lodash,
     },
 
     mounted() {
