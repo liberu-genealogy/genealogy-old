@@ -1,6 +1,4 @@
-<template>
-<svg></svg>
-</template>
+<template/>
 <style>
 
     svg {
@@ -25,11 +23,48 @@
         stroke-width: 1.5px;
     }
 
+    .linage {
+        fill: none;
+        stroke: black;
+    }
+    .marriage {
+        fill: none;
+        stroke: black;
+    }
+    .node {
+        background-color: lightblue;
+        border-style: solid;
+        border-width: 1px;
+    }
+    .nodeText{
+        font: 10px sans-serif;
+    }
+
 </style>
 <script>
-import VueD3 from 'vue-d3';
+import dTree from 'd3-dtree';
+import lodash from 'lodash';
+import vueD3 from 'vue-d3';
 
 export default {
-    components: {VueD3},
+    components: {
+        dTree, lodash, vueD3,
+    },
+
+    mounted() {
+        axios.get(route('trees.index'))
+            .then((response) => {
+                this.data = response.data;
+            }).catch(error => this.handleError(error)),
+
+        axios.get(route('trees.links'))
+            .then((response) => {
+                this.links = response.data;
+            }).catch(error => this.handleError(error));
+
+        dTree.init(this.data, this.links);
+    },
+
 };
+
 </script>
