@@ -1369,16 +1369,16 @@
         },
         {
             "name": "laravel-enso/charts",
-            "version": "2.3.5",
+            "version": "2.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/Charts.git",
-                "reference": "3eb896db19538153ca74b62e8179666d67cdead6"
+                "reference": "d8ea5f892f7e9ebd41755f5f77826f9f4eb909f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/Charts/zipball/3eb896db19538153ca74b62e8179666d67cdead6",
-                "reference": "3eb896db19538153ca74b62e8179666d67cdead6",
+                "url": "https://api.github.com/repos/laravel-enso/Charts/zipball/d8ea5f892f7e9ebd41755f5f77826f9f4eb909f8",
+                "reference": "d8ea5f892f7e9ebd41755f5f77826f9f4eb909f8",
                 "shasum": ""
             },
             "require": {
@@ -1418,7 +1418,7 @@
                 "charts",
                 "laravel-enso"
             ],
-            "time": "2018-06-07T12:01:29+00:00"
+            "time": "2018-06-10T11:44:55+00:00"
         },
         {
             "name": "laravel-enso/commentsmanager",
