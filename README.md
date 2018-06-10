@@ -2,8 +2,7 @@
 # Laravel Genealogy - Built with Enso
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[![Github All Releases](https://img.shields.io/github/downloads/laravel-genealogy/genealogy/total.svg)]()
-
+![Github All Releases](https://img.shields.io/github/downloads/laravel-genealogy/genealogy/total.svg)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/laravel-genealogy/genealogy/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/laravel-genealogy/genealogy/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/laravel-genealogy/genealogy/badges/build.png?b=master)](https://scrutinizer-ci.com/g/laravel-genealogy/genealogy/build-status/master)
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/laravel-genealogy/genealogy/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
@@ -14,6 +13,8 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/laravel-genealogy/genealogy/badge/master)](https://www.codefactor.io/repository/github/laravel-genealogy/genealogy/overview/master)
 [![codebeat badge](https://codebeat.co/badges/911f9e33-212a-4dfa-a860-751cdbbacff7)](https://codebeat.co/projects/github-com-laravel-genealogy-genealogy-master)
 [![BCH compliance](https://bettercodehub.com/edge/badge/laravel-genealogy/genealogy?branch=master)](https://bettercodehub.com/)
+[![Build Status](https://travis-ci.org/laravel-genealogy/genealogy.svg?branch=master)](https://travis-ci.org/laravel-genealogy/genealogy)
+
 <!--/h-->
 
 Free and open source genealogy data / family tree management system. Under development currently,
