@@ -9731,9 +9731,9 @@ uuid@^3.0.0, uuid@^3.0.1, uuid@^3.1.0, uuid@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.2.1.tgz#12c528bb9d58d0b9265d9a2f6f0fe8be17ff1f14"
 
-v-click-outside@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/v-click-outside/-/v-click-outside-1.0.4.tgz#4e21b8f09a434a208f59a1463997de150c414b9e"
+v-click-outside@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/v-click-outside/-/v-click-outside-1.0.5.tgz#3eb590394e062fa9a4256cbe678600557f7c87d4"
 
 v-tooltip@^2.0.0-rc.32:
   version "2.0.0-rc.32"

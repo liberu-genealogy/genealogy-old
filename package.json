@@ -84,7 +84,7 @@
         "stylus": "^0.54.0",
         "textarea-caret": "^3.1.0",
         "tooltip.js": "^1.2.0",
-        "v-click-outside": "^1.0.4",
+        "v-click-outside": "^1.0.5",
         "v-tooltip": "^2.0.0-rc.32",
         "video.js": "^7.0.3",
         "vue": "^2.5.16",
