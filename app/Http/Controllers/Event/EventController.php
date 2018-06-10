@@ -25,7 +25,6 @@ class EventController extends Controller
             ->get('events.id', 'events.events_id', 'events.events_type', 'events.name', 'events.description', 'event_types_name', 'events.is_active');
     }
 
-
     public function create(EventForm $form)
     {
         return ['form' => $form->create()];
