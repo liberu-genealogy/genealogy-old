@@ -19,6 +19,7 @@ class TreeController extends Controller
 
     public function pedigree(Individual $individual)
     {
-        return $individual->select('individuals.id', 'individuals.first_name', 'individuals.last_name', as get(array('individuals.id', 'individuals.first_name', 'individuals.last_name'));
+        return $individual = \DB::table('family_individual')->where('family_individual.type_id', '>=' , 1)->select(\DB::raw("family_individual.family_id as sid"), \DB::Raw("family_individual.individual_id as tid"))->get('sid', 'tid');
+
     }
 }
