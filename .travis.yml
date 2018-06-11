@@ -22,8 +22,8 @@ script:
 after_script:
   # upload coverage.xml file to Coveralls to analyze it
   # minimal required coverage is set to 80+ %
-  - wget https://github.com/satooshi/php-coveralls/releases/download/v2.1.0/coveralls.phar
-  - php coveralls.phar --verbose
+  # - wget https://github.com/satooshi/php-coveralls/releases/download/v2.1.0/coveralls.phar
+  # - php coveralls.phar --verbose
 
 services:
   - maria-db

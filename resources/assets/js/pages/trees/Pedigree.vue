@@ -1,5 +1,5 @@
 <template>
-
+    <div></div>
 </template>
 <style scoped>
 svg {
@@ -43,9 +43,10 @@ svg {
 </style>
 <script>
 import * as d3 from 'd3';
-window.d3 = d3;
 import dTree from 'd3-dtree';
 import lodash from 'lodash';
+
+window.d3 = d3;
 
 export default {
     components: {
@@ -56,16 +57,10 @@ export default {
     mounted() {
         axios
             .get(route('trees.pedigree'))
-            .then(response => {
+            .then((response) => {
                 this.data = response.data;
             })
-            .catch(error => this.handleError(error)),
-            axios
-                .get(route('trees.links'))
-                .then(response => {
-                    this.links = response.data;
-                })
-                .catch(error => this.handleError(error));
+            .catch(error => this.handleError(error));
 
         dTree.init(this.data);
     },
