@@ -17,7 +17,8 @@ before_install:
   - npm install
   - npm run dev
 script:
-  - phpunit --coverage-clover coverage.xml
+  #- phpunit --coverage-clover coverage.xml
+  - phpunit
 
 after_script:
   # upload coverage.xml file to Coveralls to analyze it
