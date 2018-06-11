@@ -2503,16 +2503,16 @@
         },
         {
             "name": "laravel-enso/rolemanager",
-            "version": "2.2.34",
+            "version": "2.2.35",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/RoleManager.git",
-                "reference": "f695e77ec1fa915a8f01718cd9b60a087978976c"
+                "reference": "eef98b6c6d352d4f78071f89325bac965ed0e68e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/RoleManager/zipball/f695e77ec1fa915a8f01718cd9b60a087978976c",
-                "reference": "f695e77ec1fa915a8f01718cd9b60a087978976c",
+                "url": "https://api.github.com/repos/laravel-enso/RoleManager/zipball/eef98b6c6d352d4f78071f89325bac965ed0e68e",
+                "reference": "eef98b6c6d352d4f78071f89325bac965ed0e68e",
                 "shasum": ""
             },
             "require": {
@@ -2564,7 +2564,7 @@
                 "role-manager",
                 "rolemanager"
             ],
-            "time": "2018-06-10T08:22:41+00:00"
+            "time": "2018-06-11T05:17:18+00:00"
         },
         {
             "name": "laravel-enso/select",
