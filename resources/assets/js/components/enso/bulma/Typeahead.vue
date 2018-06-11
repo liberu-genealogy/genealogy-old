@@ -55,7 +55,6 @@
 </template>
 
 <script>
-
 import debounce from 'lodash/debounce';
 import fontawesome from '@fortawesome/fontawesome';
 import { faSearch } from '@fortawesome/fontawesome-free-solid/shakable.es';
@@ -65,9 +64,7 @@ fontawesome.library.add(faSearch);
 export default {
     name: 'Typeahead',
 
-    filters: {
-
-    },
+    filters: {},
 
     props: {
         disabled: {
@@ -156,16 +153,19 @@ export default {
 
             this.loading = true;
 
-            axios.get(this.source, {
-                params: { query: this.value, length: this.length, params: this.params },
-            }).then((response) => {
-                this.hideDropdown = false;
-                this.items = response.data;
-                this.loading = false;
-            }).catch((error) => {
-                this.loading = false;
-                this.handleError(error);
-            });
+            axios
+                .get(this.source, {
+                    params: { query: this.value, length: this.length, params: this.params },
+                })
+                .then(response => {
+                    this.hideDropdown = false;
+                    this.items = response.data;
+                    this.loading = false;
+                })
+                .catch(error => {
+                    this.loading = false;
+                    this.handleError(error);
+                });
         },
         update(value) {
             this.$emit('selected', this.items[this.position]);
@@ -189,35 +189,35 @@ export default {
             }
         },
         highlight(item) {
-            this.value.split(' ').filter(word => word.length).forEach((word) => {
-                item = item.replace(new RegExp(`(${word})`, 'gi'), '<b>$1</b>');
-            });
+            this.value
+                .split(' ')
+                .filter(word => word.length)
+                .forEach(word => {
+                    item = item.replace(new RegExp(`(${word})`, 'gi'), '<b>$1</b>');
+                });
 
             return item;
         },
     },
 };
-
 </script>
 
 <style lang="scss">
+.dropdown.typeahead {
+    width: 100%;
+    position: absolute;
 
-    .dropdown.typeahead {
+    .dropdown-menu {
         width: 100%;
-        position:absolute;
 
-        .dropdown-menu {
-            width: 100%;
-
-            .dropdown-content a.dropdown-item {
-                text-overflow: ellipsis;
-                overflow-x: hidden;
-            }
+        .dropdown-content a.dropdown-item {
+            text-overflow: ellipsis;
+            overflow-x: hidden;
         }
     }
+}
 
-    .control.has-icons-right .icon.clear-button {
-        pointer-events: all;
-    }
-
+.control.has-icons-right .icon.clear-button {
+    pointer-events: all;
+}
 </style>

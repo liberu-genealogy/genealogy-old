@@ -11,7 +11,6 @@
 </template>
 
 <script>
-
 import { mapState, mapMutations, mapActions } from 'vuex';
 import Auth from './layout/Auth.vue';
 import Home from './layout/Home.vue';
@@ -69,14 +68,12 @@ export default {
         ...mapActions(['initialise']),
         ...mapMutations('auth', ['setLastRoute']),
         setDocumentTitleUpdator() {
-            this.$router.afterEach((to) => {
+            this.$router.afterEach(to => {
                 document.title = this.documentTitle(to.meta.title);
             });
         },
         documentTitle(value) {
-            const title = this.meta.extendedDocumentTitle
-                ? `${this.__(value)} | ${this.meta.appName}`
-                : this.__(value);
+            const title = this.meta.extendedDocumentTitle ? `${this.__(value)} | ${this.meta.appName}` : this.__(value);
 
             return title;
         },
@@ -94,5 +91,4 @@ export default {
         },
     },
 };
-
 </script>
