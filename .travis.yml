@@ -15,7 +15,13 @@ before_install:
   - npm install
   - npm run dev
 script:
-  - phpunit
+  - phpunit --coverage-clover coverage.xml
+
+after_script:
+  # upload coverage.xml file to Coveralls to analyze it
+  # minimal required coverage is set to 80+ %
+  - wget https://github.com/satooshi/php-coveralls/releases/download/v1.0.1/coveralls.phar
+  - php coveralls.phar --verbose
 
 services:
   - maria-db
