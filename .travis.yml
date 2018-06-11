@@ -9,7 +9,7 @@ before_script:
   - composer install --prefer-source --no-interaction --dev
   - composer update --prefer-dist
   - php artisan key:generate
-  - php artisan migrate
+  - php artisan migrate:fresh --seed
 
 before_install:
   - mysql -e 'CREATE DATABASE homestead;'
