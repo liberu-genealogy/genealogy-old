@@ -29,6 +29,7 @@
 </template>
 
 <script>
+
 import { mapState, mapMutations, mapActions } from 'vuex';
 import Nprogress from '../../components/enso/nprogress/Nprogress.vue';
 import Navbar from './navbar/Navbar.vue';
@@ -42,13 +43,7 @@ export default {
     name: 'AppMain',
 
     components: {
-        Nprogress,
-        Navbar,
-        Sidebar,
-        Settings,
-        AppFooter,
-        Router,
-        PageHeader,
+        Nprogress, Navbar, Sidebar, Settings, AppFooter, Router, PageHeader,
     },
 
     computed: {
@@ -62,7 +57,9 @@ export default {
     watch: {
         isTablet: {
             handler() {
-                return this.isTablet ? this.hideMenu() : this.showMenu();
+                return this.isTablet
+                    ? this.hideMenu()
+                    : this.showMenu();
             },
         },
     },
@@ -105,62 +102,60 @@ export default {
             handler();
         },
         startImpersonating(id) {
-            axios
-                .get(route('core.impersonate.start', id))
-                .then(response => {
+            axios.get(route('core.impersonate.start', id))
+                .then((response) => {
                     this.$toastr.warning(response.data.message);
                     this.initialise();
-                })
-                .catch(error => this.handleError(error));
+                }).catch(error => this.handleError(error));
         },
         stopImpersonating() {
-            axios
-                .get(route('core.impersonate.stop'))
-                .then(response => {
+            axios.get(route('core.impersonate.stop'))
+                .then((response) => {
                     this.$toastr.info(response.data.message);
                     this.initialise();
-                })
-                .catch(error => this.handleError(error));
+                }).catch(error => this.handleError(error));
         },
     },
 };
+
 </script>
 
 <style lang="scss">
-.app-main {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-}
 
-.main-content {
-    position: relative;
-    flex: 1;
-    z-index: 1;
-    margin-top: 50px;
-    transition: margin 0.5s;
-
-    &.is-expanded {
-        margin-left: 180px;
+    .app-main {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        opacity: 1;
+        transition: opacity .3s ease;
     }
 
-    &.is-collapsed {
-        margin-left: 56px;
-    }
-}
-
-@media screen and (max-width: 1023px) {
     .main-content {
-        &.is-expanded,
+        position: relative;
+        flex: 1;
+        z-index: 1;
+        margin-top: 50px;
+        transition: margin .5s;
+
+        &.is-expanded {
+            margin-left: 180px;
+        }
+
         &.is-collapsed {
-            margin-left: 0;
+            margin-left: 56px;
         }
     }
-}
 
-div.container.page-content {
-    padding: 20px;
-}
+    @media screen and (max-width: 1023px) {
+        .main-content {
+            &.is-expanded, &.is-collapsed {
+                margin-left: 0;
+            }
+        }
+    }
+
+    div.container.page-content {
+        padding: 20px;
+    }
+
 </style>

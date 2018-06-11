@@ -25,6 +25,7 @@
 </template>
 
 <script>
+
 import Datepicker from '../vueforms/Datepicker.vue';
 
 export default {
@@ -63,10 +64,13 @@ export default {
         },
     },
 };
+
 </script>
 
 <style scoped>
-.date-interval-filter {
-    padding: 0.5rem;
-}
+
+    .date-interval-filter {
+        padding: 0.5rem;
+    }
+
 </style>

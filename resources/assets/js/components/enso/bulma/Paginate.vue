@@ -53,18 +53,15 @@
 </template>
 
 <script>
+
 import fontawesome from '@fortawesome/fontawesome';
-import {
-    faBars,
-    faAngleDown,
-    faEye,
-    faAngleLeft,
-    faFileAlt,
-    faAngleRight,
-} from '@fortawesome/fontawesome-free-solid/shakable.es';
+import { faBars, faAngleDown, faEye, faAngleLeft, faFileAlt, faAngleRight }
+    from '@fortawesome/fontawesome-free-solid/shakable.es';
 import Dropdown from './Dropdown.vue';
 
-fontawesome.library.add([faBars, faAngleDown, faEye, faAngleLeft, faFileAlt, faAngleRight]);
+fontawesome.library.add([
+    faBars, faAngleDown, faEye, faAngleLeft, faFileAlt, faAngleRight,
+]);
 
 export default {
     name: 'Paginate',
@@ -102,7 +99,8 @@ export default {
 
     computed: {
         computedList() {
-            return this.list.filter((el, index) => index >= this.start - 1 && index < this.current * this.pageLength);
+            return this.list.filter((el, index) => index >= this.start - 1
+                && index < this.current * this.pageLength);
         },
         pages() {
             return Math.ceil(this.records / this.pageLength);
@@ -144,4 +142,5 @@ export default {
         },
     },
 };
+
 </script>

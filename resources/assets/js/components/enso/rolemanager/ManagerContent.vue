@@ -6,12 +6,12 @@
                 :key="index">
             <div class="field">
                 <input type="checkbox"
-                    :id="'checkbox-' + entry.name"
-                    :name="'checkbox-' + entry.name"
+                    :id="'checkbox-' + _uid + '-' + entry.id"
+                    :name="'checkbox-' + _uid + '-' + entry.id"
                     :value="entry.id"
                     v-model="checkedIds"
                     class="is-checkradio">
-                    <label :for="'checkbox-' + entry.name">
+                    <label :for="'checkbox-' + _uid + '-' + entry.id">
                         <span :class="getClass(entry)">
                             {{ entry.description || entry.name }}
                         </span>
@@ -28,6 +28,7 @@
 </template>
 
 <script>
+
 import { VTooltip } from 'v-tooltip';
 import fontawesome from '@fortawesome/fontawesome';
 import { faExclamationTriangle } from '@fortawesome/fontawesome-free-solid/shakable.es';
@@ -96,7 +97,8 @@ export default {
     methods: {
         setCheckedIds() {
             const self = this;
-            this.checkedIds = this.permissionIds.filter(id => self.rolePermissions.indexOf(id) > -1);
+            this.checkedIds = this.permissionIds
+                .filter(id => self.rolePermissions.indexOf(id) > -1);
         },
         setAllChecked() {
             this.checkedIds = JSON.parse(JSON.stringify(this.permissionIds));
@@ -121,7 +123,7 @@ export default {
         removeGroupPermissions() {
             const self = this;
 
-            this.permissionIds.forEach(id => {
+            this.permissionIds.forEach((id) => {
                 const idx = self.rolePermissions.indexOf(id);
 
                 if (idx !== -1) {
@@ -132,10 +134,11 @@ export default {
         addCheckedPermissions() {
             const self = this;
 
-            this.checkedIds.forEach(id => {
+            this.checkedIds.forEach((id) => {
                 self.rolePermissions.push(id);
             });
         },
     },
 };
+
 </script>

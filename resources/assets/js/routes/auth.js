@@ -12,35 +12,31 @@ const redirect = (to, from, next) => {
     next();
 };
 
-export default [
-    {
-        name: 'login',
-        path: '/login',
-        component: Login,
-        beforeEnter: redirect,
-        meta: {
-            guestGuard: true,
-            title: 'Login',
-        },
+export default [{
+    name: 'login',
+    path: '/login',
+    component: Login,
+    beforeEnter: redirect,
+    meta: {
+        guestGuard: true,
+        title: 'Login',
     },
-    {
-        path: '/password/reset',
-        name: 'password.email',
-        component: Email,
-        beforeEnter: redirect,
-        meta: {
-            guestGuard: true,
-            title: 'Email Reset Link',
-        },
+}, {
+    path: '/password/reset',
+    name: 'password.email',
+    component: Email,
+    beforeEnter: redirect,
+    meta: {
+        guestGuard: true,
+        title: 'Email Reset Link',
     },
-    {
-        path: '/password/reset/:token',
-        name: 'password.reset',
-        component: Reset,
-        beforeEnter: redirect,
-        meta: {
-            guestGuard: true,
-            title: 'Reset Password',
-        },
+}, {
+    path: '/password/reset/:token',
+    name: 'password.reset',
+    component: Reset,
+    beforeEnter: redirect,
+    meta: {
+        guestGuard: true,
+        title: 'Reset Password',
     },
-];
+}];

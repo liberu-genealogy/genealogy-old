@@ -110,10 +110,12 @@
 </template>
 
 <script>
+
 import { mapState } from 'vuex';
 import zxcvbn from 'zxcvbn';
 import fontawesome from '@fortawesome/fontawesome';
-import { faEnvelope, faCheck, faExclamationTriangle, faLock } from '@fortawesome/fontawesome-free-solid/shakable.es';
+import { faEnvelope, faCheck, faExclamationTriangle, faLock }
+    from '@fortawesome/fontawesome-free-solid/shakable.es';
 
 fontawesome.library.add(faEnvelope, faCheck, faExclamationTriangle, faLock);
 
@@ -141,7 +143,9 @@ export default {
             return this.hasPassword && this.password === this.passwordConfirmation;
         },
         score() {
-            return this.hasPassword ? zxcvbn(this.password).score : 6;
+            return this.hasPassword
+                ? zxcvbn(this.password).score
+                : 6;
         },
     },
 
@@ -176,27 +180,24 @@ export default {
                 token: this.token,
             };
 
-            axios
-                .post('/api/password/reset', params)
-                .then(({ data }) => {
-                    this.loading = false;
-                    this.isSuccessful = true;
-                    this.$toastr.success(data.status);
-                    setTimeout(() => this.$router.push({ name: 'login' }));
-                })
-                .catch(error => {
-                    this.loading = false;
-                    this.hasErrors = true;
+            axios.post('/api/password/reset', params).then(({ data }) => {
+                this.loading = false;
+                this.isSuccessful = true;
+                this.$toastr.success(data.status);
+                setTimeout(() => this.$router.push({ name: 'login' }));
+            }).catch((error) => {
+                this.loading = false;
+                this.hasErrors = true;
 
-                    const { status, data } = error.response;
+                const { status, data } = error.response;
 
-                    if (status === 422) {
-                        this.reportLoginError(data);
-                        return;
-                    }
+                if (status === 422) {
+                    this.reportLoginError(data);
+                    return;
+                }
 
-                    throw error;
-                });
+                throw error;
+            });
         },
         reportLoginError(data) {
             if (data.errors) {
@@ -215,4 +216,5 @@ export default {
         },
     },
 };
+
 </script>
