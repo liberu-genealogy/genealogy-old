@@ -18,7 +18,6 @@
 </template>
 
 <script>
-
 import Draggable from 'vue-draggable';
 
 export default {
@@ -33,33 +32,31 @@ export default {
         },
     },
 };
-
 </script>
 
 <style>
+ul.sortable-menu {
+    list-style: none;
+}
 
-    ul.sortable-menu {
-        list-style: none;
-    }
+li.sortable-menu div {
+    background-color: #4c5f67;
+    border-radius: 0px;
+    text-align: left;
+    border: 1px solid white;
+    padding: 10px 25px;
+    margin: 0;
+    cursor: move;
+    color: #fff;
+}
 
-    li.sortable-menu div {
-        background-color: #4c5f67;
-        border-radius: 0px;
-        text-align: left;
-        border: 1px solid white;
-        padding: 10px 25px;
-        margin: 0;
-        cursor: move;
-        color: #fff;
-    }
+.list-complete-item {
+    transition: all 0.3s;
+    min-height: 5px;
+}
 
-    .list-complete-item {
-        transition: all 0.3s;
-        min-height: 5px;
-    }
-
-    .list-complete-enter, .list-complete-leave-active {
-        opacity: 0;
-    }
-
+.list-complete-enter,
+.list-complete-leave-active {
+    opacity: 0;
+}
 </style>

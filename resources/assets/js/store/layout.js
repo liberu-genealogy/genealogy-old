@@ -11,7 +11,9 @@ export const state = {
 };
 
 export const mutations = {
-    setThemes: (state, themes) => { state.themes = themes; },
+    setThemes: (state, themes) => {
+        state.themes = themes;
+    },
     setThemeParams() {
         const height = document.querySelector('.app-navbar').clientHeight;
         const menuAside = document.querySelector('.menu.aside');
@@ -31,15 +33,20 @@ export const mutations = {
     toggleLights(state) {
         state.lightsOff = !state.lightsOff;
     },
-    setIsMobile: (state, isMobile) => { state.isMobile = isMobile; },
-    setIsTablet: (state, isTablet) => { state.isTablet = isTablet; },
-    setIsTouch: (state, isTouch) => { state.isTouch = isTouch; },
+    setIsMobile: (state, isMobile) => {
+        state.isMobile = isMobile;
+    },
+    setIsTablet: (state, isTablet) => {
+        state.isTablet = isTablet;
+    },
+    setIsTouch: (state, isTouch) => {
+        state.isTouch = isTouch;
+    },
 };
 
 export const actions = {
     setTheme({ state, rootGetters }) {
-        document.getElementById('theme')
-            .setAttribute('href', state.themes[rootGetters['preferences/theme']]);
+        document.getElementById('theme').setAttribute('href', state.themes[rootGetters['preferences/theme']]);
     },
     switchTheme({ commit, dispatch }) {
         commit('toggleLights');

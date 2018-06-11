@@ -11,7 +11,6 @@
 </template>
 
 <script>
-
 import fontawesome from '@fortawesome/fontawesome';
 import { faEdit } from '@fortawesome/fontawesome-free-solid/shakable.es';
 import VueTable from '../../../components/enso/vuedatatable/VueTable.vue';
@@ -27,5 +26,4 @@ export default {
         };
     },
 };
-
 </script>

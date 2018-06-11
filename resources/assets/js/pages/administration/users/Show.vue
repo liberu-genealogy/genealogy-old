@@ -238,20 +238,21 @@
 </template>
 
 <script>
-
 import { mapState, mapMutations } from 'vuex';
 import fontawesome from '@fortawesome/fontawesome';
 import {
-    faTrashAlt, faUpload, faSignOutAlt, faEllipsisH,
-    faEye, faPlus, faPencilAlt,
+    faTrashAlt,
+    faUpload,
+    faSignOutAlt,
+    faEllipsisH,
+    faEye,
+    faPlus,
+    faPencilAlt,
 } from '@fortawesome/fontawesome-free-solid/shakable.es';
 import FileUploader from '../../../components/enso/fileuploader/FileUploader.vue';
 import format from '../../../modules/enso/plugins/date-fns/format';
 
-fontawesome.library.add([
-    faTrashAlt, faUpload, faSignOutAlt, faEllipsisH,
-    faEye, faPlus, faPencilAlt,
-]);
+fontawesome.library.add([faTrashAlt, faUpload, faSignOutAlt, faEllipsisH, faEye, faPlus, faPencilAlt]);
 
 export default {
     components: { FileUploader },
@@ -278,18 +279,20 @@ export default {
             return this.profile.avatar ? this.profile.avatar.id : null;
         },
         avatarLink() {
-            return route('core.avatars.show', (this.avatarId || 'null'));
+            return route('core.avatars.show', this.avatarId || 'null');
         },
         timeline() {
             const actions = this.profile.timeline.data;
 
-            return actions.map(action => action.created_at).reduce((days, record) => {
-                days.push(this.getDay(record));
-                return days;
-            }, []).filter((value, index, days) => days.indexOf(value) === index)
+            return actions
+                .map(action => action.created_at)
+                .reduce((days, record) => {
+                    days.push(this.getDay(record));
+                    return days;
+                }, [])
+                .filter((value, index, days) => days.indexOf(value) === index)
                 .reduce((timeline, day) => {
-                    timeline[day] = actions
-                        .filter(record => this.getDay(record.created_at) === day);
+                    timeline[day] = actions.filter(record => this.getDay(record.created_at) === day);
                     return timeline;
                 }, {});
         },
@@ -300,8 +303,7 @@ export default {
             return this.profile.timeline.current_page <= 2;
         },
         isAtEnd() {
-            return this.profile.timeline.last_page
-                - this.profile.timeline.current_page <= 2;
+            return this.profile.timeline.last_page - this.profile.timeline.current_page <= 2;
         },
         hasMiddle() {
             return !this.isAtStart && !this.isAtEnd;
@@ -320,23 +322,29 @@ export default {
     },
 
     mounted() {
-        axios.get(route(this.$route.name, this.$route.params.id))
-            .then((response) => {
+        axios
+            .get(route(this.$route.name, this.$route.params.id))
+            .then(response => {
                 this.profile = response.data.user;
-            }).catch(error => this.handleError(error));
+            })
+            .catch(error => this.handleError(error));
     },
 
     methods: {
         ...mapMutations(['setUserAvatar']),
         deleteAvatar() {
-            axios.delete(route('core.avatars.destroy', this.user.avatarId))
+            axios
+                .delete(route('core.avatars.destroy', this.user.avatarId))
                 .then(() => this.setUserAvatar(null))
                 .catch(error => this.handleError(error));
         },
         logout() {
-            axios.post(route('logout')).then(() => {
-                this.$store.commit('auth/logout');
-            }).catch(error => this.handleError(error));
+            axios
+                .post(route('logout'))
+                .then(() => {
+                    this.$store.commit('auth/logout');
+                })
+                .catch(error => this.handleError(error));
         },
         getDay(timestamp) {
             return format(timestamp, 'dddd');
@@ -360,39 +368,39 @@ export default {
             return 'has-text-danger';
         },
         getPage(page) {
-            axios.get(this.paginationUrl + page).then(({ data }) => {
-                this.profile = data.user;
-            }).catch(error => this.handleError(error));
+            axios
+                .get(this.paginationUrl + page)
+                .then(({ data }) => {
+                    this.profile = data.user;
+                })
+                .catch(error => this.handleError(error));
         },
     },
 };
-
 </script>
 
 <style>
+.has-lateral-borders {
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
 
-    .has-lateral-borders {
-        border-left: 1px solid rgba(0,0,0,0.2);
-        border-right: 1px solid rgba(0,0,0,0.2);
-    }
+.stat-value {
+    font-size: 2em;
+    padding-top: 12px;
+}
 
-    .stat-value {
-        font-size: 2em;
-        padding-top: 12px;
-    }
+.stat-key {
+    font-size: 1.4em;
+    font-weight: 200;
+    padding-bottom: 8px;
+}
 
-    .stat-key {
-        font-size: 1.4em;
-        font-weight: 200;
-        padding-bottom: 8px;
-    }
+.level.user-controls {
+    margin-bottom: 0;
+}
 
-    .level.user-controls {
-        margin-bottom: 0;
-    }
-
-    .timeline-content {
-        transition:all 1s ease;
-    }
-
+.timeline-content {
+    transition: all 1s ease;
+}
 </style>
