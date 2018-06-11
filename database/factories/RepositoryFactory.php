@@ -13,10 +13,10 @@
 
 $factory->define(App\Repository::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->sentence,
+        'name'        => $faker->sentence,
         'description' => $faker->text,
-        'is_active' => $faker->boolean,
-        'type_id' => $faker->numberBetween($min = 1, $max = 20),
+        'is_active'   => $faker->boolean,
+        'type_id'     => $faker->numberBetween($min = 1, $max = 20),
 
     ];
 });

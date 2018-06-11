@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Repository;
 
-use App\Repository;
 use App\Http\Controllers\Controller;
+use App\Repository;
 use LaravelEnso\Select\app\Traits\OptionsBuilder;
 
 class RepositorySelectController extends Controller

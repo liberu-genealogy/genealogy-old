@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Individual;
 
-use App\Individual;
 use App\Http\Controllers\Controller;
+use App\Individual;
 use LaravelEnso\Select\app\Traits\OptionsBuilder;
 
 class IndividualSelectController extends Controller

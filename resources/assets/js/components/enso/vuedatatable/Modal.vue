@@ -28,7 +28,6 @@
 </template>
 
 <script>
-
 import Modal from '../../../components/enso/bulma/Modal.vue';
 
 export default {
@@ -49,13 +48,10 @@ export default {
         },
     },
 };
-
 </script>
 
 <style>
-
-    .modal.is-active {
-        z-index: 10;
-    }
-
+.modal.is-active {
+    z-index: 10;
+}
 </style>

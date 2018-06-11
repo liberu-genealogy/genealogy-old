@@ -21,9 +21,9 @@ class CitationController extends Controller
         $citation->save();
 
         return [
-            'message' => __('The Citation was successfully created'),
+            'message'  => __('The Citation was successfully created'),
             'redirect' => 'citations.edit',
-            'id' => $citation->id,
+            'id'       => $citation->id,
         ];
     }
 
@@ -51,7 +51,7 @@ class CitationController extends Controller
         $citation->delete();
 
         return [
-            'message' => __('The Citation was successfully deleted'),
+            'message'  => __('The Citation was successfully deleted'),
             'redirect' => 'citations.index',
         ];
     }

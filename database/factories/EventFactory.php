@@ -15,12 +15,12 @@ $factory->define(App\Event::class, function (Faker\Generator $faker) {
     $event = $faker->randomElement(['App\Individual', 'App\Family']);
 
     return [
-        'name' => $faker->sentence,
-        'description' => $faker->text,
-        'date' => $faker->dateTimeBetween($startDate = '-200 years', $endDate = 'now'),
-        'is_active' => $faker->boolean,
-        'event_type' => $event,
-        'event_id' => $faker->unique()->randomNumber,
+        'name'          => $faker->sentence,
+        'description'   => $faker->text,
+        'date'          => $faker->dateTimeBetween($startDate = '-200 years', $endDate = 'now'),
+        'is_active'     => $faker->boolean,
+        'event_type'    => $event,
+        'event_id'      => $faker->unique()->randomNumber,
         'event_type_id' => $faker->randomElement(\App\Individual::pluck('id')->toArray()),
     ];
 });

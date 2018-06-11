@@ -10,11 +10,9 @@
 </template>
 
 <script>
+import VueFormSs from '../../components/enso/vueforms/VueFormSs.vue';
 
-    import VueFormSs from '../../components/enso/vueforms/VueFormSs.vue';
-
-    export default {
-        components: { VueFormSs },
-    };
-
+export default {
+    components: { VueFormSs },
+};
 </script>

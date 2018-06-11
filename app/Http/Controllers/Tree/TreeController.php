@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Tree;
 
-use App\Individual;
 use App\Http\Controllers\Controller;
+use App\Individual;
 
 class TreeController extends Controller
 {
     public function index(Individual $individual)
     {
-        return $individual->get(array('individuals.id', 'individuals.first_name', 'individuals.last_name'));
+        return $individual->get(['individuals.id', 'individuals.first_name', 'individuals.last_name']);
     }
 
     public function links()

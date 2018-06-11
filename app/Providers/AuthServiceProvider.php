@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use App\User;
 use App\Policies\UserPolicy;
-use Laravel\Horizon\Horizon;
+use App\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Laravel\Horizon\Horizon;
 
 class AuthServiceProvider extends ServiceProvider
 {

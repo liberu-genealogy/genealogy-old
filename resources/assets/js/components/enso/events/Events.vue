@@ -50,7 +50,6 @@
 </template>
 
 <script>
-
 import fontawesome from '@fortawesome/fontawesome';
 import { faAddressCard, faPlusSquare } from '@fortawesome/fontawesome-free-solid/shakable.es';
 import Card from '../bulma/Card.vue';
@@ -64,7 +63,10 @@ export default {
     name: 'Events',
 
     components: {
-        Card, CardControl, Event, EventForm,
+        Card,
+        CardControl,
+        Event,
+        EventForm,
     },
 
     props: {
@@ -98,9 +100,11 @@ export default {
     computed: {
         filteredEvents() {
             return this.query
-                ? this.events.filter(event => event.first_name.toLowerCase()
-                    .indexOf(this.query.toLowerCase()) > -1
-                        || event.last_name.toLowerCase().indexOf(this.query.toLowerCase()) > -1)
+                ? this.events.filter(
+                      event =>
+                          event.first_name.toLowerCase().indexOf(this.query.toLowerCase()) > -1 ||
+                          event.last_name.toLowerCase().indexOf(this.query.toLowerCase()) > -1
+                  )
                 : this.events;
         },
         count() {
@@ -122,22 +126,27 @@ export default {
         get() {
             this.loading = true;
 
-            axios.get(route('events.index'), {
-                params: { event_id: this.id, event_type: this.type },
-            }).then(({ data }) => {
-                this.events = data;
-                this.loading = false;
-                this.$refs.card.resize();
-            }).catch(error => this.handleError(error));
+            axios
+                .get(route('events.index'), {
+                    params: { event_id: this.id, event_type: this.type },
+                })
+                .then(({ data }) => {
+                    this.events = data;
+                    this.loading = false;
+                    this.$refs.card.resize();
+                })
+                .catch(error => this.handleError(error));
         },
         destroy(event, index) {
             this.loading = true;
 
-            axios.delete(route('events.destroy', event.id))
+            axios
+                .delete(route('events.destroy', event.id))
                 .then(() => {
                     this.events.splice(index, 1);
                     this.loading = false;
-                }).catch(error => this.handleError(error));
+                })
+                .catch(error => this.handleError(error));
         },
         create() {
             this.loading = true;
@@ -148,30 +157,32 @@ export default {
 
             const params = { event_id: this.id, event_type: this.type };
 
-            axios.get(route('events.create', params))
+            axios
+                .get(route('events.create', params))
                 .then(({ data }) => {
                     this.loading = false;
                     this.form = data.form;
-                }).catch(error => this.handleError(error));
+                })
+                .catch(error => this.handleError(error));
         },
         edit(event) {
             this.loading = true;
 
-            axios.get(route('events.edit', event.id))
+            axios
+                .get(route('events.edit', event.id))
                 .then(({ data }) => {
                     this.loading = false;
                     this.form = data.form;
-                }).catch(error => this.handleError(error));
+                })
+                .catch(error => this.handleError(error));
         },
     },
 };
-
 </script>
 
 <style scoped>
-
-    .wrapper {
-        max-height: 415px;
-        overflow-y: auto;
-    }
+.wrapper {
+    max-height: 415px;
+    overflow-y: auto;
+}
 </style>

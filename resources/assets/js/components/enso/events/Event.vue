@@ -48,25 +48,25 @@
 </template>
 
 <script>
-
 import fontawesome from '@fortawesome/fontawesome';
-import { faCheck, faTimes, faEnvelope, faPhone, faStickyNote }
-    from '@fortawesome/fontawesome-free-solid/shakable.es';
+import { faCheck, faTimes, faEnvelope, faPhone, faStickyNote } from '@fortawesome/fontawesome-free-solid/shakable.es';
 import EventForm from './EventForm.vue';
 import Card from '../bulma/Card.vue';
 import CardFooter from '../bulma/CardFooter.vue';
 import CardFooterItem from '../bulma/CardFooterItem.vue';
 import Popover from '../bulma/Popover.vue';
 
-fontawesome.library.add([
-    faCheck, faTimes, faEnvelope, faPhone, faStickyNote,
-]);
+fontawesome.library.add([faCheck, faTimes, faEnvelope, faPhone, faStickyNote]);
 
 export default {
     name: 'Event',
 
     components: {
-        Card, CardFooter, CardFooterItem, EventForm, Popover,
+        Card,
+        CardFooter,
+        CardFooterItem,
+        EventForm,
+        Popover,
     },
 
     props: {
@@ -76,14 +76,10 @@ export default {
         },
     },
 };
-
 </script>
 
 <style scoped>
-
-    .template {
-        height: 9em;
-    }
-
+.template {
+    height: 9em;
+}
 </style>
-

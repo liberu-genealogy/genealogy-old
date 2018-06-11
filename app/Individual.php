@@ -4,9 +4,9 @@ namespace App;
 
 use App\Traits\Events;
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\Contacts\app\Traits\Contactable;
-use LaravelEnso\CommentsManager\app\Traits\Commentable;
 use LaravelEnso\AddressesManager\app\Traits\Addressable;
+use LaravelEnso\CommentsManager\app\Traits\Commentable;
+use LaravelEnso\Contacts\app\Traits\Contactable;
 use LaravelEnso\DocumentsManager\app\Traits\Documentable;
 
 class Individual extends Model

@@ -3,8 +3,8 @@
 namespace App\Forms\Builders;
 
 use App\Owner;
-use LaravelEnso\RoleManager\app\Models\Role;
 use LaravelEnso\FormBuilder\app\Classes\Form;
+use LaravelEnso\RoleManager\app\Models\Role;
 
 class OwnerForm
 {

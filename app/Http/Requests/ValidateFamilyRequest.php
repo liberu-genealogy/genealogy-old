@@ -16,10 +16,10 @@ class ValidateFamilyRequest extends FormRequest
         $family = $this->route('family');
 
         return [
-            'is_active' => 'boolean',
+            'is_active'   => 'boolean',
             'description' => 'required|max:500',
-            'father_id' => 'required|exists:individuals,id',
-            'mother_id' => 'required|exists:individuals,id',
+            'father_id'   => 'required|exists:individuals,id',
+            'mother_id'   => 'required|exists:individuals,id',
         ];
     }
 }
