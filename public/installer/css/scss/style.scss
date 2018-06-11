@@ -1,8 +1,8 @@
 // Variables
-@import "variables";
+@import 'variables';
 
 // Font Awesome
-@import "font-awesome/font-awesome";
+@import 'font-awesome/font-awesome';
 
 //@extend-elements
 //original selectors
@@ -32,7 +32,7 @@ html {
 	color: $color_3;
 	font-size: 12px;
 	line-height: 1.75em;
-	input[type=button] {
+	input[type='button'] {
 		-webkit-appearance: button;
 		cursor: pointer;
 	}
@@ -45,7 +45,7 @@ body {
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	-moz-font-feature-settings: "liga" on;
+	-moz-font-feature-settings: 'liga' on;
 }
 article {
 	display: block;
@@ -118,7 +118,7 @@ a {
 	text-decoration: none;
 	color: $color_5;
 	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-	transition: all .2s;
+	transition: all 0.2s;
 	margin: 0;
 	padding: 0;
 	cursor: pointer;
@@ -150,10 +150,10 @@ dfn {
 }
 h1 {
 	font-size: 2em;
-	margin: .67em 0;
-	margin-top: .942400822452556em;
+	margin: 0.67em 0;
+	margin-top: 0.942400822452556em;
 	line-height: 1.130880986943067em;
-	margin-bottom: .188480164490511em;
+	margin-bottom: 0.188480164490511em;
 	margin: 0;
 	padding: 0;
 	font-family: $font_2, $font_3, $font_4, $font_5, $font_0;
@@ -173,14 +173,14 @@ small {
 }
 sub {
 	@extend %extend_1;
-	bottom: -.25em;
+	bottom: -0.25em;
 	margin: 0;
 	padding: 0;
 	line-height: 0;
 }
 sup {
 	@extend %extend_1;
-	top: -.5em;
+	top: -0.5em;
 	margin: 0;
 	padding: 0;
 	line-height: 0;
@@ -200,7 +200,7 @@ hr {
 }
 pre {
 	overflow: auto;
-	padding: .875em;
+	padding: 0.875em;
 	margin-bottom: 1.75em;
 	background: $color_18;
 	line-height: 1;
@@ -223,7 +223,7 @@ code {
 	margin: 0;
 	padding: 0;
 	font-family: $font_6, $font_7, $font_8, $font_9, $font_1;
-	padding: .0875em .2625em;
+	padding: 0.0875em 0.2625em;
 	line-height: 0;
 }
 kbd {
@@ -247,7 +247,7 @@ button {
 	display: block;
 	cursor: pointer;
 	font-size: 12px;
-	padding: .4375em 1.75em;
+	padding: 0.4375em 1.75em;
 	margin-bottom: 1.18125em;
 }
 input {
@@ -279,7 +279,7 @@ textarea {
 	overflow: auto;
 	display: block;
 	max-width: 100%;
-	padding: .4375em;
+	padding: 0.4375em;
 	font-size: 12px;
 	margin-bottom: 1.18125em;
 	outline: none;
@@ -290,17 +290,17 @@ textarea {
 	width: calc(100% - 24px);
 	margin: 0 auto 1em;
 }
-input[type=reset] {
+input[type='reset'] {
 	-webkit-appearance: button;
 	cursor: pointer;
 }
-input[type=submit] {
+input[type='submit'] {
 	-webkit-appearance: button;
 	cursor: pointer;
 	display: block;
 	cursor: pointer;
 	font-size: 12px;
-	padding: .4375em 1.75em;
+	padding: 0.4375em 1.75em;
 	margin-bottom: 1.18125em;
 }
 button[disabled] {
@@ -314,38 +314,38 @@ input::-moz-focus-inner {
 	border: 0;
 	padding: 0;
 }
-input[type=checkbox] {
+input[type='checkbox'] {
 	//Instead of the line below you could use @include box-sizing($bs)
 	box-sizing: border-box;
 	padding: 0;
 }
-input[type=radio] {
+input[type='radio'] {
 	//Instead of the line below you could use @include box-sizing($bs)
 	box-sizing: border-box;
 	padding: 0;
 }
-input[type=number]::-webkit-inner-spin-button {
+input[type='number']::-webkit-inner-spin-button {
 	height: auto;
 }
-input[type=number]::-webkit-outer-spin-button {
+input[type='number']::-webkit-outer-spin-button {
 	height: auto;
 }
-input[type=search] {
+input[type='search'] {
 	-webkit-appearance: textfield;
 	//Instead of the line below you could use @include box-sizing($bs)
 	box-sizing: content-box;
 }
-input[type=search]::-webkit-search-cancel-button {
+input[type='search']::-webkit-search-cancel-button {
 	-webkit-appearance: none;
 }
-input[type=search]::-webkit-search-decoration {
+input[type='search']::-webkit-search-decoration {
 	-webkit-appearance: none;
 }
 fieldset {
 	border: 1px solid $color_2;
 	margin: 0 2px;
-	padding: .35em .625em .75em;
-	padding: .875em 1.75em 1.75em;
+	padding: 0.35em 0.625em 0.75em;
+	padding: 0.875em 1.75em 1.75em;
 	border-width: 1px;
 	border-style: solid;
 	max-width: 100%;
@@ -355,7 +355,7 @@ fieldset {
 	button {
 		margin-bottom: 0;
 	}
-	input[type=submit] {
+	input[type='submit'] {
 		margin-bottom: 0;
 	}
 }
@@ -380,7 +380,7 @@ td {
 	padding: 0;
 	margin: 0;
 	padding: 0;
-	padding: .21875em .875em;
+	padding: 0.21875em 0.875em;
 }
 th {
 	padding: 0;
@@ -388,29 +388,29 @@ th {
 	padding: 0;
 	text-align: left;
 	color: $color_4;
-	padding: .21875em .875em;
+	padding: 0.21875em 0.875em;
 }
-@media(min-width:600px) {
+@media (min-width: 600px) {
 	html {
 		font-size: 12px;
 	}
 	h1 {
-		font-size: calc(27.85438995234061px +18.56959 *((100vw - 600px) / 540));
+		font-size: calc(27.85438995234061px +18.56959 * ((100vw - 600px) / 540));
 	}
 	h2 {
-		font-size: calc(23.53700340860508px +15.69134 *((100vw - 600px) / 540));
+		font-size: calc(23.53700340860508px +15.69134 * ((100vw - 600px) / 540));
 	}
 	h3 {
-		font-size: calc(19.888804974891777px +13.2592 *((100vw - 600px) / 540));
+		font-size: calc(19.888804974891777px +13.2592 * ((100vw - 600px) / 540));
 	}
 	h4 {
-		font-size: calc(16.806071548796314px +11.20405 *((100vw - 600px) / 540));
+		font-size: calc(16.806071548796314px +11.20405 * ((100vw - 600px) / 540));
 	}
 	h5 {
-		font-size: calc(14.201156945318074px +9.46744 *((100vw - 600px) / 540));
+		font-size: calc(14.201156945318074px +9.46744 * ((100vw - 600px) / 540));
 	}
 	h6 {
-		font-size: calc(12px +8 *((100vw - 600px) / 540));
+		font-size: calc(12px +8 * ((100vw - 600px) / 540));
 	}
 }
 abbr {
@@ -495,7 +495,7 @@ h2 {
 	font-size: 23.53700340860508px;
 	margin-top: 1.115265165420465em;
 	line-height: 1.338318198504558em;
-	margin-bottom: .251483121980101em;
+	margin-bottom: 0.251483121980101em;
 }
 h3 {
 	margin: 0;
@@ -507,7 +507,7 @@ h3 {
 	font-size: 19.888804974891777px;
 	margin-top: 1.319837970815179em;
 	line-height: 1.583805564978215em;
-	margin-bottom: .303784103173448em;
+	margin-bottom: 0.303784103173448em;
 }
 h4 {
 	margin: 0;
@@ -519,7 +519,7 @@ h4 {
 	font-size: 16.806071548796314px;
 	margin-top: 1.561935513828041em;
 	line-height: 1.87432261659365em;
-	margin-bottom: .368150361036632em;
+	margin-bottom: 0.368150361036632em;
 }
 h5 {
 	margin: 0;
@@ -531,7 +531,7 @@ h5 {
 	font-size: 14.201156945318074px;
 	margin-top: 1.84844094752817em;
 	line-height: 2.218129137033805em;
-	margin-bottom: .369688189505634em;
+	margin-bottom: 0.369688189505634em;
 }
 h6 {
 	margin: 0;
@@ -543,7 +543,7 @@ h6 {
 	font-size: 12px;
 	margin-top: 2.1875em;
 	line-height: 2.625em;
-	margin-bottom: .619791666666667em;
+	margin-bottom: 0.619791666666667em;
 }
 i {
 	margin: 0;
@@ -557,8 +557,8 @@ label {
 	margin: 0;
 	padding: 0;
 	display: block;
-	padding-bottom: .21875em;
-	margin-bottom: -.21875em;
+	padding-bottom: 0.21875em;
+	margin-bottom: -0.21875em;
 	cursor: pointer;
 }
 li {
@@ -623,67 +623,67 @@ var {
 	margin: 0;
 	padding: 0;
 }
-@media(min-width:1140px) {
+@media (min-width: 1140px) {
 	h1 {
 		font-size: 46.423983253901014px;
-		margin-top: .942400822452556em;
+		margin-top: 0.942400822452556em;
 		line-height: 1.130880986943067em;
-		margin-bottom: .188480164490511em;
+		margin-bottom: 0.188480164490511em;
 	}
 	h2 {
 		font-size: 39.228339014341806px;
 		margin-top: 1.115265165420465em;
 		line-height: 1.338318198504558em;
-		margin-bottom: .240111086421698em;
+		margin-bottom: 0.240111086421698em;
 	}
 	h3 {
 		font-size: 33.14800829148629px;
 		margin-top: 1.319837970815179em;
 		line-height: 1.583805564978215em;
-		margin-bottom: .287857499569283em;
+		margin-bottom: 0.287857499569283em;
 	}
 	h4 {
 		font-size: 28.01011924799386px;
 		margin-top: 1.561935513828041em;
 		line-height: 1.87432261659365em;
-		margin-bottom: .345845057728222em;
+		margin-bottom: 0.345845057728222em;
 	}
 	h5 {
 		font-size: 23.668594908863454px;
 		margin-top: 1.84844094752817em;
 		line-height: 2.218129137033805em;
-		margin-bottom: .369688189505634em;
+		margin-bottom: 0.369688189505634em;
 	}
 	h6 {
 		font-size: 20px;
 		margin-top: 2.1875em;
 		line-height: 2.625em;
-		margin-bottom: .473958333333333em;
+		margin-bottom: 0.473958333333333em;
 	}
 	fieldset {
 		margin-bottom: 2.078125em;
 	}
-	input[type=email] {
+	input[type='email'] {
 		font-size: 20px;
-		margin-bottom: .5140625em;
+		margin-bottom: 0.5140625em;
 	}
-	input[type=password] {
+	input[type='password'] {
 		font-size: 20px;
-		margin-bottom: .5140625em;
+		margin-bottom: 0.5140625em;
 	}
-	input[type=text] {
+	input[type='text'] {
 		font-size: 20px;
-		margin-bottom: .5140625em;
+		margin-bottom: 0.5140625em;
 	}
 	textarea {
 		font-size: 20px;
-		margin-bottom: .5140625em;
+		margin-bottom: 0.5140625em;
 	}
 	button {
 		font-size: 20px;
 		margin-bottom: 1.3125em;
 	}
-	input[type=submit] {
+	input[type='submit'] {
 		font-size: 20px;
 		margin-bottom: 1.3125em;
 	}
@@ -691,30 +691,30 @@ var {
 		margin-bottom: 2.05625em;
 	}
 	th {
-		padding: .4375em .875em;
+		padding: 0.4375em 0.875em;
 	}
 	td {
-		padding: .4375em .875em;
+		padding: 0.4375em 0.875em;
 	}
 }
-input[type=email] {
+input[type='email'] {
 	display: block;
 	max-width: 100%;
-	padding: .4375em;
+	padding: 0.4375em;
 	font-size: 12px;
 	margin-bottom: 1.18125em;
 }
-input[type=password] {
+input[type='password'] {
 	display: block;
 	max-width: 100%;
-	padding: .4375em;
+	padding: 0.4375em;
 	font-size: 12px;
 	margin-bottom: 1.18125em;
 }
-input[type=text] {
+input[type='text'] {
 	display: block;
 	max-width: 100%;
-	padding: .4375em;
+	padding: 0.4375em;
 	font-size: 12px;
 	margin-bottom: 1.18125em;
 }
@@ -862,7 +862,7 @@ input[type=text] {
 .buttons {
 	text-align: center;
 	.button {
-		margin: .5em;
+		margin: 0.5em;
 	}
 }
 .buttons--right {
@@ -881,7 +881,7 @@ input[type=text] {
 	outline: none;
 	border: none;
 	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-	transition: box-shadow .2s ease, background-color .2s ease;
+	transition: box-shadow 0.2s ease, background-color 0.2s ease;
 	cursor: pointer;
 	&:hover {
 		color: $color_10;
@@ -1184,7 +1184,7 @@ input[type='number'] {
 	//Instead of the line below you could use @include box-sizing($bs)
 	box-sizing: border-box;
 	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
-	transition: .3s ease-out;
+	transition: 0.3s ease-out;
 }
 ::selection {
 	background: $color_18;
@@ -1270,17 +1270,17 @@ svg:not(:root) {
 	overflow: hidden;
 }
 .step__item.active .step__icon,
-.step__item.active~.step__divider,
-.step__item.active~.step__item .step__icon {
-    background-color: $color_12;
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -o-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
+.step__item.active ~ .step__divider,
+.step__item.active ~ .step__item .step__icon {
+	background-color: $color_12;
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
 }
 .step__item.active .step__icon:hover,
-.step__item.active~.step__item .step__icon:hover {
-    background-color: $color_13;
+.step__item.active ~ .step__item .step__icon:hover {
+	background-color: $color_13;
 }
 .form-group.has-error {
 	select {
@@ -1305,7 +1305,7 @@ svg:not(:root) {
 		margin: -12px 0 0;
 		display: block;
 		width: 100%;
-		font-size: .9em;
+		font-size: 0.9em;
 		color: $color_24;
 		font-weight: 500;
 	}
