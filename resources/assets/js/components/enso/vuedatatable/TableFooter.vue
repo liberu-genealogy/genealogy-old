@@ -40,6 +40,7 @@
 </template>
 
 <script>
+
 export default {
     name: 'TableFooter',
 
@@ -73,11 +74,13 @@ export default {
         },
     },
 };
+
 </script>
 
 <style>
-.is-money {
-    text-align: right;
-    font-family: monospace;
-}
+    .is-money {
+        text-align: right;
+        font-family: monospace;
+    }
 </style>
+

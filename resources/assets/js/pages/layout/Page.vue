@@ -8,6 +8,7 @@
 </template>
 
 <script>
+
 import Router from './Router.vue';
 import PageHeader from './PageHeader.vue';
 

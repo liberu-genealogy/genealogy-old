@@ -16,6 +16,7 @@
 </template>
 
 <script>
+
 import Dropdown from './Dropdown.vue';
 
 export default {
@@ -34,4 +35,5 @@ export default {
         },
     },
 };
+
 </script>

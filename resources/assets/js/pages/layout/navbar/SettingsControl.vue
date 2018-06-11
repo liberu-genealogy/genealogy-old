@@ -8,6 +8,7 @@
 </template>
 
 <script>
+
 import fontawesome from '@fortawesome/fontawesome';
 import { faCogs } from '@fortawesome/fontawesome-free-solid/shakable.es';
 
@@ -16,4 +17,6 @@ fontawesome.library.add(faCogs);
 export default {
     name: 'SettingsControl',
 };
+
 </script>
+

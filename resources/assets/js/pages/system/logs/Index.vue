@@ -45,6 +45,7 @@
 </template>
 
 <script>
+
 import fontawesome from '@fortawesome/fontawesome';
 import { faTerminal, faEye, faCloudDownloadAlt, faTrashAlt } from '@fortawesome/fontawesome-free-solid/shakable.es';
 import Card from '../../../components/enso/bulma/Card.vue';
@@ -70,24 +71,18 @@ export default {
     },
 
     created() {
-        axios
-            .get(route('system.logs.index'))
-            .then(({ data }) => {
-                this.logs = data;
-            })
-            .catch(error => this.handleError(error));
+        axios.get(route('system.logs.index')).then(({ data }) => {
+            this.logs = data;
+        }).catch(error => this.handleError(error));
     },
 
     methods: {
         empty(log) {
-            axios
-                .delete(route('system.logs.destroy', log.name))
-                .then(({ data }) => {
-                    const index = this.logs.findIndex(item => log.name === item.name);
-                    this.logs.splice(index, 1, data.log);
-                    this.$toastr.success(data.message);
-                })
-                .catch(error => this.handleError(error));
+            axios.delete(route('system.logs.destroy', log.name)).then(({ data }) => {
+                const index = this.logs.findIndex(item => log.name === item.name);
+                this.logs.splice(index, 1, data.log);
+                this.$toastr.success(data.message);
+            }).catch(error => this.handleError(error));
         },
         getDownloadLink(log) {
             return route('system.logs.download', log);
@@ -97,4 +92,5 @@ export default {
         },
     },
 };
+
 </script>
