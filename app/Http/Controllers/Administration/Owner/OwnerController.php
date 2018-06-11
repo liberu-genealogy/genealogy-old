@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Administration\Owner;
 
-use App\Owner;
 use App\Forms\Builders\OwnerForm;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ValidateOwnerRequest;
+use App\Owner;
 
 class OwnerController extends Controller
 {
@@ -22,9 +22,9 @@ class OwnerController extends Controller
         );
 
         return [
-            'message' => __('The owner was successfully created'),
+            'message'  => __('The owner was successfully created'),
             'redirect' => 'administration.owners.edit',
-            'id' => $owner->id,
+            'id'       => $owner->id,
         ];
     }
 
@@ -48,7 +48,7 @@ class OwnerController extends Controller
         $owner->delete();
 
         return [
-            'message' => __('The owner was successfully deleted'),
+            'message'  => __('The owner was successfully deleted'),
             'redirect' => 'administration.owners.index',
         ];
     }

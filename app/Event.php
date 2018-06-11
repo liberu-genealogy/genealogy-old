@@ -4,10 +4,10 @@ namespace App;
 
 use App\Classes\EventConfigMapper;
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\Helpers\app\Traits\IsActive;
-use LaravelEnso\CommentsManager\app\Traits\Commentable;
 use LaravelEnso\AddressesManager\app\Traits\Addressable;
+use LaravelEnso\CommentsManager\app\Traits\Commentable;
 use LaravelEnso\DocumentsManager\app\Traits\Documentable;
+use LaravelEnso\Helpers\app\Traits\IsActive;
 
 class Event extends Model
 {
@@ -31,7 +31,7 @@ class Event extends Model
     {
         $this->create(
             $attributes + [
-                'event_id' => $params['event_id'],
+                'event_id'   => $params['event_id'],
                 'event_type' => (new EventConfigMapper($params['event_type']))
                     ->class(),
             ]

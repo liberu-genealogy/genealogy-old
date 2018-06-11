@@ -5,7 +5,7 @@
 @import './app';
 
 .animated {
-    animation-duration: .5s;
+    animation-duration: 0.5s;
 }
 
 .button.is-naked {
@@ -14,13 +14,13 @@
 }
 
 .icon.angle {
-    transition: transform .300s ease;
+    transition: transform 0.3s ease;
 
-    &[aria-hidden="true"] {
+    &[aria-hidden='true'] {
         transform: rotate(180deg);
     }
 
-    &[aria-expanded="true"] {
+    &[aria-expanded='true'] {
         transform: rotate(-180deg);
     }
 }
@@ -30,7 +30,7 @@
         flex-direction: column-reverse;
         display: flex;
         .column {
-            width: 100%; 
+            width: 100%;
         }
     }
 }

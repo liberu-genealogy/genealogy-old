@@ -20,7 +20,6 @@
 </template>
 
 <script>
-
 import DocumentsCard from '../../components/enso/documents/DocumentsCard.vue';
 import CommentsCard from '../../components/enso/comments/CommentsCard.vue';
 import Contacts from '../../components/enso/contacts/Contacts.vue';
@@ -29,7 +28,9 @@ import VueFormSs from '../../components/enso/vueforms/VueFormSs.vue';
 
 export default {
     components: {
-        CommentsCard, Addresses, VueFormSs,
+        CommentsCard,
+        Addresses,
+        VueFormSs,
     },
 
     data() {
@@ -38,5 +39,4 @@ export default {
         };
     },
 };
-
 </script>

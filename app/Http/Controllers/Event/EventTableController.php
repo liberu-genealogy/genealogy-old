@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Event;
 
-use App\Tables\Builders\EventTable;
 use App\Http\Controllers\Controller;
-use LaravelEnso\VueDatatable\app\Traits\Excel;
+use App\Tables\Builders\EventTable;
 use LaravelEnso\VueDatatable\app\Traits\Datatable;
+use LaravelEnso\VueDatatable\app\Traits\Excel;
 
 class EventTableController extends Controller
 {

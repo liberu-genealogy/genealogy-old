@@ -29,7 +29,6 @@
 </template>
 
 <script>
-
 import vClickOutside from 'v-click-outside';
 import fontawesome from '@fortawesome/fontawesome';
 import { faAngleDown } from '@fortawesome/fontawesome-free-solid/shakable.es';
@@ -79,21 +78,18 @@ export default {
         },
     },
 };
-
 </script>
 
 <style lang="scss" scoped>
+.dropdown-content {
+    overflow-y: auto;
+}
 
-    .dropdown-content {
-        overflow-y: auto;
+.icon.angle {
+    transition: transform 0.3s ease;
+
+    &[aria-hidden='true'] {
+        transform: rotate(180deg);
     }
-
-    .icon.angle {
-        transition: transform .300s ease;
-
-        &[aria-hidden="true"] {
-            transform: rotate(180deg);
-        }
-    }
-
+}
 </style>

@@ -48,7 +48,6 @@
 </template>
 
 <script>
-
 import { mapState } from 'vuex';
 import fontawesome from '@fortawesome/fontawesome';
 import { faHeart } from '@fortawesome/fontawesome-free-solid/shakable.es';
@@ -63,19 +62,16 @@ export default {
         ...mapState(['meta']),
     },
 };
-
 </script>
 
 <style>
+.footer {
+    margin-left: 180px;
+}
 
+@media screen and (max-width: 1023px) {
     .footer {
-        margin-left: 180px;
+        margin-left: 0;
     }
-
-    @media screen and (max-width: 1023px) {
-        .footer {
-            margin-left: 0;
-        }
-    }
-
+}
 </style>

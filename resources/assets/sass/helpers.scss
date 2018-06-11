@@ -1,5 +1,5 @@
 .has-vertically-centered-content {
-    display:flex;
+    display: flex;
     align-items: center;
 }
 
@@ -8,7 +8,7 @@
         flex-direction: column-reverse;
         display: flex;
         .column {
-            width: 100%; 
+            width: 100%;
         }
     }
 }
@@ -74,7 +74,7 @@
 }
 
 .has-padding-small {
-    padding: 6px
+    padding: 6px;
 }
 
 .has-padding-left-small {
@@ -94,7 +94,7 @@
 }
 
 .has-padding-medium {
-    padding: 12px
+    padding: 12px;
 }
 
 .has-padding-left-medium {
@@ -114,7 +114,7 @@
 }
 
 .has-padding-large {
-    padding: 24px
+    padding: 24px;
 }
 
 .has-padding-left-large {

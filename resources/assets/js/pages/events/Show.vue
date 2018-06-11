@@ -20,22 +20,23 @@
 </template>
 
 <script>
+import DocumentsCard from '../../components/enso/documents/DocumentsCard.vue';
+import CommentsCard from '../../components/enso/comments/CommentsCard.vue';
+import Addresses from '../../components/enso/addresses/Addresses.vue';
+import VueFormSs from '../../components/enso/vueforms/VueFormSs.vue';
 
-    import DocumentsCard from '../../components/enso/documents/DocumentsCard.vue';
-    import CommentsCard from '../../components/enso/comments/CommentsCard.vue';
-    import Addresses from '../../components/enso/addresses/Addresses.vue';
-    import VueFormSs from '../../components/enso/vueforms/VueFormSs.vue';
+export default {
+    components: {
+        CommentsCard,
+        DocumentsCard,
+        Addresses,
+        VueFormSs,
+    },
 
-    export default {
-        components: {
-            CommentsCard, DocumentsCard, Addresses, VueFormSs,
-        },
-
-        data() {
-            return {
-                initialised: false,
-            };
-        },
-    };
-
+    data() {
+        return {
+            initialised: false,
+        };
+    },
+};
 </script>

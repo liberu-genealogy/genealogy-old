@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Individual;
 
-use App\Individual;
-use App\Http\Controllers\Controller;
 use App\Forms\Builders\IndividualForm;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\ValidateIndividualRequest;
+use App\Individual;
 
 class IndividualController extends Controller
 {
@@ -21,9 +21,9 @@ class IndividualController extends Controller
         $individual->save();
 
         return [
-            'message' => __('The Individual was successfully created'),
+            'message'  => __('The Individual was successfully created'),
             'redirect' => 'individuals.edit',
-            'id' => $individual->id,
+            'id'       => $individual->id,
         ];
     }
 
@@ -51,7 +51,7 @@ class IndividualController extends Controller
         $individual->delete();
 
         return [
-            'message' => __('The Individual was successfully deleted'),
+            'message'  => __('The Individual was successfully deleted'),
             'redirect' => 'administration.individuals.index',
         ];
     }

@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Event;
 
 use App\Event;
-use Illuminate\Http\Request;
 use App\Forms\Builders\EventForm;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ValidateEventRequest;
+use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
@@ -66,7 +66,7 @@ class EventController extends Controller
         $event->delete();
 
         return [
-            'message' => __('The Event was successfully deleted'),
+            'message'  => __('The Event was successfully deleted'),
             'redirect' => 'events.index',
         ];
     }

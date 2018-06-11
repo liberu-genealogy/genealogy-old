@@ -13,13 +13,13 @@
 
 $factory->define(App\Source::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->sentence,
-        'description' => $faker->text,
-        'is_active' => $faker->boolean,
-        'type_id' => $faker->numberBetween($min = 1, $max = 20),
-        'author_id' => $faker->numberBetween($min = 1, $max = 20),
+        'name'           => $faker->sentence,
+        'description'    => $faker->text,
+        'is_active'      => $faker->boolean,
+        'type_id'        => $faker->numberBetween($min = 1, $max = 20),
+        'author_id'      => $faker->numberBetween($min = 1, $max = 20),
         'publication_id' => $faker->numberBetween($min = 1, $max = 20),
-        'repository_id' => $faker->randomElement(\App\Repository::pluck('id')->toArray()),
+        'repository_id'  => $faker->randomElement(\App\Repository::pluck('id')->toArray()),
 
     ];
 });

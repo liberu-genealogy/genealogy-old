@@ -5,7 +5,6 @@
 </template>
 
 <script>
-
 import nprogress from 'nprogress';
 
 nprogress.configure({ showSpinner: false });
@@ -30,18 +29,21 @@ export default {
 
     methods: {
         setAxios() {
-            axios.interceptors.request.use((config) => {
+            axios.interceptors.request.use(config => {
                 this.incRequests();
                 return config;
             });
 
-            axios.interceptors.response.use((response) => {
-                this.incResponses();
-                return response;
-            }, (error) => {
-                this.incResponses();
-                return Promise.reject(error);
-            });
+            axios.interceptors.response.use(
+                response => {
+                    this.incResponses();
+                    return response;
+                },
+                error => {
+                    this.incResponses();
+                    return Promise.reject(error);
+                }
+            );
         },
         setRouter() {
             this.$router.beforeEach((route, from, next) => {
@@ -75,9 +77,7 @@ export default {
             setTimeout(() => {
                 this.responses++;
 
-                return this.responses >= this.requests
-                    ? this.done()
-                    : this.update();
+                return this.responses >= this.requests ? this.done() : this.update();
             }, this.latency);
         },
         update() {
@@ -85,29 +85,26 @@ export default {
         },
     },
 };
-
 </script>
 
 <style>
+#nprogress .bar {
+    background: #f44336;
+    box-shadow: 0 0 5px #f44336;
+    position: fixed;
+    z-index: 1051;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+}
 
-    #nprogress .bar {
-        background: #f44336;
-        box-shadow: 0 0 5px #f44336;
-        position: fixed;
-        z-index: 1051;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-    }
-
-    #nprogress .peg {
-        display:block;
-        position: absolute;
-        right: 0px;
-        width: 100px;
-        height: 100%;
-        opacity: 1.0;
-    }
-
+#nprogress .peg {
+    display: block;
+    position: absolute;
+    right: 0px;
+    width: 100px;
+    height: 100%;
+    opacity: 1;
+}
 </style>
