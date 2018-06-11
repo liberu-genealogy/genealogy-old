@@ -38,16 +38,18 @@
 </template>
 
 <script>
-
 import Vue from 'vue';
 
 import fontawesome from '@fortawesome/fontawesome';
-import { faComment, faInfoCircle, faCheckCircle, faExclamationCircle, faTimesCircle }
-    from '@fortawesome/fontawesome-free-solid/shakable.es';
+import {
+    faComment,
+    faInfoCircle,
+    faCheckCircle,
+    faExclamationCircle,
+    faTimesCircle,
+} from '@fortawesome/fontawesome-free-solid/shakable.es';
 
-fontawesome.library.add([
-    faComment, faInfoCircle, faCheckCircle, faExclamationCircle, faTimesCircle,
-]);
+fontawesome.library.add([faComment, faInfoCircle, faCheckCircle, faExclamationCircle, faTimesCircle]);
 
 const types = ['message', 'primary', 'info', 'success', 'warning', 'danger'];
 const positions = ['left', 'right', 'center'];
@@ -106,9 +108,7 @@ export default {
         i18n: {
             type: Function,
             default(key) {
-                return Object.keys(this.$options.methods).includes('__')
-                    ? this.__(key)
-                    : key;
+                return Object.keys(this.$options.methods).includes('__') ? this.__(key) : key;
             },
         },
     },
@@ -133,9 +133,7 @@ export default {
             return `bounceIn${this.direction}`;
         },
         leaveClass() {
-            return this.position === 'center'
-                ? 'bounceOutUp'
-                : `bounceOut${this.direction}`;
+            return this.position === 'center' ? 'bounceOutUp' : `bounceOut${this.direction}`;
         },
         icon() {
             return this.icons[this.type];
@@ -202,50 +200,47 @@ export default {
         },
     },
 };
-
 </script>
 
 <style lang="scss">
+.toastr-wrapper {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+    pointer-events: none;
+    top: 2em;
 
-    .toastr-wrapper {
-        position: fixed;
-        display: flex;
-        flex-direction: column;
-        z-index: 9999;
-        pointer-events: none;
-        top: 2em;
-
-        &.left {
-            margin-right: auto;
-            left: 2em;
-        }
-
-        &.right {
-            margin-left: auto;
-            right: 2em;
-        }
-
-        &.center {
-            margin-left: calc(50% - 150px);
-        }
-
-        .box.toastr.notification {
-            width: 300px;
-            padding: 12px;
-            margin-bottom: 6px;
-            pointer-events: auto;
-            position: relative;
-            z-index: 9999;
-            position: relative;
-            overflow-x: hidden;
-            -webkit-box-shadow: 0 0 5px 3px hsla(0,0%,50%,.3);
-            box-shadow: 0 0 5px 3px hsla(0,0%,50%,.3);
-
-            &.highlight {
-                -webkit-box-shadow: 0 0 5px 3px hsla(0,0%,4%,.3);
-                box-shadow: 0 0 5px 3px hsla(0,0%,4%,.3);
-            }
-        }
+    &.left {
+        margin-right: auto;
+        left: 2em;
     }
 
+    &.right {
+        margin-left: auto;
+        right: 2em;
+    }
+
+    &.center {
+        margin-left: calc(50% - 150px);
+    }
+
+    .box.toastr.notification {
+        width: 300px;
+        padding: 12px;
+        margin-bottom: 6px;
+        pointer-events: auto;
+        position: relative;
+        z-index: 9999;
+        position: relative;
+        overflow-x: hidden;
+        -webkit-box-shadow: 0 0 5px 3px hsla(0, 0%, 50%, 0.3);
+        box-shadow: 0 0 5px 3px hsla(0, 0%, 50%, 0.3);
+
+        &.highlight {
+            -webkit-box-shadow: 0 0 5px 3px hsla(0, 0%, 4%, 0.3);
+            box-shadow: 0 0 5px 3px hsla(0, 0%, 4%, 0.3);
+        }
+    }
+}
 </style>
