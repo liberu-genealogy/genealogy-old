@@ -60,7 +60,6 @@
 </template>
 
 <script>
-
 import { mapState, mapMutations } from 'vuex';
 import './icons';
 
@@ -91,7 +90,9 @@ export default {
                     this.$el.style.height = `${height}px`;
                 }
 
-                setTimeout(() => { this.$el.style.height = 0; }, 1);
+                setTimeout(() => {
+                    this.$el.style.height = 0;
+                }, 1);
                 this.$emit('shrink', height);
                 return;
             }
@@ -110,13 +111,15 @@ export default {
     methods: {
         ...mapMutations('menus', ['toggle']),
         isActive(menu) {
-            return this.$route.matched.map(route => route.name)
-                .includes(menu.link) ||
-                    (this.$route.matched.length > 1
-                        && this.$route.matched
-                            .map(route => route.path)[this.$route.matched.length - 2]
-                                === `/${menu.link.split('.').slice(0, -1).join('/')}`
-                    );
+            return (
+                this.$route.matched.map(route => route.name).includes(menu.link) ||
+                (this.$route.matched.length > 1 &&
+                    this.$route.matched.map(route => route.path)[this.$route.matched.length - 2] ===
+                        `/${menu.link
+                            .split('.')
+                            .slice(0, -1)
+                            .join('/')}`)
+            );
         },
         shrink(height) {
             this.$el.style.height = `${parseInt(this.$el.style.height, 10) - height}px`;
@@ -128,47 +131,44 @@ export default {
         },
     },
 };
-
 </script>
 
 <style lang="scss" scoped>
+.menu-list {
+    transition: height 0.4s ease;
+    display: block;
+    overflow-y: hidden;
+    overflow-x: hidden;
 
-    .menu-list {
-        transition: height .400s ease;
-        display: block;
-        overflow-y: hidden;
-        overflow-x: hidden;
-
-        a {
-            display: flex;
-        }
-
-        .menu-hiding-label {
-             white-space: nowrap;
-        }
-
-        .dropdown-content {
-            display: none;
-            white-space: nowrap;
-            padding-bottom: 0;
-            padding-top: 0;
-            margin-top: -9px;
-            position: fixed;
-            left: 55px
-        }
-
-        a:hover > div.dropdown-content {
-            display: block;
-        }
-
-        li > ul {
-            margin: 0 0 0 .5rem;
-            padding-left: 0;
-        }
-
-        .icon.angle {
-            margin-left: auto;
-        }
+    a {
+        display: flex;
     }
 
+    .menu-hiding-label {
+        white-space: nowrap;
+    }
+
+    .dropdown-content {
+        display: none;
+        white-space: nowrap;
+        padding-bottom: 0;
+        padding-top: 0;
+        margin-top: -9px;
+        position: fixed;
+        left: 55px;
+    }
+
+    a:hover > div.dropdown-content {
+        display: block;
+    }
+
+    li > ul {
+        margin: 0 0 0 0.5rem;
+        padding-left: 0;
+    }
+
+    .icon.angle {
+        margin-left: auto;
+    }
+}
 </style>

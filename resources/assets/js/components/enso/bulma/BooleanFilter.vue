@@ -9,9 +9,7 @@
 </template>
 
 <script>
-
 import VueFilter from '../bulma/VueFilter.vue';
-
 
 export default {
     name: 'BooleanFilter',
@@ -27,17 +25,19 @@ export default {
 
     data() {
         return {
-            options: [{
-                value: true,
-                label: 'check',
-                class: 'has-text-success',
-            }, {
-                value: false,
-                label: 'times',
-                class: 'has-text-danger',
-            }],
+            options: [
+                {
+                    value: true,
+                    label: 'check',
+                    class: 'has-text-success',
+                },
+                {
+                    value: false,
+                    label: 'times',
+                    class: 'has-text-danger',
+                },
+            ],
         };
     },
 };
-
 </script>
