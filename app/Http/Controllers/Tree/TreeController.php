@@ -23,9 +23,6 @@ class TreeController extends Controller
 
         header('Content-Type: application/json');
 
-
         return $data;
-
-}
-
+    }
 }
