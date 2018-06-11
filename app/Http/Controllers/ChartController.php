@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use LaravelEnso\Charts\app\Classes\BarChart;
-use LaravelEnso\Charts\app\Classes\PieChart;
-use LaravelEnso\Charts\app\Classes\LineChart;
-use LaravelEnso\Charts\app\Classes\PolarChart;
-use LaravelEnso\Charts\app\Classes\RadarChart;
 use LaravelEnso\Charts\app\Classes\BubbleChart;
 use LaravelEnso\Charts\app\Classes\DoughnutChart;
+use LaravelEnso\Charts\app\Classes\LineChart;
+use LaravelEnso\Charts\app\Classes\PieChart;
+use LaravelEnso\Charts\app\Classes\PolarChart;
+use LaravelEnso\Charts\app\Classes\RadarChart;
 
 class ChartController extends Controller
 {
@@ -19,7 +19,7 @@ class ChartController extends Controller
             ->labels(['January', 'February', 'March', 'April', 'May', 'June', 'July'])
             ->datasets([
                 'Marriage' => [65, 59, 80, 81, 26, 25, 10],
-                'Divorce' => [15, 29, 60, 31, 56, 65, 44],
+                'Divorce'  => [15, 29, 60, 31, 56, 65, 44],
             ])->fill()
             ->get();
     }
@@ -30,9 +30,9 @@ class ChartController extends Controller
             ->title('Families')
             ->labels(['Ian', 'Feb', 'Mar'])
             ->datasets([
-                'Vanzari' => [1233, 1231, 3123],
+                'Vanzari'  => [1233, 1231, 3123],
                 'Incasari' => [1250, 1730, 5300],
-                'Profit' => [1250 - 1233, 1730 - 1231, 5300 - 3123],
+                'Profit'   => [1250 - 1233, 1730 - 1231, 5300 - 3123],
             ])->get();
     }
 

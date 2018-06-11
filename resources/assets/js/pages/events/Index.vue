@@ -43,61 +43,54 @@
 </template>
 
 <script>
-    import store from '../../store';
-    import VueTable from '../../components/enso/vuedatatable/VueTable.vue';
-    import VueFilter from '../../components/enso/bulma/VueFilter.vue';
-    import VueSelectFilter from '../../components/enso/select/VueSelectFilter.vue';
-    import IntervalFilter from '../../components/enso/bulma/IntervalFilter.vue';
-    import DateIntervalFilter from '../../components/enso/bulma/DateIntervalFilter.vue';
-    import Tabs from '../../components/enso/bulma/Tabs.vue';
-    import Tab from '../../components/enso/bulma/Tab.vue';
-    import '../../modules/enso/directives/hljs';
+import store from '../../store';
+import VueTable from '../../components/enso/vuedatatable/VueTable.vue';
+import VueFilter from '../../components/enso/bulma/VueFilter.vue';
+import VueSelectFilter from '../../components/enso/select/VueSelectFilter.vue';
+import IntervalFilter from '../../components/enso/bulma/IntervalFilter.vue';
+import DateIntervalFilter from '../../components/enso/bulma/DateIntervalFilter.vue';
+import Tabs from '../../components/enso/bulma/Tabs.vue';
+import Tab from '../../components/enso/bulma/Tab.vue';
+import '../../modules/enso/directives/hljs';
 
+export default {
+    store,
+    comments: true,
 
-    export default {
+    props: ['scopes'],
 
-        store,
-        comments: true,
+    components: { VueTable, VueFilter, VueSelectFilter, IntervalFilter, DateIntervalFilter, Tabs, Tab },
 
-        props: ['scopes'],
+    data() {
+        return {
+            path: route('events.initTable', [], false),
 
-        components: { VueTable, VueFilter, VueSelectFilter, IntervalFilter, DateIntervalFilter, Tabs, Tab, },
+            showCode: false,
+            activeOptions: [
+                { value: true, label: 'check', class: 'has-text-success' },
+                { value: false, label: 'times', class: 'has-text-danger' },
+            ],
 
-        data() {
-            return {
-                path: route('events.initTable', [], false),
-
-                showCode: false,
-                activeOptions: [
-                    { value: true, label: 'check', class: 'has-text-success' },
-                    { value: false, label: 'times', class: 'has-text-danger' },
-                ],
-
-                filters: {
-                    events: {
-                        is_active: null
-
+            filters: {
+                events: {
+                    is_active: null,
+                },
+            },
+            intervals: {
+                events: {
+                    date: {
+                        min: null,
+                        max: null,
+                        dbDateFormat: 'Y-m-d h:mm:ss',
+                    },
+                    created_at: {
+                        min: null,
+                        max: null,
+                        dbDateFormat: 'Y-m-d h:mm:ss',
                     },
                 },
-                intervals: {
-                    events: {
-                        date: {
-                            min: null,
-                            max: null,
-                            dbDateFormat: 'Y-m-d h:mm:ss'
-                        },
-                        created_at: {
-                            min: null,
-                            max: null,
-                            dbDateFormat: 'Y-m-d h:mm:ss'
-                        },
-                    },
-                },
-            };
-        },
-
-
-
-    };
+            },
+        };
+    },
+};
 </script>
-

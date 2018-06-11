@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Family;
 
 use App\Family;
-use App\Individual;
 use App\Forms\Builders\FamilyForm;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ValidateFamilyRequest;
+use App\Individual;
 
 class FamilyController extends Controller
 {
@@ -36,15 +36,15 @@ class FamilyController extends Controller
         Individual::find($mother_id)->families()->attach($family->id, ['type_id' => 2]);
 
         return [
-            'message' => __('The Family was successfully created'),
+            'message'  => __('The Family was successfully created'),
             'redirect' => 'families.edit',
-            'id' => $family->id,
+            'id'       => $family->id,
         ];
     }
 
     public function show(Family $family)
     {
-        return $family->individuals()->get(array('individuals.id', 'individuals.first_name', 'individuals.last_name'));
+        return $family->individuals()->get(['individuals.id', 'individuals.first_name', 'individuals.last_name']);
     }
 
     public function edit(Family $family, FamilyForm $form)
@@ -80,7 +80,7 @@ class FamilyController extends Controller
         $family->delete();
 
         return [
-            'message' => __('The Family was successfully deleted'),
+            'message'  => __('The Family was successfully deleted'),
             'redirect' => 'families.index',
         ];
     }

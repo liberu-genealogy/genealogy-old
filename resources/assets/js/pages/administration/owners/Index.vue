@@ -7,7 +7,6 @@
 </template>
 
 <script>
-
 import VueTable from '../../../components/enso/vuedatatable/VueTable.vue';
 
 export default {
@@ -19,5 +18,4 @@ export default {
         };
     },
 };
-
 </script>

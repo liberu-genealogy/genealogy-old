@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Administration\User;
 
-use App\User;
 use App\Forms\Builders\UserForm;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ValidateUserRequest;
-use LaravelEnso\Core\app\Classes\ProfileBuilder;
+use App\User;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use LaravelEnso\Core\app\Classes\ProfileBuilder;
 
 class UserController extends Controller
 {
@@ -29,9 +29,9 @@ class UserController extends Controller
         $this->sendResetLinkEmail($request);
 
         return [
-            'message' => __('The user was successfully created'),
+            'message'  => __('The user was successfully created'),
             'redirect' => 'administration.users.edit',
-            'id' => $user->id,
+            'id'       => $user->id,
         ];
     }
 
@@ -65,7 +65,7 @@ class UserController extends Controller
         $user->delete();
 
         return [
-            'message' => __('The user was successfully deleted'),
+            'message'  => __('The user was successfully deleted'),
             'redirect' => 'administration.users.index',
         ];
     }

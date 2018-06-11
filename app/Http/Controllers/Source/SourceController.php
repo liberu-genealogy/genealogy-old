@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Source;
 
-use App\Source;
 use App\Forms\Builders\SourceForm;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ValidateSourceRequest;
+use App\Source;
 
 class SourceController extends Controller
 {
@@ -22,15 +22,15 @@ class SourceController extends Controller
         );
 
         return [
-            'message' => __('The Source was successfully created'),
+            'message'  => __('The Source was successfully created'),
             'redirect' => 'sources.edit',
-            'id' => $source->id,
+            'id'       => $source->id,
         ];
     }
 
     public function show(Source $source)
     {
-        return $source->citations()->get(array('citations.id', 'citations.name', 'citations.description'));
+        return $source->citations()->get(['citations.id', 'citations.name', 'citations.description']);
     }
 
     public function edit(Source $source, SourceForm $form)
@@ -53,7 +53,7 @@ class SourceController extends Controller
         $source->delete();
 
         return [
-            'message' => __('The Source was successfully deleted'),
+            'message'  => __('The Source was successfully deleted'),
             'redirect' => 'sources.index',
         ];
     }

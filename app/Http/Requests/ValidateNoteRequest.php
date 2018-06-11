@@ -16,11 +16,11 @@ class ValidateNoteRequest extends FormRequest
         $note = $this->route('note');
 
         return [
-            'name' => 'required|max:50',
+            'name'        => 'required|max:50',
             'description' => 'required|max:50',
-            'date' => 'required|max:24',
-            'type_id' => 'required|max:12',
-            'is_active' => 'boolean',
+            'date'        => 'required|max:24',
+            'type_id'     => 'required|max:12',
+            'is_active'   => 'boolean',
         ];
     }
 }

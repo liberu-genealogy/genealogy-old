@@ -5,7 +5,6 @@
 </template>
 
 <script>
-
 import Chart from 'chart.js';
 import 'chartjs-plugin-datalabels';
 
@@ -90,10 +89,9 @@ export default {
 
             const self = this;
 
-            this.chart.data.datasets
-                .forEach((dataset, index) => {
-                    dataset.data = self.data.datasets[index].data;
-                });
+            this.chart.data.datasets.forEach((dataset, index) => {
+                dataset.data = self.data.datasets[index].data;
+            });
 
             this.chart.data.labels = self.data.labels;
 
@@ -104,13 +102,10 @@ export default {
         },
     },
 };
-
 </script>
 
 <style scoped>
-
-    .chart-js {
-        max-width: 100%;
-  }
-
+.chart-js {
+    max-width: 100%;
+}
 </style>

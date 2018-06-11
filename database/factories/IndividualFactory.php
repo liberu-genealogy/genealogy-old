@@ -16,8 +16,8 @@ $factory->define(App\Individual::class, function (Faker\Generator $faker) {
 
     return [
         'first_name' => $faker->firstName($gender),
-        'last_name' => $faker->lastName,
-        'gender' => $gender,
-        'is_active' => $faker->boolean,
+        'last_name'  => $faker->lastName,
+        'gender'     => $gender,
+        'is_active'  => $faker->boolean,
     ];
 });

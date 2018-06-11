@@ -7,25 +7,21 @@
 </template>
 
 <script>
-
 export default {
     name: 'NotFound',
 };
-
 </script>
 
 <style>
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    font-weight: 100;
+}
 
-    .error-container {
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        height: 50%;
-        font-weight: 100;
-    }
-
-    .error-title {
-        font-size: 3rem;
-    }
-
+.error-title {
+    font-size: 3rem;
+}
 </style>

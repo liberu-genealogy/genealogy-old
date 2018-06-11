@@ -1,8 +1,8 @@
 <?php
 
+use Illuminate\Database\Migrations\Migration;
 use LaravelEnso\Core\app\Models\Owner;
 use LaravelEnso\RoleManager\app\Models\Role;
-use Illuminate\Database\Migrations\Migration;
 
 class InsertDefaultOwner extends Migration
 {
@@ -12,7 +12,7 @@ class InsertDefaultOwner extends Migration
             $roles = Role::all();
 
             $owner = Owner::create([
-                'name' => 'Admin',
+                'name'      => 'Admin',
                 'is_active' => true,
             ]);
 

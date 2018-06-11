@@ -13,11 +13,11 @@
 
 $factory->define(App\Note::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->sentence,
+        'name'        => $faker->sentence,
         'description' => $faker->text,
-        'is_active' => $faker->boolean,
-        'date' => $faker->dateTimeBetween($startDate = '-200 years', $endDate = 'now'),
-        'type_id' => $faker->randomDigit(),
+        'is_active'   => $faker->boolean,
+        'date'        => $faker->dateTimeBetween($startDate = '-200 years', $endDate = 'now'),
+        'type_id'     => $faker->randomDigit(),
 
     ];
 });

@@ -1,7 +1,6 @@
 $colors: red, orangered, blue, brown, crimson, blueviolet, coral, green, grey;
 
 .tooltip {
-
     .tooltip-arrow {
         @each $color in $colors {
             &.#{$color} {
