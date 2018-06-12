@@ -19,7 +19,6 @@
 </template>
 
 <script>
-
 import fontawesome from '@fortawesome/fontawesome';
 import { faUpload } from '@fortawesome/fontawesome-free-solid/shakable.es';
 
@@ -69,22 +68,24 @@ export default {
                 return;
             }
 
-            axios.post(this.url, this.formData).then((response) => {
-                this.reset();
-                this.$emit('upload-successful', response.data);
-            }).catch((error) => {
-                this.reset();
-                this.$emit('upload-error');
-                const { data, status } = error.response;
+            axios
+                .post(this.url, this.formData)
+                .then(response => {
+                    this.reset();
+                    this.$emit('upload-successful', response.data);
+                })
+                .catch(error => {
+                    this.reset();
+                    this.$emit('upload-error');
+                    const { data, status } = error.response;
 
-                if (status === 422) {
-                    Object.keys(data.errors)
-                        .forEach(key => this.$toastr.error(data.errors[key][0]));
-                    return;
-                }
+                    if (status === 422) {
+                        Object.keys(data.errors).forEach(key => this.$toastr.error(data.errors[key][0]));
+                        return;
+                    }
 
-                this.handleError(error);
-            });
+                    this.handleError(error);
+                });
         },
         setFormData() {
             const { files } = this.$refs.input;
@@ -116,9 +117,7 @@ export default {
         addParams() {
             if (this.params) {
                 Object.entries(this.params).forEach(([key, param]) => {
-                    const value = typeof param === 'object'
-                        ? JSON.stringify(param)
-                        : param;
+                    const value = typeof param === 'object' ? JSON.stringify(param) : param;
 
                     this.formData.append(key, value);
                 });
@@ -139,21 +138,18 @@ export default {
         },
     },
 };
-
 </script>
 
 <style>
+form.file-upload {
+    display: inline-table;
+}
 
-    form.file-upload {
-        display: inline-table;
-    }
+button.file-upload {
+    background: transparent;
+}
 
-    button.file-upload {
-        background: transparent;
-    }
-
-    .file-input.hidden {
-        display: none;
-    }
-
+.file-input.hidden {
+    display: none;
+}
 </style>

@@ -17,7 +17,6 @@
 </template>
 
 <script>
-
 import VueForm from '../../../components/enso/vueforms/VueForm.vue';
 
 export default {
@@ -54,9 +53,10 @@ export default {
 
     computed: {
         customFields() {
-            return this.data.sections
-                .reduce((fields, section) => fields
-                    .concat(section.fields.filter(field => field.meta.custom)), []);
+            return this.data.sections.reduce(
+                (fields, section) => fields.concat(section.fields.filter(field => field.meta.custom)),
+                []
+            );
         },
     },
 
@@ -66,10 +66,13 @@ export default {
 
     methods: {
         get() {
-            axios.get(route(...this.routeParams)).then(({ data }) => {
-                this.data = data.form;
-                this.$emit('loaded');
-            }).catch(error => this.handleError(error));
+            axios
+                .get(route(...this.routeParams))
+                .then(({ data }) => {
+                    this.data = data.form;
+                    this.$emit('loaded');
+                })
+                .catch(error => this.handleError(error));
         },
         field(field) {
             return this.data.sections
@@ -77,6 +80,5 @@ export default {
                 .find(item => item.name === field);
         },
     },
-
 };
 </script>
