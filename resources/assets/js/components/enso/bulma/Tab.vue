@@ -13,6 +13,7 @@
 </template>
 
 <script>
+
 export default {
     name: 'Tab',
 
@@ -33,7 +34,8 @@ export default {
 
     computed: {
         index() {
-            return this.$parent.tabs.findIndex(tab => JSON.stringify(tab) === JSON.stringify(this.id));
+            return this.$parent.tabs
+                .findIndex(tab => JSON.stringify(tab) === JSON.stringify(this.id));
         },
         active() {
             return this.index === this.$parent.active;
@@ -67,4 +69,5 @@ export default {
         this.$parent.tabs.splice(this.index, 1);
     },
 };
+
 </script>

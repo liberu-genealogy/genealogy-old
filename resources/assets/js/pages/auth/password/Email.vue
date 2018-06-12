@@ -47,6 +47,7 @@
 </template>
 
 <script>
+
 import { mapState } from 'vuex';
 import fontawesome from '@fortawesome/fontawesome';
 import { faEnvelope, faCheck, faExclamationTriangle, faUser } from '@fortawesome/fontawesome-free-solid/shakable.es';
@@ -83,26 +84,23 @@ export default {
             this.isSuccessful = false;
             this.hasErrors = false;
 
-            axios
-                .post('/api/password/email', { email: this.email })
-                .then(({ data }) => {
-                    this.loading = false;
-                    this.isSuccessful = true;
-                    this.$toastr.success(data.status);
-                })
-                .catch(error => {
-                    this.loading = false;
-                    this.hasErrors = true;
+            axios.post('/api/password/email', { email: this.email }).then(({ data }) => {
+                this.loading = false;
+                this.isSuccessful = true;
+                this.$toastr.success(data.status);
+            }).catch((error) => {
+                this.loading = false;
+                this.hasErrors = true;
 
-                    const { status, data } = error.response;
+                const { status, data } = error.response;
 
-                    if (status === 422) {
-                        this.reportLoginError(data);
-                        return;
-                    }
+                if (status === 422) {
+                    this.reportLoginError(data);
+                    return;
+                }
 
-                    throw error;
-                });
+                throw error;
+            });
         },
         reportLoginError(data) {
             if (data.errors) {
@@ -117,4 +115,5 @@ export default {
         },
     },
 };
+
 </script>

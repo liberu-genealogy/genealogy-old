@@ -22,6 +22,7 @@
 </template>
 
 <script>
+
 export default {
     name: 'Breadrumbs',
 
@@ -34,16 +35,19 @@ export default {
         },
     },
 };
+
 </script>
 
 <style>
-nav.breadcrumb > ul > li > a {
-    padding: 0 0.8rem;
-    font-size: 0.8rem;
-}
 
-breadcrumb a.is-disabled:hover {
-    color: inherit;
-    cursor: default;
-}
+    nav.breadcrumb > ul > li > a {
+        padding: 0 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    breadcrumb a.is-disabled:hover {
+        color: inherit;
+        cursor: default;
+    }
+
 </style>

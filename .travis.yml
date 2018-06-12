@@ -27,8 +27,7 @@ after_script:
   # - php coveralls.phar --verbose
 
 services:
-  - maria-db
-
+  - maria
 addons:
   apt:
     sources:

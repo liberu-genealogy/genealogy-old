@@ -85,17 +85,14 @@
 </template>
 
 <script>
+
 import { mapState, mapMutations } from 'vuex';
 import fontawesome from '@fortawesome/fontawesome';
-import {
-    faEnvelope,
-    faCheck,
-    faExclamationTriangle,
-    faLock,
-    faUser,
-} from '@fortawesome/fontawesome-free-solid/shakable.es';
+import { faEnvelope, faCheck, faExclamationTriangle, faLock, faUser } from '@fortawesome/fontawesome-free-solid/shakable.es';
 
-fontawesome.library.add([faEnvelope, faCheck, faExclamationTriangle, faLock, faUser]);
+fontawesome.library.add([
+    faEnvelope, faCheck, faExclamationTriangle, faLock, faUser,
+]);
 
 export default {
     name: 'Login',
@@ -137,8 +134,7 @@ export default {
             this.isSuccessful = false;
             this.hasErrors = false;
 
-            axios
-                .post('/api/login', { email: this.email, password: this.password })
+            axios.post('/api/login', { email: this.email, password: this.password })
                 .then(({ data }) => {
                     this.loading = false;
                     this.isSuccessful = true;
@@ -148,8 +144,7 @@ export default {
                         this.login();
                         this.$router.push({ path: '/' });
                     }, 200);
-                })
-                .catch(error => {
+                }).catch((error) => {
                     this.loading = false;
                     this.hasErrors = true;
 
@@ -185,4 +180,5 @@ export default {
         },
     },
 };
+
 </script>

@@ -33,6 +33,7 @@
         "laravel-enso/testhelper": "1.4.*",
         "mockery/mockery": "1.*",
         "nunomaduro/collision": "^2.0.0",
+        "phpunit/php-code-coverage": "^6.0",
         "phpunit/phpunit": "^7.0",
         "wnx/laravel-stats": "^1.6"
     },

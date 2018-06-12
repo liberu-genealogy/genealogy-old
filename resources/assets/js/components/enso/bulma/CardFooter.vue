@@ -7,7 +7,9 @@
 </template>
 
 <script>
+
 export default {
     name: 'CardFooter',
 };
+
 </script>

@@ -13,6 +13,7 @@
 </template>
 
 <script>
+
 import { mapState, mapMutations } from 'vuex';
 import Router from '../layout/Router.vue';
 
@@ -27,20 +28,17 @@ export default {
     },
 
     created() {
-        axios
-            .get('/api/meta')
-            .then(({ data }) => {
-                const { meta, i18n } = data;
-                this.setMeta(meta);
-                this.setI18n(i18n);
-                const lang = Object.keys(i18n).shift();
-                this.lang(lang);
+        axios.get('/api/meta').then(({ data }) => {
+            const { meta, i18n } = data;
+            this.setMeta(meta);
+            this.setI18n(i18n);
+            const lang = Object.keys(i18n).shift();
+            this.lang(lang);
 
-                if (!window.location.pathname.includes('/password/reset/')) {
-                    this.$router.push({ name: 'login' });
-                }
-            })
-            .catch(error => this.handleError(error));
+            if (!window.location.pathname.includes('/password/reset/')) {
+                this.$router.push({ name: 'login' });
+            }
+        }).catch(error => this.handleError(error));
     },
 
     methods: {
@@ -49,14 +47,17 @@ export default {
         ...mapMutations('preferences', ['lang']),
     },
 };
+
 </script>
 
 <style>
-.column.login {
-    max-width: 400px;
-}
 
-figure.logo {
-    display: inline-block;
-}
+    .column.login {
+         max-width: 400px;
+    }
+
+    figure.logo {
+        display: inline-block;
+    }
+
 </style>
