@@ -23,7 +23,6 @@
 </template>
 
 <script>
-
 import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
 import Overlay from '../../components/enso/bulma/Overlay.vue';
 
@@ -84,13 +83,10 @@ export default {
         },
     },
 };
-
 </script>
 
 <style>
-
-    .title.inspiring {
-        font-weight: 200;
-    }
-
+.title.inspiring {
+    font-weight: 200;
+}
 </style>

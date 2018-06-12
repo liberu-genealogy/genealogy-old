@@ -13,7 +13,6 @@
 </template>
 
 <script>
-
 import { mapState, mapMutations } from 'vuex';
 import Router from '../Router.vue';
 
@@ -41,17 +40,19 @@ export default {
         ...mapMutations('localisation', ['setI18n']),
         ...mapMutations('preferences', ['lang']),
         init() {
-            axios.get('/api/meta').then(({ data }) => {
-                const { meta, i18n, routes } = data;
-                this.setMeta(meta);
-                this.setI18n(i18n);
-                this.setRoutes(routes);
-                const lang = Object.keys(i18n).shift();
-                this.lang(lang);
-                this.initialised = true;
-            }).catch(error => this.handleError(error));
+            axios
+                .get('/api/meta')
+                .then(({ data }) => {
+                    const { meta, i18n, routes } = data;
+                    this.setMeta(meta);
+                    this.setI18n(i18n);
+                    this.setRoutes(routes);
+                    const lang = Object.keys(i18n).shift();
+                    this.lang(lang);
+                    this.initialised = true;
+                })
+                .catch(error => this.handleError(error));
         },
     },
 };
-
 </script>

@@ -29,7 +29,6 @@
 </template>
 
 <script>
-
 import CheckboxManager from '../../../components/enso/rolemanager/CheckboxManager.vue';
 
 export default {
@@ -48,18 +47,20 @@ export default {
 
     methods: {
         get() {
-            axios.get(route('system.roles.getPermissions', this.roleId))
+            axios
+                .get(route('system.roles.getPermissions', this.roleId))
                 .then(({ data }) => {
                     this.data = data;
-                }).catch(error => this.handleError(error));
+                })
+                .catch(error => this.handleError(error));
         },
         update() {
-            axios.post(
-                route('system.roles.setPermissions', this.roleId),
-                this.postParams(),
-            ).then(({ data }) => {
-                this.$toastr.success(data.message);
-            }).catch(error => this.handleError(error));
+            axios
+                .post(route('system.roles.setPermissions', this.roleId), this.postParams())
+                .then(({ data }) => {
+                    this.$toastr.success(data.message);
+                })
+                .catch(error => this.handleError(error));
         },
         postParams() {
             return {
@@ -69,5 +70,4 @@ export default {
         },
     },
 };
-
 </script>
