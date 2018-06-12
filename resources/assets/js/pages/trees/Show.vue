@@ -1,6 +1,6 @@
 <template>
     <div class="graph">
-        <hierarchical-edge-bundling identifier="id" :data="tree" :links="links" node-text="name" :smargin-x="20" :margin-y="20"/>
+        <hierarchical-edge-bundling identifier="id" :data="tree" :links="links" node-text="name" :margin-x="20" :margin-y="20"/>
     </div>
 </template>
 
@@ -47,7 +47,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .graph .link {
     fill: none;
     stroke: blue;
