@@ -1971,6 +1971,10 @@ css-element-queries@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/css-element-queries/-/css-element-queries-1.0.2.tgz#a32edfee4a5023688ef4d45f402077306d51d44c"
 
+css-element-queries@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/css-element-queries/-/css-element-queries-0.4.0.tgz#cb5bcde9d980ac3699e7471f798e70600088d3de"
+
 css-loader@^0.28.9:
   version "0.28.11"
   resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-0.28.11.tgz#c3f9864a700be2711bb5a2462b2389b1a392dab7"
@@ -2378,7 +2382,7 @@ d3@5.4.0:
     d3-voronoi "1"
     d3-zoom "1"
 
-d3@^4.5.0:
+d3@^4.10.2, d3@^4.5.0:
   version "4.13.0"
   resolved "https://registry.yarnpkg.com/d3/-/d3-4.13.0.tgz#ab236ff8cf0cfc27a81e69bf2fb7518bc9b4f33d"
   dependencies:
@@ -5216,6 +5220,10 @@ lodash.camelcase@^4.3.0:
 lodash.clonedeep@^4.3.2:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
+
+lodash.debounce@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
 
 lodash.defaults@^3.1.2:
   version "3.1.2"
@@ -8561,6 +8569,13 @@ vue-loader@^13.7.1:
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.6.0"
 
+vue-resize-directive@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/vue-resize-directive/-/vue-resize-directive-1.0.1.tgz#8d3d5e44e1b5b850d4c0bda8f1ed063e9d5406e2"
+  dependencies:
+    css-element-queries "^0.4.0"
+    lodash.debounce "^4.0.8"
+
 vue-resize@^0.4.3:
   version "0.4.4"
   resolved "https://registry.yarnpkg.com/vue-resize/-/vue-resize-0.4.4.tgz#dee9b8dd1b189e7e3f6ec47f86c60694a241bb17"
@@ -8597,9 +8612,17 @@ vue-video-player@5.0.2:
     videojs-flash "^2.1.0"
     videojs-hotkeys "^0.2.20"
 
-vue@2.5.16:
+vue@2.5.16, vue@^2.1.0:
   version "2.5.16"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.16.tgz#07edb75e8412aaeed871ebafa99f4672584a0085"
+
+vued3tree@3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/vued3tree/-/vued3tree-3.5.0.tgz#7b2aa959ec7e8cf512b643a591999f7fe4e62268"
+  dependencies:
+    d3 "^4.10.2"
+    vue "^2.1.0"
+    vue-resize-directive "^1.0.0"
 
 vuex@3.0.1:
   version "3.0.1"
