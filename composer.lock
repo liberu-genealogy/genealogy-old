@@ -1485,16 +1485,16 @@
         },
         {
             "name": "laravel-enso/contacts",
-            "version": "2.2.2",
+            "version": "2.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/Contacts.git",
-                "reference": "6224401ca4b6ad335c7e95c61083b49a700c278d"
+                "reference": "8be78b8c81ada59940c3e3c5da3f4c92e2ab123a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/Contacts/zipball/6224401ca4b6ad335c7e95c61083b49a700c278d",
-                "reference": "6224401ca4b6ad335c7e95c61083b49a700c278d",
+                "url": "https://api.github.com/repos/laravel-enso/Contacts/zipball/8be78b8c81ada59940c3e3c5da3f4c92e2ab123a",
+                "reference": "8be78b8c81ada59940c3e3c5da3f4c92e2ab123a",
                 "shasum": ""
             },
             "require": {
@@ -1548,7 +1548,7 @@
                 "contacts",
                 "laravel-enso"
             ],
-            "time": "2018-06-06T12:29:25+00:00"
+            "time": "2018-06-07T06:02:27+00:00"
         },
         {
             "name": "laravel-enso/core",
@@ -2503,16 +2503,16 @@
         },
         {
             "name": "laravel-enso/rolemanager",
-            "version": "2.2.35",
+            "version": "2.2.36",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/RoleManager.git",
-                "reference": "eef98b6c6d352d4f78071f89325bac965ed0e68e"
+                "reference": "d2b7f9018fe3ea1ab3579f1cca7c742669ec1cd7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/RoleManager/zipball/eef98b6c6d352d4f78071f89325bac965ed0e68e",
-                "reference": "eef98b6c6d352d4f78071f89325bac965ed0e68e",
+                "url": "https://api.github.com/repos/laravel-enso/RoleManager/zipball/d2b7f9018fe3ea1ab3579f1cca7c742669ec1cd7",
+                "reference": "d2b7f9018fe3ea1ab3579f1cca7c742669ec1cd7",
                 "shasum": ""
             },
             "require": {
@@ -2564,7 +2564,7 @@
                 "role-manager",
                 "rolemanager"
             ],
-            "time": "2018-06-11T05:17:18+00:00"
+            "time": "2018-06-11T09:26:00+00:00"
         },
         {
             "name": "laravel-enso/select",
