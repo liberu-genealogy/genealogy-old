@@ -33,7 +33,6 @@
 </template>
 
 <script>
-
 import fontawesome from '@fortawesome/fontawesome';
 import { faCopy } from '@fortawesome/fontawesome-free-solid/shakable.es';
 import Card from '../bulma/Card.vue';
@@ -47,7 +46,10 @@ export default {
     name: 'DocumentsCard',
 
     components: {
-        Card, CardControl, Documents, FileUploader,
+        Card,
+        CardControl,
+        Documents,
+        FileUploader,
     },
 
     props: {
@@ -96,14 +98,11 @@ export default {
         },
     },
 };
-
 </script>
 
 <style scoped>
-
-    .wrapper {
-        max-height: 500px;
-        overflow-y: auto;
-    }
-
+.wrapper {
+    max-height: 500px;
+    overflow-y: auto;
+}
 </style>

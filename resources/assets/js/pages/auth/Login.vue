@@ -8,7 +8,6 @@
 </template>
 
 <script>
-
 import { mapMutations } from 'vuex';
 import AuthForm from './AuthForm.vue';
 
@@ -31,5 +30,4 @@ export default {
         },
     },
 };
-
 </script>
