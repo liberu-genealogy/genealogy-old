@@ -28,3 +28,12 @@ services:
       - ./:/application:cached
     depends_on:
       - genealogy-server
+
+   neo4j:
+      image: neo4j:latest
+      ports:
+        - "7474:7474"
+      volumes:
+        - ./db/dbms:/data/dbms
+      depends_on:
+        - genealogy-server
