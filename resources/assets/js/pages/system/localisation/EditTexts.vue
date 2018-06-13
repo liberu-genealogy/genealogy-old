@@ -129,7 +129,6 @@
 </template>
 
 <script>
-
 import { mapState } from 'vuex';
 import fontawesome from '@fortawesome/fontawesome';
 import { faSearch, faTrashAlt } from '@fortawesome/fontawesome-free-solid/shakable.es';
@@ -190,12 +189,10 @@ export default {
 
             const self = this;
 
-            return this.langKeys.filter(key => key.toLowerCase()
-                .indexOf(self.query.toLowerCase()) > -1);
+            return this.langKeys.filter(key => key.toLowerCase().indexOf(self.query.toLowerCase()) > -1);
         },
         isNewKey() {
-            return this.selectedLocale &&
-                this.query && this.filteredKeys.indexOf(this.query) === -1;
+            return this.selectedLocale && this.query && this.filteredKeys.indexOf(this.query) === -1;
         },
         keysCount() {
             return this.langKeys.length;
@@ -223,11 +220,13 @@ export default {
         init() {
             this.loading = true;
 
-            axios.get(route('system.localisation.editTexts'))
+            axios
+                .get(route('system.localisation.editTexts'))
                 .then(({ data }) => {
                     this.loading = false;
                     this.locales = data;
-                }).catch(error => this.handleError(error));
+                })
+                .catch(error => this.handleError(error));
         },
         getLangFile() {
             if (!this.selectedLocale) {
@@ -238,27 +237,38 @@ export default {
 
             this.loading = true;
 
-            axios.get(route('system.localisation.getLangFile', {
-                subDir: this.subDir,
-                language: this.selectedLocale,
-            })).then(({ data }) => {
-                this.loading = false;
-                this.langFile = data;
-                this.updateOriginal();
-            }).catch(error => this.handleError(error));
+            axios
+                .get(
+                    route('system.localisation.getLangFile', {
+                        subDir: this.subDir,
+                        language: this.selectedLocale,
+                    })
+                )
+                .then(({ data }) => {
+                    this.loading = false;
+                    this.langFile = data;
+                    this.updateOriginal();
+                })
+                .catch(error => this.handleError(error));
         },
         saveLangFile() {
             this.loading = true;
 
-            axios.patch(route('system.localisation.saveLangFile', {
-                subDir: this.subDir,
-                language: this.selectedLocale,
-            }), {
-                langFile: this.langFile,
-            }).then(({ data }) => {
-                this.loading = false;
-                this.$toastr.success(data.message);
-            }).catch((error) => this.handleError(error));
+            axios
+                .patch(
+                    route('system.localisation.saveLangFile', {
+                        subDir: this.subDir,
+                        language: this.selectedLocale,
+                    }),
+                    {
+                        langFile: this.langFile,
+                    }
+                )
+                .then(({ data }) => {
+                    this.loading = false;
+                    this.$toastr.success(data.message);
+                })
+                .catch(error => this.handleError(error));
         },
         addKey() {
             this.$set(this.langFile, this.query, null);
@@ -283,25 +293,24 @@ export default {
             this.originalLangFile = JSON.parse(JSON.stringify(this.langFile));
         },
         merge() {
-            axios.patch(route('system.localisation.merge'))
+            axios
+                .patch(route('system.localisation.merge'))
                 .then(({ data }) => {
                     this.loading = false;
                     this.$toastr.success(data.message);
-                }).catch((error) => {
+                })
+                .catch(error => {
                     this.loading = false;
                     this.handleError(error);
                 });
         },
     },
 };
-
 </script>
 
 <style>
-
-    .has-shadow-bottom {
-        -webkit-box-shadow: 0px 3px 5px -4px lightgray;
-        box-shadow: 0px 3px 5px -4px lightgray;
-    }
-
+.has-shadow-bottom {
+    -webkit-box-shadow: 0px 3px 5px -4px lightgray;
+    box-shadow: 0px 3px 5px -4px lightgray;
+}
 </style>

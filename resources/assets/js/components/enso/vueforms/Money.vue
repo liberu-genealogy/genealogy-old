@@ -109,9 +109,7 @@ export default {
         update(event) {
             let value = event.target.value.split(this.decimal).join('.');
 
-            value = this.isNumeric
-                ? this.round(value)
-                : this.round(value).toFixed(this.precision);
+            value = this.isNumeric ? this.round(value) : this.round(value).toFixed(this.precision);
 
             this.$emit('input', value);
         },
@@ -121,5 +119,4 @@ export default {
         },
     },
 };
-
 </script>

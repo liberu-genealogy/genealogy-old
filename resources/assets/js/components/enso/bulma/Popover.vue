@@ -26,7 +26,6 @@
 </template>
 
 <script>
-
 import { VPopover } from 'v-tooltip';
 import fontawesome from '@fortawesome/fontawesome';
 import { faCheck, faTimes } from '@fortawesome/fontawesome-free-solid/shakable.es';
@@ -34,8 +33,18 @@ import { faCheck, faTimes } from '@fortawesome/fontawesome-free-solid/shakable.e
 fontawesome.library.add(faCheck, faTimes);
 
 const positions = [
-    'top', 'top-start', 'top-end', 'right', 'right-start', 'right-end', 'bottom', 'bottom-start',
-    'bottom-end', 'left', 'left-start', 'left-end',
+    'top',
+    'top-start',
+    'top-end',
+    'right',
+    'right-start',
+    'right-end',
+    'bottom',
+    'bottom-start',
+    'bottom-end',
+    'left',
+    'left-start',
+    'left-end',
 ];
 
 const triggers = ['hover', 'click', 'focus', 'manual'];
@@ -65,8 +74,5 @@ export default {
             default: false,
         },
     },
-
-
 };
-
 </script>

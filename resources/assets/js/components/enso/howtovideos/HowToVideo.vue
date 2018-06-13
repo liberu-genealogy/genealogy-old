@@ -86,7 +86,6 @@
 </template>
 
 <script>
-
 import { VTooltip } from 'v-tooltip';
 import { videoPlayer } from 'vue-video-player';
 import 'video.js/dist/video-js.css';
@@ -107,7 +106,11 @@ export default {
     directives: { tooltip: VTooltip },
 
     components: {
-        Card, CardControl, Popover, videoPlayer, FileUploader,
+        Card,
+        CardControl,
+        Popover,
+        videoPlayer,
+        FileUploader,
     },
 
     props: {
@@ -132,8 +135,7 @@ export default {
             return route('howTo.posters.store');
         },
         tagList() {
-            return this.tags.filter(({ id }) =>
-                this.video.tagList.includes(id));
+            return this.tags.filter(({ id }) => this.video.tagList.includes(id));
         },
     },
 
@@ -144,29 +146,33 @@ export default {
                 language: 'en',
                 playbackRates: [0.7, 1.0, 1.5, 2.0],
                 aspectRatio: '16:9',
-                sources: [{
-                    type: 'video/mp4',
-                    src: route('howTo.videos.show', this.video.id),
-                }],
-                poster: this.video.poster_saved_name
-                    ? route('howTo.posters.show', this.video.id)
-                    : '',
+                sources: [
+                    {
+                        type: 'video/mp4',
+                        src: route('howTo.videos.show', this.video.id),
+                    },
+                ],
+                poster: this.video.poster_saved_name ? route('howTo.posters.show', this.video.id) : '',
             };
         },
         destroyPoster() {
-            axios.delete(route('howTo.posters.destroy', this.video.id))
+            axios
+                .delete(route('howTo.posters.destroy', this.video.id))
                 .then(({ data }) => {
                     this.$toastr.success(data.message);
                     this.video.poster_saved_name = null;
                     this.video.poster_original_name = null;
-                }).catch(error => this.handleError(error));
+                })
+                .catch(error => this.handleError(error));
         },
         destroyVideo() {
-            axios.delete(route('howTo.videos.destroy', this.video.id))
+            axios
+                .delete(route('howTo.videos.destroy', this.video.id))
                 .then(({ data }) => {
                     this.$toastr.success(data.message);
                     this.$emit('delete');
-                }).catch(error => this.handleError(error));
+                })
+                .catch(error => this.handleError(error));
         },
         removeTag(tag) {
             const index = this.video.tagList.findIndex(id => id === tag.id);
@@ -174,15 +180,12 @@ export default {
         },
     },
 };
-
 </script>
 
 <style lang="scss" scoped>
-
-    .card-footer {
-        white-space: nowrap;
-        overflow: auto;
-        text-overflow: ellipsis;
-    }
-
+.card-footer {
+    white-space: nowrap;
+    overflow: auto;
+    text-overflow: ellipsis;
+}
 </style>
