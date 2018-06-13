@@ -218,18 +218,12 @@
 </template>
 
 <script>
+
 import { VTooltip } from 'v-tooltip';
 import fontawesome from '@fortawesome/fontawesome';
 import {
-    faUpload,
-    faDownload,
-    faTrashAlt,
-    faFileExcel,
-    faCalendarAlt,
-    faClock,
-    faCheck,
-    faTimes,
-    faBook,
+    faUpload, faDownload, faTrashAlt, faFileExcel,
+    faCalendarAlt, faClock, faCheck, faTimes, faBook,
 } from '@fortawesome/fontawesome-free-solid/shakable.es';
 import VueSelect from '../../components/enso/select/VueSelect.vue';
 import VueTable from '../../components/enso/vuedatatable/VueTable.vue';
@@ -242,28 +236,13 @@ import Tabs from '../../components/enso/bulma/Tabs.vue';
 import Tab from '../../components/enso/bulma/Tab.vue';
 
 fontawesome.library.add([
-    faUpload,
-    faDownload,
-    faTrashAlt,
-    faFileExcel,
-    faCalendarAlt,
-    faClock,
-    faCheck,
-    faTimes,
-    faBook,
+    faUpload, faDownload, faTrashAlt, faFileExcel,
+    faCalendarAlt, faClock, faCheck, faTimes, faBook,
 ]);
 
 export default {
     components: {
-        VueSelect,
-        VueTable,
-        FileUploader,
-        Card,
-        Modal,
-        Overlay,
-        Tabs,
-        Tab,
-        Paginate,
+        VueSelect, VueTable, FileUploader, Card, Modal, Overlay, Tabs, Tab, Paginate,
     },
 
     directives: { tooltip: VTooltip },
@@ -283,13 +262,16 @@ export default {
 
     computed: {
         templateLink() {
-            return this.importType && route('import.uploadTemplate', this.importType);
+            return this.importType
+                && route('import.uploadTemplate', this.importType);
         },
         downloadLink() {
-            return this.template && route('import.downloadTemplate', this.template.id);
+            return this.template
+                && route('import.downloadTemplate', this.template.id);
         },
         importLink() {
-            return this.importType && route('import.run', this.importType);
+            return this.importType
+                && route('import.run', this.importType);
         },
         icon() {
             return faBook;
@@ -297,12 +279,10 @@ export default {
     },
 
     created() {
-        axios
-            .get(route('import.index'))
+        axios.get(route('import.index'))
             .then(({ data }) => {
                 this.importTypes = data.importTypes;
-            })
-            .catch(error => this.handleError(error));
+            }).catch(error => this.handleError(error));
     },
 
     methods: {
@@ -313,28 +293,24 @@ export default {
 
             this.loadingTemplate = true;
 
-            axios
-                .get(route('import.getTemplate', this.importType))
+            axios.get(route('import.getTemplate', this.importType))
                 .then(({ data }) => {
                     this.template = data;
                     this.loadingTemplate = false;
-                })
-                .catch(error => {
+                }).catch((error) => {
                     this.loadingTemplate = false;
                     this.handleError(error);
                 });
         },
         deleteTemplate(id) {
             this.loadingTemplate = true;
-            axios
-                .delete(route('import.deleteTemplate', id))
+            axios.delete(route('import.deleteTemplate', id))
                 .then(({ data }) => {
                     this.template = null;
                     this.modal = false;
                     this.$toastr.success(data.message);
                     this.loadingTemplate = false;
-                })
-                .catch(error => {
+                }).catch((error) => {
                     this.modal = false;
                     this.loadingTemplate = false;
                     this.handleError(error);
@@ -343,8 +319,7 @@ export default {
         getSummary(row) {
             this.loading = true;
 
-            axios
-                .get(route('import.getSummary', row.dtRowId))
+            axios.get(route('import.getSummary', row.dtRowId))
                 .then(({ data }) => {
                     this.loading = false;
 
@@ -354,25 +329,27 @@ export default {
                     }
 
                     this.summary = data;
-                })
-                .catch(error => this.handleError(error));
+                }).catch(error => this.handleError(error));
         },
     },
 };
+
 </script>
 
 <style lang="scss" scoped>
-ul.issues {
-    list-style-type: square;
 
-    li {
-        cursor: pointer;
-        width: fit-content;
-        padding: 0.2em;
+    ul.issues {
+        list-style-type: square;
 
-        &:hover {
-            background: lightgray;
+        li {
+            cursor: pointer;
+            width: fit-content;
+            padding: 0.2em;
+
+            &:hover {
+                background: lightgray;
+            }
         }
     }
-}
+
 </style>

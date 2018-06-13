@@ -12,6 +12,7 @@
 </template>
 
 <script>
+
 import VueSelect from './VueSelect.vue';
 
 export default {
@@ -30,10 +31,13 @@ export default {
         },
     },
 };
+
 </script>
 
 <style scoped>
-.vue-filter {
-    padding: 0.5rem;
-}
+
+    .vue-filter {
+        padding: 0.5rem;
+    }
+
 </style>

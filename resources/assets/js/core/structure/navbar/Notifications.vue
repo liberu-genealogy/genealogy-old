@@ -67,6 +67,7 @@
 </template>
 
 <script>
+
 import debounce from 'lodash/debounce';
 import { mapState } from 'vuex';
 import vClickOutside from 'v-click-outside';
@@ -134,12 +135,10 @@ export default {
             this.show = false;
         },
         getCount() {
-            axios
-                .get(route('core.notifications.getCount'))
+            axios.get(route('core.notifications.getCount'))
                 .then(({ data }) => {
                     this.unreadCount = data;
-                })
-                .catch(error => this.handleError(error));
+                }).catch(error => this.handleError(error));
         },
         getData() {
             if (!this.needsUpdate || this.loading) {
@@ -148,47 +147,42 @@ export default {
 
             this.loading = true;
 
-            axios
-                .get(route('core.notifications.getList', [this.offset, this.limit]))
-                .then(({ data }) => {
-                    this.notifications = this.offset ? this.notifications.concat(data) : data;
-                    this.offset = this.notifications.length;
-                    this.needsUpdate = false;
-                    this.loading = false;
-                })
-                .catch(error => this.handleError(error));
+            axios.get(route(
+                'core.notifications.getList',
+                [this.offset, this.limit],
+            )).then(({ data }) => {
+                this.notifications = this.offset ? this.notifications.concat(data) : data;
+                this.offset = this.notifications.length;
+                this.needsUpdate = false;
+                this.loading = false;
+            }).catch(error => this.handleError(error));
         },
         markAsRead(notification) {
-            axios
-                .patch(route('core.notifications.markAsRead', notification.id))
+            axios.patch(route('core.notifications.markAsRead', notification.id))
                 .then(({ data }) => {
-                    this.unreadCount = this.unreadCount > 0 ? --this.unreadCount : this.unreadCount; // fixme
+                    this.unreadCount = this.unreadCount > 0
+                        ? --this.unreadCount
+                        : this.unreadCount; // fixme
 
                     notification.read_at = data.read_at;
                     this.$router.push({ path: notification.data.path });
-                })
-                .catch(error => this.handleError(error));
+                }).catch(error => this.handleError(error));
         },
         markAllAsRead() {
-            axios
-                .patch(route('core.notifications.markAllAsRead'))
+            axios.patch(route('core.notifications.markAllAsRead'))
                 .then(() => {
-                    this.notifications.forEach(notification => {
+                    this.notifications.forEach((notification) => {
                         notification.read_at = notification.read_at || format(new Date(), 'Y-MM-DD H:mm:s');
                     });
 
                     this.unreadCount = 0;
-                })
-                .catch(error => this.handleError(error));
+                }).catch(error => this.handleError(error));
         },
         clearAll() {
-            axios
-                .patch(route('core.notifications.clearAll'))
-                .then(() => {
-                    this.notifications = [];
-                    this.unreadCount = 0;
-                })
-                .catch(error => this.handleError(error));
+            axios.patch(route('core.notifications.clearAll')).then(() => {
+                this.notifications = [];
+                this.unreadCount = 0;
+            }).catch(error => this.handleError(error));
         },
         init() {
             this.Echo = new Echo({
@@ -200,7 +194,7 @@ export default {
         },
         listen() {
             const self = this;
-            this.Echo.private(`App.User.${this.user.id}`).notification(notification => {
+            this.Echo.private(`App.User.${this.user.id}`).notification((notification) => {
                 self.unreadCount++;
                 self.needsUpdate = true;
                 self.offset = 0;
@@ -221,24 +215,27 @@ export default {
         },
     },
 };
+
 </script>
 
 <style>
-sup.notification-count {
-    font-size: 0.75em;
-    margin-top: -10px;
-}
 
-div.notification-list {
-    width: 300px;
-    overflow-x: hidden;
-    max-height: 400px;
-    overflow-y: auto;
-}
+    sup.notification-count {
+        font-size: 0.75em;
+        margin-top: -10px;
+    }
 
-p.is-notification {
-    white-space: normal;
-    width: 268px;
-    overflow-x: hidden;
-}
+    div.notification-list {
+        width: 300px;
+        overflow-x: hidden;
+        max-height: 400px;
+        overflow-y: auto;
+    }
+
+    p.is-notification {
+        white-space: normal;
+        width: 268px;
+        overflow-x: hidden;
+    }
+
 </style>

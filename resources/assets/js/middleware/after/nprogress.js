@@ -5,3 +5,4 @@ export default () => {
         router.app.$nprogress.stopRouting();
     }
 };
+

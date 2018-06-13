@@ -34,6 +34,7 @@
 </template>
 
 <script>
+
 import zxcvbn from 'zxcvbn';
 import AuthForm from '../AuthForm.vue';
 
@@ -44,8 +45,11 @@ export default {
 
     methods: {
         score(hasPassword, password) {
-            return hasPassword ? zxcvbn(password).score : 6;
+            return hasPassword
+                ? zxcvbn(password).score
+                : 6;
         },
     },
 };
+
 </script>

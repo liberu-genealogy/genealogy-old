@@ -33,15 +33,11 @@ export default {
                 this.mount('danger', message, title, duration);
             },
             mount(type, message, title, duration = defaults.duration) {
-                new Toastr({
+                (new Toastr({
                     propsData: {
-                        ...defaults,
-                        type,
-                        message,
-                        title,
-                        duration,
+                        ...defaults, type, message, title, duration,
                     },
-                }).$mount();
+                })).$mount();
             },
         };
     },

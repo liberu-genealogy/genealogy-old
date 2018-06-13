@@ -25,6 +25,7 @@
 </template>
 
 <script>
+
 import formatDistance from '../../../modules/enso/plugins/date-fns/formatDistance';
 import '../../../modules/enso/directives/hljs';
 
@@ -37,12 +38,10 @@ export default {
     },
 
     created() {
-        axios
-            .get(route('system.logs.show', this.$route.params.id))
+        axios.get(route('system.logs.show', this.$route.params.id))
             .then(({ data }) => {
                 this.log = data;
-            })
-            .catch(error => this.handleError(error));
+            }).catch(error => this.handleError(error));
     },
 
     methods: {
@@ -51,7 +50,7 @@ export default {
         },
     },
 };
+
 </script>
 
-<style src="highlight.js/styles/atom-one-light.css">
-</style>
+<style src="highlight.js/styles/atom-one-light.css"></style>
