@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Enums;
 
 use LaravelEnso\Helpers\app\Classes\Enum;
