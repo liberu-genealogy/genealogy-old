@@ -29,11 +29,12 @@ services:
     depends_on:
       - genealogy-server
 
-   neo4j:
-      image: neo4j:latest@sha256:b037bf59676cb8d4a1e105e33a6155ce09933e63ef1217730f1cba6ae1300dd2
-      ports:
-        - "7474:7474"
-      volumes:
-        - ./db/dbms:/data/dbms
-      depends_on:
-        - genealogy-server
+  neo4j:
+    image: neo4j:latest@sha256:b037bf59676cb8d4a1e105e33a6155ce09933e63ef1217730f1cba6ae1300dd2
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - ./db/dbms:/data/dbms
+    depends_on:
+      - genealogy-server
