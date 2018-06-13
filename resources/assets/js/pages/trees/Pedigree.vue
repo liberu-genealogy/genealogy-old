@@ -42,7 +42,7 @@ svg {
 }
 </style>
 <script>
-import * as d3 from 'd3';
+import * as d3 from 'd3-dtree/node_modules/d3';
 import dTree from 'd3-dtree';
 import lodash from 'lodash';
 
@@ -57,7 +57,7 @@ export default {
     mounted() {
         axios
             .get(route('trees.pedigree'))
-            .then(response => {
+            .then((response) => {
                 this.data = response.data;
             })
             .catch(error => this.handleError(error));
