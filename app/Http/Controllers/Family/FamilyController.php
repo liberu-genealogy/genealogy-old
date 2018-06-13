@@ -7,6 +7,7 @@ use App\Forms\Builders\FamilyForm;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ValidateFamilyRequest;
 use App\Individual;
+use App\Person;
 
 class FamilyController extends Controller
 {
@@ -68,9 +69,22 @@ class FamilyController extends Controller
         $individuals = Individual::findOrFail($father_id);
         $individuals->parents()->attach($individualsList);
 
+
         $individuals = Individual::findOrFail($mother_id);
         $individuals->parents()->attach($individualsList);
         Individual::find($mother_id)->families()->attach($family->id, ['type_id' => 2]);
+
+        $father = Person::find($father_id);
+        $mother = Person::find($mother_id);
+
+        foreach ($individualsList as $individual)
+        {
+            $person = Person::find($individual->id);
+            $person->father()->attach($father);
+            $person->mother()->attach($mother);
+        }
+
+
 
         return ['message' => __('The Family was successfully updated')];
     }
