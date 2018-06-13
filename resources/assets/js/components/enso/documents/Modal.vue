@@ -25,7 +25,6 @@
 </template>
 
 <script>
-
 import fontawesome from '@fortawesome/fontawesome';
 import { faCopy } from '@fortawesome/fontawesome-free-solid/shakable.es';
 import Modal from '../../../components/enso/bulma/Modal.vue';
@@ -54,5 +53,4 @@ export default {
         },
     },
 };
-
 </script>

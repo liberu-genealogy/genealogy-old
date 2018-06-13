@@ -80,12 +80,10 @@
 </template>
 
 <script>
-
 import debounce from 'lodash/debounce';
 import vClickOutside from 'v-click-outside';
 import fontawesome from '@fortawesome/fontawesome';
-import { faCheck, faAngleUp }
-    from '@fortawesome/fontawesome-free-solid/shakable.es';
+import { faCheck, faAngleUp } from '@fortawesome/fontawesome-free-solid/shakable.es';
 import Tag from './Tag.vue';
 
 fontawesome.library.add([faCheck, faAngleUp]);
@@ -178,9 +176,7 @@ export default {
         i18n: {
             type: Function,
             default(key) {
-                return Object.keys(this.$options.methods).includes('__')
-                    ? this.__(key)
-                    : key;
+                return Object.keys(this.$options.methods).includes('__') ? this.__(key) : key;
             },
         },
         debounce: {
@@ -206,26 +202,23 @@ export default {
         },
         filteredOptions() {
             return this.query
-                ? this.optionList.filter(option =>
-                    option[this.label].toLowerCase()
-                        .indexOf(this.query.toLowerCase()) >= 0)
+                ? this.optionList.filter(
+                      option => option[this.label].toLowerCase().indexOf(this.query.toLowerCase()) >= 0
+                  )
                 : this.optionList;
         },
         hasSelection() {
-            return (this.multiple && this.value.length !== 0)
-                || (!this.multiple && this.value !== null);
+            return (this.multiple && this.value.length !== 0) || (!this.multiple && this.value !== null);
         },
         selected() {
             if (this.optionList.length === 0) {
                 return null;
             }
             if (!this.multiple) {
-                return this.optionList.find(option =>
-                    option[this.trackBy] === this.value)[this.label];
+                return this.optionList.find(option => option[this.trackBy] === this.value)[this.label];
             }
 
-            return this.optionList.filter(option =>
-                this.value.includes(option[this.trackBy]));
+            return this.optionList.filter(option => this.value.includes(option[this.trackBy]));
         },
     },
 
@@ -268,9 +261,7 @@ export default {
                 return;
             }
 
-            this.route = typeof route === 'function'
-                ? route(this.source)
-                : this.source;
+            this.route = typeof route === 'function' ? route(this.source) : this.source;
         },
         getData() {
             if (!this.isServerSide) {
@@ -279,11 +270,13 @@ export default {
 
             this.loading = true;
 
-            axios.get(this.route, { params: this.getParams() })
-                .then((response) => {
+            axios
+                .get(this.route, { params: this.getParams() })
+                .then(response => {
                     this.processOptions(response);
                     this.loading = false;
-                }).catch(error => this.handleError(error));
+                })
+                .catch(error => this.handleError(error));
         },
         getParams() {
             return {
@@ -304,13 +297,13 @@ export default {
         },
         valueIsMatched() {
             if (!this.multiple) {
-                return this.optionList
-                    .filter(option => option[this.trackBy] === this.value).length > 0;
+                return this.optionList.filter(option => option[this.trackBy] === this.value).length > 0;
             }
 
-            return this.optionList.filter(option =>
-                this.value
-                    .filter(val => val === option[this.trackBy]).length > 0).length > 0;
+            return (
+                this.optionList.filter(option => this.value.filter(val => val === option[this.trackBy]).length > 0)
+                    .length > 0
+            );
         },
         showDropdown() {
             if (this.optionList.length === 0 || this.disabled) {
@@ -359,8 +352,7 @@ export default {
             return label.replace(new RegExp(`(${this.query})`, 'gi'), '<b>$1</b>');
         },
         remove(value) {
-            const index = this.value
-                .findIndex(val => val === value);
+            const index = this.value.findIndex(val => val === value);
             this.value.splice(index, 1);
         },
         isSelected(option) {
@@ -369,15 +361,15 @@ export default {
                 : this.value !== null && this.value === option[this.trackBy];
         },
         keyDown() {
-            if (this.filteredOptions.length === 0
-                || this.loading
-                || this.position === this.filteredOptions.length - 1) {
+            if (
+                this.filteredOptions.length === 0 ||
+                this.loading ||
+                this.position === this.filteredOptions.length - 1
+            ) {
                 return;
             }
 
-            this.position = this.position !== null
-                ? ++this.position
-                : 0;
+            this.position = this.position !== null ? ++this.position : 0;
 
             this.scroll();
         },
@@ -394,7 +386,7 @@ export default {
             const option = this.optionSelector();
 
             if (option.offsetTop < dropdown.scrollTop) {
-                dropdown.scrollTop -= (dropdown.scrollTop - option.offsetTop);
+                dropdown.scrollTop -= dropdown.scrollTop - option.offsetTop;
                 return;
             }
 
@@ -402,7 +394,7 @@ export default {
             const optionBottom = option.offsetTop + option.clientHeight;
 
             if (optionBottom > dropdownBottom) {
-                dropdown.scrollTop += (optionBottom - dropdownBottom);
+                dropdown.scrollTop += optionBottom - dropdownBottom;
             }
         },
         dropdownSelector() {
@@ -413,127 +405,124 @@ export default {
         },
     },
 };
-
 </script>
 
 <style lang="scss" scoped>
+.icon.angle {
+    transition: transform 0.3s ease;
 
-    .icon.angle {
-        transition: transform .300s ease;
-
-        &[aria-hidden="true"] {
-            transform: rotate(180deg);
-        }
+    &[aria-hidden='true'] {
+        transform: rotate(180deg);
     }
+}
 
-    .dropdown {
-        position: relative;
+.dropdown {
+    position: relative;
+    width: 100%;
+
+    .dropdown-trigger {
         width: 100%;
 
-        .dropdown-trigger {
-            width: 100%;
-
-            &.is-danger {
-                .button {
-                    border-color: #e50800;
-                    border-top-color: rgb(229, 8, 0);
-                    border-right-color: rgb(229, 8, 0);
-                    border-bottom-color: rgb(229, 8, 0);
-                    border-left-color: rgb(229, 8, 0);
-                }
-            }
-
+        &.is-danger {
             .button {
-                justify-content: flex-start;
-                width: 100%;
-                min-height: 2.25em;
-                height: auto;
-                align-items: baseline;
-                padding: calc(.375em - 1px) calc(.625em - 1px);
-                padding-top: calc(0.375em - 1px);
-                padding-right: calc(0.625em - 1px);
-                padding-bottom: calc(0.375em - 1px);
-                padding-left: calc(0.625em - 1px);
-
-                .select-value {
-                    max-width: calc(100% - 2.5em);
-                    white-space: normal;
-                    text-align: left;
-
-                    .select-input {
-                        border: 0;
-                        height: 1.5em;
-                        box-shadow: unset;
-                        -webkit-box-shadow: unset;
-                        width: fit-content;
-                        padding: unset;
-                    }
-
-                    .angle {
-                        position: absolute;
-                        top: 0.25rem;
-                        right: 0.6rem;
-                    }
-
-                    .delete {
-                        position: absolute;
-                        right: 1.7rem;
-                        top: 0.55rem;
-                    }
-
-                    .is-loading {
-                        -webkit-animation: spinAround .5s infinite linear;
-                        animation: spinAround .5s infinite linear;
-                        border: 2px solid #dbdbdb;
-                        border-radius: 290486px;
-                        border-right-color: transparent;
-                        border-top-color: transparent;
-                        content: "";
-                        display: block;
-                        height: 1em;
-                        position: relative;
-                        width: 1em;
-                        position: absolute!important;
-                        right: 1.7rem;
-                        top: .55em;
-                        z-index: 4;
-                    }
-                }
+                border-color: #e50800;
+                border-top-color: rgb(229, 8, 0);
+                border-right-color: rgb(229, 8, 0);
+                border-bottom-color: rgb(229, 8, 0);
+                border-left-color: rgb(229, 8, 0);
             }
         }
 
-        .control {
+        .button {
+            justify-content: flex-start;
             width: 100%;
-        }
+            min-height: 2.25em;
+            height: auto;
+            align-items: baseline;
+            padding: calc(0.375em - 1px) calc(0.625em - 1px);
+            padding-top: calc(0.375em - 1px);
+            padding-right: calc(0.625em - 1px);
+            padding-bottom: calc(0.375em - 1px);
+            padding-left: calc(0.625em - 1px);
 
-        .dropdown-menu {
-            width: 100%;
+            .select-value {
+                max-width: calc(100% - 2.5em);
+                white-space: normal;
+                text-align: left;
 
-            .dropdown-content {
-                max-height: 13rem;
-                overflow-y: auto;
+                .select-input {
+                    border: 0;
+                    height: 1.5em;
+                    box-shadow: unset;
+                    -webkit-box-shadow: unset;
+                    width: fit-content;
+                    padding: unset;
+                }
 
-                a.dropdown-item {
-                    text-overflow: ellipsis;
-                    overflow-x: hidden;
-                    padding-right: 2rem;
+                .angle {
+                    position: absolute;
+                    top: 0.25rem;
+                    right: 0.6rem;
+                }
 
-                    .label.tag {
-                        position: absolute;
-                        padding: 0.3rem;
-                        height: 1.3rem;
-                        z-index: 1;
-                        right: 1rem;
-                    }
+                .delete {
+                    position: absolute;
+                    right: 1.7rem;
+                    top: 0.55rem;
+                }
 
-                    .icon.selected {
-                        position: absolute;
-                        z-index: 1;
-                        right: 1rem;
-                    }
+                .is-loading {
+                    -webkit-animation: spinAround 0.5s infinite linear;
+                    animation: spinAround 0.5s infinite linear;
+                    border: 2px solid #dbdbdb;
+                    border-radius: 290486px;
+                    border-right-color: transparent;
+                    border-top-color: transparent;
+                    content: '';
+                    display: block;
+                    height: 1em;
+                    position: relative;
+                    width: 1em;
+                    position: absolute !important;
+                    right: 1.7rem;
+                    top: 0.55em;
+                    z-index: 4;
                 }
             }
         }
     }
 
+    .control {
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        width: 100%;
+
+        .dropdown-content {
+            max-height: 13rem;
+            overflow-y: auto;
+
+            a.dropdown-item {
+                text-overflow: ellipsis;
+                overflow-x: hidden;
+                padding-right: 2rem;
+
+                .label.tag {
+                    position: absolute;
+                    padding: 0.3rem;
+                    height: 1.3rem;
+                    z-index: 1;
+                    right: 1rem;
+                }
+
+                .icon.selected {
+                    position: absolute;
+                    z-index: 1;
+                    right: 1rem;
+                }
+            }
+        }
+    }
+}
 </style>
