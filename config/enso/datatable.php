@@ -23,7 +23,7 @@ return [
      */
 
     'labels' => [
-        'crtNo'   => '#',
+        'crtNo' => '#',
         'actions' => 'Actions',
     ],
 
@@ -55,66 +55,66 @@ return [
     'buttons' => [
         'global' => [
             'create' => [
-                'icon'        => 'plus',
-                'class'       => 'is-success',
+                'icon' => 'plus',
+                'class' => 'is-success',
                 'routeSuffix' => 'create',
-                'event'       => 'create',
-                'action'      => 'router',
-                'label'       => 'Create',
+                'event' => 'create',
+                'action' => 'router',
+                'label' => 'Create',
             ],
             'excel' => [
-                'icon'        => 'file-excel',
-                'class'       => null,
+                'icon' => 'file-excel',
+                'class' => null,
                 'routeSuffix' => 'exportExcel',
-                'event'       => 'export-excel',
-                'action'      => 'export',
-                'label'       => 'Excel',
+                'event' => 'export-excel',
+                'action' => 'export',
+                'label' => 'Excel',
             ],
             'action' => [
-                'icon'         => 'check',
-                'class'        => null,
-                'routeSuffix'  => 'create',
-                'event'        => 'custom-action',
-                'postEvent'    => 'custom-action-done',
-                'action'       => 'ajax',
-                'method'       => 'PATCH',
-                'label'        => 'Action',
-                'message'      => 'Custom Action. Are you sure?',
+                'icon' => 'check',
+                'class' => null,
+                'routeSuffix' => 'action',
+                'event' => 'custom-action',
+                'postEvent' => 'custom-action-done',
+                'action' => 'ajax',
+                'method' => 'PATCH',
+                'label' => 'Action',
+                'message' => 'Custom Action. Are you sure?',
                 'confirmation' => true,
             ],
         ],
         'row' => [
             'show' => [
-                'icon'        => 'eye',
-                'class'       => 'is-success',
+                'icon' => 'eye',
+                'class' => 'is-success',
                 'routeSuffix' => 'show',
-                'event'       => 'show',
-                'action'      => 'router',
+                'event' => 'show',
+                'action' => 'router',
             ],
             'edit' => [
-                'icon'        => 'pencil-alt',
-                'class'       => 'is-warning',
+                'icon' => 'pencil-alt',
+                'class' => 'is-warning',
                 'routeSuffix' => 'edit',
-                'event'       => 'edit',
-                'action'      => 'router',
+                'event' => 'edit',
+                'action' => 'router',
             ],
             'destroy' => [
-                'icon'         => 'trash-alt',
-                'class'        => 'is-danger',
-                'routeSuffix'  => 'destroy',
-                'event'        => 'destroy',
-                'action'       => 'ajax',
-                'method'       => 'DELETE',
-                'message'      => 'The selected record is about to be deleted. Are you sure?',
+                'icon' => 'trash-alt',
+                'class' => 'is-danger',
+                'routeSuffix' => 'destroy',
+                'event' => 'destroy',
+                'action' => 'ajax',
+                'method' => 'DELETE',
+                'message' => 'The selected record is about to be deleted. Are you sure?',
                 'confirmation' => true,
-                'postEvent'    => 'destroyed',
+                'postEvent' => 'destroyed',
             ],
             'download' => [
-                'icon'        => 'cloud-download-alt',
-                'class'       => 'is-primary',
+                'icon' => 'cloud-download-alt',
+                'class' => 'is-primary',
                 'routeSuffix' => 'download',
-                'event'       => 'download',
-                'action'      => 'href',
+                'event' => 'download',
+                'action' => 'href',
             ],
         ],
     ],
@@ -133,13 +133,13 @@ return [
             'striped', 'hover', 'bordered', 'center',
         ],
         'mapping' => [
-            'left'     => 'has-text-left',
-            'center'   => 'has-text-centered',
-            'right'    => 'has-text-right',
-            'compact'  => 'is-narrow',
-            'striped'  => 'is-striped',
+            'left' => 'has-text-left',
+            'center' => 'has-text-centered',
+            'right' => 'has-text-right',
+            'compact' => 'is-narrow',
+            'striped' => 'is-striped',
             'bordered' => 'is-bordered',
-            'hover'    => 'is-hoverable',
+            'hover' => 'is-hoverable',
         ],
     ],
 
@@ -153,10 +153,10 @@ return [
     */
 
     'export' => [
-        'path'             => 'exports',
-        'limit'            => 20000,
+        'path' => 'exports',
+        'limit' => 20000,
         'maxExecutionTime' => 100,
-        'notifications'    => ['broadcast', 'database'],
+        'notifications' => ['broadcast', 'database'],
     ],
 
     /*
@@ -191,4 +191,16 @@ return [
     */
 
     'debounce' => 100,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Method
+    |--------------------------------------------------------------------------
+    |
+    | If you're working with larger tables sometimes the URI can get too long
+    | and you may run in a 414 Exception. This flag allows to globally
+    | configure the request method for fetching data.
+    */
+
+    'method' => 'GET',
 ];
