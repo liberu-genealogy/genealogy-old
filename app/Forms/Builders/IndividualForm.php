@@ -2,6 +2,7 @@
 
 namespace App\Forms\Builders;
 
+use App\Enums\GenderTypes;
 use App\Individual;
 use LaravelEnso\FormBuilder\app\Classes\Form;
 
@@ -18,12 +19,14 @@ class IndividualForm
 
     public function create()
     {
-        return $this->form->create();
+        return $this->form->options('gender', GenderTypes::select())
+                ->create();
     }
 
     public function edit(Individual $individual)
     {
-        return $this->form->append('individual_id', $individual->id)
+        return $this->form->options('gender', GenderTypes::select())
+            ->append('individual_id', $individual->id)
             ->edit($individual);
     }
 }

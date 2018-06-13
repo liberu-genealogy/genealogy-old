@@ -52,6 +52,16 @@ return [
             'engine'      => 'InnoDB ROW_FORMAT=DYNAMIC',
         ],
 
+        'neo4j' => [
+            'name' => 'neo4j',
+            'driver' => 'neo4j',
+            'host'   => env('DB_HOST_SECOND', 'localhost'),
+            'port'   => env('DB_PORT_SECOND', '7474'),
+            'username' => env('DB_USERNAME_SECOND', null),
+            'password' => env('DB_PASSWORD_SECOND', null)
+
+        ],
+
         'pgsql' => [
             'driver'   => 'pgsql',
             'host'     => env('DB_HOST', '127.0.0.1'),

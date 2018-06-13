@@ -19,6 +19,17 @@
         "content": "text"
       }
     }, {
+      "label": "Gender",
+      "name": "gender",
+      "value": null,
+      "meta": {
+        "custom": false,
+        "disabled": false,
+        "type": "select",
+        "multiple": false,
+        "options": []
+      }
+    }, {
       "label": "Active",
       "name": "is_active",
       "value": false,

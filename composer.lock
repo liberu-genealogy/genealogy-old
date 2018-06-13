@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5ba4425bd02c938b1161c48c0da10036",
+    "content-hash": "2f2cca43d448ae959057a5dacdfd7867",
     "packages": [
         {
             "name": "box/spout",
@@ -1028,6 +1028,55 @@
                 "url"
             ],
             "time": "2017-03-20T17:10:46+00:00"
+        },
+        {
+            "name": "heydavid713/neo4jphp",
+            "version": "0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/heydavid713/neo4jphp.git",
+                "reference": "30962925fb160a0efd7a021e4e5d0581404fac16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/heydavid713/neo4jphp/zipball/30962925fb160a0efd7a021e4e5d0581404fac16",
+                "reference": "30962925fb160a0efd7a021e4e5d0581404fac16",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phing/phing": "2.6.*",
+                "phpunit/phpunit": "3.7.*",
+                "squizlabs/php_codesniffer": "1.5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Everyman\\Neo4j": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Josh Adell",
+                    "email": "josh.adell@gmail.com",
+                    "homepage": "http://joshadell.com"
+                }
+            ],
+            "description": "Wrapper for the Neo4j graph database REST interface",
+            "homepage": "http://github.com/jadell/neo4jphp/wiki",
+            "keywords": [
+                "database",
+                "graph",
+                "neo4j"
+            ],
+            "time": "2015-12-30T15:32:55+00:00"
         },
         {
             "name": "intervention/image",
@@ -2882,16 +2931,16 @@
         },
         {
             "name": "laravel-enso/vuedatatable",
-            "version": "1.1.25",
+            "version": "1.1.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/VueDatatable.git",
-                "reference": "f87e141c32baeff57f1c7ef6b0b0c5210fbeb7d6"
+                "reference": "c0e2db224d5b16c43b623700b78bdac02294d2ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/VueDatatable/zipball/f87e141c32baeff57f1c7ef6b0b0c5210fbeb7d6",
-                "reference": "f87e141c32baeff57f1c7ef6b0b0c5210fbeb7d6",
+                "url": "https://api.github.com/repos/laravel-enso/VueDatatable/zipball/c0e2db224d5b16c43b623700b78bdac02294d2ac",
+                "reference": "c0e2db224d5b16c43b623700b78bdac02294d2ac",
                 "shasum": ""
             },
             "require": {
@@ -2935,7 +2984,7 @@
                 "datatable",
                 "laravel-enso"
             ],
-            "time": "2018-06-13T06:09:48+00:00"
+            "time": "2018-06-13T11:37:20+00:00"
         },
         {
             "name": "laravel/framework",
@@ -5228,6 +5277,67 @@
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
             "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
             "time": "2017-11-27T11:13:29+00:00"
+        },
+        {
+            "name": "vinelab/neoeloquent",
+            "version": "v1.4.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Vinelab/NeoEloquent.git",
+                "reference": "86382b8221d8060d81495f768389c7796627731e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Vinelab/NeoEloquent/zipball/86382b8221d8060d81495f768389c7796627731e",
+                "reference": "86382b8221d8060d81495f768389c7796627731e",
+                "shasum": ""
+            },
+            "require": {
+                "heydavid713/neo4jphp": "0.1.*",
+                "illuminate/console": "5.6.*",
+                "illuminate/database": "5.6.*",
+                "illuminate/events": "5.6.*",
+                "illuminate/pagination": "5.6.*",
+                "illuminate/support": "5.6.*",
+                "nesbot/carbon": "~1.0",
+                "php": ">=7.1.3"
+            },
+            "require-dev": {
+                "mockery/mockery": "1.0",
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Vinelab\\NeoEloquent\\NeoEloquentServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Vinelab\\NeoEloquent\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abed Halawi",
+                    "email": "abed.halawi@vinelab.com"
+                }
+            ],
+            "description": "Laravel wrapper for the Neo4j graph database REST interface",
+            "keywords": [
+                "database",
+                "graph",
+                "laravel",
+                "neo4j",
+                "neoeloquent"
+            ],
+            "time": "2018-06-05T20:24:16+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

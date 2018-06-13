@@ -6,6 +6,7 @@ use App\Forms\Builders\IndividualForm;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ValidateIndividualRequest;
 use App\Individual;
+use App\Person;
 
 class IndividualController extends Controller
 {
@@ -19,6 +20,9 @@ class IndividualController extends Controller
         $individual = new Individual($request->all());
 
         $individual->save();
+
+        Person::create(['name' => $individual->first_name . ' ' . $individual->last_name]);
+
 
         return [
             'message'  => __('The Individual was successfully created'),
