@@ -1,8 +1,8 @@
 <template>
-    <div/>
+    <div id="graph"/>
 </template>
-<style scoped>
-svg {
+<style>
+#graph svg {
     margin-top: 32px;
     border: 1px solid #aaa;
 }
@@ -54,15 +54,39 @@ export default {
         lodash,
     },
 
+    options: {
+        target: '#graph',
+        debug: true,
+    },
+
     mounted() {
+
+        this.data = [{
+            name: 'Father', // The name of the node
+            class: 'node', // The CSS class of the node
+            textClass: 'nodeText', // The CSS class of the text in the node
+            depthOffset: 1, // Generational height offset
+            marriages: [{ // Marriages is a list of nodes
+                spouse: { // Each marriage has one spouse
+                    name: 'Mother',
+                },
+                children: [{ // List of children nodes
+                    name: 'Child',
+                }],
+            }],
+            extra: {}, // Custom data passed to renderers
+        }];
+
+        dTree.init(this.data, this.options);
+
+        /*
         axios
             .get(route('trees.pedigree'))
-            .then(response => {
+            .then((response) => {
                 this.data = response.data;
             })
             .catch(error => this.handleError(error));
-
-        dTree.init(this.data);
+        */
     },
 };
 </script>
