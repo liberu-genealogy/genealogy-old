@@ -21,7 +21,7 @@ class IndividualController extends Controller
 
         $individual->save();
 
-        Person::create(['id' => $individual->id,'name' => $individual->first_name.' '.$individual->last_name]);
+        Person::create(['name' => $individual->first_name.' '.$individual->last_name]);
 
         return [
             'message'  => __('The Individual was successfully created'),

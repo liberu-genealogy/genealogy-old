@@ -20,4 +20,5 @@ class Person extends NeoEloquent
     {
         return $this->belongsTo('App\Person', 'MOTHER');
     }
+
 }
