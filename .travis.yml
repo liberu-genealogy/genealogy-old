@@ -28,6 +28,8 @@ after_script:
 
 services:
   - maria
+  - neo4j
+
 addons:
   apt:
     sources:
