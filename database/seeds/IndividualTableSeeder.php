@@ -44,6 +44,7 @@ class IndividualTableSeeder extends Seeder
              $user->mother()->associate(
                  $parents->random()->first()
              );
+             $user->save();
 
 
 
