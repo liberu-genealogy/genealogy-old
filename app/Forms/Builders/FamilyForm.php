@@ -6,6 +6,7 @@ use App\Enums\IndividualTypes;
 use App\Family;
 use App\Individual;
 use LaravelEnso\FormBuilder\app\Classes\Form;
+use App\Person;
 
 class FamilyForm
 {

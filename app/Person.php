@@ -5,9 +5,10 @@ use NeoEloquent;
 
 class Person extends NeoEloquent
 {
-    protected $fillable = ['name'];
+    protected $fillable = ['id', 'name'];
 
     protected $connection = 'neo4j';
+
 
 
     public function father()

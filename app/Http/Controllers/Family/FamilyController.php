@@ -36,6 +36,16 @@ class FamilyController extends Controller
         $individuals->parents()->attach($individualsList);
         Individual::find($mother_id)->families()->attach($family->id, ['type_id' => 2]);
 
+        $father = Person::findOrFail($father_id);
+        $mother = Person::findOrFail($mother_id);
+
+        foreach($individualsList as $individual)
+        {
+            $person = Person::find($individual->id);
+            $person->father()->attach($father);
+            $person->mother()->attach($mother);
+        }
+
         return [
             'message'  => __('The Family was successfully created'),
             'redirect' => 'families.edit',
@@ -74,10 +84,10 @@ class FamilyController extends Controller
         $individuals->parents()->attach($individualsList);
         Individual::find($mother_id)->families()->attach($family->id, ['type_id' => 2]);
 
-        $father = Person::find($father_id);
-        $mother = Person::find($mother_id);
+        $father = Person::findOrFail($father_id);
+        $mother = Person::findOrFail($mother_id);
 
-        foreach ($individualsList as $individual)
+        foreach($individualsList as $individual)
         {
             $person = Person::find($individual->id);
             $person->father()->attach($father);
