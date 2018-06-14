@@ -25,7 +25,7 @@ class IndividualForm
 
     public function edit(Individual $individual)
     {
-        return $this->form->options('gender', GenderTypes::select())
+        return $this->form->value('gender', $individual->gender)
             ->append('individual_id', $individual->id)
             ->edit($individual);
     }
