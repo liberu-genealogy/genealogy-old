@@ -1,92 +1,62 @@
 <template>
-    <div class="graph">
-        <hierarchical-edge-bundling identifier="id" :data="tree" :links="links" :link-types="linkTypes" node-text="name" :margin-x=20 :margin-y=20>
-
-        </hierarchical-edge-bundling>
+    <div id="tree">
+        <tree class="tree" :identifier="getId" :node-text="text" :data="treeData" :type="tree" :duration=5 :margin-x=100 :margin-y=150></tree>
     </div>
 </template>
 
 <script>
-import { hierarchicalEdgeBundling } from 'vued3tree';
+import { tree } from 'vued3tree';
 
 export default {
     components: {
-        hierarchicalEdgeBundling,
+        tree,
     },
     data() {
         return {
-            tree: {
-                name: 'father',
+            text: 'text',
+            treeData: {
+                id: 1,
+                text: 'father',
                 children: [
                     {
-                        name: 'son1',
-                        children: [{ name: 'grandson', id: 1 }, { name: 'grandson2', id: 2 }],
+                        id: 2,
+                        text: 'son1',
+                        children: [
+                            { id: 4, text: 'grandson' },
+                            { id: 5, text: 'grandson2' },
+                        ],
                     },
                     {
-                        name: 'son2',
-                        children: [{ name: 'grandson3', id: 3 }, { name: 'grandson4', id: 4 }],
+                        id: 3,
+                        text: 'son2',
+                        children: [
+                            { id: 6, name: 'grandson3' },
+                            { id: 7, text: 'grandson4' },
+                        ],
                     },
                 ],
             },
-            links: [{ source: 3, target: 1, type: 1 }, { source: 3, target: 4, type: 2 }],
-            linkTypes: [
-                { id: 1, name: 'depends', symmetric: true },
-                {
-                    id: 2,
-                    name: 'implement',
-                    inName: 'implements',
-                    outName: 'is implemented by',
-                },
-                {
-                    id: 3,
-                    name: 'uses',
-                    inName: 'uses',
-                    outName: 'is used by',
-                },
-            ],
         };
+    },
+    methods: {
+        getId(node) {
+            return node.id;
+        },
     },
 };
 </script>
+<style>
 
-<style scoped>
-.graph .link {
-    fill: none;
-    stroke: blue;
-    stroke-opacity: 0.2;
-    stroke-width: 1.5px;
-    transition: stroke 0.5s, stroke-opacity 0.5s;
-}
-.graph.detailed .link.link--source,
-.graph.detailed .link.link--target {
-    stroke-opacity: 1;
-}
-.graph.detailed .link {
-    stroke-opacity: 0.01;
-}
-.graph .link.link--source {
-    stroke: #d62728;
-}
-.graph .link.link--target {
-    stroke: #2ca02c;
-}
-.graph .nodetree text {
-    font: 10px sans-serif;
-    transition: opacity 0.5s, fill 0.5s;
-}
-.graph.detailed .nodetree.node--source text {
-    fill: #2ca02c;
-}
-.graph.detailed .nodetree.node--target text {
-    fill: #d62728;
-}
-.graph.detailed .nodetree.node--selected text,
-.graph.detailed .nodetree.node--source text,
-.graph.detailed .nodetree.node--target text {
-    font-weight: bold;
-    opacity: 1;
-}
-.graph.detailed .nodetree text {
-    opacity: 0.1;
-}
+    #tree {
+        width: 100%;
+        max-height:600px;
+        height: 600px;
+    }
+
+
+    #tree svg {
+        margin-top: 32px;
+        border: 1px solid #aaa;
+        max-height: 600px;
+    }
 </style>
