@@ -40,12 +40,11 @@ class IndividualTableSeeder extends Seeder
         App\Person::all()->each(function ($user) use ($parents) {
             $user->father()->associate(
                 $parents->random()->first()
-            );
+            )->save();
+
              $user->mother()->associate(
                  $parents->random()->first()
-             );
-             $user->save();
-
+             )->save();
 
 
         });
