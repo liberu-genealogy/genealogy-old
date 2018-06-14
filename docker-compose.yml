@@ -3,7 +3,7 @@ version: '3'
 services:
   genealogy-server:
     build: ./provisioning
-    image: laravel-genealogy
+    image: modulargenealogy
     depends_on:
       - mysql
     volumes:

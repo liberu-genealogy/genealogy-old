@@ -2,18 +2,18 @@
 # Laravel Genealogy Software
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-![Github All Releases](https://img.shields.io/github/downloads/laravel-genealogy/genealogy/total.svg)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/laravel-genealogy/genealogy/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/laravel-genealogy/genealogy/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/laravel-genealogy/genealogy/badges/build.png?b=master)](https://scrutinizer-ci.com/g/laravel-genealogy/genealogy/build-status/master)
-[![Code Intelligence Status](https://scrutinizer-ci.com/g/laravel-genealogy/genealogy/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
+![Github All Releases](https://img.shields.io/github/downloads/modulargenealogy/genealogy/total.svg)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/modulargenealogy/genealogy/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/modulargenealogy/genealogy/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/modulargenealogy/genealogy/badges/build.png?b=master)](https://scrutinizer-ci.com/g/modulargenealogy/genealogy/build-status/master)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/modulargenealogy/genealogy/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 [![StyleCI](https://github.styleci.io/repos/135390590/shield?branch=master)](https://github.styleci.io/repos/135390590)
 
-[![Waffle.io - Columns and their card count](https://badge.waffle.io/laravel-genealogy/Genealogy.svg?columns=all)](https://waffle.io/laravel-genealogy/genealogy)
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/modulargenealogy/Genealogy.svg?columns=all)](https://waffle.io/modulargenealogy/genealogy)
 
-[![CodeFactor](https://www.codefactor.io/repository/github/laravel-genealogy/genealogy/badge/master)](https://www.codefactor.io/repository/github/laravel-genealogy/genealogy/overview/master)
-[![codebeat badge](https://codebeat.co/badges/911f9e33-212a-4dfa-a860-751cdbbacff7)](https://codebeat.co/projects/github-com-laravel-genealogy-genealogy-master)
-[![BCH compliance](https://bettercodehub.com/edge/badge/laravel-genealogy/genealogy?branch=master)](https://bettercodehub.com/)
-[![Build Status](https://travis-ci.org/laravel-genealogy/genealogy.svg?branch=master)](https://travis-ci.org/laravel-genealogy/genealogy)
+[![CodeFactor](https://www.codefactor.io/repository/github/modulargenealogy/genealogy/badge/master)](https://www.codefactor.io/repository/github/modulargenealogy/genealogy/overview/master)
+[![codebeat badge](https://codebeat.co/badges/911f9e33-212a-4dfa-a860-751cdbbacff7)](https://codebeat.co/projects/github-com-modulargenealogy-genealogy-master)
+[![BCH compliance](https://bettercodehub.com/edge/badge/modulargenealogy/genealogy?branch=master)](https://bettercodehub.com/)
+[![Build Status](https://travis-ci.org/modulargenealogy/genealogy.svg?branch=master)](https://travis-ci.org/modulargenealogy/genealogy)
 
 <!--/h-->
 
@@ -28,7 +28,7 @@ not recommended for usage in a production environment but no major issues are kn
 
 ### Developer Installation Method
 
-1. Download the project with `git clone https://github.com/laravel-genealogy/genealogy.git`
+1. Download the project with `git clone https://github.com/modulargenealogy/genealogy.git`
 
 2. Run in the project folder `composer install`
 
@@ -48,7 +48,7 @@ See DOCKER.md for moreinformation
 
 ### Important
 
-If you are using this project please consult the **[changelog](https://github.com/laravel-genealogy/genealogy/blob/master/CHANGELOG.md)** on every update.
+If you are using this project please consult the **[changelog](https://github.com/modulargenealogy/genealogy/blob/master/CHANGELOG.md)** on every update.
 
 ### Based on Laravel Enso
 A solid starting project, based on [Laravel](https://laravel.com) 5.6, [VueJS](https://vuejs.org) 2, 

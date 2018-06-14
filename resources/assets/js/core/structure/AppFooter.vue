@@ -35,7 +35,7 @@
                 </span>
             </p>
             <p>
-                <a href="https://github.com/laravel-genealogy/genealogy"
+                <a href="https://github.com/modulargenealogy/genealogy"
                     target="_blank">
                     <span class="icon">
                         <fa :icon="['fab', 'github']"/>
