@@ -19,9 +19,8 @@ class IndividualTableSeeder extends Seeder
             ->create()
             ->each(function ($u) {
                 App\Person::create(['name' => $u->first_name.' '.$u->last_name]);
-           //    $person = App\Person::find(1);
-          //      $person->father()->attach($u->all()->unique()->pluck('id')->toArray());
-          //      $person->mother()->attach($u->all()->unique()->pluck('id')->toArray());
+                $id = App\Individual::where('first_name', '=', $u->first_name)->where('last_name', '=', $u->last_name)
+                ->pluck('id')->first();
             });
 
         // Get all the parents attaching up to 2 random parents to each user
@@ -32,6 +31,22 @@ class IndividualTableSeeder extends Seeder
             $user->parents()->attach(
                 $parents->random(rand(1, 2))->unique()->pluck('id')->toArray()
             );
+
+        });
+
+        $parents = App\Person::all();
+
+        // Populate the relationships
+        App\Person::all()->each(function ($user) use ($parents) {
+            $user->father()->associate(
+                $parents->random()->first()
+            );
+             $user->mother()->associate(
+                 $parents->random()->first()
+             );
+
+
+
         });
 
 
