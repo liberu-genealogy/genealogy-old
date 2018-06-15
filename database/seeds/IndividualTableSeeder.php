@@ -13,7 +13,7 @@ class IndividualTableSeeder extends Seeder
     {
 
 // Populate individuals
-       // factory(App\Individual::class, 50)->create();
+        // factory(App\Individual::class, 50)->create();
 
         factory(App\Individual::class, 100)
             ->create()
@@ -31,7 +31,6 @@ class IndividualTableSeeder extends Seeder
             $user->parents()->attach(
                 $parents->random(rand(1, 2))->unique()->pluck('id')->toArray()
             );
-
         });
 
         $parents = App\Person::all();
@@ -42,13 +41,9 @@ class IndividualTableSeeder extends Seeder
                 $parents->random()->first()
             )->save();
 
-             $user->mother()->associate(
+            $user->mother()->associate(
                  $parents->random()->first()
              )->save();
-
-
         });
-
-
     }
 }

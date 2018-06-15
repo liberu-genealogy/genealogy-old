@@ -50,12 +50,10 @@ export default {
 </script>
 
 <style>
-
-    #graph svg {
-
-        border: 1px solid #aaa;
-    }
-    #graph .link {
+#graph svg {
+    border: 1px solid #aaa;
+}
+#graph .link {
     fill: none;
     stroke: blue;
     stroke-opacity: 0.2;

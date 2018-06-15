@@ -39,9 +39,8 @@ class FamilyController extends Controller
         $father = Person::findOrFail($father_id);
         $mother = Person::findOrFail($mother_id);
 
-        foreach($individualsList as $individual)
-        {
-            $id = Individual::select('id','name')->where('name', '=', $individual->name);
+        foreach ($individualsList as $individual) {
+            $id = Individual::select('id', 'name')->where('name', '=', $individual->name);
             $person = Person::find($id);
             $person->father()->attach($father);
             $person->mother()->attach($mother);
@@ -80,7 +79,6 @@ class FamilyController extends Controller
         $individuals = Individual::findOrFail($father_id);
         $individuals->parents()->attach($individualsList);
 
-
         $individuals = Individual::findOrFail($mother_id);
         $individuals->parents()->attach($individualsList);
         Individual::find($mother_id)->families()->attach($family->id, ['type_id' => 2]);
@@ -88,17 +86,13 @@ class FamilyController extends Controller
         $father = Person::findOrFail($father_id);
         $mother = Person::findOrFail($mother_id);
 
-        foreach($individualsList as $individual)
-        {
-
-            $id = Individual::select('id','name')->where('name', '=', $individual->name);
+        foreach ($individualsList as $individual) {
+            $id = Individual::select('id', 'name')->where('name', '=', $individual->name);
             $person = Person::find($id);
             $person = Person::find($individual->id);
             $person->father()->attach($father);
             $person->mother()->attach($mother);
         }
-
-
 
         return ['message' => __('The Family was successfully updated')];
     }
