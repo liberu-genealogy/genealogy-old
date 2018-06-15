@@ -9,7 +9,7 @@ Setting up your development environment on your local machine :
 $ git clone https://github.com/modularsoftware/genealogy.git
 $ cd genealogy
 $ cp .env.example .env
-$ docker-compse build
+$ docker-compose build
 $ docker-compose run --rm --no-deps genealogy-server composer install
 $ docker-compose run --rm --no-deps genealogy-server php artisan key:generate
 $ docker run --rm -it -v $(pwd):/app -w /app node npm install
