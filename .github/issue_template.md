@@ -5,7 +5,7 @@ This is  a **bug | feature request**.
 ### Prerequisites
 * [ ] Are you running the latest version?
 * [ ] Are you reporting to the correct repository?
-(enso is made of many specialized packages: https://github.com/laravel-enso)
+(This project is made of many specialized packages: https://github.com/modularsoftware)
 * [ ] Did you check the documentation?
 * [ ] Did you perform a cursory search?
 
