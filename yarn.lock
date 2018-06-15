@@ -8334,9 +8334,9 @@ v-click-outside@1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/v-click-outside/-/v-click-outside-1.0.5.tgz#3eb590394e062fa9a4256cbe678600557f7c87d4"
 
-v-tooltip@2.0.0-rc.32:
-  version "2.0.0-rc.32"
-  resolved "https://registry.yarnpkg.com/v-tooltip/-/v-tooltip-2.0.0-rc.32.tgz#85271476c191598ac59361d0660d5da92dc88bf6"
+v-tooltip@2.0.0-rc.33:
+  version "2.0.0-rc.33"
+  resolved "https://registry.yarnpkg.com/v-tooltip/-/v-tooltip-2.0.0-rc.33.tgz#78f7d8e9c34265622be65ba9dc78c67f1dc02b73"
   dependencies:
     lodash.merge "^4.6.0"
     popper.js "^1.12.9"
