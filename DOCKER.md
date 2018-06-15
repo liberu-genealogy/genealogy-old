@@ -6,7 +6,7 @@ Development environment requirements :
 
 Setting up your development environment on your local machine :
 ```
-$ git clone https://github.com/modulargenealogy/genealogy.git
+$ git clone https://github.com/modularsoftware/genealogy.git
 $ cd modulargenealogy
 $ cp .env.example .env
 $ docker-compose run --rm --no-deps genealogy-server composer install

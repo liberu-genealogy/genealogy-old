@@ -35,7 +35,7 @@
                 </span>
             </p>
             <p>
-                <a href="https://github.com/modulargenealogy/genealogy"
+                <a href="https://github.com/modularsoftware/genealogy"
                     target="_blank">
                     <span class="icon">
                         <fa :icon="['fab', 'github']"/>
