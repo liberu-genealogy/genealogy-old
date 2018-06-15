@@ -21,18 +21,12 @@ export default {
                     {
                         id: 2,
                         text: 'son1',
-                        children: [
-                            { id: 4, text: 'grandson' },
-                            { id: 5, text: 'grandson2' },
-                        ],
+                        children: [{ id: 4, text: 'grandson' }, { id: 5, text: 'grandson2' }],
                     },
                     {
                         id: 3,
                         text: 'son2',
-                        children: [
-                            { id: 6, name: 'grandson3' },
-                            { id: 7, text: 'grandson4' },
-                        ],
+                        children: [{ id: 6, name: 'grandson3' }, { id: 7, text: 'grandson4' }],
                     },
                 ],
             },
@@ -46,17 +40,15 @@ export default {
 };
 </script>
 <style>
+#tree {
+    width: 100%;
+    max-height: 600px;
+    height: 600px;
+}
 
-    #tree {
-        width: 100%;
-        max-height:600px;
-        height: 600px;
-    }
-
-
-    #tree svg {
-        margin-top: 32px;
-        border: 1px solid #aaa;
-        max-height: 600px;
-    }
+#tree svg {
+    margin-top: 32px;
+    border: 1px solid #aaa;
+    max-height: 600px;
+}
 </style>

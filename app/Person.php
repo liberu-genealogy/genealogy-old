@@ -1,4 +1,5 @@
 <?php
+
 namespace App;
 
 use NeoEloquent;
@@ -9,8 +10,6 @@ class Person extends NeoEloquent
 
     protected $connection = 'neo4j';
 
-
-
     public function father()
     {
         return $this->belongsTo('App\Person', 'FATHER');
@@ -20,5 +19,4 @@ class Person extends NeoEloquent
     {
         return $this->belongsTo('App\Person', 'MOTHER');
     }
-
 }
