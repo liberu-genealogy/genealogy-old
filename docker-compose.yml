@@ -6,6 +6,7 @@ services:
     image: modulargenealogy
     depends_on:
       - mysql
+      - neo4j
     volumes:
       - ./:/application:cached
 
@@ -36,5 +37,3 @@ services:
       - "7687:7687"
     volumes:
       - ./db/dbms:/data/dbms
-    depends_on:
-      - genealogy-server
