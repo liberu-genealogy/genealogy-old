@@ -11,7 +11,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => env('APP_NAME', 'Laravel Enso'),
+    'name' => env('APP_NAME', 'Modular Genealogy'),
 
     /*
     |--------------------------------------------------------------------------
