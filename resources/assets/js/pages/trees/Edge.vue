@@ -1,6 +1,6 @@
 <template>
     <div id="graph">
-        <hierarchical-edge-bundling identifier="id" :data="tree" :links="links"  :node-text="name" :margin-x="20" :margin-y="20">
+        <hierarchical-edge-bundling identifier="id" :data="tree" :links="links" node-text="name" :margin-x="20" :margin-y="20">
 
         </hierarchical-edge-bundling>
     </div>
@@ -50,46 +50,8 @@ export default {
 </script>
 
 <style>
-#graph svg {
-    border: 1px solid #aaa;
-}
-#graph .link {
-    fill: none;
-    stroke: blue;
-    stroke-opacity: 0.2;
-    stroke-width: 1.5px;
-    transition: stroke 0.5s, stroke-opacity 0.5s;
-}
-#graph.detailed .link.link--source,
-#graph.detailed .link.link--target {
-    stroke-opacity: 1;
-}
-#graph.detailed .link {
-    stroke-opacity: 0.01;
-}
-#graph .link.link--source {
-    stroke: #d62728;
-}
-#graph .link.link--target {
-    stroke: #2ca02c;
-}
-#graph .nodetree text {
-    font: 10px sans-serif;
-    transition: opacity 0.5s, fill 0.5s;
-}
-#graph.detailed .nodetree.node--source text {
-    fill: #2ca02c;
-}
-#graph.detailed .nodetree.node--target text {
-    fill: #d62728;
-}
-#graph.detailed .nodetree.node--selected text,
-#graph.detailed .nodetree.node--source text,
-#graph.detailed .nodetree.node--target text {
-    font-weight: bold;
-    opacity: 1;
-}
-#graph.detailed .nodetree text {
-    opacity: 0.1;
-}
+    #graph svg {
+        height: 600px;
+        width: 100%;
+    }
 </style>
