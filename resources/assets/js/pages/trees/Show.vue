@@ -1,6 +1,6 @@
 <template>
     <div id="tree">
-        <tree class="tree" :identifier="getId" :node-text="text" :data="treeData" :type="tree" :duration=5 :margin-x=100 :margin-y=150></tree>
+        <tree class="tree" :identifier="getId" :node-text="text" :data="treeData" :duration=5 :margin-x=0 :margin-y=10></tree>
     </div>
 </template>
 
