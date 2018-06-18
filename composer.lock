@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2f2cca43d448ae959057a5dacdfd7867",
+    "content-hash": "3ae2d2e2f7d0382faca66cfe6007497b",
     "packages": [
         {
             "name": "box/spout",
@@ -1601,16 +1601,16 @@
         },
         {
             "name": "laravel-enso/core",
-            "version": "2.10.3",
+            "version": "2.10.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/Core.git",
-                "reference": "b5ebbf6d9660ba50d09c6adf164e8a993b57d7b5"
+                "reference": "5ba516497a300f12a7cdc4670ae428bdec21bad6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/Core/zipball/b5ebbf6d9660ba50d09c6adf164e8a993b57d7b5",
-                "reference": "b5ebbf6d9660ba50d09c6adf164e8a993b57d7b5",
+                "url": "https://api.github.com/repos/laravel-enso/Core/zipball/5ba516497a300f12a7cdc4670ae428bdec21bad6",
+                "reference": "5ba516497a300f12a7cdc4670ae428bdec21bad6",
                 "shasum": ""
             },
             "require": {
@@ -1685,7 +1685,7 @@
                 "vue-bulma",
                 "vue-spa"
             ],
-            "time": "2018-06-13T06:08:07+00:00"
+            "time": "2018-06-15T15:21:40+00:00"
         },
         {
             "name": "laravel-enso/dataimport",
@@ -1879,16 +1879,16 @@
         },
         {
             "name": "laravel-enso/formbuilder",
-            "version": "2.6.5",
+            "version": "2.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/FormBuilder.git",
-                "reference": "6f4f92c2f89bee4a2fa2ffa0e6af73fb6e8c767f"
+                "reference": "6ffd16b79230960049a857974e16e6aa0ccb990e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/FormBuilder/zipball/6f4f92c2f89bee4a2fa2ffa0e6af73fb6e8c767f",
-                "reference": "6f4f92c2f89bee4a2fa2ffa0e6af73fb6e8c767f",
+                "url": "https://api.github.com/repos/laravel-enso/FormBuilder/zipball/6ffd16b79230960049a857974e16e6aa0ccb990e",
+                "reference": "6ffd16b79230960049a857974e16e6aa0ccb990e",
                 "shasum": ""
             },
             "require": {
@@ -1931,7 +1931,7 @@
                 "form-builder",
                 "laravel-enso"
             ],
-            "time": "2018-06-12T09:18:25+00:00"
+            "time": "2018-06-17T10:38:46+00:00"
         },
         {
             "name": "laravel-enso/helpers",
@@ -2931,16 +2931,16 @@
         },
         {
             "name": "laravel-enso/vuedatatable",
-            "version": "1.1.26",
+            "version": "1.1.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/VueDatatable.git",
-                "reference": "c0e2db224d5b16c43b623700b78bdac02294d2ac"
+                "reference": "ddd43e1d3ab24bfcbffc05f46d0149e69752ebc3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/VueDatatable/zipball/c0e2db224d5b16c43b623700b78bdac02294d2ac",
-                "reference": "c0e2db224d5b16c43b623700b78bdac02294d2ac",
+                "url": "https://api.github.com/repos/laravel-enso/VueDatatable/zipball/ddd43e1d3ab24bfcbffc05f46d0149e69752ebc3",
+                "reference": "ddd43e1d3ab24bfcbffc05f46d0149e69752ebc3",
                 "shasum": ""
             },
             "require": {
@@ -2984,7 +2984,7 @@
                 "datatable",
                 "laravel-enso"
             ],
-            "time": "2018-06-13T11:37:20+00:00"
+            "time": "2018-06-17T14:52:23+00:00"
         },
         {
             "name": "laravel/framework",
@@ -6040,16 +6040,16 @@
         },
         {
             "name": "nunomaduro/collision",
-            "version": "v2.0.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/collision.git",
-                "reference": "245958b02c6a9edf24627380f368333ac5413a51"
+                "reference": "b1f606399ae77e9479b5597cd1aa3d8ea0078176"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/245958b02c6a9edf24627380f368333ac5413a51",
-                "reference": "245958b02c6a9edf24627380f368333ac5413a51",
+                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/b1f606399ae77e9479b5597cd1aa3d8ea0078176",
+                "reference": "b1f606399ae77e9479b5597cd1aa3d8ea0078176",
                 "shasum": ""
             },
             "require": {
@@ -6060,7 +6060,8 @@
             },
             "require-dev": {
                 "laravel/framework": "5.6.*",
-                "phpunit/phpunit": "~7.0"
+                "phpstan/phpstan": "^0.9.2",
+                "phpunit/phpunit": "~7.2"
             },
             "type": "library",
             "extra": {
@@ -6098,7 +6099,7 @@
                 "php",
                 "symfony"
             ],
-            "time": "2018-03-21T20:11:24+00:00"
+            "time": "2018-06-16T22:05:52+00:00"
         },
         {
             "name": "phar-io/manifest",
