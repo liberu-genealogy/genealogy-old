@@ -15,7 +15,6 @@ class CreateStructureForTrees extends StructureMigration
         ['name' => 'trees.getTableData', 'description' => 'Get table data for trees', 'type' => 0, 'is_default' => false],
         ['name' => 'trees.exportExcel', 'description' => 'Export excel for trees', 'type' => 0, 'is_default' => false],
         ['name' => 'trees.selectOptions', 'description' => 'Get tree list for vue select', 'type' => 0, 'is_default' => false],
-        ['name' => 'trees.show', 'description' => 'Show tree', 'type' => 0, 'is_default' => false],
         ['name' => 'trees.links', 'description' => 'Lists connections', 'type' => 0, 'is_default' => false],
     ];
 
@@ -24,6 +23,8 @@ class CreateStructureForTrees extends StructureMigration
     ];
 
     protected $menu = [
-        'name' => 'Trees', 'icon' => 'tachometer-alt', 'link' => 'trees.index', 'order_index' => 999, 'has_children' => false,
+        'name' => 'Network', 'icon' => 'tachometer-alt', 'link' => 'trees.index', 'order_index' => 999, 'has_children' => false,
     ];
+
+    protected $parentMenu = 'Trees';
 }
