@@ -5,7 +5,7 @@
   "name": "Events",
   "icon": "users",
   "crtNo": true,
-  "buttons": ["excel", "action", "show", "destroy"],
+  "buttons": ["excel", "show", "destroy"],
   "columns": [
     {
       "label": "Name",
