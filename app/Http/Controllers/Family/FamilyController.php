@@ -41,7 +41,7 @@ class FamilyController extends Controller
 
         foreach ($individualsList as $individual) {
             $id = Individual::select('id', 'first_name', 'last_name')->where('first_name', '=', $individual->first_name)
-            ->where('last_name', '=', $individual->last_name);
+            ->where('last_name', '=', $individual->last_name)->pluck('id');
             $person = Person::find($id);
             $person->father()->attach($father);
             $person->mother()->attach($mother);
@@ -89,7 +89,7 @@ class FamilyController extends Controller
 
         foreach ($individualsList as $individual) {
             $id = Individual::select('id', 'first_name', 'last_name')->where('first_name', '=', $individual->first_name)
-                ->where('last_name', '=', $individual->last_name);;
+                ->where('last_name', '=', $individual->last_name)->pluck('id');;
             $person = Person::find($id);
             $person->father()->attach($father);
             $person->mother()->attach($mother);
