@@ -40,7 +40,8 @@ class FamilyController extends Controller
         $mother = Person::findOrFail($mother_id);
 
         foreach ($individualsList as $individual) {
-            $id = Individual::select('id', 'name')->where('name', '=', $individual->name);
+            $id = Individual::select('id', 'first_name', 'last_name')->where('first_name', '=', $individual->first_name)
+            ->where('last_name', '=', $individual->last_name);
             $person = Person::find($id);
             $person->father()->attach($father);
             $person->mother()->attach($mother);
@@ -87,7 +88,8 @@ class FamilyController extends Controller
         $mother = Person::findOrFail($mother_id);
 
         foreach ($individualsList as $individual) {
-            $id = Individual::select('id', 'name')->where('name', '=', $individual->name);
+            $id = Individual::select('id', 'first_name', 'last_name')->where('first_name', '=', $individual->first_name)
+                ->where('last_name', '=', $individual->last_name);;
             $person = Person::find($id);
             $person->father()->attach($father);
             $person->mother()->attach($mother);
