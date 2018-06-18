@@ -26,6 +26,8 @@ class Family extends Model
 
     public function getIndividualListAttribute()
     {
-        return $this->individuals()->pluck('individuals.id');
+        return $this->individuals()->where('individuals.id', '!=', $this->father_id)
+            ->where('individuals.id', '!=', $this->mother_id)
+            ->pluck('individuals.id');
     }
 }
