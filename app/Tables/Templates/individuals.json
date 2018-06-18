@@ -26,9 +26,15 @@
       "meta": ["searchable", "sortable"]
     },
     {
+      "label": "Birth",
+      "name": "date",
+      "data": "events.date",
+      "meta": ["searchable", "sortable"]
+    },
+    {
       "label": "Active",
       "name": "is_active",
-      "data": "users.is_active",
+      "data": "individuals.is_active",
       "meta": ["boolean"]
     }
   ]

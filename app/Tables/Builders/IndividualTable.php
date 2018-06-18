@@ -11,8 +11,13 @@ class IndividualTable extends Table
 
     public function query()
     {
-        return Individual::select(\DB::raw('
-            id as "dtRowId", first_name, last_name, gender
-        '));
+        return Individual::join('events', function ($join) {
+            $join->on('individuals.id', '=', 'events.id')
+                ->where('events.event_type', '=', 'App\Individual')
+                ->where('events.event_type_id', '=', 1);
+        })
+        ->select(\DB::raw('
+            individuals.id as "dtRowId", individuals.first_name, individuals.last_name, individuals.gender, individuals.is_active, events.date
+            '));
     }
 }

@@ -21,6 +21,6 @@ $factory->define(App\Event::class, function (Faker\Generator $faker) {
         'is_active'     => $faker->boolean,
         'event_type'    => $event,
         'event_id'      => $faker->unique()->randomNumber,
-        'event_type_id' => $faker->randomElement(\App\Individual::pluck('id')->toArray()),
+        'event_type_id' => $faker->randomElement(\App\EventType::pluck('id')->toArray()),
     ];
 });
