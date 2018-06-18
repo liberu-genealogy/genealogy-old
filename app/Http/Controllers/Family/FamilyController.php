@@ -36,16 +36,27 @@ class FamilyController extends Controller
         $individuals->parents()->attach($individualsList);
         Individual::find($mother_id)->families()->attach($family->id, ['type_id' => 2]);
 
-        $father = Person::findOrFail($father_id);
-        $mother = Person::findOrFail($mother_id);
+        $father = Individual::select('id','first_name','last_name')->where('id', '=', $father_id)->first();
+        $mother = Individual::select('id','first_name','last_name')->where('id', '=', $father_id)->first();
+
+        $father_full_name = $father->first_name . ' '. $father->last_name;
+        $mother_full_name = $father->first_name . ' '. $father->last_name;
+
+        $father_person = Person::where('name', '=', $father_full_name)
+            ->first();
+        $mother_person = Person::where('name', '=', $mother_full_name)
+            ->first();
 
         foreach ($individualsList as $individual) {
-            $id = Individual::select('id', 'first_name', 'last_name')->where('first_name', '=', $individual->first_name)
-            ->where('last_name', '=', $individual->last_name)->pluck('id');
-            $person = Person::find($id);
-            $person->father()->attach($father);
-            $person->mother()->attach($mother);
+
+            $individual = Individual::find($individual);
+            $individual_full_name = $individual->first_name . ' ' . $individual->last_name;
+            $person = Person::where('name', '=', $individual_full_name)
+                ->first();
+            $person->father()->associate($father_person)->save();
+            $person->mother()->associate($mother_person)->save();
         }
+
 
         return [
             'message'  => __('The Family was successfully created'),
@@ -84,15 +95,26 @@ class FamilyController extends Controller
         $individuals->parents()->attach($individualsList);
         Individual::find($mother_id)->families()->attach($family->id, ['type_id' => 2]);
 
-        $father = Person::findOrFail($father_id);
-        $mother = Person::findOrFail($mother_id);
+
+        $father = Individual::select('id','first_name','last_name')->where('id', '=', $father_id)->first();
+        $mother = Individual::select('id','first_name','last_name')->where('id', '=', $father_id)->first();
+
+        $father_full_name = $father->first_name . ' '. $father->last_name;
+        $mother_full_name = $father->first_name . ' '. $father->last_name;
+
+        $father_person = Person::where('name', '=', $father_full_name)
+            ->first();
+        $mother_person = Person::where('name', '=', $mother_full_name)
+            ->first();
 
         foreach ($individualsList as $individual) {
-            $id = Individual::select('id', 'first_name', 'last_name')->where('first_name', '=', $individual->first_name)
-                ->where('last_name', '=', $individual->last_name)->pluck('id');;
-            $person = Person::find($id);
-            $person->father()->attach($father);
-            $person->mother()->attach($mother);
+
+            $individual = Individual::find($individual);
+            $individual_full_name = $individual->first_name . ' ' . $individual->last_name;
+            $person = Person::where('name', '=', $individual_full_name)
+                ->first();
+            $person->father()->associate($father_person)->save();
+            $person->mother()->associate($mother_person)->save();
         }
 
         return ['message' => __('The Family was successfully updated')];
