@@ -37,10 +37,10 @@ class FamilyController extends Controller
         Individual::find($mother_id)->families()->attach($family->id, ['type_id' => 2]);
 
         $father = Individual::select('id','first_name','last_name')->where('id', '=', $father_id)->first();
-        $mother = Individual::select('id','first_name','last_name')->where('id', '=', $father_id)->first();
+        $mother = Individual::select('id','first_name','last_name')->where('id', '=', $mother_id)->first();
 
         $father_full_name = $father->first_name . ' '. $father->last_name;
-        $mother_full_name = $father->first_name . ' '. $father->last_name;
+        $mother_full_name = $father->first_name . ' '. $mother->last_name;
 
         $father_person = Person::where('name', '=', $father_full_name)
             ->first();
@@ -97,10 +97,10 @@ class FamilyController extends Controller
 
 
         $father = Individual::select('id','first_name','last_name')->where('id', '=', $father_id)->first();
-        $mother = Individual::select('id','first_name','last_name')->where('id', '=', $father_id)->first();
+        $mother = Individual::select('id','first_name','last_name')->where('id', '=', $mother_id)->first();
 
         $father_full_name = $father->first_name . ' '. $father->last_name;
-        $mother_full_name = $father->first_name . ' '. $father->last_name;
+        $mother_full_name = $father->first_name . ' '. $mother->last_name;
 
         $father_person = Person::where('name', '=', $father_full_name)
             ->first();
