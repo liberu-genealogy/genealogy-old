@@ -50,8 +50,8 @@ export default {
 </script>
 
 <style>
-    #graph svg {
-        height: 600px;
-        width: 100%;
-    }
+#graph svg {
+    height: 600px;
+    width: 100%;
+}
 </style>
