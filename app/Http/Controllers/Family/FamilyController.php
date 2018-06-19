@@ -36,11 +36,11 @@ class FamilyController extends Controller
         $individuals->parents()->attach($individualsList);
         Individual::find($mother_id)->families()->attach($family->id, ['type_id' => 2]);
 
-        $father = Individual::select('id','first_name','last_name')->where('id', '=', $father_id)->first();
-        $mother = Individual::select('id','first_name','last_name')->where('id', '=', $mother_id)->first();
+        $father = Individual::select('id', 'first_name', 'last_name')->where('id', '=', $father_id)->first();
+        $mother = Individual::select('id', 'first_name', 'last_name')->where('id', '=', $mother_id)->first();
 
-        $father_full_name = $father->first_name . ' '. $father->last_name;
-        $mother_full_name = $father->first_name . ' '. $mother->last_name;
+        $father_full_name = $father->first_name.' '.$father->last_name;
+        $mother_full_name = $father->first_name.' '.$mother->last_name;
 
         $father_person = Person::where('name', '=', $father_full_name)
             ->first();
@@ -48,15 +48,13 @@ class FamilyController extends Controller
             ->first();
 
         foreach ($individualsList as $individual) {
-
             $individual = Individual::find($individual);
-            $individual_full_name = $individual->first_name . ' ' . $individual->last_name;
+            $individual_full_name = $individual->first_name.' '.$individual->last_name;
             $person = Person::where('name', '=', $individual_full_name)
                 ->first();
             $person->father()->associate($father_person)->save();
             $person->mother()->associate($mother_person)->save();
         }
-
 
         return [
             'message'  => __('The Family was successfully created'),
@@ -95,12 +93,11 @@ class FamilyController extends Controller
         $individuals->parents()->attach($individualsList);
         Individual::find($mother_id)->families()->attach($family->id, ['type_id' => 2]);
 
+        $father = Individual::select('id', 'first_name', 'last_name')->where('id', '=', $father_id)->first();
+        $mother = Individual::select('id', 'first_name', 'last_name')->where('id', '=', $mother_id)->first();
 
-        $father = Individual::select('id','first_name','last_name')->where('id', '=', $father_id)->first();
-        $mother = Individual::select('id','first_name','last_name')->where('id', '=', $mother_id)->first();
-
-        $father_full_name = $father->first_name . ' '. $father->last_name;
-        $mother_full_name = $father->first_name . ' '. $mother->last_name;
+        $father_full_name = $father->first_name.' '.$father->last_name;
+        $mother_full_name = $father->first_name.' '.$mother->last_name;
 
         $father_person = Person::where('name', '=', $father_full_name)
             ->first();
@@ -108,9 +105,8 @@ class FamilyController extends Controller
             ->first();
 
         foreach ($individualsList as $individual) {
-
             $individual = Individual::find($individual);
-            $individual_full_name = $individual->first_name . ' ' . $individual->last_name;
+            $individual_full_name = $individual->first_name.' '.$individual->last_name;
             $person = Person::where('name', '=', $individual_full_name)
                 ->first();
             $person->father()->associate($father_person)->save();
