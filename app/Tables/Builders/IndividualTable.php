@@ -11,7 +11,7 @@ class IndividualTable extends Table
 
     public function query()
     {
-        return Individual::join('events', function ($join) {
+        return Individual::leftJoin('events', function ($join) {
             $join->on('individuals.id', '=', 'events.id')
                 ->where('events.event_type', '=', 'App\Individual')
                 ->where('events.event_type_id', '=', 1);
