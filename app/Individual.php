@@ -31,7 +31,6 @@ class Individual extends Model
         });
     }
 
-
     public function families()
     {
         return $this->belongsToMany(Family::class);
