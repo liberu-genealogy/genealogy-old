@@ -8,6 +8,7 @@ use LaravelEnso\AddressesManager\app\Traits\Addressable;
 use LaravelEnso\CommentsManager\app\Traits\Commentable;
 use LaravelEnso\Contacts\app\Traits\Contactable;
 use LaravelEnso\DocumentsManager\app\Traits\Documentable;
+use Ramsey\Uuid\Uuid;
 
 class Individual extends Model
 {
@@ -20,6 +21,16 @@ class Individual extends Model
     protected $attributes = ['is_active' => false];
 
     protected $casts = ['is_active' => 'boolean'];
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            $model->uuid = (string) Uuid::uuid4();
+        });
+    }
+
 
     public function families()
     {

@@ -9,6 +9,7 @@ class IndividualTableSeeder extends Seeder
      *
      * @return void
      */
+
     public function run()
     {
 
