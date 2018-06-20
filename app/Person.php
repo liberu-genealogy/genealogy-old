@@ -6,7 +6,7 @@ use NeoEloquent;
 
 class Person extends NeoEloquent
 {
-    protected $fillable = ['uuid', 'name'];
+    protected $fillable = ['name'];
 
     protected $connection = 'neo4j';
 
