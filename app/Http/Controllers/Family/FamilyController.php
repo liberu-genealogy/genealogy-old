@@ -65,7 +65,6 @@ class FamilyController extends Controller
 
         $this->attach($family, $father_id, $mother_id, $individuals);
 
-
         return [
             'message'  => __('The Family was successfully created'),
             'redirect' => 'families.edit',

@@ -20,7 +20,6 @@ class Person extends NeoEloquent
         });
     }
 
-
     public function father()
     {
         return $this->belongsTo('App\Person', 'FATHER');
