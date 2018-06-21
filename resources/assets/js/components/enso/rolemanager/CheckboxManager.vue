@@ -42,6 +42,7 @@
 </template>
 
 <script>
+
 import Card from '../bulma/Card.vue';
 import CardControl from '../bulma/CardControl.vue';
 import ManagerContent from './ManagerContent.vue';
@@ -106,7 +107,8 @@ export default {
                 return;
             }
 
-            const indeterminate = this.$refs.children.filter(child => child.checkbox.indeterminate).length;
+            const indeterminate = this.$refs.children
+                .filter(child => child.checkbox.indeterminate).length;
 
             if (checked || indeterminate) {
                 this.setIndeterminate();
@@ -116,25 +118,32 @@ export default {
             this.setUnchecked();
         },
         updateBelow() {
-            return this.isRoot ? this.updateContent() : this.updateChildren();
+            return this.isRoot
+                ? this.updateContent()
+                : this.updateChildren();
         },
         updateContent() {
-            return this.checkbox.checked ? this.$refs.content.setAllChecked() : this.$refs.content.setAllUnchecked();
+            return this.checkbox.checked
+                ? this.$refs.content.setAllChecked()
+                : this.$refs.content.setAllUnchecked();
         },
         updateChildren() {
             const self = this;
 
-            this.$refs.children.forEach(child => {
+            this.$refs.children.forEach((child) => {
                 child.checkbox.checked = self.checkbox.checked;
                 child.updateBelow();
             });
         },
     },
 };
+
 </script>
 
 <style scoped>
-.field {
-    width: 15px;
-}
+
+    .field {
+        width: 15px;
+    }
+
 </style>

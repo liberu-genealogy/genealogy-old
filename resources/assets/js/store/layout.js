@@ -17,20 +17,16 @@ export const getters = {
             return 'auth';
         }
 
-        return state.home ? 'home' : 'default';
+        return state.home
+            ? 'home'
+            : 'default';
     },
 };
 
 export const mutations = {
-    showHome: state => {
-        state.home = true;
-    },
-    hideHome: state => {
-        state.home = false;
-    },
-    setThemes: (state, themes) => {
-        state.themes = themes;
-    },
+    showHome: (state) => { state.home = true; },
+    hideHome: (state) => { state.home = false; },
+    setThemes: (state, themes) => { state.themes = themes; },
     setThemeParams() {
         const height = document.querySelector('.app-navbar').clientHeight;
         const menuAside = document.querySelector('.menu.aside');
@@ -50,20 +46,15 @@ export const mutations = {
     toggleLights(state) {
         state.lightsOff = !state.lightsOff;
     },
-    setIsMobile: (state, isMobile) => {
-        state.isMobile = isMobile;
-    },
-    setIsTablet: (state, isTablet) => {
-        state.isTablet = isTablet;
-    },
-    setIsTouch: (state, isTouch) => {
-        state.isTouch = isTouch;
-    },
+    setIsMobile: (state, isMobile) => { state.isMobile = isMobile; },
+    setIsTablet: (state, isTablet) => { state.isTablet = isTablet; },
+    setIsTouch: (state, isTouch) => { state.isTouch = isTouch; },
 };
 
 export const actions = {
     setTheme({ state, rootGetters }, theme = null) {
-        document.getElementById('theme').setAttribute('href', theme || state.themes[rootGetters['preferences/theme']]);
+        document.getElementById('theme')
+            .setAttribute('href', theme || state.themes[rootGetters['preferences/theme']]);
 
         if (!theme) {
             localStorage.setItem('theme', state.themes[rootGetters['preferences/theme']]);

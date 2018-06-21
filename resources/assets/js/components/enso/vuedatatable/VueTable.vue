@@ -77,6 +77,7 @@
 </template>
 
 <script>
+
 import debounce from 'lodash/debounce';
 import accounting from 'accounting-js';
 import TopControls from './TopControls.vue';
@@ -92,13 +93,7 @@ export default {
     name: 'VueTable',
 
     components: {
-        TopControls,
-        TableHeader,
-        TableBody,
-        TableFooter,
-        RecordsInfo,
-        Overlay,
-        Pagination,
+        TopControls, TableHeader, TableBody, TableFooter, RecordsInfo, Overlay, Pagination,
     },
 
     directives: {
@@ -133,7 +128,9 @@ export default {
         i18n: {
             type: Function,
             default(key) {
-                return Object.keys(this.$options.methods).includes('__') ? this.__(key) : key;
+                return Object.keys(this.$options.methods).includes('__')
+                    ? this.__(key)
+                    : key;
             },
         },
     },
@@ -232,26 +229,23 @@ export default {
 
     methods: {
         init() {
-            axios
-                .get(this.path)
-                .then(({ data }) => {
-                    this.template = data.template;
-                    this.start = 0;
-                    [this.length] = this.template.lengthMenu;
-                    this.getData = debounce(this.getData, this.template.debounce);
-                    this.setPreferences();
-                    this.getData();
-                })
-                .catch(error => {
-                    const { status, data } = error.response;
+            axios.get(this.path).then(({ data }) => {
+                this.template = data.template;
+                this.start = 0;
+                [this.length] = this.template.lengthMenu;
+                this.getData = debounce(this.getData, this.template.debounce);
+                this.setPreferences();
+                this.getData();
+            }).catch((error) => {
+                const { status, data } = error.response;
 
-                    if (status === 555) {
-                        this.$toastr.error(data.message);
-                        return;
-                    }
+                if (status === 555) {
+                    this.$toastr.error(data.message);
+                    return;
+                }
 
-                    this.handleError(error);
-                });
+                this.handleError(error);
+            });
         },
         setPreferences() {
             this.setDefaultPreferences();
@@ -284,18 +278,18 @@ export default {
             this.$set(this.template, 'sort', false);
         },
         setUserPreferences(prefs) {
-            Object.keys(prefs.global).forEach(key => {
+            Object.keys(prefs.global).forEach((key) => {
                 this.$set(this, key, prefs.global[key]);
             });
 
-            Object.keys(prefs.template).forEach(key => {
+            Object.keys(prefs.template).forEach((key) => {
                 if (this.template[key] !== undefined) {
                     this.$set(this.template, key, prefs.template[key]);
                 }
             });
 
             prefs.columns.forEach((column, index) => {
-                Object.keys(column).forEach(key => {
+                Object.keys(column).forEach((key) => {
                     this.$set(this.template.columns[index].meta, key, column[key]);
                 });
             });
@@ -312,24 +306,27 @@ export default {
             this.loading = true;
             this.expanded = [];
 
-            axios[this.template.method.toLowerCase()](this.template.readPath, this.readRequest())
-                .then(({ data }) => {
-                    this.loading = false;
-                    this.forceInfo = false;
+            axios[this.template.method.toLowerCase()](
+                this.template.readPath,
+                this.readRequest(),
+            ).then(({ data }) => {
+                this.loading = false;
+                this.forceInfo = false;
 
-                    if (data.data.length === 0 && this.start > 0) {
-                        this.start -= this.length;
-                        return;
-                    }
+                if (data.data.length === 0 && this.start > 0) {
+                    this.start -= this.length;
+                    return;
+                }
 
-                    this.body = this.template.money ? this.processMoney(data) : data;
+                this.body = this.template.money
+                    ? this.processMoney(data)
+                    : data;
 
-                    this.$emit('draw');
-                })
-                .catch(error => {
-                    this.handleError(error);
-                    this.loading = false;
-                });
+                this.$emit('draw');
+            }).catch((error) => {
+                this.handleError(error);
+                this.loading = false;
+            });
         },
         readRequest(method = null) {
             const params = {
@@ -353,7 +350,9 @@ export default {
 
             method = method || this.template.method;
 
-            return method === 'GET' ? { params } : params;
+            return method === 'GET'
+                ? { params }
+                : params;
         },
         requestColumns() {
             return this.template.columns.reduce((columns, column) => {
@@ -374,23 +373,29 @@ export default {
             }, []);
         },
         processMoney(body) {
-            this.template.columns.filter(column => column.money).forEach(column => {
-                let money = body.data.map(row => parseFloat(row[column.name]) || 0);
-                money = accounting.formatColumn(money, column.money);
-                body.data = body.data.map((row, index) => {
-                    row[column.name] = money[index];
-                    return row;
-                });
+            this.template.columns
+                .filter(column => column.money)
+                .forEach((column) => {
+                    let money = body.data.map(row => parseFloat(row[column.name]) || 0);
+                    money = accounting.formatColumn(money, column.money);
+                    body.data = body.data.map((row, index) => {
+                        row[column.name] = money[index];
+                        return row;
+                    });
 
-                if (this.template.total && body.total.hasOwnProperty(column.name)) {
-                    body.total[column.name] = accounting.formatMoney(body.total[column.name], column.money);
-                }
-            });
+                    if (this.template.total && body.total.hasOwnProperty(column.name)) {
+                        body.total[column.name] = accounting
+                            .formatMoney(body.total[column.name], column.money);
+                    }
+                });
 
             return body;
         },
         exportData(path) {
-            axios[this.template.method.toLowerCase()](path, this.exportRequest()).catch(error => {
+            axios[this.template.method.toLowerCase()](
+                path,
+                this.exportRequest(),
+            ).catch((error) => {
                 const { status, data } = error.response;
 
                 if (status === 555) {
@@ -420,18 +425,18 @@ export default {
                 params: this.params,
             };
 
-            return this.template.method === 'GET' ? { params } : params;
+            return this.template.method === 'GET'
+                ? { params }
+                : params;
         },
         ajax(method, path, postEvent) {
-            axios[method.toLowerCase()](path)
-                .then(({ data }) => {
-                    this.$toastr.success(data.message);
-                    this.getData();
-                    if (postEvent) {
-                        this.$emit(postEvent);
-                    }
-                })
-                .catch(error => this.handleError(error));
+            axios[method.toLowerCase()](path).then(({ data }) => {
+                this.$toastr.success(data.message);
+                this.getData();
+                if (postEvent) {
+                    this.$emit(postEvent);
+                }
+            }).catch(error => this.handleError(error));
         },
         action(method, path, postEvent) {
             this.loading = true;
@@ -443,8 +448,7 @@ export default {
                     if (postEvent) {
                         this.$emit(postEvent);
                     }
-                })
-                .catch(error => this.handleError(error));
+                }).catch(error => this.handleError(error));
         },
         filterUpdate() {
             if (!this.initialised) {
@@ -456,30 +460,33 @@ export default {
         },
     },
 };
+
 </script>
 
 <style>
-.table.vue-data-table {
-    margin-bottom: 0;
-}
 
-.table-responsive {
-    position: relative;
-    display: block;
-    width: 100%;
-    min-height: 0.01%;
-    overflow-x: auto;
-}
+    .table.vue-data-table {
+        margin-bottom: 0;
+    }
 
-.table-responsive table {
-    font-size: 15px;
-}
+    .table-responsive {
+        position: relative;
+        display: block;
+        width: 100%;
+        min-height: .01%;
+        overflow-x: auto;
+    }
 
-div.table-bottom-controls {
-    margin-top: 0.5rem;
-}
+    .table-responsive table {
+        font-size: 15px;
+    }
 
-div.no-records-found {
-    margin-top: 20px;
-}
+    div.table-bottom-controls {
+        margin-top: .5rem;
+    }
+
+    div.no-records-found {
+        margin-top: 20px;
+    }
+
 </style>

@@ -29,6 +29,7 @@
 </template>
 
 <script>
+
 import { mapState } from 'vuex';
 import VueAside from '../VueAside.vue';
 import LanguageSelector from './LanguageSelector.vue';
@@ -41,12 +42,7 @@ export default {
     name: 'Settings',
 
     components: {
-        VueAside,
-        LanguageSelector,
-        ThemeSelector,
-        MenuState,
-        Tutorial,
-        KeyCollector,
+        VueAside, LanguageSelector, ThemeSelector, MenuState, Tutorial, KeyCollector,
     },
 
     computed: {
@@ -62,18 +58,21 @@ export default {
         },
     },
 };
+
 </script>
 
 <style>
-div.aside.settings {
-    right: 0;
-}
 
-li.settings-item .level-item {
-    padding: 6px;
-}
+    div.aside.settings {
+        right: 0;
+    }
 
-li.settings-item .level-right .level-item {
-    margin-right: unset;
-}
+    li.settings-item .level-item {
+        padding: 6px;
+    }
+
+    li.settings-item .level-right .level-item {
+        margin-right: unset;
+    }
+
 </style>

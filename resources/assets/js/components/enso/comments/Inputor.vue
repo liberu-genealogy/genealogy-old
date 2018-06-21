@@ -42,6 +42,7 @@
 </template>
 
 <script>
+
 import debounce from 'lodash/debounce';
 import getCaretCoordinates from 'textarea-caret';
 import vClickOutside from 'v-click-outside';
@@ -94,17 +95,14 @@ export default {
 
     methods: {
         fetch() {
-            axios
-                .get(route('core.comments.getTaggableUsers'), {
-                    params: { query: this.query },
-                })
-                .then(({ data }) => {
-                    this.items = data;
-                    if (this.items.length) {
-                        this.position = 0;
-                    }
-                })
-                .catch(error => this.handleError(error));
+            axios.get(route('core.comments.getTaggableUsers'), {
+                params: { query: this.query },
+            }).then(({ data }) => {
+                this.items = data;
+                if (this.items.length) {
+                    this.position = 0;
+                }
+            }).catch(error => this.handleError(error));
         },
         filter(event) {
             const arg = this.comment.body
@@ -112,10 +110,9 @@ export default {
                 .split(' ')
                 .pop();
 
-            const showAtwho =
-                arg[0] === '@' &&
-                (this.comment.body.length === this.textarea.selectionEnd ||
-                    this.comment.body[this.textarea.selectionEnd] === ' ');
+            const showAtwho = arg[0] === '@'
+                && (this.comment.body.length === this.textarea.selectionEnd
+                    || this.comment.body[this.textarea.selectionEnd] === ' ');
 
             if (!showAtwho) {
                 this.hide();
@@ -182,7 +179,8 @@ export default {
             return { search, replace };
         },
         highlight(item) {
-            return item.replace(new RegExp(`(${this.query})`, 'gi'), '<b>$1</b>');
+            return item
+                .replace(new RegExp(`(${this.query})`, 'gi'), '<b>$1</b>');
         },
         tagUser() {
             const user = this.items[this.position];
@@ -194,45 +192,48 @@ export default {
         },
     },
 };
+
 </script>
 
 <style lang="scss" scoped>
-.atwho-wrapper {
-    position: relative;
 
-    .dropdown-menu {
-        display: unset;
-        top: unset;
-        left: unset;
-        min-width: unset;
-        padding-top: unset;
+    .atwho-wrapper {
+        position: relative;
 
-        .dropdown-content {
-            width: fit-content;
-            padding: 0.25rem 0;
+        .dropdown-menu {
+            display: unset;
+            top: unset;
+            left: unset;
+            min-width: unset;
+            padding-top: unset;
 
-            a.dropdown-item {
-                padding: 0.1rem 0.5rem;
-            }
+            .dropdown-content {
+                width: fit-content;
+                padding: 0.25rem 0;
 
-            .media {
-                border-top: none;
-                padding-top: 0;
+                a.dropdown-item {
+                    padding: .1rem 0.5rem;
+                }
 
-                .media-left {
-                    margin-right: 0.5rem;
+                .media {
+                    border-top: none;
+                    padding-top: 0;
+
+                    .media-left {
+                        margin-right: 0.5rem;
+                    }
                 }
             }
         }
-    }
 
-    textarea.vue-comment {
-        resize: none;
-        word-wrap: break-word;
+        textarea.vue-comment {
+            resize: none;
+            word-wrap: break-word;
 
-        &:not([rows]) {
-            min-height: 90px;
+            &:not([rows]) {
+                min-height: 90px;
+            }
         }
     }
-}
+
 </style>

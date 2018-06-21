@@ -41,6 +41,7 @@
 </template>
 
 <script>
+
 export default {
     name: 'IntervalFilter',
 
@@ -75,14 +76,17 @@ export default {
         },
     },
 };
+
 </script>
 
 <style lang="scss" scoped>
-.interval-filter {
-    padding: 0.5rem;
-}
 
-.control.has-icons-right .icon.clear-button {
-    pointer-events: all;
-}
+    .interval-filter {
+        padding: 0.5rem;
+    }
+
+    .control.has-icons-right .icon.clear-button {
+        pointer-events: all;
+    }
+
 </style>
