@@ -26,7 +26,7 @@ export default {
                     {
                         id: 3,
                         text: 'son2',
-                        children: [{ id: 6, name: 'grandson3' }, { id: 7, text: 'grandson4' }],
+                        children: [{ id: 6, text: 'grandson3' }, { id: 7, text: 'grandson4' }],
                     },
                 ],
             },
