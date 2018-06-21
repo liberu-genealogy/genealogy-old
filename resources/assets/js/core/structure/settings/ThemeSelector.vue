@@ -28,6 +28,7 @@
 </template>
 
 <script>
+
 import { mapState, mapGetters, mapActions } from 'vuex';
 import Dropdown from '../../../components/enso/bulma/Dropdown.vue';
 
@@ -45,4 +46,5 @@ export default {
         ...mapActions('preferences', ['setTheme']),
     },
 };
+
 </script>

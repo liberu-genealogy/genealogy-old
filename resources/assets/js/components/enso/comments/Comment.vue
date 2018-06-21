@@ -73,6 +73,7 @@
 </template>
 
 <script>
+
 import { VTooltip } from 'v-tooltip';
 import { mapGetters } from 'vuex';
 import fontawesome from '@fortawesome/fontawesome';
@@ -116,15 +117,18 @@ export default {
     computed: {
         ...mapGetters(['avatarLink']),
         avatar() {
-            return this.isNew ? this.avatarLink : route('core.avatars.show', this.comment.owner.avatarId || 'null');
+            return this.isNew
+                ? this.avatarLink
+                : route('core.avatars.show', this.comment.owner.avatarId || 'null');
         },
         highlightTaggedUsers() {
             let { body } = this.comment;
 
-            this.comment.taggedUserList.forEach(user => {
-                const highlighted = `${'<span class="has-text-info">@'}${user.fullName}</span>`;
-                body = body.replace(`@${user.fullName}`, highlighted);
-            });
+            this.comment.taggedUserList
+                .forEach((user) => {
+                    const highlighted = `${'<span class="has-text-info">@'}${user.fullName}</span>`;
+                    body = body.replace(`@${user.fullName}`, highlighted);
+                });
 
             return body;
         },
@@ -161,18 +165,21 @@ export default {
         },
     },
 };
+
 </script>
 
 <style scoped>
-img.avatar {
-    border: 1px solid orangered;
-}
 
-span.comment-body {
-    word-break: break-all;
-}
+    img.avatar {
+        border: 1px solid orangered;
+    }
 
-.media-content {
-    overflow: unset;
-}
+    span.comment-body {
+        word-break: break-all;
+    }
+
+    .media-content {
+        overflow: unset;
+    }
+
 </style>

@@ -38,6 +38,7 @@
 </template>
 
 <script>
+
 import fontawesome from '@fortawesome/fontawesome';
 import { faPowerOff } from '@fortawesome/fontawesome-free-solid/shakable.es';
 
@@ -87,18 +88,21 @@ export default {
         },
     },
 };
+
 </script>
 
 <style lang="scss" scoped>
-.vue-filter {
-    padding: 0.5em;
 
-    .filter-tabs {
-        padding-top: 0.5em;
+    .vue-filter {
+        padding: 0.5em;
 
-        .filter-label {
-            font-size: 0.9em;
+        .filter-tabs {
+            padding-top: 0.5em;
+
+            .filter-label {
+                font-size: 0.9em;
+            }
         }
     }
-}
+
 </style>

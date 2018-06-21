@@ -13,6 +13,7 @@
 </template>
 
 <script>
+
 const sizes = ['is-small', 'is-medium', 'is-large'];
 const types = ['is-primary', 'is-warning', 'is-danger', 'is-success', 'is-info'];
 
@@ -56,9 +57,11 @@ export default {
         },
     },
 };
+
 </script>
 
 <style lang="scss">
+
 @import '~bulma/sass/utilities/initial-variables';
 @import '~bulma/sass/utilities/functions';
 @import '~bulma/sass/utilities/derived-variables.sass';
@@ -151,4 +154,5 @@ export default {
         --height: 1.5rem;
     }
 }
+
 </style>

@@ -26,6 +26,7 @@
 </template>
 
 <script>
+
 export default {
     name: 'TableCell',
 
@@ -48,10 +49,13 @@ export default {
         },
     },
 };
+
 </script>
 
 <style lang="scss" scoped>
-.is-clickable {
-    cursor: pointer;
-}
+
+    .is-clickable {
+        cursor: pointer;
+    }
+
 </style>

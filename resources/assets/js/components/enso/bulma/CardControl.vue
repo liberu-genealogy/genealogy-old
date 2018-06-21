@@ -8,7 +8,9 @@
 </template>
 
 <script>
+
 export default {
     name: 'CardControl',
 };
+
 </script>
