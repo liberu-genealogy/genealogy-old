@@ -9,9 +9,7 @@
 </template>
 
 <script>
-
 export default {
     name: 'Router',
 };
-
 </script>

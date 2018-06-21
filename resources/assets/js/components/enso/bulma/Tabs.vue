@@ -24,7 +24,6 @@
 </template>
 
 <script>
-
 export default {
     name: 'Tabs',
 
@@ -83,8 +82,7 @@ export default {
             }
         },
         enable(index) {
-            const position = this.disabled
-                .findIndex(position => position === index);
+            const position = this.disabled.findIndex(position => position === index);
 
             if (position >= 0) {
                 this.disabled.splice(position, 1);
@@ -92,15 +90,11 @@ export default {
         },
     },
 };
-
 </script>
 
 <style lang="scss" scoped>
-
-    a[disabled] {
-        opacity: .5;
-        cursor: not-allowed;
-    }
-
+a[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
 </style>
-
