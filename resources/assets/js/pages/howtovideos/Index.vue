@@ -164,7 +164,6 @@
 </template>
 
 <script>
-
 import fontawesome from '@fortawesome/fontawesome';
 import { faPlus, faUpload, faBan, faCheck, faPencilAlt, faTags } from '@fortawesome/fontawesome-free-solid/shakable.es';
 import FileUploader from '../../components/enso/fileuploader/FileUploader.vue';
@@ -203,20 +202,25 @@ export default {
 
             return this.selectedTags.length === 0
                 ? this.videos
-                : this.videos.filter(({ tagList }) =>
-                    tagList.filter(tagId =>
-                        this.selectedTags.findIndex(({ id }) =>
-                            tagId === id) !== -1).length === this.selectedTags.length);
+                : this.videos.filter(
+                      ({ tagList }) =>
+                          tagList.filter(tagId => this.selectedTags.findIndex(({ id }) => tagId === id) !== -1)
+                              .length === this.selectedTags.length
+                  );
         },
         filteredTags() {
             return !this.query
                 ? this.tags.filter(({ id }) => !this.video.tagList.includes(id))
-                : this.tags.filter(({ name, id }) => !this.video.tagList.includes(id) &&
-                    name.toLowerCase().indexOf(this.query.toLowerCase()) > -1);
+                : this.tags.filter(
+                      ({ name, id }) =>
+                          !this.video.tagList.includes(id) && name.toLowerCase().indexOf(this.query.toLowerCase()) > -1
+                  );
         },
         tagIsNew() {
-            return !!this.query && this.tags.findIndex(({ name }) =>
-                name.toLowerCase() === this.query.toLowerCase()) === -1;
+            return (
+                !!this.query &&
+                this.tags.findIndex(({ name }) => name.toLowerCase() === this.query.toLowerCase()) === -1
+            );
         },
         selectedTags() {
             return this.tags.filter(({ selected }) => selected);
@@ -233,12 +237,14 @@ export default {
 
     methods: {
         getVideos() {
-            axios.get(route('howTo.videos.index'))
+            axios
+                .get(route('howTo.videos.index'))
                 .then(({ data }) => (this.videos = data))
                 .catch(error => this.handleError(error));
         },
         getTags() {
-            axios.get(route('howTo.tags.index'))
+            axios
+                .get(route('howTo.tags.index'))
                 .then(({ data }) => (this.tags = data))
                 .catch(error => this.handleError(error));
         },
@@ -263,7 +269,7 @@ export default {
             this.deselectTags();
         },
         deselectTags() {
-            this.tags.map((tag) => {
+            this.tags.map(tag => {
                 tag.selected = false;
                 return tag;
             });
@@ -273,32 +279,39 @@ export default {
                 return;
             }
 
-            axios.post(route('howTo.tags.store'), { name: this.query })
+            axios
+                .post(route('howTo.tags.store'), { name: this.query })
                 .then(({ data }) => {
                     this.tags.push(data);
                     this.query = '';
-                }).catch(error => this.handleError(error));
+                })
+                .catch(error => this.handleError(error));
         },
         updateTag() {
-            axios.patch(route('howTo.tags.update', this.selectedTag.id), {
-                name: this.selectedTag.name,
-            }).catch(error => this.handleError(error));
+            axios
+                .patch(route('howTo.tags.update', this.selectedTag.id), {
+                    name: this.selectedTag.name,
+                })
+                .catch(error => this.handleError(error));
         },
         deleteTag(tagId) {
-            axios.delete(route('howTo.tags.destroy', tagId))
+            axios
+                .delete(route('howTo.tags.destroy', tagId))
                 .then(() => {
                     const index = this.tags.findIndex(({ id }) => id === tagId);
                     this.tags.splice(index, 1);
-                }).catch(error => this.handleError(error));
+                })
+                .catch(error => this.handleError(error));
         },
         update() {
-            axios.patch(route('howTo.videos.update', this.video.id), this.video)
+            axios
+                .patch(route('howTo.videos.update', this.video.id), this.video)
                 .then(({ data }) => {
                     this.$toastr.success(data.message);
                     this.reset();
-                }).catch(error => this.handleError(error));
+                })
+                .catch(error => this.handleError(error));
         },
     },
 };
-
 </script>

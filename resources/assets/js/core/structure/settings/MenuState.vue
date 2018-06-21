@@ -15,7 +15,6 @@
 </template>
 
 <script>
-
 import { mapGetters, mapActions } from 'vuex';
 import VueSwitch from '../../../components/enso/vueforms/VueSwitch.vue';
 
@@ -40,6 +39,4 @@ export default {
         ...mapActions('preferences', ['setMenuState']),
     },
 };
-
 </script>
-
