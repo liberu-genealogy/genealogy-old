@@ -10,7 +10,6 @@
 </template>
 
 <script>
-
 export default {
     name: 'RecordsInfo',
 
@@ -34,9 +33,7 @@ export default {
             return this.body.data.length > 0;
         },
         startInfo() {
-            return this.hasRecords
-                ? this.start + 1
-                : 0;
+            return this.hasRecords ? this.start + 1 : 0;
         },
         filteredInfo() {
             return this.body.filters
@@ -56,13 +53,10 @@ export default {
         },
     },
 };
-
 </script>
 
 <style>
-
-    .table-entries-info {
-        font-size: 15px;
-    }
-
+.table-entries-info {
+    font-size: 15px;
+}
 </style>

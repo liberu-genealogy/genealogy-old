@@ -30,7 +30,6 @@
 </template>
 
 <script>
-
 import Breadcrumbs from './Breadcrumbs.vue';
 
 export default {
@@ -62,5 +61,4 @@ export default {
         },
     },
 };
-
 </script>

@@ -56,7 +56,6 @@
 </template>
 
 <script>
-
 export default {
     name: 'Pagination',
 
@@ -89,7 +88,7 @@ export default {
 
     computed: {
         page() {
-            return (this.start / this.length) + 1;
+            return this.start / this.length + 1;
         },
         pages() {
             return Math.ceil(this.records / this.length);
@@ -137,13 +136,10 @@ export default {
         },
     },
 };
-
 </script>
 
 <style>
-
-    nav.table-navigation {
-        max-width: 425px;
-    }
-
+nav.table-navigation {
+    max-width: 425px;
+}
 </style>

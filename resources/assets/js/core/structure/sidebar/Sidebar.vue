@@ -12,7 +12,6 @@
 </template>
 
 <script>
-
 import { mapState, mapMutations } from 'vuex';
 import Menus from './Menus.vue';
 import VueAside from '../VueAside.vue';
@@ -36,7 +35,7 @@ export default {
         expandMenu(menus) {
             const self = this;
 
-            menus.forEach((menu) => {
+            menus.forEach(menu => {
                 if (self.hasSelectedChild(menu)) {
                     self.toggle(menu);
                     self.expandMenu(menu.children);
@@ -47,7 +46,7 @@ export default {
             const self = this;
             let active = false;
 
-            menu.children.forEach((child) => {
+            menu.children.forEach(child => {
                 if (active) return;
 
                 active = self.isActive(child);
@@ -60,23 +59,23 @@ export default {
             return active;
         },
         isActive(menu) {
-            return this.$route.matched.map(route => route.name).includes(menu.link) ||
-                (this.$route.matched.length > 1
-                    && this.$route.matched.map(route =>
-                        route.path)[this.$route.matched.length - 2] === `/${menu.link.split('.').slice(0, -1).join('/')}`
-                );
+            return (
+                this.$route.matched.map(route => route.name).includes(menu.link) ||
+                (this.$route.matched.length > 1 &&
+                    this.$route.matched.map(route => route.path)[this.$route.matched.length - 2] ===
+                        `/${menu.link
+                            .split('.')
+                            .slice(0, -1)
+                            .join('/')}`)
+            );
         },
     },
 };
-
 </script>
 
 <style>
-
-    .menu-wrapper {
-        max-height: calc(100vh - 110px);
-        overflow-y: auto;
-    }
-
+.menu-wrapper {
+    max-height: calc(100vh - 110px);
+    overflow-y: auto;
+}
 </style>
-
