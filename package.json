@@ -49,6 +49,7 @@
         "@fortawesome/fontawesome-free-brands": "5.0.13",
         "@fortawesome/fontawesome-free-regular": "5.0.13",
         "@fortawesome/fontawesome-free-solid": "5.0.13",
+        "@fortawesome/fontawesome-svg-core": "^1.2.0",
         "@fortawesome/vue-fontawesome": "0.1.0",
         "accounting-js": "1.1.1",
         "animate.css": "3.6.1",
