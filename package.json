@@ -11,7 +11,7 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
-        "babel-eslint": "8.2.3",
+        "babel-eslint": "8.2.4",
         "babel-plugin-syntax-dynamic-import": "6.18.0",
         "babel-plugin-transform-object-rest-spread": "6.26.0",
         "cross-env": "5.2.0",
