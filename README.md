@@ -26,19 +26,13 @@ Under development and currently alpha status. Contributions welcome.
 
 ### Installation
 
-1. Download the project with `git clone https://github.com/modularsoftware/genealogy.git`
+1. Download the project with `composer create-project modularsoftware/genealogy`
 
-2. Run in the project folder `composer install`
+2. Configure the `.env` file. 
 
-3. Copy `.env.example` to `.env` and Configure the `.env` file. 
+3. Run `php artisan migrate --seed`
 
-4. Run `php artisan key:generate`
-
-5. Run `php artisan migrate --seed`
-
-6. `npm install && npm run dev` / `hmr` /...
-
-7. Login into the project with user: `admin@example.net`, password: `password`
+4. Login into the project with user: `admin@example.net`, password: `password`
 
 
 ### Docker container support
