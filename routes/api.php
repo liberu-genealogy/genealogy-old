@@ -1,4 +1,10 @@
 <?php
+Route::middleware(['auth'])->namespace('Gedcom')
+    ->prefix('gedcom')->as('gedcom.')
+    ->group(function () {
+        Route::post('store', 'GedcomController@store')
+            ->name('store');
+    });
 
 Route::namespace('Auth')
     ->group(function () {
