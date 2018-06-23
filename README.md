@@ -12,7 +12,9 @@
 ## Description
 
 Genealogy software for creating your own family tree website. Store your data locally or in a networked
-environment. Features include: creating / editing / updating / deleting of individuals, families, events,
+environment. 
+
+Features include: creating / editing / updating / deleting of individuals, families, events,
 sources, notes, citations, repositories. Live rendering of tree data. Data tables, forms
 addresses, contacts, permissions and roles. Importing of CSV / Spreadsheets.
 
