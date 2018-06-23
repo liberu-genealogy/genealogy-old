@@ -27,8 +27,14 @@
     },
     {
       "label": "Birth",
-      "name": "date",
-      "data": "events.date",
+      "name": "birth",
+      "data": "birth.date",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Death",
+      "name": "death",
+      "data": "death.date",
       "meta": ["searchable", "sortable"]
     },
     {
