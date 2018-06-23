@@ -20,7 +20,7 @@ $factory->define(App\Event::class, function (Faker\Generator $faker) {
         'date'          => $faker->dateTimeBetween($startDate = '-200 years', $endDate = 'now'),
         'is_active'     => $faker->boolean,
         'event_type'    => 'App\Individual',
-        'event_id'      => $faker->randomElement(\App\Individual::pluck('id')->toArray()),
-        'event_type_id' => $faker->randomElement(\App\EventType::pluck('id')->toArray()),
+        'event_id'      => $faker->randomElement(\App\Individual::pluck('id')->unique()->toArray()),
+        'event_type_id' => $faker->randomElement(\App\EventType::pluck('id')->unique()->toArray()),
     ];
 });
