@@ -12,7 +12,7 @@
  */
 
 $factory->define(App\Event::class, function (Faker\Generator $faker) {
-   // $event = $faker->randomElement(['App\Individual', 'App\Family']);
+    // $event = $faker->randomElement(['App\Individual', 'App\Family']);
 
     return [
         'name'          => $faker->sentence,
