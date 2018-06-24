@@ -18,8 +18,8 @@ Features include: creating / editing / updating / deleting of individuals, famil
 sources, notes, citations, repositories. Live rendering of tree data. Data tables, forms
 addresses, contacts, permissions and roles. 
 
-Importing of CSV / Spreadsheets. Currently in the process
-of implementing Gedcom and API access. Exporting is also planned but with your own install you are in control of your data.
+Importing of CSV / Spreadsheets. Currently in the process of implementing
+API access. Exporting is also planned but with your own install you are in control of your data.
 
 
 Currently under development and not recommended for production websites however there are no known serious issues. 
