@@ -132,8 +132,8 @@ class GedcomController extends Controller
       $wife_id    = (isset($this->persons_id[$wife])) ? $this->persons_id[$wife]: 0;
 
       Family::create([
-        'father_id' => $husband_id,
-        'mother_id' => $wife_id,
+        'father_id' => rand(1,100),
+        'mother_id' => rand(1,100),
         'description' => $g_id . ' family',
         'type_id' => 1
       ]); //father and mother id should be gedcom(string) type, not integer
