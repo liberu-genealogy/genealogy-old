@@ -132,8 +132,8 @@ class GedcomController extends Controller
       $wife_id    = (isset($this->persons_id[$wife])) ? $this->persons_id[$wife]: 0;
 
       Family::create([
-        'father_id' => rand(1,100),
-        'mother_id' => rand(1,100),
+        'father_id' => $husband_id,
+        'mother_id' => $wife_id,
         'description' => $g_id . ' family',
         'type_id' => 1
       ]); //father and mother id should be gedcom(string) type, not integer
@@ -151,7 +151,7 @@ class GedcomController extends Controller
             $place = isset($place) ? $place : 'No place';
             Event::create([
               'event_type' => 'App\Family',
-              'event_date' => mb_convert_encoding($date, 'UTF-8', 'UTF-8'),
+              'date' => mb_convert_encoding($date, 'UTF-8', 'UTF-8'),
               'event_id'   => 1,
               'name' => mb_convert_encoding($place, 'UTF-8', 'UTF-8'),
               'description' => mb_convert_encoding($place, 'UTF-8', 'UTF-8'),
