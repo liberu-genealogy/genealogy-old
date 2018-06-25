@@ -1236,6 +1236,71 @@
             "time": "2015-04-20T18:58:01+00:00"
         },
         {
+            "name": "jenssegers/date",
+            "version": "v3.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jenssegers/date.git",
+                "reference": "3f5f94f28bd5108fab011869434209101d4189ae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jenssegers/date/zipball/3f5f94f28bd5108fab011869434209101d4189ae",
+                "reference": "3f5f94f28bd5108fab011869434209101d4189ae",
+                "shasum": ""
+            },
+            "require": {
+                "nesbot/carbon": "^1.0",
+                "php": ">=5.6",
+                "symfony/translation": "^2.7|^3.0|^4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.0|^6.0|^7.0",
+                "satooshi/php-coveralls": "^2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Jenssegers\\Date\\DateServiceProvider"
+                    ],
+                    "aliases": {
+                        "Date": "Jenssegers\\Date\\Date"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jenssegers\\Date\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jens Segers",
+                    "homepage": "https://jenssegers.com"
+                }
+            ],
+            "description": "A date library to help you work with dates in different languages",
+            "homepage": "https://github.com/jenssegers/date",
+            "keywords": [
+                "carbon",
+                "date",
+                "datetime",
+                "i18n",
+                "laravel",
+                "time",
+                "translation"
+            ],
+            "time": "2018-05-16T11:53:55+00:00"
+        },
+        {
             "name": "laravel-enso/actionlogger",
             "version": "2.1.1",
             "source": {
@@ -1601,20 +1666,21 @@
         },
         {
             "name": "laravel-enso/core",
-            "version": "2.10.6",
+            "version": "2.10.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/Core.git",
-                "reference": "5ba516497a300f12a7cdc4670ae428bdec21bad6"
+                "reference": "4d9261db5e0d2c085d17076243c1651bbd25e75c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/Core/zipball/5ba516497a300f12a7cdc4670ae428bdec21bad6",
-                "reference": "5ba516497a300f12a7cdc4670ae428bdec21bad6",
+                "url": "https://api.github.com/repos/laravel-enso/Core/zipball/4d9261db5e0d2c085d17076243c1651bbd25e75c",
+                "reference": "4d9261db5e0d2c085d17076243c1651bbd25e75c",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "~6.0",
+                "jenssegers/date": "^3.4",
                 "laravel-enso/actionlogger": "2.1.*",
                 "laravel-enso/avatarmanager": "2.1.*",
                 "laravel-enso/formbuilder": "2.6.*",
@@ -1685,7 +1751,7 @@
                 "vue-bulma",
                 "vue-spa"
             ],
-            "time": "2018-06-15T15:21:40+00:00"
+            "time": "2018-06-21T10:35:09+00:00"
         },
         {
             "name": "laravel-enso/dataimport",
@@ -1985,16 +2051,16 @@
         },
         {
             "name": "laravel-enso/historytracker",
-            "version": "1.4.7",
+            "version": "1.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/HistoryTracker.git",
-                "reference": "adf036a84f4b588a6bdb4b2c0557e550fc8e4415"
+                "reference": "0c508027e9dcc230531a0ab6119e8449dfa30185"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/HistoryTracker/zipball/adf036a84f4b588a6bdb4b2c0557e550fc8e4415",
-                "reference": "adf036a84f4b588a6bdb4b2c0557e550fc8e4415",
+                "url": "https://api.github.com/repos/laravel-enso/HistoryTracker/zipball/0c508027e9dcc230531a0ab6119e8449dfa30185",
+                "reference": "0c508027e9dcc230531a0ab6119e8449dfa30185",
                 "shasum": ""
             },
             "require": {
@@ -2026,7 +2092,7 @@
                 "historytracker",
                 "laravel-enso"
             ],
-            "time": "2018-02-11T15:39:14+00:00"
+            "time": "2018-06-18T08:45:52+00:00"
         },
         {
             "name": "laravel-enso/howtovideos",
@@ -2201,19 +2267,20 @@
         },
         {
             "name": "laravel-enso/localisation",
-            "version": "2.3.23",
+            "version": "2.3.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/Localisation.git",
-                "reference": "85bed68d4ff9f068178f928e1aa4214397b20e01"
+                "reference": "3ff9ca56b3bf0c8c27b67e70fb30dd39993c22f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/Localisation/zipball/85bed68d4ff9f068178f928e1aa4214397b20e01",
-                "reference": "85bed68d4ff9f068178f928e1aa4214397b20e01",
+                "url": "https://api.github.com/repos/laravel-enso/Localisation/zipball/3ff9ca56b3bf0c8c27b67e70fb30dd39993c22f2",
+                "reference": "3ff9ca56b3bf0c8c27b67e70fb30dd39993c22f2",
                 "shasum": ""
             },
             "require": {
+                "jenssegers/date": "^3.4",
                 "laravel-enso/core": "2.10.*",
                 "laravel-enso/formbuilder": "2.6.*",
                 "laravel-enso/helpers": "1.7.*",
@@ -2258,7 +2325,7 @@
                 "laravel-enso",
                 "localisation"
             ],
-            "time": "2018-06-12T04:31:22+00:00"
+            "time": "2018-06-21T05:37:12+00:00"
         },
         {
             "name": "laravel-enso/logmanager",
@@ -2931,16 +2998,16 @@
         },
         {
             "name": "laravel-enso/vuedatatable",
-            "version": "1.1.29",
+            "version": "1.1.31",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/VueDatatable.git",
-                "reference": "ddd43e1d3ab24bfcbffc05f46d0149e69752ebc3"
+                "reference": "eb8499d6f4fc2e2593a5d5250f2bb3151121d1fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/VueDatatable/zipball/ddd43e1d3ab24bfcbffc05f46d0149e69752ebc3",
-                "reference": "ddd43e1d3ab24bfcbffc05f46d0149e69752ebc3",
+                "url": "https://api.github.com/repos/laravel-enso/VueDatatable/zipball/eb8499d6f4fc2e2593a5d5250f2bb3151121d1fb",
+                "reference": "eb8499d6f4fc2e2593a5d5250f2bb3151121d1fb",
                 "shasum": ""
             },
             "require": {
@@ -2984,7 +3051,7 @@
                 "datatable",
                 "laravel-enso"
             ],
-            "time": "2018-06-17T14:52:23+00:00"
+            "time": "2018-06-20T07:26:26+00:00"
         },
         {
             "name": "laravel/framework",
