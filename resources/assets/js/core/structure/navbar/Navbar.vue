@@ -55,6 +55,7 @@
 </template>
 
 <script>
+
 import { mapState, mapMutations } from 'vuex';
 import { VTooltip } from 'v-tooltip';
 import fontawesome from '@fortawesome/fontawesome';
@@ -82,17 +83,20 @@ export default {
         ...mapMutations('layout/menu', { toggleMenu: 'toggle' }),
     },
 };
+
 </script>
 
 <style>
-.navbar {
-    position: fixed;
-    min-width: 100%;
-    top: 0px;
-    z-index: 3;
-}
 
-.navbar-item.is-aligned-right {
-    margin-left: auto;
-}
+    .navbar {
+        position: fixed;
+        min-width: 100%;
+        top: 0px;
+        z-index: 3;
+    }
+
+    .navbar-item.is-aligned-right {
+        margin-left: auto;
+    }
+
 </style>

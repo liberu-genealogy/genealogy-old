@@ -214,17 +214,11 @@
 </template>
 
 <script>
+
 import { VTooltip } from 'v-tooltip';
 import fontawesome from '@fortawesome/fontawesome';
-import {
-    faTrashAlt,
-    faEye,
-    faPlus,
-    faCheck,
-    faExclamationTriangle,
-    faUndo,
-    faInfo,
-} from '@fortawesome/fontawesome-free-solid/shakable.es';
+import { faTrashAlt, faEye, faPlus, faCheck, faExclamationTriangle, faUndo, faInfo }
+    from '@fortawesome/fontawesome-free-solid/shakable.es';
 import Divider from './Divider.vue';
 import Errors from './classes/Errors';
 import Modal from './Modal.vue';
@@ -241,12 +235,7 @@ export default {
     directives: { tooltip: VTooltip },
 
     components: {
-        Divider,
-        VueSwitch,
-        Modal,
-        VueSelect,
-        Datepicker,
-        Money,
+        Divider, VueSwitch, Modal, VueSelect, Datepicker, Money,
     },
 
     props: {
@@ -261,7 +250,9 @@ export default {
         i18n: {
             type: Function,
             default(key) {
-                return Object.keys(this.$options.methods).includes('__') ? this.__(key) : key;
+                return Object.keys(this.$options.methods).includes('__')
+                    ? this.__(key)
+                    : key;
             },
         },
         locale: {
@@ -280,7 +271,9 @@ export default {
 
     computed: {
         path() {
-            return this.data.method === 'post' ? this.data.actions.store.path : this.data.actions.update.path;
+            return this.data.method === 'post'
+                ? this.data.actions.store.path
+                : this.data.actions.update.path;
         },
     },
 
@@ -300,60 +293,55 @@ export default {
         submit() {
             this.loading = true;
 
-            axios[this.data.method](this.path, this.formData())
-                .then(({ data }) => {
-                    this.loading = false;
-                    this.$toastr.success(data.message);
-                    this.$emit('submit');
+            axios[this.data.method](this.path, this.formData()).then(({ data }) => {
+                this.loading = false;
+                this.$toastr.success(data.message);
+                this.$emit('submit');
 
-                    if (data.redirect) {
-                        this.$router.push({
-                            name: data.redirect,
-                            params: { id: data.id },
-                        });
-                    }
-                })
-                .catch(error => {
-                    const { status, data } = error.response;
-                    this.loading = false;
+                if (data.redirect) {
+                    this.$router.push({
+                        name: data.redirect,
+                        params: { id: data.id },
+                    });
+                }
+            }).catch((error) => {
+                const { status, data } = error.response;
+                this.loading = false;
 
-                    if (status === 422) {
-                        this.errors.set(data.errors);
+                if (status === 422) {
+                    this.errors.set(data.errors);
 
-                        return;
-                    }
+                    return;
+                }
 
-                    this.handleError(error);
-                });
+                this.handleError(error);
+            });
         },
         formData() {
-            return this.data.sections.reduce((fields, section) => fields.concat(section.fields), []).reduce(
-                (object, field) => {
+            return this.data.sections
+                .reduce((fields, section) => fields
+                    .concat(section.fields), [])
+                .reduce((object, field) => {
                     object[field.name] = field.value;
                     return object;
-                },
-                { _params: this.params }
-            );
+                }, { _params: this.params });
         },
         destroy() {
             this.modal = false;
             this.loading = true;
 
-            axios
-                .delete(this.data.actions.destroy.path)
-                .then(({ data }) => {
-                    this.loading = false;
-                    this.$toastr.success(data.message);
-                    this.$emit('destroy');
+            axios.delete(this.data.actions.destroy.path).then(({ data }) => {
+                this.loading = false;
+                this.$toastr.success(data.message);
+                this.$emit('destroy');
 
-                    if (data.redirect) {
-                        this.$router.push({ name: data.redirect });
-                    }
-                })
-                .catch(error => {
-                    this.loading = false;
-                    this.handleError(error);
-                });
+                if (data.redirect) {
+                    this.$router.push({ name: data.redirect });
+                }
+            }).catch((error) => {
+                this.loading = false;
+                this.handleError(error);
+            });
         },
         field(field) {
             return this.data.sections
@@ -365,12 +353,15 @@ export default {
         },
     },
 };
+
 </script>
 
 <style lang="scss" scoped>
-.title {
-    .icon {
-        vertical-align: text-bottom;
+
+    .title {
+        .icon {
+            vertical-align: text-bottom;
+        }
     }
-}
+
 </style>

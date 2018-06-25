@@ -9,6 +9,7 @@
 </template>
 
 <script>
+
 import Modal from '../bulma/Modal.vue';
 import VueForm from '../vueforms/VueForm.vue';
 
@@ -41,4 +42,5 @@ export default {
         },
     },
 };
+
 </script>

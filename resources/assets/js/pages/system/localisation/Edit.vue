@@ -22,9 +22,11 @@
 </template>
 
 <script>
+
 import VueFormSs from '../../../components/enso/vueforms/VueFormSs.vue';
 
 export default {
     components: { VueFormSs },
 };
+
 </script>

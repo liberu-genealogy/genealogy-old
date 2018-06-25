@@ -1,11 +1,4 @@
 <?php
-Route::middleware(['auth'])->namespace('Gedcom')
-    ->prefix('gedcom')->as('gedcom.')
-    ->group(function () {
-        Route::post('store', 'GedcomController@store')
-            ->name('store');
-    });
-
 Route::namespace('Auth')
     ->group(function () {
         Route::post('login', 'LoginController@login')
@@ -194,4 +187,11 @@ Route::middleware(['web', 'auth', 'core'])
             });
 
         Route::resource('trees', 'Tree\TreeController');
+    });
+
+Route::middleware(['auth'])->namespace('Gedcom')
+    ->prefix('gedcom')->as('gedcom.')
+    ->group(function () {
+        Route::post('store', 'GedcomController@store')
+            ->name('store');
     });

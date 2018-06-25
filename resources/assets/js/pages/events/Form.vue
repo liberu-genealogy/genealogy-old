@@ -16,12 +16,12 @@
 </template>
 
 <script>
-import fontawesome from '@fortawesome/fontawesome';
-import { faAddressCard } from '@fortawesome/fontawesome-free-solid/shakable.es';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
 import VueTable from '../../components/enso/vuedatatable/VueTable.vue';
 import EventForm from '../../components/enso/events/EventForm.vue';
 
-fontawesome.library.add(faAddressCard);
+library.add(faAddressCard);
 
 export default {
     components: { VueTable, EventForm },

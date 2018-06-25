@@ -10,6 +10,7 @@
 </template>
 
 <script>
+
 export default {
     name: 'Overlay',
 
@@ -47,37 +48,40 @@ export default {
         },
     },
 };
+
 </script>
 
 <style lang="scss" scoped>
-.is-opaque {
-    background: rgba(255, 255, 255, 0.4);
-}
 
-.overlay.is-overlay {
-    display: flex;
+    .is-opaque {
+        background: rgba(255, 255, 255, 0.4);
+    }
 
-    .overlay-loader {
-        margin: auto;
-        -webkit-animation: spinAround 500ms infinite linear;
-        animation: spinAround 500ms infinite linear;
-        border-radius: 50%;
-        content: '';
+    .overlay.is-overlay {
+        display: flex;
 
-        &.is-small {
-            height: 1em;
-            width: 1em;
-        }
+        .overlay-loader {
+            margin: auto;
+            -webkit-animation: spinAround 500ms infinite linear;
+            animation: spinAround 500ms infinite linear;
+            border-radius: 50%;
+            content: "";
 
-        &.is-medium {
-            width: 2em;
-            height: 2em;
-        }
+            &.is-small {
+                height: 1em;
+                width: 1em;
+            }
 
-        &.is-large {
-            width: 3em;
-            height: 3em;
+            &.is-medium {
+                width: 2em;
+                height: 2em;
+            }
+
+            &.is-large {
+                width: 3em;
+                height: 3em;
+            }
         }
     }
-}
+
 </style>

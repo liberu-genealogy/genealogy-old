@@ -5,6 +5,7 @@
 </template>
 
 <script>
+
 import Chart from 'chart.js';
 import 'chartjs-plugin-datalabels';
 
@@ -87,25 +88,40 @@ export default {
                 return;
             }
 
-            const self = this;
-
-            this.chart.data.datasets.forEach((dataset, index) => {
-                dataset.data = self.data.datasets[index].data;
-            });
-
-            this.chart.data.labels = self.data.labels;
-
+            this.updateDatasets();
+            this.chart.data.labels = this.data.labels;
             this.chart.update();
+        },
+        updateDatasets() {
+            if (this.datasetsStructureChanged()) {
+                this.$set(this.chart.data, 'datasets', this.data.datasets);
+                return;
+            }
+
+            this.chart.data.datasets
+                .forEach((dataset, index) => {
+                    dataset.data = this.data.datasets[index].data;
+                });
+        },
+        datasetsStructureChanged() {
+            return this.chart.data.datasets.length !== this.data.datasets.length
+                || this.chart.data.datasets
+                    .filter(({ label }) => this.data.datasets
+                        .findIndex(dataset => dataset.label === label) === -1)
+                    .length !== 0;
         },
         svg() {
             return this.$el.toDataURL('image/jpg');
         },
     },
 };
+
 </script>
 
 <style scoped>
-.chart-js {
-    max-width: 100%;
-}
+
+    .chart-js {
+        max-width: 100%;
+  }
+
 </style>

@@ -87,6 +87,7 @@
 </template>
 
 <script>
+
 import fontawesome from '@fortawesome/fontawesome';
 import { faSync, faUndo, faSearch, faInfoCircle } from '@fortawesome/fontawesome-free-solid/shakable.es';
 import LengthMenu from './topControls/LengthMenu.vue';
@@ -100,10 +101,7 @@ export default {
     name: 'TopControls',
 
     components: {
-        LengthMenu,
-        ColumnVisibility,
-        StyleSelector,
-        Modal,
+        LengthMenu, ColumnVisibility, StyleSelector, Modal,
     },
 
     props: {
@@ -176,16 +174,19 @@ export default {
         },
     },
 };
+
 </script>
 
 <style lang="scss" scoped>
-.title {
-    .icon {
-        vertical-align: text-bottom;
-    }
-}
 
-.control.has-icons-right .icon.clear-button {
-    pointer-events: all;
-}
+    .title {
+        .icon {
+            vertical-align: text-bottom;
+        }
+    }
+
+    .control.has-icons-right .icon.clear-button {
+        pointer-events: all;
+    }
+
 </style>

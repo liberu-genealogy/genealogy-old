@@ -49,11 +49,11 @@
 
 <script>
 import { mapState } from 'vuex';
-import fontawesome from '@fortawesome/fontawesome';
-import { faHeart } from '@fortawesome/fontawesome-free-solid/shakable.es';
-import { faGithub } from '@fortawesome/fontawesome-free-brands/shakable.es';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
-fontawesome.library.add(faHeart, faGithub);
+library.add(faHeart, faGithub);
 
 export default {
     name: 'AppFooter',

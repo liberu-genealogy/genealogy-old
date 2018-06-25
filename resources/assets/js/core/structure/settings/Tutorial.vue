@@ -21,6 +21,7 @@
 </template>
 
 <script>
+
 import fontawesome from '@fortawesome/fontawesome';
 import { faQuestion } from '@fortawesome/fontawesome-free-solid/shakable.es';
 
@@ -39,33 +40,31 @@ export default {
 
     methods: {
         get() {
-            axios
-                .get(route('system.tutorials.show'), {
-                    params: { route: this.$route.name },
-                })
-                .then(({ data }) => {
-                    this.init(data);
-                })
-                .catch(error => this.handleError(error));
+            axios.get(route('system.tutorials.show'), {
+                params: { route: this.$route.name },
+            }).then(({ data }) => {
+                this.init(data);
+            }).catch(error => this.handleError(error));
         },
         init(steps) {
             this.$store.commit('layout/settingsBar/toggle');
             this.intro.setOptions({
-                steps,
-                highlightClass: 'intro-highlight',
-                showStepNumbers: false,
+                steps, highlightClass: 'intro-highlight', showStepNumbers: false,
             });
             this.intro.start();
         },
     },
 };
+
 </script>
 
-<style src="intro.js/introjs.css">
-</style>
+<style src="intro.js/introjs.css"></style>
 
 <style>
-.intro-highlight {
-    opacity: 0.5;
-}
+
+    .intro-highlight {
+        opacity: 0.5;
+    }
+
 </style>
+

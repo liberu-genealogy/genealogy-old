@@ -48,15 +48,15 @@
 </template>
 
 <script>
-import fontawesome from '@fortawesome/fontawesome';
-import { faCheck, faTimes, faEnvelope, faPhone, faStickyNote } from '@fortawesome/fontawesome-free-solid/shakable.es';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCheck, faTimes, faEnvelope, faPhone, faStickyNote } from '@fortawesome/free-solid-svg-icons';
 import EventForm from './EventForm.vue';
 import Card from '../bulma/Card.vue';
 import CardFooter from '../bulma/CardFooter.vue';
 import CardFooterItem from '../bulma/CardFooterItem.vue';
 import Popover from '../bulma/Popover.vue';
 
-fontawesome.library.add([faCheck, faTimes, faEnvelope, faPhone, faStickyNote]);
+library.add([faCheck, faTimes, faEnvelope, faPhone, faStickyNote]);
 
 export default {
     name: 'Event',

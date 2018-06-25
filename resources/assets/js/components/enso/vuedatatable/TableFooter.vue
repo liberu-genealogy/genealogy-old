@@ -39,6 +39,7 @@
 </template>
 
 <script>
+
 export default {
     name: 'TableFooter',
 
@@ -72,10 +73,12 @@ export default {
         },
     },
 };
+
 </script>
 
 <style scoped>
-.is-money {
-    font-family: monospace;
-}
+    .is-money {
+        font-family: monospace;
+    }
 </style>
+
