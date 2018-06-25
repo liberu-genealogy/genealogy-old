@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "55e7dd64651bb308786b7fdcc9948f79",
@@ -1418,16 +1418,16 @@
         },
         {
             "name": "laravel-enso/charts",
-            "version": "2.3.7",
+            "version": "2.3.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/Charts.git",
-                "reference": "071b5e936df9eff0c7fcaf3400d0ddeac843350e"
+                "reference": "0e74bce03dd6c296a19f195d9ffc35fb6a9a55f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/Charts/zipball/071b5e936df9eff0c7fcaf3400d0ddeac843350e",
-                "reference": "071b5e936df9eff0c7fcaf3400d0ddeac843350e",
+                "url": "https://api.github.com/repos/laravel-enso/Charts/zipball/0e74bce03dd6c296a19f195d9ffc35fb6a9a55f2",
+                "reference": "0e74bce03dd6c296a19f195d9ffc35fb6a9a55f2",
                 "shasum": ""
             },
             "require": {
@@ -1467,7 +1467,7 @@
                 "charts",
                 "laravel-enso"
             ],
-            "time": "2018-06-12T09:15:17+00:00"
+            "time": "2018-06-25T06:27:26+00:00"
         },
         {
             "name": "laravel-enso/commentsmanager",
