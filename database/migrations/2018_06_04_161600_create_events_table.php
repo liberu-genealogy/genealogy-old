@@ -17,10 +17,10 @@ class CreateEventsTable extends Migration
             $table->morphs('event');
             $table->string('name');
             $table->text('description', 65535);
-            $table->dateTime('date')->nullable();
-            $table->timestamps();
+            $table->string('date')->nullable();
             $table->integer('is_active');
             $table->integer('event_type_id')->references('id')->on('event_types');
+            $table->timestamps();
         });
     }
 
