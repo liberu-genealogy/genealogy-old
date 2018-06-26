@@ -5,7 +5,6 @@
 </template>
 
 <script>
-
 import Chart from 'chart.js';
 import 'chartjs-plugin-datalabels';
 
@@ -98,30 +97,27 @@ export default {
                 return;
             }
 
-            this.chart.data.datasets
-                .forEach((dataset, index) => {
-                    dataset.data = this.data.datasets[index].data;
-                });
+            this.chart.data.datasets.forEach((dataset, index) => {
+                dataset.data = this.data.datasets[index].data;
+            });
         },
         datasetsStructureChanged() {
-            return this.chart.data.datasets.length !== this.data.datasets.length
-                || this.chart.data.datasets
-                    .filter(({ label }) => this.data.datasets
-                        .findIndex(dataset => dataset.label === label) === -1)
-                    .length !== 0;
+            return (
+                this.chart.data.datasets.length !== this.data.datasets.length ||
+                this.chart.data.datasets.filter(
+                    ({ label }) => this.data.datasets.findIndex(dataset => dataset.label === label) === -1
+                ).length !== 0
+            );
         },
         svg() {
             return this.$el.toDataURL('image/jpg');
         },
     },
 };
-
 </script>
 
 <style scoped>
-
-    .chart-js {
-        max-width: 100%;
-  }
-
+.chart-js {
+    max-width: 100%;
+}
 </style>

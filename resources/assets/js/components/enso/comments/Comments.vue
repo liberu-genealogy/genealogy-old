@@ -26,7 +26,6 @@
 </template>
 
 <script>
-
 import { mapState } from 'vuex';
 import Comment from './Comment.vue';
 
@@ -69,9 +68,11 @@ export default {
         ...mapState(['user']),
         filteredComments() {
             return this.query
-                ? this.comments.filter(comment => comment.body.toLowerCase()
-                    .indexOf(this.query.toLowerCase()) > -1
-                    || comment.owner.fullName.toLowerCase().indexOf(this.query.toLowerCase()) > -1)
+                ? this.comments.filter(
+                      comment =>
+                          comment.body.toLowerCase().indexOf(this.query.toLowerCase()) > -1 ||
+                          comment.owner.fullName.toLowerCase().indexOf(this.query.toLowerCase()) > -1
+                  )
                 : this.comments;
         },
     },
@@ -84,19 +85,17 @@ export default {
         get() {
             this.loading = true;
 
-            axios.get(
-                route('core.comments.index'),
-                { params: this.getParams() },
-            ).then(({ data }) => {
-                this.comments = this.offset
-                    ? this.comments.concat(data.comments)
-                    : data.comments;
+            axios
+                .get(route('core.comments.index'), { params: this.getParams() })
+                .then(({ data }) => {
+                    this.comments = this.offset ? this.comments.concat(data.comments) : data.comments;
 
-                this.count = data.count;
-                this.offset = this.comments.length;
-                this.loading = false;
-                this.$emit('update');
-            }).catch(error => this.handleError(error));
+                    this.count = data.count;
+                    this.offset = this.comments.length;
+                    this.loading = false;
+                    this.$emit('update');
+                })
+                .catch(error => this.handleError(error));
         },
         getParams() {
             return {
@@ -134,17 +133,17 @@ export default {
 
             this.loading = true;
 
-            axios.post(
-                route('core.comments.store'),
-                this.postParams(),
-            ).then(({ data }) => {
-                this.comments.unshift(data.comment);
-                this.count = data.count;
-                this.offset++;
-                this.comment = null;
-                this.loading = false;
-                this.$emit('update');
-            }).catch(error => this.handleError(error));
+            axios
+                .post(route('core.comments.store'), this.postParams())
+                .then(({ data }) => {
+                    this.comments.unshift(data.comment);
+                    this.count = data.count;
+                    this.offset++;
+                    this.comment = null;
+                    this.loading = false;
+                    this.$emit('update');
+                })
+                .catch(error => this.handleError(error));
         },
         postParams() {
             return {
@@ -160,14 +159,14 @@ export default {
             comment.path = this.path;
             this.loading = true;
 
-            axios.patch(
-                route('core.comments.update', comment.id),
-                comment,
-            ).then(({ data }) => {
-                Object.assign(comment, data.comment);
-                this.loading = false;
-                this.$emit('update');
-            }).catch(error => this.handleError(error));
+            axios
+                .patch(route('core.comments.update', comment.id), comment)
+                .then(({ data }) => {
+                    Object.assign(comment, data.comment);
+                    this.loading = false;
+                    this.$emit('update');
+                })
+                .catch(error => this.handleError(error));
         },
         syncTaggedUsers(comment) {
             comment.taggedUserList.forEach((user, index) => {
@@ -179,24 +178,23 @@ export default {
         destroy(index) {
             this.loading = true;
 
-            axios.delete(route('core.comments.destroy', this.comments[index].id))
+            axios
+                .delete(route('core.comments.destroy', this.comments[index].id))
                 .then(({ data }) => {
                     this.comments.splice(index, 1);
                     this.count = data.count;
                     this.loading = false;
                     this.$emit('update');
-                }).catch(error => this.handleError(error));
+                })
+                .catch(error => this.handleError(error));
         },
     },
 };
-
 </script>
 
 <style scoped>
-
-    .wrapper {
-        max-height: 500px;
-        overflow-y: auto;
-    }
-
+.wrapper {
+    max-height: 500px;
+    overflow-y: auto;
+}
 </style>

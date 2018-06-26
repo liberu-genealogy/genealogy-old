@@ -24,7 +24,6 @@
 </template>
 
 <script>
-
 import fontawesome from '@fortawesome/fontawesome';
 import { faExclamationTriangle } from '@fortawesome/fontawesome-free-solid/shakable.es';
 import VueFormSs from '../../../components/enso/vueforms/VueFormSs.vue';
@@ -34,5 +33,4 @@ fontawesome.library.add(faExclamationTriangle);
 export default {
     components: { VueFormSs },
 };
-
 </script>

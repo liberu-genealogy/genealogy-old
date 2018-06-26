@@ -22,18 +22,22 @@
 </template>
 
 <script>
-
 import { saveAs } from 'file-saver';
 import fontawesome from '@fortawesome/fontawesome';
-import { faChartBar, faChartPie, faChartLine, faChartArea, faCircleNotch, faCircle, faDownload }
-    from '@fortawesome/fontawesome-free-solid/shakable.es';
+import {
+    faChartBar,
+    faChartPie,
+    faChartLine,
+    faChartArea,
+    faCircleNotch,
+    faCircle,
+    faDownload,
+} from '@fortawesome/fontawesome-free-solid/shakable.es';
 import Card from '../bulma/Card.vue';
 import CardControl from '../bulma/CardControl.vue';
 import Chart from './Chart.vue';
 
-fontawesome.library.add([
-    faChartBar, faChartPie, faChartLine, faChartArea, faCircleNotch, faCircle, faDownload,
-]);
+fontawesome.library.add([faChartBar, faChartPie, faChartLine, faChartArea, faCircleNotch, faCircle, faDownload]);
 
 const icons = {
     bar: faChartBar,
@@ -92,20 +96,20 @@ export default {
         get() {
             this.loading = true;
 
-            axios.get(this.source, { params: this.params })
+            axios
+                .get(this.source, { params: this.params })
                 .then(({ data }) => {
                     this.config = data;
                     this.loading = false;
-                }).catch((error) => {
+                })
+                .catch(error => {
                     this.loading = false;
                     this.handleError(error);
                 });
         },
         download() {
-            this.$refs.chart.$el
-                .toBlob(blob => saveAs(blob, `${this.config.title}.png`));
+            this.$refs.chart.$el.toBlob(blob => saveAs(blob, `${this.config.title}.png`));
         },
     },
 };
-
 </script>

@@ -85,20 +85,33 @@
 </template>
 
 <script>
-
 import { VPopover } from 'v-tooltip';
 import fontawesome from '@fortawesome/fontawesome';
 import {
-    faFile, faEye, faCloudDownloadAlt, faTrashAlt, faLink,
-    faInfoCircle, faUser, faCalendarAlt, faDatabase,
+    faFile,
+    faEye,
+    faCloudDownloadAlt,
+    faTrashAlt,
+    faLink,
+    faInfoCircle,
+    faUser,
+    faCalendarAlt,
+    faDatabase,
 } from '@fortawesome/fontawesome-free-solid/shakable.es';
 import Popover from '../bulma/Popover.vue';
 import formatDistance from '../../../modules/enso/plugins/date-fns/formatDistance';
 import Modal from './Modal.vue';
 
 fontawesome.library.add([
-    faFile, faEye, faCloudDownloadAlt, faTrashAlt, faLink,
-    faInfoCircle, faUser, faCalendarAlt, faDatabase,
+    faFile,
+    faEye,
+    faCloudDownloadAlt,
+    faTrashAlt,
+    faLink,
+    faInfoCircle,
+    faUser,
+    faCalendarAlt,
+    faDatabase,
 ]);
 
 export default {
@@ -130,7 +143,8 @@ export default {
 
     methods: {
         link() {
-            axios.get(route('core.documents.link', this.doc.id))
+            axios
+                .get(route('core.documents.link', this.doc.id))
                 .then(({ data }) => (this.temporaryLink = data.link))
                 .catch(error => this.handleError(error));
         },
@@ -141,33 +155,28 @@ export default {
             return formatDistance(date);
         },
         shortName(name) {
-            return name.length > 20
-                ? `${name.substring(0, 20)}...`
-                : name;
+            return name.length > 20 ? `${name.substring(0, 20)}...` : name;
         },
     },
 };
-
 </script>
 
 <style lang="scss" scoped>
+@import '~bulma/sass/utilities/initial-variables';
+@import '~bulma/sass/utilities/derived-variables.sass';
 
-    @import '~bulma/sass/utilities/initial-variables';
-    @import '~bulma/sass/utilities/derived-variables.sass';
+.wrapper {
+    padding: 0.2rem;
+    -webkit-box-shadow: 0px 0px 3px 1px rgba(133, 133, 133, 1);
+    box-shadow: 0px 0px 3px 1px rgba(133, 133, 133, 1);
+    border-radius: 5px;
 
-    .wrapper {
-        padding: .2rem;
-        -webkit-box-shadow: 0px 0px 3px 1px rgba(133,133,133,1);
-        box-shadow: 0px 0px 3px 1px rgba(133,133,133,1);
-        border-radius: 5px;
-
-        &:hover {
-            border-left: 4px solid $link;
-        }
-
-        &:not(:last-child) {
-            margin-bottom: 0.75rem;
-        }
+    &:hover {
+        border-left: 4px solid $link;
     }
 
+    &:not(:last-child) {
+        margin-bottom: 0.75rem;
+    }
+}
 </style>
