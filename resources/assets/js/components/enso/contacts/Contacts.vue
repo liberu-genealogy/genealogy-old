@@ -50,7 +50,6 @@
 </template>
 
 <script>
-
 import fontawesome from '@fortawesome/fontawesome';
 import { faAddressCard, faPlusSquare } from '@fortawesome/fontawesome-free-solid/shakable.es';
 import Card from '../bulma/Card.vue';
@@ -64,7 +63,10 @@ export default {
     name: 'Contacts',
 
     components: {
-        Card, CardControl, Contact, ContactForm,
+        Card,
+        CardControl,
+        Contact,
+        ContactForm,
     },
 
     props: {
@@ -98,9 +100,11 @@ export default {
     computed: {
         filteredContacts() {
             return this.query
-                ? this.contacts.filter(contact => contact.first_name.toLowerCase()
-                    .indexOf(this.query.toLowerCase()) > -1
-                    || contact.last_name.toLowerCase().indexOf(this.query.toLowerCase()) > -1)
+                ? this.contacts.filter(
+                      contact =>
+                          contact.first_name.toLowerCase().indexOf(this.query.toLowerCase()) > -1 ||
+                          contact.last_name.toLowerCase().indexOf(this.query.toLowerCase()) > -1
+                  )
                 : this.contacts;
         },
         count() {
@@ -122,22 +126,27 @@ export default {
         get() {
             this.loading = true;
 
-            axios.get(route('core.contacts.index'), {
-                params: { contactable_id: this.id, contactable_type: this.type },
-            }).then(({ data }) => {
-                this.contacts = data;
-                this.loading = false;
-                this.$refs.card.resize();
-            }).catch(error => this.handleError(error));
+            axios
+                .get(route('core.contacts.index'), {
+                    params: { contactable_id: this.id, contactable_type: this.type },
+                })
+                .then(({ data }) => {
+                    this.contacts = data;
+                    this.loading = false;
+                    this.$refs.card.resize();
+                })
+                .catch(error => this.handleError(error));
         },
         destroy(contact, index) {
             this.loading = true;
 
-            axios.delete(route('core.contacts.destroy', contact.id))
+            axios
+                .delete(route('core.contacts.destroy', contact.id))
                 .then(() => {
                     this.contacts.splice(index, 1);
                     this.loading = false;
-                }).catch(error => this.handleError(error));
+                })
+                .catch(error => this.handleError(error));
         },
         create() {
             this.loading = true;
@@ -148,30 +157,32 @@ export default {
 
             const params = { contactable_id: this.id, contactable_type: this.type };
 
-            axios.get(route('core.contacts.create', params))
+            axios
+                .get(route('core.contacts.create', params))
                 .then(({ data }) => {
                     this.loading = false;
                     this.form = data.form;
-                }).catch(error => this.handleError(error));
+                })
+                .catch(error => this.handleError(error));
         },
         edit(contact) {
             this.loading = true;
 
-            axios.get(route('core.contacts.edit', contact.id))
+            axios
+                .get(route('core.contacts.edit', contact.id))
                 .then(({ data }) => {
                     this.loading = false;
                     this.form = data.form;
-                }).catch(error => this.handleError(error));
+                })
+                .catch(error => this.handleError(error));
         },
     },
 };
-
 </script>
 
 <style scoped>
-
-    .wrapper {
-        max-height: 415px;
-        overflow-y: auto;
-    }
+.wrapper {
+    max-height: 415px;
+    overflow-y: auto;
+}
 </style>

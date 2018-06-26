@@ -25,25 +25,39 @@ export default new Vuex.Store({
     },
 
     getters: {
-        avatarLink: state => (state.isInitialised
-            ? route('core.avatars.show', state.user.avatarId || 'null')
-            : '#'),
+        avatarLink: state => (state.isInitialised ? route('core.avatars.show', state.user.avatarId || 'null') : '#'),
         routes: state => Object.keys(state.routes),
     },
 
     mutations: {
-        setUser: (state, user) => { state.user = user; },
-        setImpersonating: (state, impersonating) => { state.impersonating = impersonating; },
-        setUserAvatar: (state, avatarId) => { state.user.avatarId = avatarId; },
-        setMeta: (state, meta) => { state.meta = meta; },
-        initialise: (state, value) => { state.isInitialised = value; },
-        setShowQuote: (state, value) => { state.showQuote = value; },
-        setRoutes: (state, routes) => { state.routes = routes; },
+        setUser: (state, user) => {
+            state.user = user;
+        },
+        setImpersonating: (state, impersonating) => {
+            state.impersonating = impersonating;
+        },
+        setUserAvatar: (state, avatarId) => {
+            state.user.avatarId = avatarId;
+        },
+        setMeta: (state, meta) => {
+            state.meta = meta;
+        },
+        initialise: (state, value) => {
+            state.isInitialised = value;
+        },
+        setShowQuote: (state, value) => {
+            state.showQuote = value;
+        },
+        setRoutes: (state, routes) => {
+            state.routes = routes;
+        },
         setDefaultRoute: (state, route) => {
-            router.addRoutes([{
-                path: '/',
-                redirect: { name: route },
-            }]);
+            router.addRoutes([
+                {
+                    path: '/',
+                    redirect: { name: route },
+                },
+            ]);
         },
         setCsrfToken: (state, token) => {
             state.meta.csrfToken = token;
@@ -58,39 +72,41 @@ export default new Vuex.Store({
         initialise({ commit, dispatch }) {
             commit('initialise', false);
 
-            axios.get('/api/core').then(({ data }) => {
-                commit('setUser', data.user);
-                commit('preferences/set', data.preferences);
-                commit('setImpersonating', data.impersonating);
-                commit('menus/set', data.menus);
-                commit('menus/setImplicit', data.implicitMenu);
-                commit('localisation/setLanguages', data.languages);
-                commit('localisation/setI18n', data.i18n);
-                commit('layout/setThemes', data.themes);
-                commit('layout/menu/update', data.preferences.global.expandedMenu);
-                commit('setMeta', data.meta);
-                commit('setCsrfToken', data.meta.csrfToken);
-                commit('setRoutes', data.routes);
-                commit('setDefaultRoute', data.implicitMenu.link);
+            axios
+                .get('/api/core')
+                .then(({ data }) => {
+                    commit('setUser', data.user);
+                    commit('preferences/set', data.preferences);
+                    commit('setImpersonating', data.impersonating);
+                    commit('menus/set', data.menus);
+                    commit('menus/setImplicit', data.implicitMenu);
+                    commit('localisation/setLanguages', data.languages);
+                    commit('localisation/setI18n', data.i18n);
+                    commit('layout/setThemes', data.themes);
+                    commit('layout/menu/update', data.preferences.global.expandedMenu);
+                    commit('setMeta', data.meta);
+                    commit('setCsrfToken', data.meta.csrfToken);
+                    commit('setRoutes', data.routes);
+                    commit('setDefaultRoute', data.implicitMenu.link);
 
-                if (data.ravenKey) {
-                    Raven.config(data.meta.ravenKey)
-                        .addPlugin(RavenVue, Vue)
-                        .install();
-                }
+                    if (data.ravenKey) {
+                        Raven.config(data.meta.ravenKey)
+                            .addPlugin(RavenVue, Vue)
+                            .install();
+                    }
 
-                dispatch('layout/setTheme')
-                    .then(() => {
+                    dispatch('layout/setTheme').then(() => {
                         if (data.local) {
                             dispatch('setLocalState', data.local);
                         }
                         setTimeout(() => commit('initialise', true), 200);
                     });
-            }).catch((error) => {
-                if (error.response.status === 401) {
-                    commit('auth/logout');
-                }
-            });
+                })
+                .catch(error => {
+                    if (error.response.status === 401) {
+                        commit('auth/logout');
+                    }
+                });
         },
         setLocalState(context, state) {
             localState(context, state);

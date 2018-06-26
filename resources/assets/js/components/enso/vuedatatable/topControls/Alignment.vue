@@ -20,12 +20,7 @@
 
 <script>
 import { library } from '@fortawesome/fontawesome-svg-core';
-import {
-    faAlignJustify,
-    faAlignCenter,
-    faAlignLeft,
-    faAlignRight,
-} from '@fortawesome/free-solid-svg-icons';
+import { faAlignJustify, faAlignCenter, faAlignLeft, faAlignRight } from '@fortawesome/free-solid-svg-icons';
 import Dropdown from './Dropdown.vue';
 
 library.add(faAlignJustify, faAlignCenter, faAlignLeft, faAlignRight);

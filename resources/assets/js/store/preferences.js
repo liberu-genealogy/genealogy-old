@@ -3,16 +3,15 @@ export const state = {
     local: {},
 };
 
-const setPreferences = (payload) => {
-    axios.patch(route('core.preferences.setPreferences'), payload)
-        .catch(error => this.handleError(error));
+const setPreferences = payload => {
+    axios.patch(route('core.preferences.setPreferences'), payload).catch(error => this.handleError(error));
 };
 
 const updateGlobal = () => {
     setPreferences({ global: state.global });
 };
 
-const updateLocal = (payload) => {
+const updateLocal = payload => {
     setPreferences({ route: payload.route, value: payload.value });
 };
 
@@ -66,8 +65,7 @@ export const actions = {
 
         commit('theme', theme);
 
-        dispatch('layout/switchTheme', null, { root: true })
-            .then(() => updateGlobal());
+        dispatch('layout/switchTheme', null, { root: true }).then(() => updateGlobal());
     },
     setMenuState: ({ commit }, state) => {
         commit('expandedMenu', state);
