@@ -17,9 +17,9 @@ class CreateNotesTable extends Migration
             $table->string('name');
             $table->text('description', 65535);
             $table->dateTime('date')->nullable();
-            $table->timestamps();
             $table->integer('type_id');
             $table->integer('is_active');
+            $table->timestamps();
         });
     }
 

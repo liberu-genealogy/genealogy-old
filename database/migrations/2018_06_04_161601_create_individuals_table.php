@@ -17,9 +17,9 @@ class CreateIndividualsTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('gender');
-            $table->timestamps();
             $table->integer('is_active');
             $table->string('uuid');
+            $table->timestamps();
         });
     }
 

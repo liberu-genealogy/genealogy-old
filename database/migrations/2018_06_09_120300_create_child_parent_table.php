@@ -18,8 +18,8 @@ class CreateChildParentTable extends Migration
             $table->foreign('child_id')->references('id')->on('individuals');
             $table->integer('parent_id')->unsigned()->index('parent_id');
             $table->foreign('parent_id')->references('id')->on('individuals');
-            $table->timestamps();
             $table->integer('is_active')->default('1');
+            $table->timestamps();
         });
     }
 
