@@ -61,13 +61,12 @@ export default {
                 debug: true,
             },
         };
-
     },
 
     mounted() {
         axios
             .get(route('trees.pedigree', 36))
-            .then((response) => {
+            .then(response => {
                 this.data = response.data;
                 dTree.init(this.data, this.options);
             })

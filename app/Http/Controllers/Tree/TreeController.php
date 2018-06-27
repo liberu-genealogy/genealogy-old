@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Tree;
 
+use App\Family;
 use App\Http\Controllers\Controller;
 use App\Individual;
-use App\Family;
 
 class TreeController extends Controller
 {
@@ -19,107 +19,108 @@ class TreeController extends Controller
     }
 
     /**
-     * Get fathers family
+     * Get fathers family.
      *
-     * @param  Integer $father_id [Father ID]
-     * @return Array | Json
+     * @param int $father_id [Father ID]
+     *
+     * @return array | Json
      */
     public function pedigree($father_id = 1)
     {
-        $father = Family::with(['info','spouse'])->where('type_id','>=',1)->where('father_id',$father_id)->first();
+        $father = Family::with(['info', 'spouse'])->where('type_id', '>=', 1)->where('father_id', $father_id)->first();
         $data = [];
-        if($father){
-            $data[] = array(
-                'name' => $father->info->getNameAttribute(),
-                'class' => 'node',
-                'textClass' => 'nodeText',
+        if ($father) {
+            $data[] = [
+                'name'        => $father->info->getNameAttribute(),
+                'class'       => 'node',
+                'textClass'   => 'nodeText',
                 'depthOffset' => 1,
-                'marriages' => array(
-                    ['spouse' => array(
-                        'name' => $father->spouse->getNameAttribute()
-                    ),
+                'marriages'   => [
+                    ['spouse' => [
+                        'name' => $father->spouse->getNameAttribute(),
+                    ],
                         'children' => $father->info->children->map(function ($item) {
                             return ['name' => $item['first_name'].' '.$item['last_name']];
-                        })->all()],
+                        })->all(), ],
 
-                ),
-                'extra' => []
-            );
+                ],
+                'extra' => [],
+            ];
         }
 
-
         return $data;
-
     }
 
     /**
-     * Get individuals with its children
+     * Get individuals with its children.
      *
-     * @param  integer $parent_id [Parent ID / Father ID]
-     * @param  integer $nest      [Set how many nested children]
-     * @return Array | Json
+     * @param int $parent_id [Parent ID / Father ID]
+     * @param int $nest      [Set how many nested children]
+     *
+     * @return array | Json
      */
-    public function show($parent_id = 1, $nest = 1){
+    public function show($parent_id = 1, $nest = 1)
+    {
         $this->nest = 1; // initialize nesting to 1
 
         $parents = Individual::where('is_active', 1)->where('id', $parent_id)->get();
 
-        $tree = $this->getChildren($parents, (int)$nest);
+        $tree = $this->getChildren($parents, (int) $nest);
 
         return $tree;
     }
 
-
     /**
-     * Loop nested children
+     * Loop nested children.
      *
      *
-     * @param  integer $parents [description]
-     * @param  integer $nest    [description]
-     * @param  boolean $show    [description]
-     * @return array           [description]
+     * @param int  $parents [description]
+     * @param int  $nest    [description]
+     * @param bool $show    [description]
+     *
+     * @return array [description]
      */
-    public function getChildren($parents = 1, $nest = 1, $show = true){
+    public function getChildren($parents = 1, $nest = 1, $show = true)
+    {
         $data = [];
-        if($this->nest <= $nest){
+        if ($this->nest <= $nest) {
             $this->nest++;
 
-            foreach($parents as $key => $parent)
-            {
-                if($show === true){
+            foreach ($parents as $key => $parent) {
+                if ($show === true) {
                     $data[] = [
-                        'id' => $parent->id,
-                        'text' => $parent->getNameAttribute(),
-                        'children' => $this->getChildren($parent->children,$nest,$show)
+                        'id'       => $parent->id,
+                        'text'     => $parent->getNameAttribute(),
+                        'children' => $this->getChildren($parent->children, $nest, $show),
                     ];
-                }else{
+                } else {
                     $data[] = [
-                        'id' => $parent->id,
-                        'name' => $parent->getNameAttribute(),
-                        'children' => $this->getChildren($parent->children,$nest,$show)
+                        'id'       => $parent->id,
+                        'name'     => $parent->getNameAttribute(),
+                        'children' => $this->getChildren($parent->children, $nest, $show),
                     ];
                 }
-
             }
         }
 
         return $data;
-
     }
 
     /**
-     * Get individuals with its children
+     * Get individuals with its children.
      *
-     * @param  integer $parent_id [Parent ID / Father ID]
-     * @param  integer $nest      [Set how many nested children]
-     * @return Array | Json
+     * @param int $parent_id [Parent ID / Father ID]
+     * @param int $nest      [Set how many nested children]
+     *
+     * @return array | Json
      */
-    public function edge($parent_id = 1, $nest = 1){
+    public function edge($parent_id = 1, $nest = 1)
+    {
         $this->nest = 1; // initialize nesting to 1
 
         $parents = Individual::where('is_active', 1)->where('id', $parent_id)->get();
 
-        $tree = $this->getChildren($parents, (int)$nest, false);
+        $tree = $this->getChildren($parents, (int) $nest, false);
 
         return $tree;
     }

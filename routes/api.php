@@ -200,7 +200,3 @@ Route::middleware(['web', 'auth', 'core'])
                     ->name('store');
             });
     });
-
-
-
-

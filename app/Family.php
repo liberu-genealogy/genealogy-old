@@ -30,14 +30,16 @@ class Family extends Model
             ->where('individuals.id', '!=', $this->mother_id)
             ->pluck('individuals.id');
     }
-    
-   public function info(){
-        return $this->belongsTo(Individual::class,'father_id','id');
+
+    public function info()
+    {
+        return $this->belongsTo(Individual::class, 'father_id', 'id');
     }
 
-    public function spouse(){
-         return $this->hasOne(Individual::class,'id','mother_id');
-    }  
+    public function spouse()
+    {
+        return $this->hasOne(Individual::class, 'id', 'mother_id');
+    }
 
     public function gedcom()
     {

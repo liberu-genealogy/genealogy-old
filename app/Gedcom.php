@@ -11,7 +11,6 @@ class Gedcom extends Model
 
     public function gedcom()
     {
-      $this->morphTo();
+        $this->morphTo();
     }
-
 }

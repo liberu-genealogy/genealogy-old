@@ -37,13 +37,11 @@ export default {
 
     mounted() {
         axios
-            .get(route('trees.edge', {'parent_id':1,'nest':3}))
+            .get(route('trees.edge', { parent_id: 1, nest: 3 }))
             .then(response => {
                 this.tree = response.data;
             })
             .catch(error => this.handleError(error));
-
-
     },
 };
 </script>
