@@ -95,7 +95,6 @@
 </template>
 
 <script>
-
 import { VTooltip } from 'v-tooltip';
 import fontawesome from '@fortawesome/fontawesome';
 import { faAnchor, faGlobe, faStickyNote } from '@fortawesome/fontawesome-free-solid/shakable.es';
@@ -110,7 +109,10 @@ export default {
     name: 'AddressesCard',
 
     components: {
-        Card, CardFooter, CardFooterItem, Popover,
+        Card,
+        CardFooter,
+        CardFooterItem,
+        Popover,
     },
 
     directives: { tooltip: VTooltip },
@@ -122,13 +124,10 @@ export default {
         },
     },
 };
-
 </script>
 
 <style scoped>
-
-    .media-content {
-        min-height: 148px;
-    }
-
+.media-content {
+    min-height: 148px;
+}
 </style>

@@ -26,7 +26,6 @@
 </template>
 
 <script>
-
 import Flatpickr from 'flatpickr';
 import fontawesome from '@fortawesome/fontawesome';
 import { faClock, faCalendarAlt } from '@fortawesome/fontawesome-free-solid/shakable.es';
@@ -43,8 +42,7 @@ export default {
             required: true,
             default: null,
             validate(value) {
-                return value === null || typeof value === 'string'
-                        || value instanceof Date || value instanceof Array;
+                return value === null || typeof value === 'string' || value instanceof Date || value instanceof Array;
             },
         },
         name: {
@@ -165,13 +163,10 @@ export default {
         },
     },
 };
-
 </script>
 
 <style lang="scss">
-
-    .control.has-icons-right .icon.clear-button {
-        pointer-events: all;
-    }
-
+.control.has-icons-right .icon.clear-button {
+    pointer-events: all;
+}
 </style>

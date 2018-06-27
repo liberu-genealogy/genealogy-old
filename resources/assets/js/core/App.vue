@@ -12,7 +12,6 @@
 </template>
 
 <script>
-
 import { mapState, mapGetters, mapActions } from 'vuex';
 import Auth from './layouts/Auth.vue';
 import Home from './layouts/Home.vue';
@@ -24,7 +23,10 @@ export default {
     name: 'App',
 
     components: {
-        Auth, Home, Default, Nprogress,
+        Auth,
+        Home,
+        Default,
+        Nprogress,
     },
 
     computed: {
@@ -47,5 +49,4 @@ export default {
         ...mapActions('layout', ['setInitialTheme']),
     },
 };
-
 </script>

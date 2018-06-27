@@ -15,19 +15,7 @@ export default {
     },
     data() {
         return {
-            tree: {
-                name: 'father',
-                children: [
-                    {
-                        name: 'son1',
-                        children: [{ name: 'grandson', id: 1 }, { name: 'grandson2', id: 2 }],
-                    },
-                    {
-                        name: 'son2',
-                        children: [{ name: 'grandson3', id: 3 }, { name: 'grandson4', id: 4 }],
-                    },
-                ],
-            },
+            tree: [],
             links: [{ source: 3, target: 1, type: 1 }, { source: 3, target: 4, type: 2 }],
             linkTypes: [
                 { id: 1, name: 'depends', symmetric: true },
@@ -45,6 +33,17 @@ export default {
                 },
             ],
         };
+    },
+
+    mounted() {
+        axios
+            .get(route('trees.edge', {'parent_id':1,'nest':3}))
+            .then(response => {
+                this.tree = response.data;
+            })
+            .catch(error => this.handleError(error));
+
+
     },
 };
 </script>

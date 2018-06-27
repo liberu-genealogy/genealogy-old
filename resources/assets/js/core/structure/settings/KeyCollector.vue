@@ -18,7 +18,6 @@
 </template>
 
 <script>
-
 import { mapState, mapMutations } from 'vuex';
 import VueSwitch from '../../../components/enso/vueforms/VueSwitch.vue';
 
@@ -41,6 +40,4 @@ export default {
         ...mapMutations('localisation', ['setKeyCollector']),
     },
 };
-
 </script>
-

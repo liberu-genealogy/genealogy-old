@@ -39,8 +39,7 @@ class ResponsiveTable {
     }
 
     showColumn() {
-        const column = this.context.template.columns
-            .find(column => column.meta.hidden);
+        const column = this.context.template.columns.find(column => column.meta.hidden);
 
         if (!column) {
             return;
