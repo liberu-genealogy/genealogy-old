@@ -48,8 +48,8 @@
 </template>
 
 <script>
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCheck, faTimes, faEnvelope, faPhone, faStickyNote } from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome';
+import { faCheck, faTimes, faEnvelope, faPhone, faStickyNote } from '@fortawesome/fontawesome-free-solid/shakable.es';
 import EventForm from './EventForm.vue';
 import Card from '../bulma/Card.vue';
 import CardFooter from '../bulma/CardFooter.vue';

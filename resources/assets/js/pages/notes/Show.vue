@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { library } from '@fortawesome/fontawesome';
 import {
     faTrashAlt,
     faUpload,
@@ -20,7 +20,7 @@ import {
     faEye,
     faPlus,
     faPencilAlt,
-} from '@fortawesome/free-solid-svg-icons';
+} from '@fortawesome/fontawesome-free-solid/shakable.es';
 
 library.add([faTrashAlt, faUpload, faSignOutAlt, faEllipsisH, faEye, faPlus, faPencilAlt]);
 

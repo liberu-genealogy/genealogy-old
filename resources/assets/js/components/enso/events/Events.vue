@@ -50,8 +50,8 @@
 </template>
 
 <script>
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faAddressCard, faPlusSquare } from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome';
+import { faAddressCard, faPlusSquare } from '@fortawesome/fontawesome-free-solid/shakable.es';
 import Card from '../bulma/Card.vue';
 import CardControl from '../bulma/CardControl.vue';
 import Event from './Event.vue';
