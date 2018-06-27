@@ -185,14 +185,22 @@ Route::middleware(['web', 'auth', 'core'])
                     ->name('links');
                 Route::get('pedigree', 'TreeController@pedigree')
                     ->name('pedigree');
+                Route::get('show/{parent_id}/{nest}', 'TreeController@show')
+                    ->name('show');
+                Route::get('edge/{parent_id}/{nest}', 'TreeController@edge')
+                    ->name('edge');
             });
 
-        Route::resource('trees', 'Tree\TreeController');
+        Route::resource('trees', 'Tree\TreeController')->except(['show']);
+
+        Route::namespace('Gedcom')
+            ->prefix('gedcom')->as('gedcom.')
+            ->group(function () {
+                Route::post('store', 'GedcomController@store')
+                    ->name('store');
+            });
     });
 
-Route::middleware(['auth'])->namespace('Gedcom')
-    ->prefix('gedcom')->as('gedcom.')
-    ->group(function () {
-        Route::post('store', 'GedcomController@store')
-            ->name('store');
-    });
+
+
+
