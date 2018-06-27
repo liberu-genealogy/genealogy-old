@@ -64,11 +64,11 @@ class GedcomController extends Controller
     }
 
     private function getIndividual ($individual){
-            $g_id = $individual->getId(); // Get individual id
-            $surn = current($individual->getName())->getSurn(); // Get individual surname
-            $givn = current($individual->getName())->getGivn(); // Get individual Givn
-            $name = current($individual->getName())->getName(); // Get individual name
-            $sex  = $individual->getSex(); // Get individual sex
+            $g_id = preg_replace('/[^A-Za-z0-9\-]/', '', $individual->getId()); // Get individual id
+            $surn = preg_replace('/[^A-Za-z0-9\-]/', '', current($individual->getName())->getSurn()); // Get individual surname
+            $givn = preg_replace('/[^A-Za-z0-9\-]/', '', current($individual->getName())->getGivn()); // Get individual Givn
+            $name = preg_replace('/[^A-Za-z0-9\-]/', '', current($individual->getName())->getName()); // Get individual name
+            $sex  = preg_replace('/[^A-Za-z0-9\-]/', '', $individual->getSex()); // Get individual sex
             $attrs = $individual->getAttr(); // Get individual attributes
             $events =$individual->getEven(); // Get individual events
             $media =$individual->getObje(); // Get individual media
@@ -76,15 +76,15 @@ class GedcomController extends Controller
             $sources =$individual->getSour(); // Get individual sources
 
 
-            $name = isset($givn) ? $name . ' ' . $givn : $name;
+            $givn = isset($givn) ? $givn : $name;
             $sex = $sex == 'F' ? 'female' : 'male';
 
             $ind = Individual::create([
-              'first_name' => mb_convert_encoding($name, 'UTF-8', 'UTF-8'),
-              'last_name'  => mb_convert_encoding($surn, 'UTF-8', 'UTF-8'),
-              'gender'     => mb_convert_encoding($sex, 'UTF-8', 'UTF-8'),
-              'is_active'  => true,
-            ]);
+                'first_name' => mb_convert_encoding($givn, 'UTF-8', 'UTF-8'),
+                'last_name'  => mb_convert_encoding($surn, 'UTF-8', 'UTF-8'),
+                'gender'     => mb_convert_encoding($sex, 'UTF-8', 'UTF-8'),
+                'is_active'  => true,
+              ]);
 
             Gedcom::create([
               'g_id' => mb_convert_encoding($g_id, 'UTF-8', 'UTF-8'),
@@ -96,33 +96,33 @@ class GedcomController extends Controller
                 $type = $event->getType(); // Example types "BIRT" "DEAT" "BURI" should be defined at db  http://wiki-en.genealogy.net/GEDCOM-Tags
                 $date = $this->get_date($event->getDate());
                 $place = $this->get_place($event->getPlac());
-                $place = isset($place) ? $place : 'Unknown';
-                $date = isset($date) ? $date : 'Unknown';
+                $place = isset($place) ? $place : 'Unknown Place';
+                $date = isset($date) ? $date : 'Unknown Date';
                 if($type == "BIRT"){
-                    $eventname = $name . ' ' . $surn . '\'s birth';
+                    $eventname = $givn . ' ' . $surn . '\'s birth';
                     $eventdescription = $eventname . ' at ' . $date. ' and '. $place;
                     Event::create([
-                      'event_type' => 'App\Individual',
-                      'event_id'   => $ind->id,
-                      'name' => mb_convert_encoding($eventname, 'UTF-8', 'UTF-8'),
-                      'description' => mb_convert_encoding($eventdescription, 'UTF-8', 'UTF-8'),
-                      'date' => mb_convert_encoding($date, 'UTF-8', 'UTF-8'),
-                      'event_type_id' => 1,
-                      'is_active' => true
-                    ]);
+                     'event_type' => 'App\Individual',
+                     'event_id'   => $ind->id,
+                     'name' => mb_convert_encoding($eventname, 'UTF-8', 'UTF-8'),
+                     'description' => mb_convert_encoding($eventdescription, 'UTF-8', 'UTF-8'),
+                     'date' => mb_convert_encoding($date, 'UTF-8', 'UTF-8'),
+                     'event_type_id' => 1,
+                     'is_active' => true
+                   ]);
                 }
                 if($type == "DEAT"){
-                    $eventname = $name . ' ' . $surn . '\'s death';
+                    $eventname = $givn . ' ' . $surn . '\'s death';
                     $eventdescription = $eventname . ' at ' . $date. ' and '. $place;
                     Event::create([
-                      'event_type' => 'App\Individual',
-                      'event_id'   => $ind->id,
-                      'name' => mb_convert_encoding($eventname, 'UTF-8', 'UTF-8'),
-                      'description' => mb_convert_encoding($eventdescription, 'UTF-8', 'UTF-8'),
-                      'date' => mb_convert_encoding($date, 'UTF-8', 'UTF-8'),
-                      'event_type_id' => 3,
-                      'is_active' => true
-                    ]);
+                       'event_type' => 'App\Individual',
+                       'event_id'   => $ind->id,
+                       'name' => mb_convert_encoding($eventname, 'UTF-8', 'UTF-8'),
+                       'description' => mb_convert_encoding($eventdescription, 'UTF-8', 'UTF-8'),
+                       'date' => mb_convert_encoding($date, 'UTF-8', 'UTF-8'),
+                       'event_type_id' => 3,
+                       'is_active' => true
+                     ]);
                 }
             };
 
@@ -139,7 +139,7 @@ class GedcomController extends Controller
                 }
 
                 if($attrtype == "TITL"){
-                    $attrname = $name . ' ' . $surn . '\'s title';
+                    $attrname = $givn . ' ' . $surn . '\'s title';
                     $attrdescription = $attrname . ' was ' . $att; // add to notes
                     $attrdescription = $note === '' ? $attrdescription : $attrdescription . ' Note: ' . $note;
                     Note::create([
@@ -157,13 +157,13 @@ class GedcomController extends Controller
                 $file  = $mediafile->getFile();
                 $file = isset($file) ? $file : 'not available';
                 if(isset($mediafile)){
-                    $medianame = $name . ' ' . $surn . '\'s media title is' . $title . ' file is' . $file;
+                    $medianame = $givn . ' ' . $surn . '\'s media title is' . $title . ' file is' . $file;
                 }
             };
     }
 
     private function getFamily($family){
-        $g_id = $family->getId() ;
+        $g_id = preg_replace('/[^A-Za-z0-9\-]/', '', $family->getId()) ;
         $husb = $family->getHusb();
         $wife = $family->getWife();
         $childs = $family->getChil();
@@ -196,27 +196,28 @@ class GedcomController extends Controller
             'description' => $description,
             'is_active' => true
           ]);
-          $fam->individuals()->attach([
-            'individual_id' => $father->id,
-            'type_id' => 1
+
+          Gedcom::create([
+            'g_id' => $g_id,
+            'gedcom_id' => $fam->id,
+            'gedcom_type' => 'App\Family'
           ]);
 
-          $fam->individuals()->attach([
-            'individual_id' => $mother->id,
-            'type_id' => 2
-          ]);
+          $fam->individuals()->save($father, ['type_id' => 1]);
+
+          $fam->individuals()->save($mother, ['type_id' => 2]);
 
 
           foreach ($childs as $child) {
             if(isset($child)){
-            $child = Gedcom::where('g_id', $child)->first();
-            $child = Individual::where('id', $child->gedcom_id)->first();
-            if($child){
-              $child->families()->attach([
-                'family_id' => $fam->id,
-                'type_id' => 0
-              ]);
-            }
+              $childId = Gedcom::where('g_id', $child)->first();
+              if($childId){
+                  $childInd = Individual::where('id', $childId->gedcom_id)->first();
+              }
+
+              if($childInd){
+                $childInd->families()->save($fam, ['type_id' => 0]);
+              }
             }
           }
 
