@@ -1,6 +1,6 @@
 <template>
     <div id="graph">
-        <hierarchical-edge-bundling identifier="id" :data="tree" :links="links" node-text="name" :margin-x="20" :margin-y="20">
+        <hierarchical-edge-bundling identifier="id" zoomable="true" :data="tree" :links="links" node-text="name" :margin-x="20" :margin-y="20" layoutType="circular" type="cluster">
 
         </hierarchical-edge-bundling>
     </div>
@@ -15,31 +15,22 @@ export default {
     },
     data() {
         return {
-            tree: [],
-            links: [{ source: 3, target: 1, type: 1 }, { source: 3, target: 4, type: 2 }],
-            linkTypes: [
-                { id: 1, name: 'depends', symmetric: true },
-                {
-                    id: 2,
-                    name: 'implement',
-                    inName: 'implements',
-                    outName: 'is implemented by',
-                },
-                {
-                    id: 3,
-                    name: 'uses',
-                    inName: 'uses',
-                    outName: 'is used by',
-                },
-            ],
+            tree: {
+                name: "father",
+                children:[]
+            },
+            links: [],
+
         };
     },
 
     mounted() {
         axios
-            .get(route('trees.edge', {'parent_id':1,'nest':3}))
+            .get(route('trees.edge', {'parent_id':7,'nest':3}))
             .then(response => {
-                this.tree = response.data;
+                let data = response.data;
+                this.tree = data.tree[0];
+                this.links = data.links;
             })
             .catch(error => this.handleError(error));
 
