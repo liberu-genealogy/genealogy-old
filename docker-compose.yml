@@ -11,7 +11,7 @@ services:
       - ./:/application:cached
 
   mysql:
-    image: mysql:5.7@sha256:81679f23e0ece3e50a7300050191272e5afbf5b66be9b60d2ee0e8b575b152e2
+    image: mysql:5.7@sha256:f568db3bdc3226cc28e4b148e6b9fd4e68d9c42e97a82be671bbe9eeb37ab1d5
     ports:
       - "3306:3306"
     environment:
@@ -21,7 +21,7 @@ services:
       - ./storage/tmp/db:/var/lib/mysql:cached
 
   nginx:
-    image: nginx:latest@sha256:1f9c00b4c95ef931afa097823d902e7602aebc3ec5532e907e066978075ca3e0
+    image: nginx:latest@sha256:1d9d3da4c60d27b77bb96bba738319c1c4424853fdd10f65982f9f2ca2422a72
     ports:
       - "80:80"
     volumes:
@@ -31,7 +31,7 @@ services:
       - genealogy-server
 
   neo4j:
-    image: neo4j:latest@sha256:d65e62b9e006fc9d246847c12de7a37dc65a079564ad6a1608f73dbdc9d5051b
+    image: neo4j:latest@sha256:d404b567d119909a323b98ad786c4f46fe0b7189bca9dcccce6303335802d5f7
     ports:
       - "7474:7474"
       - "7687:7687"
