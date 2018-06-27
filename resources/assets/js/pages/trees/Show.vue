@@ -21,7 +21,7 @@ export default {
     mounted() {
         axios
             .get(route('trees.show', { parent_id: 1, nest: 15 })) // provide 1 parameter for the parent
-            .then((response) => {
+            .then(response => {
                 this.treeData = response.data[0];
             })
             .catch(error => this.handleError(error));
@@ -31,7 +31,6 @@ export default {
             return node.id;
         },
     },
-
 };
 </script>
 <style>
