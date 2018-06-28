@@ -3,12 +3,18 @@ language: php
 php:
   - 7.2
 
+## Cache composer and vendor libraries
+cache:
+  directories:
+    - vendor
+    - $HOME/.composer/cache
+
 before_script:
   - cp .env.travis .env
   - composer self-update
   - composer install --prefer-source --no-interaction --dev
   - php artisan key:generate
-  - php artisan migrate:fresh --seed
+  - php artisan migrate
   - composer update --prefer-dist
 
 
@@ -27,7 +33,7 @@ after_script:
   # - php coveralls.phar --verbose
 
 services:
-  - mariadb
+  - mysql
   - neo4j
 
 addons:
