@@ -16,7 +16,7 @@ class CreateIndividualNoteTable extends Migration
             $table->increments('id');
             $table->integer('individual_id')->unsigned()->index('individual_note_id');
             $table->foreign('individual_id')->references('id')->on('individuals');
-            $table->integer('note_id')->unsigned()->index('individual_note_id');
+            $table->integer('note_id')->unsigned()->index('note_individual_id');
             $table->foreign('note_id')->references('id')->on('notes');
             $table->timestamps();
         });
