@@ -13,7 +13,7 @@ class CreateStructureForTreesEdge extends StructureMigration
     ];
 
     protected $menu = [
-        'name' => 'Edge', 'icon' => 'tachometer-alt', 'link' => 'trees.edge', 'order_index' => 999, 'has_children' => false,
+        'name' => 'Edge', 'icon' => 'object-group', 'link' => 'trees.edge', 'order_index' => 999, 'has_children' => false,
 
     ];
 

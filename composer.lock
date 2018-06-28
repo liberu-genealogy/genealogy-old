@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "55e7dd64651bb308786b7fdcc9948f79",
+    "content-hash": "6498f5f406b8fec77f6f6282d65fe0e7",
     "packages": [
         {
             "name": "box/spout",
@@ -3486,45 +3486,6 @@
             "time": "2017-06-19T01:22:40+00:00"
         },
         {
-            "name": "mrkrstphr/php-gedcom",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mrkrstphr/php-gedcom.git",
-                "reference": "b8289e87844dd111b91eefb87b3866479857c5ba"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mrkrstphr/php-gedcom/zipball/b8289e87844dd111b91eefb87b3866479857c5ba",
-                "reference": "b8289e87844dd111b91eefb87b3866479857c5ba",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.*",
-                "squizlabs/php_codesniffer": "1.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "PhpGedcom\\": "library/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0"
-            ],
-            "description": "A GEDCOM file parser (read + write) for PHP 5.3+",
-            "homepage": "http://github.com/mrkrstphr/php-gedcom",
-            "keywords": [
-                "gedcom",
-                "parser"
-            ],
-            "time": "2013-01-29T01:45:58+00:00"
-        },
-        {
             "name": "nesbot/carbon",
             "version": "1.25.0",
             "source": {
@@ -4253,6 +4214,45 @@
                 "sentry"
             ],
             "time": "2018-05-03T13:05:35+00:00"
+        },
+        {
+            "name": "skypal/php-gedcom",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/skypal/php-gedcom.git",
+                "reference": "8295a7b8cb970269d3c3547f45c67b425e24336b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/skypal/php-gedcom/zipball/8295a7b8cb970269d3c3547f45c67b425e24336b",
+                "reference": "8295a7b8cb970269d3c3547f45c67b425e24336b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "squizlabs/php_codesniffer": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PhpGedcom\\": "library/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "description": "A GEDCOM file parser (read + write) for PHP 5.3+",
+            "homepage": "http://github.com/skypal/php-gedcom",
+            "keywords": [
+                "gedcom",
+                "parser"
+            ],
+            "time": "2017-07-04T00:52:28+00:00"
         },
         {
             "name": "spatie/image-optimizer",

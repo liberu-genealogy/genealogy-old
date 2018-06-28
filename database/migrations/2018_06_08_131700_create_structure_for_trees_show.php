@@ -13,7 +13,7 @@ class CreateStructureForTreesShow extends StructureMigration
     ];
 
     protected $menu = [
-        'name' => 'Show', 'icon' => 'tachometer-alt', 'link' => 'trees.show', 'order_index' => 999, 'has_children' => false,
+        'name' => 'Show', 'icon' => 'object-group', 'link' => 'trees.show', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected $parentMenu = 'Trees';
