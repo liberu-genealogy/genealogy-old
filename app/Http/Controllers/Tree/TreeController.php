@@ -122,6 +122,27 @@ class TreeController extends Controller
 
         $tree = $this->getChildren($parents, (int) $nest, false);
 
-        return $tree;
+        $this->linkData = [];
+        $link = $this->edgeLink($tree[0]['id'],$tree[0]['children']);
+
+        $data['tree'] = $tree;
+        $data['links'] = $link;
+        return $data;
+    }
+
+
+    public function edgeLink($currentID, $children){
+        
+        foreach ($children as $key => $value) {
+            $this->linkData[] = [
+                'source' => $currentID,
+                'target' => $value['id'],
+                'type'  => rand(1,2)
+            ];
+
+            $this->edgeLink($value['id'],$value['children']);
+        }
+        
+        return $this->linkData;
     }
 }
