@@ -1,3 +1,12 @@
+services:
+  - docker
+  - neo4j
+
+env:
+  - IMAGE=mysql:8.0
+    NAME=mysql
+    OMIT_FEATURES=None
+
 language: php
 
 php:
@@ -19,7 +28,7 @@ before_script:
 
 
 before_install:
-  - mysql -e 'CREATE DATABASE homestead;'
+  - .ci/docker-run.sh $IMAGE $NAME 3307 $OMIT_FEATURES
   - npm install
   - npm run dev
 script:
@@ -31,18 +40,6 @@ after_script:
   # minimal required coverage is set to 80+ %
   # - wget https://github.com/satooshi/php-coveralls/releases/download/v2.1.0/coveralls.phar
   # - php coveralls.phar --verbose
-
-services:
-  - mysql
-  - neo4j
-
-addons:
-  apt:
-    sources:
-      - mysql-5.7-trusty
-    packages:
-      - mysql-server
-      - mysql-client
 
 dist: trusty
 
