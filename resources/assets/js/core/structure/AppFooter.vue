@@ -49,9 +49,9 @@
 
 <script>
 import { mapState } from 'vuex';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { library } from '@fortawesome/fontawesome';
+import { faHeart } from '@fortawesome/fontawesome-free-solid/shakable.es';
+import { faGithub } from '@fortawesome/fontawesome-free-brands/shakable.es';
 
 library.add(faHeart, faGithub);
 

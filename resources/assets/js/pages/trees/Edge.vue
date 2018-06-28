@@ -33,8 +33,6 @@ export default {
                 this.links = data.links;
             })
             .catch(error => this.handleError(error));
-
-
     },
 };
 </script>

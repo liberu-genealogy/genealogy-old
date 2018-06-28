@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome';
+import { faAddressCard } from '@fortawesome/fontawesome-free-solid/shakable.es';
 import VueTable from '../../components/enso/vuedatatable/VueTable.vue';
 import EventForm from '../../components/enso/events/EventForm.vue';
 
