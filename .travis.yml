@@ -27,7 +27,7 @@ after_script:
   # - php coveralls.phar --verbose
 
 services:
-  - maria
+  - mysql
   - neo4j
 
 addons:
