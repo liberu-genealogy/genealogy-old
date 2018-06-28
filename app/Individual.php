@@ -38,12 +38,12 @@ class Individual extends Model
 
     public function children()
     {
-        return $this->belongsToMany(self::class, 'child_parent', 'child_id', 'parent_id');
+        return $this->belongsToMany(self::class, 'child_parent', 'parent_id', 'child_id');
     }
 
     public function parents()
     {
-        return $this->belongsToMany(self::class, 'child_parent', 'parent_id', 'child_id');
+        return $this->belongsToMany(self::class, 'child_parent', 'child_id', 'parent_id');
     }
 
     public function getNameAttribute()
