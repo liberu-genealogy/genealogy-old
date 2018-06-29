@@ -30,7 +30,7 @@ before_script:
 
 
 before_install:
-  - .ci/docker-run.sh $IMAGE $NAME 3307 $OMIT_FEATURES
+  - sh .ci/docker-run.sh $IMAGE $NAME 3307 $OMIT_FEATURES
   - npm install
   - npm run dev
 script:
