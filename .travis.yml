@@ -13,7 +13,7 @@ env:
     OMIT_FEATURES=None
 
 before_install:
-  - chmod +x .ci/docker-run.sh; bash .ci/docker-run.sh $IMAGE $NAME 3307 $OMIT_FEATURES
+  - chmod +x .ci/docker-run.sh && .ci/docker-run.sh $IMAGE $NAME 3307 $OMIT_FEATURES
   - npm install
   - npm run dev
 
