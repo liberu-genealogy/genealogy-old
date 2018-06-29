@@ -61,7 +61,7 @@ for i in `seq 1 30`; do
 	fi
 
 	# exit if successful
-	docker exec -it $NAME mysql -ussltest -ptest \
+	docker exec -it $NAME mysql -uroot -pexample \
 		--ssl-mode=REQUIRED \
 		--ssl-ca=/etc/mysql/conf.d/certs/ssl-ca-cert.pem \
 		--ssl-cert=/etc/mysql/conf.d/certs/ssl-client-cert.pem \
@@ -69,7 +69,7 @@ for i in `seq 1 30`; do
 		-e "SELECT 1"
 	if [ $? -ne 0 ]; then
 		# mariadb uses --ssl=TRUE instead of --ssl-mode=REQUIRED
-		docker exec -it $NAME mysql -uroot -ppassword \
+		docker exec -it $NAME mysql -uroot -pexample \
 			--ssl=TRUE \
 			--ssl-ca=/etc/mysql/conf.d/certs/ssl-ca-cert.pem \
 			--ssl-cert=/etc/mysql/conf.d/certs/ssl-client-cert.pem \
