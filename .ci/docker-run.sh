@@ -48,15 +48,15 @@ for i in `seq 1 30`; do
 	# wait for mysql to come up
 	sleep 1
 	# try running the init script
-	docker exec -it $NAME bash -c 'mysql -uroot -ptest < /etc/mysql/conf.d/init.sql' >/dev/null 2>&1
+	docker exec -it $NAME bash -c 'mysql -uroot -pexample < /etc/mysql/conf.d/init.sql' >/dev/null 2>&1
 	if [ $? -ne 0 ]; then continue; fi
 	if [[ $OMIT_FEATURES != *"Sha256Password"* ]]; then
-	 	docker exec -it $NAME bash -c 'mysql -uroot -ptest < /etc/mysql/conf.d/init_sha256.sql' >/dev/null 2>&1
+	 	docker exec -it $NAME bash -c 'mysql -uroot -pexample < /etc/mysql/conf.d/init_sha256.sql' >/dev/null 2>&1
 		if [ $? -ne 0 ]; then continue; fi
 	fi
 
 	if [[ $OMIT_FEATURES != *"CachingSha2Password"* ]]; then
-		docker exec -it $NAME bash -c 'mysql -uroot -ptest < /etc/mysql/conf.d/init_caching_sha2.sql' >/dev/null 2>&1
+		docker exec -it $NAME bash -c 'mysql -uroot -pexample < /etc/mysql/conf.d/init_caching_sha2.sql' >/dev/null 2>&1
 		if [ $? -ne 0 ]; then continue; fi
 	fi
 
