@@ -42,8 +42,8 @@ class GedcomController extends Controller
 
         $individuals    = $gedcom->getIndi();
         $families       = $gedcom->getFam();
-        $sources        = $gedcom->getSour();
-        $repositories   = $gedcom->getRepo();
+        // $sources        = $gedcom->getSour();
+        // $repositories   = $gedcom->getRepo();
 
         foreach ($individuals as $individual) {
             $this->getIndividual($individual);
@@ -52,15 +52,15 @@ class GedcomController extends Controller
             $this->getFamily($family);
         }
 
-        foreach ($sources as $source) {
-            $this->getSource($source);
-        }
-
-        foreach ($repositories as $repo) {
-            // echo "<pre>";
-            // print_r($repo);
-            // echo "</pre>";
-        }
+        // foreach ($sources as $source) {
+        //     $this->getSource($source);
+        // }
+        //
+        // foreach ($repositories as $repo) {
+        //     // echo "<pre>";
+        //     // print_r($repo);
+        //     // echo "</pre>";
+        // }
     }
 
     private function getIndividual ($individual){
