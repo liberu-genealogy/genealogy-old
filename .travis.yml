@@ -20,7 +20,6 @@ cache:
     - $HOME/.composer/cache
 
 before_script:
-#  - mysql -h mysql -ptest -e 'create database homestead;'
   - cp .env.travis .env
   - composer self-update
   - composer install --prefer-source --no-interaction --dev
