@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Note;
 
+use App\Note;
 use App\Forms\Builders\NoteForm;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ValidateNoteRequest;
-use App\Note;
 
 class NoteController extends Controller
 {
@@ -21,9 +21,9 @@ class NoteController extends Controller
         $note->save();
 
         return [
-            'message'  => __('The Note was successfully created'),
+            'message' => __('The Note was successfully created'),
             'redirect' => 'notes.edit',
-            'id'       => $note->id,
+            'id' => $note->id,
         ];
     }
 
@@ -51,7 +51,7 @@ class NoteController extends Controller
         $note->delete();
 
         return [
-            'message'  => __('The Note was successfully deleted'),
+            'message' => __('The Note was successfully deleted'),
             'redirect' => 'notes.index',
         ];
     }

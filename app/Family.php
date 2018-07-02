@@ -5,8 +5,8 @@ namespace App;
 use App\Traits\Events;
 use App\Traits\HasIndividuals;
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\AddressesManager\app\Traits\Addressable;
 use LaravelEnso\CommentsManager\app\Traits\Commentable;
+use LaravelEnso\AddressesManager\app\Traits\Addressable;
 use LaravelEnso\DocumentsManager\app\Traits\Documentable;
 
 class Family extends Model

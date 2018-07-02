@@ -15,6 +15,6 @@ $factory->define(App\Person::class, function (Faker\Generator $faker) {
     $relationship = $faker->randomElement(['mother', 'father']);
 
     return [
-        'relationship'     => $relationship,
+        'relationship' => $relationship,
     ];
 });

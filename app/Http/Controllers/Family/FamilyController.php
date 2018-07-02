@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Family;
 
 use App\Family;
+use App\Person;
+use App\Individual;
 use App\Forms\Builders\FamilyForm;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ValidateFamilyRequest;
-use App\Individual;
-use App\Person;
 
 class FamilyController extends Controller
 {
@@ -66,9 +66,9 @@ class FamilyController extends Controller
         $this->attach($family, $father_id, $mother_id, $individuals);
 
         return [
-            'message'  => __('The Family was successfully created'),
+            'message' => __('The Family was successfully created'),
             'redirect' => 'families.edit',
-            'id'       => $family->id,
+            'id' => $family->id,
         ];
     }
 
@@ -104,7 +104,7 @@ class FamilyController extends Controller
         $family->delete();
 
         return [
-            'message'  => __('The Family was successfully deleted'),
+            'message' => __('The Family was successfully deleted'),
             'redirect' => 'families.index',
         ];
     }

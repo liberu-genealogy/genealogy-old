@@ -3,8 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\AddressesManager\app\Traits\Addressable;
 use LaravelEnso\CommentsManager\app\Traits\Commentable;
+use LaravelEnso\AddressesManager\app\Traits\Addressable;
 
 class Repository extends Model
 {

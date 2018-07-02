@@ -2,8 +2,8 @@
 
 namespace App\Forms\Builders;
 
-use App\Enums\GenderTypes;
 use App\Individual;
+use App\Enums\GenderTypes;
 use LaravelEnso\FormBuilder\app\Classes\Form;
 
 class IndividualForm
