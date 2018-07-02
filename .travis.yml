@@ -13,8 +13,8 @@ env:
     OMIT_FEATURES=None
 
 before_install:
-##  - chmod +x .ci/docker-run.sh && bash .ci/docker-run.sh $IMAGE $NAME 3307 $OMIT_FEATURES
-  - sudo docker run -d -p 3306:3306 mysql:8.0
+  - chmod +x .ci/docker-run.sh && bash .ci/docker-run.sh $IMAGE $NAME 3307 $OMIT_FEATURES
+##  - sudo docker run -d -p 3306:3306 mysql:8.0
   - npm install
   - npm run dev
 

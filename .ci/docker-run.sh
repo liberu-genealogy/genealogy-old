@@ -35,7 +35,7 @@ sudo chmod 777 run/$NAME
 docker run -d \
 	-v $(pwd)/run/$NAME:/var/run/mysqld:rw \
 	-v $(pwd)/server:/etc/mysql/conf.d:ro \
-	-p $PORT:3306 \
+	-p $PORT:3307 \
 	--name $NAME \
 	-e MYSQL_ROOT_PASSWORD='test' \
 	$IMAGE \
