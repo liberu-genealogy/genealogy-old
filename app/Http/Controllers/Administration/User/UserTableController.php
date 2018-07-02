@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Administration\User;
 
-use App\Http\Controllers\Controller;
 use App\Tables\Builders\UserTable;
-use LaravelEnso\VueDatatable\app\Traits\Datatable;
+use App\Http\Controllers\Controller;
 use LaravelEnso\VueDatatable\app\Traits\Excel;
+use LaravelEnso\VueDatatable\app\Traits\Datatable;
 
 class UserTableController extends Controller
 {

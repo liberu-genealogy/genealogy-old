@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Repository;
 
-use App\Forms\Builders\RepositoryForm;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\ValidateRepositoryRequest;
 use App\Repository;
+use App\Http\Controllers\Controller;
+use App\Forms\Builders\RepositoryForm;
+use App\Http\Requests\ValidateRepositoryRequest;
 
 class RepositoryController extends Controller
 {
@@ -21,9 +21,9 @@ class RepositoryController extends Controller
         $repository->save();
 
         return [
-            'message'  => __('The Repository was successfully created'),
+            'message' => __('The Repository was successfully created'),
             'redirect' => 'repositorys.edit',
-            'id'       => $repository->id,
+            'id' => $repository->id,
         ];
     }
 
@@ -51,7 +51,7 @@ class RepositoryController extends Controller
         $repository->delete();
 
         return [
-            'message'  => __('The Repository was successfully deleted'),
+            'message' => __('The Repository was successfully deleted'),
             'redirect' => 'repositorys.index',
         ];
     }

@@ -2,8 +2,8 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
+use Illuminate\Foundation\Http\FormRequest;
 
 class ValidateOwnerRequest extends FormRequest
 {
@@ -22,7 +22,7 @@ class ValidateOwnerRequest extends FormRequest
 
         return [
             'is_active' => 'boolean',
-            'name'      => ['required', $nameUnique],
+            'name' => ['required', $nameUnique],
         ];
     }
 }

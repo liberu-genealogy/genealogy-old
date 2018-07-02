@@ -6,9 +6,9 @@ use LaravelEnso\RoleManager\app\Models\Role;
 
 $factory->define(Role::class, function (Faker $faker) {
     return [
-        'name'         => $faker->word,
+        'name' => $faker->word,
         'display_name' => $faker->word,
-        'description'  => $faker->sentence,
-        'menu_id'      => factory(Menu::class)->create(),
+        'description' => $faker->sentence,
+        'menu_id' => factory(Menu::class)->create(),
     ];
 });

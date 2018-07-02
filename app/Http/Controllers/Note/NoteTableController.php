@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Note;
 
-use App\Http\Controllers\Controller;
 use App\Tables\Builders\NoteTable;
-use LaravelEnso\VueDatatable\app\Traits\Datatable;
+use App\Http\Controllers\Controller;
 use LaravelEnso\VueDatatable\app\Traits\Excel;
+use LaravelEnso\VueDatatable\app\Traits\Datatable;
 
 class NoteTableController extends Controller
 {
