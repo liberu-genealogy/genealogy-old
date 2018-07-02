@@ -16,6 +16,7 @@
 </template>
 
 <script>
+
 import fontawesome from '@fortawesome/fontawesome';
 import { faAddressCard } from '@fortawesome/fontawesome-free-solid/shakable.es';
 import VueTable from '../../../components/enso/vuedatatable/VueTable.vue';
@@ -37,17 +38,16 @@ export default {
     methods: {
         edit(contact) {
             this.$refs.contacts.loading = true;
-            axios
-                .get(route('core.contacts.edit', contact.dtRowId))
+            axios.get(route('core.contacts.edit', contact.dtRowId))
                 .then(({ data }) => {
                     this.$refs.contacts.loading = false;
                     this.form = data.form;
-                })
-                .catch(error => {
+                }).catch((error) => {
                     this.$refs.contacts.loading = false;
                     this.handleError(error);
                 });
         },
     },
 };
+
 </script>

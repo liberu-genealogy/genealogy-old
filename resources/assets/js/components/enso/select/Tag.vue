@@ -20,18 +20,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.tag {
-    padding: 0.2rem;
-    height: 1.3rem;
-    font-size: 1rem;
-    margin: 0.1rem 0.2rem 0.1rem 0;
+    .tag {
+        padding: 0.2rem;
+        height: 1.3rem;
+        font-size: 1rem;
+        margin: 0.1rem 0.2rem 0.1rem 0;
 
-    .delete {
-        margin-left: 0.2rem;
-    }
+        .delete {
+            margin-left: 0.2rem;
+        }
 
-    &:last {
-        margin-right: auto;
+        &:last {
+            margin-right:auto;
+        }
     }
-}
 </style>

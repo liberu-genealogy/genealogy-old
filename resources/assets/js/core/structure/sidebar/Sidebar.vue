@@ -13,6 +13,7 @@
 </template>
 
 <script>
+
 import { mapState, mapMutations } from 'vuex';
 import Menus from './Menus.vue';
 import VueAside from '../VueAside.vue';
@@ -42,31 +43,38 @@ export default {
             }
         },
         hasActiveChild(menu) {
-            return menu.children.find(child => this.isActive(child) || this.hasActiveChild(child)) !== undefined;
+            return menu.children
+                .find(child => this.isActive(child) || this.hasActiveChild(child))
+                    !== undefined;
         },
         isActive(menu) {
-            return menu.link !== null && (this.routeNameMatches(menu) || this.routePathMatches(menu));
+            return menu.link !== null && (
+                this.routeNameMatches(menu)
+                    || this.routePathMatches(menu)
+            );
         },
         routeNameMatches({ link }) {
-            return this.$route.matched.map(route => route.name).includes(link);
+            return this.$route.matched
+                .map(route => route.name)
+                .includes(link);
         },
         routePathMatches({ link }) {
-            return (
-                this.$route.matched.length > 1 &&
-                this.$route.matched.map(route => route.path)[this.$route.matched.length - 2] ===
-                    `/${link
-                        .split('.')
-                        .slice(0, -1)
-                        .join('/')}`
-            );
+            return this.$route.matched.length > 1
+                    && this.$route.matched
+                        .map(route => route.path)[this.$route.matched.length - 2]
+                            === `/${link.split('.').slice(0, -1).join('/')}`;
         },
     },
 };
+
 </script>
 
 <style>
-.menu-wrapper {
-    max-height: calc(100vh - 110px);
-    overflow-y: auto;
-}
+
+    .menu-wrapper {
+        max-height: calc(100vh - 110px);
+        overflow-y: auto;
+    }
+
 </style>
+

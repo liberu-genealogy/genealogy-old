@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "55e7dd64651bb308786b7fdcc9948f79",
+    "content-hash": "000d0ae95e56fd02b456a17a747c3b71",
     "packages": [
         {
             "name": "box/spout",
@@ -1945,16 +1945,16 @@
         },
         {
             "name": "laravel-enso/formbuilder",
-            "version": "2.6.6",
+            "version": "2.6.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/FormBuilder.git",
-                "reference": "6ffd16b79230960049a857974e16e6aa0ccb990e"
+                "reference": "d0aa3b3481b61622f18cc507b801d0e4166b81df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/FormBuilder/zipball/6ffd16b79230960049a857974e16e6aa0ccb990e",
-                "reference": "6ffd16b79230960049a857974e16e6aa0ccb990e",
+                "url": "https://api.github.com/repos/laravel-enso/FormBuilder/zipball/d0aa3b3481b61622f18cc507b801d0e4166b81df",
+                "reference": "d0aa3b3481b61622f18cc507b801d0e4166b81df",
                 "shasum": ""
             },
             "require": {
@@ -1997,7 +1997,7 @@
                 "form-builder",
                 "laravel-enso"
             ],
-            "time": "2018-06-17T10:38:46+00:00"
+            "time": "2018-06-30T08:09:16+00:00"
         },
         {
             "name": "laravel-enso/helpers",
@@ -2051,16 +2051,16 @@
         },
         {
             "name": "laravel-enso/historytracker",
-            "version": "1.4.9",
+            "version": "1.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/HistoryTracker.git",
-                "reference": "670e84d20972e264e49900dc9b6175a5010cb7d5"
+                "reference": "9ced52337bb744ce39f3ddac667028c51f04b807"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/HistoryTracker/zipball/670e84d20972e264e49900dc9b6175a5010cb7d5",
-                "reference": "670e84d20972e264e49900dc9b6175a5010cb7d5",
+                "url": "https://api.github.com/repos/laravel-enso/HistoryTracker/zipball/9ced52337bb744ce39f3ddac667028c51f04b807",
+                "reference": "9ced52337bb744ce39f3ddac667028c51f04b807",
                 "shasum": ""
             },
             "require": {
@@ -2092,7 +2092,7 @@
                 "historytracker",
                 "laravel-enso"
             ],
-            "time": "2018-06-25T12:20:11+00:00"
+            "time": "2018-06-27T19:38:14+00:00"
         },
         {
             "name": "laravel-enso/howtovideos",
@@ -2738,16 +2738,16 @@
         },
         {
             "name": "laravel-enso/structuremanager",
-            "version": "2.2.3",
+            "version": "2.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/StructureManager.git",
-                "reference": "e7a12d98d2d8ab2813ed9888c1ca93a4d9e1793e"
+                "reference": "957ef5d447b014508bd67f5f07d2c2367f46b8de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/StructureManager/zipball/e7a12d98d2d8ab2813ed9888c1ca93a4d9e1793e",
-                "reference": "e7a12d98d2d8ab2813ed9888c1ca93a4d9e1793e",
+                "url": "https://api.github.com/repos/laravel-enso/StructureManager/zipball/957ef5d447b014508bd67f5f07d2c2367f46b8de",
+                "reference": "957ef5d447b014508bd67f5f07d2c2367f46b8de",
                 "shasum": ""
             },
             "require": {
@@ -2758,6 +2758,14 @@
                 "php": ">=7.1.0"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelEnso\\StructureManager\\AppServiceProvider"
+                    ],
+                    "aliases": []
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "LaravelEnso\\StructureManager\\": "src/"
@@ -2782,7 +2790,7 @@
                 "laravel-enso",
                 "structuremanager"
             ],
-            "time": "2018-06-12T05:01:55+00:00"
+            "time": "2018-07-01T14:41:35+00:00"
         },
         {
             "name": "laravel-enso/trackwho",
@@ -2998,16 +3006,16 @@
         },
         {
             "name": "laravel-enso/vuedatatable",
-            "version": "1.2.3",
+            "version": "1.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/VueDatatable.git",
-                "reference": "67e40109e966f47d80d878594f46afc7e419555d"
+                "reference": "b4d4efc848bfec078beffbec13ddce4cab022d54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/VueDatatable/zipball/67e40109e966f47d80d878594f46afc7e419555d",
-                "reference": "67e40109e966f47d80d878594f46afc7e419555d",
+                "url": "https://api.github.com/repos/laravel-enso/VueDatatable/zipball/b4d4efc848bfec078beffbec13ddce4cab022d54",
+                "reference": "b4d4efc848bfec078beffbec13ddce4cab022d54",
                 "shasum": ""
             },
             "require": {
@@ -3051,7 +3059,7 @@
                 "datatable",
                 "laravel-enso"
             ],
-            "time": "2018-06-25T14:37:49+00:00"
+            "time": "2018-06-28T06:20:57+00:00"
         },
         {
             "name": "laravel/framework",
@@ -3486,45 +3494,6 @@
             "time": "2017-06-19T01:22:40+00:00"
         },
         {
-            "name": "mrkrstphr/php-gedcom",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mrkrstphr/php-gedcom.git",
-                "reference": "b8289e87844dd111b91eefb87b3866479857c5ba"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mrkrstphr/php-gedcom/zipball/b8289e87844dd111b91eefb87b3866479857c5ba",
-                "reference": "b8289e87844dd111b91eefb87b3866479857c5ba",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "3.7.*",
-                "squizlabs/php_codesniffer": "1.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "PhpGedcom\\": "library/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0"
-            ],
-            "description": "A GEDCOM file parser (read + write) for PHP 5.3+",
-            "homepage": "http://github.com/mrkrstphr/php-gedcom",
-            "keywords": [
-                "gedcom",
-                "parser"
-            ],
-            "time": "2013-01-29T01:45:58+00:00"
-        },
-        {
             "name": "nesbot/carbon",
             "version": "1.25.0",
             "source": {
@@ -3627,6 +3596,45 @@
                 "php"
             ],
             "time": "2018-06-03T11:33:10+00:00"
+        },
+        {
+            "name": "oguz463/php-gedcom",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/oguz463/php-gedcom.git",
+                "reference": "6f4076adeb4bb645701519c97d22fcc71c9a2d72"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/oguz463/php-gedcom/zipball/6f4076adeb4bb645701519c97d22fcc71c9a2d72",
+                "reference": "6f4076adeb4bb645701519c97d22fcc71c9a2d72",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "squizlabs/php_codesniffer": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PhpGedcom\\": "library/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "description": "A GEDCOM file parser (read + write) for PHP 5.3+",
+            "homepage": "http://github.com/oguz463/php-gedcom",
+            "keywords": [
+                "gedcom",
+                "parser"
+            ],
+            "time": "2018-06-29T21:17:50+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -5396,28 +5404,28 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v2.4.0",
+            "version": "v2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c"
+                "reference": "6ae3e2e6494bb5e58c2decadafc3de7f1453f70a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
-                "reference": "3cc116adbe4b11be5ec557bf1d24dc5e3a21d18c",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/6ae3e2e6494bb5e58c2decadafc3de7f1453f70a",
+                "reference": "6ae3e2e6494bb5e58c2decadafc3de7f1453f70a",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.9"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.8 || ^5.0"
+                "phpunit/phpunit": "^4.8.35 || ^5.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4-dev"
+                    "dev-master": "2.5-dev"
                 }
             },
             "autoload": {
@@ -5427,7 +5435,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD-3-Clause-Attribution"
+                "BSD-3-Clause"
             ],
             "authors": [
                 {
@@ -5442,7 +5450,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2016-09-01T10:05:43+00:00"
+            "time": "2018-07-01T10:25:50+00:00"
         }
     ],
     "packages-dev": [

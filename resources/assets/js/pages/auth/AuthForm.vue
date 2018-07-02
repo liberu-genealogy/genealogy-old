@@ -114,17 +114,14 @@
 </template>
 
 <script>
+
 import { mapState } from 'vuex';
 import fontawesome from '@fortawesome/fontawesome';
-import {
-    faEnvelope,
-    faCheck,
-    faExclamationTriangle,
-    faLock,
-    faUser,
-} from '@fortawesome/fontawesome-free-solid/shakable.es';
+import { faEnvelope, faCheck, faExclamationTriangle, faLock, faUser } from '@fortawesome/fontawesome-free-solid/shakable.es';
 
-fontawesome.library.add([faEnvelope, faCheck, faExclamationTriangle, faLock, faUser]);
+fontawesome.library.add([
+    faEnvelope, faCheck, faExclamationTriangle, faLock, faUser,
+]);
 
 export default {
     name: 'AuthForm',
@@ -163,13 +160,16 @@ export default {
     computed: {
         ...mapState(['meta']),
         token() {
-            return this.isReset ? this.$route.params.token : null;
+            return this.isReset
+                ? this.$route.params.token
+                : null;
         },
         hasPassword() {
             return this.password !== null && this.password.length;
         },
         match() {
-            return this.hasPassword && this.password === this.passwordConfirmation;
+            return this.hasPassword
+                && this.password === this.passwordConfirmation;
         },
         postParams() {
             let params = {
@@ -181,14 +181,11 @@ export default {
             }
 
             if (this.isReset) {
-                params = Object.assign(
-                    {
-                        password: this.password,
-                        password_confirmation: this.passwordConfirmation,
-                        token: this.token,
-                    },
-                    params
-                );
+                params = Object.assign({
+                    password: this.password,
+                    password_confirmation: this.passwordConfirmation,
+                    token: this.token,
+                }, params);
             }
 
             return params;
@@ -201,14 +198,12 @@ export default {
             this.isSuccessful = false;
             this.hasErrors = false;
 
-            axios
-                .post(route(this.route), this.postParams)
+            axios.post(route(this.route), this.postParams)
                 .then(({ data }) => {
                     this.loading = false;
                     this.isSuccessful = true;
                     this.$emit('success', data);
-                })
-                .catch(error => {
+                }).catch((error) => {
                     this.loading = false;
                     this.hasErrors = true;
 
@@ -243,14 +238,17 @@ export default {
         },
     },
 };
+
 </script>
 
 <style lang="scss" scoped>
-.column.login {
-    max-width: 400px;
-}
 
-figure.logo {
-    display: inline-block;
-}
+    .column.login {
+         max-width: 400px;
+    }
+
+    figure.logo {
+        display: inline-block;
+    }
+
 </style>

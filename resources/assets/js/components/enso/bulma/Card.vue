@@ -70,8 +70,10 @@
 </template>
 
 <script>
+
 import fontawesome from '@fortawesome/fontawesome';
-import { faSearch, faSync, faAngleDown } from '@fortawesome/fontawesome-free-solid/shakable.es';
+import { faSearch, faSync, faAngleDown }
+    from '@fortawesome/fontawesome-free-solid/shakable.es';
 import CardControl from './CardControl.vue';
 import Overlay from './Overlay.vue';
 
@@ -142,28 +144,27 @@ export default {
 
     computed: {
         searchInput() {
-            return this.search ? this.$el.querySelector('input[type=search]') : null;
+            return this.search
+                ? this.$el.querySelector('input[type=search]')
+                : null;
         },
         header() {
-            return (
-                this.icon ||
-                this.title ||
-                this.search ||
-                this.badge ||
-                this.refresh ||
-                !this.fixed ||
-                this.removable ||
-                this.controls
-            );
+            return this.icon || this.title || this.search
+                || this.badge || this.refresh || !this.fixed
+                || this.removable || this.controls;
         },
         content() {
             return this.$el.querySelector('.card-content');
         },
         maxHeight() {
-            return this.collapsed ? { 'max-height': 0 } : {};
+            return this.collapsed
+                ? { 'max-height': 0 }
+                : {};
         },
         overflowY() {
-            return this.scrollable || !this.expanded ? { 'overflow-y': 'hidden' } : {};
+            return this.scrollable || !this.expanded
+                ? { 'overflow-y': 'hidden' }
+                : {};
         },
         contentStyle() {
             return Object.assign({}, this.maxHeight, this.overflowY);
@@ -188,9 +189,7 @@ export default {
 
             this.$emit('expand');
             this.content.style['max-height'] = `${this.content.scrollHeight}px`;
-            setTimeout(() => {
-                this.expanded = true;
-            }, 400);
+            setTimeout(() => { this.expanded = true; }, 400);
         },
         collapse() {
             if (!this.content.style['max-height']) {
@@ -202,9 +201,7 @@ export default {
             }
 
             this.$emit('collapse');
-            setTimeout(() => {
-                this.content.style['max-height'] = 0;
-            }, 1);
+            setTimeout(() => { this.content.style['max-height'] = 0; }, 1);
             this.expanded = false;
         },
         resize() {
@@ -243,24 +240,27 @@ export default {
         },
     },
 };
+
 </script>
 
 <style scoped>
-.card-header-title {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
 
-.card-content {
-    transition: max-height 0.4s ease;
-}
+    .card-header-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 
-.icon.angle[aria-hidden='true'] {
-    transform: rotate(180deg);
-}
+    .card-content {
+        transition: max-height .400s ease;
+    }
 
-.icon.angle {
-    transition: transform 0.3s ease;
-}
+    .icon.angle[aria-hidden="true"] {
+        transform: rotate(180deg);
+    }
+
+    .icon.angle {
+        transition: transform .300s ease;
+    }
+
 </style>

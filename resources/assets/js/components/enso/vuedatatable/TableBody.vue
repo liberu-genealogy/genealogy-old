@@ -103,19 +103,16 @@
 </template>
 
 <script>
+
 import fontawesome from '@fortawesome/fontawesome';
-import {
-    faMinusSquare,
-    faPlusSquare,
-    faEye,
-    faPencilAlt,
-    faTrashAlt,
-    faCloudDownloadAlt,
-} from '@fortawesome/fontawesome-free-solid/shakable.es';
+import { faMinusSquare, faPlusSquare, faEye, faPencilAlt, faTrashAlt, faCloudDownloadAlt }
+    from '@fortawesome/fontawesome-free-solid/shakable.es';
 import TableCell from './TableCell.vue';
 import Modal from './Modal.vue';
 
-fontawesome.library.add([faMinusSquare, faPlusSquare, faEye, faPencilAlt, faTrashAlt, faCloudDownloadAlt]);
+fontawesome.library.add([
+    faMinusSquare, faPlusSquare, faEye, faPencilAlt, faTrashAlt, faCloudDownloadAlt,
+]);
 
 export default {
     name: 'TableBody',
@@ -155,13 +152,15 @@ export default {
 
     computed: {
         hiddenColumns() {
-            return this.template.columns.filter(column => column.meta.hidden && column.meta.visible);
+            return this.template.columns
+                .filter(column => column.meta.hidden && column.meta.visible);
         },
         hiddenCount() {
             return this.hiddenColumns.length;
         },
         hiddenColSpan() {
-            return this.template.columns.length - this.hiddenColumns.length + (this.template.actions ? 2 : 1);
+            return this.template.columns.length - this.hiddenColumns.length
+            + (this.template.actions ? 2 : 1);
         },
         cascadesHiddenControls() {
             return !this.template.crtNo && this.hiddenCount > 0;
@@ -222,9 +221,8 @@ export default {
             return params;
         },
         getIndex(row) {
-            return (
-                this.body.data.filter(r => !this.isChild(r)).findIndex(r => r.dtRowId === row.dtRowId) + this.start + 1
-            );
+            return this.body.data.filter(r => !this.isChild(r))
+                .findIndex(r => r.dtRowId === row.dtRowId) + this.start + 1;
         },
         isExpanded(row) {
             return this.expanded.includes(row.dtRowId);
@@ -271,11 +269,13 @@ export default {
         },
     },
 };
+
 </script>
 
 <style lang="scss" scoped>
+
 div.table-crt-no {
-    white-space: nowrap;
+    white-space:nowrap;
     display: flex;
 
     .crt-no-label {
@@ -290,7 +290,7 @@ div.table-crt-no {
 }
 
 td.table-actions {
-    padding: 0.35em 0.5em;
+    padding: .35em .5em;
 
     span.table-action-buttons {
         display: inline-flex;
@@ -299,7 +299,7 @@ td.table-actions {
     .button.is-small.is-table-button {
         height: 1.6em;
         width: 1.6em;
-        font-size: 0.9em;
+        font-size: .9em;
     }
 }
 
@@ -315,4 +315,5 @@ li.child-row {
     white-space: pre;
     font-family: monospace;
 }
+
 </style>

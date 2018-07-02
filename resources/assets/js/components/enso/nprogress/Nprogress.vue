@@ -3,6 +3,7 @@
 </template>
 
 <script>
+
 import nprogress from 'nprogress';
 
 nprogress.configure({ showSpinner: false });
@@ -23,7 +24,9 @@ export default {
 
     computed: {
         progress() {
-            return this.requests ? this.responses / this.requests - 0.1 : 0;
+            return this.requests
+                ? this.responses / this.requests - 0.1
+                : 0;
         },
         shouldStop() {
             return this.responses >= this.requests;
@@ -77,26 +80,29 @@ export default {
         },
     },
 };
+
 </script>
 
 <style>
-#nprogress .bar {
-    background: #f44336;
-    box-shadow: 0 0 5px #f44336;
-    position: fixed;
-    z-index: 1051;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-}
 
-#nprogress .peg {
-    display: block;
-    position: absolute;
-    right: 0px;
-    width: 100px;
-    height: 100%;
-    opacity: 1;
-}
+    #nprogress .bar {
+        background: #f44336;
+        box-shadow: 0 0 5px #f44336;
+        position: fixed;
+        z-index: 1051;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+    }
+
+    #nprogress .peg {
+        display:block;
+        position: absolute;
+        right: 0px;
+        width: 100px;
+        height: 100%;
+        opacity: 1.0;
+    }
+
 </style>

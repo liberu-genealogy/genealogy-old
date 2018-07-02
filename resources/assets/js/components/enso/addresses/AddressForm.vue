@@ -20,6 +20,7 @@
 </template>
 
 <script>
+
 import fontawesome from '@fortawesome/fontawesome';
 import { faLocationArrow } from '@fortawesome/fontawesome-free-solid/shakable.es';
 import VueForm from '../vueforms/VueForm.vue';
@@ -55,17 +56,19 @@ export default {
             };
         },
         customFields() {
-            return this.form.sections.reduce(
-                (fields, section) => fields.concat(section.fields.filter(field => field.meta.custom)),
-                []
-            );
+            return this.form.sections
+                .reduce((fields, section) => fields
+                    .concat(section.fields.filter(field => field.meta.custom)), []);
         },
     },
 };
+
 </script>
 
 <style>
-.modal-content {
-    width: 70%;
-}
+
+    .modal-content {
+        width: 70%;
+    }
+
 </style>

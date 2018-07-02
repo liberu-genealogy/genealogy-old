@@ -11,28 +11,36 @@
 </template>
 
 <script>
+
 import fontawesome from '@fortawesome/fontawesome';
 import { faBan } from '@fortawesome/fontawesome-free-solid/shakable.es';
 
-fontawesome.library.add([faBan]);
+fontawesome.library.add([
+    faBan,
+]);
 
 export default {
     name: 'Unauthorized',
 
-    created() {},
+    created() {
+
+    },
 };
+
 </script>
 
 <style>
-.error-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50%;
-    font-weight: 100;
-}
 
-.error-title {
-    font-size: 3rem;
-}
+    .error-container {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        height: 50%;
+        font-weight: 100;
+    }
+
+    .error-title {
+        font-size: 3rem;
+    }
+
 </style>

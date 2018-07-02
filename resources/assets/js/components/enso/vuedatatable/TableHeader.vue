@@ -44,17 +44,12 @@
 </template>
 
 <script>
+
 import { VTooltip } from 'v-tooltip';
 import fontawesome from '@fortawesome/fontawesome';
 
-import {
-    faSort,
-    faSortUp,
-    faSortDown,
-    faPlus,
-    faFileExcel,
-    faInfo,
-} from '@fortawesome/fontawesome-free-solid/shakable.es';
+import { faSort, faSortUp, faSortDown, faPlus, faFileExcel, faInfo }
+    from '@fortawesome/fontawesome-free-solid/shakable.es';
 
 fontawesome.library.add(faSort, faSortUp, faSortDown, faPlus, faFileExcel, faInfo);
 
@@ -78,7 +73,9 @@ export default {
         sortIcon(sort) {
             if (!sort) return faSort;
 
-            return sort === 'ASC' ? faSortUp : faSortDown;
+            return sort === 'ASC'
+                ? faSortUp
+                : faSortDown;
         },
         toggleSort(event, { meta }) {
             const { sort } = meta;
@@ -107,22 +104,25 @@ export default {
         },
     },
 };
+
 </script>
 
 <style lang="scss">
-th.vue-table-header {
-    white-space: nowrap;
-    align-content: center;
-}
 
-.table-header-controls {
-    .sorter {
-        cursor: pointer;
-        opacity: 0.5;
+    th.vue-table-header {
+        white-space:nowrap;
+        align-content: center;
+    }
 
-        &:hover {
-            opacity: 1;
+    .table-header-controls {
+        .sorter {
+            cursor: pointer;
+            opacity: 0.5;
+
+            &:hover {
+                opacity: 1;
+            }
         }
     }
-}
+
 </style>

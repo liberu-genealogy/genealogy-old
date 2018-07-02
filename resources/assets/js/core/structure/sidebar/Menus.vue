@@ -61,6 +61,7 @@
 </template>
 
 <script>
+
 import { mapState, mapMutations } from 'vuex';
 import './icons';
 
@@ -95,9 +96,7 @@ export default {
                     this.$el.style.height = `${height}px`;
                 }
 
-                setTimeout(() => {
-                    this.$el.style.height = 0;
-                }, 1);
+                setTimeout(() => { this.$el.style.height = 0; }, 1);
                 this.$emit('shrink', height);
                 return;
             }
@@ -125,44 +124,47 @@ export default {
         },
     },
 };
+
 </script>
 
 <style lang="scss" scoped>
-.menu-list {
-    transition: height 0.4s ease;
-    display: block;
-    overflow-y: hidden;
-    overflow-x: hidden;
 
-    a {
-        display: flex;
-    }
-
-    .menu-hiding-label {
-        white-space: nowrap;
-    }
-
-    .dropdown-content {
-        display: none;
-        white-space: nowrap;
-        padding-bottom: 0;
-        padding-top: 0;
-        margin-top: -9px;
-        position: fixed;
-        left: 55px;
-    }
-
-    a:hover > div.dropdown-content {
+    .menu-list {
+        transition: height .400s ease;
         display: block;
+        overflow-y: hidden;
+        overflow-x: hidden;
+
+        a {
+            display: flex;
+        }
+
+        .menu-hiding-label {
+             white-space: nowrap;
+        }
+
+        .dropdown-content {
+            display: none;
+            white-space: nowrap;
+            padding-bottom: 0;
+            padding-top: 0;
+            margin-top: -9px;
+            position: fixed;
+            left: 55px
+        }
+
+        a:hover > div.dropdown-content {
+            display: block;
+        }
+
+        li > ul {
+            margin: 0 0 0 .5rem;
+            padding-left: 0;
+        }
+
+        .icon.angle {
+            margin-left: auto;
+        }
     }
 
-    li > ul {
-        margin: 0 0 0 0.5rem;
-        padding-left: 0;
-    }
-
-    .icon.angle {
-        margin-left: auto;
-    }
-}
 </style>
