@@ -6,7 +6,7 @@ services:
 
 before_install:
 ##  - chmod +x .ci/docker-run.sh && bash .ci/docker-run.sh $IMAGE $NAME 3307 $OMIT_FEATURES
-  - sudo docker run -d -p 3307:3307 mysql:8.0
+  - sudo docker run -d -p 3307:3307 mysql:8.0 -e MYSQL_ROOT_PASSWORD='test'
   - npm install
   - npm run dev
 
