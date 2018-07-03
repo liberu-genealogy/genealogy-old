@@ -45,7 +45,7 @@ matrix:
 
 
 before_script:
-  - ./.travis/install-and-init-db.sh
+  - chmod +x ./.travis/install-and-init-db.sh && ./travis/install-and-init-db.sh
   - cp .env.travis .env
   - composer self-update
   - composer install --prefer-source --no-interaction --dev
