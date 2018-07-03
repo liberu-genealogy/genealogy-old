@@ -36,16 +36,16 @@ matrix:
         #
         # Define versions of MySQL and MariaDB to test against.
         # mysql 5.6
-        - php: 7.2
+        - php: nightly
           env: DB=mysql:8.0
         # ...
-        # mariadb 10.0
-        - php: 7.2
+        # mariadb 10.3
+        - php: nightly
           env: DB=mariadb:10.3
 
 
 before_script:
-  - chmod +x ./.travis/install-and-init-db.sh && ./.travis/install-and-init-db.sh
+  - chmod +x .travis/install-and-init-db.sh && .travis/install-and-init-db.sh
   - cp .env.travis .env
   - composer self-update
   - composer install --prefer-source --no-interaction --dev
