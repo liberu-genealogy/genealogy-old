@@ -6,8 +6,8 @@ services:
 
 before_install:
 ##  - chmod +x .ci/docker-run.sh && bash .ci/docker-run.sh $IMAGE $NAME 3307 $OMIT_FEATURES
-  - sudo service mysql stop
-  - sudo docker run -d -p 3306:3306 mysql:8.0 --link mysql --name mysql -e MYSQL_USER=travis -e MYSQL_PASSWORD=test -e MYSQL_DATABASE=homestead -e MYSQL_ROOT_PASSWORD=test
+##  - sudo service mysql stop
+##  - sudo docker run -d -p 3306:3306 mysql:8.0 --link mysql --name mysql -e MYSQL_USER=travis -e MYSQL_PASSWORD=test -e MYSQL_DATABASE=homestead -e MYSQL_ROOT_PASSWORD=test
 
 language: php
 
