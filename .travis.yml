@@ -20,7 +20,32 @@ cache:
     - vendor
     - $HOME/.composer/cache
 
+matrix:
+    fast_finish: true
+    include:
+        #
+        # Define versions of MySQL and MariaDB to test against.
+        # mysql 5.6
+        - php: 7.2
+          env: DB=mysql:5.6
+        #
+        # Define versions of MySQL and MariaDB to test against.
+        # mysql 5.6
+        - php: 7.2
+          env: DB=mysql:5.7
+        #
+        # Define versions of MySQL and MariaDB to test against.
+        # mysql 5.6
+        - php: 7.2
+          env: DB=mysql:8.0
+        # ...
+        # mariadb 10.0
+        - php: 7.2
+          env: DB=mariadb:10.3
+
+
 before_script:
+  - ./.travis/install-and-init-db.sh
   - cp .env.travis .env
   - composer self-update
   - composer install --prefer-source --no-interaction --dev
