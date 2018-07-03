@@ -20,6 +20,7 @@ cache:
     - $HOME/.composer/cache
 
 before_script:
+  - docker-machine ip
   - mysql --host 172.18.0.1 --port 3307 -ptest -e 'create database homestead;'
   - cp .env.travis .env
   - composer self-update
