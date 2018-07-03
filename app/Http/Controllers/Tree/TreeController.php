@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Tree;
 
 use App\Family;
-use App\Http\Controllers\Controller;
 use App\Individual;
+use App\Http\Controllers\Controller;
 
 class TreeController extends Controller
 {
@@ -31,11 +31,11 @@ class TreeController extends Controller
         $data = [];
         if ($father) {
             $data[] = [
-                'name'        => $father->info->getNameAttribute(),
-                'class'       => 'node',
-                'textClass'   => 'nodeText',
+                'name' => $father->info->getNameAttribute(),
+                'class' => 'node',
+                'textClass' => 'nodeText',
                 'depthOffset' => 1,
-                'marriages'   => [
+                'marriages' => [
                     ['spouse' => [
                         'name' => $father->spouse->getNameAttribute(),
                     ],
@@ -89,14 +89,14 @@ class TreeController extends Controller
             foreach ($parents as $key => $parent) {
                 if ($show === true) {
                     $data[] = [
-                        'id'       => $parent->id,
-                        'text'     => $parent->getNameAttribute(),
+                        'id' => $parent->id,
+                        'text' => $parent->getNameAttribute(),
                         'children' => $this->getChildren($parent->children, $nest, $show),
                     ];
                 } else {
                     $data[] = [
-                        'id'       => $parent->id,
-                        'name'     => $parent->getNameAttribute(),
+                        'id' => $parent->id,
+                        'name' => $parent->getNameAttribute(),
                         'children' => $this->getChildren($parent->children, $nest, $show),
                     ];
                 }
@@ -123,26 +123,26 @@ class TreeController extends Controller
         $tree = $this->getChildren($parents, (int) $nest, false);
 
         $this->linkData = [];
-        $link = $this->edgeLink($tree[0]['id'],$tree[0]['children']);
+        $link = $this->edgeLink($tree[0]['id'], $tree[0]['children']);
 
         $data['tree'] = $tree;
         $data['links'] = $link;
+
         return $data;
     }
 
-
-    public function edgeLink($currentID, $children){
-        
+    public function edgeLink($currentID, $children)
+    {
         foreach ($children as $key => $value) {
             $this->linkData[] = [
                 'source' => $currentID,
                 'target' => $value['id'],
-                'type'  => rand(1,2)
+                'type' => rand(1, 2),
             ];
 
-            $this->edgeLink($value['id'],$value['children']);
+            $this->edgeLink($value['id'], $value['children']);
         }
-        
+
         return $this->linkData;
     }
 }

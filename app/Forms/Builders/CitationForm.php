@@ -2,8 +2,8 @@
 
 namespace App\Forms\Builders;
 
-use App\Citation;
 use App\Source;
+use App\Citation;
 use LaravelEnso\FormBuilder\app\Classes\Form;
 
 class CitationForm

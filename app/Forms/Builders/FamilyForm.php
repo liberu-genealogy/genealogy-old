@@ -2,9 +2,9 @@
 
 namespace App\Forms\Builders;
 
-use App\Enums\IndividualTypes;
 use App\Family;
 use App\Individual;
+use App\Enums\IndividualTypes;
 use LaravelEnso\FormBuilder\app\Classes\Form;
 
 class FamilyForm

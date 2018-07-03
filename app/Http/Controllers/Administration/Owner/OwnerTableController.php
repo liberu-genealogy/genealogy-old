@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Administration\Owner;
 
-use App\Http\Controllers\Controller;
 use App\Tables\Builders\OwnerTable;
-use LaravelEnso\VueDatatable\app\Traits\Datatable;
+use App\Http\Controllers\Controller;
 use LaravelEnso\VueDatatable\app\Traits\Excel;
+use LaravelEnso\VueDatatable\app\Traits\Datatable;
 
 class OwnerTableController extends Controller
 {

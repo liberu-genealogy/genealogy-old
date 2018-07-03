@@ -2,13 +2,13 @@
 
 namespace App;
 
+use Ramsey\Uuid\Uuid;
 use App\Traits\Events;
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\AddressesManager\app\Traits\Addressable;
-use LaravelEnso\CommentsManager\app\Traits\Commentable;
 use LaravelEnso\Contacts\app\Traits\Contactable;
+use LaravelEnso\CommentsManager\app\Traits\Commentable;
+use LaravelEnso\AddressesManager\app\Traits\Addressable;
 use LaravelEnso\DocumentsManager\app\Traits\Documentable;
-use Ramsey\Uuid\Uuid;
 
 class Individual extends Model
 {

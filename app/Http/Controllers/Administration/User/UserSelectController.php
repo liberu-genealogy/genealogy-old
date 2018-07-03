@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Administration\User;
 
-use App\Http\Controllers\Controller;
 use App\User;
+use App\Http\Controllers\Controller;
 use LaravelEnso\Select\app\Traits\OptionsBuilder;
 
 class UserSelectController extends Controller
