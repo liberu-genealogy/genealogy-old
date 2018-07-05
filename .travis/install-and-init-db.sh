@@ -26,6 +26,7 @@ if [ ! -z "${DB}" ]; then
     done
 
     mysql -e 'select VERSION()'
+    mysql -e 'SET GLOBAL innodb_buffer_pool_size=512M'
 
     if [ $DB == 'mysql:8.0' ]; then
         WITH_PLUGIN='with mysql_native_password'
