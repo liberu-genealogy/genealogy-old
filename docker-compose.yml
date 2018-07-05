@@ -21,7 +21,7 @@ services:
       - ./storage/tmp/db:/var/lib/mysql:cached
 
   nginx:
-    image: nginx:latest@sha256:1d9d3da4c60d27b77bb96bba738319c1c4424853fdd10f65982f9f2ca2422a72
+    image: nginx:latest@sha256:edad5e71815c79108ddbd1d42123ee13ba2d8050ad27cfa72c531986d03ee4e7
     ports:
       - "80:80"
     volumes:
