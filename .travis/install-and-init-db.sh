@@ -4,7 +4,7 @@ set -x
 set -v
 
 if [ ! -z "${DB}" ]; then
-    # disable existing database server in case of accidential connection
+    # disable existing database server in case of accidental connection
     sudo service mysql stop
 
     docker pull ${DB}
@@ -26,7 +26,6 @@ if [ ! -z "${DB}" ]; then
     done
 
     mysql -e 'select VERSION()'
-    mysql -e 'SET GLOBAL innodb_buffer_pool_size=512M'
 
     if [ $DB == 'mysql:8.0' ]; then
         WITH_PLUGIN='with mysql_native_password'
