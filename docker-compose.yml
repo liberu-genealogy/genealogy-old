@@ -31,7 +31,7 @@ services:
       - genealogy-server
 
   neo4j:
-    image: neo4j:latest@sha256:d404b567d119909a323b98ad786c4f46fe0b7189bca9dcccce6303335802d5f7
+    image: neo4j:latest@sha256:40fb3eee219172a07c9fb5bd689514bf01f37e47443bc6cb02e482908a244133
     ports:
       - "7474:7474"
       - "7687:7687"
