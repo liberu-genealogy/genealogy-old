@@ -1,7 +1,6 @@
 {
   "routePrefix": "notes",
   "readSuffix": "getTableData",
-  "writeSuffix": null,
   "name": "Notes",
   "icon": "users",
   "crtNo": true,

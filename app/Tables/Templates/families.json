@@ -1,7 +1,6 @@
 {
   "routePrefix": "families",
   "readSuffix": "getTableData",
-  "writeSuffix": null,
   "name": "Families",
   "icon": "users",
   "crtNo": true,

@@ -1,7 +1,6 @@
 {
   "routePrefix": "events",
   "readSuffix": "getTableData",
-  "writeSuffix": null,
   "name": "Events",
   "icon": "users",
   "crtNo": true,

@@ -1,7 +1,6 @@
 {
   "routePrefix": "repositories",
   "readSuffix": "getTableData",
-  "writeSuffix": null,
   "name": "Repositories",
   "icon": "users",
   "crtNo": true,

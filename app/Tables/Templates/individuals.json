@@ -1,7 +1,6 @@
 {
   "routePrefix": "individuals",
   "readSuffix": "getTableData",
-  "writeSuffix": null,
   "name": "Individuals",
   "icon": "users",
   "crtNo": true,
