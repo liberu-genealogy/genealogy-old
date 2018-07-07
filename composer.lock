@@ -1536,16 +1536,16 @@
         },
         {
             "name": "laravel-enso/commentsmanager",
-            "version": "2.3.2",
+            "version": "2.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/CommentsManager.git",
-                "reference": "632fbf1bf3950d3cab29563995818923e796c452"
+                "reference": "a7b73abe2e061eab8e55e81cab408eb75ff46115"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/CommentsManager/zipball/632fbf1bf3950d3cab29563995818923e796c452",
-                "reference": "632fbf1bf3950d3cab29563995818923e796c452",
+                "url": "https://api.github.com/repos/laravel-enso/CommentsManager/zipball/a7b73abe2e061eab8e55e81cab408eb75ff46115",
+                "reference": "a7b73abe2e061eab8e55e81cab408eb75ff46115",
                 "shasum": ""
             },
             "require": {
@@ -1595,7 +1595,7 @@
                 "commentsmanager",
                 "laravel-enso"
             ],
-            "time": "2018-06-12T09:15:42+00:00"
+            "time": "2018-07-06T07:22:27+00:00"
         },
         {
             "name": "laravel-enso/contacts",
@@ -1945,16 +1945,16 @@
         },
         {
             "name": "laravel-enso/formbuilder",
-            "version": "2.6.7",
+            "version": "2.6.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/FormBuilder.git",
-                "reference": "d0aa3b3481b61622f18cc507b801d0e4166b81df"
+                "reference": "30ee6c7ebb6d76a823aed9042c5b8c9e0dbc0f82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/FormBuilder/zipball/d0aa3b3481b61622f18cc507b801d0e4166b81df",
-                "reference": "d0aa3b3481b61622f18cc507b801d0e4166b81df",
+                "url": "https://api.github.com/repos/laravel-enso/FormBuilder/zipball/30ee6c7ebb6d76a823aed9042c5b8c9e0dbc0f82",
+                "reference": "30ee6c7ebb6d76a823aed9042c5b8c9e0dbc0f82",
                 "shasum": ""
             },
             "require": {
@@ -1997,7 +1997,7 @@
                 "form-builder",
                 "laravel-enso"
             ],
-            "time": "2018-06-30T08:09:16+00:00"
+            "time": "2018-07-05T16:55:04+00:00"
         },
         {
             "name": "laravel-enso/helpers",
@@ -2389,16 +2389,16 @@
         },
         {
             "name": "laravel-enso/menumanager",
-            "version": "2.1.44",
+            "version": "2.1.45",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/MenuManager.git",
-                "reference": "46fcb7cd91f6eee842d26c20c58cae68fc6e99ec"
+                "reference": "e8650ded36be9fe12554b4ed52f16d1677bf5d99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/MenuManager/zipball/46fcb7cd91f6eee842d26c20c58cae68fc6e99ec",
-                "reference": "46fcb7cd91f6eee842d26c20c58cae68fc6e99ec",
+                "url": "https://api.github.com/repos/laravel-enso/MenuManager/zipball/e8650ded36be9fe12554b4ed52f16d1677bf5d99",
+                "reference": "e8650ded36be9fe12554b4ed52f16d1677bf5d99",
                 "shasum": ""
             },
             "require": {
@@ -2447,7 +2447,7 @@
                 "menu-manager",
                 "menumanager"
             ],
-            "time": "2018-06-21T14:42:00+00:00"
+            "time": "2018-07-05T16:56:46+00:00"
         },
         {
             "name": "laravel-enso/notifications",
@@ -2684,16 +2684,16 @@
         },
         {
             "name": "laravel-enso/select",
-            "version": "2.4.19",
+            "version": "2.4.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/Select.git",
-                "reference": "b27eac90478ec0ddbc2db91a8e302cef68af89b4"
+                "reference": "c5c7ecd347657cf6ee25f30f8b33a6549d11317d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/Select/zipball/b27eac90478ec0ddbc2db91a8e302cef68af89b4",
-                "reference": "b27eac90478ec0ddbc2db91a8e302cef68af89b4",
+                "url": "https://api.github.com/repos/laravel-enso/Select/zipball/c5c7ecd347657cf6ee25f30f8b33a6549d11317d",
+                "reference": "c5c7ecd347657cf6ee25f30f8b33a6549d11317d",
                 "shasum": ""
             },
             "require": {
@@ -2734,7 +2734,7 @@
                 "select",
                 "select-server-side"
             ],
-            "time": "2018-05-19T07:38:33+00:00"
+            "time": "2018-07-06T06:49:23+00:00"
         },
         {
             "name": "laravel-enso/structuremanager",
@@ -2842,16 +2842,16 @@
         },
         {
             "name": "laravel-enso/tutorialmanager",
-            "version": "2.1.50",
+            "version": "2.1.52",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/TutorialManager.git",
-                "reference": "e202a5d0ebc7b03aefae9463629a65c38d6e8658"
+                "reference": "cb9011c83235fd0942bb14e88715b8f47faff943"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/TutorialManager/zipball/e202a5d0ebc7b03aefae9463629a65c38d6e8658",
-                "reference": "e202a5d0ebc7b03aefae9463629a65c38d6e8658",
+                "url": "https://api.github.com/repos/laravel-enso/TutorialManager/zipball/cb9011c83235fd0942bb14e88715b8f47faff943",
+                "reference": "cb9011c83235fd0942bb14e88715b8f47faff943",
                 "shasum": ""
             },
             "require": {
@@ -2900,7 +2900,7 @@
                 "tutorial-manager",
                 "tutorialmanager"
             ],
-            "time": "2018-07-03T06:08:44+00:00"
+            "time": "2018-07-07T11:42:45+00:00"
         },
         {
             "name": "laravel-enso/versioning",
@@ -3006,16 +3006,16 @@
         },
         {
             "name": "laravel-enso/vuedatatable",
-            "version": "1.2.4",
+            "version": "1.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/VueDatatable.git",
-                "reference": "b4d4efc848bfec078beffbec13ddce4cab022d54"
+                "reference": "a4a1e5b6d02a47d24680be6aca7a4e952bb0c30b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/VueDatatable/zipball/b4d4efc848bfec078beffbec13ddce4cab022d54",
-                "reference": "b4d4efc848bfec078beffbec13ddce4cab022d54",
+                "url": "https://api.github.com/repos/laravel-enso/VueDatatable/zipball/a4a1e5b6d02a47d24680be6aca7a4e952bb0c30b",
+                "reference": "a4a1e5b6d02a47d24680be6aca7a4e952bb0c30b",
                 "shasum": ""
             },
             "require": {
@@ -3059,7 +3059,7 @@
                 "datatable",
                 "laravel-enso"
             ],
-            "time": "2018-06-28T06:20:57+00:00"
+            "time": "2018-07-07T11:42:11+00:00"
         },
         {
             "name": "laravel/framework",
@@ -3603,12 +3603,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/oguz463/php-gedcom.git",
-                "reference": "6f4076adeb4bb645701519c97d22fcc71c9a2d72"
+                "reference": "631e696897be3e892beaad33e56b35ed28ff2d8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/oguz463/php-gedcom/zipball/6f4076adeb4bb645701519c97d22fcc71c9a2d72",
-                "reference": "6f4076adeb4bb645701519c97d22fcc71c9a2d72",
+                "url": "https://api.github.com/repos/oguz463/php-gedcom/zipball/631e696897be3e892beaad33e56b35ed28ff2d8a",
+                "reference": "631e696897be3e892beaad33e56b35ed28ff2d8a",
                 "shasum": ""
             },
             "require": {
@@ -3634,7 +3634,7 @@
                 "gedcom",
                 "parser"
             ],
-            "time": "2018-06-29T21:17:50+00:00"
+            "time": "2018-07-04T13:42:47+00:00"
         },
         {
             "name": "paragonie/random_compat",
