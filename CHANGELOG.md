@@ -1,5 +1,116 @@
 ## Laravel Enso's Changelog
 
+### 2.8.8
+
+#### VueDatatable
+
+NOTE: we removed the unused `writeSuffix` template attribute. Make sure that you remove it from all the existing templates.
+
+#### StructureManager
+
+Finalizes the implementation for `php artisan enso:make:structure` - a CLI designed to help creating new ready for production Enso structures in minutes.
+
+From the CLI you easily generate the following files:
+
+- model
+- `create_structure_for_model` migration
+- front-end route files for crud actions `index`, `create`, `edit`, `show`
+- crud views boilerplate
+- form structure:
+    - builder
+    - json template boilerplate
+    - request validator,
+    - controller
+- table structure:
+    - builder
+    - json template boilerplate
+    - controller
+- select structure
+    - controller
+
+and the needed backend routes (api.php)
+
+#### RoleManager
+
+Adds the new system that allows roles management in development with the posibility to easily sync them with the live instance of the app though a seeder.
+
+To run the syncronization, after generating each config file run on the live instance `php artisan db:seed --class=RoleSeeder.php
+
+To use this run `php artisan enso:roles:add-missing-permission` after upgrading, and publish the [seeder]in your local project: `php artisan vendor-publish --tag=roles-seeder`
+
+### 2.8.7
+
+- compiles all the themes with latest bulma & bulma-extensions
+- fixes navbar shadow
+
+### 2.8.6
+
+Pay attention, has one breaking change. See the upgrade section below.
+
+#### Contacts
+- removes the obsolete `DropCreatedBy` command for contacts
+- add the position field to the form & table
+- moves the observations under a hoverable info icon
+- changes the observations form field to a textarea
+
+#### Comments
+
+- removes the obsolete `UpdateCommentsTable` command for comments
+- raises the pagination default from 5 to 100
+
+#### Core
+ 
+- removes the obsolete `DBRenameReserved` command
+
+#### DocumentsManager
+
+- removes the obsolete `UpdateDocumentsPermissions` command
+- adds authorization for link generation
+
+#### FormBuilder
+
+- adds the `resize` boolean template attribute for textareas in formbuilder
+- moves the validation error messages under the field
+
+#### RoleManager
+
+- refactors the `HasRoles` trait - breaking change
+
+#### PermissionsManager
+
+- removes the obsolete `AddMissingPermissions` command
+
+#### StructureManager
+
+- finally adds a CLI for handling new structures. This is work in progress so what you see is what you get :)
+To play with it run `php artisan enso:make:structure`.
+
+#### General
+
+- updates composer and npm dependencies
+
+#### Upgrade an existing project
+
+- Replace in your project's OwnerController file form
+```
+$owner->updateWithRoles(
+    $request->all(),
+    $request->get('roleList')
+);
+```
+
+to
+
+```
+$owner->updateWithRoles($request->validated());
+```
+
+and do the same for `storeWithRoles`
+### 2.8.5
+
+- brings back the `webpack.mix.js` file
+- fixes a bug in vuedatatable when saved start position is > total filtered
+
 ### 2.8.4
 
 #### Core
