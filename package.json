@@ -21,7 +21,7 @@
         "eslint-plugin-import": "2.13.0",
         "eslint-plugin-jsx-a11y": "6.1.0",
         "eslint-plugin-react": "7.10.0",
-        "eslint-plugin-vue": "4.5.0",
+        "eslint-plugin-vue": "4.6.0",
         "laravel-mix": "2.1.11",
         "node-sass": "4.9.2",
         "sass-loader": "6.0.7",
