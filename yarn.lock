@@ -8635,9 +8635,9 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-d3-network@0.1.24:
-  version "0.1.24"
-  resolved "https://registry.yarnpkg.com/vue-d3-network/-/vue-d3-network-0.1.24.tgz#f4374533b8294905b99e292f919ad172c19b2adf"
+vue-d3-network@0.1.26:
+  version "0.1.26"
+  resolved "https://registry.yarnpkg.com/vue-d3-network/-/vue-d3-network-0.1.26.tgz#5317396c4d96aab7ab806fba009e48c0a551a19b"
   dependencies:
     d3-force "^1.0.6"
 
