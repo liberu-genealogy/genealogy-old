@@ -2432,9 +2432,9 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
-date-fns@2.0.0-alpha.7:
-  version "2.0.0-alpha.7"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.0.0-alpha.7.tgz#245ad16f95764eababfb2c0a41fd5d033c20e57a"
+date-fns@2.0.0-alpha.13:
+  version "2.0.0-alpha.13"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.0.0-alpha.13.tgz#a0fd723c467b5c5ba98bc9d7fe1beef5e6a4d596"
 
 date-now@^0.1.4:
   version "0.1.4"
