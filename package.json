@@ -55,7 +55,7 @@
         "axios": "0.17.1",
         "bulma": "0.7.1",
         "bulma-extensions": "2.2.1",
-        "bulmaswatch": "0.7.0",
+        "bulmaswatch": "0.7.1",
         "chart.js": "2.7.2",
         "chartjs-plugin-datalabels": "0.3.0",
         "css-element-queries": "1.0.2",
