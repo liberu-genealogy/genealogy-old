@@ -59,7 +59,7 @@
         "chart.js": "2.7.2",
         "chartjs-plugin-datalabels": "0.3.0",
         "css-element-queries": "1.0.2",
-        "d3": "5.5.0",
+        "d3": "5.6.0",
         "d3-dtree": "2.0.2",
         "date-fns": "2.0.0-alpha.7",
         "favico.js": "0.3.10",
