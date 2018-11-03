@@ -44,7 +44,7 @@ Features will be improved gradually. Watch / star on GitHub or follow the projec
 Open `DOCKER.md` file for information
 
 ### Software used
-Laravel 5.6.x, Bulma 0.7.x, Vuejs 2.5.x and:
+Laravel 5.7.x, Bulma 0.7.x, Vuejs 2.5.x and:
 
 [Vue Router](https://router.vuejs.org/en), [Vuex](https://vuex.vuejs.org/en/), [Axios](https://github.com/axios/axios),
 [Font awesome 5](https://fontawesome.com), [Animate.css](https://daneden.github.io/animate.css/), 
