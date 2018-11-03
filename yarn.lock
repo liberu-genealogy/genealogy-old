@@ -1338,9 +1338,9 @@ bulma-extensions@2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/bulma-extensions/-/bulma-extensions-2.2.1.tgz#b77e75eb6eb47f8eb79d45450888d49d22d72f96"
 
-bulma@0.7.1:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/bulma/-/bulma-0.7.1.tgz#73c2e3b2930c90cc272029cbd19918b493fca486"
+bulma@0.7.2:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/bulma/-/bulma-0.7.2.tgz#8e944377b74c7926558830d38d8e19eaf49f5fb6"
 
 bulmaswatch@0.7.0:
   version "0.7.0"
