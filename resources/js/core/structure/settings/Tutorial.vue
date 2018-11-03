@@ -1,0 +1,63 @@
+<template>
+
+    <div class="level is-mobile settings">
+        <div class="level-left">
+            <div class="level-item">
+                {{ __('Tutorial') }}
+            </div>
+        </div>
+        <div class="level-right">
+            <div class="level-item">
+                <button class="button is-small is-info"
+                    @click="get()">
+                    <span class="icon is-small">
+                        <fa icon="question"/>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</template>
+
+<script>
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faQuestion } from '@fortawesome/free-solid-svg-icons';
+
+import * as Driver from 'driver.js';
+import '../../../../../node_modules/driver.js/dist/driver.min.css';
+
+library.add(faQuestion);
+
+export default {
+    name: 'Tutorial',
+
+    data() {
+        return {
+            driver: new Driver(),
+        };
+    },
+
+    methods: {
+        get() {
+            axios.get(route('system.tutorials.show'), {
+                params: { route: this.$route.name },
+            }).then(({ data }) => {
+                if (data.length) {
+                    this.init(data);
+                }
+            }).catch((error) => {
+                this.handleError(error);
+            });
+        },
+        init(steps) {
+            this.$store.commit('layout/settingsBar/toggle');
+            this.driver.defineSteps(steps);
+            this.driver.start();
+        },
+    },
+};
+
+</script>
+
