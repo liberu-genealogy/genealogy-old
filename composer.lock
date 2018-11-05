@@ -1467,16 +1467,16 @@
         },
         {
             "name": "laravel-enso/commentsmanager",
-            "version": "2.4.9",
+            "version": "2.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/CommentsManager.git",
-                "reference": "f2fdd35ed2c8e48a9e1d02c3ca8deb094bced090"
+                "reference": "8f200625db88a781c21e2c8316c37a0b8f4ff3e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/CommentsManager/zipball/f2fdd35ed2c8e48a9e1d02c3ca8deb094bced090",
-                "reference": "f2fdd35ed2c8e48a9e1d02c3ca8deb094bced090",
+                "url": "https://api.github.com/repos/laravel-enso/CommentsManager/zipball/8f200625db88a781c21e2c8316c37a0b8f4ff3e9",
+                "reference": "8f200625db88a781c21e2c8316c37a0b8f4ff3e9",
                 "shasum": ""
             },
             "require": {
@@ -1524,7 +1524,7 @@
                 "commentsmanager",
                 "laravel-enso"
             ],
-            "time": "2018-10-26T12:42:14+00:00"
+            "time": "2018-11-05T05:28:51+00:00"
         },
         {
             "name": "laravel-enso/companies",
@@ -1985,7 +1985,7 @@
                 "file-uploader",
                 "laravel-enso"
             ],
-            "time": "2018-10-28T09:09:33+00:00"
+            "time": "2018-10-28T09:14:50+00:00"
         },
         {
             "name": "laravel-enso/examples",
@@ -5631,16 +5631,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v4.1.6",
+            "version": "v4.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "ee33c0322a8fee0855afcc11fff81e6b1011b529"
+                "reference": "3e83acef94d979b1de946599ef86b3a352abcdc9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/ee33c0322a8fee0855afcc11fff81e6b1011b529",
-                "reference": "ee33c0322a8fee0855afcc11fff81e6b1011b529",
+                "url": "https://api.github.com/repos/symfony/process/zipball/3e83acef94d979b1de946599ef86b3a352abcdc9",
+                "reference": "3e83acef94d979b1de946599ef86b3a352abcdc9",
                 "shasum": ""
             },
             "require": {
@@ -5676,7 +5676,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2018-10-02T12:40:59+00:00"
+            "time": "2018-10-14T20:48:13+00:00"
         },
         {
             "name": "symfony/routing",
