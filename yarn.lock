@@ -6652,7 +6652,7 @@ verror@1.10.0:
     videojs-vtt.js "0.12.6"
     xhr "2.4.0"
 
-"video.js@^6 || ^7", "video.js@^6.8.0 || ^7.0.0", video.js@^7.0.3:
+"video.js@^6 || ^7", "video.js@^6.8.0 || ^7.0.0", video.js@^7.2.4:
   version "7.2.4"
   resolved "https://registry.yarnpkg.com/video.js/-/video.js-7.2.4.tgz#d1f9768947ef1c2288cec787ecc4d617a9e8956c"
   dependencies:
