@@ -1985,7 +1985,7 @@
                 "file-uploader",
                 "laravel-enso"
             ],
-            "time": "2018-10-28T09:09:33+00:00"
+            "time": "2018-10-28T09:14:50+00:00"
         },
         {
             "name": "laravel-enso/examples",
@@ -3584,16 +3584,16 @@
         },
         {
             "name": "laravel/telescope",
-            "version": "v0.1.5",
+            "version": "v0.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "3984649a9ff8e9bcca6b40d1126d2d8e336616de"
+                "reference": "e3dbda59367969222603a2a20f0ee3aabe7bcdce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/3984649a9ff8e9bcca6b40d1126d2d8e336616de",
-                "reference": "3984649a9ff8e9bcca6b40d1126d2d8e336616de",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/e3dbda59367969222603a2a20f0ee3aabe7bcdce",
+                "reference": "e3dbda59367969222603a2a20f0ee3aabe7bcdce",
                 "shasum": ""
             },
             "require": {
@@ -3604,7 +3604,7 @@
                 "symfony/var-dumper": "^4.1"
             },
             "require-dev": {
-                "nunomaduro/larastan": "^0.3.4",
+                "nunomaduro/larastan": "^0.3.7",
                 "orchestra/testbench": "~3.7"
             },
             "type": "library",
@@ -3643,7 +3643,7 @@
                 "laravel",
                 "monitoring"
             ],
-            "time": "2018-10-29T20:37:28+00:00"
+            "time": "2018-11-02T10:45:19+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -5826,7 +5826,7 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v4.1.6",
+            "version": "v4.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
