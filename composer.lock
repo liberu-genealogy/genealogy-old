@@ -1528,16 +1528,16 @@
         },
         {
             "name": "laravel-enso/companies",
-            "version": "1.1.7",
+            "version": "1.1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/Companies.git",
-                "reference": "52d83d54a9402cc1e001809dcb5b3b3dcc7d1d39"
+                "reference": "ded293a3337805013547b196e44a7f16ab6f15f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/Companies/zipball/52d83d54a9402cc1e001809dcb5b3b3dcc7d1d39",
-                "reference": "52d83d54a9402cc1e001809dcb5b3b3dcc7d1d39",
+                "url": "https://api.github.com/repos/laravel-enso/Companies/zipball/ded293a3337805013547b196e44a7f16ab6f15f2",
+                "reference": "ded293a3337805013547b196e44a7f16ab6f15f2",
                 "shasum": ""
             },
             "require": {
@@ -1584,7 +1584,7 @@
                 "company-management",
                 "laravel-enso"
             ],
-            "time": "2018-11-02T08:15:51+00:00"
+            "time": "2018-11-06T06:03:53+00:00"
         },
         {
             "name": "laravel-enso/controlpanelapi",
@@ -1985,7 +1985,7 @@
                 "file-uploader",
                 "laravel-enso"
             ],
-            "time": "2018-10-28T09:09:33+00:00"
+            "time": "2018-10-28T09:14:50+00:00"
         },
         {
             "name": "laravel-enso/examples",
@@ -2101,16 +2101,16 @@
         },
         {
             "name": "laravel-enso/formbuilder",
-            "version": "2.10.7",
+            "version": "2.10.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/FormBuilder.git",
-                "reference": "9345c90cd180e5678d6e68cc84c3bd08badcc5c5"
+                "reference": "f389e6ce74b6f82a0fc4b0df0566361034b12228"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/FormBuilder/zipball/9345c90cd180e5678d6e68cc84c3bd08badcc5c5",
-                "reference": "9345c90cd180e5678d6e68cc84c3bd08badcc5c5",
+                "url": "https://api.github.com/repos/laravel-enso/FormBuilder/zipball/f389e6ce74b6f82a0fc4b0df0566361034b12228",
+                "reference": "f389e6ce74b6f82a0fc4b0df0566361034b12228",
                 "shasum": ""
             },
             "require": {
@@ -2153,20 +2153,20 @@
                 "form-builder",
                 "laravel-enso"
             ],
-            "time": "2018-11-02T07:32:20+00:00"
+            "time": "2018-11-05T15:27:29+00:00"
         },
         {
             "name": "laravel-enso/helpers",
-            "version": "1.9.4",
+            "version": "1.9.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/Helpers.git",
-                "reference": "634520ea82ff8f04045ae8a6c7099074ebadd993"
+                "reference": "fa1963ab9ed65b2ace18d4454addf555984da121"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/Helpers/zipball/634520ea82ff8f04045ae8a6c7099074ebadd993",
-                "reference": "634520ea82ff8f04045ae8a6c7099074ebadd993",
+                "url": "https://api.github.com/repos/laravel-enso/Helpers/zipball/fa1963ab9ed65b2ace18d4454addf555984da121",
+                "reference": "fa1963ab9ed65b2ace18d4454addf555984da121",
                 "shasum": ""
             },
             "require": {
@@ -2203,7 +2203,7 @@
                 "helpers",
                 "laravel-enso"
             ],
-            "time": "2018-10-21T11:08:45+00:00"
+            "time": "2018-11-05T10:20:14+00:00"
         },
         {
             "name": "laravel-enso/historytracker",
@@ -2935,16 +2935,16 @@
         },
         {
             "name": "laravel-enso/select",
-            "version": "2.7.5",
+            "version": "2.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/Select.git",
-                "reference": "b075d273b496069493d98a2719fe2b21b89a3cbc"
+                "reference": "09e696099067b6886e4e014a824087c357c4e812"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/Select/zipball/b075d273b496069493d98a2719fe2b21b89a3cbc",
-                "reference": "b075d273b496069493d98a2719fe2b21b89a3cbc",
+                "url": "https://api.github.com/repos/laravel-enso/Select/zipball/09e696099067b6886e4e014a824087c357c4e812",
+                "reference": "09e696099067b6886e4e014a824087c357c4e812",
                 "shasum": ""
             },
             "require": {
@@ -2985,7 +2985,7 @@
                 "select",
                 "select-server-side"
             ],
-            "time": "2018-10-31T11:46:57+00:00"
+            "time": "2018-11-05T13:43:52+00:00"
         },
         {
             "name": "laravel-enso/structuremanager",
@@ -5631,16 +5631,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v4.1.6",
+            "version": "v4.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "ee33c0322a8fee0855afcc11fff81e6b1011b529"
+                "reference": "3e83acef94d979b1de946599ef86b3a352abcdc9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/ee33c0322a8fee0855afcc11fff81e6b1011b529",
-                "reference": "ee33c0322a8fee0855afcc11fff81e6b1011b529",
+                "url": "https://api.github.com/repos/symfony/process/zipball/3e83acef94d979b1de946599ef86b3a352abcdc9",
+                "reference": "3e83acef94d979b1de946599ef86b3a352abcdc9",
                 "shasum": ""
             },
             "require": {
@@ -5676,7 +5676,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2018-10-02T12:40:59+00:00"
+            "time": "2018-10-14T20:48:13+00:00"
         },
         {
             "name": "symfony/routing",
