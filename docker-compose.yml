@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  genealogy-server:
+    build: ./provisioning
+    image: modulargenealogy
+    depends_on:
+      - mysql
+      - neo4j
+    volumes:
+      - ./:/application:cached
+
+  mysql:
+    image: mysql:5.7@sha256:f568db3bdc3226cc28e4b148e6b9fd4e68d9c42e97a82be671bbe9eeb37ab1d5
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=homestead
+    volumes:
+      - ./storage/tmp/db:/var/lib/mysql:cached
+
+  nginx:
+    image: nginx:latest@sha256:d59a1aa7866258751a261bae525a1842c7ff0662d4f34a355d5f36826abc0341
+    ports:
+      - "80:80"
+    volumes:
+      - ./provisioning/nginx.conf:/etc/nginx/conf.d/default.conf:cached
+      - ./:/application:cached
+    depends_on:
+      - genealogy-server
+
+  neo4j:
+    image: neo4j:latest@sha256:0dace6d4972ef5c2e219dd93d51286ed69e00459a15e473691a102ecfdf6d5c4
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - ./db/dbms:/data/dbms

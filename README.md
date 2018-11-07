@@ -1,125 +1,75 @@
-<!--h-->
-# Laravel Enso
-[![StyleCI](https://styleci.io/repos/95136264/shield?branch=master)](https://styleci.io/repos/95136264)
-[![Backers on Open Collective](https://opencollective.com/Enso/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/Enso/sponsors/badge.svg)](#sponsors) [![Waffle.io - Columns and their card count](https://badge.waffle.io/laravel-enso/Enso.svg?columns=all)](https://waffle.io/laravel-enso/Enso)
-[![Build Status](https://travis-ci.org/laravel-enso/Enso.svg?branch=master)](https://travis-ci.org/laravel-enso/Enso)
-<!--/h-->
+# Modular Genealogy Software
+ ![Latest Stable Version](https://img.shields.io/github/release/modularsoftware/genealogy.svg) 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/modularsoftware/genealogy/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/modularsoftware/genealogy/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/modularsoftware/genealogy/badges/build.png?b=master)](https://scrutinizer-ci.com/g/modularsoftware/genealogy/build-status/master)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/modularsoftware/genealogy/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
+[![StyleCI](https://github.styleci.io/repos/135390590/shield?branch=master)](https://github.styleci.io/repos/135390590)
+[![CodeFactor](https://www.codefactor.io/repository/github/modularsoftware/genealogy/badge/master)](https://www.codefactor.io/repository/github/modularsoftware/genealogy/overview/master)
+[![codebeat badge](https://codebeat.co/badges/911f9e33-212a-4dfa-a860-751cdbbacff7)](https://codebeat.co/projects/github-com-modulargenealogy-genealogy-master)
+[![Build Status](https://travis-ci.org/modularsoftware/genealogy.svg?branch=master)](https://travis-ci.org/modularsoftware/genealogy)
 
-**Hit the ground running when building your new Laravel SPA project with boilerplate and extra functionality out of the box!**
 
-&nbsp;
+## Description
 
-[![Watch the demo](https://laravel-enso.github.io/enso/screenshots/bulma_cap000_thumb.png)](https://laravel-enso.github.io/enso/videos/bulma_quick_walkthrough.webm)
+Genealogy software for processing data efficiently. Creating your own family tree website. Store your data locally or in a networked
+environment.
 
-<sup>click on the photo to view a short demo in compatible browsers</sup>
+Features include: creating / editing / updating / deleting of individuals, families, events,
+sources, notes, citations, repositories. Live rendering of tree data. Data tables, forms
+addresses, contacts, permissions and roles. 
 
-### Important
+Importing of CSV / Spreadsheets. Currently in the process of implementing
+API access. Exporting is also planned but with your own install you are in control of your data.
 
-If you are using this project please consult the **[changelog](https://github.com/laravel-enso/Enso/blob/master/CHANGELOG.md)** on every update.
 
-For the v1.x / adminlte version, take a look at the **[adminlte](https://github.com/laravel-enso/Enso/tree/adminlte)** branch.
+Currently under development and not recommended for production websites however there are no known serious issues. 
+Features will be improved gradually. Watch / star on GitHub or follow the project on Facebook.
 
-<!--h-->
-### Official Documentation
+![](https://www.modularsoftware.co.uk/screenshots/genealogy/edit-individual.png)
 
-The documentation is available [here](https://docs.laravel-enso.com).
-Note that most sections have short demo clips.
 
-<!--/h-->
+### Installation
 
-### Take It For A Spin
+1. Download the project with `composer create-project modularsoftware/genealogy`
 
-You may try out a live demo installation by visiting [laravel-enso.com](https://www.laravel-enso.com) 
-and logging in with `admin@laravel-enso.com` and `password`. 
+2. Configure the `.env` file. 
 
-### Installation Steps
+3. Run `php artisan migrate --seed`
 
-1. Download the project with `git clone https://github.com/laravel-enso/Enso.git`
+4. Login into the project with user: `admin@example.net`, password: `password`
 
-2. Run in the project folder `composer install`
 
-3. Configure the `.env` file. Run `php artisan key:generate`
+### Docker container support
 
-4. Run `php artisan migrate --seed`
+Open `DOCKER.md` file for information
 
-5. Login into the project with user: `admin@laravel-enso.com`, password: `password`
-
-6. (optional) Setup the configuration files as needed, in `config/enso/*.php`
-
-7. (optional) `npm install` / `npm run dev` / `hmr` /...
-
-Enjoy!
-
-### Support services (*new*)
-
-While developing Enso, we constantly received private inquiries from devs and teams asking us about paid support. Some of these requests even lead to fruitful collaborations, so we finally decided to launch such an option.
-
-If you're looking for premium support when building applications with Enso we can help you with that. Our support packages start at 480 Eur / month with 8 hours included. With premium support you will get:
-
-- a private repo on our self hosted gitlab instance where you can host your project
-- priority in addressing your issues
-- help with understanding the Enso environment
-- getting you to be proficient when developing on Enso
-- mentoring 
-- code reviews
-- general advice & support on Laravel & Vue
-- assistance on Enso version upgrades
-- up to 4 hours / month of remote desktop sessions and call conferences with your team
-- direct communication via Slack during our office hours
-
-The support services are provided by a team of 4 members.
-
-### Thanks
-
-Built with with <span style="color:red"> &#10084;&#65039;</span>, crafted on Laravel 5.6.x, Bulma 0.6.x, Vuejs 2.5.x and:
+### Software used
+Laravel 5.7.x, Bulma 0.7.x, Vuejs 2.5.x and:
 
 [Vue Router](https://router.vuejs.org/en), [Vuex](https://vuex.vuejs.org/en/), [Axios](https://github.com/axios/axios),
 [Font awesome 5](https://fontawesome.com), [Animate.css](https://daneden.github.io/animate.css/), 
-[Bulmaswatch](https://jenil.github.io/bulmaswatch), [Bulma-Extensions](https://wikiki.github.io/bulma-extensions/overview), [Intro.js](http://introjs.com/),
-[Chart.js](http://chartjs.org), [Flatpickr](https://chmln.github.io/flatpickr/), 
+[Bulmaswatch](https://jenil.github.io/bulmaswatch), [Bulma-Extensions](https://wikiki.github.io/bulma-extensions/overview),
+[Nprogress.js](http://ricostacruz.com/nprogress), [Vue-multiselect](https://github.com/monterail/vue-multiselect),
+[Intro.js](http://introjs.com/),  [Chart.js](http://chartjs.org), [Flatpickr](https://chmln.github.io/flatpickr/), 
 
-Special thanks to [Taylor Otwell](https://laravel.com/), [Jeffrey Way](https://laracasts.com), [Evan You](https://vuejs.org/) and [Jeremy Thomas](https://bulma.io).
-
-<!--h-->
-### Contributions
-
-are welcome. Pull requests are great, but issues are good too.
-
-### Sponsor (*new*)
-
-This project is backed by [Earthlink](https://www.earthlink.ro)
-
-## Contributors
-
-This project exists thanks to all the people who contribute. 
-<a href="graphs/contributors"><img src="https://opencollective.com/Enso/contributors.svg?width=890&button=false" /></a>
+Special thanks to [Laravel Enso](https://github.com/laravel-enso)  [Taylor Otwell](https://laravel.com/), [Jeffrey Way](https://laracasts.com), [Evan You](https://vuejs.org/) and [Jeremy Thomas](https://bulma.io).
 
 
-## Backers
+## Reporting bugs
 
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/Enso#backer)]
+If you've stumbled across a bug, please help us out by [reporting the bug](https://github.com/modularsoftware/genealogy/issues?state=open) you have found. Simply log in or register and submit a new issue, leaving as much information about the bug as possible, e.g.
 
-<a href="https://opencollective.com/Enso#backers" target="_blank"><img src="https://opencollective.com/Enso/backers.svg?width=890"></a>
+* Steps to reproduce
+* Expected result
+* Actual result
 
-
-## Sponsors
-
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/Enso#sponsor)]
-
-<a href="https://opencollective.com/Enso/sponsor/0/website" target="_blank"><img src="https://opencollective.com/Enso/sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/Enso/sponsor/1/website" target="_blank"><img src="https://opencollective.com/Enso/sponsor/1/avatar.svg"></a>
-<a href="https://opencollective.com/Enso/sponsor/2/website" target="_blank"><img src="https://opencollective.com/Enso/sponsor/2/avatar.svg"></a>
-<a href="https://opencollective.com/Enso/sponsor/3/website" target="_blank"><img src="https://opencollective.com/Enso/sponsor/3/avatar.svg"></a>
-<a href="https://opencollective.com/Enso/sponsor/4/website" target="_blank"><img src="https://opencollective.com/Enso/sponsor/4/avatar.svg"></a>
-<a href="https://opencollective.com/Enso/sponsor/5/website" target="_blank"><img src="https://opencollective.com/Enso/sponsor/5/avatar.svg"></a>
-<a href="https://opencollective.com/Enso/sponsor/6/website" target="_blank"><img src="https://opencollective.com/Enso/sponsor/6/avatar.svg"></a>
-<a href="https://opencollective.com/Enso/sponsor/7/website" target="_blank"><img src="https://opencollective.com/Enso/sponsor/7/avatar.svg"></a>
-<a href="https://opencollective.com/Enso/sponsor/8/website" target="_blank"><img src="https://opencollective.com/Enso/sponsor/8/avatar.svg"></a>
-<a href="https://opencollective.com/Enso/sponsor/9/website" target="_blank"><img src="https://opencollective.com/Enso/sponsor/9/avatar.svg"></a>
-
-
+This will help us to fix the bug as quickly as possible, and if you'd like to fix it yourself feel free to fork us on GitHub and submit a pull request!
 
 ### License
 
-This package is released under the MIT license.
-<!--/h-->
+ [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
+## Contributing
+
+Contributions are encouraged and welcome; however, please review the Developer Certificate of Origin in the LICENSE.md file included in the repository.
