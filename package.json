@@ -51,7 +51,7 @@
         "bulma-extensions": "^2.2.1",
         "bulmaswatch": "^0.7.0",
         "chart.js": "^2.7.2",
-        "chartjs-plugin-datalabels": "^0.3.0",
+        "chartjs-plugin-datalabels": "^0.4.0",
         "css-element-queries": "^1.1.0",
         "date-fns": "2.0.0-alpha.7",
         "driver.js": "^0.7.1",
