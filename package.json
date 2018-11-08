@@ -69,7 +69,7 @@
         "popper.js": "^1.14.3",
         "pusher-js": "^4.2.2",
         "quill": "^1.3.6",
-        "raven-js": "^3.26.2",
+        "raven-js": "^3.27.0",
         "textarea-caret": "^3.1.0",
         "tooltip.js": "^1.2.0",
         "v-click-outside": "^1.0.5",
