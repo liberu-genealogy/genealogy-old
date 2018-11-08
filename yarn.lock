@@ -1762,9 +1762,9 @@ css-color-names@0.0.4:
   version "0.0.4"
   resolved "http://registry.npmjs.org/css-color-names/-/css-color-names-0.0.4.tgz#808adc2e79cf84738069b646cb20ec27beb629e0"
 
-css-element-queries@^1.0.2:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/css-element-queries/-/css-element-queries-1.0.5.tgz#4f032f017693a2d410872db46a4caa932c62c71a"
+css-element-queries@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/css-element-queries/-/css-element-queries-1.1.0.tgz#aa411134bfecacab1240d9b760b1ed2ed2c3e3b4"
 
 css-loader@^0.28.9:
   version "0.28.11"
