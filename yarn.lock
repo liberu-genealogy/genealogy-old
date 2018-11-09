@@ -3790,7 +3790,7 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
 
-laravel-echo@^1.4.0:
+laravel-echo@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/laravel-echo/-/laravel-echo-1.4.1.tgz#61ac9f7f38dafb8a581bd626fd0d74987e9ce2e2"
 
