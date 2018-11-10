@@ -1,7 +1,60 @@
 {
-    "routePrefix": "event",
-    "sections": [{
-        "columns": 2,
-        "fields": []
+  "routePrefix": "events",
+  "sections": [{
+      "columns": "4",
+      "fields": [
+        {
+          "label": "Date",
+          "name": "date",
+          "value": null,
+          "column": 3,
+          "meta": {
+            "custom": false,
+            "type": "datepicker",
+            "content": "date",
+            "time": true,
+            "format": "Y-m-d h:m:S",
+            "disabled": false
+          }
+        },{
+          "label": "Name",
+          "name": "name",
+          "column" : 3,
+          "value": null,
+          "meta": {
+            "type": "input",
+            "content": "text"
+          }
+        }, {
+          "label": "Description",
+          "name": "description",
+          "column" : 3,
+          "value": null,
+          "meta": {
+            "type": "input",
+            "content": "text"
+          }
+    }, {
+      "label": "Active",
+      "name": "is_active",
+      "column": 3,
+      "value": false,
+      "meta": {
+        "type": "input",
+        "content": "checkbox"
+      }
+        }, {
+          "label": "Type",
+          "name": "event_type_id",
+          "value": null,
+          "column": 3,
+          "meta": {
+            "custom": false,
+            "disabled": false,
+            "type": "select",
+            "multiple": false,
+            "options": []
+          }
     }]
+  }]
 }
