@@ -12,7 +12,7 @@ class SourceTable extends Table
     public function query()
     {
         return Source::select(\DB::raw('
-            sources.id as "dtRowId"
+            id as "dtRowId", name, description, is_active, date, created_at
         '));
     }
 }

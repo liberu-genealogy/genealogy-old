@@ -12,7 +12,7 @@ class RepositoryTable extends Table
     public function query()
     {
         return Repository::select(\DB::raw('
-            repositories.id as "dtRowId"
+            id as "dtRowId", name, description, is_active, date, created_at
         '));
     }
 }

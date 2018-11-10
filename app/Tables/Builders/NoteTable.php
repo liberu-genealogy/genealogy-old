@@ -12,7 +12,7 @@ class NoteTable extends Table
     public function query()
     {
         return Note::select(\DB::raw('
-            notes.id as "dtRowId"
+            id as "dtRowId", name, description, is_active, date, created_at
         '));
     }
 }
