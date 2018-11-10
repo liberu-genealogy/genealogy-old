@@ -1,14 +1,31 @@
 {
-    "routePrefix": "event",
-    "crtNo": true,
-    "buttons": ["excel", "create", "show", "edit", "destroy"],
-    "columns": [{
-        "label": "Id",
-        "name": "dtRowId",
-        "data": "events.dtRowId",
-        "meta": [
-            "searchable",
-            "sortable"
-        ]
-    }]
+  "routePrefix": "events",
+  "crtNo": true,
+  "buttons": ["excel", "show", "destroy"],
+  "columns": [
+    {
+      "label": "Name",
+      "name": "name",
+      "data": "events.name",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Description",
+      "name": "description",
+      "data": "events.description",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Date",
+      "name": "date",
+      "data": "events.date",
+      "meta": ["searchable", "sortable", "date"]
+    },
+    {
+      "label": "Active",
+      "name": "is_active",
+      "data": "events.is_active",
+      "meta": ["boolean"]
+    }
+  ]
 }

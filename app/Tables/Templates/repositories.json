@@ -1,14 +1,31 @@
 {
-    "routePrefix": "repository",
-    "crtNo": true,
-    "buttons": ["excel", "create", "show", "edit", "destroy"],
-    "columns": [{
-        "label": "Id",
-        "name": "dtRowId",
-        "data": "repositories.dtRowId",
-        "meta": [
-            "searchable",
-            "sortable"
-        ]
-    }]
+  "routePrefix": "repositories",
+  "crtNo": true,
+  "buttons": ["excel", "create", "show", "edit", "destroy"],
+  "columns": [
+    {
+      "label": "Name",
+      "name": "name",
+      "data": "repositories.name",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Description",
+      "name": "description",
+      "data": "repositories.description",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Date",
+      "name": "date",
+      "data": "repositories.date",
+      "meta": ["searchable", "sortable", "date"]
+    },
+    {
+      "label": "Active",
+      "name": "is_active",
+      "data": "repositories.is_active",
+      "meta": ["boolean"]
+    }
+  ]
 }
