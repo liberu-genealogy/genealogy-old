@@ -1,5 +1,28 @@
 ## Laravel Enso's Changelog
 
+### 2.13.11
+- from now on Enso ships with only two themes, a light one and a dark one. If you enjoyed bulmaswatch it's pretty easy to keep the old functionality in place, you just have to customize the `themes.php` config file, the `themeSelector.vue` component and the local `webpack.mix.js`
+- the vue select was improved visually and extended with a `readonly` prop
+- lots of minor fixes
+
+Upgrade steps:
+- run `composer update; yarn upgrade`
+- run `art vendor:publish --tag=enso-preferences --force`
+- manually overwrite the `config/enso/themes.php` config file with the one provided by the core package
+- update `webpack.min.js` accordingly - you can use the one from this repo
+- run `php artisan enso:preferences:clear`
+- compile & enjoy (you should compile the themes at least the first time -> uncomment the two lines from webpack.js)
+
+### 2.13.10
+- improved searchable; added tests
+- added `nullLast` sorting option to vuedatatable
+- fixed a bug in vueform when using a different id key in edited models
+- improves the menu behaviour (auto toggle on parent menus)
+
+For existing projects check the repo's `phpunit.xml` file and make sure you have all the test suites for your instance.
+
+Note: temporarily disable the `RequestWatcher` in telescope.php (`Watchers\RequestWatcher::class => env('TELESCOPE_REQUEST_WATCHER', false)`) until the problem will be fixed -> https://github.com/laravel/telescope/pull/357
+
 ### 2.13.9
 - adds categories filtering for searchable
 
