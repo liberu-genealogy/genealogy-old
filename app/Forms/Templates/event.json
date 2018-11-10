@@ -1,0 +1,7 @@
+{
+    "routePrefix": "event",
+    "sections": [{
+        "columns": 2,
+        "fields": []
+    }]
+}

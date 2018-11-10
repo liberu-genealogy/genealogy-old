@@ -1,0 +1,14 @@
+{
+    "routePrefix": "repository",
+    "crtNo": true,
+    "buttons": ["excel", "create", "show", "edit", "destroy"],
+    "columns": [{
+        "label": "Id",
+        "name": "dtRowId",
+        "data": "repositories.dtRowId",
+        "meta": [
+            "searchable",
+            "sortable"
+        ]
+    }]
+}

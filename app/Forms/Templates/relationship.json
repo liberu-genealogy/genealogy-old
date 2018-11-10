@@ -1,0 +1,7 @@
+{
+    "routePrefix": "relationship",
+    "sections": [{
+        "columns": 2,
+        "fields": []
+    }]
+}
