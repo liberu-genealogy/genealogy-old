@@ -1,0 +1,35 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateChildParentTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('child_parent', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('child_id')->unsigned()->index('child_id');
+            $table->foreign('child_id')->references('id')->on('individuals');
+            $table->integer('parent_id')->unsigned()->index('parent_id');
+            $table->foreign('parent_id')->references('id')->on('individuals');
+            $table->integer('is_active')->default('1');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('child_parent');
+    }
+}

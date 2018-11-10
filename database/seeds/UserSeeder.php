@@ -28,12 +28,12 @@ class UserSeeder extends Seeder
     {
         return factory(Person::class)->create([
             'title' => Titles::Mr,
-            'name' => 'Admin Root',
+            'name' => 'First Last',
             'appellative' => 'Admin',
-            'email' => 'admin@laravel-enso.com',
+            'email' => 'admin@localhost',
             'gender' => Genders::Male,
-            'birthday' => '1980-01-19',
-            'phone' => '+40793232522',
+            'birthday' => '1970-01-01',
+            'phone' => '555-555-555',
         ]);
     }
 }

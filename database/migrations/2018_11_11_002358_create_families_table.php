@@ -15,6 +15,11 @@ class CreateFamiliesTable extends Migration
     {
         Schema::create('families', function (Blueprint $table) {
             $table->increments('id');
+            $table->text('description');
+            $table->integer('is_active');
+            $table->integer('type_id');
+            $table->integer('father_id')->references('id')->on('individuals');
+            $table->integer('mother_id')->references('id')->on('individuals');
             $table->timestamps();
         });
     }
