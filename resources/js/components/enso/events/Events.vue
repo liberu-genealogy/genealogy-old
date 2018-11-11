@@ -1,189 +1,232 @@
 <template>
 
-    <card :icon="icon"
-          refresh
-          scrollable
-          :search="events.length > 1"
-          :title="title || __('Events')"
-          :overlay="loading"
-          @refresh="get()"
-          :collapsed="!open || isEmpty"
-          ref="card"
-          @query-update="query = $event"
-          @expand="isEmpty
-            ? $refs.card.collapse()
-            : null"
-          :badge="count"
-          :controls="1">
-        <card-control slot="control-1"
-                      @click="create()">
-            <span class="icon is-small">
-                <fa icon="plus-square"/>
-            </span>
-        </card-control>
-        <div class="has-padding-medium wrapper">
-            <div class="columns is-multiline">
-                <event-form
-                        v-if="form"
-                        :id="id"
-                        :type="type"
-                        :form="form"
-                        @close="form = null"
-                        @destroy="get(); form=false"
-                        @submit="get();form=false"/>
-
-                <div class="column is-half-widescreen is-one-third-fullhd"
-                     v-for="(event, index) in filteredEvents"
-                     :key="index">
-                    <event
-                            :event="event"
-                            @edit="edit(event)"
-                            @delete="destroy(event, index)"
-                            :index="index"
-                            :type="type"
-                            :id="id"/>
-                </div>
+    <div class="wrapper">
+        <div class="controls"
+             v-if="controls">
+            <button class="button"
+                    @click="create()">
+                <span v-if="!isMobile">
+                    {{ __('New Event') }}
+                </span>
+                <span class="icon">
+                    <fa icon="plus"/>
+                </span>
+            </button>
+            <button class="button has-margin-left-small"
+                    @click="fetch()">
+                <span v-if="!isMobile">
+                    {{ __('Reload') }}
+                </span>
+                <span class="icon">
+                    <fa icon="sync"/>
+                </span>
+            </button>
+            <p class="control has-icons-left has-icons-right has-margin-left-large">
+                <input class="input is-rounded"
+                       type="text"
+                       v-model="internalQuery"
+                       :placeholder="__('Filter')">
+                <span class="icon is-small is-left">
+                    <fa icon="search"/>
+                </span>
+                <span class="icon is-small is-right clear-button"
+                      v-if="internalQuery"
+                      @click="internalQuery = ''">
+                    <a class="delete is-small"/>
+                </span>
+            </p>
+        </div>
+        <div class="columns is-multiline"
+             :class="{'has-margin-top-large': controls}">
+            <div class="column is-half-tablet is-one-third-widescreen"
+                 v-for="(event, index) in filteredEvents"
+                 :key="index">
+                <event-card :event="event"
+                              @set-default="setDefault(event)"
+                              @edit="edit(event)"
+                              @delete="destroy(event, index)"
+                              :key="index">
+                    <template slot="event"
+                              :event="event">
+                        <slot name="event"
+                              :event="event"/>
+                    </template>
+                </event-card>
             </div>
         </div>
-    </card>
+        <event-form
+                :form="form"
+                @close="form = null"
+                @delete="fetch();form = null"
+                @submit="fetch();form = null"
+                ref="form"
+                v-if="form">
+            <template v-for="field in customFields"
+                      :slot="field.name"
+                      slot-scope="{ field, errors }"
+                      v-if="field.meta.custom">
+                <slot :name="field.name"
+                      :field="field"
+                      :errors="errors"/>
+            </template>
+        </event-form>
+    </div>
 
 </template>
 
 <script>
-    import { faCheck, faTimes, faEnvelope, faPhone, faInfoCircle, faPencilAlt, faTrashAlt, faAddressCard, faPlusSquare }
-        from '@fortawesome/free-solid-svg-icons';
-    library.add([
-        faCheck, faTimes, faEnvelope, faPhone, faInfoCircle, faPencilAlt, faTrashAlt, faStickyNote, faAddressCard, faPlusSquare,
-    ]);
-import Card from '../bulma/Card.vue';
-import CardControl from '../bulma/CardControl.vue';
-import Event from './Event.vue';
-import EventForm from './EventForm.vue';
 
-export default {
-    name: 'Events',
+    import { mapState } from 'vuex';
+    import { faPlus, faSync, faSearch } from '@fortawesome/free-solid-svg-icons';
+    import { library } from '@fortawesome/fontawesome-svg-core';
+    import EventCard from './EventsCard.vue';
+    import EventForm from './EventForm.vue';
 
-    components: {
-        Card,
-        CardControl,
-        Event,
-        EventForm,
-    },
+    library.add(faPlus, faSync, faSearch);
 
-    props: {
-        id: {
-            type: Number,
-            required: true,
-        },
-        type: {
-            type: String,
-            required: true,
-        },
-        open: {
-            type: Boolean,
-            default: false,
-        },
-        title: {
-            type: String,
-            default: null,
-        },
-    },
+    export default {
+        name: 'Events',
 
-    data() {
-        return {
-            loading: false,
-            query: '',
-            events: [],
-            form: null,
-        };
-    },
+        components: { EventCard, EventForm },
 
-    computed: {
-        filteredEvents() {
-            return this.query
-                ? this.events.filter(
-                      event =>
-                          event.first_name.toLowerCase().indexOf(this.query.toLowerCase()) > -1 ||
-                          event.last_name.toLowerCase().indexOf(this.query.toLowerCase()) > -1
-                  )
-                : this.events;
+        props: {
+            id: {
+                type: Number,
+                required: true,
+            },
+            type: {
+                type: String,
+                default: null,
+            },
+            query: {
+                type: String,
+                default: '',
+            },
+            controls: {
+                type: Boolean,
+                default: false,
+            },
         },
-        count() {
-            return this.events.length;
-        },
-        isEmpty() {
-            return this.count === 0;
-        },
-        icon() {
-            return faAddressCard;
-        },
-    },
 
-    created() {
-        this.get();
-    },
+        data() {
+            return {
+                loading: false,
+                events: [],
+                form: null,
+                internalQuery: '',
+            };
+        },
 
-    methods: {
-        get() {
-            this.loading = true;
+        computed: {
+            ...mapState('layout', ['isMobile']),
+            filteredEvents() {
+                const query = this.internalQuery.toLowerCase();
 
-            axios
-                .get(route('events.index'), {
-                    params: { event_id: this.id, event_type: this.type },
-                })
-                .then(({ data }) => {
+                return query
+                    ? this.events.filter(({ city, street }) =>
+                        city.toLowerCase().indexOf(query) > -1
+                        || street.toLowerCase().indexOf(query) > -1)
+                    : this.events;
+            },
+            count() {
+                return this.filteredEvents.length;
+            },
+            customFields() {
+                return this.form && this.form.sections
+                    .reduce((fields, section) => fields
+                        .concat(section.fields.filter(field => field.meta.custom)), []);
+            },
+            params() {
+                return {
+                    eventable_id: this.id,
+                    eventable_type: this.type,
+                };
+            },
+        },
+
+        watch: {
+            count() {
+                this.$emit('update');
+            },
+            query() {
+                this.internalQuery = this.query;
+            },
+        },
+
+        created() {
+            this.fetch();
+        },
+
+        methods: {
+            fetch() {
+                this.loading = true;
+
+                axios.get(
+                    route('event.index'),
+                    { params: this.params },
+                ).then(({ data }) => {
                     this.events = data;
                     this.loading = false;
-                    this.$refs.card.resize();
-                })
-                .catch(error => this.handleError(error));
-        },
-        destroy(event, index) {
-            this.loading = true;
+                    this.$emit('update');
+                }).catch(error => this.handleError(error));
+            },
+            edit(event) {
+                this.loading = true;
 
-            axios
-                .delete(route('events.destroy', event.id))
-                .then(() => {
+                axios.get(route('event.edit', event.id))
+                    .then(({ data }) => {
+                        this.form = data.form;
+                        this.addFields();
+                        this.$emit('form-loaded', this.form);
+                        this.loading = false;
+                    }).catch(error => this.handleError(error));
+            },
+            create() {
+                this.loading = true;
+
+                axios.get(route('event.create', this.params)).then(({ data }) => {
+                    this.form = data.form;
+                    this.addFields();
+                    this.$emit('form-loaded', this.form);
+                    this.loading = false;
+                    this.$emit('update');
+                }).catch(error => this.handleError(error));
+            },
+            setDefault(event) {
+                this.loading = true;
+
+                axios.patch(route('event.setDefault', event.id)).then(() => {
+                    this.fetch();
+                }).catch(error => this.handleError(error));
+            },
+            destroy(event, index) {
+                this.loading = true;
+
+                axios.delete(route('event.destroy', event.id)).then(() => {
+                    this.loading = false;
                     this.events.splice(index, 1);
-                    this.loading = false;
-                })
-                .catch(error => this.handleError(error));
+                    this.$emit('update');
+                }).catch(error => this.handleError(error));
+            },
+            addFields() {
+                this.field('eventable_type').value = this.type;
+                this.field('eventable_id').value = this.id;
+            },
+            field(field) {
+                return this.form.sections
+                    .reduce((fields, section) => fields.concat(section.fields), [])
+                    .find(item => item.name === field);
+            },
         },
-        create() {
-            this.loading = true;
+    };
 
-            if (!this.$refs.card.expanded) {
-                this.$refs.card.toggle();
-            }
-
-            const params = { event_id: this.id, event_type: this.type };
-
-            axios
-                .get(route('events.create', params))
-                .then(({ data }) => {
-                    this.loading = false;
-                    this.form = data.form;
-                })
-                .catch(error => this.handleError(error));
-        },
-        edit(event) {
-            this.loading = true;
-
-            axios
-                .get(route('events.edit', event.id))
-                .then(({ data }) => {
-                    this.loading = false;
-                    this.form = data.form;
-                })
-                .catch(error => this.handleError(error));
-        },
-    },
-};
 </script>
 
-<style scoped>
-.wrapper {
-    max-height: 415px;
-    overflow-y: auto;
-}
+<style lang="scss" scoped>
+
+    .controls {
+        display: flex;
+        justify-content: center;
+    }
+
 </style>

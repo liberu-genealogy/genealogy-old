@@ -4,7 +4,7 @@ namespace App;
 
 use App\Classes\EventConfigMapper;
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\Helpers\app\Traits\IsActive;
+// use LaravelEnso\Helpers\app\Traits\IsActive;
 use LaravelEnso\CommentsManager\app\Traits\Commentable;
 use LaravelEnso\AddressesManager\app\Traits\Addressable;
 use LaravelEnso\DocumentsManager\app\Traits\Documentable;
@@ -45,5 +45,10 @@ class Event extends Model
                 (new EventConfigMapper($request['event_type']))
                     ->class()
             );
+    }
+
+    public function getLoggableMorph()
+    {
+        return config('enso.events.loggableMorph');
     }
 }

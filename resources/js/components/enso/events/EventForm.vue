@@ -1,44 +1,69 @@
 <template>
-    <modal v-on="$listeners"
-           :show="true">
-        <vue-form class="box"
+    <modal :show="show"
+           container="contact-form"
+           v-on="$listeners"
+           ref="modal">
+        <vue-form class="box has-background-light"
                   v-on="$listeners"
-                  :params="params"
-                  :data="form"/>
+                  :data="form">
+            <a slot="actions"
+               class="button is-warning"
+               @click="
+                    show = false;
+                    $router.push({
+                        name: 'event.edit',
+                        params: { event: field('event_id').value }
+                    })">
+                <span class="is-hidden-mobile">
+                    {{ __('Edit Event') }}
+                </span>
+                <span class="icon">
+                    <fa icon="user-tie"/>
+                </span>
+                <span class="is-hidden-mobile"/>
+            </a>
+        </vue-form>
     </modal>
 </template>
 
 <script>
-import Modal from '../bulma/Modal.vue';
-import VueForm from '../vueforms/VueForm.vue';
 
-export default {
-    name: 'EventForm',
+    import Modal from '../bulma/Modal.vue';
+    import VueForm from '../vueforms/VueForm.vue';
 
-    components: { Modal, VueForm },
+    export default {
+        name: 'EventForm',
 
-    props: {
-        id: {
-            type: Number,
-            default: null,
-        },
-        type: {
-            type: String,
-            default: '',
-        },
-        form: {
-            type: Object,
-            default: null,
-        },
-    },
+        components: { Modal, VueForm },
 
-    computed: {
-        params() {
-            return {
-                event_id: this.id,
-                event_type: this.type,
-            };
+        props: {
+            form: {
+                type: Object,
+                default: null,
+            },
         },
-    },
-};
+
+        data: () => ({
+            show: true,
+        }),
+
+        methods: {
+            field(field) {
+                return this.form.sections
+                    .reduce((fields, section) => fields.concat(section.fields), [])
+                    .find(item => item.name === field);
+            },
+        },
+    };
+
 </script>
+
+<style lang="scss">
+
+    .contact-form {
+        .modal-content {
+            overflow: unset;
+        }
+    }
+
+</style>

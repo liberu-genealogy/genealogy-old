@@ -57,6 +57,7 @@ import Addresses from '../addresses/Addresses.vue';
 import Comments from '../comments/Comments.vue';
 import Discussions from '../discussions/Discussions.vue';
 import Documents from '../documents/Documents.vue';
+import Events from '../events/Events.vue';
 import Tabs from './Tabs.vue';
 import Tab from './Tab.vue';
 
@@ -64,7 +65,7 @@ export default {
     name: 'Accessories',
 
     components: {
-        Addresses, Comments, Discussions, Documents, Tab, Tabs,
+        Addresses, Comments, Discussions, Documents, Events, Tab, Tabs,
     },
 
     props: {
@@ -84,6 +85,10 @@ export default {
             type: Boolean,
             default: false,
         },
+        events: {
+            type: Boolean,
+            default: false,
+        },
         id: {
             type: Number,
             required: true,
@@ -100,6 +105,7 @@ export default {
             comments: 0,
             discussions: 0,
             documents: 0,
+            events: 0,
         },
     }),
 };

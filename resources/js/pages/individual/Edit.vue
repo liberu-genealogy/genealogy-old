@@ -1,21 +1,29 @@
 <template>
 
     <div class="columns is-centered">
-        <div class="column is-three-quarters">
-            <vue-form-ss class="box animated fadeIn"
-                         :route-params="[$route.name, $route.params.id, false]"
-                         @loaded="initialised = true"
+        <div class="column is-three-quarters is-full-touch">
+            <vue-form-ss class="box has-background-light raises-on-hover animated fadeIn"
+                         @loaded="ready = true"
                          ref="form"/>
-            <div v-if="initialised">
-                <events type="individual" :id="$refs.form.data.params.individual_id" :open="true" />
-
-                <documents-card :id="$refs.form.data.params.individual_id"
-                                type="individual"/>
-                <addresses :id="$refs.form.data.params.individual_id"
-                           type="individual"/>
-                <comments-card :id="$refs.form.data.params.individual_id"
-                               type="individual"
-                               :open="true"/>
+            <div v-if="ready">
+                <accessories type="App\Individual"
+                             addresses
+                             events
+                             comments
+                             discussions
+                             documents
+                             :id="$refs.form.data.routeParams.individual">
+                    <template slot="custom"
+                              slot-scope="{count}">
+                        <tab keep-alive
+                             id="Contacts">
+                            <contacts controls
+                                      :id="$refs.form.data.routeParams.individual"
+                                      @update="$set(count, 'contacts', $refs.contacts.count)"
+                                      ref="contacts"/>
+                        </tab>
+                    </template>
+                </accessories>
             </div>
         </div>
     </div>
@@ -23,20 +31,20 @@
 </template>
 
 <script>
-    import DocumentsCard from '../../components/enso/documents/DocumentsCard.vue';
-    import CommentsCard from '../../components/enso/comments/CommentsCard.vue';
-    import Addresses from '../../components/enso/addresses/Addresses.vue';
-    import Events from '../../components/enso/events/Events.vue';
+
+    import Accessories from '../../components/enso/bulma/Accessories.vue';
     import VueFormSs from '../../components/enso/vueforms/VueFormSs.vue';
-    import VueSelect from '../../components/enso/select/VueSelect.vue';
+    import Contacts from '../../components/enso/contacts/Contacts.vue';
+    import Tab from '../../components/enso/bulma/Tab.vue';
 
     export default {
-        components: { VueFormSs, VueSelect, DocumentsCard, CommentsCard, Addresses, Events },
-
-        data() {
-            return {
-                initialised: false,
-            };
+        components: {
+            VueFormSs, Accessories, Contacts, Tab,
         },
+
+        data: () => ({
+            ready: false,
+        }),
     };
+
 </script>
