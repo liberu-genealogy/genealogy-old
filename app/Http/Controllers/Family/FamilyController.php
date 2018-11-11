@@ -35,7 +35,7 @@ class FamilyController extends Controller
         foreach ($individual_list as $individual) {
             $individual = Individual::find($individual);
             $individual_full_name = $individual->first_name.' '.$individual->last_name;
-            $person = Person::select('id', 'name')->where('name', '=', $individual_full_name)
+            $person = Individual::select('id', 'name')->where('name', '=', $individual_full_name)
                 ->first();
             $person->father()->associate($father_person);
             $person->save();

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a35bb93e1cc69c9ae80890e648c979a",
+    "content-hash": "22fd57e7e6d70988ca4aa99dfcf2a189",
     "packages": [
         {
             "name": "box/spout",
@@ -3978,6 +3978,45 @@
                 "php"
             ],
             "time": "2018-10-10T09:24:14+00:00"
+        },
+        {
+            "name": "oguz463/php-gedcom",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/oguz463/php-gedcom.git",
+                "reference": "631e696897be3e892beaad33e56b35ed28ff2d8a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/oguz463/php-gedcom/zipball/631e696897be3e892beaad33e56b35ed28ff2d8a",
+                "reference": "631e696897be3e892beaad33e56b35ed28ff2d8a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "squizlabs/php_codesniffer": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PhpGedcom\\": "library/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "description": "A GEDCOM file parser (read + write) for PHP 5.3+",
+            "homepage": "http://github.com/oguz463/php-gedcom",
+            "keywords": [
+                "gedcom",
+                "parser"
+            ],
+            "time": "2018-07-04T13:42:47+00:00"
         },
         {
             "name": "opis/closure",

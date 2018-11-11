@@ -178,7 +178,7 @@ Route::middleware(['auth', 'core'])
         Route::namespace('Individual')
 
             ->group(function () {
-                Route::resource('individuals', 'IndividualController'); // if it's the case, use `except` or `only` to avoid generating unused routes
+                Route::resource('individual', 'IndividualController'); // if it's the case, use `except` or `only` to avoid generating unused routes
             });
 
 

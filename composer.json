@@ -8,11 +8,11 @@
         "doctrine/dbal": "^2.8",
         "fideloper/proxy": "~4.0",
         "guzzlehttp/guzzle": "^6.3",
-        "laravel-enso/core": "3.2.*",
         "laravel-enso/addressesmanager": "2.5.*",
         "laravel-enso/commentsmanager": "2.4.*",
         "laravel-enso/companies": "1.1.*",
         "laravel-enso/controlpanelapi": "^2.0",
+        "laravel-enso/core": "3.2.*",
         "laravel-enso/dataimport": "2.5.*",
         "laravel-enso/discussions": "1.1.*",
         "laravel-enso/documentsmanager": "2.4.*",
@@ -21,6 +21,7 @@
         "laravel-enso/teams": "1.0.*",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "~1.0",
+        "oguz463/php-gedcom": "^1.0",
         "sentry/sentry-laravel": "dev-laravel-57@dev"
     },
     "require-dev": {
