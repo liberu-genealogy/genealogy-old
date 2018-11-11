@@ -11,14 +11,16 @@
 
 ## Description
 
-Genealogy software for processing data efficiently. Creating your own family tree website. Store your data locally or in a networked
-environment.
+Browser based Genealogy software for interacting and processing data efficiently. Easily create your
+own family tree by importing your existing data or manual data entry. Storage of all data is securely on your own server and does
+not leave your environment without your permission. In the future there will be optional
+smart matching with other servers.
 
 Features include: creating / editing / updating / deleting of individuals, families, events,
-sources, notes, citations, repositories. Live rendering of tree data. Data tables, forms
-addresses, contacts, permissions and roles. 
+sources, places, notes, citations, repositories. Live rendering of tree data in various displays.
+Data tables, forms, addresses, contacts, permissions and roles. 
 
-Importing of CSV / Spreadsheets. Currently in the process of implementing
+Importing of GEDCOM and CSV / Spreadsheets. Currently in the process of implementing
 API access. Exporting is also planned but with your own install you are in control of your data.
 
 
@@ -36,7 +38,7 @@ Features will be improved gradually. Watch / star on GitHub or follow the projec
 
 3. Run `php artisan migrate --seed`
 
-4. Login into the project with user: `admin@example.net`, password: `password`
+4. Login into the project with user: `admin@localhost`, password: `password`
 
 
 ### Docker container support
