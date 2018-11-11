@@ -62,7 +62,7 @@ Route::middleware(['auth', 'core'])
             });
 
         Route::namespace('Family')
-            ->prefix('family')->as('family.')
+            ->prefix('families')->as('families.')
             ->group(function () {
                 Route::get('initTable', 'FamilyTableController@init')
                     ->name('initTable');

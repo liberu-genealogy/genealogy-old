@@ -1,5 +1,5 @@
 {
-  "routePrefix": "families",
+  "routePrefix": "family",
   "sections": [{
     "columns": "3",
     "fields": [
