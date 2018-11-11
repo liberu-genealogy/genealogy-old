@@ -1,5 +1,5 @@
 {
-  "routePrefix": "events",
+  "routePrefix": "event",
   "sections": [{
       "columns": "4",
       "fields": [

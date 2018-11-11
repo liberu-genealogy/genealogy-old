@@ -6,25 +6,20 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class ValidateEventRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
     public function rules()
     {
+        $event = $this->route('event');
+
         return [
-            //
+            'description' => 'required|max:50',
+            'date' => 'required|max:24',
+            'is_active' => 'boolean',
+            'event_type_id' => 'required|exists:event_types,id',
         ];
     }
 }

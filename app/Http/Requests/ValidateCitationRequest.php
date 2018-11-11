@@ -6,25 +6,24 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class ValidateCitationRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
     public function rules()
     {
+        $citation = $this->route('citation');
+
         return [
-            //
+            'description' => 'required|max:50',
+            'name' => 'required|max:50',
+            'date' => 'required|max:24',
+            'is_active' => 'boolean',
+            'source_id' => 'required|exists:sources,id',
+            'volume_id' => 'required|max:5',
+            'page_id' => 'required|max:5',
+            'confidence' => 'required|max:50',
         ];
     }
 }

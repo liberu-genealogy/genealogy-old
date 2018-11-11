@@ -1,5 +1,5 @@
 {
-  "routePrefix": "citations",
+  "routePrefix": "citation",
   "sections": [{
       "columns": "custom",
       "fields": [

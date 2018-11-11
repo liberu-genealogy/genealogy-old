@@ -6,25 +6,24 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class ValidateSourceRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
     public function rules()
     {
+        $source = $this->route('source');
+
         return [
-            //
+            'description' => 'required|max:50',
+            'name' => 'required|max:50',
+            'date' => 'required|max:24',
+            'is_active' => 'boolean',
+            'repository_id' => 'required|exists:repositories,id',
+            'author_id' => 'required|max:10',
+            'publication_id' => 'required|max:10',
+            'type_id' => 'required|max:10',
         ];
     }
 }

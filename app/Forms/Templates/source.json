@@ -1,5 +1,5 @@
 {
-    "routePrefix": "sources",
+    "routePrefix": "source",
     "sections": [{
         "columns": "2",
         "fields": [{
