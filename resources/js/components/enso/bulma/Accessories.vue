@@ -47,6 +47,15 @@
                 @update="count.documents = $refs.documents.count"
                 ref="documents"/>
         </tab>
+        <tab keep-alive
+             id="Events"
+             v-if="events">
+            <documents controls
+                       :type="type"
+                       :id="id"
+                       @update="count.events = $refs.events.count"
+                       ref="events"/>
+        </tab>
     </tabs>
 
 </template>
