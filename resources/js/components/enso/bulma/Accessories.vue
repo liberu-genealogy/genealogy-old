@@ -50,7 +50,7 @@
         <tab keep-alive
              id="Events"
              v-if="events">
-            <documents controls
+            <events controls
                        :type="type"
                        :id="id"
                        @update="count.events = $refs.events.count"
