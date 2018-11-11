@@ -50,14 +50,15 @@
 </template>
 
 <script>
-import { library } from '@fortawesome/fontawesome';
-import { faAddressCard, faPlusSquare } from '@fortawesome/fontawesome-free-solid/shakable.es';
+    import { faCheck, faTimes, faEnvelope, faPhone, faInfoCircle, faPencilAlt, faTrashAlt, faAddressCard, faPlusSquare }
+        from '@fortawesome/free-solid-svg-icons';
+    library.add([
+        faCheck, faTimes, faEnvelope, faPhone, faInfoCircle, faPencilAlt, faTrashAlt, faStickyNote, faAddressCard, faPlusSquare,
+    ]);
 import Card from '../bulma/Card.vue';
 import CardControl from '../bulma/CardControl.vue';
 import Event from './Event.vue';
 import EventForm from './EventForm.vue';
-
-library.add(faAddressCard, faPlusSquare);
 
 export default {
     name: 'Events',
