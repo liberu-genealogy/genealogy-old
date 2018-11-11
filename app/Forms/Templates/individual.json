@@ -1,0 +1,7 @@
+{
+    "routePrefix": "individual",
+    "sections": [{
+        "columns": 2,
+        "fields": []
+    }]
+}

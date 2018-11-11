@@ -161,6 +161,25 @@ Route::middleware(['auth', 'core'])
                 Route::resource('event', 'EventController'); // if it's the case, use `except` or `only` to avoid generating unused routes
             });
 
+        Route::namespace('Individual')
+            ->prefix('individual')->as('individual.')
+            ->group(function () {
+                Route::get('initTable', 'IndividualTableController@init')
+                    ->name('initTable');
+                Route::get('tableData', 'IndividualTableController@data')
+                    ->name('tableData');
+                Route::get('exportExcel', 'IndividualTableController@excel')
+                    ->name('exportExcel');
+
+                Route::get('options', 'IndividualSelectController@options')
+                    ->name('options');
+            });
+
+        Route::namespace('Individual')
+
+            ->group(function () {
+                Route::resource('individuals', 'IndividualController'); // if it's the case, use `except` or `only` to avoid generating unused routes
+            });
 
 
 
