@@ -55,6 +55,7 @@
         "chartjs-plugin-datalabels": "^0.3.0",
         "css-element-queries": "^1.0.2",
         "d3": "^5.7.0",
+        "d3-dtree": "^2.0.2",
         "date-fns": "2.0.0-alpha.7",
         "driver.js": "^0.7.1",
         "dropzone": "^5.5.1",
