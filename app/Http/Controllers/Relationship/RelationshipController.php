@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\Relationship;
 
 use App\Relationship;
-use App\Forms\Builders\RelationshipForm;
 use App\Http\Controllers\Controller;
+use App\Forms\Builders\RelationshipForm;
 use App\Http\Requests\ValidateRelationshipRequest;
-
 
 class RelationshipController extends Controller
 {

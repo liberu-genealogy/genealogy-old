@@ -201,7 +201,4 @@ Route::middleware(['auth', 'core'])
                 Route::post('store', 'GedcomController@store')
                     ->name('store');
             });
-
-
-
     });

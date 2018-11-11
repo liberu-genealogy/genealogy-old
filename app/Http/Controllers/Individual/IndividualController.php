@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\Individual;
 
 use App\Individual;
-use App\Forms\Builders\IndividualForm;
 use App\Http\Controllers\Controller;
+use App\Forms\Builders\IndividualForm;
 use App\Http\Requests\ValidateIndividualRequest;
-
 
 class IndividualController extends Controller
 {

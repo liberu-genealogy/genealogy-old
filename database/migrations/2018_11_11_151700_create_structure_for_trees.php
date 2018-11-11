@@ -23,9 +23,8 @@ class CreateStructureForTrees extends StructureMigration
     ];
 
     protected $menu = [
-        'name' => 'Index', 'icon' => 'book', 'route' => 'trees.index', 'order_index' => 999, 'has_children' => false
+        'name' => 'Index', 'icon' => 'book', 'route' => 'trees.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected $parentMenu = 'Trees';
-
 }

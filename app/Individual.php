@@ -5,6 +5,7 @@ namespace App;
 use Ramsey\Uuid\Uuid;
 use App\Traits\Events;
 use Illuminate\Database\Eloquent\Model;
+use LaravelEnso\Companies\app\Models\Contact;
 use LaravelEnso\TrackWho\app\Traits\CreatedBy;
 use LaravelEnso\TrackWho\app\Traits\UpdatedBy;
 use LaravelEnso\Discussions\app\Traits\Discussable;
@@ -12,7 +13,6 @@ use LaravelEnso\ActivityLog\app\Traits\LogsActivity;
 use LaravelEnso\CommentsManager\app\Traits\Commentable;
 use LaravelEnso\AddressesManager\app\Traits\Addressable;
 use LaravelEnso\DocumentsManager\app\Traits\Documentable;
-use LaravelEnso\Companies\app\Models\Contact;
 
 class Individual extends Model
 {
@@ -64,10 +64,9 @@ class Individual extends Model
     {
         return $this->morphMany('App\Gedcom', 'gedcom');
     }
+
     public function contacts()
     {
         return $this->hasMany(Contact::class);
     }
-
 }
-

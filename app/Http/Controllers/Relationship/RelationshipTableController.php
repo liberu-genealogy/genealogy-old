@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Relationship;
 
-use App\Tables\Builders\RelationshipTable;
 use App\Http\Controllers\Controller;
+use App\Tables\Builders\RelationshipTable;
 use LaravelEnso\VueDatatable\app\Traits\Excel;
 use LaravelEnso\VueDatatable\app\Traits\Datatable;
 

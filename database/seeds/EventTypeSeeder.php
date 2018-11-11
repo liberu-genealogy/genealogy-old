@@ -13,7 +13,6 @@ class EventTypeSeeder extends Seeder
      */
     public function run()
     {
-
         DB::table('event_types')->truncate();
 
         EventType::create(['name' => 'Birth', 'description' => 'Birth record']);

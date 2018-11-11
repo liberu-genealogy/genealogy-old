@@ -7,7 +7,6 @@ use App\Forms\Builders\PlaceForm;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ValidatePlaceRequest;
 
-
 class PlaceController extends Controller
 {
     public function create(PlaceForm $form)
