@@ -14,6 +14,6 @@ class CreateStructureForGedcom extends StructureMigration
     ];
 
     protected $menu = [
-        'name' => 'Gedcom', 'icon' => 'book', 'route' => 'gedcom.index', 'order_index' => 999, 'has_children' => false
+        'name' => 'Gedcom', 'icon' => 'book', 'route' => 'gedcom.index', 'order_index' => 999, 'has_children' => false,
     ];
 }

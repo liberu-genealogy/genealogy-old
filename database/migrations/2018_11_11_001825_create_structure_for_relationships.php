@@ -19,9 +19,8 @@ class CreateStructureForRelationships extends StructureMigration
     ];
 
     protected $menu = [
-        'name' => 'Relationships', 'icon' => 'book', 'route' => 'relationship.index', 'order_index' => 999, 'has_children' => false
+        'name' => 'Relationships', 'icon' => 'book', 'route' => 'relationship.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected $parentMenu = '';
 }
-

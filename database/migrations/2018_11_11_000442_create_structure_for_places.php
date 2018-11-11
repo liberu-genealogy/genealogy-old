@@ -19,9 +19,8 @@ class CreateStructureForPlaces extends StructureMigration
     ];
 
     protected $menu = [
-        'name' => 'Places', 'icon' => 'book', 'route' => 'place.index', 'order_index' => 999, 'has_children' => false
+        'name' => 'Places', 'icon' => 'book', 'route' => 'place.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected $parentMenu = '';
 }
-

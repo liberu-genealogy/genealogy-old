@@ -19,9 +19,8 @@ class CreateStructureForEvents extends StructureMigration
     ];
 
     protected $menu = [
-        'name' => 'Events', 'icon' => 'book', 'route' => 'event.index', 'order_index' => 999, 'has_children' => false
+        'name' => 'Events', 'icon' => 'book', 'route' => 'event.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected $parentMenu = '';
 }
-

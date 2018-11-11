@@ -3,8 +3,8 @@
 namespace App\Forms\Builders;
 
 use App\Individual;
-use LaravelEnso\FormBuilder\app\Classes\Form;
 use App\Enums\GenderTypes;
+use LaravelEnso\FormBuilder\app\Classes\Form;
 
 class IndividualForm
 {
