@@ -3,7 +3,7 @@
 Route::middleware(['auth', 'core'])
     ->group(function () {
         Route::namespace('Places')
-            ->prefix('places')->as('places.')
+            ->prefix('place')->as('place.')
             ->group(function () {
                 Route::get('initTable', 'PlaceTableController@init')
                     ->name('initTable');
@@ -19,10 +19,10 @@ Route::middleware(['auth', 'core'])
         Route::namespace('Places')
 
             ->group(function () {
-                Route::resource('places', 'PlaceController'); // if it's the case, use `except` or `only` to avoid generating unused routes
+                Route::resource('place', 'PlaceController'); // if it's the case, use `except` or `only` to avoid generating unused routes
             });
         Route::namespace('Sources')
-            ->prefix('sources')->as('sources.')
+            ->prefix('source')->as('source.')
             ->group(function () {
                 Route::get('initTable', 'SourceTableController@init')
                     ->name('initTable');
@@ -38,7 +38,7 @@ Route::middleware(['auth', 'core'])
         Route::namespace('Sources')
 
             ->group(function () {
-                Route::resource('sources', 'SourceController'); // if it's the case, use `except` or `only` to avoid generating unused routes
+                Route::resource('source', 'SourceController'); // if it's the case, use `except` or `only` to avoid generating unused routes
             });
 
         Route::namespace('Relationship')
@@ -58,11 +58,11 @@ Route::middleware(['auth', 'core'])
         Route::namespace('Relationship')
 
             ->group(function () {
-                Route::resource('relationships', 'RelationshipController'); // if it's the case, use `except` or `only` to avoid generating unused routes
+                Route::resource('relationship', 'RelationshipController'); // if it's the case, use `except` or `only` to avoid generating unused routes
             });
 
         Route::namespace('Family')
-            ->prefix('families')->as('families.')
+            ->prefix('family')->as('family.')
             ->group(function () {
                 Route::get('initTable', 'FamilyTableController@init')
                     ->name('initTable');
@@ -78,7 +78,7 @@ Route::middleware(['auth', 'core'])
         Route::namespace('Family')
 
             ->group(function () {
-                Route::resource('families', 'FamilyController'); // if it's the case, use `except` or `only` to avoid generating unused routes
+                Route::resource('family', 'FamilyController'); // if it's the case, use `except` or `only` to avoid generating unused routes
             });
 
         Route::namespace('Citation')
@@ -98,7 +98,7 @@ Route::middleware(['auth', 'core'])
         Route::namespace('Citation')
 
             ->group(function () {
-                Route::resource('citations', 'CitationController'); // if it's the case, use `except` or `only` to avoid generating unused routes
+                Route::resource('citation', 'CitationController'); // if it's the case, use `except` or `only` to avoid generating unused routes
             });
 
         Route::namespace('Repository')
@@ -118,7 +118,7 @@ Route::middleware(['auth', 'core'])
         Route::namespace('Repository')
 
             ->group(function () {
-                Route::resource('repositories', 'RepositoryController'); // if it's the case, use `except` or `only` to avoid generating unused routes
+                Route::resource('repository', 'RepositoryController'); // if it's the case, use `except` or `only` to avoid generating unused routes
             });
 
         Route::namespace('Note')
@@ -138,7 +138,7 @@ Route::middleware(['auth', 'core'])
         Route::namespace('Note')
 
             ->group(function () {
-                Route::resource('notes', 'NoteController'); // if it's the case, use `except` or `only` to avoid generating unused routes
+                Route::resource('note', 'NoteController'); // if it's the case, use `except` or `only` to avoid generating unused routes
             });
 
         Route::namespace('Event')
@@ -158,7 +158,7 @@ Route::middleware(['auth', 'core'])
         Route::namespace('Event')
 
             ->group(function () {
-                Route::resource('events', 'EventController'); // if it's the case, use `except` or `only` to avoid generating unused routes
+                Route::resource('event', 'EventController'); // if it's the case, use `except` or `only` to avoid generating unused routes
             });
 
 

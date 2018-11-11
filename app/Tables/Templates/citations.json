@@ -1,5 +1,5 @@
 {
-  "routePrefix": "citations",
+  "routePrefix": "citation",
   "crtNo": true,
   "buttons": ["excel", "create", "show", "edit", "destroy"],
   "columns": [

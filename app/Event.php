@@ -12,7 +12,7 @@ use LaravelEnso\DocumentsManager\app\Traits\Documentable;
 class Event extends Model
 {
     use Commentable, Documentable, Addressable;
-    use IsActive;
+  //  use IsActive;
 
     protected $fillable = [
         'event_id', 'event_type', 'event_type_id', 'name', 'description', 'date', 'is_active',

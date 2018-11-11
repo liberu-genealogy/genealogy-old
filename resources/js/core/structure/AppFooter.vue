@@ -35,19 +35,8 @@
                     </a>
                 </span>
             </p>
-            <p class="level">
-                <span class="level-item">
-                    <strong>Backed by:</strong>
-                    <a href="https://earthlink.ro"
-                        target="_blank">
-                        <figure class="image earthlink">
-                            <img src="/images/earthlink.svg">
-                        </figure>
-                    </a>
-                </span>
-            </p>
             <p>
-                <a href="https://github.com/laravel-enso/enso"
+                <a href="https://github.com/modularsoftware/genealogy"
                     target="_blank">
                     <span class="icon">
                         <fa :icon="['fab', 'github']"/>

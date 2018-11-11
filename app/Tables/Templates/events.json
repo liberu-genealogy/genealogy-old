@@ -1,5 +1,5 @@
 {
-  "routePrefix": "events",
+  "routePrefix": "event",
   "crtNo": true,
   "buttons": ["excel", "show", "destroy"],
   "columns": [
