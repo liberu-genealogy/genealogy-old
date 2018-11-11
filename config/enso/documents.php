@@ -9,6 +9,6 @@ return [
     'imageHeight' => 2048,
     'onDelete' => 'restrict',
     'loggableMorph' => [
-        'documentable' => [Company::class => 'name'],
+        'documentable' => [Company::class => 'name'], Individual::class
     ],
 ];

@@ -8,6 +8,7 @@ return [
     'loggableMorph' => [
         'addressable' => [
             Company::class => 'name',
+            Individual::class,
         ],
     ],
     'streetTypes' => [

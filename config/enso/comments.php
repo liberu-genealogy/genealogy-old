@@ -8,6 +8,7 @@ return [
     'loggableMorph' => [
         'commentable' => [
             Company::class => 'name',
+            Individual::class,
         ],
     ],
 ];
