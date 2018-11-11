@@ -180,7 +180,27 @@ Route::middleware(['auth', 'core'])
             ->group(function () {
                 Route::resource('individual', 'IndividualController'); // if it's the case, use `except` or `only` to avoid generating unused routes
             });
+        Route::namespace('Tree')
+            ->prefix('trees')->as('trees.')
+            ->group(function () {
+                Route::get('links', 'TreeController@links')
+                    ->name('links');
+                Route::get('pedigree', 'TreeController@pedigree')
+                    ->name('pedigree');
+                Route::get('show/{parent_id}/{nest}', 'TreeController@show')
+                    ->name('show');
+                Route::get('edge/{parent_id}/{nest}', 'TreeController@edge')
+                    ->name('edge');
+            });
 
+        Route::resource('trees', 'Tree\TreeController')->except(['show']);
+
+        Route::namespace('Gedcom')
+            ->prefix('gedcom')->as('gedcom.')
+            ->group(function () {
+                Route::post('store', 'GedcomController@store')
+                    ->name('store');
+            });
 
 
 
