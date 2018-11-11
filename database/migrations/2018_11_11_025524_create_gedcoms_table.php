@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateIndividualsTable extends Migration
+class CreateGedcomsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class CreateIndividualsTable extends Migration
      */
     public function up()
     {
-        Schema::create('individuals', function (Blueprint $table) {
+        Schema::create('gedcoms', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('gender');
-            $table->integer('is_active');
-            $table->string('uuid');
-            $table->timestamps();
+            $table->string('g_id', 50);
+            $table->unsignedInteger('gedcom_id');
+            $table->string('gedcom_type', 50);
         });
     }
 
@@ -31,6 +28,6 @@ class CreateIndividualsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('individuals');
+        Schema::dropIfExists('gedcoms');
     }
 }

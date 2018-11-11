@@ -1,7 +1,42 @@
 {
-    "routePrefix": "individual",
-    "sections": [{
-        "columns": 2,
-        "fields": []
+  "routePrefix": "individuals",
+  "sections": [{
+    "columns": "2",
+    "fields": [{
+      "label": "First Name",
+      "name": "first_name",
+      "value": null,
+      "meta": {
+        "type": "input",
+        "content": "text"
+      }
+    }, {
+      "label": "Last Name",
+      "name": "last_name",
+      "value": null,
+      "meta": {
+        "type": "input",
+        "content": "text"
+      }
+    }, {
+      "label": "Gender",
+      "name": "gender",
+      "value": null,
+      "meta": {
+        "custom": false,
+        "disabled": false,
+        "type": "select",
+        "multiple": false,
+        "options": []
+      }
+    }, {
+      "label": "Active",
+      "name": "is_active",
+      "value": false,
+      "meta": {
+        "type": "input",
+        "content": "checkbox"
+      }
     }]
+  }]
 }

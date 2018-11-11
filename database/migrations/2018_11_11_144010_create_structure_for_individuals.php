@@ -19,7 +19,7 @@ class CreateStructureForIndividuals extends StructureMigration
     ];
 
     protected $menu = [
-        'name' => 'Individiduals', 'icon' => 'book', 'route' => 'individual.index', 'order_index' => 999, 'has_children' => false
+        'name' => 'Individuals', 'icon' => 'book', 'route' => 'individual.index', 'order_index' => 999, 'has_children' => false
     ];
 
     protected $parentMenu = '';

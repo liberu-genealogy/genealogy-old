@@ -1,0 +1,36 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateFamilyIndividualTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('family_individual', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('family_id')->unsigned()->index('family_id');
+            $table->foreign('family_id')->references('id')->on('families');
+            $table->integer('individual_id')->unsigned()->index('individual_id');
+            $table->foreign('individual_id')->references('id')->on('individuals');
+            $table->integer('type_id')->default('0');
+            $table->integer('is_active')->default('1');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('family_individual');
+    }
+}
