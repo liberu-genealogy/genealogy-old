@@ -1,14 +1,13 @@
 <?php
 
-use LaravelEnso\Companies\app\Models\Company;
 use App\Individual;
+use LaravelEnso\Companies\app\Models\Company;
 
 return [
     'onDelete' => 'cascade',
     'formTemplate' => null,
     'loggableMorph' => [
-        'addressable' =>
-            [Company::class => 'name', Individual::class => 'name'],
+        'addressable' => [Company::class => 'name', Individual::class => 'name'],
     ],
     'streetTypes' => [
         'Street' => 'Street',

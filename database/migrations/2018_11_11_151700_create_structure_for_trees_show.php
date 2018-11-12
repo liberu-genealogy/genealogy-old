@@ -13,7 +13,7 @@ class CreateStructureForTreesShow extends StructureMigration
     ];
 
     protected $menu = [
-        'name' => 'Show', 'icon' => 'book', 'route' => 'trees.show', 'order_index' => 999, 'has_children' => false
+        'name' => 'Show', 'icon' => 'book', 'route' => 'trees.show', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected $parentMenu = 'Trees';

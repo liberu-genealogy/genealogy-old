@@ -1,7 +1,7 @@
 <?php
 
-use LaravelEnso\Companies\app\Models\Company;
 use App\Individual;
+use LaravelEnso\Companies\app\Models\Company;
 
 return [
     'deletableTimeLimit' => 60 * 60,

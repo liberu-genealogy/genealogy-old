@@ -19,9 +19,8 @@ class CreateStructureForRepositories extends StructureMigration
     ];
 
     protected $menu = [
-        'name' => 'Repositories', 'icon' => 'book', 'route' => 'repository.index', 'order_index' => 999, 'has_children' => false
+        'name' => 'Repositories', 'icon' => 'book', 'route' => 'repository.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected $parentMenu = '';
 }
-

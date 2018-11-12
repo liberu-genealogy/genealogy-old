@@ -7,7 +7,6 @@ use App\Forms\Builders\NoteForm;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ValidateNoteRequest;
 
-
 class NoteController extends Controller
 {
     public function create(NoteForm $form)

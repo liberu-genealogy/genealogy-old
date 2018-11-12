@@ -13,7 +13,7 @@ class CreateStructureForTreesPedigree extends StructureMigration
     ];
 
     protected $menu = [
-        'name' => 'Pedigree', 'icon' => 'book', 'route' => 'trees.pedigree', 'order_index' => 999, 'has_children' => false
+        'name' => 'Pedigree', 'icon' => 'book', 'route' => 'trees.pedigree', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected $parentMenu = 'Trees';

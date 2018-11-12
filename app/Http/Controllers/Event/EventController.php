@@ -7,7 +7,6 @@ use App\Forms\Builders\EventForm;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ValidateEventRequest;
 
-
 class EventController extends Controller
 {
     public function create(EventForm $form)

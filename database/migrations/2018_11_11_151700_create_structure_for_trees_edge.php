@@ -13,7 +13,7 @@ class CreateStructureForTreesEdge extends StructureMigration
     ];
 
     protected $menu = [
-        'name' => 'Edge', 'icon' => 'book', 'route' => 'trees.edge', 'order_index' => 999, 'has_children' => false
+        'name' => 'Edge', 'icon' => 'book', 'route' => 'trees.edge', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected $parentMenu = 'Trees';

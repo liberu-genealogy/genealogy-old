@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\Repository;
 
 use App\Repository;
-use App\Forms\Builders\RepositoryForm;
 use App\Http\Controllers\Controller;
+use App\Forms\Builders\RepositoryForm;
 use App\Http\Requests\ValidateRepositoryRequest;
-
 
 class RepositoryController extends Controller
 {
