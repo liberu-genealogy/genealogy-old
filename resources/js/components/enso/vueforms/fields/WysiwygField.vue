@@ -1,23 +1,21 @@
 <template>
 
-    <vue-switch v-model="field.value"
-        :disabled="field.meta.disabled || field.meta.readonly"
-        size="is-large"
-        type="is-info"
+    <wysiwyg v-model="field.value"
+        :readonly="field.meta.readonly"
+        :has-error="errors.has(field.name)"
         v-on="$listeners"
-        @click="$emit('update')"
         @input="errors.clear(field.name)"/>
 
 </template>
 
 <script>
 
-import VueSwitch from '../VueSwitch.vue';
+import Wysiwyg from '../Wysiwyg.vue';
 
 export default {
-    name: 'SwitchField',
+    name: 'WysiwygField',
 
-    components: { VueSwitch },
+    components: { Wysiwyg },
 
     props: {
         errors: {
