@@ -1528,16 +1528,16 @@
         },
         {
             "name": "laravel-enso/companies",
-            "version": "1.1.12",
+            "version": "1.1.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/Companies.git",
-                "reference": "b5b525d04da5d605f90dbf0e00acd3a7e369867a"
+                "reference": "efa4bb27a1bf50caaca60564bf6359a7364bbfea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/Companies/zipball/b5b525d04da5d605f90dbf0e00acd3a7e369867a",
-                "reference": "b5b525d04da5d605f90dbf0e00acd3a7e369867a",
+                "url": "https://api.github.com/repos/laravel-enso/Companies/zipball/efa4bb27a1bf50caaca60564bf6359a7364bbfea",
+                "reference": "efa4bb27a1bf50caaca60564bf6359a7364bbfea",
                 "shasum": ""
             },
             "require": {
@@ -1584,7 +1584,7 @@
                 "company-management",
                 "laravel-enso"
             ],
-            "time": "2018-11-08T13:33:03+00:00"
+            "time": "2018-11-12T13:59:47+00:00"
         },
         {
             "name": "laravel-enso/controlpanelapi",
