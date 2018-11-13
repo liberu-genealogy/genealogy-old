@@ -17207,3 +17207,18 @@ span.flatpickr-day.selected {
   background: white;
 }
 
+.editor.wysiwyg .content.wysiwyg-content {
+  color: #363636;
+  background-color: white;
+  border-color: #dbdbdb;
+}
+
+.editor.wysiwyg .content.wysiwyg-content:hover {
+  color: #363636;
+  border-color: #b5b5b5;
+}
+
+.editor.wysiwyg .content.wysiwyg-content.is-danger {
+  border-color: #e74c3c;
+}
+

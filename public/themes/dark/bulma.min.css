@@ -8535,7 +8535,7 @@ label.panel-block:hover {
 }
 
 .tabs.is-boxed li.is-active a {
-  background-color: #1c2531;
+  background-color: white;
   border-color: #232D3D;
   border-bottom-color: transparent !important;
 }
@@ -8575,9 +8575,9 @@ label.panel-block:hover {
 }
 
 .tabs.is-toggle li.is-active a {
-  background-color: #283243;
-  border-color: #232D3D;
-  color: #FFF;
+  background-color: #5285af;
+  border-color: #5285af;
+  color: white;
   z-index: 1;
 }
 
@@ -12219,6 +12219,21 @@ label.panel-block:hover {
 
 .has-background-light {
   background: #2b3e4f !important;
+}
+
+.editor.wysiwyg .content.wysiwyg-content {
+  color: #dee5ed;
+  background-color: #283243;
+  border-color: #232D3D;
+}
+
+.editor.wysiwyg .content.wysiwyg-content:hover {
+  color: #dee5ed;
+  border-color: #5285af;
+}
+
+.editor.wysiwyg .content.wysiwyg-content.is-danger {
+  border-color: #E1112C;
 }
 
 .flatpickr-calendar {

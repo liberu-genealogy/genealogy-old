@@ -1,4 +1,6 @@
 {
     "/js/enso.js": "/js/enso.js",
-    "/css/enso.css": "/css/enso.css"
+    "/css/enso.css": "/css/enso.css",
+    "/themes/light/bulma.min.css": "/themes/light/bulma.min.css",
+    "/themes/dark/bulma.min.css": "/themes/dark/bulma.min.css"
 }

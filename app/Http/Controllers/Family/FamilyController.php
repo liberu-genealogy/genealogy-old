@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Family;
 
 use App\Family;
-use App\Person;
 use App\Individual;
 use App\Forms\Builders\FamilyForm;
 use App\Http\Controllers\Controller;
@@ -24,22 +23,18 @@ class FamilyController extends Controller
         $father = Individual::select('id', 'first_name', 'last_name')->where('id', '=', $father_id)->first();
         $mother = Individual::select('id', 'first_name', 'last_name')->where('id', '=', $mother_id)->first();
 
-        $father_full_name = $father->first_name.' '.$father->last_name;
-        $mother_full_name = $mother->first_name.' '.$mother->last_name;
-
-        $father_person = Person::where('name', '=', $father_full_name)
+        $father_person = Individual::where('first_name', '=', $father->first_name)->where('last_name', '=', $father->last_name)
             ->first();
-        $mother_person = Person::where('name', '=', $mother_full_name)
+        $mother_person = Individual::where('first_name', '=', $mother->first_name)->where('last_name', '=', $mother->last_name)
             ->first();
 
         foreach ($individual_list as $individual) {
             $individual = Individual::find($individual);
-            $individual_full_name = $individual->first_name.' '.$individual->last_name;
-            $person = Individual::select('id', 'name')->where('name', '=', $individual_full_name)
+            $person = Individual::select('id')->where('first_name', '=', $individual->first_name)->where('last_name', '=', $individual->last_name)
                 ->first();
             $person->father()->associate($father_person);
             $person->save();
-            $person = Person::select('id', 'name')->where('name', '=', $individual_full_name)
+            $person = Individual::select('id')->where('first_name', '=', $individual->first_name)->where('last_name', '=', $individual->last_name)
                 ->first();
             $person->mother()->associate($mother_person);
             $person->save();

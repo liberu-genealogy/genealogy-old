@@ -15,8 +15,8 @@ mix
 
     .sass('resources/sass/enso.scss', 'public/css')
 
-//    .sass('resources/sass/themes/light.scss', 'public/themes/light/bulma.min.css')
-//    .sass('resources/sass/themes/dark.scss', 'public/themes/dark/bulma.min.css');
+    .sass('resources/sass/themes/light.scss', 'public/themes/light/bulma.min.css')
+    .sass('resources/sass/themes/dark.scss', 'public/themes/dark/bulma.min.css');
 
 if (process.env.NODE_ENV === 'production') {
     mix.version();
