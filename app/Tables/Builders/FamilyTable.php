@@ -9,7 +9,6 @@ class FamilyTable extends Table
 {
     protected $templatePath = __DIR__.'/../Templates/families.json';
 
-
     public function query()
     {
         return Family::leftJoin('individuals as father', function ($join) {
