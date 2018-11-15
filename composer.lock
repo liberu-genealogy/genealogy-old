@@ -1650,16 +1650,16 @@
         },
         {
             "name": "laravel-enso/core",
-            "version": "3.2.22",
+            "version": "3.2.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/Core.git",
-                "reference": "762cb786cac795d1e50987552a6035a0f6f69951"
+                "reference": "db8d2cd9a8c1cbe19b13cfe9be17a70aa61a4103"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/Core/zipball/762cb786cac795d1e50987552a6035a0f6f69951",
-                "reference": "762cb786cac795d1e50987552a6035a0f6f69951",
+                "url": "https://api.github.com/repos/laravel-enso/Core/zipball/db8d2cd9a8c1cbe19b13cfe9be17a70aa61a4103",
+                "reference": "db8d2cd9a8c1cbe19b13cfe9be17a70aa61a4103",
                 "shasum": ""
             },
             "require": {
@@ -1742,7 +1742,7 @@
                 "vue-bulma",
                 "vue-spa"
             ],
-            "time": "2018-11-12T05:23:50+00:00"
+            "time": "2018-11-14T05:36:48+00:00"
         },
         {
             "name": "laravel-enso/dataexport",
@@ -2101,16 +2101,16 @@
         },
         {
             "name": "laravel-enso/formbuilder",
-            "version": "2.10.11",
+            "version": "2.10.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/FormBuilder.git",
-                "reference": "f1e09c00c08e66514f09cfeed727953fd6f132bc"
+                "reference": "d6cfa12bd81c9df67df613e1b80e07de417eb36a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/FormBuilder/zipball/f1e09c00c08e66514f09cfeed727953fd6f132bc",
-                "reference": "f1e09c00c08e66514f09cfeed727953fd6f132bc",
+                "url": "https://api.github.com/repos/laravel-enso/FormBuilder/zipball/d6cfa12bd81c9df67df613e1b80e07de417eb36a",
+                "reference": "d6cfa12bd81c9df67df613e1b80e07de417eb36a",
                 "shasum": ""
             },
             "require": {
@@ -2153,7 +2153,7 @@
                 "form-builder",
                 "laravel-enso"
             ],
-            "time": "2018-11-11T14:38:45+00:00"
+            "time": "2018-11-13T17:57:39+00:00"
         },
         {
             "name": "laravel-enso/helpers",
@@ -2539,16 +2539,16 @@
         },
         {
             "name": "laravel-enso/menumanager",
-            "version": "2.3.3",
+            "version": "2.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/MenuManager.git",
-                "reference": "71d849da92158cdefaee6ecdb3d9b824c1823414"
+                "reference": "4681a4bbc332ebd46619a5b8027eed26c8b7d83d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/MenuManager/zipball/71d849da92158cdefaee6ecdb3d9b824c1823414",
-                "reference": "71d849da92158cdefaee6ecdb3d9b824c1823414",
+                "url": "https://api.github.com/repos/laravel-enso/MenuManager/zipball/4681a4bbc332ebd46619a5b8027eed26c8b7d83d",
+                "reference": "4681a4bbc332ebd46619a5b8027eed26c8b7d83d",
                 "shasum": ""
             },
             "require": {
@@ -2594,7 +2594,7 @@
                 "menu-manager",
                 "menumanager"
             ],
-            "time": "2018-11-02T07:19:28+00:00"
+            "time": "2018-11-13T17:54:40+00:00"
         },
         {
             "name": "laravel-enso/notifications",
@@ -2714,16 +2714,16 @@
         },
         {
             "name": "laravel-enso/permissionmanager",
-            "version": "2.3.0",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/PermissionManager.git",
-                "reference": "050d9252cef5c5030c824ebc0dbcf4ee99a2401f"
+                "reference": "7a7cd024ceeb339a4ea38faed3a3a87d757ad469"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/PermissionManager/zipball/050d9252cef5c5030c824ebc0dbcf4ee99a2401f",
-                "reference": "050d9252cef5c5030c824ebc0dbcf4ee99a2401f",
+                "url": "https://api.github.com/repos/laravel-enso/PermissionManager/zipball/7a7cd024ceeb339a4ea38faed3a3a87d757ad469",
+                "reference": "7a7cd024ceeb339a4ea38faed3a3a87d757ad469",
                 "shasum": ""
             },
             "require": {
@@ -2770,7 +2770,7 @@
                 "laravel-permissions",
                 "permission-manager"
             ],
-            "time": "2018-10-25T08:16:45+00:00"
+            "time": "2018-11-13T17:56:21+00:00"
         },
         {
             "name": "laravel-enso/rememberable",
@@ -2820,16 +2820,16 @@
         },
         {
             "name": "laravel-enso/rolemanager",
-            "version": "2.5.0",
+            "version": "2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/RoleManager.git",
-                "reference": "91829fa524a2b9db97e423a042bd1fa08aeae065"
+                "reference": "8fcab5a98ace60b9664610fca19beb92c91e83aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/RoleManager/zipball/91829fa524a2b9db97e423a042bd1fa08aeae065",
-                "reference": "91829fa524a2b9db97e423a042bd1fa08aeae065",
+                "url": "https://api.github.com/repos/laravel-enso/RoleManager/zipball/8fcab5a98ace60b9664610fca19beb92c91e83aa",
+                "reference": "8fcab5a98ace60b9664610fca19beb92c91e83aa",
                 "shasum": ""
             },
             "require": {
@@ -2878,7 +2878,7 @@
                 "role-manager",
                 "rolemanager"
             ],
-            "time": "2018-10-25T08:27:55+00:00"
+            "time": "2018-11-14T06:02:06+00:00"
         },
         {
             "name": "laravel-enso/searchable",
@@ -2935,16 +2935,16 @@
         },
         {
             "name": "laravel-enso/select",
-            "version": "2.7.8",
+            "version": "2.7.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/Select.git",
-                "reference": "21cb0081544c0868fdd0d708a0771daab4ac8534"
+                "reference": "c2f2cf0f6993cbf9e98e53fd2fd7698a6c7186f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/Select/zipball/21cb0081544c0868fdd0d708a0771daab4ac8534",
-                "reference": "21cb0081544c0868fdd0d708a0771daab4ac8534",
+                "url": "https://api.github.com/repos/laravel-enso/Select/zipball/c2f2cf0f6993cbf9e98e53fd2fd7698a6c7186f1",
+                "reference": "c2f2cf0f6993cbf9e98e53fd2fd7698a6c7186f1",
                 "shasum": ""
             },
             "require": {
@@ -2985,7 +2985,7 @@
                 "select",
                 "select-server-side"
             ],
-            "time": "2018-11-10T09:34:39+00:00"
+            "time": "2018-11-14T06:43:53+00:00"
         },
         {
             "name": "laravel-enso/structuremanager",
@@ -3875,16 +3875,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.34.1",
+            "version": "1.35.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "19201b87f7dba2a7cbf1cccdf0e1da13c04ee9c9"
+                "reference": "5c05a2be472b22f63291d192410df9f0e0de3b19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/19201b87f7dba2a7cbf1cccdf0e1da13c04ee9c9",
-                "reference": "19201b87f7dba2a7cbf1cccdf0e1da13c04ee9c9",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/5c05a2be472b22f63291d192410df9f0e0de3b19",
+                "reference": "5c05a2be472b22f63291d192410df9f0e0de3b19",
                 "shasum": ""
             },
             "require": {
@@ -3892,8 +3892,11 @@
                 "symfony/translation": "~2.6 || ~3.0 || ~4.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "~2",
                 "phpunit/phpunit": "^4.8.35 || ^5.7"
+            },
+            "suggest": {
+                "friendsofphp/php-cs-fixer": "Needed for the `composer phpcs` command. Allow to automatically fix code style.",
+                "phpstan/phpstan": "Needed for the `composer phpstan` command. Allow to detect potential errors."
             },
             "type": "library",
             "extra": {
@@ -3926,7 +3929,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-11-08T13:33:47+00:00"
+            "time": "2018-11-14T21:55:58+00:00"
         },
         {
             "name": "nikic/php-parser",
