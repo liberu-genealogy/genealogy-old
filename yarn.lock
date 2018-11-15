@@ -7125,7 +7125,7 @@ tiptap-commands@^0.7.1:
     prosemirror-schema-list "^1.0.1"
     tiptap-utils "^0.4.1"
 
-tiptap-commands@^1.0.1:
+tiptap-commands@^1.0.0, tiptap-commands@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/tiptap-commands/-/tiptap-commands-1.0.1.tgz#dc77a66ef6da452b53b45add8573089509d8f746"
   dependencies:
