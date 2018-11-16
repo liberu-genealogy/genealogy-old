@@ -1871,16 +1871,16 @@
         },
         {
             "name": "laravel-enso/discussions",
-            "version": "1.1.7",
+            "version": "1.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/Discussions.git",
-                "reference": "e4ccdb9774b1cf8722274a9b30f0df095c4553b4"
+                "reference": "0c672c680b5c57ecd5109c7b6a6b8a370041e5ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/Discussions/zipball/e4ccdb9774b1cf8722274a9b30f0df095c4553b4",
-                "reference": "e4ccdb9774b1cf8722274a9b30f0df095c4553b4",
+                "url": "https://api.github.com/repos/laravel-enso/Discussions/zipball/0c672c680b5c57ecd5109c7b6a6b8a370041e5ef",
+                "reference": "0c672c680b5c57ecd5109c7b6a6b8a370041e5ef",
                 "shasum": ""
             },
             "require": {
@@ -1923,7 +1923,7 @@
                 "discussions",
                 "laravel-enso"
             ],
-            "time": "2018-10-25T06:37:19+00:00"
+            "time": "2018-11-14T11:24:01+00:00"
         },
         {
             "name": "laravel-enso/documentsmanager",
@@ -2935,16 +2935,16 @@
         },
         {
             "name": "laravel-enso/select",
-            "version": "2.7.8",
+            "version": "2.7.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/Select.git",
-                "reference": "21cb0081544c0868fdd0d708a0771daab4ac8534"
+                "reference": "c2f2cf0f6993cbf9e98e53fd2fd7698a6c7186f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/Select/zipball/21cb0081544c0868fdd0d708a0771daab4ac8534",
-                "reference": "21cb0081544c0868fdd0d708a0771daab4ac8534",
+                "url": "https://api.github.com/repos/laravel-enso/Select/zipball/c2f2cf0f6993cbf9e98e53fd2fd7698a6c7186f1",
+                "reference": "c2f2cf0f6993cbf9e98e53fd2fd7698a6c7186f1",
                 "shasum": ""
             },
             "require": {
@@ -2985,7 +2985,7 @@
                 "select",
                 "select-server-side"
             ],
-            "time": "2018-11-10T09:34:39+00:00"
+            "time": "2018-11-14T06:43:53+00:00"
         },
         {
             "name": "laravel-enso/structuremanager",
