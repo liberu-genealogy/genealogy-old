@@ -5933,7 +5933,7 @@ prosemirror-keymap@^1.0.0, prosemirror-keymap@^1.0.1:
     prosemirror-state "^1.0.0"
     w3c-keyname "^1.1.8"
 
-prosemirror-model@^1.0.0, prosemirror-model@^1.1.0, prosemirror-model@^1.6.2, prosemirror-model@^1.6.3:
+prosemirror-model@^1.0.0, prosemirror-model@^1.1.0, prosemirror-model@^1.6.3:
   version "1.6.3"
   resolved "https://registry.yarnpkg.com/prosemirror-model/-/prosemirror-model-1.6.3.tgz#9a416f907f5f650dfd6062643ce014bf0d0e8931"
   dependencies:
@@ -5953,7 +5953,7 @@ prosemirror-state@^1.0.0, prosemirror-state@^1.2.1, prosemirror-state@^1.2.2:
     prosemirror-model "^1.0.0"
     prosemirror-transform "^1.0.0"
 
-prosemirror-tables@^0.7.7, prosemirror-tables@^0.7.9:
+prosemirror-tables@^0.7.9:
   version "0.7.9"
   resolved "https://registry.yarnpkg.com/prosemirror-tables/-/prosemirror-tables-0.7.9.tgz#fb82d1e5d8cc4661820fdb956b76f2192bcd2127"
   dependencies:
@@ -5969,15 +5969,11 @@ prosemirror-transform@^1.0.0, prosemirror-transform@^1.1.0:
   dependencies:
     prosemirror-model "^1.0.0"
 
-prosemirror-utils@^0.6.6:
-  version "0.6.7"
-  resolved "https://registry.yarnpkg.com/prosemirror-utils/-/prosemirror-utils-0.6.7.tgz#2a54de0883a609442b83fe5c076073b828c58f19"
-
 prosemirror-utils@^0.7.2:
   version "0.7.2"
   resolved "https://registry.yarnpkg.com/prosemirror-utils/-/prosemirror-utils-0.7.2.tgz#dbdd42c902892777f7fc04dbcb23dbfd9332a771"
 
-prosemirror-view@^1.0.0, prosemirror-view@^1.6.1:
+prosemirror-view@^1.0.0:
   version "1.6.5"
   resolved "https://registry.yarnpkg.com/prosemirror-view/-/prosemirror-view-1.6.5.tgz#0427775fd68006a2270dfad549707e5a3d9880db"
   dependencies:
@@ -5985,7 +5981,7 @@ prosemirror-view@^1.0.0, prosemirror-view@^1.6.1:
     prosemirror-state "^1.0.0"
     prosemirror-transform "^1.1.0"
 
-prosemirror-view@^1.6.5:
+prosemirror-view@^1.6.5, prosemirror-view@^1.6.6:
   version "1.6.6"
   resolved "https://registry.yarnpkg.com/prosemirror-view/-/prosemirror-view-1.6.6.tgz#72acbcff798bb541136a7ec32e7c56c0c1df6f6a"
   dependencies:
@@ -7116,15 +7112,6 @@ timers-browserify@^2.0.4:
   dependencies:
     setimmediate "^1.0.4"
 
-tiptap-commands@^0.7.1:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/tiptap-commands/-/tiptap-commands-0.7.1.tgz#8d4ab2218d550afffe1af5ef8bbc20c5bcf197ba"
-  dependencies:
-    prosemirror-commands "^1.0.7"
-    prosemirror-inputrules "^1.0.1"
-    prosemirror-schema-list "^1.0.1"
-    tiptap-utils "^0.4.1"
-
 tiptap-commands@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/tiptap-commands/-/tiptap-commands-1.0.1.tgz#dc77a66ef6da452b53b45add8573089509d8f746"
@@ -7145,13 +7132,6 @@ tiptap-extensions@^1.0.2:
     tiptap "^1.0.2"
     tiptap-commands "^1.0.1"
 
-tiptap-utils@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/tiptap-utils/-/tiptap-utils-0.4.1.tgz#4290958658c6715c07e47bc7e6c8a35125495aa4"
-  dependencies:
-    prosemirror-tables "^0.7.7"
-    prosemirror-utils "^0.6.6"
-
 tiptap-utils@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/tiptap-utils/-/tiptap-utils-1.0.1.tgz#fa0e056742c6ff4812a5a2e51515abcb6c749307"
@@ -7161,23 +7141,9 @@ tiptap-utils@^1.0.1:
     prosemirror-tables "^0.7.9"
     prosemirror-utils "^0.7.2"
 
-tiptap@^0.20.1:
-  version "0.20.1"
-  resolved "https://registry.yarnpkg.com/tiptap/-/tiptap-0.20.1.tgz#a233dc53299ff3cd85868f45c7c13316cffac2d5"
-  dependencies:
-    prosemirror-commands "^1.0.7"
-    prosemirror-gapcursor "^1.0.3"
-    prosemirror-inputrules "^1.0.1"
-    prosemirror-keymap "^1.0.1"
-    prosemirror-model "^1.6.2"
-    prosemirror-state "^1.2.1"
-    prosemirror-view "^1.6.1"
-    tiptap-commands "^0.7.1"
-    tiptap-utils "^0.4.1"
-
-tiptap@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/tiptap/-/tiptap-1.0.2.tgz#72487c3dbee2bf8b60b7ec03ace3ba7a2f2fdd85"
+tiptap@^1.0.2, tiptap@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/tiptap/-/tiptap-1.0.5.tgz#d238ef5c701aa660a17d7da0b9e3b2a9f861fa50"
   dependencies:
     prosemirror-commands "^1.0.7"
     prosemirror-gapcursor "^1.0.3"
@@ -7185,7 +7151,7 @@ tiptap@^1.0.2:
     prosemirror-keymap "^1.0.1"
     prosemirror-model "^1.6.3"
     prosemirror-state "^1.2.1"
-    prosemirror-view "^1.6.5"
+    prosemirror-view "^1.6.6"
     tiptap-commands "^1.0.1"
     tiptap-utils "^1.0.1"
 
