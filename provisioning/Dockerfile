@@ -1,4 +1,4 @@
-FROM php:7.2-fpm@sha256:5c13826c6f94056c4d9fdd3d37a96357031f6b9ddf3d3e7817af8eeeefbc2dff
+FROM php:7.2-fpm@sha256:2eae146993b58a61fbe40b36547d644222cf9db5dd04b3fe9c01f10820459b80
 
 # Installing dependencies
 RUN apt-get update && apt-get install -y \
