@@ -7121,6 +7121,15 @@ tiptap-commands@^1.0.1:
     prosemirror-schema-list "^1.0.1"
     tiptap-utils "^1.0.1"
 
+tiptap-commands@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/tiptap-commands/-/tiptap-commands-1.1.0.tgz#756ec3c1d2c416140d9f992c29c05e7f834da4b1"
+  dependencies:
+    prosemirror-commands "^1.0.7"
+    prosemirror-inputrules "^1.0.1"
+    prosemirror-schema-list "^1.0.1"
+    tiptap-utils "^1.0.1"
+
 tiptap-extensions@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/tiptap-extensions/-/tiptap-extensions-1.0.5.tgz#41577858709f219a77f546c676af565ec4444546"
@@ -7141,9 +7150,9 @@ tiptap-utils@^1.0.1:
     prosemirror-tables "^0.7.9"
     prosemirror-utils "^0.7.2"
 
-tiptap@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/tiptap/-/tiptap-1.0.5.tgz#d238ef5c701aa660a17d7da0b9e3b2a9f861fa50"
+tiptap@^1.0.5, tiptap@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/tiptap/-/tiptap-1.2.0.tgz#0ddb7e04d3f4c4ac7de37ca95e44bdb014dfc9fc"
   dependencies:
     prosemirror-commands "^1.0.7"
     prosemirror-gapcursor "^1.0.3"
@@ -7152,7 +7161,7 @@ tiptap@^1.0.5:
     prosemirror-model "^1.6.3"
     prosemirror-state "^1.2.1"
     prosemirror-view "^1.6.6"
-    tiptap-commands "^1.0.1"
+    tiptap-commands "^1.1.0"
     tiptap-utils "^1.0.1"
 
 tmp@^0.0.33:
@@ -7665,7 +7674,7 @@ vue-video-player@^5.0.2:
     videojs-flash "^2.1.0"
     videojs-hotkeys "^0.2.20"
 
-vue@^2.1.0, vue@^2.5.16:
+vue@^2.1.0, vue@^2.5.17:
   version "2.5.17"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.17.tgz#0f8789ad718be68ca1872629832ed533589c6ada"
 
