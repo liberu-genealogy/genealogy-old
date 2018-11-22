@@ -7112,9 +7112,9 @@ timers-browserify@^2.0.4:
   dependencies:
     setimmediate "^1.0.4"
 
-tiptap-commands@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/tiptap-commands/-/tiptap-commands-1.0.1.tgz#dc77a66ef6da452b53b45add8573089509d8f746"
+tiptap-commands@^1.0.1, tiptap-commands@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/tiptap-commands/-/tiptap-commands-1.1.0.tgz#756ec3c1d2c416140d9f992c29c05e7f834da4b1"
   dependencies:
     prosemirror-commands "^1.0.7"
     prosemirror-inputrules "^1.0.1"
@@ -7665,7 +7665,7 @@ vue-video-player@^5.0.2:
     videojs-flash "^2.1.0"
     videojs-hotkeys "^0.2.20"
 
-vue@^2.1.0, vue@^2.5.16:
+vue@^2.1.0, vue@^2.5.17:
   version "2.5.17"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.17.tgz#0f8789ad718be68ca1872629832ed533589c6ada"
 
