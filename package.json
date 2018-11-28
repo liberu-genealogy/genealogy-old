@@ -88,7 +88,7 @@
         "vue-router": "^3.0.1",
         "vue-video-player": "^5.0.2",
         "vued3tree": "^3.6.4",
-        "vuedraggable": "^2.16.0",
+        "vuedraggable": "^2.17.0",
         "vuex": "^3.0.0",
         "zxcvbn": "^4.4.2"
     },

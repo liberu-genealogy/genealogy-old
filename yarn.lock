@@ -7665,7 +7665,7 @@ vue-video-player@^5.0.2:
     videojs-flash "^2.1.0"
     videojs-hotkeys "^0.2.20"
 
-vue@^2.1.0, vue@^2.5.16:
+vue@^2.1.0, vue@^2.5.17:
   version "2.5.17"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.17.tgz#0f8789ad718be68ca1872629832ed533589c6ada"
 
@@ -7678,9 +7678,9 @@ vued3tree@^3.6.4:
     vue "^2.1.0"
     vue-resize-directive "^1.1.4"
 
-vuedraggable@^2.16.0:
-  version "2.16.0"
-  resolved "https://registry.yarnpkg.com/vuedraggable/-/vuedraggable-2.16.0.tgz#52127081a2adb3de5fabd214d404ff3eee63575a"
+vuedraggable@^2.17.0:
+  version "2.17.0"
+  resolved "https://registry.yarnpkg.com/vuedraggable/-/vuedraggable-2.17.0.tgz#489c16c9bcb9eb06f441944d3c52e5f2bb7060f9"
   dependencies:
     sortablejs "^1.7.0"
 
