@@ -5754,16 +5754,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v4.1.7",
+            "version": "v4.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "60319b45653580b0cdacca499344577d87732f16"
+                "reference": "db61258540350725f4beb6b84006e32398acd120"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/60319b45653580b0cdacca499344577d87732f16",
-                "reference": "60319b45653580b0cdacca499344577d87732f16",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/db61258540350725f4beb6b84006e32398acd120",
+                "reference": "db61258540350725f4beb6b84006e32398acd120",
                 "shasum": ""
             },
             "require": {
@@ -5791,7 +5791,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.1-dev"
+                    "dev-master": "4.2-dev"
                 }
             },
             "autoload": {
@@ -5825,7 +5825,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2018-10-02T16:36:10+00:00"
+            "time": "2018-11-25T12:50:42+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
@@ -6339,16 +6339,16 @@
         },
         {
             "name": "laravel/telescope",
-            "version": "v1.0.5",
+            "version": "v1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "8a1a5288ac3fa7bddcc98c1bb13e43b79f4b04f9"
+                "reference": "0287613e09639dd0784de53ca587e665082b7618"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/8a1a5288ac3fa7bddcc98c1bb13e43b79f4b04f9",
-                "reference": "8a1a5288ac3fa7bddcc98c1bb13e43b79f4b04f9",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/0287613e09639dd0784de53ca587e665082b7618",
+                "reference": "0287613e09639dd0784de53ca587e665082b7618",
                 "shasum": ""
             },
             "require": {
@@ -6398,7 +6398,7 @@
                 "laravel",
                 "monitoring"
             ],
-            "time": "2018-11-20T15:01:41+00:00"
+            "time": "2018-12-06T09:39:19+00:00"
         },
         {
             "name": "mockery/mockery",
