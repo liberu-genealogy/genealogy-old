@@ -18,7 +18,7 @@
         "cross-env": "^5.1.6",
         "eslint": "^4.19.1",
         "eslint-plugin-vue": "^4.5.0",
-        "laravel-mix": "^2.1.14",
+        "laravel-mix": "^4.0.0",
         "webpack-cli": "^3.1.2"
     },
     "name": "enso",
