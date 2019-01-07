@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "507b5c58244938024ac36c96d5b0f1be",
+    "content-hash": "78940d334f6d80b2e17973d10700c45c",
     "packages": [
         {
             "name": "box/spout",
@@ -6458,6 +6458,51 @@
     ],
     "packages-dev": [
         {
+            "name": "2bj/phanybar",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/2bj/Phanybar.git",
+                "reference": "88ff671e18f30c2047a34f8cf2465a7ff93c819b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/2bj/Phanybar/zipball/88ff671e18f30c2047a34f8cf2465a7ff93c819b",
+                "reference": "88ff671e18f30c2047a34f8cf2465a7ff93c819b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "bin": [
+                "bin/phanybar"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bakyt\\": [
+                        "src/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bakyt Turgumbaev",
+                    "email": "dev2bj@gmail.com"
+                }
+            ],
+            "description": "Control AnyBar from your php",
+            "keywords": [
+                "anybar",
+                "phanybar"
+            ],
+            "time": "2015-03-06T12:14:28+00:00"
+        },
+        {
             "name": "codedungeon/php-cli-colors",
             "version": "1.10.7",
             "source": {
@@ -6503,27 +6548,28 @@
         },
         {
             "name": "codedungeon/phpunit-result-printer",
-            "version": "0.19.14",
+            "version": "0.24.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mikeerickson/phpunit-pretty-result-printer.git",
-                "reference": "d95e985bbc6b884e2e9e74fe99ce41728ae8d6e4"
+                "reference": "efac6389486641fd3390180c5e0eb4bec5f4cd9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mikeerickson/phpunit-pretty-result-printer/zipball/d95e985bbc6b884e2e9e74fe99ce41728ae8d6e4",
-                "reference": "d95e985bbc6b884e2e9e74fe99ce41728ae8d6e4",
+                "url": "https://api.github.com/repos/mikeerickson/phpunit-pretty-result-printer/zipball/efac6389486641fd3390180c5e0eb4bec5f4cd9e",
+                "reference": "efac6389486641fd3390180c5e0eb4bec5f4cd9e",
                 "shasum": ""
             },
             "require": {
+                "2bj/phanybar": "^1.0",
                 "codedungeon/php-cli-colors": "^1.10.2",
-                "hassankhan/config": "^1.0",
+                "hassankhan/config": "^0.11.2",
                 "php": "^7.1",
                 "symfony/yaml": "^2.7|^3.0|^4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "7.1.1",
-                "spatie/phpunit-watcher": "^1.5"
+                "phpunit/phpunit": "7.4.*",
+                "spatie/phpunit-watcher": "^1.6"
             },
             "type": "library",
             "autoload": {
@@ -6551,7 +6597,7 @@
                 "result-printer",
                 "testing"
             ],
-            "time": "2018-09-05T16:10:09+00:00"
+            "time": "2019-01-05T19:01:49+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -6768,29 +6814,28 @@
         },
         {
             "name": "hassankhan/config",
-            "version": "1.1.0",
+            "version": "0.11.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hassankhan/config.git",
-                "reference": "930556337783acfd95bde723354119178db01d10"
+                "reference": "7fbc236c32dc6cc53a7b00992a2739cf8b41c085"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hassankhan/config/zipball/930556337783acfd95bde723354119178db01d10",
-                "reference": "930556337783acfd95bde723354119178db01d10",
+                "url": "https://api.github.com/repos/hassankhan/config/zipball/7fbc236c32dc6cc53a7b00992a2739cf8b41c085",
+                "reference": "7fbc236c32dc6cc53a7b00992a2739cf8b41c085",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9"
+                "php": ">=5.3.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0",
                 "scrutinizer/ocular": "~1.1",
-                "squizlabs/php_codesniffer": "~2.2",
-                "symfony/yaml": "~3.4"
+                "squizlabs/php_codesniffer": "~2.2"
             },
             "suggest": {
-                "symfony/yaml": "~3.4"
+                "symfony/yaml": "~2.5"
             },
             "type": "library",
             "autoload": {
@@ -6822,7 +6867,7 @@
                 "yaml",
                 "yml"
             ],
-            "time": "2018-08-22T14:18:52+00:00"
+            "time": "2017-11-07T22:49:43+00:00"
         },
         {
             "name": "laracasts/generators",
@@ -8374,16 +8419,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v4.1.7",
+            "version": "v4.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "367e689b2fdc19965be435337b50bc8adf2746c9"
+                "reference": "d0aa6c0ea484087927b49fd513383a7d36190ca6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/367e689b2fdc19965be435337b50bc8adf2746c9",
-                "reference": "367e689b2fdc19965be435337b50bc8adf2746c9",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/d0aa6c0ea484087927b49fd513383a7d36190ca6",
+                "reference": "d0aa6c0ea484087927b49fd513383a7d36190ca6",
                 "shasum": ""
             },
             "require": {
@@ -8402,7 +8447,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.1-dev"
+                    "dev-master": "4.2-dev"
                 }
             },
             "autoload": {
@@ -8429,7 +8474,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2018-10-02T16:36:10+00:00"
+            "time": "2019-01-03T09:07:35+00:00"
         },
         {
             "name": "theseer/tokenizer",
