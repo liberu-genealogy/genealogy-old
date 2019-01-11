@@ -56,7 +56,7 @@
         "css-element-queries": "^1.1.1",
         "d3": "^5.7.0",
         "d3-dtree": "^2.0.2",
-        "date-fns": "2.0.0-alpha.7",
+        "date-fns": "2.0.0-alpha.27",
         "driver.js": "^0.8.1",
         "dropzone": "^5.5.1",
         "dtree": "0.0.7",
