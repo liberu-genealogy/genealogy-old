@@ -12,7 +12,7 @@
         "laravel-enso/commentsmanager": "2.4.*",
         "laravel-enso/companies": "1.1.*",
         "laravel-enso/controlpanelapi": "^2.0",
-        "laravel-enso/core": "3.2.*",
+        "laravel-enso/core": "3.7.*",
         "laravel-enso/dataimport": "2.5.*",
         "laravel-enso/discussions": "1.1.*",
         "laravel-enso/documentsmanager": "2.4.*",
