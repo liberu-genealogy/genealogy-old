@@ -2538,9 +2538,9 @@ dotenv@^4.0.0:
   version "4.0.0"
   resolved "http://registry.npmjs.org/dotenv/-/dotenv-4.0.0.tgz#864ef1379aced55ce6f95debecdce179f7a0cd1d"
 
-driver.js@^0.8.1:
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/driver.js/-/driver.js-0.8.1.tgz#e356e314dcfb56c5c369f34121075ac9f063cc2b"
+driver.js@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/driver.js/-/driver.js-0.9.0.tgz#b15191cdcc85f22ca735bbb96a6db473761a540c"
 
 dropzone@^5.5.1:
   version "5.5.1"
@@ -7665,9 +7665,13 @@ vue-video-player@^5.0.2:
     videojs-flash "^2.1.0"
     videojs-hotkeys "^0.2.20"
 
-vue@^2.1.0, vue@^2.5.16:
+vue@^2.1.0:
   version "2.5.17"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.17.tgz#0f8789ad718be68ca1872629832ed533589c6ada"
+
+vue@^2.5.17:
+  version "2.6.3"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.3.tgz#180017ba25b94a9864b2921db8644e1062ea82a0"
 
 vued3tree@^3.6.4:
   version "3.6.4"
