@@ -5939,9 +5939,15 @@ prosemirror-model@^1.0.0, prosemirror-model@^1.1.0, prosemirror-model@^1.6.3:
   dependencies:
     orderedmap "^1.0.0"
 
-prosemirror-schema-list@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/prosemirror-schema-list/-/prosemirror-schema-list-1.0.1.tgz#f216e0cf4809b6074aa27912449ac89897f1ae94"
+prosemirror-model@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/prosemirror-model/-/prosemirror-model-1.7.0.tgz#1fde0fd7cb2f9ead0be1581ad9f04593002a65aa"
+  dependencies:
+    orderedmap "^1.0.0"
+
+prosemirror-schema-list@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/prosemirror-schema-list/-/prosemirror-schema-list-1.0.2.tgz#8381fb0c1eaf439d848059f62e2fac517033c2ef"
   dependencies:
     prosemirror-model "^1.0.0"
     prosemirror-transform "^1.0.0"
@@ -5969,9 +5975,9 @@ prosemirror-transform@^1.0.0, prosemirror-transform@^1.1.0:
   dependencies:
     prosemirror-model "^1.0.0"
 
-prosemirror-utils@^0.7.2:
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/prosemirror-utils/-/prosemirror-utils-0.7.2.tgz#dbdd42c902892777f7fc04dbcb23dbfd9332a771"
+prosemirror-utils@^0.7.5:
+  version "0.7.6"
+  resolved "https://registry.yarnpkg.com/prosemirror-utils/-/prosemirror-utils-0.7.6.tgz#c462ddfbf2452e56e4b25d1f02b34caccddb0f33"
 
 prosemirror-view@^1.0.0:
   version "1.6.5"
@@ -7112,14 +7118,15 @@ timers-browserify@^2.0.4:
   dependencies:
     setimmediate "^1.0.4"
 
-tiptap-commands@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/tiptap-commands/-/tiptap-commands-1.0.1.tgz#dc77a66ef6da452b53b45add8573089509d8f746"
+tiptap-commands@^1.0.1, tiptap-commands@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/tiptap-commands/-/tiptap-commands-1.6.0.tgz#567b7b218bd7d1c1214534a2007acbb7b8d06688"
   dependencies:
     prosemirror-commands "^1.0.7"
     prosemirror-inputrules "^1.0.1"
-    prosemirror-schema-list "^1.0.1"
-    tiptap-utils "^1.0.1"
+    prosemirror-schema-list "^1.0.2"
+    prosemirror-state "^1.2.2"
+    tiptap-utils "^1.2.0"
 
 tiptap-extensions@^1.0.5:
   version "1.0.5"
@@ -7132,14 +7139,14 @@ tiptap-extensions@^1.0.5:
     tiptap "^1.0.5"
     tiptap-commands "^1.0.1"
 
-tiptap-utils@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/tiptap-utils/-/tiptap-utils-1.0.1.tgz#fa0e056742c6ff4812a5a2e51515abcb6c749307"
+tiptap-utils@^1.0.1, tiptap-utils@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/tiptap-utils/-/tiptap-utils-1.2.0.tgz#e1e566af1212acff6b2e3c4ca6edc21ebf306440"
   dependencies:
-    prosemirror-model "^1.6.3"
+    prosemirror-model "^1.7.0"
     prosemirror-state "^1.2.2"
     prosemirror-tables "^0.7.9"
-    prosemirror-utils "^0.7.2"
+    prosemirror-utils "^0.7.5"
 
 tiptap@^1.0.5:
   version "1.0.5"
@@ -7665,9 +7672,13 @@ vue-video-player@^5.0.2:
     videojs-flash "^2.1.0"
     videojs-hotkeys "^0.2.20"
 
-vue@^2.1.0, vue@^2.5.16:
+vue@^2.1.0:
   version "2.5.17"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.17.tgz#0f8789ad718be68ca1872629832ed533589c6ada"
+
+vue@^2.5.17:
+  version "2.6.6"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.6.tgz#dde41e483c11c46a7bf523909f4f2f816ab60d25"
 
 vued3tree@^3.6.4:
   version "3.6.4"
