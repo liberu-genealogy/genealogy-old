@@ -4339,9 +4339,9 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
 
-laravel-echo@^1.4.0:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/laravel-echo/-/laravel-echo-1.4.1.tgz#61ac9f7f38dafb8a581bd626fd0d74987e9ce2e2"
+laravel-echo@^1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/laravel-echo/-/laravel-echo-1.5.2.tgz#d27357971315533bcd6d4c316936e74c7518bcba"
 
 laravel-mix@^2.1.14:
   version "2.1.14"
@@ -7665,9 +7665,13 @@ vue-video-player@^5.0.2:
     videojs-flash "^2.1.0"
     videojs-hotkeys "^0.2.20"
 
-vue@^2.1.0, vue@^2.5.16:
+vue@^2.1.0:
   version "2.5.17"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.17.tgz#0f8789ad718be68ca1872629832ed533589c6ada"
+
+vue@^2.5.17:
+  version "2.6.6"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.6.tgz#dde41e483c11c46a7bf523909f4f2f816ab60d25"
 
 vued3tree@^3.6.4:
   version "3.6.4"
