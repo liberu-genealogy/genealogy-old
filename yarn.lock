@@ -116,9 +116,9 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.8"
 
-"@fortawesome/vue-fontawesome@^0.1.1":
-  version "0.1.2"
-  resolved "https://npm.fontawesome.com/@fortawesome/vue-fontawesome/-/vue-fontawesome-0.1.2.tgz#f993d7788bd6f031a1a20ff8f608ed0f36c83185"
+"@fortawesome/vue-fontawesome@^0.1.5":
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/@fortawesome/vue-fontawesome/-/vue-fontawesome-0.1.5.tgz#ea70a4d4ad0d6d617048a5b2a2ff33e21fe47d61"
 
 "@videojs/http-streaming@1.4.1":
   version "1.4.1"
@@ -7665,9 +7665,13 @@ vue-video-player@^5.0.2:
     videojs-flash "^2.1.0"
     videojs-hotkeys "^0.2.20"
 
-vue@^2.1.0, vue@^2.5.16:
+vue@^2.1.0:
   version "2.5.17"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.17.tgz#0f8789ad718be68ca1872629832ed533589c6ada"
+
+vue@^2.5.17:
+  version "2.6.6"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.6.tgz#dde41e483c11c46a7bf523909f4f2f816ab60d25"
 
 vued3tree@^3.6.4:
   version "3.6.4"
