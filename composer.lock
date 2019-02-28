@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "507b5c58244938024ac36c96d5b0f1be",
+    "content-hash": "3c065d1983fc93b79be14a861c747c11",
     "packages": [
         {
             "name": "box/spout",
@@ -3875,7 +3875,7 @@
                 {
                     "name": "Luís Otávio Cobucci Oblonczyk",
                     "email": "lcobucci@gmail.com",
-                    "role": "developer"
+                    "role": "Developer"
                 }
             ],
             "description": "A simple library to work with JSON Web Token and JSON Web Signature",
@@ -6871,21 +6871,21 @@
         },
         {
             "name": "laravel/telescope",
-            "version": "v1.0.5",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "8a1a5288ac3fa7bddcc98c1bb13e43b79f4b04f9"
+                "reference": "fe09fa31786dfc95edf9b9a1fe6caef701fddf71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/8a1a5288ac3fa7bddcc98c1bb13e43b79f4b04f9",
-                "reference": "8a1a5288ac3fa7bddcc98c1bb13e43b79f4b04f9",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/fe09fa31786dfc95edf9b9a1fe6caef701fddf71",
+                "reference": "fe09fa31786dfc95edf9b9a1fe6caef701fddf71",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "laravel/framework": "~5.7.7",
+                "laravel/framework": "~5.7.7|~5.8.0",
                 "moontoast/math": "^1.1",
                 "php": "^7.1.3",
                 "symfony/var-dumper": "^4.1"
@@ -6897,7 +6897,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev"
+                    "dev-master": "2.0-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -6930,7 +6930,7 @@
                 "laravel",
                 "monitoring"
             ],
-            "time": "2018-11-20T15:01:41+00:00"
+            "time": "2019-02-26T20:38:25+00:00"
         },
         {
             "name": "mockery/mockery",

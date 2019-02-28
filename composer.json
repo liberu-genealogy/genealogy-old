@@ -29,7 +29,7 @@
         "filp/whoops": "^2.1.0",
         "fzaninotto/faker": "^1.7.0",
         "laracasts/generators": "dev-develop",
-        "laravel/telescope": "^1.0.0",
+        "laravel/telescope": "^2.0.0",
         "mockery/mockery": "1.*",
         "nunomaduro/collision": "^2.0.0",
         "phpunit/phpunit": "^7.0"
