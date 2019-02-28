@@ -25,7 +25,7 @@
         "sentry/sentry-laravel": "dev-laravel-57@dev"
     },
     "require-dev": {
-        "codedungeon/phpunit-result-printer": "^0.19.0",
+        "codedungeon/phpunit-result-printer": "^0.26.1",
         "filp/whoops": "^2.1.0",
         "fzaninotto/faker": "^1.7.0",
         "laracasts/generators": "dev-develop",
