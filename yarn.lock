@@ -6750,9 +6750,9 @@ sort-keys@^1.0.0:
   dependencies:
     is-plain-obj "^1.0.0"
 
-sortablejs@^1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/sortablejs/-/sortablejs-1.7.0.tgz#80a2b2370abd568e1cec8c271131ef30a904fa28"
+sortablejs@^1.8.3:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/sortablejs/-/sortablejs-1.8.3.tgz#5ae908ef96300966e95440a143340f5dd565a0df"
 
 source-list-map@^2.0.0:
   version "2.0.1"
@@ -7665,9 +7665,9 @@ vue-video-player@^5.0.2:
     videojs-flash "^2.1.0"
     videojs-hotkeys "^0.2.20"
 
-vue@^2.1.0, vue@^2.5.16:
-  version "2.5.17"
-  resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.17.tgz#0f8789ad718be68ca1872629832ed533589c6ada"
+vue@^2.1.0, vue@^2.5.17, vue@^2.5.22:
+  version "2.6.8"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.8.tgz#f21cbc536bfc14f7d1d792a137bb12f69e60ea91"
 
 vued3tree@^3.6.4:
   version "3.6.4"
@@ -7678,11 +7678,12 @@ vued3tree@^3.6.4:
     vue "^2.1.0"
     vue-resize-directive "^1.1.4"
 
-vuedraggable@^2.16.0:
-  version "2.16.0"
-  resolved "https://registry.yarnpkg.com/vuedraggable/-/vuedraggable-2.16.0.tgz#52127081a2adb3de5fabd214d404ff3eee63575a"
+vuedraggable@^2.19.0:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/vuedraggable/-/vuedraggable-2.19.0.tgz#f9de67efa5e6ea0114297ba047dbc442138a31b4"
   dependencies:
-    sortablejs "^1.7.0"
+    sortablejs "^1.8.3"
+    vue "^2.5.22"
 
 vuex@^3.0.0:
   version "3.0.1"
