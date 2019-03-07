@@ -31,7 +31,7 @@
         "laracasts/generators": "dev-develop",
         "laravel/telescope": "^1.0.0",
         "mockery/mockery": "1.*",
-        "nunomaduro/collision": "^2.0.0",
+        "nunomaduro/collision": "^3.0.1",
         "phpunit/phpunit": "^7.0"
     },
     "repositories": [{
