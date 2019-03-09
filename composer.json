@@ -15,7 +15,7 @@
         "laravel-enso/core": "3.2.*",
         "laravel-enso/dataimport": "2.5.*",
         "laravel-enso/discussions": "1.1.*",
-        "laravel-enso/documentsmanager": "2.4.*",
+        "laravel-enso/documentsmanager": "3.0.*",
         "laravel-enso/examples": "^1.0",
         "laravel-enso/howtovideos": "2.2.*",
         "laravel-enso/teams": "1.0.*",
