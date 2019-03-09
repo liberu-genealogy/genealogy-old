@@ -1,4 +1,4 @@
-FROM php:7.3-fpm-alpine3.8@sha256:52d59ae8686bf21638ba8bd9a4f36455fed0ad56fe213a811a0a0d3b267c9b71
+FROM php:7.3-fpm-alpine3.8@sha256:7017a6be15320832314b049d160cf2eeeb6fdf1c780c37977a9af1e2049176ea
 
 # Installing dependencies
 RUN apt-get update && apt-get install -y \
