@@ -18,7 +18,7 @@
         "laravel-enso/documentsmanager": "2.4.*",
         "laravel-enso/examples": "^1.0",
         "laravel-enso/howtovideos": "2.2.*",
-        "laravel-enso/teams": "1.0.*",
+        "laravel-enso/teams": "2.0.*",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "~1.0",
         "oguz463/php-gedcom": "^1.0",
