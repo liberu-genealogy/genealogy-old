@@ -14,7 +14,7 @@
         "laravel-enso/controlpanelapi": "^2.0",
         "laravel-enso/core": "3.2.*",
         "laravel-enso/dataimport": "2.5.*",
-        "laravel-enso/discussions": "1.1.*",
+        "laravel-enso/discussions": "2.0.*",
         "laravel-enso/documentsmanager": "2.4.*",
         "laravel-enso/examples": "^1.0",
         "laravel-enso/howtovideos": "2.2.*",
