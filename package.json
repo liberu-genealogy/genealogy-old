@@ -16,7 +16,7 @@
         "@vue/eslint-config-airbnb": "^4.0.0",
         "babel-eslint": "^10.0.1",
         "cross-env": "^5.1.6",
-        "eslint": "^5.0.1",
+        "eslint": "^5.15.3",
         "eslint-plugin-vue": "^5.0.0",
         "laravel-mix": "3.0.0",
         "node-sass": "^4.11.0",
