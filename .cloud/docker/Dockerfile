@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
     libzip-dev \
     locales \
+    git-core \
     zip \
     jpegoptim optipng pngquant gifsicle
 
