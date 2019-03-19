@@ -41,7 +41,7 @@
     "false": {},
     "dependencies": {
         "@enso-ui/accessories": "^1.0.0",
-        "@enso-ui/bulma": "^1.0.0",
+        "@enso-ui/bulma": "^1.0.31",
         "@enso-ui/directives": "^1.0.1",
         "@enso-ui/forms": "^1.0.1",
         "@enso-ui/mixins": "^1.0.0",
