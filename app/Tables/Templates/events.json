@@ -1,0 +1,14 @@
+{
+    "routePrefix": "events",
+    "crtNo": true,
+    "buttons": ["excel", "create", "show", "edit", "destroy"],
+    "columns": [{
+        "label": "Id",
+        "name": "dtRowId",
+        "data": "events.dtRowId",
+        "meta": [
+            "searchable",
+            "sortable"
+        ]
+    }]
+}
