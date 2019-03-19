@@ -1521,16 +1521,16 @@
         },
         {
             "name": "laravel-enso/charts",
-            "version": "3.0.1",
+            "version": "3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/Charts.git",
-                "reference": "53d95dd4b1e3acadca59cb69f303dd65a29f79d0"
+                "reference": "6197d153341b7828a41fd9c146088407a43d7cec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/Charts/zipball/53d95dd4b1e3acadca59cb69f303dd65a29f79d0",
-                "reference": "53d95dd4b1e3acadca59cb69f303dd65a29f79d0",
+                "url": "https://api.github.com/repos/laravel-enso/Charts/zipball/6197d153341b7828a41fd9c146088407a43d7cec",
+                "reference": "6197d153341b7828a41fd9c146088407a43d7cec",
                 "shasum": ""
             },
             "require": {
@@ -1570,7 +1570,7 @@
                 "charts",
                 "laravel-enso"
             ],
-            "time": "2019-03-15T10:50:23+00:00"
+            "time": "2019-03-18T12:43:11+00:00"
         },
         {
             "name": "laravel-enso/commentsmanager",
@@ -1759,16 +1759,16 @@
         },
         {
             "name": "laravel-enso/core",
-            "version": "4.0.6",
+            "version": "4.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/Core.git",
-                "reference": "a7370a3c1510f95a6943fdf8906592a5beffab84"
+                "reference": "0f46d066ca9678ba4530814f2ce0b22e5aca8cf5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/Core/zipball/a7370a3c1510f95a6943fdf8906592a5beffab84",
-                "reference": "a7370a3c1510f95a6943fdf8906592a5beffab84",
+                "url": "https://api.github.com/repos/laravel-enso/Core/zipball/0f46d066ca9678ba4530814f2ce0b22e5aca8cf5",
+                "reference": "0f46d066ca9678ba4530814f2ce0b22e5aca8cf5",
                 "shasum": ""
             },
             "require": {
@@ -1856,7 +1856,7 @@
                 "vue-bulma",
                 "vue-spa"
             ],
-            "time": "2019-03-16T07:11:25+00:00"
+            "time": "2019-03-18T10:15:53+00:00"
         },
         {
             "name": "laravel-enso/dataexport",
@@ -2863,16 +2863,16 @@
         },
         {
             "name": "laravel-enso/people",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/People.git",
-                "reference": "844b8413f5de7c7d2368e761e01f5d003b1316cd"
+                "reference": "98544eb7ec8807d89ec53aa2e7f44076fec9d9d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/People/zipball/844b8413f5de7c7d2368e761e01f5d003b1316cd",
-                "reference": "844b8413f5de7c7d2368e761e01f5d003b1316cd",
+                "url": "https://api.github.com/repos/laravel-enso/People/zipball/98544eb7ec8807d89ec53aa2e7f44076fec9d9d8",
+                "reference": "98544eb7ec8807d89ec53aa2e7f44076fec9d9d8",
                 "shasum": ""
             },
             "require": {
@@ -2919,7 +2919,7 @@
                 "people",
                 "person-management"
             ],
-            "time": "2019-03-16T07:21:27+00:00"
+            "time": "2019-03-17T10:38:39+00:00"
         },
         {
             "name": "laravel-enso/permissionmanager",
@@ -3029,16 +3029,16 @@
         },
         {
             "name": "laravel-enso/rolemanager",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/RoleManager.git",
-                "reference": "e712e9e90b8d3d6286c638001fb750df6a0471c1"
+                "reference": "febc175fcedca047fdbb78d36f89b89ee10673e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/RoleManager/zipball/e712e9e90b8d3d6286c638001fb750df6a0471c1",
-                "reference": "e712e9e90b8d3d6286c638001fb750df6a0471c1",
+                "url": "https://api.github.com/repos/laravel-enso/RoleManager/zipball/febc175fcedca047fdbb78d36f89b89ee10673e2",
+                "reference": "febc175fcedca047fdbb78d36f89b89ee10673e2",
                 "shasum": ""
             },
             "require": {
@@ -3086,7 +3086,7 @@
                 "role-manager",
                 "rolemanager"
             ],
-            "time": "2019-03-08T15:30:55+00:00"
+            "time": "2019-03-19T04:58:16+00:00"
         },
         {
             "name": "laravel-enso/searchable",
@@ -5322,22 +5322,22 @@
         },
         {
             "name": "pusher/pusher-php-server",
-            "version": "v3.3.1",
+            "version": "v3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pusher/pusher-http-php.git",
-                "reference": "2279bcd21a608a76f9be1fe0675aa2dd1efb2fa0"
+                "reference": "9093be6934e2e5129bd66322fc28d8b65794e58c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pusher/pusher-http-php/zipball/2279bcd21a608a76f9be1fe0675aa2dd1efb2fa0",
-                "reference": "2279bcd21a608a76f9be1fe0675aa2dd1efb2fa0",
+                "url": "https://api.github.com/repos/pusher/pusher-http-php/zipball/9093be6934e2e5129bd66322fc28d8b65794e58c",
+                "reference": "9093be6934e2e5129bd66322fc28d8b65794e58c",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
                 "paragonie/sodium_compat": "^1.6",
-                "php": "^5.4 || ^7.0",
+                "php": ">=5.4 <7.3",
                 "psr/log": "^1.0"
             },
             "require-dev": {
@@ -5372,7 +5372,7 @@
                 "rest",
                 "trigger"
             ],
-            "time": "2019-01-18T12:10:21+00:00"
+            "time": "2019-03-13T17:36:04+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -6451,7 +6451,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "BackEndTea@gmail.com"
+                    "email": "backendtea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
