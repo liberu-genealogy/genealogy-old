@@ -883,10 +883,10 @@
     bulma "^0.7.2"
     vue "^2.5.16"
 
-"@enso-ui/tables@^1.0.0", "@enso-ui/tables@^1.0.17":
-  version "1.0.24"
-  resolved "https://registry.yarnpkg.com/@enso-ui/tables/-/tables-1.0.24.tgz#7be7e5b1044a1d8ddfd109c3ce734b0caab10a1c"
-  integrity sha512-lnQggN8FJVm/V9fsOYM4Ha/oot2/9UOFAWZoy6Ys6yPcA+5IpWpYgwnr9e7iVELEbFCMAVHvonajvMWJoy1q8A==
+"@enso-ui/tables@^1.0.0", "@enso-ui/tables@^1.0.17", "@enso-ui/tables@^1.0.26":
+  version "1.0.26"
+  resolved "https://registry.yarnpkg.com/@enso-ui/tables/-/tables-1.0.26.tgz#89a78c108f4ee1bc51a295702db66587ff265523"
+  integrity sha512-wQRyTIWl70Vb8ubWhLQw9thfv66DF/BXxozunUHlhqLFues6Bq0jgt8TCpFyPLQG8gxBDK4rfi5sFt9znejT1Q==
   dependencies:
     "@enso-ui/directives" "^1.0.4"
     "@enso-ui/dropdown" "^1.0.15"
