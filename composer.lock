@@ -732,16 +732,16 @@
         },
         {
             "name": "erusev/parsedown",
-            "version": "1.7.1",
+            "version": "v1.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/erusev/parsedown.git",
-                "reference": "92e9c27ba0e74b8b028b111d1b6f956a15c01fc1"
+                "reference": "d60bcdc46978357759ecb13cb4b078da783f8faf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown/zipball/92e9c27ba0e74b8b028b111d1b6f956a15c01fc1",
-                "reference": "92e9c27ba0e74b8b028b111d1b6f956a15c01fc1",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/d60bcdc46978357759ecb13cb4b078da783f8faf",
+                "reference": "d60bcdc46978357759ecb13cb4b078da783f8faf",
                 "shasum": ""
             },
             "require": {
@@ -774,7 +774,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2018-03-08T01:11:30+00:00"
+            "time": "2019-03-17T17:19:46+00:00"
         },
         {
             "name": "fideloper/proxy",
@@ -3526,16 +3526,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.8.4",
+            "version": "v5.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "d651f8bd25c6baf7ae4913bc51f02849fad4e925"
+                "reference": "791992e20efdf043ac3c2d989025d48d648821de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/d651f8bd25c6baf7ae4913bc51f02849fad4e925",
-                "reference": "d651f8bd25c6baf7ae4913bc51f02849fad4e925",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/791992e20efdf043ac3c2d989025d48d648821de",
+                "reference": "791992e20efdf043ac3c2d989025d48d648821de",
                 "shasum": ""
             },
             "require": {
@@ -3669,7 +3669,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2019-03-12T13:33:14+00:00"
+            "time": "2019-03-19T14:20:36+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -6451,7 +6451,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "BackEndTea@gmail.com"
+                    "email": "backendtea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
