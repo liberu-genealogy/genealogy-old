@@ -3193,21 +3193,20 @@
         },
         {
             "name": "laravel-enso/structuremanager",
-            "version": "3.0.3",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/StructureManager.git",
-                "reference": "77195cde103886b04d871ff3bf527e3ca4a33c4d"
+                "reference": "7fcd11e7dad34d1ec608496c64efdb834144948a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/StructureManager/zipball/77195cde103886b04d871ff3bf527e3ca4a33c4d",
-                "reference": "77195cde103886b04d871ff3bf527e3ca4a33c4d",
+                "url": "https://api.github.com/repos/laravel-enso/StructureManager/zipball/7fcd11e7dad34d1ec608496c64efdb834144948a",
+                "reference": "7fcd11e7dad34d1ec608496c64efdb834144948a",
                 "shasum": ""
             },
             "require": {
                 "laravel-enso/core": "4.0.*",
-                "laravel-enso/helpers": "1.10.*",
                 "laravel-enso/menumanager": "3.0.*",
                 "laravel-enso/permissionmanager": "3.0.*",
                 "laravel-enso/rolemanager": "3.0.*",
@@ -3246,7 +3245,7 @@
                 "laravel-enso",
                 "structuremanager"
             ],
-            "time": "2019-03-21T10:50:38+00:00"
+            "time": "2019-03-09T07:52:44+00:00"
         },
         {
             "name": "laravel-enso/teams",
