@@ -2,6 +2,22 @@
     "routePrefix": "relationship",
     "sections": [{
         "columns": 2,
-        "fields": []
+        "fields": [{
+            "label": "Name",
+            "name": "name",
+            "value": null,
+            "meta": {
+                "type": "input",
+                "content": "text"
+            }
+        }, {
+            "label": "Description",
+            "name": "description",
+            "value": null,
+            "meta": {
+                "type": "input",
+                "content": "text"
+            }
+        }]
     }]
 }
