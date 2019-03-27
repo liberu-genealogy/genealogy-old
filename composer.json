@@ -9,7 +9,7 @@
         "fideloper/proxy": "~4.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel-enso/controlpanelapi": "^2.1",
-        "laravel-enso/core": "4.0.*",
+        "laravel-enso/core": "4.1.*",
         "laravel-enso/examples": "^1.1",
         "laravel/horizon": "^3.0",
         "laravel/framework": "5.8.*",
