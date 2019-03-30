@@ -46,7 +46,7 @@
         "@enso-ui/forms": "^1.0.20",
         "@enso-ui/mixins": "^1.0.3",
         "@enso-ui/select": "^1.0.23",
-        "@enso-ui/tables": "^1.0.24",
+        "@enso-ui/tables": "^1.0.30",
         "@enso-ui/themes": "^1.0.19",
         "@enso-ui/transitions": "^1.0.10",
         "@enso-ui/ui": "github:enso-ui/ui",
