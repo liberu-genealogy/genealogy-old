@@ -1,5 +1,70 @@
 ## Laravel Enso's Changelog
 
+### 3.1.1
+
+- fixes typo in calendar
+- fixes comment tag notifications
+- improves data import cell sanitization
+- improves new operation handling in `IO.vue`
+- improves slot exposure in forms
+- fixes bug that was preventing hiding sections without visible fields
+- adds back submit button animation in forms
+- fixes selected value handling in vue select when using objects
+
+To upgrade:
+
+- remove `v-click-outside` from extracted vendors in `webpack.mix.js` and from `package.json`
+- `yarn upgrade && composer update && yarn run dev`
+
+### 3.1.0
+
+#### Changes
+
+- improves custom fields in forms (slots). Now you can use the generic `FormField` in almost all cases. If you want to use the specific fields (`SelectField`, `InputField`...) don't forget to manually add the label
+- unifies `phpDateFormat` and `jsDateFormat` in one single `dateFormat` prop, in `config/enso/config.php`
+- adds a new Calendar package. Note that the calendar is still WiP
+- fixes various bugs
+- fixes npm dependencies to keep track of minor versions
+
+#### Upgrade steps:
+
+- update in `package.json` all `@enso-ui/...` deps by replacing the `^` with `~` (`"@enso-ui/accessories": "~1.0.0",`)
+- update in `package.json` the `form` and `ui` deps to
+```
+"@enso-ui/forms": "~1.1.0",
+"@enso-ui/ui": "~1.1.0",
+```
+- update in `composer.json` -> `"laravel-enso/core": "4.1.*"`
+- replace `phpDateFormat` and `jsDateFormat` with `dateFormat` in `config/enso/config.php`
+- search the whole frontend by `-field` and replace all the specific fields with `form-field` in custom forms. Don't forget to also import `FormField.vue` from the same location.
+- `composer update && yarn install && yarn upgrade`
+- `php artisan migrate`
+- publish the calendar config and provider if you need customisations (will be documented in the near future)
+- `yarn dev`
+
+### 3.0.3
+
+- adds `horizontalBar` chart type in Charts
+- exposes 
+- fixes a bug in Filemanager for filenames containing non ascii chars
+- adds a `responsive` boolean flag in vue table config / template that controls if the table is horizontally responsive / uses scroll
+- fixes the table stubs in StructureManager
+- fixes label generation in AddressManager when having `country_id` null
+- fixes `VueTable`'s unique `key` for `tr` that was causing table freezes in some edge cases
+- fixes `expanded` management in `VueTable`
+- adds missing `notificationEvents` in `Notifications`
+- adds `Tag` to export list in the select package
+
+### 3.0.2
+
+- fixes two bugs related to hidden rows (due to responsivity)
+- fixes closing modal on deleting from forms
+- minor other bug fixes
+- adds the `ProgressCircle` component (@enso-ui/progress-circle)
+- updates all deps
+- adds a `localisation(bool)` helper in `Enum`
+- adds an `option()` helper to the `Chart` builder
+
 ### 3.0.1
 
 - tens of small bugs fixed
@@ -556,7 +621,7 @@ if (mix.inProduction()) {
 ```php
 {
     Gate::define('viewHorizon', function ($user) {
-        return auth()->check() && user()->isAdmin();
+        return auth()->check() && $user->isAdmin();
     });
 }
 ```
@@ -577,6 +642,8 @@ if (mix.inProduction()) {
 
 - replace relative routeImporer imports such as: `import routeImporter from '../modules/importers/routeImporter;` with the package import : `import routeImporter from '@core-modules/importers/routeImporter';`
 
+- replace relative date-fns imports such as: `import format from '../../../modules/enso/plugins/date-fns/format;` with the package import `import format from '@core-modules/plugins/date-fns/format';` (notably `format`, `formatDistance`) 
+
 - comment out the import of the `tiptap-extensions` from `/resources/js/components/enso/vueforms/Wysiwyg.vue`
 
 - in `resources/images` ensure you have `earthlink.svg` & `enso-favicon.png`
@@ -586,7 +653,8 @@ within the route file you expose only the `path` and the `children` properties. 
 
 - move the icon imports from `resources/js/core/structure/menu/icons/app.js` to `resources/js/app.js`
 
-Migrate all pages/components by looking at the general changelog
+- Migrate all pages/components by looking at the [New Packages section](#new-packages).
+
 - inject `i18n` and `errorHandler` everywhere they're used
 
 ### 2.16.3
