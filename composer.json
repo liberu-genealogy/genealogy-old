@@ -24,7 +24,7 @@
         "laracasts/generators": "dev-develop",
         "mockery/mockery": "1.*",
         "nunomaduro/collision": "^2.0.0",
-        "phpunit/phpunit": "^7.0"
+        "phpunit/phpunit": "^8.0"
     },
     "repositories": [{
         "type": "git",
