@@ -38,7 +38,7 @@ Features will be improved gradually. Watch / star on GitHub or follow the projec
 
 3. Run `php artisan migrate --seed`
 
-4. Login into the project with user: `admin@localhost`, password: `password`
+4. Login into the project with user: `admin@modulargenealogy`, password: `password`
 
 
 ### Docker container support
