@@ -870,10 +870,10 @@
     bulma "^0.7.2"
     vue "^2.5.16"
 
-"@enso-ui/select@^1.0.0", "@enso-ui/select@^1.0.2", "@enso-ui/select@~1.0.2":
-  version "1.0.26"
-  resolved "https://registry.yarnpkg.com/@enso-ui/select/-/select-1.0.26.tgz#e9ddce201359ec6dad8c8e70ab7515c566a38856"
-  integrity sha512-8TrmXi5Ga40UgHuu7YPSXCnFS/OAAGvXjn/0Z5Ev2YtBJ8gqtLRBRN/ncrAm0HC3ORVrtpzJnUm4MMUf5rQKCg==
+"@enso-ui/select@^1.0.0", "@enso-ui/select@^1.0.2", "@enso-ui/select@~1.0.27":
+  version "1.0.27"
+  resolved "https://registry.yarnpkg.com/@enso-ui/select/-/select-1.0.27.tgz#8801720c27efe54666d4769acbf1a7c65b9f570a"
+  integrity sha512-9wvMdy3xNfo1fpi2tm8fCe4SepJDQZq3fgw8ettaTLpOWvlFpIQIGkgQizvLEK+ce1ColeOc2SPEO35zY7BHdQ==
   dependencies:
     "@enso-ui/directives" "^1.0.0"
     "@enso-ui/dropdown" "^1.0.0"
