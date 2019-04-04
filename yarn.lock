@@ -781,10 +781,10 @@
     vue "^2.5.16"
     vuex "^3.0.0"
 
-"@enso-ui/forms@^1.0.0", "@enso-ui/forms@^1.0.18", "@enso-ui/forms@~1.1.0":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@enso-ui/forms/-/forms-1.1.3.tgz#2f9b63b1772a2d6acf4ea96dbe4815132d862a30"
-  integrity sha512-Z1RYlTm3tAUSu/40OQVwhF19wOHnlJrI6CZVYnA/aJSYSKJEciWYzPPggS8m4aQKJ9AnuYtqGNzTy27+Od82iA==
+"@enso-ui/forms@^1.0.0", "@enso-ui/forms@^1.0.18", "@enso-ui/forms@~1.1.8":
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/@enso-ui/forms/-/forms-1.1.8.tgz#1569111b63b4168c217916845bc0623f85bb7781"
+  integrity sha512-5nlLZrZ8yZhJpPbM1bpoDUn6K5L8SppjtqcQR4Zp7ojTm91bTP8UfVJ/TpHy7cft04qxJ4FzVBy04t5tR750mg==
   dependencies:
     "@enso-ui/datepicker" "^1.0.5"
     "@enso-ui/directives" "^1.0.1"
