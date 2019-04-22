@@ -923,10 +923,10 @@
     bulma "^0.7.2"
     vue "^2.5.16"
 
-"@enso-ui/themes@~1.0.0":
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/@enso-ui/themes/-/themes-1.0.21.tgz#f7aca00d392526acb5fdb9654b59a7176ea24a03"
-  integrity sha512-VRWIATZGnn8xLwupAtNG/puOZiuCS8XxPYvpf/G5CqADEcSnb0ITkJGVPURIWfHW5s+BQXQ8kEXNkyMWt8Jv6A==
+"@enso-ui/themes@~1.0.23":
+  version "1.0.23"
+  resolved "https://registry.yarnpkg.com/@enso-ui/themes/-/themes-1.0.23.tgz#fb206697a2f4ad8edc51cb3c7f972fd5e1884e4f"
+  integrity sha512-ai3DUULtLvPnytuipPNIazFSQjrrtbMtfAzXx8C3asTkIrcf+gQopUFlYS4B7U9cGtXKdK6FoD9grg/nHvwgsw==
   dependencies:
     bulma "^0.7.2"
     bulma-extensions "^2.2.1"
