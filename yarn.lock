@@ -967,10 +967,10 @@
     lodash "^4.17.10"
     vue "^2.5.16"
 
-"@enso-ui/ui@~1.1.0":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@enso-ui/ui/-/ui-1.1.2.tgz#6333ac91360427e5907d40ccf75b6bae8cfdeab1"
-  integrity sha512-eQBfmEc706cSz71BmE2ELJUJYJhbJFOX/DuXK1e3RGQfUlJaXQ2sg58+sqeaxNGUGgE6ljmphvRHFsZD3jOohg==
+"@enso-ui/ui@~1.1.9":
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/@enso-ui/ui/-/ui-1.1.9.tgz#0f1ec1c55d858ad77db84e46cae42c79c6f7c05f"
+  integrity sha512-AH+9uk99A+ZzeBQwqAVv3eZBZFZfOrwbVRrPr0LAG3t3T0CQ6LYZJ3U+s8mCAw4rHzjm8bAyffbOiwqTdJ3AQQ==
   dependencies:
     "@enso-ui/accessories" "^1.0.0"
     "@enso-ui/bulma" "^1.0.0"
