@@ -62,7 +62,7 @@
         "opencollective": "^1.0.3",
         "opencollective-postinstall": "^2.0.0",
         "patch-package": "^6.0.2",
-        "popper.js": "^1.14.7",
+        "popper.js": "^1.15.0",
         "postinstall-postinstall": "^2.0.0",
         "pusher-js": "^4.2.2",
         "raven-js": "^3.26.2",
