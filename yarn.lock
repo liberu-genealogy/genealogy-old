@@ -967,10 +967,10 @@
     lodash "^4.17.10"
     vue "^2.5.16"
 
-"@enso-ui/ui@~1.1.0":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@enso-ui/ui/-/ui-1.1.2.tgz#6333ac91360427e5907d40ccf75b6bae8cfdeab1"
-  integrity sha512-eQBfmEc706cSz71BmE2ELJUJYJhbJFOX/DuXK1e3RGQfUlJaXQ2sg58+sqeaxNGUGgE6ljmphvRHFsZD3jOohg==
+"@enso-ui/ui@~1.1.10":
+  version "1.1.10"
+  resolved "https://registry.yarnpkg.com/@enso-ui/ui/-/ui-1.1.10.tgz#2b0ddf1d75a21ae5c6dc557ce843d9ecde46b820"
+  integrity sha512-ojbouGwGaRakUVaFOsn8P7fuzRmOClViH1P3KKwn0cVthL9YC99IXn8BvSnU9ui/VQlvk2bor2WcRXnLdTqaXw==
   dependencies:
     "@enso-ui/accessories" "^1.0.0"
     "@enso-ui/bulma" "^1.0.0"
@@ -989,14 +989,14 @@
     axios "^0.18"
     bulma "^0.7.2"
     date-fns "^2.0.0-alpha.7"
-    driver.js "^0.7.1"
+    driver.js "^0.9.5"
     favico.js "^0.3.10"
     flag-icon-css "^3.0.0"
-    highlight.js "^9.12.0"
-    laravel-echo "^1.4.0"
+    highlight.js "^9.15.0"
+    laravel-echo "^1.5.3"
     lodash "^4.17.11"
     pusher-js "^4.4.0"
-    raven-js "^3.26.2"
+    raven-js "^3.27.0"
     tooltip.js "^1.2.0"
     v-tooltip "^2.0.0-rc.32"
     video.js "^7.0.3"
@@ -2854,10 +2854,10 @@ dotenv@^4.0.0:
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-4.0.0.tgz#864ef1379aced55ce6f95debecdce179f7a0cd1d"
   integrity sha1-hk7xN5rO1Vzm+V3r7NzhefegzR0=
 
-driver.js@^0.7.1:
-  version "0.7.1"
-  resolved "https://registry.yarnpkg.com/driver.js/-/driver.js-0.7.1.tgz#3ca48a6503ca1723fa16d9a4f0e93698322c94c5"
-  integrity sha512-UMDkYEdqgeFrmZ5OpX0c44pE4bJSaitiRbATlxaTiLH7jmIU7dl+c5CHA+EJ/rn3qxvjGvfnON0tGJqH9tdLPg==
+driver.js@^0.9.5:
+  version "0.9.5"
+  resolved "https://registry.yarnpkg.com/driver.js/-/driver.js-0.9.5.tgz#ee8a8b6a7d3a49bab6f55cb5e25055837db6cda4"
+  integrity sha512-QIMRsXR+/HdN792vYdZziC2shtHuLMV/oVTsqExOP4YmKjR7wwY4l3n80SebhUcn7z8dG4aTXIhDUGQCOczPyw==
 
 dropzone@^5.5.1:
   version "5.5.1"
@@ -4153,7 +4153,7 @@ he@1.2.x, he@^1.1.0:
   resolved "https://registry.yarnpkg.com/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
 
-highlight.js@^9.12.0, highlight.js@~9.15.0:
+highlight.js@^9.12.0, highlight.js@^9.15.0, highlight.js@~9.15.0:
   version "9.15.6"
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.15.6.tgz#72d4d8d779ec066af9a17cb14360c3def0aa57c4"
   integrity sha512-zozTAWM1D6sozHo8kqhfYgsac+B+q0PmsjXeyDrYIHHcBN0zTVT66+s2GW1GZv7DbyaROdLXKdabwS/WqPyIdQ==
@@ -4977,7 +4977,7 @@ klaw-sync@^6.0.0:
   dependencies:
     graceful-fs "^4.1.11"
 
-laravel-echo@^1.4.0:
+laravel-echo@^1.5.3:
   version "1.5.3"
   resolved "https://registry.yarnpkg.com/laravel-echo/-/laravel-echo-1.5.3.tgz#4a810eff43fb09c9bdba74396ee028c7abd485f9"
   integrity sha512-CFm0Kruz2zqAwTFSA5X9X5BmIvXYEmrHhcVp5nu4uIdhyObHohWAUBNUD34J4QsIR2J4nGSzB+wi/wsACwlPcg==
@@ -7070,7 +7070,7 @@ range-parser@^1.0.3, range-parser@~1.2.0:
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
   integrity sha1-9JvmtIeJTdxA3MlKMi9hEJLgDV4=
 
-raven-js@^3.26.2:
+raven-js@^3.26.2, raven-js@^3.27.0:
   version "3.27.0"
   resolved "https://registry.yarnpkg.com/raven-js/-/raven-js-3.27.0.tgz#9f47c03e17933ce756e189f3669d49c441c1ba6e"
   integrity sha512-vChdOL+yzecfnGA+B5EhEZkJ3kY3KlMzxEhShKh6Vdtooyl0yZfYNFQfYzgMf2v4pyQa+OTZ5esTxxgOOZDHqw==
