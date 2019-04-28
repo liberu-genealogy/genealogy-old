@@ -618,10 +618,10 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@enso-ui/accessories@^1.0.0", "@enso-ui/accessories@^1.0.16", "@enso-ui/accessories@~1.0.0":
-  version "1.0.20"
-  resolved "https://registry.yarnpkg.com/@enso-ui/accessories/-/accessories-1.0.20.tgz#cafdf800e78d3e5c9dea85221bb0a09fb6ebffe8"
-  integrity sha512-qDwCfpxYFnIl/eH/KoBowpRUIBSCkj93bkJ4x28cQX4dtpMtEflR+HpvzKW5tUOaSk/90faceGN+qeje9Pb0Uw==
+"@enso-ui/accessories@^1.0.0", "@enso-ui/accessories@^1.0.16", "@enso-ui/accessories@~1.0.28":
+  version "1.0.28"
+  resolved "https://registry.yarnpkg.com/@enso-ui/accessories/-/accessories-1.0.28.tgz#58fce1524d6dbdf9b0dfb151f46fa465b787e689"
+  integrity sha512-nkPor78qr5pm8B7o+fAMuuo1T5ZOmM9SoPE2+bJ/7+xpNp09RSds6XM6c/JsNwUYmIpq+A9lEj0L6FSKPrazcA==
   dependencies:
     "@enso-ui/card" "^1.0.0"
     "@enso-ui/confirmation" "^1.0.0"
