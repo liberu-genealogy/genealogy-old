@@ -923,13 +923,14 @@
     bulma "^0.7.2"
     vue "^2.5.16"
 
-"@enso-ui/themes@~1.0.0":
-  version "1.0.21"
-  resolved "https://registry.yarnpkg.com/@enso-ui/themes/-/themes-1.0.21.tgz#f7aca00d392526acb5fdb9654b59a7176ea24a03"
-  integrity sha512-VRWIATZGnn8xLwupAtNG/puOZiuCS8XxPYvpf/G5CqADEcSnb0ITkJGVPURIWfHW5s+BQXQ8kEXNkyMWt8Jv6A==
+"@enso-ui/themes@~1.0.26":
+  version "1.0.26"
+  resolved "https://registry.yarnpkg.com/@enso-ui/themes/-/themes-1.0.26.tgz#3700e5b5ca905522c8feb16643e5e6c2c3f1016c"
+  integrity sha512-Vm2i/XpmKbp0Am9L1ReGoUbVnWrLeI/IkMlAFLxPj8wj56zL9qvp83JJeGTevleG1gAlZ3+BfqituC2hX1xeGw==
   dependencies:
     bulma "^0.7.2"
     bulma-extensions "^2.2.1"
+    bulma-rtl "^0.7.1"
     flatpickr "^4.5.0"
 
 "@enso-ui/toastr@^1.0.0":
@@ -1785,6 +1786,11 @@ bulma-extensions@^2.2.1:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/bulma-extensions/-/bulma-extensions-2.2.2.tgz#d46f11d1242a3fdc60a983afaea0b5e6c137362d"
   integrity sha512-6hV6SiRT7RZD5+scn/462Dz8RURRgxuvlCy+R5LH9U6FLn7Q/sInAA5VdK8c4DKpxZjfsipp72EAKM7yzgzRig==
+
+bulma-rtl@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/bulma-rtl/-/bulma-rtl-0.7.1.tgz#7e589f3cd8ffcdf8fb507996279a812ebf79f91f"
+  integrity sha512-Gjsmzc3ZAzIAqfCguFxlkFn4OKFhNZ5G67GdQScxhJHyOPYEYWdsKbPG9N+mau4BjkV6pNrNxzDonxiXyGHT5A==
 
 bulma@^0.7.2:
   version "0.7.4"
