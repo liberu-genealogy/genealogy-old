@@ -1688,16 +1688,16 @@
         },
         {
             "name": "laravel-enso/companies",
-            "version": "2.0.4",
+            "version": "2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/Companies.git",
-                "reference": "ae2cef81aefeb23788da7222e44cac72bc4f529e"
+                "reference": "cb7e5e6aae096d6b9576bc4ef0071d25b98da124"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/Companies/zipball/ae2cef81aefeb23788da7222e44cac72bc4f529e",
-                "reference": "ae2cef81aefeb23788da7222e44cac72bc4f529e",
+                "url": "https://api.github.com/repos/laravel-enso/Companies/zipball/cb7e5e6aae096d6b9576bc4ef0071d25b98da124",
+                "reference": "cb7e5e6aae096d6b9576bc4ef0071d25b98da124",
                 "shasum": ""
             },
             "require": {
@@ -1747,7 +1747,7 @@
                 "company-management",
                 "laravel-enso"
             ],
-            "time": "2019-04-28T07:27:52+00:00"
+            "time": "2019-05-02T15:15:20+00:00"
         },
         {
             "name": "laravel-enso/controlpanelapi",
@@ -1813,16 +1813,16 @@
         },
         {
             "name": "laravel-enso/core",
-            "version": "4.2.5",
+            "version": "4.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/Core.git",
-                "reference": "3f93735fbb55891ad0163204b92beb4e7e2301af"
+                "reference": "3d0c48819704d746ff9846e7b2c356e5e9c3b03a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/Core/zipball/3f93735fbb55891ad0163204b92beb4e7e2301af",
-                "reference": "3f93735fbb55891ad0163204b92beb4e7e2301af",
+                "url": "https://api.github.com/repos/laravel-enso/Core/zipball/3d0c48819704d746ff9846e7b2c356e5e9c3b03a",
+                "reference": "3d0c48819704d746ff9846e7b2c356e5e9c3b03a",
                 "shasum": ""
             },
             "require": {
@@ -1911,7 +1911,7 @@
                 "vue-bulma",
                 "vue-spa"
             ],
-            "time": "2019-05-02T08:42:45+00:00"
+            "time": "2019-05-05T18:03:56+00:00"
         },
         {
             "name": "laravel-enso/dataexport",
@@ -2274,16 +2274,16 @@
         },
         {
             "name": "laravel-enso/formbuilder",
-            "version": "3.0.9",
+            "version": "3.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/FormBuilder.git",
-                "reference": "b55b7bc5b52ba2864cdf62e73b30de6e30ac6bff"
+                "reference": "26b3a963033a7b75fb9591c0043436d555ced0b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/FormBuilder/zipball/b55b7bc5b52ba2864cdf62e73b30de6e30ac6bff",
-                "reference": "b55b7bc5b52ba2864cdf62e73b30de6e30ac6bff",
+                "url": "https://api.github.com/repos/laravel-enso/FormBuilder/zipball/26b3a963033a7b75fb9591c0043436d555ced0b2",
+                "reference": "26b3a963033a7b75fb9591c0043436d555ced0b2",
                 "shasum": ""
             },
             "require": {
@@ -2324,7 +2324,7 @@
                 "form-builder",
                 "laravel-enso"
             ],
-            "time": "2019-04-27T09:44:59+00:00"
+            "time": "2019-05-05T09:02:20+00:00"
         },
         {
             "name": "laravel-enso/helpers",
@@ -6579,7 +6579,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "backendtea@gmail.com"
+                    "email": "BackEndTea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
