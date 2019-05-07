@@ -50,7 +50,7 @@
         "@enso-ui/themes": "~1.0.0",
         "@enso-ui/transitions": "~1.0.1",
         "@enso-ui/ui": "~1.2.0",
-        "@fortawesome/fontawesome-free": "^5.2.0",
+        "@fortawesome/fontawesome-free": "^5.8.2",
         "@fortawesome/fontawesome-svg-core": "^1.2.2",
         "@fortawesome/free-brands-svg-icons": "^5.2.0",
         "@fortawesome/free-regular-svg-icons": "^5.2.0",
