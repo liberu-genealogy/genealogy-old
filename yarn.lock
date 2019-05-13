@@ -8742,6 +8742,14 @@ v-tooltip@^2.0.0-rc.32, v-tooltip@^2.0.0-rc.33:
     popper.js "^1.15.0"
     vue-resize "^0.4.5"
 
+v-tooltip@^3.0.0-alpha.7:
+  version "3.0.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/v-tooltip/-/v-tooltip-3.0.0-alpha.7.tgz#99e201939dddc6c7e3beef8329f76da1d7a3d02b"
+  integrity sha512-BJM1tYm/Idsa4xjY8nsZ/o329qEhnpAnKTI5fG2r5/aEFtmno9HJKT8+lmbHGpZhOnV8NCCg/9PuiCFPOT7/Lw==
+  dependencies:
+    popper.js "^1.15.0"
+    vue-resize "^0.4.5"
+
 v8-compile-cache@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.0.2.tgz#a428b28bb26790734c4fc8bc9fa106fccebf6a6c"
