@@ -1344,6 +1344,7 @@
                 "laravel-enso",
                 "logging"
             ],
+            "abandoned": "laravel-enso/action-logger",
             "time": "2019-04-28T07:25:33+00:00"
         },
         {
@@ -1400,6 +1401,7 @@
                 "laravel-enso",
                 "logging"
             ],
+            "abandoned": "laravel-enso/activity-log",
             "time": "2019-04-28T07:25:49+00:00"
         },
         {
@@ -1463,6 +1465,7 @@
                 "laravel-enso",
                 "manager"
             ],
+            "abandoned": "laravel-enso/addresses",
             "time": "2019-05-01T07:43:26+00:00"
         },
         {
@@ -1522,6 +1525,7 @@
                 "avatarmanager",
                 "laravel-enso"
             ],
+            "abandoned": "laravel-enso/avatars",
             "time": "2019-04-28T07:27:08+00:00"
         },
         {
@@ -1684,6 +1688,7 @@
                 "commentsmanager",
                 "laravel-enso"
             ],
+            "abandoned": "laravel-enso/comments",
             "time": "2019-04-28T07:27:32+00:00"
         },
         {
@@ -1809,6 +1814,7 @@
                 "laravel",
                 "laravel-enso"
             ],
+            "abandoned": "laravel-enso/control-panel-api",
             "time": "2019-04-28T07:28:10+00:00"
         },
         {
@@ -1969,6 +1975,7 @@
                 "enso-exports",
                 "laravel-enso"
             ],
+            "abandoned": "laravel-enso/data-export",
             "time": "2019-04-28T09:49:27+00:00"
         },
         {
@@ -2039,6 +2046,7 @@
                 "excel-importer",
                 "laravel-enso"
             ],
+            "abandoned": "laravel-enso/data-import",
             "time": "2019-04-30T15:04:08+00:00"
         },
         {
@@ -2157,6 +2165,7 @@
                 "file-uploader",
                 "laravel-enso"
             ],
+            "abandoned": "laravel-enso/documents",
             "time": "2019-04-28T07:30:39+00:00"
         },
         {
@@ -2270,6 +2279,7 @@
                 "filemanager",
                 "laravel-enso"
             ],
+            "abandoned": "laravel-enso/files",
             "time": "2019-04-28T07:30:58+00:00"
         },
         {
@@ -2324,6 +2334,7 @@
                 "form-builder",
                 "laravel-enso"
             ],
+            "abandoned": "laravel-enso/forms",
             "time": "2019-05-05T09:02:20+00:00"
         },
         {
@@ -2419,6 +2430,7 @@
                 "historytracker",
                 "laravel-enso"
             ],
+            "abandoned": "laravel-enso/history-tracker",
             "time": "2019-03-17T09:48:26+00:00"
         },
         {
@@ -2475,6 +2487,7 @@
                 "laravel-enso",
                 "vidoes"
             ],
+            "abandoned": "laravel-enso/how-to",
             "time": "2019-04-28T07:31:17+00:00"
         },
         {
@@ -2529,6 +2542,7 @@
                 "imagetransformer",
                 "laravel-enso"
             ],
+            "abandoned": "laravel-enso/image-transformer",
             "time": "2019-03-08T13:04:31+00:00"
         },
         {
@@ -2750,6 +2764,7 @@
                 "log-manager",
                 "logmanager"
             ],
+            "abandoned": "laravel-enso/logs",
             "time": "2019-04-28T09:14:21+00:00"
         },
         {
@@ -2810,6 +2825,7 @@
                 "menu-manager",
                 "menumanager"
             ],
+            "abandoned": "laravel-enso/menus",
             "time": "2019-04-28T09:15:34+00:00"
         },
         {
@@ -3042,6 +3058,7 @@
                 "laravel-permissions",
                 "permission-manager"
             ],
+            "abandoned": "laravel-enso/permissions",
             "time": "2019-04-28T09:17:29+00:00"
         },
         {
@@ -3149,6 +3166,7 @@
                 "role-manager",
                 "rolemanager"
             ],
+            "abandoned": "laravel-enso/roles",
             "time": "2019-04-28T09:18:01+00:00"
         },
         {
@@ -3311,6 +3329,7 @@
                 "laravel-enso",
                 "structuremanager"
             ],
+            "abandoned": "laravel-enso/cli",
             "time": "2019-04-29T09:08:41+00:00"
         },
         {
@@ -3419,6 +3438,7 @@
                 "track-who",
                 "trackwho"
             ],
+            "abandoned": "laravel-enso/track-who",
             "time": "2019-04-24T05:14:11+00:00"
         },
         {
@@ -3479,6 +3499,7 @@
                 "tutorial-manager",
                 "tutorialmanager"
             ],
+            "abandoned": "laravel-enso/tutorials",
             "time": "2019-04-28T09:21:11+00:00"
         },
         {
@@ -3588,6 +3609,7 @@
                 "datatable",
                 "laravel-enso"
             ],
+            "abandoned": "laravel-enso/tables",
             "time": "2019-05-10T07:42:14+00:00"
         },
         {
@@ -3808,16 +3830,16 @@
         },
         {
             "name": "laravel/telescope",
-            "version": "v2.0.4",
+            "version": "v2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "eb3f6f8337050cc31fe1a1164240fe205e33b167"
+                "reference": "a3f15809dd1de4759d44c159e99b9474d8b83e94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/eb3f6f8337050cc31fe1a1164240fe205e33b167",
-                "reference": "eb3f6f8337050cc31fe1a1164240fe205e33b167",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/a3f15809dd1de4759d44c159e99b9474d8b83e94",
+                "reference": "a3f15809dd1de4759d44c159e99b9474d8b83e94",
                 "shasum": ""
             },
             "require": {
@@ -3866,7 +3888,7 @@
                 "laravel",
                 "monitoring"
             ],
-            "time": "2019-03-28T05:06:56+00:00"
+            "time": "2019-06-03T11:40:15+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -7032,16 +7054,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v4.2.8",
+            "version": "v4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "3c4084cb1537c0e2ad41aad622bbf55a44a5c9ce"
+                "reference": "2fd2ecf7913fb96f0c2e941ca15bb702184c6574"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/3c4084cb1537c0e2ad41aad622bbf55a44a5c9ce",
-                "reference": "3c4084cb1537c0e2ad41aad622bbf55a44a5c9ce",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/2fd2ecf7913fb96f0c2e941ca15bb702184c6574",
+                "reference": "2fd2ecf7913fb96f0c2e941ca15bb702184c6574",
                 "shasum": ""
             },
             "require": {
@@ -7070,7 +7092,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.2-dev"
+                    "dev-master": "4.3-dev"
                 }
             },
             "autoload": {
@@ -7104,7 +7126,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2019-05-01T12:55:36+00:00"
+            "time": "2019-05-01T12:55:49+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
