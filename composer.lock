@@ -1344,6 +1344,7 @@
                 "laravel-enso",
                 "logging"
             ],
+            "abandoned": "laravel-enso/action-logger",
             "time": "2019-04-28T07:25:33+00:00"
         },
         {
@@ -1400,6 +1401,7 @@
                 "laravel-enso",
                 "logging"
             ],
+            "abandoned": "laravel-enso/activity-log",
             "time": "2019-04-28T07:25:49+00:00"
         },
         {
@@ -1463,6 +1465,7 @@
                 "laravel-enso",
                 "manager"
             ],
+            "abandoned": "laravel-enso/addresses",
             "time": "2019-05-01T07:43:26+00:00"
         },
         {
@@ -1522,6 +1525,7 @@
                 "avatarmanager",
                 "laravel-enso"
             ],
+            "abandoned": "laravel-enso/avatars",
             "time": "2019-04-28T07:27:08+00:00"
         },
         {
@@ -1684,6 +1688,7 @@
                 "commentsmanager",
                 "laravel-enso"
             ],
+            "abandoned": "laravel-enso/comments",
             "time": "2019-04-28T07:27:32+00:00"
         },
         {
@@ -1809,20 +1814,21 @@
                 "laravel",
                 "laravel-enso"
             ],
+            "abandoned": "laravel-enso/control-panel-api",
             "time": "2019-04-28T07:28:10+00:00"
         },
         {
             "name": "laravel-enso/core",
-            "version": "4.2.6",
+            "version": "4.2.7",
             "source": {
                 "type": "git",
-                "url": "https://github.com/laravel-enso/Core.git",
-                "reference": "3d0c48819704d746ff9846e7b2c356e5e9c3b03a"
+                "url": "https://github.com/laravel-enso/core.git",
+                "reference": "54ba6b43e8a2e35b3b83f217641f579a38ad8298"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/Core/zipball/3d0c48819704d746ff9846e7b2c356e5e9c3b03a",
-                "reference": "3d0c48819704d746ff9846e7b2c356e5e9c3b03a",
+                "url": "https://api.github.com/repos/laravel-enso/core/zipball/54ba6b43e8a2e35b3b83f217641f579a38ad8298",
+                "reference": "54ba6b43e8a2e35b3b83f217641f579a38ad8298",
                 "shasum": ""
             },
             "require": {
@@ -1911,7 +1917,7 @@
                 "vue-bulma",
                 "vue-spa"
             ],
-            "time": "2019-05-05T18:03:56+00:00"
+            "time": "2019-06-18T11:37:36+00:00"
         },
         {
             "name": "laravel-enso/dataexport",
@@ -1969,6 +1975,7 @@
                 "enso-exports",
                 "laravel-enso"
             ],
+            "abandoned": "laravel-enso/data-export",
             "time": "2019-04-28T09:49:27+00:00"
         },
         {
@@ -2039,6 +2046,7 @@
                 "excel-importer",
                 "laravel-enso"
             ],
+            "abandoned": "laravel-enso/data-import",
             "time": "2019-04-30T15:04:08+00:00"
         },
         {
@@ -2157,6 +2165,7 @@
                 "file-uploader",
                 "laravel-enso"
             ],
+            "abandoned": "laravel-enso/documents",
             "time": "2019-04-28T07:30:39+00:00"
         },
         {
@@ -2270,6 +2279,7 @@
                 "filemanager",
                 "laravel-enso"
             ],
+            "abandoned": "laravel-enso/files",
             "time": "2019-04-28T07:30:58+00:00"
         },
         {
@@ -2324,6 +2334,7 @@
                 "form-builder",
                 "laravel-enso"
             ],
+            "abandoned": "laravel-enso/forms",
             "time": "2019-05-05T09:02:20+00:00"
         },
         {
@@ -2419,6 +2430,7 @@
                 "historytracker",
                 "laravel-enso"
             ],
+            "abandoned": "laravel-enso/history-tracker",
             "time": "2019-03-17T09:48:26+00:00"
         },
         {
@@ -2475,6 +2487,7 @@
                 "laravel-enso",
                 "vidoes"
             ],
+            "abandoned": "laravel-enso/how-to",
             "time": "2019-04-28T07:31:17+00:00"
         },
         {
@@ -2529,6 +2542,7 @@
                 "imagetransformer",
                 "laravel-enso"
             ],
+            "abandoned": "laravel-enso/image-transformer",
             "time": "2019-03-08T13:04:31+00:00"
         },
         {
@@ -2750,6 +2764,7 @@
                 "log-manager",
                 "logmanager"
             ],
+            "abandoned": "laravel-enso/logs",
             "time": "2019-04-28T09:14:21+00:00"
         },
         {
@@ -2810,6 +2825,7 @@
                 "menu-manager",
                 "menumanager"
             ],
+            "abandoned": "laravel-enso/menus",
             "time": "2019-04-28T09:15:34+00:00"
         },
         {
@@ -3042,6 +3058,7 @@
                 "laravel-permissions",
                 "permission-manager"
             ],
+            "abandoned": "laravel-enso/permissions",
             "time": "2019-04-28T09:17:29+00:00"
         },
         {
@@ -3092,16 +3109,16 @@
         },
         {
             "name": "laravel-enso/rolemanager",
-            "version": "3.0.5",
+            "version": "3.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/RoleManager.git",
-                "reference": "f02d68f728e430ea4197617e5b22ec97abb76de2"
+                "reference": "df9235bbfaa5f69eeeb9ebb91910316928c9a987"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/RoleManager/zipball/f02d68f728e430ea4197617e5b22ec97abb76de2",
-                "reference": "f02d68f728e430ea4197617e5b22ec97abb76de2",
+                "url": "https://api.github.com/repos/laravel-enso/RoleManager/zipball/df9235bbfaa5f69eeeb9ebb91910316928c9a987",
+                "reference": "df9235bbfaa5f69eeeb9ebb91910316928c9a987",
                 "shasum": ""
             },
             "require": {
@@ -3149,7 +3166,8 @@
                 "role-manager",
                 "rolemanager"
             ],
-            "time": "2019-04-28T09:18:01+00:00"
+            "abandoned": "laravel-enso/roles",
+            "time": "2019-05-12T08:20:50+00:00"
         },
         {
             "name": "laravel-enso/searchable",
@@ -3311,6 +3329,7 @@
                 "laravel-enso",
                 "structuremanager"
             ],
+            "abandoned": "laravel-enso/cli",
             "time": "2019-04-29T09:08:41+00:00"
         },
         {
@@ -3419,6 +3438,7 @@
                 "track-who",
                 "trackwho"
             ],
+            "abandoned": "laravel-enso/track-who",
             "time": "2019-04-24T05:14:11+00:00"
         },
         {
@@ -3479,6 +3499,7 @@
                 "tutorial-manager",
                 "tutorialmanager"
             ],
+            "abandoned": "laravel-enso/tutorials",
             "time": "2019-04-28T09:21:11+00:00"
         },
         {
@@ -3588,6 +3609,7 @@
                 "datatable",
                 "laravel-enso"
             ],
+            "abandoned": "laravel-enso/tables",
             "time": "2019-05-10T07:42:14+00:00"
         },
         {
@@ -4209,16 +4231,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.17.1",
+            "version": "2.19.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "96acbc0c03782e8115156dd4dd8b736267155066"
+                "reference": "adcad3f3af52d0ad4ad7b05f43aa58243b6ca67b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/96acbc0c03782e8115156dd4dd8b736267155066",
-                "reference": "96acbc0c03782e8115156dd4dd8b736267155066",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/adcad3f3af52d0ad4ad7b05f43aa58243b6ca67b",
+                "reference": "adcad3f3af52d0ad4ad7b05f43aa58243b6ca67b",
                 "shasum": ""
             },
             "require": {
@@ -4265,7 +4287,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2019-04-27T18:04:27+00:00"
+            "time": "2019-06-07T09:56:45+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -4476,16 +4498,16 @@
         },
         {
             "name": "paragonie/sodium_compat",
-            "version": "v1.9.4",
+            "version": "v1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/sodium_compat.git",
-                "reference": "91c1362bb0084c02828d43bbc9ee38831297329e"
+                "reference": "228a9fc64cf4ba84c7967c1076d94209db03e0ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/sodium_compat/zipball/91c1362bb0084c02828d43bbc9ee38831297329e",
-                "reference": "91c1362bb0084c02828d43bbc9ee38831297329e",
+                "url": "https://api.github.com/repos/paragonie/sodium_compat/zipball/228a9fc64cf4ba84c7967c1076d94209db03e0ee",
+                "reference": "228a9fc64cf4ba84c7967c1076d94209db03e0ee",
                 "shasum": ""
             },
             "require": {
@@ -4554,7 +4576,7 @@
                 "secret-key cryptography",
                 "side-channel resistant"
             ],
-            "time": "2019-05-09T23:30:36+00:00"
+            "time": "2019-05-13T16:04:50+00:00"
         },
         {
             "name": "php-http/client-common",
@@ -6049,20 +6071,27 @@
         },
         {
             "name": "symfony/contracts",
-            "version": "v1.1.0",
+            "version": "v1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/contracts.git",
-                "reference": "d3636025e8253c6144358ec0a62773cae588395b"
+                "reference": "2d19b12caccbd80cf0c85624dc87b7021a0df1d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/contracts/zipball/d3636025e8253c6144358ec0a62773cae588395b",
-                "reference": "d3636025e8253c6144358ec0a62773cae588395b",
+                "url": "https://api.github.com/repos/symfony/contracts/zipball/2d19b12caccbd80cf0c85624dc87b7021a0df1d5",
+                "reference": "2d19b12caccbd80cf0c85624dc87b7021a0df1d5",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1.3"
+            },
+            "replace": {
+                "symfony/cache-contracts": "self.version",
+                "symfony/event-dispatcher-contracts": "self.version",
+                "symfony/http-client-contracts": "self.version",
+                "symfony/service-contracts": "self.version",
+                "symfony/translation-contracts": "self.version"
             },
             "require-dev": {
                 "psr/cache": "^1.0",
@@ -6072,11 +6101,12 @@
             "suggest": {
                 "psr/cache": "When using the Cache contracts",
                 "psr/container": "When using the Service contracts",
-                "symfony/cache-contracts-implementation": "",
+                "psr/event-dispatcher": "When using the EventDispatcher contracts",
+                "symfony/cache-implementation": "",
                 "symfony/event-dispatcher-implementation": "",
-                "symfony/http-client-contracts-implementation": "",
-                "symfony/service-contracts-implementation": "",
-                "symfony/translation-contracts-implementation": ""
+                "symfony/http-client-implementation": "",
+                "symfony/service-implementation": "",
+                "symfony/translation-implementation": ""
             },
             "type": "library",
             "extra": {
@@ -6116,7 +6146,7 @@
                 "interoperability",
                 "standards"
             ],
-            "time": "2019-04-27T14:29:50+00:00"
+            "time": "2019-06-05T13:28:50+00:00"
         },
         {
             "name": "symfony/css-selector",
@@ -6832,16 +6862,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v4.2.8",
+            "version": "v4.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "8cf39fb4ccff793340c258ee7760fd40bfe745fe"
+                "reference": "856d35814cf287480465bb7a6c413bb7f5f5e69c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/8cf39fb4ccff793340c258ee7760fd40bfe745fe",
-                "reference": "8cf39fb4ccff793340c258ee7760fd40bfe745fe",
+                "url": "https://api.github.com/repos/symfony/process/zipball/856d35814cf287480465bb7a6c413bb7f5f5e69c",
+                "reference": "856d35814cf287480465bb7a6c413bb7f5f5e69c",
                 "shasum": ""
             },
             "require": {
@@ -6850,7 +6880,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.2-dev"
+                    "dev-master": "4.3-dev"
                 }
             },
             "autoload": {
@@ -6877,7 +6907,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2019-04-10T16:20:36+00:00"
+            "time": "2019-05-30T16:10:05+00:00"
         },
         {
             "name": "symfony/routing",
@@ -6957,22 +6987,22 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v4.2.8",
+            "version": "v4.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "181a426dd129cb496f12d7e7555f6d0b37a7615b"
+                "reference": "5dda505e5f65d759741dfaf4e54b36010a4b57aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/181a426dd129cb496f12d7e7555f6d0b37a7615b",
-                "reference": "181a426dd129cb496f12d7e7555f6d0b37a7615b",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/5dda505e5f65d759741dfaf4e54b36010a4b57aa",
+                "reference": "5dda505e5f65d759741dfaf4e54b36010a4b57aa",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1.3",
-                "symfony/contracts": "^1.0.2",
-                "symfony/polyfill-mbstring": "~1.0"
+                "symfony/polyfill-mbstring": "~1.0",
+                "symfony/translation-contracts": "^1.1.2"
             },
             "conflict": {
                 "symfony/config": "<3.4",
@@ -6980,7 +7010,7 @@
                 "symfony/yaml": "<3.4"
             },
             "provide": {
-                "symfony/translation-contracts-implementation": "1.0"
+                "symfony/translation-implementation": "1.0"
             },
             "require-dev": {
                 "psr/log": "~1.0",
@@ -6990,6 +7020,7 @@
                 "symfony/finder": "~2.8|~3.0|~4.0",
                 "symfony/http-kernel": "~3.4|~4.0",
                 "symfony/intl": "~3.4|~4.0",
+                "symfony/service-contracts": "^1.1.2",
                 "symfony/var-dumper": "~3.4|~4.0",
                 "symfony/yaml": "~3.4|~4.0"
             },
@@ -7001,7 +7032,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.2-dev"
+                    "dev-master": "4.3-dev"
                 }
             },
             "autoload": {
@@ -7028,7 +7059,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2019-05-01T12:55:36+00:00"
+            "time": "2019-06-03T20:27:40+00:00"
         },
         {
             "name": "symfony/var-dumper",
