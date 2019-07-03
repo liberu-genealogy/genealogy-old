@@ -47,7 +47,7 @@
         "@enso-ui/mixins": "~1.0.0",
         "@enso-ui/select": "~1.0.2",
         "@enso-ui/tables": "~1.0.0",
-        "@enso-ui/themes": "~1.0.0",
+        "@enso-ui/themes": "~1.0.29",
         "@enso-ui/transitions": "~1.0.1",
         "@enso-ui/ui": "~1.2.0",
         "@fortawesome/fontawesome-free": "^5.2.0",
