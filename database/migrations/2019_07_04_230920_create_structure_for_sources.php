@@ -19,9 +19,8 @@ class CreateStructureForsources extends Migration
     ];
 
     protected $menu = [
-        'name' => 'Sources', 'icon' => 'book', 'route' => 'source.index', 'order_index' => 999, 'has_children' => false
+        'name' => 'Sources', 'icon' => 'book', 'route' => 'source.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected $parentMenu = '';
 }
-

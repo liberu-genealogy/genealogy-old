@@ -5,7 +5,7 @@ namespace App\Tables\Builders;
 use App\source;
 use LaravelEnso\Tables\app\Services\Table;
 
-class sourceTable extends Table
+class SourceTable extends Table
 {
     protected $templatePath = __DIR__.'/../Templates/sources.json';
 

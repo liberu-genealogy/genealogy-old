@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Note;
 
 use App\note;
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\noteForm;
+use Illuminate\Routing\Controller;
 
 class Edit extends Controller
 {

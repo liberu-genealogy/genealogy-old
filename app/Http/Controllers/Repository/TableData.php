@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Repository;
 
-use App\Tables\Builders\repositoryTable;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Tables\app\Traits\Data;
+use App\Tables\Builders\repositoryTable;
 
 class TableData extends Controller
 {

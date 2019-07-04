@@ -19,9 +19,8 @@ class CreateStructureFornotes extends Migration
     ];
 
     protected $menu = [
-        'name' => 'Notes', 'icon' => 'book', 'route' => 'note.index', 'order_index' => 999, 'has_children' => false
+        'name' => 'Notes', 'icon' => 'book', 'route' => 'note.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected $parentMenu = '';
 }
-

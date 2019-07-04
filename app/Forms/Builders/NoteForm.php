@@ -5,7 +5,7 @@ namespace App\Forms\Builders;
 use App\note;
 use LaravelEnso\Forms\app\Services\Form;
 
-class noteForm
+class NoteForm
 {
     private const TemplatePath = __DIR__.'/../Templates/note.json';
 

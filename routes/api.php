@@ -20,8 +20,6 @@ Route::middleware(['auth', 'core'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{citation}', 'Show')->name('show');
-
-
             });
         Route::namespace('Note')
             ->prefix('note')->as('note.')
@@ -41,7 +39,6 @@ Route::middleware(['auth', 'core'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{note}', 'Show')->name('show');
-
             });
 
         Route::namespace('Repository')
@@ -62,7 +59,6 @@ Route::middleware(['auth', 'core'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{repository}', 'Show')->name('show');
-
             });
 
         Route::namespace('Source')
@@ -83,7 +79,5 @@ Route::middleware(['auth', 'core'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{source}', 'Show')->name('show');
-
             });
-
     });

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Repository;
 
-use App\Tables\Builders\repositoryTable;
 use Illuminate\Routing\Controller;
+use App\Tables\Builders\repositoryTable;
 use LaravelEnso\Tables\app\Traits\Excel;
 
 class ExportExcel extends Controller

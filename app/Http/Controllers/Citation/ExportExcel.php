@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Citation;
 
-use App\Tables\Builders\CitationTable;
 use Illuminate\Routing\Controller;
+use App\Tables\Builders\CitationTable;
 use LaravelEnso\Tables\app\Traits\Excel;
 
 class ExportExcel extends Controller

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Note;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\noteForm;
+use Illuminate\Routing\Controller;
 
 class Create extends Controller
 {
