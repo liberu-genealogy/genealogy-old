@@ -1,0 +1,15 @@
+{
+    "name": "Citation",
+    "routePrefix": "citation",
+    "crtNo": true,
+    "buttons": ["excel", "create", "show", "edit", "destroy"],
+    "columns": [{
+        "label": "Id",
+        "name": "dtRowId",
+        "data": "citations.dtRowId",
+        "meta": [
+            "searchable",
+            "sortable"
+        ]
+    }]
+}
