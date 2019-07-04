@@ -11,8 +11,8 @@ class noteTable extends Table
 
     public function query()
     {
-        return note::selectRaw('
-            notes.id as "dtRowId"
+        return Note::selectRaw('
+            notes.id as "dtRowId", name, description, is_active, date, created_at
         ');
     }
 }

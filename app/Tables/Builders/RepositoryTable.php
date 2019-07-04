@@ -11,8 +11,8 @@ class repositoryTable extends Table
 
     public function query()
     {
-        return repository::selectRaw('
-            repositories.id as "dtRowId"
+        return Repository::selectRaw('
+            repositories.id as "dtRowId", name, description, is_active, date, created_at
         ');
     }
 }

@@ -4,12 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\CommentsManager\app\Traits\Comments;
+use LaravelEnso\AddressesManager\app\Traits\Addresses;
 
-class Citation extends Model
+class Repository extends Model
 {
-    use Comments;
+    use Comments, Addresses;
 
-    protected $fillable = ['name', 'description', 'repository_id', 'volume_id', 'page_id', 'is_active', 'confidence', 'source_id'];
+    protected $fillable = ['name', 'description', 'type_id', 'is_active'];
 
     protected $attributes = ['is_active' => false];
 
@@ -17,6 +18,6 @@ class Citation extends Model
 
     public function sources()
     {
-        return $this->belongsToMany(Source::class);
+        return $this->hasMany(Source::class);
     }
 }

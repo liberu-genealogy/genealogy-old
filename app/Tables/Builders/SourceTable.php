@@ -11,8 +11,8 @@ class sourceTable extends Table
 
     public function query()
     {
-        return source::selectRaw('
-            sources.id as "dtRowId"
+        return Source::selectRaw('
+            sources.id as "dtRowId", name, description, is_active, date, created_at
         ');
     }
 }

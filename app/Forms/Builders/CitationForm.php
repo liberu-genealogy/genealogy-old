@@ -3,9 +3,10 @@
 namespace App\Forms\Builders;
 
 use App\Citation;
+use App\Source;
 use LaravelEnso\Forms\app\Services\Form;
 
-class CitationForm
+class citationForm
 {
     private const TemplatePath = __DIR__.'/../Templates/citation.json';
 
@@ -18,11 +19,13 @@ class CitationForm
 
     public function create()
     {
-        return $this->form->create();
+        return $this->form->options('source_id', Source::get(['sources.name', 'sources.id']))
+            ->create();
     }
 
     public function edit(Citation $citation)
     {
-        return $this->form->edit($citation);
+        return $this->form->options('source_id', Source::get(['sources.name', 'sources.id']))
+            ->edit($citation);
     }
 }

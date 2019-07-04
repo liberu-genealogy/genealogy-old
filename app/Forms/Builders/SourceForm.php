@@ -2,12 +2,12 @@
 
 namespace App\Forms\Builders;
 
-use App\repository;
+use App\source;
 use LaravelEnso\Forms\app\Services\Form;
 
-class repositoryForm
+class SourceForm
 {
-    private const TemplatePath = __DIR__.'/../Templates/repository.json';
+    private const TemplatePath = __DIR__.'/../Templates/source.json';
 
     private $form;
 
@@ -21,8 +21,8 @@ class repositoryForm
         return $this->form->create();
     }
 
-    public function edit(repository $repository)
+    public function edit(source $source)
     {
-        return $this->form->edit($repository);
+        return $this->form->edit($source);
     }
 }

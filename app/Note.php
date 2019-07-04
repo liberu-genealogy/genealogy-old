@@ -5,18 +5,18 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\CommentsManager\app\Traits\Comments;
 
-class Citation extends Model
+class Note extends Model
 {
     use Comments;
 
-    protected $fillable = ['name', 'description', 'repository_id', 'volume_id', 'page_id', 'is_active', 'confidence', 'source_id'];
+    protected $fillable = ['name', 'description', 'is_active', 'type_id'];
 
     protected $attributes = ['is_active' => false];
 
     protected $casts = ['is_active' => 'boolean'];
 
-    public function sources()
+    public function individuals()
     {
-        return $this->belongsToMany(Source::class);
+        return $this->belongsToMany(Individual::class);
     }
 }

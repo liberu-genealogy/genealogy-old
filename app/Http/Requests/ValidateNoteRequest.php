@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ValidateCitationRequest extends FormRequest
+class ValidateNoteRequest extends FormRequest
 {
     public function authorize()
     {
@@ -13,17 +13,14 @@ class ValidateCitationRequest extends FormRequest
 
     public function rules()
     {
-        $citation = $this->route('citation');
+        $note = $this->route('note');
 
         return [
-            'description' => 'required|max:50',
             'name' => 'required|max:50',
+            'description' => 'required|max:50',
             'date' => 'required|max:24',
+            'type_id' => 'required|max:12',
             'is_active' => 'boolean',
-            'source_id' => 'required|exists:sources,id',
-            'volume_id' => 'required|max:5',
-            'page_id' => 'required|max:5',
-            'confidence' => 'required|max:50',
         ];
     }
 }
