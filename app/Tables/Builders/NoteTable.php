@@ -5,7 +5,7 @@ namespace App\Tables\Builders;
 use App\note;
 use LaravelEnso\Tables\app\Services\Table;
 
-class noteTable extends Table
+class NoteTable extends Table
 {
     protected $templatePath = __DIR__.'/../Templates/notes.json';
 

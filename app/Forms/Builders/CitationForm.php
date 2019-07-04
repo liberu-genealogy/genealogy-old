@@ -2,11 +2,11 @@
 
 namespace App\Forms\Builders;
 
-use App\Citation;
 use App\Source;
+use App\Citation;
 use LaravelEnso\Forms\app\Services\Form;
 
-class citationForm
+class CitationForm
 {
     private const TemplatePath = __DIR__.'/../Templates/citation.json';
 

@@ -5,7 +5,7 @@ namespace App\Tables\Builders;
 use App\repository;
 use LaravelEnso\Tables\app\Services\Table;
 
-class repositoryTable extends Table
+class RepositoryTable extends Table
 {
     protected $templatePath = __DIR__.'/../Templates/repositories.json';
 

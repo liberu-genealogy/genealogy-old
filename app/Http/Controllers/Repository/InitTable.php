@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Repository;
 
-use App\Tables\Builders\repositoryTable;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Tables\app\Traits\Init;
+use App\Tables\Builders\repositoryTable;
 
 class InitTable extends Controller
 {

@@ -1,4 +1,5 @@
 <?php
+
 $factory->define(App\Citation::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->sentence,
