@@ -3,7 +3,7 @@ version: '3'
 services:
   php:
     build: ./docker
-    container_name: enso
+    container_name: genealogy
     ports:
       - 8000:80
     volumes:
@@ -14,7 +14,7 @@ services:
 
   mysqldb:
     image: mysql:5.7.21
-    container_name: enso-${DB_CONNECTION}
+    container_name: genealogy-${DB_CONNECTION}
     restart: always
     env_file:
       - .env
@@ -30,12 +30,12 @@ services:
 
 #  myadmin:
 #    image: phpmyadmin/phpmyadmin:4.7
-#    container_name: enso-phpmyadmin
+#    container_name: genealogy-phpmyadmin
 #    ports:
 #      - 8081:80
 #    environment:
 #      - PMA_ARBITRARY=1
-#      - PMA_HOST=enso-${DB_CONNECTION}
+#      - PMA_HOST=genealogy-${DB_CONNECTION}
 #    restart: always
 #    depends_on:
 #      - mysqldb
