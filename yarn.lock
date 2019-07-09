@@ -842,10 +842,10 @@
     bulma "^0.7.2"
     vue "^2.5.16"
 
-"@enso-ui/mixins@^1.0.0", "@enso-ui/mixins@~1.0.0":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@enso-ui/mixins/-/mixins-1.0.7.tgz#248809b6291bdd88053392e0d38823acdb905e88"
-  integrity sha512-bZ5pVhIfqW+QJgyRvVRyyS9cEH6OohrmH2fgM6g8U5P9tUfHsQFDsaWxeTbpzL3In1gzaZsJp2Mw8J0F9tPPSQ==
+"@enso-ui/mixins@^1.0.0", "@enso-ui/mixins@~1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@enso-ui/mixins/-/mixins-1.0.8.tgz#4d2fb48bc3d2e93055c7a538e43263a102c67fad"
+  integrity sha512-CTHfYETLNIXfdhW9IcMgKzAVw/nu0Eg9uv1qyOuwlmxII2uEGOOd+0mNHerTJUL1V82hysmVgIu4+q7v63gXyg==
   dependencies:
     vue "^2.5.16"
 
