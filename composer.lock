@@ -3834,16 +3834,16 @@
         },
         {
             "name": "laravel/horizon",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "03cfd34e84a83e537df1d640d196193e69c229b4"
+                "reference": "f65d71bb2f2d14442b76c7d34ffe3854776ae6ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/03cfd34e84a83e537df1d640d196193e69c229b4",
-                "reference": "03cfd34e84a83e537df1d640d196193e69c229b4",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/f65d71bb2f2d14442b76c7d34ffe3854776ae6ef",
+                "reference": "f65d71bb2f2d14442b76c7d34ffe3854776ae6ef",
                 "shasum": ""
             },
             "require": {
@@ -3899,7 +3899,7 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2019-07-02T15:31:06+00:00"
+            "time": "2019-07-11T21:11:11+00:00"
         },
         {
             "name": "laravel/telescope",
