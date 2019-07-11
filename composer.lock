@@ -2269,16 +2269,16 @@
         },
         {
             "name": "laravel-enso/examples",
-            "version": "1.2.4",
+            "version": "1.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/examples.git",
-                "reference": "e2d5385c5e7f2ddecef645fe2476cf190362169d"
+                "reference": "0e3744861d02ac35150746eea872694e47c9e3af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/examples/zipball/e2d5385c5e7f2ddecef645fe2476cf190362169d",
-                "reference": "e2d5385c5e7f2ddecef645fe2476cf190362169d",
+                "url": "https://api.github.com/repos/laravel-enso/examples/zipball/0e3744861d02ac35150746eea872694e47c9e3af",
+                "reference": "0e3744861d02ac35150746eea872694e47c9e3af",
                 "shasum": ""
             },
             "require": {
@@ -2317,7 +2317,7 @@
                 "examples",
                 "laravel-enso"
             ],
-            "time": "2019-05-22T09:38:35+00:00"
+            "time": "2019-07-11T07:56:48+00:00"
         },
         {
             "name": "laravel-enso/files",
