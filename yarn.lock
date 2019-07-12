@@ -642,17 +642,19 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@enso-ui/accessories@^1.0.0", "@enso-ui/accessories@^1.0.16", "@enso-ui/accessories@~1.0.0":
-  version "1.0.34"
-  resolved "https://registry.yarnpkg.com/@enso-ui/accessories/-/accessories-1.0.34.tgz#26d71f2acfceccc82ab7168ba86fb237a961ecce"
-  integrity sha512-7f5GdrPxVP0IL+AfB1ykZjMspOdtsISuM81JvTnEczTbaugIBcBXXWMJ6m8J/ntccfH7zsnTz8enJ+ZHV9PZnQ==
+"@enso-ui/accessories@^1.0.0", "@enso-ui/accessories@^1.0.16", "@enso-ui/accessories@~1.0.39":
+  version "1.0.39"
+  resolved "https://registry.yarnpkg.com/@enso-ui/accessories/-/accessories-1.0.39.tgz#a2e04d5c5d4336ccd87f30e20fea375f7397dc8c"
+  integrity sha512-fwKEn0JmEaXVmVjaDWO/6lUyL34Rvjpr8H78ycX5NXZFd6P1PtMEj7MzZWaLjS0DLnNTQlbIAVru5CeZatuKpA==
   dependencies:
     "@enso-ui/card" "^1.0.0"
     "@enso-ui/confirmation" "^1.0.0"
     "@enso-ui/directives" "^1.0.0"
     "@enso-ui/forms" "^1.0.0"
+    "@enso-ui/mixins" "^1.0.7"
     "@enso-ui/modal" "^1.0.0"
     "@enso-ui/tabs" "^1.0.5"
+    "@enso-ui/transitions" "^1.0.5"
     "@enso-ui/uploader" "^1.0.3"
     "@fortawesome/fontawesome-svg-core" "^1.2.2"
     "@fortawesome/free-solid-svg-icons" "^5.2.0"
@@ -842,10 +844,10 @@
     bulma "^0.7.2"
     vue "^2.5.16"
 
-"@enso-ui/mixins@^1.0.0", "@enso-ui/mixins@~1.0.0":
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/@enso-ui/mixins/-/mixins-1.0.7.tgz#248809b6291bdd88053392e0d38823acdb905e88"
-  integrity sha512-bZ5pVhIfqW+QJgyRvVRyyS9cEH6OohrmH2fgM6g8U5P9tUfHsQFDsaWxeTbpzL3In1gzaZsJp2Mw8J0F9tPPSQ==
+"@enso-ui/mixins@^1.0.0", "@enso-ui/mixins@^1.0.7", "@enso-ui/mixins@~1.0.0":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@enso-ui/mixins/-/mixins-1.0.8.tgz#4d2fb48bc3d2e93055c7a538e43263a102c67fad"
+  integrity sha512-CTHfYETLNIXfdhW9IcMgKzAVw/nu0Eg9uv1qyOuwlmxII2uEGOOd+0mNHerTJUL1V82hysmVgIu4+q7v63gXyg==
   dependencies:
     vue "^2.5.16"
 
@@ -971,7 +973,7 @@
     bulma "^0.7.2"
     vue "^2.5.16"
 
-"@enso-ui/transitions@^1.0.0", "@enso-ui/transitions@~1.0.1":
+"@enso-ui/transitions@^1.0.0", "@enso-ui/transitions@^1.0.5", "@enso-ui/transitions@~1.0.1":
   version "1.0.13"
   resolved "https://registry.yarnpkg.com/@enso-ui/transitions/-/transitions-1.0.13.tgz#b1d0ab82eb9d40552028689dd7d547cae672f20d"
   integrity sha512-tjY2+HlTKHC9MV+WJCTMk3rMzcqM6zwh9DG+uz1qpCABBNGDxfKfCuMRgNSqnTzg2HS48HIHWUZ6s8JJR12xcw==
