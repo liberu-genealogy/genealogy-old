@@ -1617,9 +1617,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Enso Calendar",
@@ -1671,9 +1671,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Server-side data builder for Chart.js, with a VueJS component for the frontend.",
@@ -1727,9 +1727,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Cli dependency for Laravel Enso",
@@ -1847,9 +1847,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Person management dependency for Laravel Enso",
@@ -2069,9 +2069,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Structure for holding Laravel-Enso exports",
@@ -2129,15 +2129,15 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 },
                 {
                     "name": "Mihai Ocneanu",
+                    "role": "Developer",
                     "email": "mihai.ocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Excel Importer dependency for Laravel Enso",
@@ -2252,9 +2252,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Documents Manager for Laravel Enso",
@@ -2421,9 +2421,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Form builder for Laravel Enso",
@@ -2473,9 +2473,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Helper classes dependency for Laravel Enso",
@@ -2517,9 +2517,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Model history tracking dependency for Laravel Enso",
@@ -2790,9 +2790,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Localisation management dependency for Laravel Enso",
@@ -2903,9 +2903,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Menu Manager dependency for Laravel Enso",
@@ -3009,9 +3009,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "User actions logger dependency for Laravel Enso",
@@ -3126,9 +3126,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Person management dependency for Laravel Enso",
@@ -3186,9 +3186,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Permissions dependency for Laravel Enso",
@@ -3292,9 +3292,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Role Manager dependency for Laravel Enso",
@@ -3350,9 +3350,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Searchable dependency for Laravel Enso",
@@ -3458,9 +3458,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Data Table library with server-side processing and a VueJS component",
@@ -3617,9 +3617,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Tutorial management dependency for Laravel Enso",
@@ -3670,9 +3670,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Prevents update conflicts using the optimistic lock pattern in Laravel",
@@ -4077,9 +4077,9 @@
             "authors": [
                 {
                     "name": "Bayu Hendra Winata",
+                    "role": "Developer",
                     "email": "uyab.exe@gmail.com",
-                    "homepage": "http://id-laravel.com",
-                    "role": "Developer"
+                    "homepage": "http://id-laravel.com"
                 }
             ],
             "description": "Turn name, email, and any other string into beautiful, initial-based avatar.",
@@ -5996,9 +5996,9 @@
             "authors": [
                 {
                     "name": "Freek Van der Herten",
+                    "role": "Developer",
                     "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
+                    "homepage": "https://spatie.be"
                 }
             ],
             "description": "Optimize images in your Laravel app",
@@ -7474,8 +7474,8 @@
             "authors": [
                 {
                     "name": "Tijs Verkoyen",
-                    "email": "css_to_inline_styles@verkoyen.eu",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "css_to_inline_styles@verkoyen.eu"
                 }
             ],
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
@@ -8126,16 +8126,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.4.1",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "6fb502c23885701a991b0bba974b1a8eb6673577"
+                "reference": "cde50e6720a39fdacb240159d3eea6865d51fd96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/6fb502c23885701a991b0bba974b1a8eb6673577",
-                "reference": "6fb502c23885701a991b0bba974b1a8eb6673577",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/cde50e6720a39fdacb240159d3eea6865d51fd96",
+                "reference": "cde50e6720a39fdacb240159d3eea6865d51fd96",
                 "shasum": ""
             },
             "require": {
@@ -8169,8 +8169,8 @@
             "authors": [
                 {
                     "name": "Filipe Dobreira",
-                    "homepage": "https://github.com/filp",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "homepage": "https://github.com/filp"
                 }
             ],
             "description": "php error handling for cool kids",
@@ -8183,7 +8183,7 @@
                 "throwable",
                 "whoops"
             ],
-            "time": "2019-07-04T09:00:00+00:00"
+            "time": "2019-08-07T09:00:00+00:00"
         },
         {
             "name": "friendsofphp/php-cs-fixer",
@@ -8543,9 +8543,9 @@
             "authors": [
                 {
                     "name": "Phil Bennett",
+                    "role": "Developer",
                     "email": "philipobenito@gmail.com",
-                    "homepage": "http://www.philipobenito.com",
-                    "role": "Developer"
+                    "homepage": "http://www.philipobenito.com"
                 }
             ],
             "description": "A fast and intuitive dependency injection container.",
@@ -9147,18 +9147,18 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "arne@blankerts.de"
                 },
                 {
                     "name": "Sebastian Heuer",
-                    "email": "sebastian@phpeople.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpeople.de"
                 },
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Library for handling version information and constraints",
@@ -9408,8 +9408,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "A tool for quickly measuring the size of a PHP project.",
@@ -9576,8 +9576,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Library that provides collection, processing, and rendering functionality for PHP code coverage information.",
@@ -9627,8 +9627,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "FilterIterator implementation that filters files based on a list of suffixes.",
@@ -9669,8 +9669,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Simple template engine.",
@@ -9718,8 +9718,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Utility class for timing",
@@ -9849,8 +9849,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "The PHP Unit Testing framework.",
@@ -10224,8 +10224,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "FinderFacade is a convenience wrapper for Symfony's Finder component.",
@@ -10505,8 +10505,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
@@ -11606,8 +11606,8 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "arne@blankerts.de"
                 }
             ],
             "description": "The classes contained within this repository extend the standard DOM to use exceptions at all occasions of errors instead of PHP warnings or notices. They also add various custom methods and shortcuts for convenience and to simplify the usage of DOM.",
