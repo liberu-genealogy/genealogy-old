@@ -1462,16 +1462,16 @@
         },
         {
             "name": "laravel-enso/addresses",
-            "version": "3.1.6",
+            "version": "3.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/addresses.git",
-                "reference": "6cb3ffd181ef62574180241627ca7afd72ecc75f"
+                "reference": "c9f57a49fa5047d57d8d73a5b61d88e480b4d4b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/addresses/zipball/6cb3ffd181ef62574180241627ca7afd72ecc75f",
-                "reference": "6cb3ffd181ef62574180241627ca7afd72ecc75f",
+                "url": "https://api.github.com/repos/laravel-enso/addresses/zipball/c9f57a49fa5047d57d8d73a5b61d88e480b4d4b2",
+                "reference": "c9f57a49fa5047d57d8d73a5b61d88e480b4d4b2",
                 "shasum": ""
             },
             "require": {
@@ -1502,15 +1502,15 @@
             ],
             "authors": [
                 {
-                    "name": "Adrian Ocneanu",
-                    "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "name": "Mihai",
+                    "role": "Developer",
+                    "email": "mihai.ocneanu@gmail.com"
                 },
                 {
-                    "name": "Mihai",
-                    "email": "mihai.ocneanu@gmail.com",
-                    "role": "Developer"
+                    "name": "Adrian Ocneanu",
+                    "role": "Developer",
+                    "email": "aocneanu@gmail.com",
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Addresses Manager for Laravel Enso",
@@ -1520,7 +1520,7 @@
                 "laravel-enso",
                 "manager"
             ],
-            "time": "2019-05-30T12:35:50+00:00"
+            "time": "2019-08-08T07:25:03+00:00"
         },
         {
             "name": "laravel-enso/avatars",
@@ -1583,20 +1583,21 @@
         },
         {
             "name": "laravel-enso/calendar",
-            "version": "1.1.5",
+            "version": "1.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/calendar.git",
-                "reference": "242b42c377a909a4f47b4d58d147c7b148858d93"
+                "reference": "74254cfbbba65b297c46c45c612d448a62a9c98d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/calendar/zipball/242b42c377a909a4f47b4d58d147c7b148858d93",
-                "reference": "242b42c377a909a4f47b4d58d147c7b148858d93",
+                "url": "https://api.github.com/repos/laravel-enso/calendar/zipball/74254cfbbba65b297c46c45c612d448a62a9c98d",
+                "reference": "74254cfbbba65b297c46c45c612d448a62a9c98d",
                 "shasum": ""
             },
             "require": {
                 "laravel-enso/core": "4.3.*",
+                "laravel-enso/helpers": "1.11.*",
                 "php": ">=7.1.3"
             },
             "type": "library",
@@ -1617,9 +1618,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Enso Calendar",
@@ -1629,7 +1630,7 @@
                 "events",
                 "reminders"
             ],
-            "time": "2019-06-21T15:14:53+00:00"
+            "time": "2019-08-10T10:40:01+00:00"
         },
         {
             "name": "laravel-enso/charts",
@@ -1671,9 +1672,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Server-side data builder for Chart.js, with a VueJS component for the frontend.",
@@ -1686,16 +1687,16 @@
         },
         {
             "name": "laravel-enso/cli",
-            "version": "3.1.7",
+            "version": "3.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/cli.git",
-                "reference": "3fab75e0b78f3673e06e22748fb137b4f557c156"
+                "reference": "af99057a7a2e5f7f258d8904002686e6aed4745a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/cli/zipball/3fab75e0b78f3673e06e22748fb137b4f557c156",
-                "reference": "3fab75e0b78f3673e06e22748fb137b4f557c156",
+                "url": "https://api.github.com/repos/laravel-enso/cli/zipball/af99057a7a2e5f7f258d8904002686e6aed4745a",
+                "reference": "af99057a7a2e5f7f258d8904002686e6aed4745a",
                 "shasum": ""
             },
             "require": {
@@ -1727,9 +1728,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Cli dependency for Laravel Enso",
@@ -1739,20 +1740,20 @@
                 "enso-helper",
                 "laravel-enso"
             ],
-            "time": "2019-05-29T05:19:57+00:00"
+            "time": "2019-07-23T12:07:22+00:00"
         },
         {
             "name": "laravel-enso/comments",
-            "version": "3.1.1",
+            "version": "3.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/comments.git",
-                "reference": "dc5b5af0f08a660223da024764275f28631be114"
+                "reference": "153197098b01f3e4a584b0a9189ec24bfdba5018"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/comments/zipball/dc5b5af0f08a660223da024764275f28631be114",
-                "reference": "dc5b5af0f08a660223da024764275f28631be114",
+                "url": "https://api.github.com/repos/laravel-enso/comments/zipball/153197098b01f3e4a584b0a9189ec24bfdba5018",
+                "reference": "153197098b01f3e4a584b0a9189ec24bfdba5018",
                 "shasum": ""
             },
             "require": {
@@ -1796,20 +1797,20 @@
                 "comments-manager",
                 "laravel-enso"
             ],
-            "time": "2019-05-17T12:20:36+00:00"
+            "time": "2019-07-15T03:56:29+00:00"
         },
         {
             "name": "laravel-enso/companies",
-            "version": "2.1.7",
+            "version": "2.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/companies.git",
-                "reference": "98b19924681e9968c57078686cdda11be37e4cba"
+                "reference": "c5ee5076c21a4934aeffd4c816dec8a85f0b4886"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/companies/zipball/98b19924681e9968c57078686cdda11be37e4cba",
-                "reference": "98b19924681e9968c57078686cdda11be37e4cba",
+                "url": "https://api.github.com/repos/laravel-enso/companies/zipball/c5ee5076c21a4934aeffd4c816dec8a85f0b4886",
+                "reference": "c5ee5076c21a4934aeffd4c816dec8a85f0b4886",
                 "shasum": ""
             },
             "require": {
@@ -1847,9 +1848,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Person management dependency for Laravel Enso",
@@ -1859,7 +1860,7 @@
                 "company-management",
                 "laravel-enso"
             ],
-            "time": "2019-05-22T08:46:36+00:00"
+            "time": "2019-08-09T06:05:13+00:00"
         },
         {
             "name": "laravel-enso/control-panel-api",
@@ -1924,16 +1925,16 @@
         },
         {
             "name": "laravel-enso/core",
-            "version": "4.3.16",
+            "version": "4.3.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/core.git",
-                "reference": "862fe0826a141dfeed48ccdf1fd50c9ee3b2fff7"
+                "reference": "68388013f19d139a5e6ddf3f8adc9506cb5e79d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/core/zipball/862fe0826a141dfeed48ccdf1fd50c9ee3b2fff7",
-                "reference": "862fe0826a141dfeed48ccdf1fd50c9ee3b2fff7",
+                "url": "https://api.github.com/repos/laravel-enso/core/zipball/68388013f19d139a5e6ddf3f8adc9506cb5e79d2",
+                "reference": "68388013f19d139a5e6ddf3f8adc9506cb5e79d2",
                 "shasum": ""
             },
             "require": {
@@ -1997,21 +1998,21 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 },
                 {
                     "name": "Mihai Ocneanu",
+                    "role": "Developer",
                     "email": "mihai.ocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 },
                 {
                     "name": "Ionut Pirvulescu",
+                    "role": "Developer",
                     "email": "ionut.pirvulescu1@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Main requirement & dependency aggregator for Laravel Enso",
@@ -2023,7 +2024,7 @@
                 "vue-bulma",
                 "vue-spa"
             ],
-            "time": "2019-05-29T07:45:29+00:00"
+            "time": "2019-08-10T10:26:12+00:00"
         },
         {
             "name": "laravel-enso/data-export",
@@ -2069,9 +2070,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Structure for holding Laravel-Enso exports",
@@ -2085,16 +2086,16 @@
         },
         {
             "name": "laravel-enso/data-import",
-            "version": "4.1.12",
+            "version": "4.1.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/data-import.git",
-                "reference": "51e46d8be7e4ca93e9d2edb142d79d0e49d10027"
+                "reference": "42af881d019e62f6e101ab0f01e1b3cc0cb639e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/data-import/zipball/51e46d8be7e4ca93e9d2edb142d79d0e49d10027",
-                "reference": "51e46d8be7e4ca93e9d2edb142d79d0e49d10027",
+                "url": "https://api.github.com/repos/laravel-enso/data-import/zipball/42af881d019e62f6e101ab0f01e1b3cc0cb639e5",
+                "reference": "42af881d019e62f6e101ab0f01e1b3cc0cb639e5",
                 "shasum": ""
             },
             "require": {
@@ -2129,15 +2130,15 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 },
                 {
                     "name": "Mihai Ocneanu",
+                    "role": "Developer",
                     "email": "mihai.ocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Excel Importer dependency for Laravel Enso",
@@ -2148,20 +2149,20 @@
                 "excel-importer",
                 "laravel-enso"
             ],
-            "time": "2019-06-25T10:06:39+00:00"
+            "time": "2019-07-05T10:38:39+00:00"
         },
         {
             "name": "laravel-enso/discussions",
-            "version": "2.1.1",
+            "version": "2.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/discussions.git",
-                "reference": "82139fb28db3a5092311595b39e54c3d37a669df"
+                "reference": "ba17c8290c05f5a227b95d1358906f3fb698e443"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/discussions/zipball/82139fb28db3a5092311595b39e54c3d37a669df",
-                "reference": "82139fb28db3a5092311595b39e54c3d37a669df",
+                "url": "https://api.github.com/repos/laravel-enso/discussions/zipball/ba17c8290c05f5a227b95d1358906f3fb698e443",
+                "reference": "ba17c8290c05f5a227b95d1358906f3fb698e443",
                 "shasum": ""
             },
             "require": {
@@ -2204,20 +2205,20 @@
                 "discussions",
                 "laravel-enso"
             ],
-            "time": "2019-05-20T12:17:46+00:00"
+            "time": "2019-07-15T05:53:12+00:00"
         },
         {
             "name": "laravel-enso/documents",
-            "version": "3.1.1",
+            "version": "3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/documents.git",
-                "reference": "b12be50d20c57ccb2fd2fb37efdef357a11a1464"
+                "reference": "56633d3390e069e4dbb57a187aad31a3671a9535"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/documents/zipball/b12be50d20c57ccb2fd2fb37efdef357a11a1464",
-                "reference": "b12be50d20c57ccb2fd2fb37efdef357a11a1464",
+                "url": "https://api.github.com/repos/laravel-enso/documents/zipball/56633d3390e069e4dbb57a187aad31a3671a9535",
+                "reference": "56633d3390e069e4dbb57a187aad31a3671a9535",
                 "shasum": ""
             },
             "require": {
@@ -2252,9 +2253,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Documents Manager for Laravel Enso",
@@ -2265,7 +2266,7 @@
                 "file-uploader",
                 "laravel-enso"
             ],
-            "time": "2019-05-20T08:56:31+00:00"
+            "time": "2019-07-23T08:13:01+00:00"
         },
         {
             "name": "laravel-enso/examples",
@@ -2321,16 +2322,16 @@
         },
         {
             "name": "laravel-enso/files",
-            "version": "3.1.3",
+            "version": "3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/files.git",
-                "reference": "76f2786853600eaaaae8c718d8496aeca6773773"
+                "reference": "ed2bd332c1f6abc548896accbbc2f4fab6397d8c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/files/zipball/76f2786853600eaaaae8c718d8496aeca6773773",
-                "reference": "76f2786853600eaaaae8c718d8496aeca6773773",
+                "url": "https://api.github.com/repos/laravel-enso/files/zipball/ed2bd332c1f6abc548896accbbc2f4fab6397d8c",
+                "reference": "ed2bd332c1f6abc548896accbbc2f4fab6397d8c",
                 "shasum": ""
             },
             "require": {
@@ -2380,20 +2381,20 @@
                 "files",
                 "laravel-enso"
             ],
-            "time": "2019-05-21T08:38:40+00:00"
+            "time": "2019-07-10T14:04:51+00:00"
         },
         {
             "name": "laravel-enso/forms",
-            "version": "3.1.3",
+            "version": "3.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/forms.git",
-                "reference": "6511d0923c7424172a7366b0cdaa4896fd846242"
+                "reference": "7f809e378ee2b0de102833ab98f2cf882beb7aff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/forms/zipball/6511d0923c7424172a7366b0cdaa4896fd846242",
-                "reference": "6511d0923c7424172a7366b0cdaa4896fd846242",
+                "url": "https://api.github.com/repos/laravel-enso/forms/zipball/7f809e378ee2b0de102833ab98f2cf882beb7aff",
+                "reference": "7f809e378ee2b0de102833ab98f2cf882beb7aff",
                 "shasum": ""
             },
             "require": {
@@ -2421,9 +2422,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Form builder for Laravel Enso",
@@ -2433,20 +2434,20 @@
                 "form-builder",
                 "laravel-enso"
             ],
-            "time": "2019-05-22T09:00:23+00:00"
+            "time": "2019-08-10T08:58:57+00:00"
         },
         {
             "name": "laravel-enso/helpers",
-            "version": "1.11.5",
+            "version": "1.11.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/helpers.git",
-                "reference": "88ec6e15f0b3b1800e5ea679cd0eede8ae439a06"
+                "reference": "370051f08763475bf59a68161752dd04b3d36069"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/helpers/zipball/88ec6e15f0b3b1800e5ea679cd0eede8ae439a06",
-                "reference": "88ec6e15f0b3b1800e5ea679cd0eede8ae439a06",
+                "url": "https://api.github.com/repos/laravel-enso/helpers/zipball/370051f08763475bf59a68161752dd04b3d36069",
+                "reference": "370051f08763475bf59a68161752dd04b3d36069",
                 "shasum": ""
             },
             "require": {
@@ -2473,9 +2474,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Helper classes dependency for Laravel Enso",
@@ -2484,20 +2485,20 @@
                 "helpers",
                 "laravel-enso"
             ],
-            "time": "2019-07-03T08:46:35+00:00"
+            "time": "2019-08-04T09:31:09+00:00"
         },
         {
             "name": "laravel-enso/history-tracker",
-            "version": "1.6.0",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/history-tracker.git",
-                "reference": "654a826326a7c9a01b37615cee8dda96112f659f"
+                "reference": "ea4683d4815039f5ce93a34a89a93c51441cacf2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/history-tracker/zipball/654a826326a7c9a01b37615cee8dda96112f659f",
-                "reference": "654a826326a7c9a01b37615cee8dda96112f659f",
+                "url": "https://api.github.com/repos/laravel-enso/history-tracker/zipball/ea4683d4815039f5ce93a34a89a93c51441cacf2",
+                "reference": "ea4683d4815039f5ce93a34a89a93c51441cacf2",
                 "shasum": ""
             },
             "require": {
@@ -2517,9 +2518,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Model history tracking dependency for Laravel Enso",
@@ -2528,7 +2529,7 @@
                 "history-tracker",
                 "laravel-enso"
             ],
-            "time": "2019-05-17T12:54:46+00:00"
+            "time": "2019-07-28T08:06:34+00:00"
         },
         {
             "name": "laravel-enso/how-to",
@@ -2693,16 +2694,16 @@
         },
         {
             "name": "laravel-enso/io",
-            "version": "1.2.0",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/io.git",
-                "reference": "dff0ae4fda6dbe4acb66b95fef3960857c4f3fcf"
+                "reference": "d26a4d5551b90fc592dec007b27886c8975fbae0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/io/zipball/dff0ae4fda6dbe4acb66b95fef3960857c4f3fcf",
-                "reference": "dff0ae4fda6dbe4acb66b95fef3960857c4f3fcf",
+                "url": "https://api.github.com/repos/laravel-enso/io/zipball/d26a4d5551b90fc592dec007b27886c8975fbae0",
+                "reference": "d26a4d5551b90fc592dec007b27886c8975fbae0",
                 "shasum": ""
             },
             "require": {
@@ -2742,20 +2743,20 @@
                 "laravel",
                 "laravel-enso"
             ],
-            "time": "2019-05-17T12:58:52+00:00"
+            "time": "2019-07-10T14:42:48+00:00"
         },
         {
             "name": "laravel-enso/localisation",
-            "version": "3.2.3",
+            "version": "3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/localisation.git",
-                "reference": "8f6010228527331d6d5b7ba145f522e9f7972f19"
+                "reference": "4c3965817e31e62d1175e1634b0e68689cc85534"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/localisation/zipball/8f6010228527331d6d5b7ba145f522e9f7972f19",
-                "reference": "8f6010228527331d6d5b7ba145f522e9f7972f19",
+                "url": "https://api.github.com/repos/laravel-enso/localisation/zipball/4c3965817e31e62d1175e1634b0e68689cc85534",
+                "reference": "4c3965817e31e62d1175e1634b0e68689cc85534",
                 "shasum": ""
             },
             "require": {
@@ -2790,9 +2791,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Localisation management dependency for Laravel Enso",
@@ -2801,7 +2802,7 @@
                 "laravel-enso",
                 "localisation"
             ],
-            "time": "2019-05-22T08:48:26+00:00"
+            "time": "2019-07-29T13:58:02+00:00"
         },
         {
             "name": "laravel-enso/logs",
@@ -2903,9 +2904,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Menu Manager dependency for Laravel Enso",
@@ -3009,9 +3010,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "User actions logger dependency for Laravel Enso",
@@ -3083,16 +3084,16 @@
         },
         {
             "name": "laravel-enso/people",
-            "version": "2.1.4",
+            "version": "2.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/people.git",
-                "reference": "ca16332190c56f2edd8d5a89b538427ae0f97b22"
+                "reference": "4cac852fc32448fdf878977cbc073ba0ee4db12c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/people/zipball/ca16332190c56f2edd8d5a89b538427ae0f97b22",
-                "reference": "ca16332190c56f2edd8d5a89b538427ae0f97b22",
+                "url": "https://api.github.com/repos/laravel-enso/people/zipball/4cac852fc32448fdf878977cbc073ba0ee4db12c",
+                "reference": "4cac852fc32448fdf878977cbc073ba0ee4db12c",
                 "shasum": ""
             },
             "require": {
@@ -3126,9 +3127,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Person management dependency for Laravel Enso",
@@ -3138,20 +3139,20 @@
                 "people",
                 "person-management"
             ],
-            "time": "2019-05-22T08:47:00+00:00"
+            "time": "2019-08-09T06:05:33+00:00"
         },
         {
             "name": "laravel-enso/permissions",
-            "version": "3.1.2",
+            "version": "3.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/permissions.git",
-                "reference": "efbbe45a02658ad13e3822cf8db19a430c19b417"
+                "reference": "2392ff3b28129e18ee61e2b6b5298d7b20b4b37d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/permissions/zipball/efbbe45a02658ad13e3822cf8db19a430c19b417",
-                "reference": "efbbe45a02658ad13e3822cf8db19a430c19b417",
+                "url": "https://api.github.com/repos/laravel-enso/permissions/zipball/2392ff3b28129e18ee61e2b6b5298d7b20b4b37d",
+                "reference": "2392ff3b28129e18ee61e2b6b5298d7b20b4b37d",
                 "shasum": ""
             },
             "require": {
@@ -3186,9 +3187,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Permissions dependency for Laravel Enso",
@@ -3198,7 +3199,7 @@
                 "laravel-permissions",
                 "permission-manager"
             ],
-            "time": "2019-05-22T08:49:12+00:00"
+            "time": "2019-07-06T17:01:02+00:00"
         },
         {
             "name": "laravel-enso/rememberable",
@@ -3248,16 +3249,16 @@
         },
         {
             "name": "laravel-enso/roles",
-            "version": "3.1.5",
+            "version": "3.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/roles.git",
-                "reference": "39a0365f57039fd7c8ad61df091fdc960cf7804c"
+                "reference": "afa2897ff3c0b9abf3c2c1ccb09ef8b0e733f82d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/roles/zipball/39a0365f57039fd7c8ad61df091fdc960cf7804c",
-                "reference": "39a0365f57039fd7c8ad61df091fdc960cf7804c",
+                "url": "https://api.github.com/repos/laravel-enso/roles/zipball/afa2897ff3c0b9abf3c2c1ccb09ef8b0e733f82d",
+                "reference": "afa2897ff3c0b9abf3c2c1ccb09ef8b0e733f82d",
                 "shasum": ""
             },
             "require": {
@@ -3292,9 +3293,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Role Manager dependency for Laravel Enso",
@@ -3305,7 +3306,7 @@
                 "role-manager",
                 "roles"
             ],
-            "time": "2019-06-23T07:05:56+00:00"
+            "time": "2019-08-10T07:14:03+00:00"
         },
         {
             "name": "laravel-enso/searchable",
@@ -3350,9 +3351,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Searchable dependency for Laravel Enso",
@@ -3365,16 +3366,16 @@
         },
         {
             "name": "laravel-enso/select",
-            "version": "3.1.0",
+            "version": "3.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/select.git",
-                "reference": "24a0360386d611300a8b4c8f4ebe7785c5a31631"
+                "reference": "9b6cf6b1497c79906d19b9b895a0f7d3432b36ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/select/zipball/24a0360386d611300a8b4c8f4ebe7785c5a31631",
-                "reference": "24a0360386d611300a8b4c8f4ebe7785c5a31631",
+                "url": "https://api.github.com/repos/laravel-enso/select/zipball/9b6cf6b1497c79906d19b9b895a0f7d3432b36ba",
+                "reference": "9b6cf6b1497c79906d19b9b895a0f7d3432b36ba",
                 "shasum": ""
             },
             "require": {
@@ -3415,20 +3416,20 @@
                 "select",
                 "select-server-side"
             ],
-            "time": "2019-05-17T07:35:09+00:00"
+            "time": "2019-07-14T07:23:58+00:00"
         },
         {
             "name": "laravel-enso/tables",
-            "version": "2.1.18",
+            "version": "2.1.33",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/tables.git",
-                "reference": "50bc5d9efea6342cc70de7ffd95d4023858a6419"
+                "reference": "b0e7c8c24d71c3d7af59198e5c3f74f47f6bb8b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/tables/zipball/50bc5d9efea6342cc70de7ffd95d4023858a6419",
-                "reference": "50bc5d9efea6342cc70de7ffd95d4023858a6419",
+                "url": "https://api.github.com/repos/laravel-enso/tables/zipball/b0e7c8c24d71c3d7af59198e5c3f74f47f6bb8b2",
+                "reference": "b0e7c8c24d71c3d7af59198e5c3f74f47f6bb8b2",
                 "shasum": ""
             },
             "require": {
@@ -3458,9 +3459,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Data Table library with server-side processing and a VueJS component",
@@ -3471,20 +3472,20 @@
                 "datatable",
                 "laravel-enso"
             ],
-            "time": "2019-06-24T10:36:15+00:00"
+            "time": "2019-07-31T05:56:05+00:00"
         },
         {
             "name": "laravel-enso/teams",
-            "version": "2.1.0",
+            "version": "2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/teams.git",
-                "reference": "ece71c4df8349dcc531c5830a0897b147edab719"
+                "reference": "612a8006cf656ac126a7abb1fc80cbd71c53dcb7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/teams/zipball/ece71c4df8349dcc531c5830a0897b147edab719",
-                "reference": "ece71c4df8349dcc531c5830a0897b147edab719",
+                "url": "https://api.github.com/repos/laravel-enso/teams/zipball/612a8006cf656ac126a7abb1fc80cbd71c53dcb7",
+                "reference": "612a8006cf656ac126a7abb1fc80cbd71c53dcb7",
                 "shasum": ""
             },
             "require": {
@@ -3515,9 +3516,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Team management dependency for Laravel Enso",
@@ -3527,20 +3528,20 @@
                 "laravel-enso",
                 "team-management"
             ],
-            "time": "2019-05-17T13:17:27+00:00"
+            "time": "2019-07-08T11:16:38+00:00"
         },
         {
             "name": "laravel-enso/track-who",
-            "version": "1.8.1",
+            "version": "1.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/track-who.git",
-                "reference": "5af4bf6a7dc343399829fd9876d6cba8175b8f0a"
+                "reference": "b9df767a1f5ef800296dc575c496d245a44b8ab8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/track-who/zipball/5af4bf6a7dc343399829fd9876d6cba8175b8f0a",
-                "reference": "5af4bf6a7dc343399829fd9876d6cba8175b8f0a",
+                "url": "https://api.github.com/repos/laravel-enso/track-who/zipball/b9df767a1f5ef800296dc575c496d245a44b8ab8",
+                "reference": "b9df767a1f5ef800296dc575c496d245a44b8ab8",
                 "shasum": ""
             },
             "require": {
@@ -3571,7 +3572,7 @@
                 "laravel-enso",
                 "track-who"
             ],
-            "time": "2019-05-18T07:11:07+00:00"
+            "time": "2019-07-12T11:26:46+00:00"
         },
         {
             "name": "laravel-enso/tutorials",
@@ -3617,9 +3618,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Tutorial management dependency for Laravel Enso",
@@ -3634,16 +3635,16 @@
         },
         {
             "name": "laravel-enso/versioning",
-            "version": "1.2.2",
+            "version": "1.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/versioning.git",
-                "reference": "bf4cd7b8397528ab51274eb8129962992e4de25d"
+                "reference": "fccae49da67eddef9b7e65164e14c0025ba25cb6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/versioning/zipball/bf4cd7b8397528ab51274eb8129962992e4de25d",
-                "reference": "bf4cd7b8397528ab51274eb8129962992e4de25d",
+                "url": "https://api.github.com/repos/laravel-enso/versioning/zipball/fccae49da67eddef9b7e65164e14c0025ba25cb6",
+                "reference": "fccae49da67eddef9b7e65164e14c0025ba25cb6",
                 "shasum": ""
             },
             "require": {
@@ -3670,9 +3671,9 @@
             "authors": [
                 {
                     "name": "Adrian Ocneanu",
+                    "role": "Developer",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
+                    "homepage": "https://laravel-enso.com"
                 }
             ],
             "description": "Prevents update conflicts using the optimistic lock pattern in Laravel",
@@ -3683,7 +3684,7 @@
                 "trait",
                 "versioning"
             ],
-            "time": "2019-06-27T09:39:33+00:00"
+            "time": "2019-08-05T14:10:22+00:00"
         },
         {
             "name": "laravel/framework",
@@ -4077,9 +4078,9 @@
             "authors": [
                 {
                     "name": "Bayu Hendra Winata",
+                    "role": "Developer",
                     "email": "uyab.exe@gmail.com",
-                    "homepage": "http://id-laravel.com",
-                    "role": "Developer"
+                    "homepage": "http://id-laravel.com"
                 }
             ],
             "description": "Turn name, email, and any other string into beautiful, initial-based avatar.",
@@ -4304,16 +4305,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.20.0",
+            "version": "2.22.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "bc671b896c276795fad8426b0aa24e8ade0f2498"
+                "reference": "738fbd8d80b2c5e158fda76c29c2de432fcc6f7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/bc671b896c276795fad8426b0aa24e8ade0f2498",
-                "reference": "bc671b896c276795fad8426b0aa24e8ade0f2498",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/738fbd8d80b2c5e158fda76c29c2de432fcc6f7e",
+                "reference": "738fbd8d80b2c5e158fda76c29c2de432fcc6f7e",
                 "shasum": ""
             },
             "require": {
@@ -4324,11 +4325,14 @@
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.14 || ^3.0",
                 "kylekatarnls/multi-tester": "^1.1",
-                "phpmd/phpmd": "^2.6",
+                "phpmd/phpmd": "dev-php-7.1-compatibility",
                 "phpstan/phpstan": "^0.11",
                 "phpunit/phpunit": "^7.5 || ^8.0",
                 "squizlabs/php_codesniffer": "^3.4"
             },
+            "bin": [
+                "bin/carbon"
+            ],
             "type": "library",
             "extra": {
                 "laravel": {
@@ -4351,6 +4355,10 @@
                     "name": "Brian Nesbitt",
                     "email": "brian@nesbot.com",
                     "homepage": "http://nesbot.com"
+                },
+                {
+                    "name": "kylekatarnls",
+                    "homepage": "http://github.com/kylekatarnls"
                 }
             ],
             "description": "A simple API extension for DateTime.",
@@ -4360,7 +4368,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2019-06-25T10:00:57+00:00"
+            "time": "2019-08-07T12:36:44+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -4571,16 +4579,16 @@
         },
         {
             "name": "paragonie/sodium_compat",
-            "version": "v1.10.0",
+            "version": "v1.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/sodium_compat.git",
-                "reference": "228a9fc64cf4ba84c7967c1076d94209db03e0ee"
+                "reference": "5115fa44886d1c2785d2f135ef4626db868eac4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/sodium_compat/zipball/228a9fc64cf4ba84c7967c1076d94209db03e0ee",
-                "reference": "228a9fc64cf4ba84c7967c1076d94209db03e0ee",
+                "url": "https://api.github.com/repos/paragonie/sodium_compat/zipball/5115fa44886d1c2785d2f135ef4626db868eac4b",
+                "reference": "5115fa44886d1c2785d2f135ef4626db868eac4b",
                 "shasum": ""
             },
             "require": {
@@ -4649,7 +4657,7 @@
                 "secret-key cryptography",
                 "side-channel resistant"
             ],
-            "time": "2019-05-13T16:04:50+00:00"
+            "time": "2019-07-12T16:36:59+00:00"
         },
         {
             "name": "php-http/client-common",
@@ -5996,9 +6004,9 @@
             "authors": [
                 {
                     "name": "Freek Van der Herten",
+                    "role": "Developer",
                     "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
+                    "homepage": "https://spatie.be"
                 }
             ],
             "description": "Optimize images in your Laravel app",
@@ -6873,16 +6881,16 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.11.0",
+            "version": "v1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "fe5e94c604826c35a32fa832f35bd036b6799609"
+                "reference": "b42a2f66e8f1b15ccf25652c3424265923eb4f17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/fe5e94c604826c35a32fa832f35bd036b6799609",
-                "reference": "fe5e94c604826c35a32fa832f35bd036b6799609",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/b42a2f66e8f1b15ccf25652c3424265923eb4f17",
+                "reference": "b42a2f66e8f1b15ccf25652c3424265923eb4f17",
                 "shasum": ""
             },
             "require": {
@@ -6894,7 +6902,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.11-dev"
+                    "dev-master": "1.12-dev"
                 }
             },
             "autoload": {
@@ -6928,7 +6936,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2019-02-06T07:57:58+00:00"
+            "time": "2019-08-06T08:03:45+00:00"
         },
         {
             "name": "symfony/polyfill-php72",
@@ -7045,7 +7053,7 @@
         },
         {
             "name": "symfony/process",
-            "version": "v4.3.2",
+            "version": "v4.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
@@ -7228,16 +7236,16 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v4.3.2",
+            "version": "v4.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "934ab1d18545149e012aa898cf02e9f23790f7a0"
+                "reference": "4e3e39cc485304f807622bdc64938e4633396406"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/934ab1d18545149e012aa898cf02e9f23790f7a0",
-                "reference": "934ab1d18545149e012aa898cf02e9f23790f7a0",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/4e3e39cc485304f807622bdc64938e4633396406",
+                "reference": "4e3e39cc485304f807622bdc64938e4633396406",
                 "shasum": ""
             },
             "require": {
@@ -7300,7 +7308,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2019-06-13T11:03:18+00:00"
+            "time": "2019-07-18T10:34:59+00:00"
         },
         {
             "name": "symfony/translation-contracts",
@@ -7474,8 +7482,8 @@
             "authors": [
                 {
                     "name": "Tijs Verkoyen",
-                    "email": "css_to_inline_styles@verkoyen.eu",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "css_to_inline_styles@verkoyen.eu"
                 }
             ],
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
@@ -8169,8 +8177,8 @@
             "authors": [
                 {
                     "name": "Filipe Dobreira",
-                    "homepage": "https://github.com/filp",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "homepage": "https://github.com/filp"
                 }
             ],
             "description": "php error handling for cool kids",
@@ -8543,9 +8551,9 @@
             "authors": [
                 {
                     "name": "Phil Bennett",
+                    "role": "Developer",
                     "email": "philipobenito@gmail.com",
-                    "homepage": "http://www.philipobenito.com",
-                    "role": "Developer"
+                    "homepage": "http://www.philipobenito.com"
                 }
             ],
             "description": "A fast and intuitive dependency injection container.",
@@ -9100,18 +9108,18 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "arne@blankerts.de"
                 },
                 {
                     "name": "Sebastian Heuer",
-                    "email": "sebastian@phpeople.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpeople.de"
                 },
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Component for reading phar.io manifest information from a PHP Archive (PHAR)",
@@ -9147,18 +9155,18 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "arne@blankerts.de"
                 },
                 {
                     "name": "Sebastian Heuer",
-                    "email": "sebastian@phpeople.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpeople.de"
                 },
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Library for handling version information and constraints",
@@ -9408,8 +9416,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "A tool for quickly measuring the size of a PHP project.",
@@ -9576,8 +9584,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Library that provides collection, processing, and rendering functionality for PHP code coverage information.",
@@ -9627,8 +9635,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "FilterIterator implementation that filters files based on a list of suffixes.",
@@ -9669,8 +9677,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Simple template engine.",
@@ -9718,8 +9726,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Utility class for timing",
@@ -9849,8 +9857,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "The PHP Unit Testing framework.",
@@ -10224,8 +10232,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "FinderFacade is a convenience wrapper for Symfony's Finder component.",
@@ -10505,8 +10513,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
@@ -11606,8 +11614,8 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "arne@blankerts.de"
                 }
             ],
             "description": "The classes contained within this repository extend the standard DOM to use exceptions at all occasions of errors instead of PHP warnings or notices. They also add various custom methods and shortcuts for convenience and to simplify the usage of DOM.",
