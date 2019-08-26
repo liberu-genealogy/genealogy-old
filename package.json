@@ -43,7 +43,7 @@
         "@enso-ui/accessories": "~1.0.0",
         "@enso-ui/bulma": "~1.0.0",
         "@enso-ui/directives": "~1.0.1",
-        "@enso-ui/forms": "~1.1.0",
+        "@enso-ui/forms": "~1.1.39",
         "@enso-ui/mixins": "~1.0.0",
         "@enso-ui/select": "~1.0.2",
         "@enso-ui/tables": "~1.0.0",
