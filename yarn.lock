@@ -776,7 +776,7 @@
     "@fortawesome/vue-fontawesome" "^0.1.1"
     vue "^2.5.16"
 
-"@enso-ui/dropdown@^1.0.0", "@enso-ui/dropdown@^1.0.15":
+"@enso-ui/dropdown@^1.0.0", "@enso-ui/dropdown@^1.0.15", "@enso-ui/dropdown@~1.0.0":
   version "1.0.25"
   resolved "https://registry.yarnpkg.com/@enso-ui/dropdown/-/dropdown-1.0.25.tgz#bc2c100e8090515317b445d7afaae90fa09232fa"
   integrity sha512-4+fK4lDhNBiRHIUfU/+72jAiZxbAo245d1xvSHG1+4NTqR7r48nfDZJAqMxBDIkLEmT2q0Mdq94i3Vq4HQvWdg==
@@ -894,13 +894,13 @@
     bulma "^0.7.2"
     vue "^2.5.16"
 
-"@enso-ui/select@^1.0.0", "@enso-ui/select@^1.0.2", "@enso-ui/select@~1.0.2":
-  version "1.0.35"
-  resolved "https://registry.yarnpkg.com/@enso-ui/select/-/select-1.0.35.tgz#cdae40b5a350fd5aad219a71ac3da6709ad5c95a"
-  integrity sha512-nFCWfYKPPdVTsPItj8dDfG1eLMVN20YXGaQJYSvKcD5a/fCMZ0d3/F5QTx6BJh4teT5BC15Ibp2l54wm6V60QA==
+"@enso-ui/select@^1.0.0", "@enso-ui/select@^1.0.2", "@enso-ui/select@~1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@enso-ui/select/-/select-1.1.1.tgz#c57f78fc496c4d3062be0afe3efc3266fd55a49a"
+  integrity sha512-PXD+1SQ6eYhmUCbKN9DAsagn4yQUwVw1V1070Iurpv0SFzMhIp/s9jXNKjtkRWGEWHsj2+Nv+zMThTBo4X+pFA==
   dependencies:
     "@enso-ui/directives" "^1.0.0"
-    "@enso-ui/dropdown" "^1.0.0"
+    "@enso-ui/dropdown" "~1.0.0"
     "@enso-ui/dropdown-indicator" "^1.0.0"
     "@fortawesome/fontawesome-free" "^5.2.0"
     "@fortawesome/fontawesome-svg-core" "^1.2.2"
