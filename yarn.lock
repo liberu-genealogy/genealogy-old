@@ -737,10 +737,10 @@
     v-tooltip "^2.0.0-rc.32"
     vue "^2.5.16"
 
-"@enso-ui/datepicker@^1.0.0", "@enso-ui/datepicker@^1.0.5":
-  version "1.0.12"
-  resolved "https://registry.yarnpkg.com/@enso-ui/datepicker/-/datepicker-1.0.12.tgz#44e00ee20182ad8af4ed54d010314860620a05db"
-  integrity sha512-2AhFqWdij+ZtDjNG7jmVBQ+qgD3B9wcm/Y7Dvau0bMHDZxHs0ZWkn92wND+wD6zK0ZWpApc1sCUmBbxfJaM5zA==
+"@enso-ui/datepicker@^1.0.0", "@enso-ui/datepicker@~1.0.5":
+  version "1.0.16"
+  resolved "https://registry.yarnpkg.com/@enso-ui/datepicker/-/datepicker-1.0.16.tgz#5221f6468c76b11cd9632deac9183d35d9ad2c29"
+  integrity sha512-OQkvwdPZVUEvtlfp8Vx75f3g8zKyoPEii0jNC6lXfqtTxrvfyJBolaijMlnCKp9lH6nLdSqg8gkcV9G3usAnBQ==
   dependencies:
     "@fortawesome/fontawesome-free" "^5.2.0"
     "@fortawesome/fontawesome-svg-core" "^1.2.2"
@@ -751,7 +751,7 @@
     vue "^2.5.16"
     vuex "^3.0.0"
 
-"@enso-ui/directives@^1.0.0", "@enso-ui/directives@^1.0.1", "@enso-ui/directives@^1.0.4", "@enso-ui/directives@~1.0.1":
+"@enso-ui/directives@^1.0.0", "@enso-ui/directives@^1.0.4", "@enso-ui/directives@~1.0.1":
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/@enso-ui/directives/-/directives-1.0.9.tgz#2394cd3a0847f4b1851176fd50a6f777e9cb7a85"
   integrity sha512-L3Ul+gQI0A6ymar0Zjr8zsHFzCGoFKU8GVUc4kXMhKb0SKWEcY5i/qIxs3ctba1ws+a47qDp4a3/aQjaQztIUQ==
@@ -759,7 +759,7 @@
     highlight.js "^9.12.0"
     vue "^2.5.16"
 
-"@enso-ui/divider@^1.0.0":
+"@enso-ui/divider@^1.0.0", "@enso-ui/divider@~1.0.0":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@enso-ui/divider/-/divider-1.0.4.tgz#5bcb2532b63f309b56f48c3297313c7c99ee251e"
   integrity sha512-RKAvEeDMkEdCCNijsmZczg2eauL3Hwv19eAEBxyNMdROLTmngSrRgz4SZrNNDc3TitgN6fePSWjom2wNOdse1Q==
@@ -776,7 +776,7 @@
     "@fortawesome/vue-fontawesome" "^0.1.1"
     vue "^2.5.16"
 
-"@enso-ui/dropdown@^1.0.0", "@enso-ui/dropdown@^1.0.15":
+"@enso-ui/dropdown@^1.0.0", "@enso-ui/dropdown@^1.0.15", "@enso-ui/dropdown@~1.0.0":
   version "1.0.25"
   resolved "https://registry.yarnpkg.com/@enso-ui/dropdown/-/dropdown-1.0.25.tgz#bc2c100e8090515317b445d7afaae90fa09232fa"
   integrity sha512-4+fK4lDhNBiRHIUfU/+72jAiZxbAo245d1xvSHG1+4NTqR7r48nfDZJAqMxBDIkLEmT2q0Mdq94i3Vq4HQvWdg==
@@ -805,20 +805,20 @@
     vue "^2.5.16"
     vuex "^3.0.0"
 
-"@enso-ui/forms@^1.0.0", "@enso-ui/forms@^1.0.18", "@enso-ui/forms@~1.1.0":
-  version "1.1.28"
-  resolved "https://registry.yarnpkg.com/@enso-ui/forms/-/forms-1.1.28.tgz#3c3b29e6156e334fc7df8b520789a99e9d0ced5a"
-  integrity sha512-ZMsjL0ZxEk9X9DSG3+HSCTlGuW4SGzpLNcvWevEPLvhPCHfBKr1mc+xq4LBJyb5zx6Q67kzmkZaMcU0uDuAVCw==
+"@enso-ui/forms@^1.0.0", "@enso-ui/forms@^1.0.18", "@enso-ui/forms@~1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@enso-ui/forms/-/forms-1.2.2.tgz#e74a5a726be8f93040a1722854d9b7b866b64042"
+  integrity sha512-yV4ZZDZuitjb5tQPzYGHa5eNA8HpPxjxGRC7xP7Q5k6EH+3or5ihSXt7pNM0UJ/L9FY9/HHSSTBSOmaYY0EueA==
   dependencies:
-    "@enso-ui/datepicker" "^1.0.5"
-    "@enso-ui/directives" "^1.0.1"
-    "@enso-ui/divider" "^1.0.0"
-    "@enso-ui/modal" "^1.0.4"
-    "@enso-ui/money" "^1.0.0"
-    "@enso-ui/select" "^1.0.2"
-    "@enso-ui/switch" "^1.0.2"
-    "@enso-ui/tabs" "^1.0.5"
-    "@enso-ui/wysiwyg" "^1.0.0"
+    "@enso-ui/datepicker" "~1.0.5"
+    "@enso-ui/directives" "~1.0.1"
+    "@enso-ui/divider" "~1.0.0"
+    "@enso-ui/modal" "~1.0.4"
+    "@enso-ui/money" "~1.0.0"
+    "@enso-ui/select" "~1.1.0"
+    "@enso-ui/switch" "~1.0.2"
+    "@enso-ui/tabs" "~1.0.5"
+    "@enso-ui/wysiwyg" "~1.0.0"
     "@fortawesome/fontawesome-free" "^5.2.0"
     "@fortawesome/fontawesome-svg-core" "^1.2.2"
     "@fortawesome/free-solid-svg-icons" "^5.2.0"
@@ -849,7 +849,7 @@
   dependencies:
     vue "^2.5.16"
 
-"@enso-ui/modal@^1.0.0", "@enso-ui/modal@^1.0.4", "@enso-ui/modal@^1.0.6":
+"@enso-ui/modal@^1.0.0", "@enso-ui/modal@^1.0.6", "@enso-ui/modal@~1.0.4":
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/@enso-ui/modal/-/modal-1.0.11.tgz#361fcf46e948fd26692065e87ffb783a4a1999f4"
   integrity sha512-S6ZOujKfWVvJJVFqMU28BYW2Jsq8KpCO45vgc/vWCC6uc9Vqrx8A2VjHv2+rIX7LC/Bq5D3fFscAkz1uG/YqdA==
@@ -859,10 +859,10 @@
     bulma "^0.7.2"
     vue "^2.5.16"
 
-"@enso-ui/money@^1.0.0", "@enso-ui/money@^1.0.2":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@enso-ui/money/-/money-1.0.5.tgz#ca8800b21bd0503164f6469841a9d21f01396358"
-  integrity sha512-z+C4ZlDmvpvejUDj73/8KUz/uLwmxyRqvOvh0je3QEA0tOGWWAUVSm3ueUERbzWSXxEURZU3P5r0WKCngomgWQ==
+"@enso-ui/money@^1.0.2", "@enso-ui/money@~1.0.0":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@enso-ui/money/-/money-1.0.7.tgz#b1e9fdd3e2e327f9e6510126754d155f17443d95"
+  integrity sha512-YmcpKESgwZDQkekKUHnYqUmlaTN7vbQgVs7sgDwXh7U1+p00FufD/qzCxEb3EbfQvJD1/lWlqDHLWW1/+uiVUQ==
   dependencies:
     accounting-js "^1.1.1"
     vue "^2.5.16"
@@ -894,7 +894,23 @@
     bulma "^0.7.2"
     vue "^2.5.16"
 
-"@enso-ui/select@^1.0.0", "@enso-ui/select@^1.0.2", "@enso-ui/select@~1.0.2":
+"@enso-ui/select@^1.0.0", "@enso-ui/select@~1.1.0":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@enso-ui/select/-/select-1.1.1.tgz#c57f78fc496c4d3062be0afe3efc3266fd55a49a"
+  integrity sha512-PXD+1SQ6eYhmUCbKN9DAsagn4yQUwVw1V1070Iurpv0SFzMhIp/s9jXNKjtkRWGEWHsj2+Nv+zMThTBo4X+pFA==
+  dependencies:
+    "@enso-ui/directives" "^1.0.0"
+    "@enso-ui/dropdown" "~1.0.0"
+    "@enso-ui/dropdown-indicator" "^1.0.0"
+    "@fortawesome/fontawesome-free" "^5.2.0"
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "^0.1.1"
+    bulma "^0.7.2"
+    lodash "^4.17.10"
+    vue "^2.5.16"
+
+"@enso-ui/select@~1.0.2":
   version "1.0.35"
   resolved "https://registry.yarnpkg.com/@enso-ui/select/-/select-1.0.35.tgz#cdae40b5a350fd5aad219a71ac3da6709ad5c95a"
   integrity sha512-nFCWfYKPPdVTsPItj8dDfG1eLMVN20YXGaQJYSvKcD5a/fCMZ0d3/F5QTx6BJh4teT5BC15Ibp2l54wm6V60QA==
@@ -910,7 +926,7 @@
     lodash "^4.17.10"
     vue "^2.5.16"
 
-"@enso-ui/switch@^1.0.0", "@enso-ui/switch@^1.0.2":
+"@enso-ui/switch@^1.0.0", "@enso-ui/switch@~1.0.2":
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/@enso-ui/switch/-/switch-1.0.10.tgz#3eca4e15af23203898e7cb79c9269bb2e6521dae"
   integrity sha512-MJf8vnhlqYXucsp0eDZC5OOSiel83netUUHB+WF+cqhFZC4ECa8V+LK8zLG6L4M0ZKESBLnsSsTmHE/WsGP89Q==
@@ -938,10 +954,10 @@
     vue "^2.5.16"
     vuex "^3.1.0"
 
-"@enso-ui/tabs@^1.0.0", "@enso-ui/tabs@^1.0.5":
-  version "1.0.24"
-  resolved "https://registry.yarnpkg.com/@enso-ui/tabs/-/tabs-1.0.24.tgz#d26f9a77319875494972e591dfae0d35db0cb4a3"
-  integrity sha512-EpMai4qj2OQS3uPptWLVqGgS+b+a96JHThzAMuzfZOll/RI+qNC0n99mwRAcfhXUt6rU1JBlovreKYxT+M1MEQ==
+"@enso-ui/tabs@^1.0.0", "@enso-ui/tabs@^1.0.5", "@enso-ui/tabs@~1.0.5":
+  version "1.0.25"
+  resolved "https://registry.yarnpkg.com/@enso-ui/tabs/-/tabs-1.0.25.tgz#5e9bbab584b5efbc5414ebd22600db2179b9b2ce"
+  integrity sha512-M6cLxVx/8Ep14LzhEneUzU3Nb9Tiahq/svWSvETlHe0Qh83ZTG9wQ/M2jKanXyK5jhcIcc9qepAjR28tn9NzOw==
   dependencies:
     animate.css "^3.6.1"
     bulma "^0.7.2"
@@ -1044,10 +1060,10 @@
     bulma "^0.7.2"
     vue "^2.5.16"
 
-"@enso-ui/wysiwyg@^1.0.0":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@enso-ui/wysiwyg/-/wysiwyg-1.0.3.tgz#799bf9f5d7ad8b5cbcd62bb607d274c41e5eaddb"
-  integrity sha512-PS5UXfHp6a/KRL+5kYGvNFwJfvVldUf3ruLn7KmyZmNBSrykr+HckbzBdXznoVaHoZ8NJsmgq8r0WJS3qDRrjQ==
+"@enso-ui/wysiwyg@~1.0.0":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@enso-ui/wysiwyg/-/wysiwyg-1.0.6.tgz#a78032f91942f5b242fba3357280969d82c9f65d"
+  integrity sha512-kSkSKWs9ah23PNG3TMTd4hdCVekmRCG/7Ty7kLUcK7Lpo/EgKgsLfEeQEJ/dySSfUIb8VwLkSOQMyZ5jP0f6Jw==
   dependencies:
     "@fortawesome/fontawesome-free" "^5.2.0"
     "@fortawesome/fontawesome-svg-core" "^1.2.2"
