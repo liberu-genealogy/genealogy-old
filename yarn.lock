@@ -918,10 +918,10 @@
     bulma "^0.7.2"
     vue "^2.5.16"
 
-"@enso-ui/tables@^1.0.0", "@enso-ui/tables@^1.0.17", "@enso-ui/tables@~1.0.0":
-  version "1.0.44"
-  resolved "https://registry.yarnpkg.com/@enso-ui/tables/-/tables-1.0.44.tgz#0dc7dd79bbb4ef6f944b90bfec0d1cb3664684b8"
-  integrity sha512-3U/ORihB7PjJubeNon5MRao58QV8e8onnxDGWyEs5/ZbIFK9JPOxmhskW9llTPAF2TZd3hjNVem5Oycj56UQpA==
+"@enso-ui/tables@^1.0.0", "@enso-ui/tables@^1.0.17", "@enso-ui/tables@~1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@enso-ui/tables/-/tables-1.1.4.tgz#8d229fdd2a224b4e070cf1eae53c7bcb1b9bd054"
+  integrity sha512-WVXxB8YE56KWahksi44v1sUnD0LKcArr9qjm8ir9t+HOhQ1EgUbjEa3h0IOEyVZKSeagULQ1JNMMWmerLim32g==
   dependencies:
     "@enso-ui/directives" "^1.0.4"
     "@enso-ui/dropdown" "^1.0.15"
