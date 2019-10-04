@@ -751,10 +751,10 @@
     vue "^2.5.16"
     vuex "^3.0.0"
 
-"@enso-ui/directives@^1.0.0", "@enso-ui/directives@^1.0.1", "@enso-ui/directives@^1.0.4", "@enso-ui/directives@~1.0.1":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@enso-ui/directives/-/directives-1.0.9.tgz#2394cd3a0847f4b1851176fd50a6f777e9cb7a85"
-  integrity sha512-L3Ul+gQI0A6ymar0Zjr8zsHFzCGoFKU8GVUc4kXMhKb0SKWEcY5i/qIxs3ctba1ws+a47qDp4a3/aQjaQztIUQ==
+"@enso-ui/directives@1.0.x", "@enso-ui/directives@^1.0.0", "@enso-ui/directives@^1.0.1", "@enso-ui/directives@~1.0.1":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@enso-ui/directives/-/directives-1.0.11.tgz#8e7566d636155df1bf12c87decac231f47d7ff87"
+  integrity sha512-TS1wx5QhPAZMdvEY4y6GYFKUumspGTSxTocks/u+DfnBG5TLq759FLSDKdyoYrRsxUdcE0hPiBimdGil3kx/SA==
   dependencies:
     highlight.js "^9.12.0"
     vue "^2.5.16"
@@ -766,7 +766,7 @@
   dependencies:
     vue "^2.5.16"
 
-"@enso-ui/dropdown-indicator@^1.0.0":
+"@enso-ui/dropdown-indicator@1.0.x", "@enso-ui/dropdown-indicator@^1.0.0":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@enso-ui/dropdown-indicator/-/dropdown-indicator-1.0.6.tgz#02f14de3b138c3d3bec2e44c4565e2b48fb345a7"
   integrity sha512-Oo/vP1dSTSW57l6pREWD8+ziivE/Hm8To5tJfpTUZu38CKGeLqDtu5lTsY/Hd73CsAW6ZNGa5JKAZwvtRb6iYg==
@@ -776,14 +776,14 @@
     "@fortawesome/vue-fontawesome" "^0.1.1"
     vue "^2.5.16"
 
-"@enso-ui/dropdown@^1.0.0", "@enso-ui/dropdown@^1.0.15":
-  version "1.0.25"
-  resolved "https://registry.yarnpkg.com/@enso-ui/dropdown/-/dropdown-1.0.25.tgz#bc2c100e8090515317b445d7afaae90fa09232fa"
-  integrity sha512-4+fK4lDhNBiRHIUfU/+72jAiZxbAo245d1xvSHG1+4NTqR7r48nfDZJAqMxBDIkLEmT2q0Mdq94i3Vq4HQvWdg==
+"@enso-ui/dropdown@1.0.x", "@enso-ui/dropdown@^1.0.0":
+  version "1.0.26"
+  resolved "https://registry.yarnpkg.com/@enso-ui/dropdown/-/dropdown-1.0.26.tgz#c5bdd5e7a5b16f51e022849493c04ad40aea381b"
+  integrity sha512-nzi0rkUruEUErE0LDpUrp6ZMS7uoaGz69khOIG+3/9nAFU8xT+yVbo1rHfISynk13G8sCppo2it1s69qn0AMAA==
   dependencies:
-    "@enso-ui/directives" "^1.0.0"
-    "@enso-ui/dropdown-indicator" "^1.0.0"
-    "@enso-ui/transitions" "^1.0.0"
+    "@enso-ui/directives" "1.0.x"
+    "@enso-ui/dropdown-indicator" "1.0.x"
+    "@enso-ui/transitions" "1.0.x"
     popper.js "^1.14.7"
     vue "^2.5.16"
 
@@ -833,12 +833,12 @@
     vue "^2.5.16"
     vuex "^3.1.0"
 
-"@enso-ui/loader@^1.0.0", "@enso-ui/loader@^1.0.6":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@enso-ui/loader/-/loader-1.0.9.tgz#95903d729d01cec9e0b3807a8ca2707ce4b1c145"
-  integrity sha512-rtaenYZHjn79eOilvS3HoJ8spI3MPc/s5H5JBbBPJ7pFbLC+G85BfdE8LZgZr6eefOsYDQgsjVJekbvJBkjb7g==
+"@enso-ui/loader@1.0.x", "@enso-ui/loader@^1.0.0":
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/@enso-ui/loader/-/loader-1.0.10.tgz#1f866f98f1f8407218baa83dd630d6af9398216c"
+  integrity sha512-yQrwU9d62fTvIIH2but9Y5q9s9utUF2BkrV3f1PWTmxsRxjbnV0Zh26SqoV+y4ThdGi+XcoiQ5qvPfX6Dri94A==
   dependencies:
-    "@enso-ui/transitions" "^1.0.0"
+    "@enso-ui/transitions" "1.0.x"
     bulma "^0.7.2"
     vue "^2.5.16"
 
@@ -849,7 +849,7 @@
   dependencies:
     vue "^2.5.16"
 
-"@enso-ui/modal@^1.0.0", "@enso-ui/modal@^1.0.4", "@enso-ui/modal@^1.0.6":
+"@enso-ui/modal@1.0.x", "@enso-ui/modal@^1.0.0", "@enso-ui/modal@^1.0.4":
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/@enso-ui/modal/-/modal-1.0.11.tgz#361fcf46e948fd26692065e87ffb783a4a1999f4"
   integrity sha512-S6ZOujKfWVvJJVFqMU28BYW2Jsq8KpCO45vgc/vWCC6uc9Vqrx8A2VjHv2+rIX7LC/Bq5D3fFscAkz1uG/YqdA==
@@ -918,15 +918,15 @@
     bulma "^0.7.2"
     vue "^2.5.16"
 
-"@enso-ui/tables@^1.0.0", "@enso-ui/tables@^1.0.17", "@enso-ui/tables@~1.0.0":
-  version "1.0.44"
-  resolved "https://registry.yarnpkg.com/@enso-ui/tables/-/tables-1.0.44.tgz#0dc7dd79bbb4ef6f944b90bfec0d1cb3664684b8"
-  integrity sha512-3U/ORihB7PjJubeNon5MRao58QV8e8onnxDGWyEs5/ZbIFK9JPOxmhskW9llTPAF2TZd3hjNVem5Oycj56UQpA==
+"@enso-ui/tables@^1.0.0", "@enso-ui/tables@^1.0.17", "@enso-ui/tables@~1.1.6":
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/@enso-ui/tables/-/tables-1.1.6.tgz#9212959dd87357c759daac19ecbb360c59001eab"
+  integrity sha512-oE4sU0I0NIoNuvK4xIvPqrAnq1UAgb1VnzDx8F1Ic3ZwoqPB9fz1R3N+9kxtkaQHoyq20MWx7vDU4ABYGEdE0Q==
   dependencies:
-    "@enso-ui/directives" "^1.0.4"
-    "@enso-ui/dropdown" "^1.0.15"
-    "@enso-ui/loader" "^1.0.6"
-    "@enso-ui/modal" "^1.0.6"
+    "@enso-ui/directives" "1.0.x"
+    "@enso-ui/dropdown" "1.0.x"
+    "@enso-ui/loader" "1.0.x"
+    "@enso-ui/modal" "1.0.x"
     "@fortawesome/fontawesome-free" "^5.2.0"
     "@fortawesome/fontawesome-svg-core" "^1.2.2"
     "@fortawesome/free-solid-svg-icons" "^5.2.0"
@@ -971,7 +971,7 @@
     bulma "^0.7.2"
     vue "^2.5.16"
 
-"@enso-ui/transitions@^1.0.0", "@enso-ui/transitions@~1.0.1":
+"@enso-ui/transitions@1.0.x", "@enso-ui/transitions@^1.0.0", "@enso-ui/transitions@~1.0.1":
   version "1.0.13"
   resolved "https://registry.yarnpkg.com/@enso-ui/transitions/-/transitions-1.0.13.tgz#b1d0ab82eb9d40552028689dd7d547cae672f20d"
   integrity sha512-tjY2+HlTKHC9MV+WJCTMk3rMzcqM6zwh9DG+uz1qpCABBNGDxfKfCuMRgNSqnTzg2HS48HIHWUZ6s8JJR12xcw==
