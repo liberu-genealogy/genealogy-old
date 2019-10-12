@@ -40,7 +40,7 @@
     },
     "false": {},
     "dependencies": {
-        "@enso-ui/accessories": "~1.0.0",
+        "@enso-ui/accessories": "~2.0.4",
         "@enso-ui/bulma": "~1.0.0",
         "@enso-ui/directives": "~1.0.1",
         "@enso-ui/forms": "~1.1.0",
