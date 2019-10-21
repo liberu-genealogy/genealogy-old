@@ -3834,16 +3834,16 @@
         },
         {
             "name": "laravel/horizon",
-            "version": "v3.2.5",
+            "version": "v3.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "03cfd34e84a83e537df1d640d196193e69c229b4"
+                "reference": "d3bbfd72413357a5c509b67eee93b67a5a94ba65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/03cfd34e84a83e537df1d640d196193e69c229b4",
-                "reference": "03cfd34e84a83e537df1d640d196193e69c229b4",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/d3bbfd72413357a5c509b67eee93b67a5a94ba65",
+                "reference": "d3bbfd72413357a5c509b67eee93b67a5a94ba65",
                 "shasum": ""
             },
             "require": {
@@ -3851,9 +3851,9 @@
                 "ext-json": "*",
                 "ext-pcntl": "*",
                 "ext-posix": "*",
-                "illuminate/contracts": "~5.7.0|~5.8.0|~5.9.0",
-                "illuminate/queue": "~5.7.0|~5.8.0|~5.9.0",
-                "illuminate/support": "~5.7.0|~5.8.0|~5.9.0",
+                "illuminate/contracts": "~5.7.0|~5.8.0|^6.0|^7.0",
+                "illuminate/queue": "~5.7.0|~5.8.0|^6.0|^7.0",
+                "illuminate/support": "~5.7.0|~5.8.0|^6.0|^7.0",
                 "php": ">=7.1.0",
                 "predis/predis": "^1.1",
                 "ramsey/uuid": "^3.5",
@@ -3862,8 +3862,8 @@
             },
             "require-dev": {
                 "mockery/mockery": "^1.0",
-                "orchestra/testbench": "^3.7",
-                "phpunit/phpunit": "^7.0"
+                "orchestra/testbench": "^3.7|^4.0|^5.0",
+                "phpunit/phpunit": "^7.0|^8.0"
             },
             "type": "library",
             "extra": {
@@ -3899,7 +3899,7 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2019-07-02T15:31:06+00:00"
+            "time": "2019-10-21T13:46:02+00:00"
         },
         {
             "name": "laravel/telescope",
@@ -6201,16 +6201,16 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v4.3.2",
+            "version": "v4.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "d8f4fb38152e0eb6a433705e5f661d25b32c5fcd"
+                "reference": "cc5c1efd0edfcfd10b354750594a46b3dd2afbbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/d8f4fb38152e0eb6a433705e5f661d25b32c5fcd",
-                "reference": "d8f4fb38152e0eb6a433705e5f661d25b32c5fcd",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/cc5c1efd0edfcfd10b354750594a46b3dd2afbbe",
+                "reference": "cc5c1efd0edfcfd10b354750594a46b3dd2afbbe",
                 "shasum": ""
             },
             "require": {
@@ -6253,7 +6253,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2019-06-19T15:27:09+00:00"
+            "time": "2019-09-19T15:51:53+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -6694,16 +6694,16 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.11.0",
+            "version": "v1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "82ebae02209c21113908c229e9883c419720738a"
+                "reference": "550ebaac289296ce228a706d0867afc34687e3f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/82ebae02209c21113908c229e9883c419720738a",
-                "reference": "82ebae02209c21113908c229e9883c419720738a",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/550ebaac289296ce228a706d0867afc34687e3f4",
+                "reference": "550ebaac289296ce228a706d0867afc34687e3f4",
                 "shasum": ""
             },
             "require": {
@@ -6715,7 +6715,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.11-dev"
+                    "dev-master": "1.12-dev"
                 }
             },
             "autoload": {
@@ -6732,12 +6732,12 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                },
-                {
                     "name": "Gert de Pagter",
                     "email": "BackEndTea@gmail.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
@@ -6748,7 +6748,7 @@
                 "polyfill",
                 "portable"
             ],
-            "time": "2019-02-06T07:57:58+00:00"
+            "time": "2019-08-06T08:03:45+00:00"
         },
         {
             "name": "symfony/polyfill-iconv",
@@ -7045,16 +7045,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v4.3.2",
+            "version": "v4.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "856d35814cf287480465bb7a6c413bb7f5f5e69c"
+                "reference": "50556892f3cc47d4200bfd1075314139c4c9ff4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/856d35814cf287480465bb7a6c413bb7f5f5e69c",
-                "reference": "856d35814cf287480465bb7a6c413bb7f5f5e69c",
+                "url": "https://api.github.com/repos/symfony/process/zipball/50556892f3cc47d4200bfd1075314139c4c9ff4b",
+                "reference": "50556892f3cc47d4200bfd1075314139c4c9ff4b",
                 "shasum": ""
             },
             "require": {
@@ -7090,7 +7090,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2019-05-30T16:10:05+00:00"
+            "time": "2019-09-26T21:17:10+00:00"
         },
         {
             "name": "symfony/routing",
