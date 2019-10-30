@@ -726,24 +726,6 @@
     "@enso-ui/uploader" "1.0.x"
     bulma "^0.7.2"
 
-"@enso-ui/calendar@1.1.x":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@enso-ui/calendar/-/calendar-1.1.0.tgz#c4b355b7ffbbba5381355bc7f8d481be2a36756a"
-  integrity sha512-q+tnE6gcAych8jSqrq4pOxNG9KxWF+Vlb9PIaxtBP04FkahKCU4sq8zcrDoEpy1JeTybwpVws28EW1syZGM1nw==
-  dependencies:
-    "@enso-ui/datepicker" "1.0.x"
-    "@enso-ui/forms" "1.2.x"
-    "@enso-ui/modal" "1.0.x"
-    "@enso-ui/select" "1.1.x"
-    "@enso-ui/transitions" "1.0.x"
-    "@enso-ui/ui" "2.1.x"
-    "@fortawesome/fontawesome-svg-core" "^1.2.2"
-    "@fortawesome/free-solid-svg-icons" "^5.2.0"
-    v-tooltip "^2.0.0-rc.32"
-    vue "^2.5.16"
-    vue-cal "^2.0.1"
-    vuex "^3.0.0"
-
 "@enso-ui/card@1.0.x":
   version "1.0.23"
   resolved "https://registry.yarnpkg.com/@enso-ui/card/-/card-1.0.23.tgz#c6b363569bccc1ca834f8158f3a115241d598616"
@@ -1224,13 +1206,12 @@
     vue "^2.5.16"
 
 "@enso-ui/ui@2.1.x":
-  version "2.1.5"
-  resolved "https://registry.yarnpkg.com/@enso-ui/ui/-/ui-2.1.5.tgz#24279db8f2c48cfbf55a697798e11bc18a683e6f"
-  integrity sha512-KMDzGSHoCORntnXw1PwZEw5Kon0eRTiyVK0sOKjgtamRV4dLfvGvr6mmjNL0wlaQmqyCr2Q4ZowM0vsCKOt0cg==
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/@enso-ui/ui/-/ui-2.1.8.tgz#b2494850f39780cfcc9936e767141872b515ad55"
+  integrity sha512-S8MC+Cw+i43sDH0TvmWK54ZgQDn3M1m8sGA94AOimBcSPSGEkZgyQictPZWp9VdLJd87TAtdyPl5yRHi/lkRqw==
   dependencies:
     "@enso-ui/accessories" "2.1.x"
     "@enso-ui/activity-log" "1.1.x"
-    "@enso-ui/calendar" "1.1.x"
     "@enso-ui/charts" "1.0.x"
     "@enso-ui/companies" "1.1.x"
     "@enso-ui/data-import" "1.1.x"
