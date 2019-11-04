@@ -655,9 +655,9 @@
     to-fast-properties "^2.0.0"
 
 "@enso-ui/accessories@2.1.x":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@enso-ui/accessories/-/accessories-2.1.0.tgz#83398a9876dfd997c600adbbd74fb69164f149f4"
-  integrity sha512-X/9mosI2UdcqxXQlviZ0+9bFR94yUaNW69hktOBAnsDslqJFie093tRP/H+Uedl06X4w8o2kBtv/iV+PgTl94Q==
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@enso-ui/accessories/-/accessories-2.1.2.tgz#883599ff06ae18fcaced1a4c766eb645f1ba1d81"
+  integrity sha512-nopZDBiwi1fmdM353DzgDHqlfto8Cb3pvgMowBCP4oWu4thGPu3I47i/iRTMm/YFRV4Q01pqDZKeKK6BEMOYLQ==
   dependencies:
     "@enso-ui/card" "1.0.x"
     "@enso-ui/confirmation" "1.0.x"
