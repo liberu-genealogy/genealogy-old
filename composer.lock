@@ -2510,21 +2510,21 @@
         },
         {
             "name": "laravel-enso/excel",
-            "version": "1.0.2",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/excel.git",
-                "reference": "d94b7f6657ff805ae13037660708d4287aa0337b"
+                "reference": "688f566436612396e71b7885e38853a8e0deef07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/excel/zipball/d94b7f6657ff805ae13037660708d4287aa0337b",
-                "reference": "d94b7f6657ff805ae13037660708d4287aa0337b",
+                "url": "https://api.github.com/repos/laravel-enso/excel/zipball/688f566436612396e71b7885e38853a8e0deef07",
+                "reference": "688f566436612396e71b7885e38853a8e0deef07",
                 "shasum": ""
             },
             "require": {
                 "box/spout": "^3.0.1",
-                "php": ">=7.2.21"
+                "php": ">=7.3.0"
             },
             "type": "library",
             "extra": {
@@ -2569,7 +2569,7 @@
                 "laravel",
                 "laravel-enso"
             ],
-            "time": "2019-10-14T07:42:31+00:00"
+            "time": "2019-12-12T14:23:18+00:00"
         },
         {
             "name": "laravel-enso/files",
@@ -3788,7 +3788,7 @@
                 "datatable",
                 "laravel-enso"
             ],
-            "time": "2019-10-16T12:07:16+00:00"
+            "time": "2019-10-16T13:25:46+00:00"
         },
         {
             "name": "laravel-enso/teams",
@@ -6217,9 +6217,9 @@
             "authors": [
                 {
                     "name": "Freek Van der Herten",
-                    "role": "Developer",
                     "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be"
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
                 }
             ],
             "description": "Easily optimize images using PHP",
@@ -8670,8 +8670,8 @@
             "authors": [
                 {
                     "name": "Filipe Dobreira",
-                    "role": "Developer",
-                    "homepage": "https://github.com/filp"
+                    "homepage": "https://github.com/filp",
+                    "role": "Developer"
                 }
             ],
             "description": "php error handling for cool kids",
@@ -10449,18 +10449,18 @@
             "authors": [
                 {
                     "name": "Geert Bergman",
-                    "role": "Project Author",
-                    "homepage": "http://www.scrivo.org/"
+                    "homepage": "http://www.scrivo.org/",
+                    "role": "Project Author"
                 },
                 {
                     "name": "Vladimir Jimenez",
-                    "role": "Contributor",
-                    "homepage": "https://allejo.io"
+                    "homepage": "https://allejo.io",
+                    "role": "Contributor"
                 },
                 {
                     "name": "Martin Folkers",
-                    "role": "Contributor",
-                    "homepage": "https://twobrain.io"
+                    "homepage": "https://twobrain.io",
+                    "role": "Contributor"
                 }
             ],
             "description": "Server side syntax highlighter that supports 185 languages. It's a PHP port of highlight.js",
