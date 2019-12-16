@@ -1123,9 +1123,9 @@
     vue "^2.5.16"
 
 "@enso-ui/tables@1.2.x":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@enso-ui/tables/-/tables-1.2.1.tgz#aa1542261065b964f8b3358421313aa42448cda6"
-  integrity sha512-a/xeLs00eO37t2FN8q3NNlAGsp97n2gWd9NNh7+ScaJgIaZIJmrowNLjAyYjwQjHVc7q7JpMUkqVIMdca4ylrQ==
+  version "1.2.8"
+  resolved "https://registry.yarnpkg.com/@enso-ui/tables/-/tables-1.2.8.tgz#bb9a02107084615871257daf73c663e17d368398"
+  integrity sha512-zFN9Ep75JPAfuAUl645RJRIK5M3aWtFN8UOzsYAzo77akmlsbUR+UUuYI/ZWg89ytWzaDdT3Q2Agn9ccN+Vtow==
   dependencies:
     "@enso-ui/directives" "1.0.x"
     "@enso-ui/dropdown" "1.0.x"
