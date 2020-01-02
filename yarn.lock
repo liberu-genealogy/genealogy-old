@@ -9289,10 +9289,10 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.0.tgz#bd76d6a23323e2ca8ffa12028dc04559c75f9019"
   integrity sha512-iq+S7vZJE60yejDYM0ek6zg308+UZsdtPExWP9VZoCFCz1zkJoXFnAX7aZfd/ZwrkidzdUZL0C/ryW+JwAiIGw==
 
-vue-cal@^2.0.1:
-  version "2.11.1"
-  resolved "https://registry.yarnpkg.com/vue-cal/-/vue-cal-2.11.1.tgz#74b362bb18b602e887dcad730535c9270b677513"
-  integrity sha512-H1ASGyUNiy3cWzZicwjYWQnNxB3598iOiMmVo2WM/jrArXwkT4JPlYLlD4rIF/zoJwxsYQ1de1rgXmOyzALCRw==
+vue-cal@^2.0.1, vue-cal@^2.18.1:
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/vue-cal/-/vue-cal-2.18.1.tgz#8444e202a313ce7e4b1763786d9fef99aaabcfcd"
+  integrity sha512-7qZtRezOJOG9rScXb4i5o4/+uChEnmKT2/LUrzPeF0d5jWd0WeYOjvTwHQZ5Dpe0B6Nn+4gZVaXPv/j+GFBO8Q==
 
 vue-eslint-parser@^5.0.0:
   version "5.0.0"
