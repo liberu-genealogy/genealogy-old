@@ -1142,6 +1142,26 @@
     vue "^2.5.16"
     vuex "^3.1.0"
 
+"@enso-ui/tables@1.3.x":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@enso-ui/tables/-/tables-1.3.0.tgz#0ce89409ee26faeb0a50b729ab54f1fed1587c09"
+  integrity sha512-TzPQ/JWlJUQPqcwFhwwxRKFumh3LzV6/0AEK/XqiuOFcSXZtLOdN1uYqv4+CZfS95ctUHmxld4bexX219sHCqA==
+  dependencies:
+    "@enso-ui/directives" "1.0.x"
+    "@enso-ui/dropdown" "1.0.x"
+    "@enso-ui/loader" "1.0.x"
+    "@enso-ui/modal" "1.0.x"
+    "@fortawesome/fontawesome-free" "^5.2.0"
+    "@fortawesome/fontawesome-svg-core" "^1.2.2"
+    "@fortawesome/free-solid-svg-icons" "^5.2.0"
+    "@fortawesome/vue-fontawesome" "^0.1.1"
+    accounting-js "^1.1.1"
+    css-element-queries "^1.1.1"
+    lodash "^4.17.11"
+    v-tooltip "^2.0.0-rc.33"
+    vue "^2.5.16"
+    vuex "^3.1.0"
+
 "@enso-ui/tabs@1.0.x":
   version "1.0.25"
   resolved "https://registry.yarnpkg.com/@enso-ui/tabs/-/tabs-1.0.25.tgz#5e9bbab584b5efbc5414ebd22600db2179b9b2ce"
