@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use LaravelEnso\Localisation\app\Models\Language;
+use Illuminate\Support\Collection;
+use LaravelEnso\Localisation\App\Models\Language;
 
 class LanguageSeeder extends Seeder
 {
@@ -16,16 +16,12 @@ class LanguageSeeder extends Seeder
         ['name' => 'ar', 'display_name' => 'Arabic', 'flag' => 'flag-icon flag-icon-eg', 'is_rtl' => true, 'is_active' => true],
         ['name' => 'mn', 'display_name' => 'Mongolia', 'flag' => 'flag-icon flag-icon-mn', 'is_rtl' => false, 'is_active' => true],
         ['name' => 'hu', 'display_name' => 'Magyar', 'flag' => 'flag-icon flag-icon-hu', 'is_rtl' => false, 'is_active' => true],
+        ['name' => 'es', 'display_name' => 'Español', 'flag' => 'flag-icon flag-icon-es', 'is_rtl' => false, 'is_active' => true],
     ];
 
     public function run()
     {
-        DB::transaction(function () {
-            collect(self::Languages)
-                ->each(function ($language) {
-                    factory(Language::class)
-                        ->create($language);
-                });
-        });
+        (new Collection(self::Languages))
+            ->each(fn ($language) => factory(Language::class)->create($language));
     }
 }

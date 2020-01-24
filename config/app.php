@@ -81,8 +81,6 @@ return [
 
     'locale' => 'en',
 
-    'faker_locale' => 'en_US',
-
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
@@ -164,7 +162,7 @@ return [
         /*
          * Package Service Providers...
          */
-        LaravelEnso\ActivityLog\EnumServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -176,6 +174,7 @@ return [
         App\Providers\TelescopeServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\LoggerServiceProvider::class,
+        App\Providers\CalendarServiceProvider::class,
     ],
 
     /*

@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use LaravelEnso\Roles\app\Models\Role;
-use LaravelEnso\Core\app\Models\UserGroup;
+use LaravelEnso\Core\App\Models\UserGroup;
+use LaravelEnso\Roles\App\Models\Role;
 
 class UserGroupSeeder extends Seeder
 {
@@ -11,7 +11,6 @@ class UserGroupSeeder extends Seeder
         factory(UserGroup::class)->create([
             'name' => 'Administrators',
             'description' => 'Administrator users group',
-        ])->roles()
-        ->sync(Role::pluck('id'));
+        ])->roles()->sync(Role::pluck('id'));
     }
 }

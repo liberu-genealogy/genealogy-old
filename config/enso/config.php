@@ -1,11 +1,9 @@
 <?php
 
-use App\Classes\LocalState;
-
 return [
-    'version' => '3.6.0',
-    'showQuote' => true,
-    'stateBuilder' => LocalState::class,
+    'version' => '3.8.0',
+    'ownerCompanyId' => env('OWNER_COMPANY_ID', 1),
+    'showQuote' => env('SHOW_QUOTE', true),
     'defaultRole' => 'admin',
     'dateFormat' => 'd-m-Y',
     'dateTimeFormat' => 'd-m-Y H:i:s',
@@ -15,5 +13,5 @@ return [
     'ravenKey' => env('RAVEN_DSN', null),
     'cacheLifetime' => env('CACHE_LIFETIME', 60),
     'ensoApiToken' => env('ENSO_API_TOKEN', null),
-    'extendedDocumentTitle' => false,
+    'extendedDocumentTitle' => env('EXTENDED_DOCUMENT_TITLE', false),
 ];

@@ -25,6 +25,9 @@
         <testsuite name="avatars">
             <directory suffix="Test.php">./vendor/laravel-enso/avatars/tests/features</directory>
         </testsuite>
+        <testsuite name="calendar">
+            <directory suffix="Test.php">./vendor/laravel-enso/calendar/tests</directory>
+        </testsuite>
         <testsuite name="cli">
             <directory suffix="Test.php">./vendor/laravel-enso/cli/tests</directory>
         </testsuite>
@@ -54,6 +57,9 @@
         </testsuite>
         <testsuite name="forms">
             <directory suffix="Test.php">./vendor/laravel-enso/forms/tests/unit</directory>
+        </testsuite>
+        <testsuite name="helpers">
+            <directory suffix="Test.php">./vendor/laravel-enso/helpers/tests/units</directory>
         </testsuite>
         <testsuite name="history-tracker">
             <directory suffix="Test.php">./vendor/laravel-enso/history-tracker/tests/features</directory>
