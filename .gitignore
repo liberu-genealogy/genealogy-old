@@ -4,14 +4,15 @@
 ._*
 Homestead.json
 Homestead.yaml
-public/*
-!public/robots.txt
-!public/index.php
-!public/.htaccess
-!public/vendor
-node_modules
-vendor
-packages
+/public/*
+!/public/robots.txt
+!/public/index.php
+!/public/.htaccess
+!/public/vendor
+/resources/views/index.blade.php
+/node_modules
+/vendor
+/packages
 .vagrant
 
 # env
@@ -30,4 +31,3 @@ packages
 *.njsproj
 *.sln
 *.sw*
-
