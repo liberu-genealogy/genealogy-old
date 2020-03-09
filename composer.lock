@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2ef50e32354993803eaa12cee4538e28",
+    "content-hash": "3c0f4df19cbee476690cc4fc9cd2ae2a",
     "packages": [
         {
             "name": "barryvdh/laravel-snappy",
@@ -8329,16 +8329,16 @@
         },
         {
             "name": "codedungeon/phpunit-result-printer",
-            "version": "0.26.2",
+            "version": "0.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mikeerickson/phpunit-pretty-result-printer.git",
-                "reference": "89f1664579d8732e987bf5db1f689dab39d19d36"
+                "reference": "b1321647ef3eacfb145fcc9559483b22d0c86cfe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mikeerickson/phpunit-pretty-result-printer/zipball/89f1664579d8732e987bf5db1f689dab39d19d36",
-                "reference": "89f1664579d8732e987bf5db1f689dab39d19d36",
+                "url": "https://api.github.com/repos/mikeerickson/phpunit-pretty-result-printer/zipball/b1321647ef3eacfb145fcc9559483b22d0c86cfe",
+                "reference": "b1321647ef3eacfb145fcc9559483b22d0c86cfe",
                 "shasum": ""
             },
             "require": {
@@ -8346,7 +8346,7 @@
                 "codedungeon/php-cli-colors": "^1.10.2",
                 "hassankhan/config": "^0.11.2",
                 "php": "^7.1",
-                "phpunit/phpunit": "^8.0",
+                "phpunit/phpunit": "^8.0|^9.0",
                 "symfony/yaml": "^2.7|^3.0|^4.0"
             },
             "require-dev": {
@@ -8378,7 +8378,7 @@
                 "result-printer",
                 "testing"
             ],
-            "time": "2019-04-02T17:06:04+00:00"
+            "time": "2020-02-29T21:59:20+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -11839,16 +11839,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v4.4.4",
+            "version": "v4.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "cd014e425b3668220adb865f53bff64b3ad21767"
+                "reference": "94d005c176db2080e98825d98e01e8b311a97a88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/cd014e425b3668220adb865f53bff64b3ad21767",
-                "reference": "cd014e425b3668220adb865f53bff64b3ad21767",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/94d005c176db2080e98825d98e01e8b311a97a88",
+                "reference": "94d005c176db2080e98825d98e01e8b311a97a88",
                 "shasum": ""
             },
             "require": {
@@ -11894,7 +11894,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2020-01-21T11:12:16+00:00"
+            "time": "2020-02-03T10:46:43+00:00"
         },
         {
             "name": "theseer/fdomdocument",

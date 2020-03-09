@@ -20,7 +20,7 @@
     },
     "require-dev": {
         "facade/ignition": "^1.4",
-        "codedungeon/phpunit-result-printer": "^0.26.0",
+        "codedungeon/phpunit-result-printer": "^0.27.0",
         "filp/whoops": "^2.1.0",
         "fzaninotto/faker": "^1.7.0",
         "mockery/mockery": "1.*",
