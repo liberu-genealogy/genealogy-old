@@ -2569,20 +2569,20 @@
         },
         {
             "name": "laravel-enso/excel",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/excel.git",
-                "reference": "e0f989ff4e9b15661a932364b20be1fb6cfbeeb3"
+                "reference": "53604d89f91c5186afd9eb70898fbd3506ba8fbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/excel/zipball/e0f989ff4e9b15661a932364b20be1fb6cfbeeb3",
-                "reference": "e0f989ff4e9b15661a932364b20be1fb6cfbeeb3",
+                "url": "https://api.github.com/repos/laravel-enso/excel/zipball/53604d89f91c5186afd9eb70898fbd3506ba8fbb",
+                "reference": "53604d89f91c5186afd9eb70898fbd3506ba8fbb",
                 "shasum": ""
             },
             "require": {
-                "box/spout": "^3.0.1",
+                "box/spout": "^3.0",
                 "php": ">=7.4"
             },
             "type": "library",
@@ -2622,7 +2622,7 @@
                 "laravel",
                 "laravel-enso"
             ],
-            "time": "2019-12-31T17:21:15+00:00"
+            "time": "2020-03-10T09:30:11+00:00"
         },
         {
             "name": "laravel-enso/files",
