@@ -14,7 +14,7 @@
         "laravel-enso/excel": "1.1.*",
         "laravel-enso/pdf": "1.1.*",
         "laravel/horizon": "^3.0",
-        "laravel/telescope": "^2.0",
+        "laravel/telescope": "^3.2",
         "laravel/tinker": "~1.0",
         "sentry/sentry-laravel": "^1.0.0"
     },
