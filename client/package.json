@@ -23,7 +23,7 @@
         "@enso-ui/tables": "1.4.x",
         "@enso-ui/themes": "1.1.x",
         "@enso-ui/transitions": "1.0.x",
-        "@enso-ui/ui": "2.4.x",
+        "@enso-ui/ui": "2.5.x",
         "@fortawesome/fontawesome-free": "^5.2.0",
         "@fortawesome/fontawesome-svg-core": "^1.2.2",
         "@fortawesome/free-brands-svg-icons": "^5.2.0",
@@ -42,12 +42,12 @@
         "popper.js": "^1.14.7",
         "postinstall-postinstall": "^2.0.0",
         "pusher-js": "^5.0.0",
-        "raven-js": "^3.26.2",
         "v-tooltip": "^2.0.0-rc.32",
         "vue": "^2.6.10",
         "vue-cal": "^2.0.1",
         "vue-router": "^3.0.1",
-        "vuex": "^3.0.0"
+        "vuex": "^3.0.0",
+        "vuex-router-sync": "^5.0.0"
     },
     "devDependencies": {
         "@babel/plugin-syntax-dynamic-import": "^7.2.0",
@@ -57,7 +57,7 @@
         "@vue/eslint-config-airbnb": "^5.0.0",
         "autoprefixer": "^9.6.1",
         "babel-eslint": "^10.0.1",
-        "copy-webpack-plugin": "^5.0.4",
+        "copy-webpack-plugin": "^5.0.5",
         "cross-env": "^6.0.0",
         "cssnano": "^4.1.10",
         "eslint": "^6.8.0",
