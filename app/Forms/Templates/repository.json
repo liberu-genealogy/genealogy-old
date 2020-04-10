@@ -1,0 +1,7 @@
+{
+    "routePrefix": "repositories",
+    "sections": [{
+        "columns": 2,
+        "fields": []
+    }]
+}

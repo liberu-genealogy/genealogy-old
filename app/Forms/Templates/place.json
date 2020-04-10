@@ -1,0 +1,7 @@
+{
+    "routePrefix": "places",
+    "sections": [{
+        "columns": 2,
+        "fields": []
+    }]
+}

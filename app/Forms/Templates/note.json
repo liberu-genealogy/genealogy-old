@@ -1,0 +1,7 @@
+{
+    "routePrefix": "notes",
+    "sections": [{
+        "columns": 2,
+        "fields": []
+    }]
+}

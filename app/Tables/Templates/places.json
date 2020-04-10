@@ -1,0 +1,12 @@
+{
+    "name": "Place",
+    "routePrefix": "places",
+    "crtNo": true,
+    "buttons": ["excel", "create", "show", "edit", "destroy"],
+    "columns": [{
+        "label": "Id",
+        "name": "id",
+        "data": "places.id",
+        "meta": ["searchable", "sortable"]
+    }]
+}
