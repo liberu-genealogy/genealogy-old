@@ -1,7 +1,55 @@
 {
-    "routePrefix": "notes",
-    "sections": [{
-        "columns": 2,
-        "fields": []
+  "routePrefix": "notes",
+  "sections": [{
+    "columns": "2",
+    "fields": [
+      {
+        "label": "Name",
+        "name": "name",
+        "value": null,
+        "meta": {
+          "type": "input",
+          "content": "text"
+        }
+      }, {
+        "label": "Description",
+        "name": "name",
+        "value": null,
+        "meta": {
+          "type": "input",
+          "content": "text"
+                }
+    }, {
+      "label": "Date",
+      "name": "date",
+      "value": null,
+      "meta": {
+        "custom": false,
+        "type": "datepicker",
+        "content": "date",
+        "time": true,
+        "format": "Y-m-d h:m:S",
+        "disabled": false
+      }
+    }, {
+      "label": "Type",
+      "name": "type_id",
+      "value": null,
+      "meta": {
+        "custom": true,
+        "type": "select",
+        "multiple": false,
+        "options": [],
+        "source": "types.selectOptions"
+      }
+    }, {
+      "label": "Active",
+      "name": "is_active",
+      "value": false,
+      "meta": {
+        "type": "input",
+        "content": "checkbox"
+      }
     }]
+  }]
 }

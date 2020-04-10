@@ -1,7 +1,66 @@
 {
-    "routePrefix": "families",
-    "sections": [{
-        "columns": 2,
-        "fields": []
+  "routePrefix": "families",
+  "sections": [{
+    "columns": "3",
+    "fields": [
+      {
+        "label": "Description",
+        "name": "description",
+        "value": null,
+        "meta": {
+          "type": "input",
+          "content": "text"
+        }
+      }, {
+       "label": "Individuals",
+      "name": "individualList",
+      "value": [],
+      "meta": {
+        "type": "select",
+        "multiple": true,
+        "options": []
+      }
+      },
+      {
+        "label": "Types",
+        "name": "type_id",
+        "value": null,
+        "meta": {
+          "type": "select",
+          "multiple": false,
+          "options": []
+        }
+      },
+      {
+        "label": "Father",
+        "name": "father_id",
+        "value": null,
+        "meta": {
+          "type": "select",
+          "multiple": false,
+          "options": [],
+          "source": "persons.selectOptions"
+        }
+      },
+      {
+        "label": "Mother",
+        "name": "mother_id",
+        "value": null,
+        "meta": {
+          "type": "select",
+          "multiple": false,
+          "options": [],
+          "source": "persons.selectOptions"
+        }
+      },
+      {
+      "label": "Active",
+      "name": "is_active",
+      "value": true,
+      "meta": {
+        "type": "input",
+        "content": "checkbox"
+      }
     }]
+  }]
 }
