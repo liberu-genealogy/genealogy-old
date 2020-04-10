@@ -8,7 +8,7 @@ use LaravelEnso\Tables\App\Contracts\Table;
 
 class RepositoryTable implements Table
 {
-    protected const TemplatePath = __DIR__.'/../../Templates/repositories.json';
+    protected const TemplatePath = __DIR__.'/../Templates/repositories.json';
 
     public function query(): Builder
     {

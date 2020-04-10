@@ -8,7 +8,7 @@ use LaravelEnso\Tables\App\Contracts\Table;
 
 class SourceTable implements Table
 {
-    protected const TemplatePath = __DIR__.'/../../Templates/sources.json';
+    protected const TemplatePath = __DIR__.'/../Templates/sources.json';
 
     public function query(): Builder
     {

@@ -1,5 +1,5 @@
 {
-    "name": "Note",
+    "name": "Notes",
     "routePrefix": "notes",
     "crtNo": true,
     "buttons": ["excel", "create", "show", "edit", "destroy"],

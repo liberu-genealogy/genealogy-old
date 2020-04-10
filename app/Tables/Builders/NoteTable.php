@@ -8,7 +8,7 @@ use LaravelEnso\Tables\App\Contracts\Table;
 
 class NoteTable implements Table
 {
-    protected const TemplatePath = __DIR__.'/../../Templates/notes.json';
+    protected const TemplatePath = __DIR__.'/../Templates/notes.json';
 
     public function query(): Builder
     {

@@ -1,5 +1,5 @@
 {
-    "name": "Repository",
+    "name": "Repositories",
     "routePrefix": "repositories",
     "crtNo": true,
     "buttons": ["excel", "create", "show", "edit", "destroy"],

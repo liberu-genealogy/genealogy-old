@@ -8,7 +8,7 @@ use LaravelEnso\Tables\App\Contracts\Table;
 
 class PlaceTable implements Table
 {
-    protected const TemplatePath = __DIR__.'/../../Templates/places.json';
+    protected const TemplatePath = __DIR__.'/../Templates/places.json';
 
     public function query(): Builder
     {
