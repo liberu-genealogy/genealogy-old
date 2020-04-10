@@ -1,7 +1,86 @@
 {
-    "routePrefix": "citations",
-    "sections": [{
-        "columns": 2,
-        "fields": []
+  "routePrefix": "citations",
+  "sections": [{
+      "columns": "custom",
+      "fields": [
+        {
+          "label": "Date",
+          "name": "date",
+          "value": null,
+          "column": 3,
+          "meta": {
+            "custom": false,
+            "type": "datepicker",
+            "content": "date",
+            "time": true,
+            "format": "Y-m-d h:m:S",
+            "disabled": false
+          }
+        },{
+          "label": "Name",
+          "name": "name",
+          "column" : 3,
+          "value": null,
+          "meta": {
+            "type": "input",
+            "content": "text"
+          }
+        }, {
+          "label": "Description",
+          "name": "description",
+          "column" : 6,
+          "value": null,
+          "meta": {
+            "type": "input",
+            "content": "text"
+          }
+        }, {
+          "label": "Confidence",
+          "name": "confidence",
+          "column" : 2,
+          "value": null,
+          "meta": {
+            "type": "input",
+            "content": "text"
+          }
+        }, {
+          "label": "Volume",
+          "name": "volume_id",
+          "column" : 2,
+          "value": null,
+          "meta": {
+            "type": "input",
+            "content": "text"
+          }
+        }, {
+          "label": "Page",
+          "name": "page_id",
+          "column" : 2,
+          "value": null,
+          "meta": {
+            "type": "input",
+            "content": "text"
+          }
+        }, {
+          "label": "Source",
+          "name": "source_id",
+          "column" : 2,
+          "value": null,
+          "meta": {
+            "custom": false,
+            "type": "select",
+            "multiple": false,
+            "options": []
+          }
+    }, {
+      "label": "Active",
+      "name": "is_active",
+      "column": 3,
+      "value": false,
+      "meta": {
+        "type": "input",
+        "content": "checkbox"
+      }
     }]
+  }]
 }

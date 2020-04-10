@@ -1,7 +1,46 @@
 {
     "routePrefix": "repositories",
     "sections": [{
-        "columns": 2,
-        "fields": []
+        "columns": "2",
+        "fields": [{
+            "label": "Name",
+            "name": "name",
+            "value": null,
+            "meta": {
+                "type": "input",
+                "content": "text"
+            }
+        }, {
+            "label": "Description",
+            "name": "description",
+            "value": null,
+            "meta": {
+                "type": "input",
+                "content": "text"
+            }
+        }, {
+            "label": "Date",
+            "name": "date",
+            "value": null,
+            "meta": {
+                "custom": false,
+                "type": "datepicker",
+                "content": "date",
+                "time": true,
+                "format": "Y-m-d h:m:S",
+                "disabled": false
+            }
+        }, {
+            "label": "Type",
+            "name": "type_id",
+            "value": null,
+            "meta": {
+                "custom": true,
+                "type": "select",
+                "multiple": false,
+                "options": [],
+                "source": "types.selectOptions"
+            }
+        }]
     }]
 }

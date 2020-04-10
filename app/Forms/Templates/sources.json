@@ -1,7 +1,87 @@
 {
     "routePrefix": "sources",
     "sections": [{
-        "columns": 2,
-        "fields": []
+        "columns": "2",
+        "fields": [{
+            "label": "Name",
+            "name": "name",
+            "value": null,
+            "meta": {
+                "type": "input",
+                "content": "text"
+            }
+        }, {
+            "label": "Description",
+            "name": "description",
+            "value": null,
+            "meta": {
+                "type": "input",
+                "content": "text"
+            }
+        }, {
+            "label": "Date",
+            "name": "date",
+            "value": null,
+            "meta": {
+                "custom": false,
+                "type": "datepicker",
+                "content": "date",
+                "time": true,
+                "format": "Y-m-d h:m:S",
+                "disabled": false
+            }
+        }, {
+            "label": "Type",
+            "name": "type_id",
+            "value": null,
+            "meta": {
+                "custom": true,
+                "type": "select",
+                "multiple": false,
+                "options": [],
+                "source": "types.selectOptions"
+            }
+        }, {
+            "label": "Author",
+            "name": "author_id",
+            "value": null,
+            "meta": {
+                "custom": true,
+                "type": "select",
+                "multiple": false,
+                "options": [],
+                "source": "authors.selectOptions"
+            }
+        }, {
+            "label": "Publication",
+            "name": "publication_id",
+            "value": null,
+            "meta": {
+                "custom": true,
+                "type": "select",
+                "multiple": false,
+                "options": [],
+                "source": "publication.selectOptions"
+            }
+        }, {
+            "label": "Repository",
+            "name": "repository_id",
+            "value": null,
+            "meta": {
+                "custom": true,
+                "type": "select",
+                "multiple": false,
+                "options": [],
+                "source": "repository.selectOptions"
+            }
+        }, {
+            "label": "Active",
+            "name": "is_active",
+            "value": false,
+            "meta": {
+                "type": "input",
+                "content": "checkbox"
+            }
+        }]
     }]
 }
