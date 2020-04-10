@@ -7,7 +7,7 @@ use LaravelEnso\Forms\App\Services\Form;
 
 class FamilyForm
 {
-    protected const TemplatePath = __DIR__.'/../Templates//family.json';
+    protected const TemplatePath = __DIR__.'/../Templates/families.json';
 
     protected Form $form;
 

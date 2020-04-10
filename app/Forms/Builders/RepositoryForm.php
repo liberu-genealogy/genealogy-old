@@ -7,7 +7,7 @@ use LaravelEnso\Forms\App\Services\Form;
 
 class RepositoryForm
 {
-    protected const TemplatePath = __DIR__.'/../Templates//repository.json';
+    protected const TemplatePath = __DIR__.'/../Templates/repositories.json';
 
     protected Form $form;
 
