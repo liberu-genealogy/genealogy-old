@@ -7,7 +7,7 @@ use LaravelEnso\Forms\App\Services\Form;
 
 class CitationForm
 {
-    protected const TemplatePath = __DIR__.'/../Templates//citation.json';
+    protected const TemplatePath = __DIR__.'/../Templates/citations.json';
 
     protected Form $form;
 

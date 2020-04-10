@@ -7,7 +7,7 @@ use LaravelEnso\Forms\App\Services\Form;
 
 class NoteForm
 {
-    protected const TemplatePath = __DIR__.'/../Templates//note.json';
+    protected const TemplatePath = __DIR__.'/../Templates/notes.json';
 
     protected Form $form;
 
