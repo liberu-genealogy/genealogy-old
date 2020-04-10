@@ -1,0 +1,7 @@
+{
+    "routePrefix": "citations",
+    "sections": [{
+        "columns": 2,
+        "fields": []
+    }]
+}
