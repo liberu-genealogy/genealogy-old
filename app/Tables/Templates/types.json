@@ -1,0 +1,12 @@
+{
+    "name": "Type",
+    "routePrefix": "types",
+    "crtNo": true,
+    "buttons": ["excel", "create", "show", "edit", "destroy"],
+    "columns": [{
+        "label": "Id",
+        "name": "id",
+        "data": "types.id",
+        "meta": ["searchable", "sortable"]
+    }]
+}
