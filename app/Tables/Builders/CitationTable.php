@@ -8,7 +8,7 @@ use LaravelEnso\Tables\App\Contracts\Table;
 
 class CitationTable implements Table
 {
-    protected const TemplatePath = __DIR__.'/../../Templates/citations.json';
+    protected const TemplatePath = __DIR__.'/../Templates/citations.json';
 
     public function query(): Builder
     {

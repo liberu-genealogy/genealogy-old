@@ -8,7 +8,7 @@ use LaravelEnso\Tables\App\Contracts\Table;
 
 class FamilyTable implements Table
 {
-    protected const TemplatePath = __DIR__.'/../../Templates/families.json';
+    protected const TemplatePath = __DIR__.'/../Templates/families.json';
 
     public function query(): Builder
     {

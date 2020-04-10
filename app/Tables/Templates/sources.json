@@ -1,5 +1,5 @@
 {
-    "name": "Source",
+    "name": "Sources",
     "routePrefix": "sources",
     "crtNo": true,
     "buttons": ["excel", "create", "show", "edit", "destroy"],

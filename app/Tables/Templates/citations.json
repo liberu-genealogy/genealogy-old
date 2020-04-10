@@ -1,5 +1,5 @@
 {
-    "name": "Citation",
+    "name": "Citations",
     "routePrefix": "citations",
     "crtNo": true,
     "buttons": ["excel", "create", "show", "edit", "destroy"],
