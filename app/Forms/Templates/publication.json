@@ -1,0 +1,7 @@
+{
+    "routePrefix": "publications",
+    "sections": [{
+        "columns": 2,
+        "fields": []
+    }]
+}
