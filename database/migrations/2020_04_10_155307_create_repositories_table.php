@@ -14,7 +14,12 @@ class CreateRepositoriesTable extends Migration
     public function up()
     {
         Schema::create('repositories', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('name');
+            $table->text('description', 65535);
+            $table->dateTime('date')->nullable();
+            $table->integer('is_active');
+            $table->integer('type_id');
             $table->timestamps();
         });
     }
