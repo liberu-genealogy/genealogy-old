@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Families;
 
 use App\Family;
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\FamilyForm;
+use Illuminate\Routing\Controller;
 
 class Edit extends Controller
 {

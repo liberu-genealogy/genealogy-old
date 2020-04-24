@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Publications;
 
+use App\Http\Requests\ValidatePublicationRequest;
 use App\Publication;
 use Illuminate\Routing\Controller;
-use App\Http\Requests\ValidatePublicationRequest;
 
 class Store extends Controller
 {

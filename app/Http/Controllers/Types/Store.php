@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Types;
 
+use App\Http\Requests\ValidateTypeRequest;
 use App\Type;
 use Illuminate\Routing\Controller;
-use App\Http\Requests\ValidateTypeRequest;
 
 class Store extends Controller
 {

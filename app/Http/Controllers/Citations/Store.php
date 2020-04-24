@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Citations;
 
 use App\Citation;
-use Illuminate\Routing\Controller;
 use App\Http\Requests\ValidateCitationRequest;
+use Illuminate\Routing\Controller;
 
 class Store extends Controller
 {
