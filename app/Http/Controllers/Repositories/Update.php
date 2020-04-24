@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Repositories;
 
+use App\Http\Requests\ValidateRepositoryRequest;
 use App\Repository;
 use Illuminate\Routing\Controller;
-use App\Http\Requests\ValidateRepositoryRequest;
 
 class Update extends Controller
 {

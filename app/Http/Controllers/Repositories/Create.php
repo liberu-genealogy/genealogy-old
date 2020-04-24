@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Repositories;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\RepositoryForm;
+use Illuminate\Routing\Controller;
 
 class Create extends Controller
 {

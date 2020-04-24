@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Publications;
 
+use App\Forms\Builders\PublicationForm;
 use App\Publication;
 use Illuminate\Routing\Controller;
-use App\Forms\Builders\PublicationForm;
 
 class Edit extends Controller
 {

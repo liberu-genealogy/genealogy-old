@@ -7,7 +7,7 @@ use LaravelEnso\Tables\App\Traits\TableCache;
 
 class Source extends Model
 {
-	use TableCache;
+    use TableCache;
 
     protected $fillable = ['name', 'description', 'repository_id', 'author_id', 'is_active'];
 

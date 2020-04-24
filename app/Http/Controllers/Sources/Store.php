@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Sources;
 
+use App\Http\Requests\ValidateSourceRequest;
 use App\Source;
 use Illuminate\Routing\Controller;
-use App\Http\Requests\ValidateSourceRequest;
 
 class Store extends Controller
 {

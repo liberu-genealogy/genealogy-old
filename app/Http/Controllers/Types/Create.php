@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Types;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\TypeForm;
+use Illuminate\Routing\Controller;
 
 class Create extends Controller
 {

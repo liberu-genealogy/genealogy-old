@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Authors;
 
 use App\Author;
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\AuthorForm;
+use Illuminate\Routing\Controller;
 
 class Edit extends Controller
 {

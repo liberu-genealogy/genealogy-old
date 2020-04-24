@@ -7,7 +7,7 @@ use LaravelEnso\Tables\App\Traits\TableCache;
 
 class Note extends Model
 {
-	use TableCache;
+    use TableCache;
 
     protected $fillable = ['name', 'description', 'is_active', 'type_id'];
 
@@ -19,5 +19,4 @@ class Note extends Model
     {
         return $this->belongsToMany(Person::class);
     }
-
 }

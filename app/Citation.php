@@ -7,7 +7,7 @@ use LaravelEnso\Tables\App\Traits\TableCache;
 
 class Citation extends Model
 {
-	use TableCache;
+    use TableCache;
 
     protected $fillable = ['name', 'description', 'repository_id', 'volume_id', 'page_id', 'is_active', 'confidence', 'source_id'];
 
@@ -19,5 +19,4 @@ class Citation extends Model
     {
         return $this->belongsToMany(Source::class);
     }
-
 }
