@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Tables\App\Traits\TableCache;
+use LaravelEnso\People\App\Models\Person;
 
 class Family extends Model
 {
@@ -16,7 +17,7 @@ class Family extends Model
 
     public function person()
     {
-        return $this->belongsToMany(Person::class)
+        return $this->belongsToMany(Person::class);
 
     }
 }

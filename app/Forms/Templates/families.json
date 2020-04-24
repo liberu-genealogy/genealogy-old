@@ -18,6 +18,7 @@
       "meta": {
         "type": "select",
         "multiple": true,
+        "custom": true,
         "source": "administration.people.options",
         "options": []
 
