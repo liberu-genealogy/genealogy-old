@@ -12,8 +12,8 @@
           "content": "text"
         }
       }, {
-       "label": "Individuals",
-      "name": "individual_id",
+       "label": "People",
+      "name": "people_id",
       "value": null,
       "meta": {
         "type": "select",
@@ -31,6 +31,7 @@
         "meta": {
           "type": "select",
           "multiple": false,
+          "source": "types.options",
           "options": []
         }
       },
