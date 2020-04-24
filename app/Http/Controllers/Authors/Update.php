@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Authors;
 
 use App\Author;
-use Illuminate\Routing\Controller;
 use App\Http\Requests\ValidateAuthorRequest;
+use Illuminate\Routing\Controller;
 
 class Update extends Controller
 {

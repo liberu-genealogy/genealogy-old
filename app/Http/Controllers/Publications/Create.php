@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Publications;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\PublicationForm;
+use Illuminate\Routing\Controller;
 
 class Create extends Controller
 {

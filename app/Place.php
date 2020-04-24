@@ -7,7 +7,7 @@ use LaravelEnso\Tables\App\Traits\TableCache;
 
 class Place extends Model
 {
-	use TableCache;
+    use TableCache;
 
     //
 }

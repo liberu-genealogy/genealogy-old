@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Notes;
 
+use App\Forms\Builders\NoteForm;
 use App\Note;
 use Illuminate\Routing\Controller;
-use App\Forms\Builders\NoteForm;
 
 class Edit extends Controller
 {

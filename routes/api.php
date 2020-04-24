@@ -29,7 +29,6 @@ Route::middleware(['web', 'auth', 'core'])
             ->prefix('citations')
             ->as('citations.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -45,9 +44,7 @@ Route::middleware(['web', 'auth', 'core'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{citation}', 'Show')->name('show');
-
-
-        });
+            });
     });
 
 Route::middleware(['web', 'auth', 'core'])
@@ -56,7 +53,6 @@ Route::middleware(['web', 'auth', 'core'])
             ->prefix('families')
             ->as('families.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -72,9 +68,7 @@ Route::middleware(['web', 'auth', 'core'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{family}', 'Show')->name('show');
-
-
-        });
+            });
     });
 
 Route::middleware(['web', 'auth', 'core'])
@@ -83,7 +77,6 @@ Route::middleware(['web', 'auth', 'core'])
             ->prefix('notes')
             ->as('notes.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -99,9 +92,7 @@ Route::middleware(['web', 'auth', 'core'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{note}', 'Show')->name('show');
-
-
-        });
+            });
     });
 
 Route::middleware(['web', 'auth', 'core'])
@@ -110,7 +101,6 @@ Route::middleware(['web', 'auth', 'core'])
             ->prefix('places')
             ->as('places.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -126,9 +116,7 @@ Route::middleware(['web', 'auth', 'core'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{place}', 'Show')->name('show');
-
-
-        });
+            });
     });
 
 Route::middleware(['web', 'auth', 'core'])
@@ -137,7 +125,6 @@ Route::middleware(['web', 'auth', 'core'])
             ->prefix('repositories')
             ->as('repositories.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -153,9 +140,7 @@ Route::middleware(['web', 'auth', 'core'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{repository}', 'Show')->name('show');
-
-
-        });
+            });
     });
 
 Route::middleware(['web', 'auth', 'core'])
@@ -164,7 +149,6 @@ Route::middleware(['web', 'auth', 'core'])
             ->prefix('sources')
             ->as('sources.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -180,9 +164,7 @@ Route::middleware(['web', 'auth', 'core'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{source}', 'Show')->name('show');
-
-
-        });
+            });
     });
 
 Route::middleware(['web', 'auth', 'core'])
@@ -191,7 +173,6 @@ Route::middleware(['web', 'auth', 'core'])
             ->prefix('types')
             ->as('types.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -207,9 +188,7 @@ Route::middleware(['web', 'auth', 'core'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{type}', 'Show')->name('show');
-
-
-        });
+            });
     });
 
 Route::middleware(['web', 'auth', 'core'])
@@ -218,7 +197,6 @@ Route::middleware(['web', 'auth', 'core'])
             ->prefix('authors')
             ->as('authors.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -234,9 +212,7 @@ Route::middleware(['web', 'auth', 'core'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{author}', 'Show')->name('show');
-
-
-        });
+            });
     });
 Route::middleware(['web', 'auth', 'core'])
     ->group(function () {
@@ -244,7 +220,6 @@ Route::middleware(['web', 'auth', 'core'])
             ->prefix('publications')
             ->as('publications.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -260,8 +235,5 @@ Route::middleware(['web', 'auth', 'core'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{publication}', 'Show')->name('show');
-
-
-        });
+            });
     });
-

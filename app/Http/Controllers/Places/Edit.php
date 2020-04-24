@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Places;
 
+use App\Forms\Builders\PlaceForm;
 use App\Place;
 use Illuminate\Routing\Controller;
-use App\Forms\Builders\PlaceForm;
 
 class Edit extends Controller
 {

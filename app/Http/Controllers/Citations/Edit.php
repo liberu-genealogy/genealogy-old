@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Citations;
 
 use App\Citation;
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\CitationForm;
+use Illuminate\Routing\Controller;
 
 class Edit extends Controller
 {

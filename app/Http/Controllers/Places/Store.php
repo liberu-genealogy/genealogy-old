@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Places;
 
+use App\Http\Requests\ValidatePlaceRequest;
 use App\Place;
 use Illuminate\Routing\Controller;
-use App\Http\Requests\ValidatePlaceRequest;
 
 class Store extends Controller
 {
