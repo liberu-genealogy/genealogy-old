@@ -39,7 +39,7 @@
                 "type": "select",
                 "multiple": false,
                 "options": [],
-                "source": "types.selectOptions"
+                "source": "types.select.options"
             }
         }, {
             "label": "Author",
@@ -50,7 +50,7 @@
                 "type": "select",
                 "multiple": false,
                 "options": [],
-                "source": "authors.selectOptions"
+                "source": "authors.select.options"
             }
         }, {
             "label": "Publication",
@@ -61,7 +61,7 @@
                 "type": "select",
                 "multiple": false,
                 "options": [],
-                "source": "publication.selectOptions"
+                "source": "publication.select.options"
             }
         }, {
             "label": "Repository",
@@ -72,7 +72,7 @@
                 "type": "select",
                 "multiple": false,
                 "options": [],
-                "source": "repository.selectOptions"
+                "source": "repository.select.options"
             }
         }, {
             "label": "Active",

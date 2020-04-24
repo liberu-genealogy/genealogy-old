@@ -40,7 +40,7 @@
         "type": "select",
         "multiple": false,
         "options": [],
-        "source": "types.selectOptions"
+        "source": "types.options"
       }
     }, {
       "label": "Active",
