@@ -12,25 +12,25 @@
           "content": "text"
         }
       }, {
-       "label": "People",
-      "name": "people_id",
-      "value": null,
+       "label": "Person",
+      "name": "person_id",
+      "value": [],
       "meta": {
         "type": "select",
-	"custom": true,
         "multiple": true,
-	"source": "administration.people.options",
-        "options": [],
-	"label": "label"
+        "source": "administration.people.options",
+        "options": []
+
       }
       },
       {
-        "label": "Types",
+        "label": "Type",
         "name": "type_id",
-        "value": null,
+        "value": [],
         "meta": {
           "type": "select",
           "multiple": false,
+	  "custom": true,
           "source": "types.options",
           "options": []
         }
@@ -38,28 +38,25 @@
       {
         "label": "Father",
         "name": "father_id",
-        "value": null,
+        "value": [],
         "meta": {
         "type": "select",
-	"custom": true,
         "multiple": true,
+	"custom": true,
 	"source": "administration.people.options",
-        "options": [],
-	"label": "label"
-
+        "options": []
         }
       },
       {
         "label": "Mother",
         "name": "mother_id",
-        "value": null,
+        "value": [],
         "meta": {
         "type": "select",
-	"custom": true,
         "multiple": true,
+	"custom": true,
 	"source": "administration.people.options",
-        "options": [],
-	"label": "label"
+        "options": []
 
         }
       },

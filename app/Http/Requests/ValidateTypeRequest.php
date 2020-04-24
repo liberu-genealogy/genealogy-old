@@ -13,8 +13,12 @@ class ValidateTypeRequest extends FormRequest
 
     public function rules()
     {
+        $type = $this->route('type');
+
         return [
-            //
+            'description' => 'required|max:50',
+            'name' => 'required|max:50',
+            'is_active' => 'boolean',
         ];
     }
 }
