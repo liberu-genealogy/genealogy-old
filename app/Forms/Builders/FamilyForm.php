@@ -21,16 +21,20 @@ class FamilyForm
     public function create()
     {
         return $this->form
-	->options('person_id', Person::select())
-	->options('type_id', Type::select())
+	->value('personList', Family::personList() )
+	->options('father_id', Person::all())
+	->options('mother_id', Person::all())
+	->options('type_id', Type::all())
 	->create();
     }
 
     public function edit(Family $family)
     {
         return $this->form
-	->options('person_id', Person::select())
-	->options('type_id', Type::select())
+	->value('personList', Family::personList() )
+	->options('father_id', Person::all())
+	->options('mother_id', Person::all())
+	->options('type_id', Type::all())
         ->append('family_id', $family->id)
 	->create();
 
