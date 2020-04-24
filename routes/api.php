@@ -212,3 +212,56 @@ Route::middleware(['web', 'auth', 'core'])
         });
     });
 
+Route::middleware(['web', 'auth', 'core'])
+    ->group(function () {
+        Route::namespace('Authors')
+            ->prefix('authors')
+            ->as('authors.')
+            ->group(function () {
+
+                Route::get('', 'Index')->name('index');
+                Route::get('create', 'Create')->name('create');
+                Route::post('', 'Store')->name('store');
+                Route::get('{author}/edit', 'Edit')->name('edit');
+
+                Route::patch('{author}', 'Update')->name('update');
+
+                Route::delete('{author}', 'Destroy')->name('destroy');
+
+                Route::get('initTable', 'InitTable')->name('initTable');
+                Route::get('tableData', 'TableData')->name('tableData');
+                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+
+                Route::get('options', 'Options')->name('options');
+                Route::get('{author}', 'Show')->name('show');
+
+
+        });
+    });
+Route::middleware(['web', 'auth', 'core'])
+    ->group(function () {
+        Route::namespace('Publications')
+            ->prefix('publications')
+            ->as('publications.')
+            ->group(function () {
+
+                Route::get('', 'Index')->name('index');
+                Route::get('create', 'Create')->name('create');
+                Route::post('', 'Store')->name('store');
+                Route::get('{publication}/edit', 'Edit')->name('edit');
+
+                Route::patch('{publication}', 'Update')->name('update');
+
+                Route::delete('{publication}', 'Destroy')->name('destroy');
+
+                Route::get('initTable', 'InitTable')->name('initTable');
+                Route::get('tableData', 'TableData')->name('tableData');
+                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+
+                Route::get('options', 'Options')->name('options');
+                Route::get('{publication}', 'Show')->name('show');
+
+
+        });
+    });
+

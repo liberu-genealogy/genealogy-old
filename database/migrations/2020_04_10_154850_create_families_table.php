@@ -14,7 +14,12 @@ class CreateFamiliesTable extends Migration
     public function up()
     {
         Schema::create('families', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->text('description');
+            $table->integer('is_active');
+            $table->integer('type_id');
+            $table->integer('father_id')->references('id')->on('people');
+            $table->integer('mother_id')->references('id')->on('people');
             $table->timestamps();
         });
     }
