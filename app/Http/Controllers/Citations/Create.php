@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Citations;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\CitationForm;
+use Illuminate\Routing\Controller;
 
 class Create extends Controller
 {

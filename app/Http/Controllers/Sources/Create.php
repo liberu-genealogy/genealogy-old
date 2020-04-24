@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Sources;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\SourceForm;
+use Illuminate\Routing\Controller;
 
 class Create extends Controller
 {

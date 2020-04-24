@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Notes;
 
+use App\Http\Requests\ValidateNoteRequest;
 use App\Note;
 use Illuminate\Routing\Controller;
-use App\Http\Requests\ValidateNoteRequest;
 
 class Update extends Controller
 {

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Authors;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\AuthorForm;
+use Illuminate\Routing\Controller;
 
 class Create extends Controller
 {

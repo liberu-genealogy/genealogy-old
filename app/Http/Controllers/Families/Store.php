@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Families;
 
 use App\Family;
-use Illuminate\Routing\Controller;
 use App\Http\Requests\ValidateFamilyRequest;
+use Illuminate\Routing\Controller;
 
 class Store extends Controller
 {
