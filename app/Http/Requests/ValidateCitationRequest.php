@@ -13,8 +13,17 @@ class ValidateCitationRequest extends FormRequest
 
     public function rules()
     {
+        $citation = $this->route('citation');
+
         return [
-            //
+            'description' => 'required|max:50',
+            'name' => 'required|max:50',
+            'date' => 'required|max:24',
+            'is_active' => 'boolean',
+            'source_id' => 'required|exists:sources,id',
+            'volume_id' => 'required|max:5',
+            'page_id' => 'required|max:5',
+            'confidence' => 'required|max:50',
         ];
     }
 }
