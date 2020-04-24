@@ -1,0 +1,12 @@
+{
+    "name": "Author",
+    "routePrefix": "authors",
+    "crtNo": true,
+    "buttons": ["excel", "create", "show", "edit", "destroy"],
+    "columns": [{
+        "label": "Id",
+        "name": "id",
+        "data": "authors.id",
+        "meta": ["searchable", "sortable"]
+    }]
+}
