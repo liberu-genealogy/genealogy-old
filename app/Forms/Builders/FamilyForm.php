@@ -3,6 +3,8 @@
 namespace App\Forms\Builders;
 
 use App\Family;
+use App\Type;
+use LaravelEnso\People\App\Models\Person;
 use LaravelEnso\Forms\App\Services\Form;
 
 class FamilyForm
@@ -18,11 +20,19 @@ class FamilyForm
 
     public function create()
     {
-        return $this->form->create();
+        return $this->form
+	->options('person_id', Person::select())
+	->options('type_id', Type::select())
+	->create();
     }
 
     public function edit(Family $family)
     {
-        return $this->form->edit($family);
+        return $this->form
+	->options('person_id', Person::select())
+	->options('type_id', Type::select())
+        ->append('family_id', $family->id)
+	->create();
+
     }
 }
