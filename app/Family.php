@@ -20,4 +20,11 @@ class Family extends Model
         return $this->belongsToMany(Person::class);
 
     }
+
+    public static function personList()
+    {
+        return Person::pluck('name')
+            ->toArray();
+    }
+
 }

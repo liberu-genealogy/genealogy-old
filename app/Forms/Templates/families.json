@@ -13,50 +13,42 @@
         }
       }, {
        "label": "Person",
-      "name": "person_id",
+      "name": "personList",
       "value": [],
       "meta": {
         "type": "select",
         "multiple": true,
-        "custom": true,
-        "source": "administration.people.options",
         "options": []
-
       }
       },
       {
         "label": "Type",
         "name": "type_id",
-        "value": [],
+        "value": null,
         "meta": {
           "type": "select",
           "multiple": false,
-	  "custom": true,
-          "source": "types.options",
           "options": []
         }
       },
+
       {
         "label": "Father",
         "name": "father_id",
-        "value": [],
+        "value": null,
         "meta": {
         "type": "select",
-        "multiple": true,
-	"custom": true,
-	"source": "administration.people.options",
+        "multiple": false,
         "options": []
         }
       },
       {
         "label": "Mother",
         "name": "mother_id",
-        "value": [],
+        "value": null,
         "meta": {
         "type": "select",
-        "multiple": true,
-	"custom": true,
-	"source": "administration.people.options",
+        "multiple": false,
         "options": []
 
         }
