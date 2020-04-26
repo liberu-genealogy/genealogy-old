@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "21346f21b455bc55fd032148ae682c54",
@@ -2131,16 +2131,16 @@
         },
         {
             "name": "laravel-enso/core",
-            "version": "4.8.21",
+            "version": "4.8.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/core.git",
-                "reference": "4ec0d753d3500e6f5534aff193faf72c2d36a2e8"
+                "reference": "604f96be8b59d106df7ff32a58733d9522d3e635"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/core/zipball/4ec0d753d3500e6f5534aff193faf72c2d36a2e8",
-                "reference": "4ec0d753d3500e6f5534aff193faf72c2d36a2e8",
+                "url": "https://api.github.com/repos/laravel-enso/core/zipball/604f96be8b59d106df7ff32a58733d9522d3e635",
+                "reference": "604f96be8b59d106df7ff32a58733d9522d3e635",
                 "shasum": ""
             },
             "require": {
@@ -2230,7 +2230,7 @@
                 "vue-bulma",
                 "vue-spa"
             ],
-            "time": "2020-04-21T12:32:55+00:00"
+            "time": "2020-04-26T12:21:51+00:00"
         },
         {
             "name": "laravel-enso/countries",
