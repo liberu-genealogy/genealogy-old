@@ -8,7 +8,7 @@ use LaravelEnso\Tables\App\Contracts\Table;
 
 class AuthorTable implements Table
 {
-    protected const TemplatePath = __DIR__.'/../../Templates/authors.json';
+    protected const TemplatePath = __DIR__.'/../Templates/authors.json';
 
     public function query(): Builder
     {

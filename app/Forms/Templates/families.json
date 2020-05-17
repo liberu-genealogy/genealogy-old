@@ -20,8 +20,8 @@
         "multiple": true,
         "options": []
       }
-      },
-      {
+
+      },{
         "label": "Type",
         "name": "type_id",
         "value": null,

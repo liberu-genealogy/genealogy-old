@@ -13,7 +13,7 @@
         }
       }, {
         "label": "Description",
-        "name": "name",
+        "name": "description",
         "value": null,
         "meta": {
           "type": "input",
@@ -31,17 +31,15 @@
         "format": "Y-m-d h:m:S",
         "disabled": false
       }
-    }, {
-      "label": "Type",
-      "name": "type_id",
-      "value": null,
-      "meta": {
-        "custom": true,
-        "type": "select",
-        "multiple": false,
-        "options": [],
-        "source": "types.options"
-      }
+      },{
+        "label": "Type",
+        "name": "type_id",
+        "value": null,
+        "meta": {
+          "type": "select",
+          "multiple": false,
+          "options": []
+        }
     }, {
       "label": "Active",
       "name": "is_active",

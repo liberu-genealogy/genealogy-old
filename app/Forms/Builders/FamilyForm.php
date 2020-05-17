@@ -21,7 +21,7 @@ class FamilyForm
     public function create()
     {
         return $this->form
-    ->value('personList', Family::personList())
+    ->value('personList', Person::all())
     ->options('father_id', Person::all())
     ->options('mother_id', Person::all())
     ->options('type_id', Type::all())

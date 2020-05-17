@@ -3,10 +3,30 @@
     "routePrefix": "notes",
     "crtNo": true,
     "buttons": ["excel", "create", "show", "edit", "destroy"],
-    "columns": [{
-        "label": "Id",
-        "name": "id",
-        "data": "notes.id",
-        "meta": ["searchable", "sortable"]
-    }]
+  "columns": [
+    {
+      "label": "Name",
+      "name": "name",
+      "data": "notes.name",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Description",
+      "name": "description",
+      "data": "notes.description",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Date",
+      "name": "date",
+      "data": "notes.date",
+      "meta": ["searchable", "sortable", "date"]
+    },
+    {
+      "label": "Active",
+      "name": "is_active",
+      "data": "notes.is_active",
+      "meta": ["boolean"]
+    }
+  ]
 }

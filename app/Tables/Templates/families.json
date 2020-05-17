@@ -3,10 +3,42 @@
     "routePrefix": "families",
     "crtNo": true,
     "buttons": ["excel", "create", "show", "edit", "destroy"],
-    "columns": [{
-        "label": "Id",
-        "name": "id",
-        "data": "families.id",
-        "meta": ["searchable", "sortable"]
-    }]
+ "columns": [
+    {
+      "label": "Description",
+      "name": "description",
+      "data": "families.description",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Father First",
+      "name": "father_first_name",
+      "data": "families.father_first_name",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Father Last",
+      "name": "father_last_name",
+      "data": "families.father_last_name",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Mother First",
+      "name": "mother_first_name",
+      "data": "families.mother_first_name",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Mother Last",
+      "name": "mother_last_name",
+      "data": "families.mother_last_name",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Active",
+      "name": "is_active",
+      "data": "families.is_active",
+      "meta": ["boolean"]
+    }
+  ]
 }
