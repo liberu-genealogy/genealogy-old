@@ -9,5 +9,6 @@ class Place extends Model
 {
     use TableCache;
 
-    //
+protected $fillable = ['description', 'name'];
+
 }
