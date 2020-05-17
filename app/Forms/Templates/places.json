@@ -18,6 +18,18 @@
                 "type": "input",
                 "content": "text"
             }
-        }]
+        }, {
+            "label": "Date",
+            "name": "date",
+            "value": null,
+            "meta": {
+                "custom": false,
+                "type": "datepicker",
+                "content": "date",
+                "time": true,
+                "format": "Y-m-d h:m:S",
+                "disabled": false
+            }
+}]
     }]
 }
