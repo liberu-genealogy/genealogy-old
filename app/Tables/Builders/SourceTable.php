@@ -12,9 +12,9 @@ class SourceTable implements Table
 
     public function query(): Builder
     {
-        return Source::selectRaw('
-            sources.id
-        ');
+        return Source::select(\DB::raw('
+            id as "dtRowId", name, description, is_active, date, created_at
+        '));
     }
 
     public function templatePath(): string

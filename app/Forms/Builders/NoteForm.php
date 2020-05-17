@@ -3,6 +3,7 @@
 namespace App\Forms\Builders;
 
 use App\Note;
+use App\Type;
 use LaravelEnso\Forms\App\Services\Form;
 
 class NoteForm
@@ -18,7 +19,10 @@ class NoteForm
 
     public function create()
     {
-        return $this->form->create();
+        return $this->form
+    ->options('type_id', Type::all())
+    ->create();
+
     }
 
     public function edit(Note $note)

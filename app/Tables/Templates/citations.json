@@ -3,10 +3,36 @@
     "routePrefix": "citations",
     "crtNo": true,
     "buttons": ["excel", "create", "show", "edit", "destroy"],
-    "columns": [{
-        "label": "Id",
-        "name": "id",
-        "data": "citations.id",
-        "meta": ["searchable", "sortable"]
-    }]
+  "columns": [
+    {
+      "label": "Name",
+      "name": "name",
+      "data": "citations.name",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Description",
+      "name": "description",
+      "data": "citations.description",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Date",
+      "name": "date",
+      "data": "citations.date",
+      "meta": ["searchable", "sortable", "date"]
+    },
+    {
+      "label": "Source",
+      "name": "source",
+      "data": "citations.source",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Active",
+      "name": "is_active",
+      "data": "citations.is_active",
+      "meta": ["boolean"]
+    }
+  ]
 }

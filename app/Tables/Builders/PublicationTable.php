@@ -8,7 +8,7 @@ use LaravelEnso\Tables\App\Contracts\Table;
 
 class PublicationTable implements Table
 {
-    protected const TemplatePath = __DIR__.'/../../Templates/publications.json';
+    protected const TemplatePath = __DIR__.'/../Templates/publications.json';
 
     public function query(): Builder
     {

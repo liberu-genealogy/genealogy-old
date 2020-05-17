@@ -12,9 +12,9 @@ class NoteTable implements Table
 
     public function query(): Builder
     {
-        return Note::selectRaw('
-            notes.id
-        ');
+        return Note::select(\DB::raw('
+            id as "dtRowId", name, description, is_active, date, created_at
+        '));
     }
 
     public function templatePath(): string
