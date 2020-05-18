@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "21346f21b455bc55fd032148ae682c54",
@@ -1714,16 +1714,16 @@
         },
         {
             "name": "laravel-enso/calendar",
-            "version": "1.5.8",
+            "version": "1.5.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/calendar.git",
-                "reference": "d32747ac23e6a7bebf14688e90143b8b969d253a"
+                "reference": "0b77aa52273c2ab3b10bcdc6836602a29df8575b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/calendar/zipball/d32747ac23e6a7bebf14688e90143b8b969d253a",
-                "reference": "d32747ac23e6a7bebf14688e90143b8b969d253a",
+                "url": "https://api.github.com/repos/laravel-enso/calendar/zipball/0b77aa52273c2ab3b10bcdc6836602a29df8575b",
+                "reference": "0b77aa52273c2ab3b10bcdc6836602a29df8575b",
                 "shasum": ""
             },
             "require": {
@@ -1785,7 +1785,7 @@
                 "laravel-enso",
                 "reminders"
             ],
-            "time": "2020-04-12T07:43:33+00:00"
+            "time": "2020-05-18T05:49:59+00:00"
         },
         {
             "name": "laravel-enso/charts",
@@ -3300,16 +3300,16 @@
         },
         {
             "name": "laravel-enso/menus",
-            "version": "3.4.6",
+            "version": "3.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/menus.git",
-                "reference": "189411e20870a5bbf7211d6a6a81e8adcf6de534"
+                "reference": "ae271f5eb021a83b5c2fcd34e944f83e88699c87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/menus/zipball/189411e20870a5bbf7211d6a6a81e8adcf6de534",
-                "reference": "189411e20870a5bbf7211d6a6a81e8adcf6de534",
+                "url": "https://api.github.com/repos/laravel-enso/menus/zipball/ae271f5eb021a83b5c2fcd34e944f83e88699c87",
+                "reference": "ae271f5eb021a83b5c2fcd34e944f83e88699c87",
                 "shasum": ""
             },
             "require": {
@@ -3355,7 +3355,7 @@
                 "menu-manager",
                 "menus"
             ],
-            "time": "2020-03-29T13:27:57+00:00"
+            "time": "2020-05-18T06:15:50+00:00"
         },
         {
             "name": "laravel-enso/migrator",
