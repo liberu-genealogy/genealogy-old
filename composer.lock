@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "21346f21b455bc55fd032148ae682c54",
@@ -1902,16 +1902,16 @@
         },
         {
             "name": "laravel-enso/comments",
-            "version": "3.3.4",
+            "version": "3.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/comments.git",
-                "reference": "b99393afaeb8a7495c94bb98819a8b6567555ee8"
+                "reference": "56890c8f4a5f1bf8fce39d091fce0941eabba346"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/comments/zipball/b99393afaeb8a7495c94bb98819a8b6567555ee8",
-                "reference": "b99393afaeb8a7495c94bb98819a8b6567555ee8",
+                "url": "https://api.github.com/repos/laravel-enso/comments/zipball/56890c8f4a5f1bf8fce39d091fce0941eabba346",
+                "reference": "56890c8f4a5f1bf8fce39d091fce0941eabba346",
                 "shasum": ""
             },
             "require": {
@@ -1954,7 +1954,7 @@
                 "comments-manager",
                 "laravel-enso"
             ],
-            "time": "2020-03-30T14:20:07+00:00"
+            "time": "2020-05-18T09:20:10+00:00"
         },
         {
             "name": "laravel-enso/companies",
@@ -2141,16 +2141,16 @@
         },
         {
             "name": "laravel-enso/core",
-            "version": "4.8.29",
+            "version": "4.8.33",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/core.git",
-                "reference": "60c48782b7d6c03d32a663156f08663b3d7f59b8"
+                "reference": "25b4d9d8fea25ab9f9223efedd2997de64022736"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/core/zipball/60c48782b7d6c03d32a663156f08663b3d7f59b8",
-                "reference": "60c48782b7d6c03d32a663156f08663b3d7f59b8",
+                "url": "https://api.github.com/repos/laravel-enso/core/zipball/25b4d9d8fea25ab9f9223efedd2997de64022736",
+                "reference": "25b4d9d8fea25ab9f9223efedd2997de64022736",
                 "shasum": ""
             },
             "require": {
@@ -2240,7 +2240,7 @@
                 "vue-bulma",
                 "vue-spa"
             ],
-            "time": "2020-05-15T15:06:22+00:00"
+            "time": "2020-05-18T12:10:06+00:00"
         },
         {
             "name": "laravel-enso/countries",
@@ -2819,16 +2819,16 @@
         },
         {
             "name": "laravel-enso/forms",
-            "version": "3.4.10",
+            "version": "3.4.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/forms.git",
-                "reference": "d6a3fe020e3a447997e56e8dcc1b05f01e14483c"
+                "reference": "6acc618624409ddf632ed47ebe2893fb7c78fea6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/forms/zipball/d6a3fe020e3a447997e56e8dcc1b05f01e14483c",
-                "reference": "d6a3fe020e3a447997e56e8dcc1b05f01e14483c",
+                "url": "https://api.github.com/repos/laravel-enso/forms/zipball/6acc618624409ddf632ed47ebe2893fb7c78fea6",
+                "reference": "6acc618624409ddf632ed47ebe2893fb7c78fea6",
                 "shasum": ""
             },
             "require": {
@@ -2871,7 +2871,7 @@
                 "json-templates",
                 "laravel-enso"
             ],
-            "time": "2020-04-12T09:12:08+00:00"
+            "time": "2020-05-19T06:06:00+00:00"
         },
         {
             "name": "laravel-enso/helpers",
@@ -3300,16 +3300,16 @@
         },
         {
             "name": "laravel-enso/menus",
-            "version": "3.4.6",
+            "version": "3.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/menus.git",
-                "reference": "189411e20870a5bbf7211d6a6a81e8adcf6de534"
+                "reference": "ae271f5eb021a83b5c2fcd34e944f83e88699c87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/menus/zipball/189411e20870a5bbf7211d6a6a81e8adcf6de534",
-                "reference": "189411e20870a5bbf7211d6a6a81e8adcf6de534",
+                "url": "https://api.github.com/repos/laravel-enso/menus/zipball/ae271f5eb021a83b5c2fcd34e944f83e88699c87",
+                "reference": "ae271f5eb021a83b5c2fcd34e944f83e88699c87",
                 "shasum": ""
             },
             "require": {
@@ -3355,7 +3355,7 @@
                 "menu-manager",
                 "menus"
             ],
-            "time": "2020-03-29T13:27:57+00:00"
+            "time": "2020-05-18T06:15:50+00:00"
         },
         {
             "name": "laravel-enso/migrator",
@@ -4739,16 +4739,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.68",
+            "version": "1.0.69",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "3e4198372276ec99ac3409a21d7c9d1ced9026e4"
+                "reference": "7106f78428a344bc4f643c233a94e48795f10967"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/3e4198372276ec99ac3409a21d7c9d1ced9026e4",
-                "reference": "3e4198372276ec99ac3409a21d7c9d1ced9026e4",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/7106f78428a344bc4f643c233a94e48795f10967",
+                "reference": "7106f78428a344bc4f643c233a94e48795f10967",
                 "shasum": ""
             },
             "require": {
@@ -4819,7 +4819,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2020-05-12T20:33:44+00:00"
+            "time": "2020-05-18T15:13:39+00:00"
         },
         {
             "name": "monolog/monolog",
