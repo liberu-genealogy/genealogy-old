@@ -22,7 +22,6 @@ class NoteForm
         return $this->form
     ->options('type_id', Type::all())
     ->create();
-
     }
 
     public function edit(Note $note)
