@@ -6,7 +6,7 @@
     "require": {
         "doctrine/dbal": "^2.8",
         "fideloper/proxy": "^4.2",
-        "fruitcake/laravel-cors": "^1.0",
+        "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel-enso/calendar": "1.5.*",
         "laravel-enso/cli": "3.4.*",
