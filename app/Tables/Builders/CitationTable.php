@@ -15,8 +15,8 @@ class CitationTable implements Table
         return Citation::select(\DB::raw('
             citations.id as "dtRowId", citations.name as name, citations.description as description, citations.is_active as is_active,
  citations.date as date, citations.created_at as created_at, sources.name as source
-        \'))->join(\'sources\', \'citations.source_id\', \'=\', \'sources.id\');
-        '));
+        '))->join('sources', 'citations.source_id', '=', 'sources.id');
+
     }
 
     public function templatePath(): string
