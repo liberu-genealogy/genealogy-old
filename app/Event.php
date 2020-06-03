@@ -18,7 +18,7 @@ class Event extends Model
         if ($this->place) {
             return $this->place->title;
         } else {
-            return "unknown place";
+            return 'unknown place';
         }
     }
 

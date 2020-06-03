@@ -2,7 +2,6 @@
 
 namespace App;
 
-
 use Asdfx\LaravelGedcom\Observers\EventActionsObserver;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -17,7 +16,7 @@ class FamilyEvent extends Event
      */
     protected $dates = ['deleted_at'];
 
-    protected $table    = 'family_events';
+    protected $table = 'family_events';
 
     protected $fillable = [
         'family_id',
@@ -27,15 +26,14 @@ class FamilyEvent extends Event
         'description',
         'year',
         'month',
-        'day'
+        'day',
     ];
-
 
     public static function boot()
     {
         parent::boot();
 
-        FamilyEvent::observe(new EventActionsObserver());
+        self::observe(new EventActionsObserver());
     }
 
     public function family()
