@@ -245,16 +245,7 @@ Route::middleware(['web', 'auth', 'core'])
             ->as('gedcom.')
             ->group(function () {
 
-                Route::get('', 'Index')->name('index');
-                Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
-                Route::get('{gedcom}/edit', 'Edit')->name('edit');
-
-                Route::patch('{gedcom}', 'Update')->name('update');
-
-                Route::delete('{gedcom}', 'Destroy')->name('destroy');
-
-                Route::get('{gedcom}', 'Show')->name('show');
 
 
         });
