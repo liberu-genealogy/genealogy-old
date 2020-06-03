@@ -10640,10 +10640,15 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-vue-cal@^2.0.1, vue-cal@^2.12.1:
+vue-cal@^2.12.1:
   version "2.24.8"
   resolved "https://registry.yarnpkg.com/vue-cal/-/vue-cal-2.24.8.tgz#6d12b593825f58977b2fcbdc410537a3c3acac44"
   integrity sha512-n2aSJlzAHhu1OHECysTzi4xKRA4Myc1cMUZF2zABWFfS0QvXOSQjhSfpgnCahmYYbJ7SFIdgi4fqqN+QKspECg==
+
+vue-cal@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/vue-cal/-/vue-cal-3.3.0.tgz#92b3eb5363a046e01409f2a97d53e363c05992ed"
+  integrity sha512-gaY2JeTHvJCx3pjJN6oFfxTkxCpPvdS4sTmigBffilTY9w/sjMhin1UVUySaEcr8SLCrbWtkcFzM9QTe8f+UvA==
 
 vue-eslint-parser@^7.0.0:
   version "7.1.0"
