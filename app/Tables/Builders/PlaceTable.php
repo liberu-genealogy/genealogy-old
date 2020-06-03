@@ -13,7 +13,7 @@ class PlaceTable implements Table
     public function query(): Builder
     {
         return Place::selectRaw('
-            places.id, places.name, places.title, places.date
+            places.id, places.title, places.date
         ');
     }
 
