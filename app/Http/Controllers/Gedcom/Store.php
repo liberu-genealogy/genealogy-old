@@ -23,7 +23,7 @@ class Store extends Controller
         if ($request->hasFile('file')) {
             if ($request->file('file')->isValid()) {
                 $request->file->storeAs('gedcom', 'file.ged');
-                $this->readData($request->file);
+		GedcomParserFacade::parse($request->file('file'), true);
 
                 return ['File uploaded'];
             }
@@ -32,16 +32,6 @@ class Store extends Controller
         }
 
         return ['Not uploaded'];
-    }
-
-    /*
-    * Read ged file
-    */
-
-    public function readData($filename)
-    {
-	$filename = $this->filename;
-	GedcomParserFacade::parse($filename, true);
     }
 
 }

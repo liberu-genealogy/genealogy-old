@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Person extends LaravelEnso\People\app\Person
+class Person extends \LaravelEnso\People\app\Models\Person
 {
     use SoftDeletes;
 
