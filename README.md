@@ -48,7 +48,7 @@ for the back-end API (which you've configured at step 4)
 
 7. Run `yarn && yarn build`
 
-8. Launch the site and log into the project with user: `admin@laravel-enso.com`, password: `password`
+8. Launch the site and log into the project with user: `admin@genealogia.co.uk`, password: `password`
 
 9. For live reload / hot module replacement functionality run `yarn serve`
 
