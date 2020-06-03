@@ -245,7 +245,7 @@ Route::middleware(['web', 'auth', 'core'])
             ->as('gedcom.')
             ->group(function () {
 
-                Route::post('', 'Store')->name('store');
+                Route::post('store', 'Store')->name('store');
 
 
         });
