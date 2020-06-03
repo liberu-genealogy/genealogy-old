@@ -18,8 +18,8 @@ class CreateFamiliesTable extends Migration
             $table->text('description');
             $table->integer('is_active');
             $table->integer('type_id');
-            $table->integer("husband_id")->references("id")->on("persons")->nullable();
-            $table->integer("wife_id")->references("id")->on("persons")->nullable();
+            $table->integer('husband_id')->references('id')->on('persons')->nullable();
+            $table->integer('wife_id')->references('id')->on('persons')->nullable();
             $table->timestamps();
         });
     }

@@ -37,15 +37,15 @@ class Family extends Model
 
     public function title()
     {
-        return (($this->husband) ? $this->husband->fullname() : "?") .
-            " + " .
-            (($this->wife) ? $this->wife->fullname() : "?");
+        return (($this->husband) ? $this->husband->fullname() : '?').
+            ' + '.
+            (($this->wife) ? $this->wife->fullname() : '?');
     }
 
     public static function getList()
     {
         $families = self::get();
-        $result = array();
+        $result = [];
         foreach ($families as $family) {
             $result[$family->id] = $family->title();
         }
@@ -56,11 +56,11 @@ class Family extends Model
     public function addEvent($title, $date, $place, $description = '')
     {
         $place_id = Place::getIdByTitle($place);
-        $event = FamilyEvent::create(array(
+        $event = FamilyEvent::create([
             'family_id' => $this->id,
             'title' => $title,
             'description' => $description,
-        ));
+        ]);
         if ($date) {
             $event->date = $date;
             $event->save();
@@ -71,13 +71,12 @@ class Family extends Model
         }
     }
 
-
     public function getWifeName()
     {
         if ($this->wife) {
             return $this->wife->fullname();
         } else {
-            return "unknown woman";
+            return 'unknown woman';
         }
     }
 
@@ -86,9 +85,7 @@ class Family extends Model
         if ($this->husband) {
             return $this->husband->fullname();
         } else {
-            return "unknown man";
+            return 'unknown man';
         }
     }
 }
-
-
