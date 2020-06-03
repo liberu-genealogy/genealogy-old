@@ -1,0 +1,40 @@
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/AppFooter.vue b/node_modules/@enso-ui/ui/src/bulma/components/AppFooter.vue
+index cfb133c..a88a151 100644
+--- a/node_modules/@enso-ui/ui/src/bulma/components/AppFooter.vue
++++ b/node_modules/@enso-ui/ui/src/bulma/components/AppFooter.vue
+@@ -15,6 +15,14 @@
+                             <span class="has-margin-left-small">
+                                 +
+                             </span>
++                            <a href="https://github.com/laravel-enso/enso"
++                                target="_blank">
++                                <img src="/images/enso.svg"
++                                    alt="Made with Laravel Enso"
++                                    width="28"
++                                    height="28">
++                            </a>
++			    +
+                             <a href="https://vuejs.org"
+                                 target="_blank">
+                                 <img src="/images/vue-badge.png"
+@@ -43,19 +51,8 @@
+                             </a>
+                         </div>
+                     </div>
+-                    <div class="level">
+-                        <div class="level-item">
+-                            <strong>Backed by:</strong>
+-                            <a href="https://earthlink.ro"
+-                                target="_blank">
+-                                <figure class="image earthlink">
+-                                    <img src="/images/earthlink.svg">
+-                                </figure>
+-                            </a>
+-                        </div>
+-                    </div>
+                     <div>
+-                        <a href="https://github.com/laravel-enso/enso"
++                        <a href="https://github.com/modularsoftware/genealogy"
+                             target="_blank">
+                             <span class="icon">
+                                 <fa :icon="['fab', 'github']"/>
