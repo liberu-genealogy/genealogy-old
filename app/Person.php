@@ -49,22 +49,22 @@ class Person extends LaravelEnso\People\app\Person
 
     public function fullname()
     {
-        return $this->givn . " " . $this->surn;
+        return $this->givn.' '.$this->surn;
     }
 
     public function getSex()
     {
-        if ($this->sex == "F") {
-            return "Female";
+        if ($this->sex == 'F') {
+            return 'Female';
         }
 
-        return "Male";
+        return 'Male';
     }
 
     public static function getList()
     {
         $persons = self::get();
-        $result = array();
+        $result = [];
         foreach ($persons as $person) {
             $result[$person->id] = $person->fullname();
         }
@@ -75,11 +75,11 @@ class Person extends LaravelEnso\People\app\Person
     public function addEvent($title, $date, $place, $description = '')
     {
         $place_id = Place::getIdByTitle($place);
-        $event = PersonEvent::create(array(
+        $event = PersonEvent::create([
             'person_id' => $this->id,
             'title' => $title,
             'description' => $description,
-        ));
+        ]);
 
         if ($date) {
             $event->date = $date;
