@@ -11,8 +11,8 @@
                 "content": "text"
             }
         }, {
-            "label": "Description",
-            "name": "description",
+            "label": "Title",
+            "name": "title",
             "value": null,
             "meta": {
                 "type": "input",

@@ -22,8 +22,8 @@ class FamilyForm
     {
         return $this->form
     ->value('personList', Person::all())
-    ->options('father_id', Person::all())
-    ->options('mother_id', Person::all())
+    ->options('husband_id', Person::all())
+    ->options('wife_id', Person::all())
     ->options('type_id', Type::all())
     ->create();
     }
@@ -32,8 +32,8 @@ class FamilyForm
     {
         return $this->form
     ->value('personList', Family::personList())
-    ->options('father_id', Person::all())
-    ->options('mother_id', Person::all())
+    ->options('husband_id', Person::all())
+    ->options('wife_id', Person::all())
     ->options('type_id', Type::all())
         ->append('family_id', $family->id)
     ->create();

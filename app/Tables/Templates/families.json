@@ -11,15 +11,15 @@
       "meta": ["searchable", "sortable"]
     },
     {
-      "label": "Father Name",
-      "name": "father_name",
-      "data": "families.father_name",
+      "label": "Husband Name",
+      "name": "husband_name",
+      "data": "families.husband_name",
       "meta": ["searchable", "sortable"]
     },
     {
-      "label": "Mother Name",
-      "name": "mother_name",
-      "data": "families.mother_name",
+      "label": "Wife Name",
+      "name": "wife_name",
+      "data": "families.wife_name",
       "meta": ["searchable", "sortable"]
     },
     {
