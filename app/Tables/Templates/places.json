@@ -11,9 +11,9 @@
       "meta": ["searchable", "sortable"]
     },
     {
-      "label": "Description",
-      "name": "description",
-      "data": "repositories.description",
+      "label": "Title",
+      "name": "title",
+      "data": "repositories.title",
       "meta": ["searchable", "sortable"]
     },
     {

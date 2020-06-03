@@ -12,15 +12,15 @@ class FamilyTable implements Table
 
     public function query(): Builder
     {
-        return Family::leftJoin('people as father', function ($join) {
-            $join->on('father.id', '=', 'families.father_id');
+        return Family::leftJoin('people as husband', function ($join) {
+            $join->on('husband.id', '=', 'families.husband_id');
         })
-            ->leftJoin('people as mother', function ($join) {
-                $join->on('mother.id', '=', 'families.mother_id');
+            ->leftJoin('people as wife', function ($join) {
+                $join->on('wife.id', '=', 'families.wife_id');
             })
             ->select(\DB::raw('
-            families.id as "dtRowId", families.description as description, father.name as father_name,
- mother.name as mother_name, families.is_active
+            families.id as "dtRowId", families.description as description, husband.name as husband_name,
+ wife.name as wife_name, families.is_active
             '));
     }
 
