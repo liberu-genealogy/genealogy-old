@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa52d323ed1292b20dbada522f8feef4",
+    "content-hash": "993f81a2dec17f8fe0414b4663a3990a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4829,6 +4829,88 @@
                 }
             ],
             "time": "2020-05-18T15:13:39+00:00"
+        },
+        {
+            "name": "modularsoftware/laravel-gedcom",
+            "version": "v1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/modularsoftware/laravel-gedcom.git",
+                "reference": "968c35ec38e67c09796157ea8e9b3bc0e7279723"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/modularsoftware/laravel-gedcom/zipball/968c35ec38e67c09796157ea8e9b3bc0e7279723",
+                "reference": "968c35ec38e67c09796157ea8e9b3bc0e7279723",
+                "shasum": ""
+            },
+            "require": {
+                "modularsoftware/php-gedcom": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Asdfx\\LaravelGedcom\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Asdfx\\LaravelGedcom\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Mills",
+                    "email": "alex@asdfx.us"
+                }
+            ],
+            "description": "A package that converts gedcom files to Eloquent models",
+            "time": "2020-06-03T19:02:12+00:00"
+        },
+        {
+            "name": "modularsoftware/php-gedcom",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/modularsoftware/php-gedcom.git",
+                "reference": "631e696897be3e892beaad33e56b35ed28ff2d8a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/modularsoftware/php-gedcom/zipball/631e696897be3e892beaad33e56b35ed28ff2d8a",
+                "reference": "631e696897be3e892beaad33e56b35ed28ff2d8a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "squizlabs/php_codesniffer": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PhpGedcom\\": "library/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "description": "A GEDCOM file parser (read + write) for PHP 5.3+",
+            "homepage": "http://github.com/oguz463/php-gedcom",
+            "keywords": [
+                "gedcom",
+                "parser"
+            ],
+            "time": "2018-07-04T13:42:47+00:00"
         },
         {
             "name": "monolog/monolog",
