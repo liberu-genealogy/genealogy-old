@@ -21,19 +21,19 @@ class PersonEvent extends Event
         'description',
         'year',
         'month',
-        'day'
+        'day',
     ];
 
     protected $gedcom_event_names = [
-        'BIRT' => "Birth",
-        'DEAT' => "Death",
+        'BIRT' => 'Birth',
+        'DEAT' => 'Death',
     ];
 
     public static function boot()
     {
         parent::boot();
 
-        PersonEvent::observe(new EventActionsObserver);
+        self::observe(new EventActionsObserver);
     }
 
     public function person()
