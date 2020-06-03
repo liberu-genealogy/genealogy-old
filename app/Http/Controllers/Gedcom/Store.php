@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\GedcomImport;
+namespace App\Http\Controllers\Gedcom;
 
 use App\Note;
 use App\Event;
@@ -9,15 +9,16 @@ use App\Person;
 use App\Source;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Asdfx\LaravelGedcom\Facades\GedcomParserFacade;
 
-class GedcomImportController extends Controller
+class Store extends Controller
 {
     /*
     * Api end-point for Gedcom api/gedcom/store
     * Saving uploaded file to storage and starting to read
     */
 
-    public function store(Request $request)
+    public function __invoke(Request $request)
     {
         if ($request->hasFile('file')) {
             if ($request->file('file')->isValid()) {
@@ -39,7 +40,6 @@ class GedcomImportController extends Controller
 
     public function readData($filename)
     {
-	use Asdfx\LaravelGedcom\Facades\GedcomParserFacade;
 	$filename = $this->filename;
 	GedcomParserFacade::parse($filename, true);
     }
