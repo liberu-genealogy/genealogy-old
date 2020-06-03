@@ -29,9 +29,9 @@ class UserSeeder extends Seeder
             'title' => Titles::Mr,
             'name' => 'Admin Root',
             'appellative' => 'Admin',
-            'email' => 'admin@laravel-enso.com',
-            'birthday' => '1980-01-19',
-            'phone' => '+40793232522',
+            'email' => 'admin@genealogia.co.uk',
+            'birthday' => '1970-01-01',
+            'phone' => '+4412345678910',
         ]);
     }
 }
