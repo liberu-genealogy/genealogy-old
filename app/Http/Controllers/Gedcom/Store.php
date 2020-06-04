@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Gedcom;
 
-use App\Note;
 use App\Event;
 use App\Family;
+use App\Http\Controllers\Controller;
+use App\Note;
 use App\Person;
 use App\Source;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Asdfx\LaravelGedcom\Facades\GedcomParserFacade;
+use Illuminate\Http\Request;
 
 class Store extends Controller
 {
@@ -23,7 +23,7 @@ class Store extends Controller
         if ($request->hasFile('file')) {
             if ($request->file('file')->isValid()) {
                 $request->file->storeAs('gedcom', 'file.ged');
-		GedcomParserFacade::parse($request->file('file'), true);
+                GedcomParserFacade::parse($request->file('file'), true);
 
                 return ['File uploaded'];
             }
@@ -33,5 +33,4 @@ class Store extends Controller
 
         return ['Not uploaded'];
     }
-
 }
