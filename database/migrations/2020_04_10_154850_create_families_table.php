@@ -21,7 +21,7 @@ class CreateFamiliesTable extends Migration
             $table->integer('husband_id')->references('id')->on('persons')->nullable();
             $table->integer('wife_id')->references('id')->on('persons')->nullable();
             $table->timestamps();
-	    $table->softDeletes();
+            $table->softDeletes();
         });
     }
 

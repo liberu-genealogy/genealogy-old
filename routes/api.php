@@ -244,10 +244,6 @@ Route::middleware(['web', 'auth', 'core'])
             ->prefix('gedcom')
             ->as('gedcom.')
             ->group(function () {
-
                 Route::post('store', 'Store')->name('store');
-
-
-        });
+            });
     });
-

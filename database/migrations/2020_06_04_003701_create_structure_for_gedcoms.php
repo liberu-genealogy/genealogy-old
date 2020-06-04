@@ -16,9 +16,8 @@ class CreateStructureForGedcoms extends Migration
     ];
 
     protected $menu = [
-        'name' => 'Gedcom Import', 'icon' => '', 'route' => 'gedcom.index', 'order_index' => 999, 'has_children' => false
+        'name' => 'Gedcom Import', 'icon' => '', 'route' => 'gedcom.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected $parentMenu = '';
 }
-
