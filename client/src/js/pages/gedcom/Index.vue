@@ -1,22 +1,20 @@
 <template>
     <div>
         <div>
-        <input
-        type="file"
-        style="display:none"
-        @change="selectedFile"
-        ref="fileInput"
-        accept="GED"
-        >
-        <button @click="$refs.fileInput.click()">
-            Select Gedcom File
-        </button>
-        <button v-if="file" @click="uploadFile">
-            Upload
-        </button>
+            <input
+                type="file"
+                style="display:none"
+                @change="selectedFile"
+                ref="fileInput"
+                accept="GED"/>
+            <button @click="$refs.fileInput.click()">Select Gedcom File</button>
+            <button v-if="file" @click="uploadFile">Upload</button>
         </div>
         <div>
-            <progress max="100" :value.prop="uploadPercentage" v-if="uploadPercentage"/>
+            <progress
+                max="100"
+                :value.prop="uploadPercentage"
+                v-if="uploadPercentage"/>
         </div>
     </div>
 </template>
@@ -32,7 +30,7 @@ export default {
 
     computed: {
         uploadLink() {
-            return window.location.origin + '/api/gedcom/store';
+            return '/api/gedcom/store';
         },
     },
 
@@ -40,33 +38,28 @@ export default {
 
     methods: {
         selectedFile(event) {
-            this.file = event.target.files[0];
+            [this.file] = event.target.files;
             this.uploadPercentage = 0;
-            console.log(this.uploadPercentage);
+            // console.log(this.uploadPercentage);
         },
         uploadFile() {
             const fd = new FormData();
             fd.append('file', this.file, 'file.ged');
-            axios.post( this.uploadLink,
-                fd,
-                {
+            axios
+                .post(this.uploadLink, fd, {
                     headers: {
-                        'Content-Type': 'multipart/form-data'
+                        'Content-Type': 'multipart/form-data',
                     },
-                    onUploadProgress: function( progressEvent ) {
-                        this.uploadPercentage = parseInt( Math.round( ( progressEvent.loaded / progressEvent.total ) * 100 ));
-                    }.bind(this)
-                },
-            ).then(function(){
-                
-            })
-            .catch(function(){
-                
-            });
+                    onUploadProgress: function (progressEvent) {
+                        const pe = Math.round((progressEvent.loaded / progressEvent.total) * 100);
+                        this.uploadPercentage = parseInt(pe, 10);
+                    }.bind(this),
+                })
+                .then()
+                .catch();
         },
     },
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
