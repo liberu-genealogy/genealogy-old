@@ -17,9 +17,11 @@ module.exports = {
         proxy: {
             '/api': {
                 target: process.env.API_URL,
+                changeOrigin: true,
             },
             '/broadcasting': {
                 target: process.env.API_URL,
+                changeOrigin: true,
             },
         },
     },
