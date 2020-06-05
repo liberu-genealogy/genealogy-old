@@ -23,7 +23,7 @@ class CreateStructureForFamilies extends Migration
     ];
 
     protected $menu = [
-        'name' => 'Families', 'icon' => '', 'route' => 'families.index', 'order_index' => 999, 'has_children' => false,
+        'name' => 'Families', 'icon' => 'users', 'route' => 'families.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected $parentMenu = '';
