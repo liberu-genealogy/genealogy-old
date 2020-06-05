@@ -53,7 +53,7 @@ export default {
 
     methods: {
         subscribe() {
-            const pusher = new Pusher('2e7bbf1d37acc270e41f', { cluster: 'eu' });
+            const pusher = new Pusher(this.PUSHER_KEY, { cluster: this.PUSHER_CLUSTER });
             pusher.subscribe('gedcom-progress');
             pusher.bind('newMessage', data => {
                 const { slug, total, complete } = data;
@@ -61,9 +61,7 @@ export default {
                     this.slug = slug;
                     this.total = total;
                     this.complete = complete;
-                    console.log(this.complete);
                 }
-                console.log(data);
             });
         },
         selectedFile(event) {
@@ -72,7 +70,6 @@ export default {
             this.total = 0;
             this.slug = Math.random().toString(36).substring(2, 15)
              + Math.random().toString(36).substring(2, 15);
-            console.log(this.slug);
         },
         uploadFile() {
             const fd = new FormData();
