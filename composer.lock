@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "993f81a2dec17f8fe0414b4663a3990a",
+    "content-hash": "6a4f6d036512f74f17da964158ab572f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4826,16 +4826,16 @@
         },
         {
             "name": "modularsoftware/laravel-gedcom",
-            "version": "v1.0.6",
+            "version": "v1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/modularsoftware/laravel-gedcom.git",
-                "reference": "e76cc8cdf43e2698169f06b3d0fa7fe458a21dd7"
+                "reference": "82c3437ca6fd56a97a9a245855963555672a13d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/modularsoftware/laravel-gedcom/zipball/e76cc8cdf43e2698169f06b3d0fa7fe458a21dd7",
-                "reference": "e76cc8cdf43e2698169f06b3d0fa7fe458a21dd7",
+                "url": "https://api.github.com/repos/modularsoftware/laravel-gedcom/zipball/82c3437ca6fd56a97a9a245855963555672a13d7",
+                "reference": "82c3437ca6fd56a97a9a245855963555672a13d7",
                 "shasum": ""
             },
             "require": {
@@ -4865,7 +4865,7 @@
                 }
             ],
             "description": "A package that converts gedcom files to Eloquent models",
-            "time": "2020-06-03T23:17:21+00:00"
+            "time": "2020-06-05T16:50:10+00:00"
         },
         {
             "name": "modularsoftware/php-gedcom",
