@@ -4822,26 +4822,20 @@
                 "sftp",
                 "storage"
             ],
-            "funding": [
-                {
-                    "url": "https://offset.earth/frankdejonge",
-                    "type": "other"
-                }
-            ],
             "time": "2020-05-18T15:13:39+00:00"
         },
         {
             "name": "modularsoftware/laravel-gedcom",
-            "version": "v1.0.4",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/modularsoftware/laravel-gedcom.git",
-                "reference": "968c35ec38e67c09796157ea8e9b3bc0e7279723"
+                "reference": "e76cc8cdf43e2698169f06b3d0fa7fe458a21dd7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/modularsoftware/laravel-gedcom/zipball/968c35ec38e67c09796157ea8e9b3bc0e7279723",
-                "reference": "968c35ec38e67c09796157ea8e9b3bc0e7279723",
+                "url": "https://api.github.com/repos/modularsoftware/laravel-gedcom/zipball/e76cc8cdf43e2698169f06b3d0fa7fe458a21dd7",
+                "reference": "e76cc8cdf43e2698169f06b3d0fa7fe458a21dd7",
                 "shasum": ""
             },
             "require": {
@@ -4871,7 +4865,7 @@
                 }
             ],
             "description": "A package that converts gedcom files to Eloquent models",
-            "time": "2020-06-03T19:02:12+00:00"
+            "time": "2020-06-03T23:17:21+00:00"
         },
         {
             "name": "modularsoftware/php-gedcom",
@@ -4990,16 +4984,6 @@
                 "log",
                 "logging",
                 "psr-3"
-            ],
-            "funding": [
-                {
-                    "url": "https://github.com/Seldaek",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/monolog/monolog",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-05-22T08:12:19+00:00"
         },
@@ -5124,16 +5108,6 @@
                 "date",
                 "datetime",
                 "time"
-            ],
-            "funding": [
-                {
-                    "url": "https://opencollective.com/Carbon",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/nesbot/carbon",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-05-19T22:14:16+00:00"
         },
@@ -6770,16 +6744,6 @@
                 "log",
                 "logging",
                 "sentry"
-            ],
-            "funding": [
-                {
-                    "url": "https://sentry.io/",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://sentry.io/pricing/",
-                    "type": "custom"
-                }
             ],
             "time": "2020-05-20T20:49:38+00:00"
         },
@@ -9643,12 +9607,6 @@
                 "provider",
                 "service"
             ],
-            "funding": [
-                {
-                    "url": "https://github.com/philipobenito",
-                    "type": "github"
-                }
-            ],
             "time": "2020-05-18T08:20:23+00:00"
         },
         {
@@ -10903,16 +10861,6 @@
                 "testing",
                 "xunit"
             ],
-            "funding": [
-                {
-                    "url": "https://phpunit.de/donate.html",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/sebastianbergmann",
-                    "type": "github"
-                }
-            ],
             "time": "2020-05-22T13:54:05+00:00"
         },
         {
@@ -11880,16 +11828,6 @@
                 "MIT"
             ],
             "description": "Slevomat Coding Standard for PHP_CodeSniffer complements Consistence Coding Standard by providing sniffs with additional checks.",
-            "funding": [
-                {
-                    "url": "https://github.com/kukulich",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/slevomat/coding-standard",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-05-22T15:11:14+00:00"
         },
         {
@@ -12364,6 +12302,5 @@
     "platform": {
         "php": ">=7.4.0"
     },
-    "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "platform-dev": []
 }

@@ -14,7 +14,7 @@ class AddColumnsForPeopleTable extends Migration
             $table->char('sex', 1)->nullable();
             $table->text('description')->nullable();
             $table->integer('child_in_family_id')->references('id')->on('families')->nullable();
-	    $table->softDeletes();
+            $table->softDeletes();
         });
     }
 
