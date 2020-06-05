@@ -22,7 +22,6 @@ module.exports = {
                 target: process.env.API_URL,
             },
         },
-        port: 8081,
     },
     outputDir: '../public/',
     configureWebpack: {
