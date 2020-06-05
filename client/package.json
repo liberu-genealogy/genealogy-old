@@ -40,7 +40,7 @@
         "opencollective-postinstall": "^2.0.0",
         "patch-package": "^6.0.2",
         "postinstall-postinstall": "^2.0.0",
-        "pusher-js": "^5.1.1",
+        "pusher-js": "^6.0.3",
         "v-tooltip": "^2.0.0-rc.32",
         "vue": "^2.6.10",
         "vue-cal": "^2.0.1",
