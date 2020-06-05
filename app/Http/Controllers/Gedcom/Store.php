@@ -30,8 +30,7 @@ class Store extends Controller
         
                         return ['File uploaded'];
                     }catch(Exception $e){
-                        abort(500, 'Could not create office or assign it to administrator');
-                        // return ['Not uploaded'];
+                        return ['Not uploaded'];
                     }
                 }
     
