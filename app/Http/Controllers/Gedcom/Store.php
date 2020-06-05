@@ -1,6 +1,7 @@
 <?php
-
 namespace App\Http\Controllers\Gedcom;
+
+define('STDIN',fopen("php://stdin","r"));
 
 use App\Event;
 use App\Family;
