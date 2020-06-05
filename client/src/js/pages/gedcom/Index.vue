@@ -10,21 +10,34 @@
             <button @click="$refs.fileInput.click()">Select Gedcom File</button>
             <button v-if="file" @click="uploadFile">Upload</button>
         </div>
-        <div>
+        <div v-if="uploadPercentage">
+            <span class="ml-1">Upload</span>
             <progress
                 max="100"
-                :value.prop="uploadPercentage"
-                v-if="uploadPercentage"/>
+                :value.prop="uploadPercentage"/>
+            <span :value.prop="total">{{ uploadPercentage }}%</span>
+        </div>
+        <div v-if="total">
+            <span class="ml-1">Import</span>
+            <progress
+                :max.prop="total"
+                :value.prop="complete"/>
+            <span :value.prop="total">{{ complete }}/{{ total }}</span>
         </div>
     </div>
 </template>
-
 <script>
+import Pusher from 'pusher-js'; // import Pusher
+
 export default {
+
     data() {
         return {
             file: null,
             uploadPercentage: 0,
+            total: 0,
+            complete: 0,
+            slug: null,
         };
     },
 
@@ -34,16 +47,36 @@ export default {
         },
     },
 
-    created() {},
+    created() {
+        this.subscribe();
+    },
 
     methods: {
+        subscribe() {
+            const pusher = new Pusher('2e7bbf1d37acc270e41f', { cluster: 'eu' });
+            pusher.subscribe('gedcom-progress');
+            pusher.bind('newMessage', data => {
+                const { slug, total, complete } = data;
+                if (slug === this.slug) {
+                    this.slug = slug;
+                    this.total = total;
+                    this.complete = complete;
+                    console.log(this.complete);
+                }
+                console.log(data);
+            });
+        },
         selectedFile(event) {
             [this.file] = event.target.files;
             this.uploadPercentage = 0;
-            // console.log(this.uploadPercentage);
+            this.total = 0;
+            this.slug = Math.random().toString(36).substring(2, 15)
+             + Math.random().toString(36).substring(2, 15);
+            console.log(this.slug);
         },
         uploadFile() {
             const fd = new FormData();
+            fd.append('slug', this.slug);
             fd.append('file', this.file, 'file.ged');
             axios
                 .post(this.uploadLink, fd, {
