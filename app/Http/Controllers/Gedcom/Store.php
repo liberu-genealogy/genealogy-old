@@ -20,22 +20,21 @@ class Store extends Controller
 
     public function __invoke(Request $request)
     {
-        
-            if ($request->hasFile('file')) {
-                if ($request->file('file')->isValid()) {
-                    try{
-                        $request->file->storeAs('gedcom', 'file.ged');
-                        $parser = new GedcomParser();
-                        $parser->parse($request->file('file'), true);
-        
-                        return ['File uploaded'];
-                    }catch(Exception $e){
-                        return ['Not uploaded'];
-                    }
+        $slug = $request->get('slug');
+        if ($request->hasFile('file')) {
+            if ($request->file('file')->isValid()) {
+                try{
+                    $request->file->storeAs('gedcom', 'file.ged');
+                    $parser = new GedcomParser();
+                    $parser->parse($request->file('file'), $slug, true);
+                    return ['File uploaded'];
+                }catch(Exception $e){
+                    return ['Not uploaded'];
                 }
-    
-                return ['File corrupted'];
             }
+
+            return ['File corrupted'];
+        }
         
         return ['Not uploaded'];
     }
