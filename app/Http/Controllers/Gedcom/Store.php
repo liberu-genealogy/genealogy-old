@@ -1,8 +1,6 @@
 <?php
 namespace App\Http\Controllers\Gedcom;
 
-define('STDIN',fopen("php://stdin","r"));
-
 use App\Event;
 use App\Family;
 use App\Http\Controllers\Controller;
@@ -27,6 +25,7 @@ class Store extends Controller
             if ($request->file('file')->isValid()) {
                 try{
                     $request->file->storeAs('gedcom', 'file.ged');
+		    define('STDIN',fopen("php://stdin","r"));
                     $parser = new GedcomParser();
                     $parser->parse($request->file('file'), $slug, true);
                     return ['File uploaded'];
