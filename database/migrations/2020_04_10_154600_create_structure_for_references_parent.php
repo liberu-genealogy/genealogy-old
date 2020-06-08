@@ -8,4 +8,3 @@ class CreateStructureForReferencesParent extends Migration
         'name' => 'References', 'icon' => 'book', 'route' => null, 'order_index' => 798, 'has_children' => true,
     ];
 }
-
