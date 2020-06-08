@@ -26,5 +26,5 @@ class CreateStructureForPlaces extends Migration
         'name' => 'Places', 'icon' => 'users', 'route' => 'places.index', 'order_index' => 999, 'has_children' => false,
     ];
 
-    protected $parentMenu = '';
+    protected $parentMenu = 'References';
 }
