@@ -10,6 +10,7 @@ use LaravelEnso\Charts\App\Factories\Line;
 use LaravelEnso\Charts\App\Factories\Pie;
 use LaravelEnso\Charts\App\Factories\Polar;
 use LaravelEnso\Charts\App\Factories\Radar;
+use App\Person;
 
 class ChartController extends Controller
 {
@@ -39,10 +40,13 @@ class ChartController extends Controller
 
     public function pie()
     {
+        $male = Person::where('sex', 'M')->get()->count();
+        $female = Person::where('sex', 'F')->get()->count();
+        $unknown = Person::whereNull('sex')->get()->count();
         return (new Pie())
             ->title('Colors')
-            ->labels(['Green', 'Red', 'Azzure'])
-            ->datasets([400, 50, 100])
+            ->labels(['Male', 'Female', 'Unknown'])
+            ->datasets([$male, $female, $unknown])
             ->get();
     }
 
