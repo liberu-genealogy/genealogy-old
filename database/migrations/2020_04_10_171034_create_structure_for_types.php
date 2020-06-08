@@ -26,5 +26,5 @@ class CreateStructureForTypes extends Migration
         'name' => 'Types', 'icon' => 'users', 'route' => 'types.index', 'order_index' => 999, 'has_children' => false,
     ];
 
-    protected $parentMenu = '';
+    protected $parentMenu = 'References';
 }

@@ -44,7 +44,7 @@ class ChartController extends Controller
         $female = Person::where('sex', 'F')->get()->count();
         $unknown = Person::whereNull('sex')->get()->count();
         return (new Pie())
-            ->title('Colors')
+            ->title('Genders')
             ->labels(['Male', 'Female', 'Unknown'])
             ->datasets([$male, $female, $unknown])
             ->get();
