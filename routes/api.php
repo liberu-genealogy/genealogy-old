@@ -247,3 +247,16 @@ Route::middleware(['web', 'auth', 'core'])
                 Route::post('store', 'Store')->name('store');
             });
     });
+
+Route::middleware(['web', 'auth', 'core'])
+    ->group(function () {
+        Route::namespace('Trees')
+            ->prefix('trees')
+            ->as('trees.')
+            ->group(function () {
+                
+                Route::get('{tree}', 'Show')->name('show');
+
+
+        });
+    });
