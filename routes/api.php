@@ -254,9 +254,6 @@ Route::middleware(['web', 'auth', 'core'])
             ->prefix('trees')
             ->as('trees.')
             ->group(function () {
-                
                 Route::get('{tree}', 'Show')->name('show');
-
-
-        });
+            });
     });
