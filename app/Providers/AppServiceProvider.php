@@ -2,15 +2,15 @@
 
 namespace App\Providers;
 
+use App\Forms\Builders\PersonForm as LocalPersonForm;
 use App\Http\Requests\ValidatePersonStoreRequest as LocalPersonStore;
 use App\Http\Requests\ValidatePersonUpdateRequest as LocalPersonUpdate;
-use App\Forms\Builders\PersonForm as LocalPersonForm;
 use App\Tables\Builders\PersonTable as LocalPersonTable;
 use Illuminate\Support\ServiceProvider;
+use LaravelEnso\People\App\Forms\Builders\PersonForm;
 use LaravelEnso\People\App\Http\Requests\ValidatePersonStore;
 use LaravelEnso\People\App\Http\Requests\ValidatePersonUpdate;
 use LaravelEnso\People\App\Tables\Builders\PersonTable;
-use LaravelEnso\People\App\Forms\Builders\PersonForm;
 
 class AppServiceProvider extends ServiceProvider
 {
