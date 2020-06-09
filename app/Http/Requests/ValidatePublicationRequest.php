@@ -13,8 +13,12 @@ class ValidatePublicationRequest extends FormRequest
 
     public function rules()
     {
+        $publication = $this->route('publication');
+
         return [
-            //
+            'description' => 'required|max:50',
+            'name' => 'required|max:50',
+            'is_active' => 'boolean',
         ];
     }
 }

@@ -2,7 +2,11 @@
 
 namespace App\Forms\Builders;
 
+use App\Author;
+use App\Publication;
+use App\Repository;
 use App\Source;
+use App\Type;
 use LaravelEnso\Forms\App\Services\Form;
 
 class SourceForm
@@ -18,11 +22,22 @@ class SourceForm
 
     public function create()
     {
-        return $this->form->create();
+        return $this->form
+    ->options('type_id', Type::all())
+    ->options('author_id', Author::all())
+    ->options('publication_id', Publication::all())
+    ->options('repository_id', Repository::all())
+    ->create();
     }
 
     public function edit(Source $source)
     {
-        return $this->form->edit($source);
+        return $this->form
+    ->options('type_id', Type::all())
+    ->options('author_id', Author::all())
+    ->options('publication_id', Publication::all())
+    ->options('repository_id', Repository::all())
+    ->append('source_id', $source->id)
+    ->edit($source);
     }
 }

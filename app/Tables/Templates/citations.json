@@ -17,6 +17,24 @@
       "meta": ["searchable", "sortable"]
     },
     {
+      "label": "Confidence",
+      "name": "confidence",
+      "data": "citations.confidence",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Volume",
+      "name": "volume",
+      "data": "citations.volume",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Page",
+      "name": "page",
+      "data": "citations.page",
+      "meta": ["searchable", "sortable"]
+    },
+    {
       "label": "Date",
       "name": "date",
       "data": "citations.date",

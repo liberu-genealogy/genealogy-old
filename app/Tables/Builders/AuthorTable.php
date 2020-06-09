@@ -13,7 +13,7 @@ class AuthorTable implements Table
     public function query(): Builder
     {
         return Author::selectRaw('
-            authors.id
+            authors.id, authors.name, authors.description, authors.is_active
         ');
     }
 

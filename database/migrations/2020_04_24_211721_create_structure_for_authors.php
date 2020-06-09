@@ -23,8 +23,8 @@ class CreateStructureForAuthors extends Migration
     ];
 
     protected $menu = [
-        'name' => 'Authors', 'icon' => '', 'route' => 'authors.index', 'order_index' => 999, 'has_children' => false,
+        'name' => 'Authors', 'icon' => 'users', 'route' => 'authors.index', 'order_index' => 999, 'has_children' => false,
     ];
 
-    protected $parentMenu = '';
+    protected $parentMenu = 'References';
 }

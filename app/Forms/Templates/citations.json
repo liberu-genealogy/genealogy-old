@@ -45,7 +45,7 @@
           }
         }, {
           "label": "Volume",
-          "name": "volume_id",
+          "name": "volume",
           "column" : 2,
           "value": null,
           "meta": {
@@ -54,7 +54,7 @@
           }
         }, {
           "label": "Page",
-          "name": "page_id",
+          "name": "page",
           "column" : 2,
           "value": null,
           "meta": {
@@ -62,16 +62,16 @@
             "content": "text"
           }
         }, {
-          "label": "Source",
-          "name": "source_id",
-          "column" : 2,
-          "value": null,
-          "meta": {
-            "custom": false,
-            "type": "select",
-            "multiple": false,
-            "options": []
-          }
+        "label": "Source",
+        "name": "source_id",
+	"column": 2,
+        "value": null,
+        "meta": {
+        "type": "select",
+        "multiple": false,
+        "options": []
+        }
+
     }, {
       "label": "Active",
       "name": "is_active",

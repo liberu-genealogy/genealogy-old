@@ -23,8 +23,8 @@ class CreateStructureForPublications extends Migration
     ];
 
     protected $menu = [
-        'name' => 'Publications', 'icon' => '', 'route' => 'publications.index', 'order_index' => 999, 'has_children' => false,
+        'name' => 'Publications', 'icon' => 'users', 'route' => 'publications.index', 'order_index' => 999, 'has_children' => false,
     ];
 
-    protected $parentMenu = '';
+    protected $parentMenu = 'References';
 }
