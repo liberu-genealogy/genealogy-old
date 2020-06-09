@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Trees;
 
-use App\Note;
-use Illuminate\Routing\Controller;
-use Illuminate\Http\Request;
 use App\Family;
+use App\Note;
 use App\Person;
+use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class Show extends Controller
 {
@@ -14,37 +14,38 @@ class Show extends Controller
     private $unions;
     private $links;
     private $nest;
+
     public function __invoke(Request $request)
     {
         $start_id = $request->get('start_id', 1);
         $nest = $request->get('nest', 3);
-        $ret = array();
+        $ret = [];
         $ret['start'] = $start_id;
-        $this->persons = array();
-        $this->unions = array();
+        $this->persons = [];
+        $this->unions = [];
         $this->links = [];
         $this->nest = $nest;
         $this->getGraphData(2);
         $ret['persons'] = $this->persons;
         $ret['unions'] = $this->unions;
         $ret['links'] = $this->links;
+
         return $ret;
     }
 
-    private function getGraphData($start_id, $nest = 1){
-        if($this->nest >= $nest){
+    private function getGraphData($start_id, $nest = 1)
+    {
+        if ($this->nest >= $nest) {
             $nest++;
             // get unions first
             $person = Person::find($start_id);
-            
+
             // add family
             $families = Family::where('husband_id', $start_id)->orwhere('wife_id', $start_id)->get();
             $own_unions = [];
 
-
-
             // add children
-            foreach($families as $family) {
+            foreach ($families as $family) {
                 $family_id = $family->id;
 
                 $father = Person::find($family->husband_id);
@@ -52,13 +53,13 @@ class Show extends Controller
                 // add partner to person
                 // add partner link
 
-                if(isset($father->id)){
+                if (isset($father->id)) {
                     $_families = Family::where('husband_id', $father->id)->orwhere('wife_id', $father->id)->select('id')->get()->toArray();
                     $father->setAttribute('own_unions', $_families);
                     $this->persons[$father->id] = $father;
                     $this->links[] = [$father->id, $family_id];
                 }
-                if(isset($mother->id)){
+                if (isset($mother->id)) {
                     $_families = Family::where('husband_id', $mother->id)->orwhere('wife_id', $mother->id)->select('id')->get()->toArray();
                     $mother->setAttribute('own_unions', $_families);
                     $this->persons[$mother->id] = $mother;
@@ -70,7 +71,7 @@ class Show extends Controller
                 // find children
                 $children = Person::where('child_in_family_id', $family_id)->get();
                 $children_ids = [];
-                foreach($children as $child){
+                foreach ($children as $child) {
                     $child_id = $child->id;
                     // add child to person
                     // parent_union
@@ -84,18 +85,19 @@ class Show extends Controller
 
                     // make union child filds
                     $children_ids[] = $child_id;
-                    $this->getGraphData($child_id,$nest);
+                    $this->getGraphData($child_id, $nest);
                 }
 
                 // compose union item and add to unions
-                $union = array();
+                $union = [];
                 $union['id'] = $family_id;
-                $union['partner'] = [isset($father->id) ? $father->id : null, isset($mother->id)? $mother->id: null];
+                $union['partner'] = [isset($father->id) ? $father->id : null, isset($mother->id) ? $mother->id : null];
                 $union['children'] = $children_ids;
                 $this->unions[$family_id] = $union;
                 $own_unions[] = $family_id;
             }
         }
+
         return true;
     }
 }
