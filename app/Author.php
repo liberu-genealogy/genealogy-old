@@ -14,5 +14,4 @@ class Author extends Model
     protected $attributes = ['is_active' => false];
 
     protected $casts = ['is_active' => 'boolean'];
-
 }
