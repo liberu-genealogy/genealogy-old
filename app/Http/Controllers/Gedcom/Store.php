@@ -24,19 +24,21 @@ class Store extends Controller
         $slug = $request->get('slug');
         if ($request->hasFile('file')) {
             if ($request->file('file')->isValid()) {
-                try{
+                try {
                     $request->file->storeAs('gedcom', 'file.ged');
+                    define('STDIN', fopen('php://stdin', 'r'));
                     $parser = new GedcomParser();
                     $parser->parse($request->file('file'), $slug, true);
+
                     return ['File uploaded'];
-                }catch(Exception $e){
+                } catch (Exception $e) {
                     return ['Not uploaded'];
                 }
             }
 
             return ['File corrupted'];
         }
-        
+
         return ['Not uploaded'];
     }
 }

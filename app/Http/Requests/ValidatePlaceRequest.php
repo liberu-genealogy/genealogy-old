@@ -24,7 +24,7 @@ class ValidatePlaceRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:50',
+            'title' => 'required|max:50',
             'description' => 'required|max:50',
         ];
     }

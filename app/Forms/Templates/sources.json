@@ -35,44 +35,36 @@
             "name": "type_id",
             "value": null,
             "meta": {
-                "custom": true,
                 "type": "select",
                 "multiple": false,
-                "options": [],
-                "source": "types.options"
+                "options": []
             }
         }, {
             "label": "Author",
             "name": "author_id",
             "value": null,
             "meta": {
-                "custom": true,
                 "type": "select",
                 "multiple": false,
-                "options": [],
-                "source": "authors.options"
+                "options": []
             }
         }, {
             "label": "Publication",
             "name": "publication_id",
             "value": null,
             "meta": {
-                "custom": true,
                 "type": "select",
                 "multiple": false,
-                "options": [],
-                "source": "publications.options"
+                "options": []
             }
         }, {
             "label": "Repository",
             "name": "repository_id",
             "value": null,
             "meta": {
-                "custom": true,
                 "type": "select",
                 "multiple": false,
-                "options": [],
-                "source": "repositories.options"
+                "options": []
             }
         }, {
             "label": "Active",

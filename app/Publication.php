@@ -9,5 +9,9 @@ class Publication extends Model
 {
     use TableCache;
 
-    //
+    protected $fillable = ['description', 'is_active', 'name'];
+
+    protected $attributes = ['is_active' => false];
+
+    protected $casts = ['is_active' => 'boolean'];
 }
