@@ -3,16 +3,16 @@
     "sections": [{
         "columns": 2,
         "fields": [{
-            "label": "Name",
-            "name": "name",
+            "label": "Title",
+            "name": "title",
             "value": null,
             "meta": {
                 "type": "input",
                 "content": "text"
             }
         }, {
-            "label": "Title",
-            "name": "title",
+            "label": "Description",
+            "name": "description",
             "value": null,
             "meta": {
                 "type": "input",
