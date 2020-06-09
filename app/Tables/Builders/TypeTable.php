@@ -13,7 +13,7 @@ class TypeTable implements Table
     public function query(): Builder
     {
         return Type::selectRaw('
-            types.id
+            types.id, types.name, types.description, types.is_active
         ');
     }
 

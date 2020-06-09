@@ -23,8 +23,8 @@ class CreateStructureForCitations extends Migration
     ];
 
     protected $menu = [
-        'name' => 'Citations', 'icon' => '', 'route' => 'citations.index', 'order_index' => 999, 'has_children' => false,
+        'name' => 'Citations', 'icon' => 'users', 'route' => 'citations.index', 'order_index' => 999, 'has_children' => false,
     ];
 
-    protected $parentMenu = '';
+    protected $parentMenu = 'References';
 }

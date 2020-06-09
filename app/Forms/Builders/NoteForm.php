@@ -26,6 +26,8 @@ class NoteForm
 
     public function edit(Note $note)
     {
-        return $this->form->edit($note);
+        return $this->form
+    ->options('type_id', Type::all())
+    ->edit($note);
     }
 }

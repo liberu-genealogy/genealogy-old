@@ -35,11 +35,9 @@
             "name": "type_id",
             "value": null,
             "meta": {
-                "custom": true,
                 "type": "select",
                 "multiple": false,
-                "options": [],
-                "source": "types.options"
+                "options": []
             }
         }]
     }]

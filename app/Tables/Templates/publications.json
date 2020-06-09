@@ -1,12 +1,26 @@
 {
-    "name": "Publication",
+    "name": "Publications",
     "routePrefix": "publications",
     "crtNo": true,
     "buttons": ["excel", "create", "show", "edit", "destroy"],
-    "columns": [{
-        "label": "Id",
-        "name": "id",
-        "data": "publications.id",
-        "meta": ["searchable", "sortable"]
-    }]
+  "columns": [
+    {
+      "label": "Name",
+      "name": "name",
+      "data": "publications.name",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Description",
+      "name": "description",
+      "data": "publications.description",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Active",
+      "name": "is_active",
+      "data": "publications.is_active",
+      "meta": ["boolean"]
+    }
+  ]
 }

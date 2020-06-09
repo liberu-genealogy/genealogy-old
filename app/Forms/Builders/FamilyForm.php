@@ -35,7 +35,7 @@ class FamilyForm
     ->options('husband_id', Person::all())
     ->options('wife_id', Person::all())
     ->options('type_id', Type::all())
-        ->append('family_id', $family->id)
-    ->create();
+    ->append('family_id', $family->id)
+    ->edit($family);
     }
 }
