@@ -9,5 +9,4 @@ use LaravelEnso\Tables\App\Contracts\Table;
 class PersonTable extends \LaravelEnso\People\App\Tables\Builders\PersonTable
 {
     protected const TemplatePath = __DIR__.'/../Templates/people.json';
-
 }
