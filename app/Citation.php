@@ -2,9 +2,9 @@
 
 namespace App;
 
+use App\Source;
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Tables\App\Traits\TableCache;
-use App\Source;
 
 class Citation extends Model
 {
