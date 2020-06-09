@@ -1,7 +1,6 @@
 <template>
     <div>
-        <button v-on:click="newlink(43)">New URL</button>
-        <router-link to="/trees/23/show">Navigate to Page2</router-link>
+        <router-link to="/trees/2/show">Navigate to Person 2</router-link>
         <div id="panel" style="height:300px;">
         </div>
     </div>
@@ -15,117 +14,7 @@ export default {
     name: 'Show',
     data() {
         return{
-            data : {
-                "start":"id2",
-                "persons": {
-                    "id1": {
-                        "id": "id1",
-                        "name": "Adam",
-                        "birthyear": 1900,
-                        "deathyear": 1980,
-                        "own_unions": ["u1"],
-                        "birthplace":"Alberta",
-                        "deathplace":"Austin"},
-                    "id2": {
-                        "id": "id2",
-                        "name": "Berta",
-                        "birthyear": 1901,
-                        "deathyear": 1985,
-                        "own_unions": ["u1"],
-                        "birthplace":"Berlin",
-                        "deathplace":"Bern" },
-                    "id3": {
-                        "id": "id3",
-                        "name": "Charlene",
-                        "birthyear": 1930,
-                        "deathyear": 2010,
-                        "own_unions": ["u3", "u4"],
-                        "child_in_family_id": "u1",
-                        "birthplace":"Château",
-                        "deathplace":"Cuxhaven" },
-                    "id4": {
-                        "id": "id4",
-                        "name": "Dan",
-                        "birthyear": 1926,
-                        "deathyear": 2009,
-                        "own_unions": [],
-                        "child_in_family_id": "u1",
-                        "birthplace":"den Haag",
-                        "deathplace":"Derince" },
-                    "id5": {
-                        "id": "id5",
-                        "name": "Eric",
-                        "birthyear": 1931,
-                        "deathyear": 2015,
-                        "own_unions": ["u3"],
-                        "child_in_family_id": "u2",
-                        "birthplace":"Essen",
-                        "deathplace":"Edinburgh" },
-                    "id6": {
-                        "id": "id6",
-                        "name": "Francis",
-                        "birthyear": 1902,
-                        "deathyear": 1970,
-                        "own_unions": ["u2"],
-                        "birthplace":"Firenze",
-                        "deathplace":"Faizabad" },
-                    "id7": {
-                        "id": "id7",
-                        "name": "Greta",
-                        "birthyear": 1905, "deathyear": 1990, "own_unions": ["u2"] },
-                    "id8": {
-                        "id": "id8",
-                        "name": "Heinz",
-                        "birthyear": 1970, "own_unions": ["u5"], "child_in_family_id": "u3" },
-                    "id9": {
-                        "id": "id9",
-                        "name": "Iver",
-                        "birthyear": 1925,
-                        "deathyear": 1963, "own_unions": ["u4"] },
-                    "id10": {
-                        "id": "id10",
-                        "name": "Jennifer",
-                        "birthyear": 1950,
-                        "own_unions": [], "child_in_family_id": "u4" },
-                    "id11": {
-                        "id": "id11",
-                        "name": "Klaus",
-                        "birthyear": 1933,
-                        "deathyear": 2013,
-                        "own_unions": [], "child_in_family_id": "u1" },
-                    "id12": {
-                        "id": "id12",
-                        "name": "Lennart",
-                        "birthyear": 1999,
-                        "own_unions": [], "child_in_family_id": "u5" },
-                },
-                "unions": {
-                    "u1": {
-                        "id": "u1", "partner": ["id1", "id2"], "children": ["id3", "id4", "id11"] },
-                    "u2": { "id": "u2", "partner": ["id6", "id7"], "children": ["id5"] },
-                    "u3": { "id": "u3", "partner": ["id3", "id5"], "children": ["id8"] },
-                    "u4": { "id": "u4", "partner": ["id3", "id9"], "children": ["id10"] },
-                    "u5": { "id": "u5", "partner": ["id8"], "children": ["id12"] },
-                },
-                "links": [
-                    ["id1", "u1"],
-                    ["id2", "u1"],
-                    ["u1", "id3"],
-                    ["u1", "id4"],
-                    ["id6", "u2"],
-                    ["id7", "u2"],
-                    ["u2", "id5"],
-                    ["id3", "u3"],
-                    ["id5", "u3"],
-                    ["u3", "id8"],
-                    ["id3", "u4"],
-                    ["id9", "u4"],
-                    ["u4", "id10"],
-                    ["u1", "id11"],
-                    ["id8", "u5"],
-                    ["u5", "id12"],
-                ]
-            },
+            data :null,
             all_nodes: null,
             tree: null,
             dag: null,
@@ -147,12 +36,11 @@ export default {
             }
             return this;
         };
-        this.generateTree();
+        // this.generateTree();
         this.fecthData();
     },
     created() {
         // mark unions
-        console.log('', this.$route);
     },
     computed: {
         fetchLink() {
@@ -349,7 +237,7 @@ export default {
             if (node.data.isUnion) return [];
             let unions = [];
             node.data.own_unions.forEach(
-                u_id => unions.push(this.all_nodes.find(n => n.id == u_id['id']))
+                u_id => unions.push(this.all_nodes.find(n => n.id == u_id))
             );
             return unions.filter(u => u != undefined)
         },
@@ -443,7 +331,7 @@ export default {
                 .text(
                     function (d) {
                         if (d.data.isUnion) return;
-                        return (d.data.birthyear||"?")
+                        return (new Date(d.data.created_at).getFullYear()||"?")
                     }
                 );
 
@@ -614,6 +502,11 @@ export default {
                     (a, b) => { return 1 }
                 );
             // make dag from edge list
+            const _links = this.data.links;
+            let links = [];
+            _links.forEach(
+                item => links.push([item[0], item[1]])
+            );
             this.dag = _dag.dagConnect()(this.data.links);
             // in order to make the family tree work, the dag
             // must be a node with id undefined. create that node if
@@ -664,12 +557,10 @@ export default {
             axios
                 .get(this.fetchLink, { params })
                 .then(res => {
-                    console.log((res['data']));
                     this.data = (res['data']);
                     this.generateTree();
-                    console.log(this.data);
                     })
-                .catch(err => { console.log(err); });
+                .catch(err => {  });
         }
     }
 };
