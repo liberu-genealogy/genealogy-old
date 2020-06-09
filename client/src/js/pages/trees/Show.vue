@@ -621,6 +621,18 @@ export default {
 
             // draw dag
             this.update(root);
+            setTimeout(this.expand, 1000);
+            setTimeout(this.expand, 2000);
+            setTimeout(this.expand, 3000);
+
+        },
+        expand(){
+            this.all_nodes.forEach(n => {
+                if(this.is_extendable(n)){
+                    this.uncollapse(n);
+                    this.update(n);
+                };
+            });
         },
         fecthData() {
             const start_id = this.$route.params.tree;
