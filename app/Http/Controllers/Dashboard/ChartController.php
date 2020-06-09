@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Person;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Charts\App\Factories\Bar;
 use LaravelEnso\Charts\App\Factories\Bubble;
@@ -10,7 +11,6 @@ use LaravelEnso\Charts\App\Factories\Line;
 use LaravelEnso\Charts\App\Factories\Pie;
 use LaravelEnso\Charts\App\Factories\Polar;
 use LaravelEnso\Charts\App\Factories\Radar;
-use App\Person;
 
 class ChartController extends Controller
 {
@@ -43,6 +43,7 @@ class ChartController extends Controller
         $male = Person::where('sex', 'M')->get()->count();
         $female = Person::where('sex', 'F')->get()->count();
         $unknown = Person::whereNull('sex')->get()->count();
+
         return (new Pie())
             ->title('Genders')
             ->labels(['Male', 'Female', 'Unknown'])
