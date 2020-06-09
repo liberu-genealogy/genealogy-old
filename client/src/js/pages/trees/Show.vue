@@ -1,5 +1,9 @@
 <template>
-    <div id="panel" style="height:300px;">
+    <div>
+        <button v-on:click="newlink(43)">New URL</button>
+        <router-link to="/trees/23/show">Navigate to Page2</router-link>
+        <div id="panel" style="height:300px;">
+        </div>
     </div>
 </template>
 <script src="https://cdn.jsdelivr.net/npm/d3-dag@0.3.4/dist/d3-dag.min.js"></script>
@@ -36,7 +40,7 @@ export default {
                         "birthyear": 1930,
                         "deathyear": 2010,
                         "own_unions": ["u3", "u4"],
-                        "parent_union": "u1",
+                        "child_in_family_id": "u1",
                         "birthplace":"Château",
                         "deathplace":"Cuxhaven" },
                     "id4": {
@@ -45,7 +49,7 @@ export default {
                         "birthyear": 1926,
                         "deathyear": 2009,
                         "own_unions": [],
-                        "parent_union": "u1",
+                        "child_in_family_id": "u1",
                         "birthplace":"den Haag",
                         "deathplace":"Derince" },
                     "id5": {
@@ -54,7 +58,7 @@ export default {
                         "birthyear": 1931,
                         "deathyear": 2015,
                         "own_unions": ["u3"],
-                        "parent_union": "u2",
+                        "child_in_family_id": "u2",
                         "birthplace":"Essen",
                         "deathplace":"Edinburgh" },
                     "id6": {
@@ -72,7 +76,7 @@ export default {
                     "id8": {
                         "id": "id8",
                         "name": "Heinz",
-                        "birthyear": 1970, "own_unions": ["u5"], "parent_union": "u3" },
+                        "birthyear": 1970, "own_unions": ["u5"], "child_in_family_id": "u3" },
                     "id9": {
                         "id": "id9",
                         "name": "Iver",
@@ -82,18 +86,18 @@ export default {
                         "id": "id10",
                         "name": "Jennifer",
                         "birthyear": 1950,
-                        "own_unions": [], "parent_union": "u4" },
+                        "own_unions": [], "child_in_family_id": "u4" },
                     "id11": {
                         "id": "id11",
                         "name": "Klaus",
                         "birthyear": 1933,
                         "deathyear": 2013,
-                        "own_unions": [], "parent_union": "u1" },
+                        "own_unions": [], "child_in_family_id": "u1" },
                     "id12": {
                         "id": "id12",
                         "name": "Lennart",
                         "birthyear": 1999,
-                        "own_unions": [], "parent_union": "u5" },
+                        "own_unions": [], "child_in_family_id": "u5" },
                 },
                 "unions": {
                     "u1": {
@@ -122,13 +126,6 @@ export default {
                     ["u5", "id12"],
                 ]
             },
-            gdp: [
-                {country: "USA", value: 20.5 },
-                {country: "China", value: 13.4 },
-                {country: "Germany", value: 4.0 },
-                {country: "Japan", value: 4.9 },
-                {country: "France", value: 2.8 }
-            ],
             all_nodes: null,
             tree: null,
             dag: null,
@@ -136,6 +133,7 @@ export default {
             duration: null,
             svg: null,
             zoom: null,
+            nest: 3,
         }
     },
     mounted() {
@@ -150,12 +148,21 @@ export default {
             return this;
         };
         this.generateTree();
+        this.fecthData();
     },
     created() {
         // mark unions
-
+        console.log('', this.$route);
+    },
+    computed: {
+        fetchLink() {
+            return '/api/trees/show';
+        },
     },
     methods: {
+        newlink(id) {
+            this.$router.push(id);
+        },
         is_extendable(node) {
             return node.neighbors.filter(n => !n.visible).length > 0
         },
@@ -291,7 +298,7 @@ export default {
         getParentUnions(node) {
             if (node == undefined) return [];
             if (node.data.isUnion) return [];
-            var u_id = node.data.parent_union;
+            var u_id = node.data.child_in_family_id;
             if (u_id) {
                 var union = this.all_nodes.find(n => n.id == u_id);
                 return [union].filter(u => u != undefined);
@@ -342,7 +349,7 @@ export default {
             if (node.data.isUnion) return [];
             let unions = [];
             node.data.own_unions.forEach(
-                u_id => unions.push(this.all_nodes.find(n => n.id == u_id))
+                u_id => unions.push(this.all_nodes.find(n => n.id == u_id['id']))
             );
             return unions.filter(u => u != undefined)
         },
@@ -365,7 +372,7 @@ export default {
             return children
         },
         getBirthYear(node) {
-            return new Date(node.data.birthyear || NaN).getFullYear()
+            return new Date(node.data.birthday || NaN).getFullYear()
         },
         getDeathYear(node) {
             return new Date(node.data.deathyear || NaN).getFullYear()
@@ -436,9 +443,7 @@ export default {
                 .text(
                     function (d) {
                         if (d.data.isUnion) return;
-                        return (d.data.birthyear||"?") +
-                            " - " +
-                            (d.data.deathyear||"?")
+                        return (d.data.birthyear||"?")
                     }
                 );
 
@@ -647,6 +652,25 @@ export default {
             // draw dag
             this.update(root);
         },
+        fecthData() {
+            const start_id = this.$route.params.tree;
+            // const fd = new FormData();
+            // fd.append('start_id', start_id);
+            // fd.append('nest', this.nest);
+            const params = {
+                'start_id': start_id,
+                'nest':this.nest,
+            };
+            axios
+                .get(this.fetchLink, { params })
+                .then(res => {
+                    console.log((res['data']));
+                    this.data = (res['data']);
+                    this.generateTree();
+                    console.log(this.data);
+                    })
+                .catch(err => { console.log(err); });
+        }
     }
 };
 </script>
