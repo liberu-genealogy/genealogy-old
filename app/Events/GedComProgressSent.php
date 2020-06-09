@@ -18,7 +18,6 @@ class GedComProgressSent implements ShouldBroadcast
     public $total;
     public $complete;
 
-
     /**
      * Create a new event instance.
      *

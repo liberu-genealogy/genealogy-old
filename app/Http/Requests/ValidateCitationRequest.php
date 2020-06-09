@@ -21,8 +21,8 @@ class ValidateCitationRequest extends FormRequest
             'date' => 'required|max:24',
             'is_active' => 'boolean',
             'source_id' => 'required|exists:sources,id',
-            'volume_id' => 'required|max:5',
-            'page_id' => 'required|max:5',
+            'volume' => 'required|max:5',
+            'page' => 'required|max:5',
             'confidence' => 'required|max:50',
         ];
     }

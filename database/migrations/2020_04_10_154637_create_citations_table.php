@@ -19,8 +19,8 @@ class CreateCitationsTable extends Migration
             $table->text('description', 65535);
             $table->dateTime('date')->nullable();
             $table->integer('is_active');
-            $table->integer('volume_id');
-            $table->integer('page_id');
+            $table->integer('volume');
+            $table->integer('page');
             $table->integer('confidence');
             $table->integer('source_id')->references('id')->on('sources');
             $table->timestamps();

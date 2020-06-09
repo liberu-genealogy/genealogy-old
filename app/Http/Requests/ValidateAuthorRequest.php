@@ -13,8 +13,12 @@ class ValidateAuthorRequest extends FormRequest
 
     public function rules()
     {
+        $author = $this->route('author');
+
         return [
-            //
+            'description' => 'required|max:50',
+            'name' => 'required|max:50',
+            'is_active' => 'boolean',
         ];
     }
 }
