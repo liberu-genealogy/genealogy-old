@@ -14,7 +14,86 @@ export default {
     name: 'Show',
     data() {
         return{
-            data :null,
+            data :{
+                start: 4,
+                links: [[3, "u1"], [2, "u2"], [2, "u1"], ["u2", 4]],
+                unions: {'u1': {id: "u1", partner: [2, 3], children: []},
+                'u2': {id: "u2", partner: [2, null], children: [4]} },
+                persons: {
+                    2: {
+                        appellative: null,
+                        bank: null,
+                        bank_account: null,
+                        birthday: null,
+                        parent_union: null,
+                        created_at: "2020-06-09T15:17:59.000000Z",
+                        created_by: 1,
+                        deleted_at: null,
+                        description: null,
+                        email: null,
+                        givn: "Robert Eugene",
+                        id: 2,
+                        name: "Robert Eugene /Williams/",
+                        obs: null,
+                        own_unions: ["u1", "u2"],
+                        phone: null,
+                        sex: "M",
+                        surn: "Williams",
+                        title: null,
+                        uid: null,
+                        updated_at: "2020-06-09T15:17:59.000000Z",
+                        updated_by: 1,
+                    },
+                    3: {
+                        appellative: null,
+                        bank: null,
+                        bank_account: null,
+                        birthday: null,
+                        parent_union: null,
+                        created_at: "2020-06-09T15:17:59.000000Z",
+                        created_by: 1,
+                        deleted_at: null,
+                        description: null,
+                        email: null,
+                        givn: "Mary Ann",
+                        id: 3,
+                        name: "Mary Ann /Williams/",
+                        obs: null,
+                        own_unions: ["u1", "u2"],
+                        phone: null,
+                        sex: "M",
+                        surn: "Wilson",
+                        title: null,
+                        uid: null,
+                        updated_at: "2020-06-09T15:17:59.000000Z",
+                        updated_by: 1,
+                    },
+                    4: {
+                        appellative: null,
+                        bank: null,
+                        bank_account: null,
+                        birthday: null,
+                        parent_union: 2,
+                        created_at: "2020-06-09T15:17:59.000000Z",
+                        created_by: 1,
+                        deleted_at: null,
+                        description: null,
+                        email: null,
+                        givn: "4Mary Ann",
+                        id: 3,
+                        name: "4Mary Ann /Williams/",
+                        obs: null,
+                        own_unions: ["u1", "u2"],
+                        phone: null,
+                        sex: "M",
+                        surn: "4Wilson",
+                        title: null,
+                        uid: null,
+                        updated_at: "2020-06-09T15:17:59.000000Z",
+                        updated_by: 1,
+                    },
+                    },
+                },
             all_nodes: null,
             tree: null,
             dag: null,
@@ -77,6 +156,7 @@ export default {
 
             // collapse neighbors which are visible and have been inserted by this node
             var vis_inserted_nei = d.neighbors.filter(n => n.visible&d.inserted_nodes.includes(n));
+
             vis_inserted_nei.forEach(
                 n => {
                     // tag invisible
@@ -106,7 +186,7 @@ export default {
             // neighbor nodes that are already visible (happens when
             // circles occur): make connections, save them to
             // destroy / rebuild on collapse
-            var extended_neighbors = d.neighbors.filter(n => n.visible)
+            var extended_neighbors = d.neighbors.filter(n => n.visible);
             extended_neighbors.forEach(
                 n => {
                     // if child, make connection
@@ -186,7 +266,7 @@ export default {
         getParentUnions(node) {
             if (node == undefined) return [];
             if (node.data.isUnion) return [];
-            var u_id = node.data.child_in_family_id;
+            var u_id = node.data.parent_union;
             if (u_id) {
                 var union = this.all_nodes.find(n => n.id == u_id);
                 return [union].filter(u => u != undefined);
@@ -297,7 +377,6 @@ export default {
             // Update the nodes...
             var node = this.g.selectAll('g.node')
                 .data(nodes, function (d) { return d.id || (d.id = ++i); })
-
             // Enter any new nodes at the parent's previous position.
             var nodeEnter = node.enter().append('g')
                 .attr('class', 'node')
@@ -308,7 +387,6 @@ export default {
                 // .on('mouseover', tip.show)
                 // .on('mouseout', tip.hide)
                 .attr('visible', true);
-
             // Add Circle for the nodes
             nodeEnter.append('circle')
                 .attr('class', 'node')
@@ -376,7 +454,6 @@ export default {
             // Update the links...
             var link = this.g.selectAll('path.link')
                 .data(links, function (d) { return d.source.id + d.target.id });
-
             // Enter any new links at the parent's previous position.
             var linkEnter = link.enter().insert('path', "g")
                 .attr("class", "link")
@@ -558,7 +635,8 @@ export default {
                 .get(this.fetchLink, { params })
                 .then(res => {
                     this.data = (res['data']);
-                    this.generateTree();
+                    setTimeout(this.generateTree, 1000);
+                    // this.generateTree();
                     })
                 .catch(err => {  });
         }
