@@ -13,7 +13,7 @@ class PublicationTable implements Table
     public function query(): Builder
     {
         return Publication::selectRaw('
-            publications.id
+            publications.id, publications.name, publications.description, publications.is_active
         ');
     }
 
