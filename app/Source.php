@@ -9,7 +9,7 @@ class Source extends Model
 {
     use TableCache;
 
-    protected $fillable = ['name', 'description', 'repository_id', 'author_id', 'is_active'];
+    protected $fillable = ['name', 'description', 'repository_id', 'author_id', 'publication_id', 'type_id', 'is_active'];
 
     protected $attributes = ['is_active' => false];
 
