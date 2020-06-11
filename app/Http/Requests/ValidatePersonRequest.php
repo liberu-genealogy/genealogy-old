@@ -5,9 +5,9 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Collection;
 use Illuminate\Validation\Rule;
-use LaravelEnso\Companies\app\Http\Requests\ValidatePersonStore as EnsoPersonStore;
+use LaravelEnso\People\App\Http\Requests\ValidatePersonRequest as EnsoPersonRequest;
 
-class ValidatePersonRequest extends EnsoPersonStore
+class ValidatePersonRequest extends EnsoPersonRequest
 {
     private Collection $companies;
 
@@ -20,14 +20,12 @@ class ValidatePersonRequest extends EnsoPersonStore
     {
         return [
             'title' => 'integer|nullable',
-            'name' => 'required|max:50',
-            'appellative' => 'string|max:12|nullable',
+            'givn' => 'required|max:100',
+            'surn' => 'string|max:100|nullable',
             'uid' => ['string', 'nullable', $this->unique('uid')],
             'email' => ['email', 'nullable', $this->unique('email')],
             'phone' => 'max:30|nullable',
             'birthday' => 'nullable|date',
-            'bank' => 'string|nullable',
-            'bank_account' => 'string|nullable',
             'position' => 'integer|nullable',
             'obs' => 'string|nullable',
             'companies' => 'array',

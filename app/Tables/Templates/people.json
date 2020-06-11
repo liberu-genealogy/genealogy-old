@@ -28,18 +28,18 @@
             "enum": "LaravelEnso\\People\\App\\Enums\\Titles"
         },
         {
-            "label": "Name",
-            "name": "name",
-            "data": "people.name",
+            "label": "Given",
+            "name": "givn",
+            "data": "people.givn",
             "meta": [
                 "searchable",
                 "sortable"
             ]
         },
         {
-            "label": "Appellative",
-            "name": "appellative",
-            "data": "people.appellative",
+            "label": "Surname",
+            "name": "surn",
+            "data": "people.surn",
             "meta": [
                 "searchable",
                 "sortable"

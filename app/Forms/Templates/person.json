@@ -17,8 +17,8 @@
                     }
                 },
                 {
-                    "label": "Name",
-                    "name": "name",
+                    "label": "Given",
+                    "name": "givn",
                     "value": "",
                     "column": 6,
                     "meta": {
@@ -27,8 +27,8 @@
                     }
                 },
                 {
-                    "label": "Appellative",
-                    "name": "appellative",
+                    "label": "Surname",
+                    "name": "surn",
                     "value": "",
                     "column": 4,
                     "meta": {
@@ -78,26 +78,6 @@
                     "column": 4,
                     "label": "Unique Identifier",
                     "name": "uid",
-                    "value": "",
-                    "meta": {
-                        "type": "input",
-                        "content": "text"
-                    }
-                },
-                {
-                    "column": 4,
-                    "label": "Bank",
-                    "name": "bank",
-                    "value": "",
-                    "meta": {
-                        "type": "input",
-                        "content": "text"
-                    }
-                },
-                {
-                    "column": 4,
-                    "label": "Bank Account",
-                    "name": "bank_account",
                     "value": "",
                     "meta": {
                         "type": "input",
