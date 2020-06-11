@@ -20,6 +20,7 @@ class UpdateAddColumnsPersonEventsTable extends Migration
             $table->string('date')->nullable();
             $table->string('description')->nullable();
             $table->unsignedBigInteger('places_id')->nullable()->after('description');
+	    $table->softDeletes();
 
         });
     }
@@ -37,6 +38,7 @@ class UpdateAddColumnsPersonEventsTable extends Migration
             $table->dropColumn('title');
             $table->dropColumn('description');
             $table->dropColumn('places_id');
+            $table->dropColumn('deleted_at');
         });
     }
 }
