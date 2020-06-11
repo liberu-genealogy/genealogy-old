@@ -13,7 +13,7 @@ services:
       - mysqldb
 
   mysqldb:
-    image: mysql:5.7.21
+    image: mysql
     container_name: enso-${DB_CONNECTION}
     restart: always
     env_file:
