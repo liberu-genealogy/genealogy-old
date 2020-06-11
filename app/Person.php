@@ -24,6 +24,7 @@ class Person extends \LaravelEnso\People\app\Models\Person
         'description',
         'title', 'name', 'appellative', 'uid', 'email', 'phone', 'birthday',
         'bank', 'bank_account', 'obs',
+        'uid','chan', 'rin', 'resn', 'rfn', 'afn'
 
     ];
 
@@ -75,7 +76,12 @@ class Person extends \LaravelEnso\People\app\Models\Person
     public function addEvent($title, $date, $place, $description = '')
     {
         $place_id = Place::getIdByTitle($place);
-        $event = PersonEvent::create([
+        $event = PersonEvent::updateOrCreate(
+            [
+                'person_id' => $this->id,
+                'title' => $title,
+            ],
+            [
             'person_id' => $this->id,
             'title' => $title,
             'description' => $description,
