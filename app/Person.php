@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Person extends \LaravelEnso\People\app\Models\Person
+class Person extends \LaravelEnso\People\App\Models\Person
 {
     use SoftDeletes;
 
@@ -23,7 +23,7 @@ class Person extends \LaravelEnso\People\app\Models\Person
         'child_in_family_id',
         'description',
         'title', 'name', 'appellative', 'uid', 'email', 'phone', 'birthday',
-        'bank', 'bank_account', 'obs',
+        'obs',
         'uid','chan', 'rin', 'resn', 'rfn', 'afn'
 
     ];
@@ -107,4 +107,11 @@ class Person extends \LaravelEnso\People\app\Models\Person
     {
         return $this->events->where('title', '=', 'DEAT')->first();
     }
+
+    public function appellative()
+    {
+        return $this->givn;
+    }
+
+
 }
