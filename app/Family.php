@@ -9,7 +9,7 @@ use LaravelEnso\Tables\App\Traits\TableCache;
 class Family extends Model
 {
     use TableCache;
-    protected $fillable = ['description', 'is_active', 'husband_id', 'wife_id', 'type_id'];
+    protected $fillable = ['description', 'is_active', 'husband_id', 'wife_id', 'type_id','chan', 'nchi'];
 
     protected $attributes = ['is_active' => false];
 
@@ -56,11 +56,16 @@ class Family extends Model
     public function addEvent($title, $date, $place, $description = '')
     {
         $place_id = Place::getIdByTitle($place);
-        $event = FamilyEvent::create([
-            'family_id' => $this->id,
-            'title' => $title,
-            'description' => $description,
-        ]);
+        $event = FamilyEvent::updateOrCreate(
+            [
+                'family_id' => $this->id,
+                'title' => $title,
+            ],
+            [
+                'family_id' => $this->id,
+                'title' => $title,
+                'description' => $description,
+            ]);
         if ($date) {
             $event->date = $date;
             $event->save();
