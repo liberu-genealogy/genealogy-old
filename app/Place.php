@@ -11,18 +11,20 @@ class Place extends Model
 
     protected $fillable = ['description', 'title', 'date'];
 
-    public static function getIdByTitle($title){
-        $id = NULL;
-        if(empty($title)){
+    public static function getIdByTitle($title)
+    {
+        $id = null;
+        if (empty($title)) {
             return $id;
         }
         $place = self::where('title', $title)->first();
-        if($place !== null){
+        if ($place !== null) {
             $id = $place->id;
-        }else{
+        } else {
             $place = self::create(compact('title'));
             $id = $place->id;
         }
+
         return $id;
     }
 }

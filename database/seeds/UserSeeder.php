@@ -27,9 +27,9 @@ class UserSeeder extends Seeder
     {
         return factory(Person::class)->create([
             'title' => Titles::Mr,
-	    'name' => 'Admin Root',
+            'name' => 'Admin Root',
             'givn' => 'Admin',
-	    'appellative' => 'admin',
+            'appellative' => 'admin',
             'surn' => 'Root',
             'email' => 'admin@genealogia.co.uk',
             'birthday' => '1970-01-01',

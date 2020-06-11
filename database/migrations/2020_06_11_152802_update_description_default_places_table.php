@@ -14,7 +14,7 @@ class UpdateDescriptionDefaultPlacesTable extends Migration
     public function up()
     {
         //
-        if(Schema::hasColumn('places', 'description')){
+        if (Schema::hasColumn('places', 'description')) {
             Schema::table('places', function (Blueprint $table) {
                 $table->dropColumn('description');
             });
