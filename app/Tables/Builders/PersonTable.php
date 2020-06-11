@@ -24,6 +24,4 @@ class PersonTable extends \LaravelEnso\People\App\Tables\Builders\PersonTable
                     ->where('company_person.is_main', true)
             )->leftJoin('companies', 'company_person.company_id', 'companies.id');
     }
-
-
 }

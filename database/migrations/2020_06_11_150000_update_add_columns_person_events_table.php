@@ -20,7 +20,6 @@ class UpdateAddColumnsPersonEventsTable extends Migration
             $table->string('date')->nullable();
             $table->string('description')->nullable();
             $table->unsignedBigInteger('places_id')->nullable()->after('description');
-
         });
     }
 

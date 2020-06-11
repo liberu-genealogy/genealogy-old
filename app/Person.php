@@ -24,7 +24,7 @@ class Person extends \LaravelEnso\People\App\Models\Person
         'description',
         'title', 'name', 'appellative', 'uid', 'email', 'phone', 'birthday',
         'deathday', 'bank', 'bank_account', 'obs',
-        'uid','chan', 'rin', 'resn', 'rfn', 'afn'
+        'uid', 'chan', 'rin', 'resn', 'rfn', 'afn',
     ];
 
     public function events()
@@ -81,10 +81,10 @@ class Person extends \LaravelEnso\People\App\Models\Person
                 'title' => $title,
             ],
             [
-            'person_id' => $this->id,
-            'title' => $title,
-            'description' => $description,
-        ]);
+                'person_id' => $this->id,
+                'title' => $title,
+                'description' => $description,
+            ]);
 
         if ($date) {
             $event->date = $date;
@@ -97,12 +97,12 @@ class Person extends \LaravelEnso\People\App\Models\Person
         }
 
         // add birthyear to person table ( for form builder )
-        if($title == 'BIRT' && !empty($date)){
-            $this->birthday =  date('Y-m-d', strtotime($date));
+        if ($title == 'BIRT' && ! empty($date)) {
+            $this->birthday = date('Y-m-d', strtotime($date));
         }
         // add deathyear to person table ( for form builder )
-        if($title == 'DEAT'  && !empty($date)){
-            $this->deathday =  date('Y-m-d', strtotime($date));
+        if ($title == 'DEAT' && ! empty($date)) {
+            $this->deathday = date('Y-m-d', strtotime($date));
         }
         $this->save();
     }
@@ -121,6 +121,4 @@ class Person extends \LaravelEnso\People\App\Models\Person
     {
         return $this->givn;
     }
-
-
 }
