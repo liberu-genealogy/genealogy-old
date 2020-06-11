@@ -27,6 +27,7 @@ class UserSeeder extends Seeder
     {
         return factory(Person::class)->create([
             'title' => Titles::Mr,
+	    'name' => 'Admin Root',
             'givn' => 'Admin',
 	    'appellative' => 'admin',
             'surn' => 'Root',

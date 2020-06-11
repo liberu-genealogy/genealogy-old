@@ -37,6 +37,7 @@ class UpdateAddColumnsPersonEventsTable extends Migration
             $table->dropColumn('title');
             $table->dropColumn('description');
             $table->dropColumn('places_id');
+            $table->dropColumn('deleted_at');
         });
     }
 }
