@@ -23,7 +23,7 @@ class Person extends \LaravelEnso\People\App\Models\Person
         'child_in_family_id',
         'description',
         'title', 'name', 'appellative', 'uid', 'email', 'phone', 'birthday',
-        'bank', 'bank_account', 'obs',
+        'deathday', 'bank', 'bank_account', 'obs',
         'uid','chan', 'rin', 'resn', 'rfn', 'afn'
     ];
 
