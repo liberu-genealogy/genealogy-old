@@ -24,7 +24,7 @@ class Person extends \LaravelEnso\People\app\Models\Person
         'description',
         'title', 'name', 'appellative', 'uid', 'email', 'phone', 'birthday',
         'bank', 'bank_account', 'obs',
-
+        'uid','chan', 'rin', 'resn', 'rfn', 'afn'
     ];
 
     public function events()
