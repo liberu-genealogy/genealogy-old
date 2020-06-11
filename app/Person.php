@@ -97,12 +97,12 @@ class Person extends \LaravelEnso\People\App\Models\Person
         }
 
         // add birthyear to person table ( for form builder )
-        if($title == 'BIRT'){
-            $this->birthyear =  $date;
+        if($title == 'BIRT' && !empty($date)){
+            $this->birthday =  date('Y-m-d', strtotime($date));
         }
         // add deathyear to person table ( for form builder )
-        if($title == 'DEAT'){
-            $this->deathyear =  $date;
+        if($title == 'DEAT'  && !empty($date)){
+            $this->deathday =  date('Y-m-d', strtotime($date));
         }
         $this->save();
     }

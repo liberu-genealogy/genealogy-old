@@ -40,7 +40,7 @@
         },
         {
             "tab": "Personal",
-            "columns": 3,
+            "columns": 4,
             "fields": [
                 {
                     "label": "Email",
@@ -63,6 +63,14 @@
                 {
                     "label": "Birthday",
                     "name": "birthday",
+                    "value": null,
+                    "meta": {
+                        "type": "datepicker"
+                    }
+                },
+                {
+                    "label": "Deathday",
+                    "name": "deathday",
                     "value": null,
                     "meta": {
                         "type": "datepicker"
