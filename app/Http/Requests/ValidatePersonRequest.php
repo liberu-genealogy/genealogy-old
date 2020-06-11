@@ -26,6 +26,7 @@ class ValidatePersonRequest extends EnsoPersonRequest
             'email' => ['email', 'nullable', $this->unique('email')],
             'phone' => 'max:30|nullable',
             'birthday' => 'nullable|date',
+            'deathday' => 'nullable|date',
             'position' => 'integer|nullable',
             'obs' => 'string|nullable',
             'companies' => 'array',
