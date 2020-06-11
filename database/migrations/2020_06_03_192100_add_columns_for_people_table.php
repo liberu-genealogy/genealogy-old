@@ -15,12 +15,16 @@ class AddColumnsForPeopleTable extends Migration
             $table->text('description')->nullable();
             $table->integer('child_in_family_id')->references('id')->on('families')->nullable();
             $table->softDeletes();
+	    $table->dropColumn('bank');
+	    $table->dropColumn('bank_account');
         });
     }
 
     public function down()
     {
         Schema::table('people', function ($table) {
+	    $table->string('bank');
+	    $table->string('bank_account');
             $table->dropColumn('givn');
             $table->dropColumn('surn');
             $table->dropColumn('sex');
