@@ -14,12 +14,11 @@ $factory->define(Person::class, function (Faker $faker) {
 
     return [
         'title' => $title,
+        'givn' => $faker->firstName(lcfirst(Genders::get($gender))),
+        'surn' => $faker->lastName(lcfirst(Genders::get($gender))),
         'name' => $faker->name(lcfirst(Genders::get($gender))),
-        'appellative' => $faker->firstName(lcfirst(Genders::get($gender))),
         'email' => $faker->unique()->safeEmail,
         'phone' => $faker->phoneNumber,
         'birthday' => Carbon::now()->subYears(rand(15, 40)),
-        'bank' => $faker->word,
-        'bank_account' => $faker->bankAccountNumber,
     ];
 });
