@@ -95,6 +95,16 @@ class Person extends \LaravelEnso\People\App\Models\Person
             $event->places_id = $place_id;
             $event->save();
         }
+
+        // add birthyear to person table ( for form builder )
+        if($title == 'BIRT' && !empty($date)){
+            $this->birthday =  date('Y-m-d', strtotime($date));
+        }
+        // add deathyear to person table ( for form builder )
+        if($title == 'DEAT'  && !empty($date)){
+            $this->deathday =  date('Y-m-d', strtotime($date));
+        }
+        $this->save();
     }
 
     public function birth()
