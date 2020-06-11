@@ -23,9 +23,8 @@ class Person extends \LaravelEnso\People\App\Models\Person
         'child_in_family_id',
         'description',
         'title', 'name', 'appellative', 'uid', 'email', 'phone', 'birthday',
-        'obs',
+        'bank', 'bank_account', 'obs',
         'uid','chan', 'rin', 'resn', 'rfn', 'afn'
-
     ];
 
     public function events()
@@ -96,6 +95,16 @@ class Person extends \LaravelEnso\People\App\Models\Person
             $event->places_id = $place_id;
             $event->save();
         }
+
+        // add birthyear to person table ( for form builder )
+        if($title == 'BIRT'){
+            $this->birthyear =  $date;
+        }
+        // add deathyear to person table ( for form builder )
+        if($title == 'DEAT'){
+            $this->deathyear =  $date;
+        }
+        $this->save();
     }
 
     public function birth()

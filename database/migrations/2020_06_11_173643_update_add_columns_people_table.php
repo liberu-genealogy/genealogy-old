@@ -20,6 +20,8 @@ class UpdateAddColumnsPeopleTable extends Migration
             $table->string('resn')->nullable();
             $table->string('rfn')->nullable();
             $table->string('afn')->nullable();
+            $table->string('birthyear')->nullable()->after('birthday');
+            $table->string('deathyear')->nullable()->after('birthyear');
         });
     }
 
@@ -37,6 +39,8 @@ class UpdateAddColumnsPeopleTable extends Migration
             $table->dropColumn('resn');
             $table->dropColumn('rfn');
             $table->dropColumn('afn');
+            $table->dropColumn('birthyear');
+            $table->dropColumn('deathyear');
         });
     }
 }
