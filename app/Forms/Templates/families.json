@@ -1,66 +1,82 @@
 {
   "routePrefix": "families",
-  "sections": [{
-    "columns": "3",
-    "fields": [
-      {
-        "label": "Description",
-        "name": "description",
-        "value": null,
-        "meta": {
-          "type": "input",
-          "content": "text"
-        }
-      }, {
-       "label": "Person",
-      "name": "personList",
-      "value": [],
-      "meta": {
-        "type": "select",
-        "multiple": true,
-        "options": []
-      }
+  "tabs": true,
+  "sections": [
 
-      },{
-        "label": "Type",
-        "name": "type_id",
-        "value": null,
+    {
+      "tab": "Family",
+      "columns": "3",
+      "fields": [
+        {
+          "label": "Description",
+          "name": "description",
+          "value": null,
+          "meta": {
+            "type": "input",
+            "content": "text"
+          }
+        },
+        {
+        "label": "Person",
+        "name": "personList",
+        "value": [],
         "meta": {
+          "type": "select",
+          "multiple": true,
+          "options": []
+        }
+        }
+        ,{
+          "label": "Type",
+          "name": "type_id",
+          "value": null,
+          "meta": {
+            "type": "select",
+            "multiple": false,
+            "options": []
+          }
+        },
+
+        {
+          "label": "Husband",
+          "name": "husband_id",
+          "value": null,
+          "meta": {
           "type": "select",
           "multiple": false,
           "options": []
-        }
-      },
+          }
+        },
+        {
+          "label": "Wife",
+          "name": "wife_id",
+          "value": null,
+          "meta": {
+          "type": "select",
+          "multiple": false,
+          "options": []
 
-      {
-        "label": "Husband",
-        "name": "husband_id",
-        "value": null,
+          }
+        },
+        {
+          "label": "Children",
+          "name": "child_id",
+          "value": [],
+          "meta": {
+            "type": "select",
+            "multiple": true,
+            "options": []
+          }
+        },
+        {
+        "label": "Active",
+        "name": "is_active",
+        "value": true,
         "meta": {
-        "type": "select",
-        "multiple": false,
-        "options": []
+          "type": "input",
+          "content": "checkbox"
         }
-      },
-      {
-        "label": "Wife",
-        "name": "wife_id",
-        "value": null,
-        "meta": {
-        "type": "select",
-        "multiple": false,
-        "options": []
-
-        }
-      },
-      {
-      "label": "Active",
-      "name": "is_active",
-      "value": true,
-      "meta": {
-        "type": "input",
-        "content": "checkbox"
-      }
-    }]
-  }]
+      }]
+    }
+]
 }
