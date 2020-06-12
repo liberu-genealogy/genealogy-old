@@ -31,11 +31,14 @@ class FamilyForm
     public function edit(Family $family)
     {
         return $this->form
-    ->value('personList', Family::personList())
-    ->options('husband_id', Person::all())
-    ->options('wife_id', Person::all())
-    ->options('type_id', Type::all())
-    ->append('family_id', $family->id)
-    ->edit($family);
+        ->value('personList', Person::all())
+        ->options('personList', Person::all())
+        ->options('husband_id', Person::all())
+        ->options('wife_id', Person::all())
+        ->options('type_id', Type::all())
+        ->append('family_id', $family->id)
+        ->value('child_id', $family->children)
+        ->options('child_id', Person::all())
+        ->edit($family);
     }
 }
