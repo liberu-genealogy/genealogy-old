@@ -31,7 +31,6 @@ class FamilyForm
     public function edit(Family $family)
     {
         return $this->form
-        ->options('personList', Person::all())
         ->options('husband_id', Person::all())
         ->options('wife_id', Person::all())
         ->options('type_id', Type::all())
