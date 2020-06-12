@@ -2,8 +2,8 @@
 
 namespace App;
 
-use ModularSoftware\LaravelGedcom\Observers\EventActionsObserver;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use ModularSoftware\LaravelGedcom\Observers\EventActionsObserver;
 
 class FamilyEvent extends Event
 {
