@@ -4877,16 +4877,16 @@
         },
         {
             "name": "modularsoftware/laravel-gedcom",
-            "version": "v1.0.8",
+            "version": "v1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/modularsoftware/laravel-gedcom.git",
-                "reference": "1749e1c6b85735b9e8f2c3070e5b946e37e2b15d"
+                "reference": "56e6da3f1b2943a3ddcf50e396c8c66c234e16df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/modularsoftware/laravel-gedcom/zipball/1749e1c6b85735b9e8f2c3070e5b946e37e2b15d",
-                "reference": "1749e1c6b85735b9e8f2c3070e5b946e37e2b15d",
+                "url": "https://api.github.com/repos/modularsoftware/laravel-gedcom/zipball/56e6da3f1b2943a3ddcf50e396c8c66c234e16df",
+                "reference": "56e6da3f1b2943a3ddcf50e396c8c66c234e16df",
                 "shasum": ""
             },
             "require": {
@@ -4896,13 +4896,13 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Asdfx\\LaravelGedcom\\ServiceProvider"
+                        "ModularSoftware\\LaravelGedcom\\ServiceProvider"
                     ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Asdfx\\LaravelGedcom\\": "src"
+                    "ModularSoftware\\LaravelGedcom\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -4911,12 +4911,12 @@
             ],
             "authors": [
                 {
-                    "name": "Alex Mills",
-                    "email": "alex@asdfx.us"
+                    "name": "Curtis Delicata",
+                    "email": "curtis.delicata@outlook.com"
                 }
             ],
             "description": "A package that converts gedcom files to Eloquent models",
-            "time": "2020-06-11T15:54:19+00:00"
+            "time": "2020-06-12T17:27:08+00:00"
         },
         {
             "name": "modularsoftware/php-gedcom",

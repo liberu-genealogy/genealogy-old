@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Asdfx\LaravelGedcom\Observers\EventActionsObserver;
+use ModularSoftware\LaravelGedcom\Observers\EventActionsObserver;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class PersonEvent extends Event
