@@ -3,9 +3,9 @@
 namespace App\Forms\Builders;
 
 use App\Family;
+use App\Person;
 use App\Type;
 use LaravelEnso\Forms\App\Services\Form;
-use LaravelEnso\People\App\Models\Person;
 
 class FamilyForm
 {
@@ -21,18 +21,16 @@ class FamilyForm
     public function create()
     {
         return $this->form
-    ->value('personList', Person::all())
     ->options('husband_id', Person::all())
     ->options('wife_id', Person::all())
     ->options('type_id', Type::all())
+    ->options('child_id', Person::all())
     ->create();
     }
 
     public function edit(Family $family)
     {
         return $this->form
-        ->value('personList', Person::all())
-        ->options('personList', Person::all())
         ->options('husband_id', Person::all())
         ->options('wife_id', Person::all())
         ->options('type_id', Type::all())

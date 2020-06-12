@@ -8,9 +8,9 @@ use App\Http\Controllers\Controller;
 use App\Note;
 use App\Person;
 use App\Source;
-use Asdfx\LaravelGedcom\Facades\GedcomParserFacade;
-use Asdfx\LaravelGedcom\Utils\GedcomParser;
 use Illuminate\Http\Request;
+use ModularSoftware\LaravelGedcom\Facades\GedcomParserFacade;
+use ModularSoftware\LaravelGedcom\Utils\GedcomParser;
 
 class Store extends Controller
 {
