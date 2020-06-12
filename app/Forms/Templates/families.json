@@ -15,18 +15,7 @@
             "type": "input",
             "content": "text"
           }
-        },
-        {
-        "label": "Person",
-        "name": "personList",
-        "value": [],
-        "meta": {
-          "type": "select",
-          "multiple": true,
-          "options": []
-        }
-        }
-        ,{
+        },{
           "label": "Type",
           "name": "type_id",
           "value": null,
