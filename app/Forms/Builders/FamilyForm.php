@@ -3,8 +3,8 @@
 namespace App\Forms\Builders;
 
 use App\Family;
-use App\Type;
 use App\Person;
+use App\Type;
 use LaravelEnso\Forms\App\Services\Form;
 
 class FamilyForm
