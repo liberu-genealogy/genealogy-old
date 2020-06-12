@@ -19,7 +19,7 @@ class FamilyTable implements Table
                 $join->on('wife.id', '=', 'families.wife_id');
             })
             ->select(\DB::raw('
-            families.id as "dtRowId", families.description as description, husband.name as husband_name,
+            families.id, families.id as "dtRowId", families.description as description, husband.name as husband_name,
  wife.name as wife_name, families.is_active
             '));
     }
