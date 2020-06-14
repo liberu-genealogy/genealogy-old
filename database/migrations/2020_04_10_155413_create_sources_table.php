@@ -15,7 +15,7 @@ class CreateSourcesTable extends Migration
     {
         Schema::create('sources', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')-nullable();
+            $table->string('name')->nullable();
             $table->text('description', 65535)->nullable();
             $table->dateTime('date')->nullable();
             $table->integer('is_active')->nullable();

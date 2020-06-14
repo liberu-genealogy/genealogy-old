@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $created_at
  * @property string $updated_at
  */
-class Object extends Model
+class MediaObject extends Model
 {
     /**
      * The "type" of the auto-incrementing ID.
