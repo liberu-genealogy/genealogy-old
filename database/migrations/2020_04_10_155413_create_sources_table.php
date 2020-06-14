@@ -15,14 +15,14 @@ class CreateSourcesTable extends Migration
     {
         Schema::create('sources', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->text('description', 65535);
+            $table->string('name')-nullable();
+            $table->text('description', 65535)->nullable();
             $table->dateTime('date')->nullable();
-            $table->integer('is_active');
-            $table->integer('author_id');
-            $table->integer('repository_id')->references('id')->on('repositories');
-            $table->integer('publication_id');
-            $table->integer('type_id');
+            $table->integer('is_active')->nullable();
+            $table->integer('author_id')->nullable();
+            $table->integer('repository_id')->references('id')->on('repositories')->nullable();
+            $table->integer('publication_id')->nullable();
+            $table->integer('type_id')->nullable();
             $table->string('sour')->nullable();
             $table->string('titl')->nullable();
             $table->string('auth')->nullable();
