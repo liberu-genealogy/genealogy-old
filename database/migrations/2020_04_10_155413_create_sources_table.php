@@ -23,6 +23,13 @@ class CreateSourcesTable extends Migration
             $table->integer('repository_id')->references('id')->on('repositories');
             $table->integer('publication_id');
             $table->integer('type_id');
+            $table->string('sour')->nullable();
+            $table->string('titl')->nullable();
+            $table->string('auth')->nullable();
+            $table->string('data')->nullable();
+            $table->string('text')->nullable();
+            $table->string('publ')->nullable();
+            $table->string('abbr')->nullable();
             $table->timestamps();
         });
     }

@@ -20,6 +20,11 @@ class CreateRepositoriesTable extends Migration
             $table->dateTime('date')->nullable();
             $table->integer('is_active');
             $table->integer('type_id');
+            $table->string('repo')->nullable();
+            $table->string('name')->nullable();
+            $table->string('addr')->nullable();
+            $table->string('rin')->nullable();
+            $table->string('phon')->nullable();
             $table->timestamps();
         });
     }

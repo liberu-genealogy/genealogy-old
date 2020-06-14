@@ -9,7 +9,14 @@ class Repository extends Model
 {
     use TableCache;
 
-    protected $fillable = ['name', 'description', 'type_id', 'is_active'];
+    /**
+     * The "type" of the auto-incrementing ID.
+     *
+     * @var string
+     */
+    protected $keyType = 'integer';
+
+    protected $fillable = ['repo', 'name', 'addr', 'rin', 'phon', 'name', 'description', 'type_id', 'is_active'];
 
     protected $attributes = ['is_active' => false];
 

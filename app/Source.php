@@ -9,7 +9,14 @@ class Source extends Model
 {
     use TableCache;
 
-    protected $fillable = ['name', 'description', 'repository_id', 'author_id', 'publication_id', 'type_id', 'is_active'];
+    /**
+     * The "type" of the auto-incrementing ID.
+     *
+     * @var string
+     */
+    protected $keyType = 'integer';
+
+    protected $fillable = ['sour', 'titl', 'auth', 'data', 'text', 'publ', 'abbr', 'name', 'description', 'repository_id', 'author_id', 'publication_id', 'type_id', 'is_active'];
 
     protected $attributes = ['is_active' => false];
 

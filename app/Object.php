@@ -6,17 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property integer $id
- * @property string $sour
+ * @property string $gid
+ * @property string $form
  * @property string $titl
- * @property string $auth
- * @property string $data
- * @property string $text
- * @property string $publ
- * @property string $abbr
+ * @property string $blob
+ * @property string $rin
+ * @property string $file
  * @property string $created_at
  * @property string $updated_at
  */
-class Sour extends Model
+class Object extends Model
 {
     /**
      * The "type" of the auto-incrementing ID.
@@ -28,6 +27,6 @@ class Sour extends Model
     /**
      * @var array
      */
-    protected $fillable = ['sour', 'titl', 'auth', 'data', 'text', 'publ', 'abbr', 'created_at', 'updated_at'];
+    protected $fillable = ['gid', 'form', 'titl', 'blob', 'rin', 'file', 'created_at', 'updated_at'];
 
 }
