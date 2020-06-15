@@ -9,13 +9,12 @@ class Note extends Model
 {
     use TableCache;
 
-  /**
+    /**
      * The "type" of the auto-incrementing ID.
      *
      * @var string
      */
     protected $keyType = 'integer';
-
 
     protected $fillable = ['gid', 'note', 'rin', 'name', 'description', 'is_active', 'type_id'];
 
