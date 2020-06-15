@@ -8,7 +8,7 @@ class Subn extends Model
 {
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'subns';
@@ -16,6 +16,5 @@ class Subn extends Model
     /**
      * @var array
      */
-    protected $fillable = ['subm', 'famf', 'temp', 'ance', 'desc','ordi', 'rin'];
-
+    protected $fillable = ['subm', 'famf', 'temp', 'ance', 'desc', 'ordi', 'rin'];
 }

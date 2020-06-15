@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property integer $id
+ * @property int $id
  * @property string $gid
  * @property string $form
  * @property string $titl
@@ -15,11 +15,11 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $created_at
  * @property string $updated_at
  */
-class MediaObject extends Model
+class Object extends Model
 {
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'integer';
@@ -28,5 +28,4 @@ class MediaObject extends Model
      * @var array
      */
     protected $fillable = ['gid', 'form', 'titl', 'blob', 'rin', 'file', 'created_at', 'updated_at'];
-
 }
