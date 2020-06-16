@@ -1,0 +1,45 @@
+{
+    "name": "Media Objects",
+    "routePrefix": "objects",
+    "crtNo": true,
+    "buttons": ["excel", "create", "show", "edit", "destroy"],
+  "columns": [
+    {
+      "label": "Gid",
+      "name": "gid",
+      "data": "media_objects.gid",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Form",
+      "name": "form",
+      "data": "media_objects.form",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Title",
+      "name": "titl",
+      "data": "media_objects.titl",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Blob",
+      "name": "blob",
+      "data": "media_objects.blob",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "Rin",
+      "name": "rin",
+      "data": "media_objects.rin",
+      "meta": ["searchable", "sortable"]
+    },
+    {
+      "label": "File",
+      "name": "file",
+      "data": "media_objects.file",
+      "meta": ["searchable", "sortable"]
+    }
+
+  ]
+}
