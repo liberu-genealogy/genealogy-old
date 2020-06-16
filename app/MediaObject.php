@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use LaravelEnso\Tables\App\Traits\TableCache;
 
 /**
  * @property int $id
@@ -15,8 +16,11 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $created_at
  * @property string $updated_at
  */
-class Object extends Model
+class MediaObject extends Model
 {
+
+use TableCache;
+
     /**
      * The "type" of the auto-incrementing ID.
      *

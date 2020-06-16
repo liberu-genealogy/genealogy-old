@@ -257,3 +257,31 @@ Route::middleware(['web', 'auth', 'core'])
                 Route::get('{tree}', 'Show')->name('show');
             });
     });
+
+Route::middleware(['web', 'auth', 'core'])
+    ->group(function () {
+        Route::namespace('MediaObjects')
+            ->prefix('objects')
+            ->as('objects.')
+            ->group(function () {
+
+                Route::get('', 'Index')->name('index');
+                Route::get('create', 'Create')->name('create');
+                Route::post('', 'Store')->name('store');
+                Route::get('{object}/edit', 'Edit')->name('edit');
+
+                Route::patch('{object}', 'Update')->name('update');
+
+                Route::delete('{object}', 'Destroy')->name('destroy');
+
+                Route::get('initTable', 'InitTable')->name('initTable');
+                Route::get('tableData', 'TableData')->name('tableData');
+                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+
+                Route::get('options', 'Options')->name('options');
+                Route::get('{object}', 'Show')->name('show');
+
+
+        });
+    });
+
