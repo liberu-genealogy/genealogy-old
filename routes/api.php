@@ -264,7 +264,6 @@ Route::middleware(['web', 'auth', 'core'])
             ->prefix('objects')
             ->as('objects.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -280,8 +279,5 @@ Route::middleware(['web', 'auth', 'core'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{object}', 'Show')->name('show');
-
-
-        });
+            });
     });
-

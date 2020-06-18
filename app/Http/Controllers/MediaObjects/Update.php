@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\MediaObjects;
 
+use App\Http\Requests\ValidateMediaObjectRequest;
 use App\MediaObject;
 use Illuminate\Routing\Controller;
-use App\Http\Requests\ValidateMediaObjectRequest;
 
 class Update extends Controller
 {
