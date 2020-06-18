@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\MediaObjects;
 
+use App\Forms\Builders\MediaObjectForm;
 use App\MediaObject;
 use Illuminate\Routing\Controller;
-use App\Forms\Builders\MediaObjectForm;
 
 class Edit extends Controller
 {
