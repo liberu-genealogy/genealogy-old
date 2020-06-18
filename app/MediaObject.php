@@ -18,8 +18,7 @@ use LaravelEnso\Tables\App\Traits\TableCache;
  */
 class MediaObject extends Model
 {
-
-use TableCache;
+    use TableCache;
 
     /**
      * The "type" of the auto-incrementing ID.
