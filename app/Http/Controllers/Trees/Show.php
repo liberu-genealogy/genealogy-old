@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Trees;
 
 use App\Family;
+use App\Jobs\ExportGedCom;
 use App\Note;
 use App\Person;
+use File;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use ModularSoftware\LaravelGedcom\Utils\GedcomGenerator;
-use File;
 use Response;
-use App\Jobs\ExportGedCom;
 
 class Show extends Controller
 {
@@ -21,7 +21,6 @@ class Show extends Controller
 
     public function __invoke(Request $request)
     {
-        
         $start_id = $request->get('start_id', 1);
         $nest = $request->get('nest', 3);
         $ret = [];
@@ -38,8 +37,9 @@ class Show extends Controller
 
         ExportGedCom::dispatch(2, $request);
         $file = 'file.GED';
-        $destinationPath=public_path()."/upload/";
+        $destinationPath = public_path().'/upload/';
         $ret['link'] = $destinationPath.$file;
+
         return $ret;
     }
 
