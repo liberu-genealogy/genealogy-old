@@ -38,10 +38,13 @@ class ExportGedCom implements ShouldQueue
         $headers = [
             'Content-type' => 'text/txt',
         ];
+        $p_id = 6;
         $f_id = $this->family_id;
-        $writer = new GedcomGenerator($f_id);
-        $content = $writer->getGedcom();
-        $user_id = Auth::user()->id;
+        $up_nest = 3;
+        $down_nest = 3;
+        $writer = new GedcomGenerator($p_id, $f_id, $up_nest, $down_nest);
+        $content = $writer->getGedcomPerson();
+        // $user_id = Auth::user()->id;
         $ts = microtime(true);
         $file = env('APP_NAME').date('_Ymd_').$ts.'.GED';
         $destinationPath=public_path()."/upload/";
