@@ -18,7 +18,7 @@ smart matching with other servers.
 
 ## Demo
 
-https://genealogia.co.uk/
+https://genealogia.co.uk/ - login is admin@genealogia.co.uk and password
 
 <!--h-->
 ### Official Laravel Enso Documentation
