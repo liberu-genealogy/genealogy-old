@@ -5,13 +5,14 @@ namespace App\Http\Controllers\Gedcom;
 use App\Event;
 use App\Family;
 use App\Http\Controllers\Controller;
+use App\Jobs\ImportGedcom;
 use App\Note;
 use App\Person;
 use App\Source;
 use Illuminate\Http\Request;
 use ModularSoftware\LaravelGedcom\Facades\GedcomParserFacade;
 use ModularSoftware\LaravelGedcom\Utils\GedcomParser;
-use App\Jobs\ImportGedcom;
+
 class Store extends Controller
 {
     /*
@@ -25,13 +26,14 @@ class Store extends Controller
         if ($request->hasFile('file')) {
             if ($request->file('file')->isValid()) {
                 try {
-                    $_name = uniqid().".ged";
+                    $_name = uniqid().'.ged';
                     $request->file->storeAs('gedcom', $_name);
                     define('STDIN', fopen('php://stdin', 'r'));
                     // $parser = new GedcomParser();
                     // $parser->parse($request->file('file'), $slug, true);
                     $filename = 'app/gedcom/'.$_name;
                     ImportGedcom::dispatch($filename);
+
                     return ['File uploaded'];
                 } catch (Exception $e) {
                     return ['Not uploaded'];
