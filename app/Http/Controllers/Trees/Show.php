@@ -262,6 +262,8 @@ class Show extends Controller
             foreach ($brothers as $brother) {
                 $this->getGraphDataUpward($brother->id, $nest--);
             }
+        } else {
+            return;
         }
     }
 }
