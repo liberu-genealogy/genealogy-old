@@ -3,9 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use LaravelEnso\Tables\App\Traits\TableCache;
 
 /**
- * @property integer $id
+ * @property int $id
  * @property string $gid
  * @property string $form
  * @property string $titl
@@ -15,11 +16,13 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $created_at
  * @property string $updated_at
  */
-class Objeged extends Model
+class MediaObject extends Model
 {
+    use TableCache;
+
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'integer';
@@ -28,5 +31,4 @@ class Objeged extends Model
      * @var array
      */
     protected $fillable = ['gid', 'form', 'titl', 'blob', 'rin', 'file', 'created_at', 'updated_at'];
-
 }

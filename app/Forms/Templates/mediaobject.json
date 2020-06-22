@@ -1,0 +1,56 @@
+{
+  "routePrefix": "objects",
+  "sections": [{
+    "columns": "2",
+    "fields": [
+      {
+        "label": "Gid",
+        "name": "gid",
+        "value": null,
+        "meta": {
+          "type": "input",
+          "content": "text"
+        }
+      }, {
+        "label": "Form",
+        "name": "form",
+        "value": null,
+        "meta": {
+          "type": "input",
+          "content": "text"
+                }
+    }, {
+        "label": "Title",
+        "name": "titl",
+        "value": null,
+        "meta": {
+          "type": "input",
+          "content": "text"
+      }
+      },{
+        "label": "Blob",
+        "name": "blob",
+        "value": null,
+        "meta": {
+          "type": "input",
+          "content": "text"
+        }
+    }, {
+        "label": "Rin",
+        "name": "rin",
+        "value": null,
+        "meta": {
+          "type": "input",
+          "content": "text"
+	}
+    }, {
+        "label": "File",
+        "name": "file",
+        "value": null,
+        "meta": {
+          "type": "input",
+          "content": "text"
+    }
+    }]
+  }]
+}

@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property integer $id
+ * @property int $id
  * @property string $subm
  * @property string $name
  * @property string $addr
@@ -20,7 +20,7 @@ class Subm extends Model
 {
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'integer';
@@ -29,5 +29,4 @@ class Subm extends Model
      * @var array
      */
     protected $fillable = ['subm', 'name', 'addr', 'rin', 'rfn', 'lang', 'phon', 'created_at', 'updated_at'];
-
 }
