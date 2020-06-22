@@ -2,20 +2,22 @@
 
 namespace App\Jobs;
 
+use Auth;
+use File;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Http\Request;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Http\Request;
 use ModularSoftware\LaravelGedcom\Utils\GedcomGenerator;
-use File;
-use Auth;
+
 class ExportGedCom implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     protected $family_id;
+
     /**
      * Create a new job instance.
      *
@@ -47,9 +49,12 @@ class ExportGedCom implements ShouldQueue
         // $user_id = Auth::user()->id;
         $ts = microtime(true);
         $file = env('APP_NAME').date('_Ymd_').$ts.'.GED';
-        $destinationPath=public_path()."/upload/";
-        if (!is_dir($destinationPath)) {  mkdir($destinationPath,0777,true);  }
-        File::put($destinationPath.$file,$content);
+        $destinationPath = public_path().'/upload/';
+        if (! is_dir($destinationPath)) {
+            mkdir($destinationPath, 0777, true);
+        }
+        File::put($destinationPath.$file, $content);
+
         return 0;
     }
 }
