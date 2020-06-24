@@ -5,14 +5,15 @@ namespace App\Http\Controllers\Gedcom;
 use App\Event;
 use App\Family;
 use App\Http\Controllers\Controller;
+use App\Jobs\ImportGedcom;
 use App\Note;
 use App\Person;
 use App\Source;
 use Illuminate\Http\Request;
 use ModularSoftware\LaravelGedcom\Facades\GedcomParserFacade;
 use ModularSoftware\LaravelGedcom\Utils\GedcomParser;
-use App\Jobs\ImportGedcom;
 use Auth;
+
 class Store extends Controller
 {
     /*
