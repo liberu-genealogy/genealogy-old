@@ -16,7 +16,7 @@ class Note extends Model
      */
     protected $keyType = 'integer';
 
-    protected $fillable = ['gid', 'note', 'rin', 'name', 'description', 'is_active', 'type_id'];
+    protected $fillable = ['gid', 'note', 'rin', 'name', 'description', 'is_active', 'type_id','group'];
 
     protected $attributes = ['is_active' => false];
 

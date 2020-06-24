@@ -38,7 +38,7 @@ class ExportGedCom implements ShouldQueue
         $headers = [
             'Content-type' => 'text/txt',
         ];
-        $p_id = 7;
+        $p_id = 0;
         $f_id = $this->family_id;
         $up_nest = 3;
         $down_nest = 3;
