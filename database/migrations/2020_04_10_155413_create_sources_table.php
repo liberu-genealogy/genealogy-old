@@ -30,6 +30,10 @@ class CreateSourcesTable extends Migration
             $table->string('text')->nullable();
             $table->string('publ')->nullable();
             $table->string('abbr')->nullable();
+            $table->string('group')->nullable();
+            $table->integer('gid')->nullable();
+            $table->string('quay')->nullable();
+            $table->string('page')->nullable();
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSourrefTable extends Migration
+class CreateSourcedataTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateSourrefTable extends Migration
      */
     public function up()
     {
-        Schema::create('sourref', function (Blueprint $table) {
+        Schema::create('source_data', function (Blueprint $table) {
             $table->id();
             $table->string('group')->nullable();
-            $table->integer('gid')->default(0);
-            $table->string('sour')->nullable();
+            $table->integer('gid')->nullable();
+            $table->string('date')->nullable();
             $table->string('text')->nullable();
-            $table->string('quay')->nullable();
-            $table->string('page')->nullable();
+            $table->string('agnc')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ class CreateSourrefTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sourref');
+        Schema::dropIfExists('source_data');
     }
 }
