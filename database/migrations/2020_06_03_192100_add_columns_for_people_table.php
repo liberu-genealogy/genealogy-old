@@ -11,7 +11,7 @@ class AddColumnsForPeopleTable extends Migration
         Schema::table('people', function (Blueprint $table) {
             $table->string('givn');
             $table->text('surn')->nullable();
-            $table->string('name')->nullable()->change();
+            $table->text('name')->nullable()->change();
             $table->char('sex', 1)->nullable();
             $table->text('description')->nullable();
             $table->integer('child_in_family_id')->references('id')->on('families')->nullable();
@@ -28,7 +28,7 @@ class AddColumnsForPeopleTable extends Migration
             $table->string('bank_account');
             $table->dropColumn('givn');
             $table->dropColumn('surn');
-            $table->string('name')->nullable(false)->change();
+            $table->text('name')->nullable(false)->change();
             $table->dropColumn('sex');
             $table->dropColumn('description');
             $table->dropColumn('child_in_family_id');

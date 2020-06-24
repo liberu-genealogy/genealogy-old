@@ -20,8 +20,9 @@ class CreateNotesTable extends Migration
             $table->dateTime('date')->nullable();
             $table->integer('type_id')->nullable();
             $table->integer('is_active')->nullable();
+            $table->string('group')->nullable();
             $table->string('gid')->nullable();
-            $table->string('note')->nullable();
+            $table->longText('note')->nullable();
             $table->string('rin')->nullable();
             $table->timestamps();
         });
