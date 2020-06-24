@@ -105,6 +105,7 @@ class Person extends \LaravelEnso\People\App\Models\Person
             $this->deathday = date('Y-m-d', strtotime($date));
         }
         $this->save();
+        return $event;
     }
 
     public function birth()
