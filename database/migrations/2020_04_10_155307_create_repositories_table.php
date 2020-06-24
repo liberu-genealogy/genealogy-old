@@ -18,8 +18,8 @@ class CreateRepositoriesTable extends Migration
             $table->string('name')->nullable();
             $table->text('description', 65535)->nullable();
             $table->dateTime('date')->nullable();
-            $table->integer('is_active')->nullable;
-            $table->integer('type_id')->nullable;
+            $table->integer('is_active')->nullable();
+            $table->integer('type_id')->nullable();
             $table->string('repo')->nullable();
             $table->string('addr')->nullable();
             $table->string('rin')->nullable();
