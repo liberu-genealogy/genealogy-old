@@ -15,9 +15,16 @@ class PersonEvent extends Event
 
     protected $fillable = [
         'person_id',
-        'places_id',
-        'date',
         'title',
+        'type',
+        'attr',
+        'date',
+        'plac',
+        'phon',
+        'caus',
+        'age',
+        'agnc',
+        'places_id',
         'description',
         'year',
         'month',

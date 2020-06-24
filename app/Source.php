@@ -16,7 +16,7 @@ class Source extends Model
      */
     protected $keyType = 'integer';
 
-    protected $fillable = ['sour', 'titl', 'auth', 'data', 'text', 'publ', 'abbr', 'name', 'description', 'repository_id', 'author_id', 'publication_id', 'type_id', 'is_active'];
+    protected $fillable = ['sour', 'titl', 'auth', 'data', 'text', 'publ', 'abbr', 'name', 'description', 'repository_id', 'author_id', 'publication_id', 'type_id', 'is_active', 'group', 'gid','quay', 'page'];
 
     protected $attributes = ['is_active' => false];
 

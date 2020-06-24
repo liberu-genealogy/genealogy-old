@@ -12,6 +12,7 @@ use App\Source;
 use Illuminate\Http\Request;
 use ModularSoftware\LaravelGedcom\Facades\GedcomParserFacade;
 use ModularSoftware\LaravelGedcom\Utils\GedcomParser;
+use Auth;
 
 class Store extends Controller
 {
@@ -26,20 +27,19 @@ class Store extends Controller
         if ($request->hasFile('file')) {
             if ($request->file('file')->isValid()) {
                 try {
-                    $_name = uniqid().'.ged';
+                    $currentUser = Auth::user();
+                    $_name = uniqid().".ged";
                     $request->file->storeAs('gedcom', $_name);
                     define('STDIN', fopen('php://stdin', 'r'));
                     // $parser = new GedcomParser();
                     // $parser->parse($request->file('file'), $slug, true);
                     $filename = 'app/gedcom/'.$_name;
-                    ImportGedcom::dispatch($filename);
-
+                    ImportGedcom::dispatch($filename, $slug, $currentUser->id);
                     return ['File uploaded'];
                 } catch (Exception $e) {
                     return ['Not uploaded'];
                 }
             }
-
             return ['File corrupted'];
         }
 
