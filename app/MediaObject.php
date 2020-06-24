@@ -7,7 +7,8 @@ use LaravelEnso\Tables\App\Traits\TableCache;
 
 /**
  * @property int $id
- * @property string $gid
+ * @property integer $gid
+ * @property string $group
  * @property string $form
  * @property string $titl
  * @property string $blob
@@ -30,5 +31,5 @@ class MediaObject extends Model
     /**
      * @var array
      */
-    protected $fillable = ['gid', 'form', 'titl', 'blob', 'rin', 'file', 'created_at', 'updated_at'];
+    protected $fillable = ['gid','group', 'form', 'titl', 'blob', 'rin', 'file', 'created_at', 'updated_at'];
 }

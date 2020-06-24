@@ -8,21 +8,18 @@ use Illuminate\Database\Eloquent\Model;
  * @property integer $id
  * @property string $group
  * @property int $gid
- * @property string $sour
- * @property string $text
- * @property string $quay
- * @property string $page
+ * @property string $alia
  * @property string $created_at
  * @property string $updated_at
  */
-class SourRef extends Model
+class PersonAlia extends Model
 {
     /**
      * The table associated with the model.
      * 
      * @var string
      */
-    protected $table = 'sourref';
+    protected $table = 'person_alia';
 
     /**
      * The "type" of the auto-incrementing ID.
@@ -34,6 +31,6 @@ class SourRef extends Model
     /**
      * @var array
      */
-    protected $fillable = ['group', 'gid', 'sour', 'text', 'quay', 'page', 'created_at', 'updated_at'];
+    protected $fillable = ['group', 'gid', 'alia', 'created_at', 'updated_at'];
 
 }
