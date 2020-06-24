@@ -9,22 +9,26 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Http\Request;
 use ModularSoftware\LaravelGedcom\Utils\GedcomParser;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use App\ImportJob;
 
 class ImportGedcom implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
     protected $filename;
+    protected $slug;
+    protected $user_id;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($filename)
+    public function __construct($filename, $slug, $user_id)
     {
         //
         $this->filename = $filename;
+        $this->slug = $slug;
+        $this->user_id = $user_id;
     }
 
     /**
@@ -34,9 +38,19 @@ class ImportGedcom implements ShouldQueue
      */
     public function handle()
     {
+        // add import job
+        $slug = $this->slug;
+        $user_id = $this->user_id;
+        $status = 'queue';
+        ImportJob::create(compact('user_id', 'slug','status'));
+
         $parser = new GedcomParser();
         $parser->parse(storage_path($this->filename), '', true);
         File::delete(storage_path($this->filename));
+
+        // update import job
+        $status = 'complete';
+        ImportJob::where('slug', $slug)->where('user_id', $user_id)->update(compact('status'));
         return 0;
     }
 }

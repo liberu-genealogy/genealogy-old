@@ -46,11 +46,9 @@ export default {
             return '/api/gedcom/store';
         },
     },
-
     created() {
         this.subscribe();
     },
-
     methods: {
         subscribe() {
             const pusher = new Pusher(this.PUSHER_KEY, { cluster: this.PUSHER_CLUSTER });
