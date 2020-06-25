@@ -247,7 +247,7 @@ Route::middleware(['web', 'auth', 'core'])
                 Route::post('store', 'Store')->name('store');
             });
     });
-    Route::get('gedcom/progress', '\App\Http\Controllers\Gedcom\Progress@index')->name('ppp');
+Route::get('gedcom/progress', '\App\Http\Controllers\Gedcom\Progress@index')->name('progress');
 Route::middleware(['web', 'auth', 'core'])
     ->group(function () {
         Route::namespace('Trees')

@@ -20,6 +20,7 @@ class UpdateEventsAddTimestamp extends Migration
             $table->string('type')->nullable();
             $table->string('attr')->nullable();
             $table->string('plac')->nullable();
+            $table->integer('addr_id')->nullable();
             $table->string('phon')->nullable();
             $table->string('caus')->nullable();
             $table->string('age')->nullable();
@@ -32,6 +33,15 @@ class UpdateEventsAddTimestamp extends Migration
             $table->integer('year')->nullable();
             $table->integer('month')->nullable();
             $table->integer('day')->nullable();
+            $table->string('type')->nullable();
+            $table->string('plac')->nullable();
+            $table->integer('addr_id')->nullable();
+            $table->string('phon')->nullable();
+            $table->string('caus')->nullable();
+            $table->string('age')->nullable();
+            $table->string('agnc')->nullable();
+            $table->integer('husb')->nullable();
+            $table->integer('wife')->nullable();
         });
     }
 
@@ -49,6 +59,7 @@ class UpdateEventsAddTimestamp extends Migration
             $table->dropColumn('type');
             $table->dropColumn('attr');
             $table->dropColumn('plac');
+            $table->dropColumn('addr_id');
             $table->dropColumn('phon');
             $table->dropColumn('caus');
             $table->dropColumn('age');
@@ -61,6 +72,15 @@ class UpdateEventsAddTimestamp extends Migration
             $table->dropColumn('year');
             $table->dropColumn('month');
             $table->dropColumn('day');
+            $table->dropColumn('type');
+            $table->dropColumn('plac');
+            $table->dropColumn('addr_id');
+            $table->dropColumn('phon');
+            $table->dropColumn('caus');
+            $table->dropColumn('age');
+            $table->dropColumn('agnc');
+            $table->dropColumn('husb');
+            $table->dropColumn('wife');
         });
     }
 }
