@@ -5006,16 +5006,16 @@
         },
         {
             "name": "modularsoftware/laravel-gedcom",
-            "version": "v1.1.4",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/modularsoftware/laravel-gedcom.git",
-                "reference": "d37cf327c4fab9aa59c63d9b1a3095b0a18c3251"
+                "reference": "7904e65c7930493e398490c118608189561ca93a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/modularsoftware/laravel-gedcom/zipball/d37cf327c4fab9aa59c63d9b1a3095b0a18c3251",
-                "reference": "d37cf327c4fab9aa59c63d9b1a3095b0a18c3251",
+                "url": "https://api.github.com/repos/modularsoftware/laravel-gedcom/zipball/7904e65c7930493e398490c118608189561ca93a",
+                "reference": "7904e65c7930493e398490c118608189561ca93a",
                 "shasum": ""
             },
             "require": {
@@ -5045,7 +5045,7 @@
                 }
             ],
             "description": "A package that converts gedcom files to Eloquent models",
-            "time": "2020-06-24T11:33:55+00:00"
+            "time": "2020-06-25T11:58:07+00:00"
         },
         {
             "name": "modularsoftware/php-gedcom",
