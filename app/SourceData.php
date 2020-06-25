@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property integer $id
+ * @property int $id
  * @property string $group
  * @property int $gid
  * @property string $date
@@ -18,14 +18,14 @@ class SourceData extends Model
 {
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'source_data';
 
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'integer';
@@ -34,5 +34,4 @@ class SourceData extends Model
      * @var array
      */
     protected $fillable = ['group', 'gid', 'date', 'text', 'agnc', 'created_at', 'updated_at'];
-
 }
