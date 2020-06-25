@@ -10,7 +10,7 @@ use LaravelEnso\Tables\App\Traits\TableCache;
 class Family extends Model
 {
     use TableCache;
-    protected $fillable = ['description', 'is_active', 'husband_id', 'wife_id', 'type_id', 'chan', 'nchi'];
+    protected $fillable = ['description', 'is_active', 'husband_id', 'wife_id', 'type_id', 'chan', 'nchi', 'rin'];
 
     protected $attributes = ['is_active' => false];
 
