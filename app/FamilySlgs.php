@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property integer $id
+ * @property int $id
  * @property int $family_id
  * @property string $stat
  * @property string $date
@@ -18,7 +18,7 @@ class FamilySlgs extends Model
 {
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'integer';
@@ -27,5 +27,4 @@ class FamilySlgs extends Model
      * @var array
      */
     protected $fillable = ['family_id', 'stat', 'date', 'plac', 'temp', 'created_at', 'updated_at'];
-
 }
