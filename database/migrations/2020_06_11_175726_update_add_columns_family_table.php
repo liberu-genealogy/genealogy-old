@@ -17,6 +17,7 @@ class UpdateAddColumnsFamilyTable extends Migration
         Schema::table('families', function (Blueprint $table) {
             $table->string('chan')->nullable();
             $table->string('nchi')->nullable();
+            $table->string('rin')->nullable();
         });
     }
 
@@ -31,6 +32,7 @@ class UpdateAddColumnsFamilyTable extends Migration
         Schema::table('families', function (Blueprint $table) {
             $table->dropColumn('chan');
             $table->dropColumn('nchi');
+            $table->dropColumn('rin');
         });
     }
 }

@@ -27,6 +27,13 @@ class FamilyEvent extends Event
         'year',
         'month',
         'day',
+        'type',
+        'plac',
+        'phon',
+        'caus',
+        'age',
+        'husb',
+        'wife',
     ];
 
     public static function boot()
