@@ -2,6 +2,9 @@
     <div>
         <div>
             <input
+                type="text"
+                :value.prop="slug"/>
+            <input
                 type="file"
                 style="display:none"
                 @change="selectedFile"
@@ -45,9 +48,13 @@ export default {
         uploadLink() {
             return '/api/gedcom/store';
         },
+        getProgressLink() {
+            return '/api/gedcom/progress';
+        },
     },
     created() {
         this.subscribe();
+        this.getProgressData();
     },
     methods: {
         subscribe() {
@@ -86,6 +93,16 @@ export default {
                 .then()
                 .catch();
         },
+        // getProgressData() {
+        //     const params = {};
+        //     axios
+        //         .get(this.getProgressLink, { params })
+        //         .then(res => {
+        //             const data = JSON.parse(res);
+        //             this.slug = data.slug;
+        //         })
+        //         .catch();
+        // },
     },
 };
 </script>

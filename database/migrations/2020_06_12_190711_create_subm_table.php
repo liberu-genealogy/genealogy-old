@@ -15,9 +15,10 @@ class CreateSubmTable extends Migration
     {
         Schema::create('subms', function (Blueprint $table) {
             $table->id();
-            $table->string('subm')->nullable();
+            $table->string('group')->nullable();
+            $table->integer('gid')->nullable();
             $table->string('name')->nullable();
-            $table->string('addr')->nullable();
+            $table->integer('addr_id')->nullable();
             $table->string('rin')->nullable();
             $table->string('rfn')->nullable();
             $table->string('lang')->nullable();

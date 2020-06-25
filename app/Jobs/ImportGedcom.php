@@ -45,7 +45,7 @@ class ImportGedcom implements ShouldQueue
         ImportJob::create(compact('user_id', 'slug','status'));
 
         $parser = new GedcomParser();
-        $parser->parse(storage_path($this->filename), '', true);
+        $parser->parse(storage_path($this->filename), $slug, true);
         File::delete(storage_path($this->filename));
 
         // update import job
