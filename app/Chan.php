@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property integer $id
+ * @property int $id
  * @property string $group
  * @property int $gid
  * @property string $date
@@ -17,7 +17,7 @@ class Chan extends Model
 {
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'integer';
@@ -26,5 +26,4 @@ class Chan extends Model
      * @var array
      */
     protected $fillable = ['group', 'gid', 'date', 'time', 'created_at', 'updated_at'];
-
 }
