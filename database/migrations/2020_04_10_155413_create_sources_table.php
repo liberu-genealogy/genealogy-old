@@ -34,6 +34,7 @@ class CreateSourcesTable extends Migration
             $table->integer('gid')->nullable();
             $table->string('quay')->nullable();
             $table->string('page')->nullable();
+            $table->string('rin')->nullable();
             $table->timestamps();
         });
     }
