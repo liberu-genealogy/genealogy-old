@@ -18,7 +18,6 @@ class Show extends Controller
     private $unions;
     private $links;
     private $nest;
-
     public function __invoke(Request $request)
     {
         $start_id = $request->get('start_id', 1);
@@ -29,16 +28,15 @@ class Show extends Controller
         $this->unions = [];
         $this->links = [];
         $this->nest = $nest;
-        // $this->getGraphData($start_id);
+        // $this->getGraphData((int)$start_id);
         $this->getGraphDataUpward((int) $start_id);
         $ret['persons'] = $this->persons;
         $ret['unions'] = $this->unions;
         $ret['links'] = $this->links;
-
-        ExportGedCom::dispatch(2, $request);
-        $file = 'file.GED';
-        $destinationPath = public_path().'/upload/';
-        $ret['link'] = $destinationPath.$file;
+        // ExportGedCom::dispatch(2, $request);
+        // $file = 'file.GED';
+        // $destinationPath = public_path().'/upload/';
+        // $ret['link'] = $destinationPath.$file;
 
         return $ret;
     }
@@ -117,12 +115,12 @@ class Show extends Controller
         return true;
     }
 
-    private function getGraphDataUpward($start_id, $nest = 1)
+    private function getGraphDataUpward($start_id, $nest = 0)
     {
-        if ($this->nest >= $nest) {
-            $nest++;
+        $threshold = (int)($this->nest) * 1;
+        $has = (int)($nest) * 1;
+        if ($threshold >= $has) {
             $person = Person::find($start_id);
-
             // do not process for null
             if ($person == null) {
                 return;
@@ -157,11 +155,11 @@ class Show extends Controller
                     $p_family = Family::find($p_family_id);
                     if (isset($p_family->husband_id)) {
                         $p_fatherid = $p_family->husband_id;
-                        $this->getGraphDataUpward($p_fatherid, $nest);
+                        $this->getGraphDataUpward($p_fatherid, $nest + 1);
                     }
                     if (isset($p_family->wife_id)) {
                         $p_motherid = $p_family->wife_id;
-                        $this->getGraphDataUpward($p_motherid, $nest);
+                        $this->getGraphDataUpward($p_motherid, $nest + 1);
                     }
                 }
             }
@@ -196,11 +194,11 @@ class Show extends Controller
                             $p_family = Family::find($p_family_id);
                             if (isset($p_family->husband_id)) {
                                 $p_fatherid = $p_family->husband_id;
-                                $this->getGraphDataUpward($p_fatherid, $nest);
+                                $this->getGraphDataUpward($p_fatherid, $nest + 1);
                             }
                             if (isset($p_family->wife_id)) {
                                 $p_motherid = $p_family->wife_id;
-                                $this->getGraphDataUpward($p_motherid, $nest);
+                                $this->getGraphDataUpward($p_motherid, $nest + 1);
                             }
                         }
                     }
@@ -230,11 +228,11 @@ class Show extends Controller
                             $p_family = Family::find($p_family_id);
                             if (isset($p_family->husband_id)) {
                                 $p_fatherid = $p_family->husband_id;
-                                $this->getGraphDataUpward($p_fatherid, $nest);
+                                $this->getGraphDataUpward($p_fatherid, $nest + 1);
                             }
                             if (isset($p_family->wife_id)) {
                                 $p_motherid = $p_family->wife_id;
-                                $this->getGraphDataUpward($p_motherid, $nest);
+                                $this->getGraphDataUpward($p_motherid, $nest + 1);
                             }
                         }
                     }
@@ -259,8 +257,9 @@ class Show extends Controller
             $brothers = Person::where('child_in_family_id', $person->child_in_family_id)
             ->whereNotNull('child_in_family_id')
             ->where('id', '<>', $start_id)->get();
+            // $nest = $nest -1;
             foreach ($brothers as $brother) {
-                $this->getGraphDataUpward($brother->id, $nest--);
+                $this->getGraphDataUpward($brother->id, $nest);
             }
         } else {
             return;
