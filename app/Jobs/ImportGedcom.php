@@ -2,15 +2,15 @@
 
 namespace App\Jobs;
 
+use App\ImportJob;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Http\Request;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use ModularSoftware\LaravelGedcom\Utils\GedcomParser;
 use Illuminate\Support\Facades\File;
-use App\ImportJob;
+use ModularSoftware\LaravelGedcom\Utils\GedcomParser;
 
 class ImportGedcom implements ShouldQueue
 {
@@ -18,6 +18,7 @@ class ImportGedcom implements ShouldQueue
     protected $filename;
     protected $slug;
     protected $user_id;
+
     /**
      * Create a new job instance.
      *
@@ -42,7 +43,7 @@ class ImportGedcom implements ShouldQueue
         $slug = $this->slug;
         $user_id = $this->user_id;
         $status = 'queue';
-        ImportJob::create(compact('user_id', 'slug','status'));
+        ImportJob::create(compact('user_id', 'slug', 'status'));
 
         $parser = new GedcomParser();
         $parser->parse(storage_path($this->filename), $slug, true);
@@ -51,6 +52,7 @@ class ImportGedcom implements ShouldQueue
         // update import job
         $status = 'complete';
         ImportJob::where('slug', $slug)->where('user_id', $user_id)->update(compact('status'));
+
         return 0;
     }
 }
