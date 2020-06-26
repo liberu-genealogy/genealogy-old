@@ -24,7 +24,7 @@ class CreateSourcesTable extends Migration
             $table->integer('publication_id')->nullable();
             $table->integer('type_id')->nullable();
             $table->string('sour')->nullable();
-            $table->string('titl')->nullable();
+            $table->text('titl', 65535)->nullable();
             $table->string('auth')->nullable();
             $table->string('data')->nullable();
             $table->text('text', 65535)->nullable();
