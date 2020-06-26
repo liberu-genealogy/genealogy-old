@@ -17,6 +17,7 @@ class Person extends \LaravelEnso\People\App\Models\Person
     protected $dates = ['deleted_at', 'birthday'];
 
     protected $fillable = [
+        'gid',
         'givn',
         'surn',
         'sex',
