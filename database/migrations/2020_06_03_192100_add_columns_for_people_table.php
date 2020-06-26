@@ -9,7 +9,8 @@ class AddColumnsForPeopleTable extends Migration
     public function up()
     {
         Schema::table('people', function (Blueprint $table) {
-            $table->string('givn');
+            $table->string('gid')->nullable();
+            $table->string('givn')->nullable();
             $table->string('surn')->nullable();
             $table->string('name')->nullable()->change();
             $table->char('sex', 1)->nullable();
@@ -26,6 +27,7 @@ class AddColumnsForPeopleTable extends Migration
         Schema::table('people', function ($table) {
             $table->string('bank');
             $table->string('bank_account');
+            $table->dropColumn('gid');
             $table->dropColumn('givn');
             $table->dropColumn('surn');
             $table->string('name')->nullable(false)->change();
