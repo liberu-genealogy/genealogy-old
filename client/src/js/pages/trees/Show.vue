@@ -585,6 +585,7 @@ export default {
                 item => links.push([item[0], item[1]])
             );
             this.dag = _dag.dagConnect()(this.data.links);
+
             // in order to make the family tree work, the dag
             // must be a node with id undefined. create that node if
             // not done automaticaly
@@ -611,20 +612,22 @@ export default {
 
             // find root node and assign data
             root = this.all_nodes.find(n => n.id == this.data.start);
-            root.visible = true;
-            root.neighbors = this.getNeighbors(root);
-            root.x0 = screen_height / 2;
-            root.y0 = screen_width / 2;
 
+            if(root !== undefined) {
+                root.visible = true;
+                root.neighbors = this.getNeighbors(root);
+                root.x0 = screen_height / 2;
+                root.y0 = screen_width / 2;
+                this.dag.children = [root];
+
+                // draw dag
+                this.update(root);
+                setTimeout(this.expand, 1000);
+                setTimeout(this.expand, 2000);
+                setTimeout(this.expand, 3000);
+
+            }
             // overwrite dag root nodes
-            this.dag.children = [root];
-
-            // draw dag
-            this.update(root);
-            setTimeout(this.expand, 1000);
-            setTimeout(this.expand, 2000);
-            setTimeout(this.expand, 3000);
-
         },
         expand(){
             this.all_nodes.forEach(n => {

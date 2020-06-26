@@ -3,6 +3,7 @@
         <div>
             <input
                 type="text"
+                style="display:none"
                 :value.prop="slug"/>
             <input
                 type="file"
