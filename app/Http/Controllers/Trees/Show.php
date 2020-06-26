@@ -18,6 +18,7 @@ class Show extends Controller
     private $unions;
     private $links;
     private $nest;
+
     public function __invoke(Request $request)
     {
         $start_id = $request->get('start_id', 1);
@@ -117,8 +118,8 @@ class Show extends Controller
 
     private function getGraphDataUpward($start_id, $nest = 0)
     {
-        $threshold = (int)($this->nest) * 1;
-        $has = (int)($nest) * 1;
+        $threshold = (int) ($this->nest) * 1;
+        $has = (int) ($nest) * 1;
         if ($threshold >= $has) {
             $person = Person::find($start_id);
             // do not process for null
