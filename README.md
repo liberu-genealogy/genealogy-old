@@ -48,7 +48,7 @@ for the back-end API (which you've configured at step 4)
 
 7. Run `yarn && yarn build`
 
-8. Launch the site and log into the project with user: `admin@genealogia.co.uk`, password: `password`
+8. Launch the site and log into the project with user: `admin@laravel-enso.com`, password: `password`
 
 9. For live reload / hot module replacement functionality run `yarn serve`
 
@@ -87,6 +87,7 @@ Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com
 
 Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/genealogy#sponsor)]
 
+<a href="https://opencollective.com/genealogy#sponsors" target="_blank"><img src="https://opencollective.com/genealogy/sponsors.svg?width=890"></a>
 ### License
 
 This package is released under the MIT license.
