@@ -15,7 +15,7 @@ RUN apt-get update \
 RUN rm -rf /var/cache/apk/*
 
 # Install php extensions.
-RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include
+RUN docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include
 RUN docker-php-ext-install bcmath intl zip pcntl soap gd
 
 # Enable imagick
