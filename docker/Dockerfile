@@ -23,7 +23,7 @@ RUN pecl install imagick-3.4.3
 RUN echo "extension=imagick.so" >> /usr/local/etc/php/conf.d/imagick.ini
 
 # Install xdebug
-RUN pecl install xdebug-2.7.0RC2 && docker-php-ext-enable xdebug
+RUN pecl install xdebug-2.9.5 && docker-php-ext-enable xdebug
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
