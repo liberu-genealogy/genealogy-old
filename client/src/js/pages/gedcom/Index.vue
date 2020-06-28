@@ -4,15 +4,19 @@
             <input
                 type="text"
                 style="display:none"
-                :value.prop="slug"/>
+                :value.prop="slug">
             <input
                 type="file"
                 style="display:none"
                 @change="selectedFile"
                 ref="fileInput"
-                accept="GED"/>
-            <button @click="$refs.fileInput.click()">Select Gedcom File</button>
-            <button v-if="file" @click="uploadFile">Upload</button>
+                accept="GED">
+            <button @click="$refs.fileInput.click()">
+Select Gedcom File
+</button>
+            <button v-if="file" @click="uploadFile">
+Upload
+</button>
         </div>
         <div v-if="uploadPercentage">
             <span class="ml-1">Upload</span>
