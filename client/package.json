@@ -5,8 +5,12 @@
     "author": "Adrian Ocneanu",
     "scripts": {
         "serve": "vue-cli-service serve",
-        "build": "rm -rf ../public/{js,themes,themes-rtl,images} && vue-cli-service build --no-clean --modern",
-        "dev": "rm -rf ../public/{js,themes,themes-rtl,images} && vue-cli-service build --no-clean --mode development",
+        "build": "npx run-script-os",
+        "build:default": "rm -rf ..\\/public/{js,themes,themes-rtl,images} && vue-cli-service build --no-clean --modern",
+        "build:windows": "cd ..\\public && if exist js rd \/s \/q js && if exist themes rd \/s \/q themes && if exist themes-rtl rd \/s \/q themes-rtl && if exist images rd \/s \/q images && cd ..\\client\\ && node_modules\\.bin\\eslint * --fix && .\\node_modules\\.bin\\vue-cli-service build --no-clean --modern --skip-plugins thread-loader",
+        "dev": "npx-run-script-os",
+        "dev:default": "rm -rf ../public/{js,themes,themes-rtl,images} && vue-cli-service build --no-clean --mode development",
+        "dev:windows": "cd ..\\public && if exist js rd \/s \/q js && if exist themes rd \/s \/q themes && if exist themes-rtl rd \/s \/q themes-rtl && if exist images rd \/s \/q images && cd ..\\client\\ && node_modules\\.bin\\eslint * --fix && .\\node_modules\\.bin\\vue-cli-service build --no-clean --mode development --skip-plugins thread-loader",
         "lint": "vue-cli-service lint",
         "postinstall": "opencollective-postinstall && patch-package",
         "prod": "npm run build"
@@ -105,7 +109,7 @@
     ],
     "collective": {
         "type": "opencollective",
-        "url": "https://opencollective.com/Enso"
+        "url": "https://opencollective.com/genealogy"
     },
     "directories": {
         "test": "tests"
