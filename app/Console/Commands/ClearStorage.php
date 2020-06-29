@@ -2,9 +2,9 @@
 
 namespace App\Console\Commands;
 
-use LaravelEnso\Companies\App\Models\Company;
 use App\Jobs\Tenant\ClearStrg as Job;
-use \LaravelEnso\Multitenancy\App\Commands\Tenant;
+use LaravelEnso\Companies\App\Models\Company;
+use LaravelEnso\Multitenancy\App\Commands\Tenant;
 
 class ClearStorage extends Tenant
 {

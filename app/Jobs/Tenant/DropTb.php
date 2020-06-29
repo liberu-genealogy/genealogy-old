@@ -11,10 +11,12 @@ use Illuminate\Support\Facades\DB;
 use LaravelEnso\Companies\App\Models\Company;
 use LaravelEnso\Multitenancy\App\Enums\Connections;
 use LaravelEnso\Multitenancy\App\Services\Tenant;
+
 class DropTb implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
     private $tenant;
+
     /**
      * Create a new job instance.
      *
