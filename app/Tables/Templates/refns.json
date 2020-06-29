@@ -8,5 +8,36 @@
         "name": "id",
         "data": "refns.id",
         "meta": ["searchable", "sortable"]
-    }]
+    },
+        {
+            "label": "Group",
+            "name": "group",
+            "data": "refns.group",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Gid",
+            "name": "gid",
+            "data": "refns.gid",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Refn",
+            "name": "refn",
+            "data": "refns.refn",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Type",
+            "name": "type",
+            "data": "refns.type",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Created At",
+            "name": "created_at",
+            "data": "refns.created_at",
+            "meta": ["date", "searchable", "sortable"]
+        }
+    ]
 }

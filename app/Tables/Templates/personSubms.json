@@ -8,5 +8,30 @@
         "name": "id",
         "data": "person_subms.id",
         "meta": ["searchable", "sortable"]
-    }]
+    },
+        {
+            "label": "Group",
+            "name": "group",
+            "data": "person_subms.group",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Gid",
+            "name": "gid",
+            "data": "person_subms.gid",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Subm",
+            "name": "subm",
+            "data": "person_subms.subm",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Created At",
+            "name": "created_at",
+            "data": "person_subms.created_at",
+            "meta": ["date","searchable", "sortable"]
+        }
+    ]
 }
