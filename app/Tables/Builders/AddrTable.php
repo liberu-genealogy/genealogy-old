@@ -13,7 +13,7 @@ class AddrTable implements Table
     public function query(): Builder
     {
         return Addr::selectRaw('
-            addrs.id, addrs.addr1, addrs.addr2, addrs.city, addrs.stae, addrs.post, addrs.ctry, addrs.created_at
+            addrs.id, addrs.adr1, addrs.adr2, addrs.city, addrs.stae, addrs.post, addrs.ctry, addrs.created_at
         ');
     }
 

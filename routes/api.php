@@ -247,7 +247,9 @@ Route::middleware(['web', 'auth', 'core'])
                 Route::post('store', 'Store')->name('store');
             });
     });
+
 Route::get('gedcom/progress', '\App\Http\Controllers\Gedcom\Progress@index')->name('progress');
+
 Route::middleware(['web', 'auth', 'core'])
     ->group(function () {
         Route::namespace('Trees')
@@ -267,18 +269,18 @@ Route::middleware(['web', 'auth', 'core'])
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
-                Route::get('{object}/edit', 'Edit')->name('edit');
+                Route::get('{mediaobject}/edit', 'Edit')->name('edit');
 
-                Route::patch('{object}', 'Update')->name('update');
+                Route::patch('{mediaobject}', 'Update')->name('update');
 
-                Route::delete('{object}', 'Destroy')->name('destroy');
+                Route::delete('{mediaobject}', 'Destroy')->name('destroy');
 
                 Route::get('initTable', 'InitTable')->name('initTable');
                 Route::get('tableData', 'TableData')->name('tableData');
                 Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
 
                 Route::get('options', 'Options')->name('options');
-                Route::get('{object}', 'Show')->name('show');
+                Route::get('{mediaobject}', 'Show')->name('show');
             });
     });
 
