@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
-use LaravelEnso\Companies\App\Models\Company;
 use App\Jobs\Tenant\DropDB as Job;
+use LaravelEnso\Companies\App\Models\Company;
 use LaravelEnso\Multitenancy\App\Commands\Tenant;
 
 class DropDatabase extends Tenant

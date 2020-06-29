@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
-use LaravelEnso\Companies\App\Models\Company;
 use App\Jobs\Tenant\DropTb as Job;
+use LaravelEnso\Companies\App\Models\Company;
 use LaravelEnso\Multitenancy\App\Commands\Tenant;
 
 class DropTables extends Tenant
