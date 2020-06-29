@@ -4,9 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 use ModularSoftware\LaravelGedcom\Observers\EventActionsObserver;
+use LaravelEnso\Tables\App\Traits\TableCache;
 
 class PersonEvent extends Event
 {
+    use TableCache;
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
