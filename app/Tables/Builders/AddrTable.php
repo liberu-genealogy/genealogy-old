@@ -8,12 +8,12 @@ use LaravelEnso\Tables\App\Contracts\Table;
 
 class AddrTable implements Table
 {
-    protected const TemplatePath = __DIR__.'/../../Templates/addrs.json';
+    protected const TemplatePath = __DIR__.'/../Templates/addrs.json';
 
     public function query(): Builder
     {
         return Addr::selectRaw('
-            addrs.id
+            addrs.id, addrs.addr1, addrs.addr2, addrs.city, addrs.stae, addrs.post, addrs.ctry, addrs.created_at
         ');
     }
 

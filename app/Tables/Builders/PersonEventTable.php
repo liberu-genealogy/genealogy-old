@@ -8,12 +8,12 @@ use LaravelEnso\Tables\App\Contracts\Table;
 
 class PersonEventTable implements Table
 {
-    protected const TemplatePath = __DIR__.'/../../Templates/personEvents.json';
+    protected const TemplatePath = __DIR__.'/../Templates/personEvents.json';
 
     public function query(): Builder
     {
         return PersonEvent::selectRaw('
-            person_events.id
+            person_events.id, person_events.title, person_events.description, person_events.date, person_events.created_at
         ');
     }
 

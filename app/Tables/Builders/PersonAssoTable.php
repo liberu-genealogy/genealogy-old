@@ -8,12 +8,12 @@ use LaravelEnso\Tables\App\Contracts\Table;
 
 class PersonAssoTable implements Table
 {
-    protected const TemplatePath = __DIR__.'/../../Templates/personAssos.json';
+    protected const TemplatePath = __DIR__.'/../Templates/personAssos.json';
 
     public function query(): Builder
     {
         return PersonAsso::selectRaw('
-            person_assos.id
+            person_asso.id, person_asso.group, person_asso.gid, person_asso.rela, person_asso.created_at
         ');
     }
 

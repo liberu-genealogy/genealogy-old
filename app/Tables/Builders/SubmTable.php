@@ -8,12 +8,12 @@ use LaravelEnso\Tables\App\Contracts\Table;
 
 class SubmTable implements Table
 {
-    protected const TemplatePath = __DIR__.'/../../Templates/subms.json';
+    protected const TemplatePath = __DIR__.'/../Templates/subms.json';
 
     public function query(): Builder
     {
         return Subm::selectRaw('
-            subms.id
+            subms.id, subms.group, subms.gid, subms.name, subms.addr_id, subms.rin, subms.rfn, subms.lang, subms.phone, subms.created_at
         ');
     }
 
