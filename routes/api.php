@@ -688,4 +688,30 @@ Route::middleware(['web', 'auth', 'core'])
             });
     });
 
+Route::middleware(['web', 'auth', 'core'])
+    ->group(function () {
+        Route::namespace('Personsubm')
+            ->prefix('personsubm')
+            ->as('personsubm.')
+            ->group(function () {
+
+                Route::get('', 'Index')->name('index');
+                Route::get('create', 'Create')->name('create');
+                Route::post('', 'Store')->name('store');
+                Route::get('{personSubm}/edit', 'Edit')->name('edit');
+
+                Route::patch('{personSubm}', 'Update')->name('update');
+
+                Route::delete('{personSubm}', 'Destroy')->name('destroy');
+
+                Route::get('initTable', 'InitTable')->name('initTable');
+                Route::get('tableData', 'TableData')->name('tableData');
+                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+
+                Route::get('options', 'Options')->name('options');
+                Route::get('{personSubm}', 'Show')->name('show');
+
+
+            });
+    });
 

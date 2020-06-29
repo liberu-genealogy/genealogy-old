@@ -8,12 +8,12 @@ use LaravelEnso\Tables\App\Contracts\Table;
 
 class PersonAnciTable implements Table
 {
-    protected const TemplatePath = __DIR__.'/../../Templates/personAncis.json';
+    protected const TemplatePath = __DIR__.'/../Templates/personAncis.json';
 
     public function query(): Builder
     {
         return PersonAnci::selectRaw('
-            person_ancis.id
+            person_anci.id, person_anci.group, person_anci.gid, person_anci.anci, person_anci.created_at
         ');
     }
 

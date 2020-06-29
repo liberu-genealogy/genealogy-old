@@ -13,7 +13,7 @@ class FamilyEventTable implements Table
     public function query(): Builder
     {
         return FamilyEvent::selectRaw('
-            family_events.id
+            family_events.id, family_events.date, family_events.title, family_events.description, family_events.created_at
         ');
     }
 

@@ -2,18 +2,18 @@
 
 namespace App\Tables\Builders;
 
-use App\PersonAlia;
+use App\PersonSubm;
 use Illuminate\Database\Eloquent\Builder;
 use LaravelEnso\Tables\App\Contracts\Table;
 
-class PersonAliaTable implements Table
+class PersonSubmTable implements Table
 {
-    protected const TemplatePath = __DIR__.'/../Templates/personAlias.json';
+    protected const TemplatePath = __DIR__.'/../Templates/personSubms.json';
 
     public function query(): Builder
     {
-        return PersonAlia::selectRaw('
-            person_alia.id, person_alia.group, person_alia.gid, person_alia.alia, person_alia.created_at
+        return PersonSubm::selectRaw('
+            person_subm.id, person_subm.group, person_subm.gid, person_subm.subm, person_subm.created_at
         ');
     }
 
