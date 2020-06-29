@@ -1,0 +1,37 @@
+{
+    "name": "Person Asso",
+    "routePrefix": "personasso",
+    "crtNo": true,
+    "buttons": ["excel", "create", "show", "edit", "destroy"],
+    "columns": [{
+        "label": "Id",
+        "name": "id",
+        "data": "person_assos.id",
+        "meta": ["searchable", "sortable"]
+    },
+        {
+            "label": "Group",
+            "name": "group",
+            "data": "person_asso.group",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Gid",
+            "name": "gid",
+            "data": "person_asso.id",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Relative",
+            "name": "rela",
+            "data": "person_asso.rela",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Created At",
+            "name": "created_at",
+            "data": "person_asso.created_at",
+            "meta": ["date", "searchable", "sortable"]
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "routePrefix": "personsubm",
+    "sections": [{
+        "columns": 2,
+        "fields": []
+    }]
+}

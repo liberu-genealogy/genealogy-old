@@ -4,10 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 use ModularSoftware\LaravelGedcom\Observers\EventActionsObserver;
+use LaravelEnso\Tables\App\Traits\TableCache;
 
 class FamilyEvent extends Event
 {
     use SoftDeletes;
+    use TableCache;
 
     /**
      * The attributes that should be mutated to dates.

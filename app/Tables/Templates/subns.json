@@ -1,0 +1,61 @@
+{
+    "name": "Subn",
+    "routePrefix": "subn",
+    "crtNo": true,
+    "buttons": ["excel", "create", "show", "edit", "destroy"],
+    "columns": [{
+        "label": "Id",
+        "name": "id",
+        "data": "subns.id",
+        "meta": ["searchable", "sortable"]
+    },
+        {
+            "label": "Subm",
+            "name": "subm",
+            "data": "subns.subm",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Famf",
+            "name": "famf",
+            "data": "subns.famf",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Temp",
+            "name": "temp",
+            "data": "subns.temp",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Ance",
+            "name": "ance",
+            "data": "subns.ance",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Description",
+            "name": "desc",
+            "data": "subns.desc",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Ordi",
+            "name": "ordi",
+            "data": "subns.ordi",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Rin",
+            "name": "rin",
+            "data": "subns.rin",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Created At",
+            "name": "created_at",
+            "data": "subns.created_at",
+            "meta": ["date","searchable", "sortable"]
+        }
+    ]
+}

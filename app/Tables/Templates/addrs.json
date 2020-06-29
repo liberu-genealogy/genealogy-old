@@ -1,0 +1,56 @@
+{
+    "name": "Addr",
+    "routePrefix": "addresses",
+    "crtNo": true,
+    "buttons": ["excel", "create", "show", "edit", "destroy"],
+    "columns": [{
+        "label": "Id",
+        "name": "id",
+        "data": "addrs.id",
+        "meta": ["searchable", "sortable"]
+    },
+        {
+            "label": "Address 1",
+            "name": "adr1",
+            "data": "addrs.adr1",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Address 2",
+            "name": "adr2",
+            "data": "addrs.adr2",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "City",
+            "name": "city",
+            "data": "addrs.city",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "State",
+            "name": "stae",
+            "data": "addrs.stae",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Postcode",
+            "name": "post",
+            "data": "addrs.post",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Country",
+            "name": "ctry",
+            "data": "addrs.post",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Created At",
+            "name": "created_at",
+            "data": "addrs.created_at",
+            "meta": ["date","searchable", "sortable"]
+        }
+
+    ]
+}

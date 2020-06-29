@@ -1,0 +1,37 @@
+{
+    "name": "Person Anci",
+    "routePrefix": "personanci",
+    "crtNo": true,
+    "buttons": ["excel", "create", "show", "edit", "destroy"],
+    "columns": [{
+        "label": "Id",
+        "name": "id",
+        "data": "person_ancis.id",
+        "meta": ["searchable", "sortable"]
+    },
+        {
+            "label": "Group",
+            "name": "group",
+            "data": "person_ancis.group",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Gid",
+            "name": "gid",
+            "data": "person_ancis.gid",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Anci",
+            "name": "anci",
+            "data": "person_ancis.anci",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Created At",
+            "name": "created_at",
+            "data": "person_ancis.created_at",
+            "meta": ["date", "searchable", "sortable"]
+        }
+    ]
+}

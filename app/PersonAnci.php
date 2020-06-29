@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use LaravelEnso\Tables\App\Traits\TableCache;
 
 /**
  * @property int $id
@@ -14,6 +15,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class PersonAnci extends Model
 {
+    use TableCache;
+
     /**
      * The table associated with the model.
      *

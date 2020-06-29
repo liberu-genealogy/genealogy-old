@@ -22,7 +22,7 @@ class UpdateEventsAddTimestamp extends Migration
             $table->string('plac')->nullable();
             $table->integer('addr_id')->nullable();
             $table->string('phon')->nullable();
-            $table->string('caus')->nullable();
+            $table->text('caus', 65535)->nullable();
             $table->string('age')->nullable();
             $table->string('agnc')->nullable();
             $table->string('adop')->nullable();
@@ -37,7 +37,7 @@ class UpdateEventsAddTimestamp extends Migration
             $table->string('plac')->nullable();
             $table->integer('addr_id')->nullable();
             $table->string('phon')->nullable();
-            $table->string('caus')->nullable();
+            $table->text('caus', 65535)->nullable();
             $table->string('age')->nullable();
             $table->string('agnc')->nullable();
             $table->integer('husb')->nullable();

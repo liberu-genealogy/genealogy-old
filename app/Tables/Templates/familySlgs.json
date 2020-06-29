@@ -1,0 +1,49 @@
+{
+    "name": "Family Slgs",
+    "routePrefix": "familyslugs",
+    "crtNo": true,
+    "buttons": ["excel", "create", "show", "edit", "destroy"],
+    "columns": [{
+        "label": "Id",
+        "name": "id",
+        "data": "family_slgs.id",
+        "meta": ["searchable", "sortable"]
+    },
+        {
+            "label": "Family Id",
+            "name": "family_id",
+            "data": "family_slgs.family_id",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Stat",
+            "name": "stat",
+            "data": "family_slgs.stat",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Date",
+            "name": "date",
+            "data": "family_slgs.date",
+            "meta": ["date", "searchable", "sortable"]
+        },
+        {
+            "label": "Place",
+            "name": "plac",
+            "data": "family_slgs.plac",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Temp",
+            "name": "temp",
+            "data": "family_slgs.temp",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Created At",
+            "name": "created_at",
+            "data": "family_slgs.created_at",
+            "meta": ["date", "searchable", "sortable"]
+        }
+    ]
+}

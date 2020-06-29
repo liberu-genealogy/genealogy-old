@@ -1,0 +1,37 @@
+{
+    "name": "Person Event",
+    "routePrefix": "personevent",
+    "crtNo": true,
+    "buttons": ["excel", "create", "show", "edit", "destroy"],
+    "columns": [{
+        "label": "Id",
+        "name": "id",
+        "data": "person_events.id",
+        "meta": ["searchable", "sortable"]
+    },
+        {
+            "label": "Title",
+            "name": "title",
+            "data": "person_events.title",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Description",
+            "name": "description",
+            "data": "person_events.description",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Date",
+            "name": "date",
+            "data": "person_events.date",
+            "meta": ["date", "searchable", "sortable"]
+        },
+        {
+            "label": "Created At",
+            "name": "created_at",
+            "data": "person_events.created_at",
+            "meta": ["date", "searchable", "sortable"]
+        }
+    ]
+}

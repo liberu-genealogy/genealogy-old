@@ -1,0 +1,50 @@
+{
+    "name": "Source Data",
+    "routePrefix": "sourcedata",
+    "crtNo": true,
+    "buttons": ["excel", "create", "show", "edit", "destroy"],
+    "columns": [{
+        "label": "Id",
+        "name": "id",
+        "data": "source_data.id",
+        "meta": ["searchable", "sortable"]
+    },
+
+        {
+            "label": "Group",
+            "name": "group",
+            "data": "source_data.group",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Gid",
+            "name": "gid",
+            "data": "source_data.gid",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Date",
+            "name": "date",
+            "data": "source_data.date",
+            "meta": ["date","searchable", "sortable"]
+        },
+        {
+            "label": "Text",
+            "name": "text",
+            "data": "source_data.text",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Agnc",
+            "name": "agnc",
+            "data": "source_data.agnc",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Created At",
+            "name": "created_at",
+            "data": "source_datas.created_at",
+            "meta": ["date","searchable", "sortable"]
+        }
+    ]
+}
