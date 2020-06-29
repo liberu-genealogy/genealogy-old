@@ -20,7 +20,7 @@
         "laravel/telescope": "^3.1",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
-        "modularsoftware/laravel-gedcom": "^1.0",
+        "modularsoftware/laravel-gedcom": "^1.2",
         "pusher/pusher-php-server": "~4.1",
         "sentry/sentry-laravel": "^1.0.0"
     },
@@ -37,7 +37,11 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "platform": {
+            "ext-pcntl": "7.4",
+            "ext-posix": "7.4"
+        }
     },
     "extra": {
         "laravel": {

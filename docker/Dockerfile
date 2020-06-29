@@ -15,7 +15,7 @@ RUN apt-get update \
 RUN rm -rf /var/cache/apk/*
 
 # Install php extensions.
-RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include
+RUN docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include
 RUN docker-php-ext-install bcmath intl zip pcntl soap gd
 
 # Enable imagick
@@ -23,13 +23,13 @@ RUN pecl install imagick-3.4.3
 RUN echo "extension=imagick.so" >> /usr/local/etc/php/conf.d/imagick.ini
 
 # Install xdebug
-RUN pecl install xdebug-2.7.0RC2 && docker-php-ext-enable xdebug
+RUN pecl install xdebug-2.9.5 && docker-php-ext-enable xdebug
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 #Install Yarn
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - \
   && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
   && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
