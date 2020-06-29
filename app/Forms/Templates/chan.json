@@ -1,7 +1,43 @@
 {
     "routePrefix": "chan",
     "sections": [{
-        "columns": 2,
-        "fields": []
+        "columns": "2",
+        "fields": [{
+            "label": "Group",
+            "name": "group",
+            "value": null,
+            "meta": {
+                "type": "input",
+                "content": "text"
+            }
+        },
+            {
+                "label": "Gid",
+                "name": "Gid",
+                "value": null,
+                "meta": {
+                    "type": "input",
+                    "content": "text"
+                }
+            },
+            {
+                "label": "Date",
+                "name": "date",
+                "value": null,
+                "meta": {
+                    "type": "input",
+                    "content": "text"
+                }
+            },
+            {
+                "label": "Time",
+                "name": "time",
+                "value": null,
+                "meta": {
+                    "type": "input",
+                    "content": "text"
+                }
+            }
+        ]
     }]
 }

@@ -1,7 +1,34 @@
 {
     "routePrefix": "personasso",
     "sections": [{
-        "columns": 2,
-        "fields": []
+        "columns": "2",
+        "fields": [{
+            "label": "Group",
+            "name": "group",
+            "value": null,
+            "meta": {
+                "type": "input",
+                "content": "text"
+            }
+        },
+            {
+                "label": "Gid",
+                "name": "gid",
+                "value": null,
+                "meta": {
+                    "type": "input",
+                    "content": "text"
+                }
+            },
+            {
+                "label": "Relation",
+                "name": "rela",
+                "value": null,
+                "meta": {
+                    "type": "input",
+                    "content": "text"
+                }
+            }
+        ]
     }]
 }

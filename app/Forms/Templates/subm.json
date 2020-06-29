@@ -1,7 +1,80 @@
 {
     "routePrefix": "subm",
     "sections": [{
-        "columns": 2,
-        "fields": []
+        "columns": "2",
+        "fields": [{
+            "label": "Group",
+            "name": "group",
+            "value": null,
+            "meta": {
+                "type": "input",
+                "content": "text"
+            }
+        },
+            {
+                "label": "Gid",
+                "name": "gid",
+                "value": null,
+                "meta": {
+                    "type": "input",
+                    "content": "text"
+                }
+            },
+            {
+                "label": "Name",
+                "name": "name",
+                "value": null,
+                "meta": {
+                    "type": "input",
+                    "content": "text"
+                }
+            },
+            {
+                "label": "Address Id",
+                "name": "addr_id",
+                "value": null,
+                "meta": {
+                    "type": "input",
+                    "content": "text"
+                }
+            },
+            {
+                "label": "Rin",
+                "name": "rin",
+                "value": null,
+                "meta": {
+                    "type": "input",
+                    "content": "text"
+                }
+            },
+            {
+                "label": "Rfn",
+                "name": "rfn",
+                "value": null,
+                "meta": {
+                    "type": "input",
+                    "content": "text"
+                }
+            },
+
+            {
+                "label": "Language",
+                "name": "lang",
+                "value": null,
+                "meta": {
+                    "type": "input",
+                    "content": "text"
+                }
+            },
+            {
+                "label": "Phone",
+                "name": "phone",
+                "value": null,
+                "meta": {
+                    "type": "input",
+                    "content": "text"
+                }
+            }
+        ]
     }]
 }

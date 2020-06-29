@@ -1,7 +1,25 @@
 {
     "routePrefix": "sourcedataevent",
     "sections": [{
-        "columns": 2,
-        "fields": []
+        "columns": "2",
+        "fields": [{
+            "label": "Date",
+            "name": "date",
+            "value": null,
+            "meta": {
+                "type": "input",
+                "content": "text"
+            }
+        },
+            {
+                "label": "Place",
+                "name": "place",
+                "value": null,
+                "meta": {
+                    "type": "input",
+                    "content": "text"
+                }
+            }
+        ]
     }]
 }

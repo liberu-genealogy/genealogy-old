@@ -1,7 +1,43 @@
 {
     "routePrefix": "refn",
     "sections": [{
-        "columns": 2,
-        "fields": []
+        "columns": "2",
+        "fields": [{
+            "label": "Group",
+            "name": "group",
+            "value": null,
+            "meta": {
+                "type": "input",
+                "content": "text"
+            }
+        },
+            {
+                "label": "gid",
+                "name": "gid",
+                "value": null,
+                "meta": {
+                    "type": "input",
+                    "content": "text"
+                }
+            },
+            {
+                "label": "Refn",
+                "name": "refn",
+                "value": null,
+                "meta": {
+                    "type": "input",
+                    "content": "text"
+                }
+            },
+            {
+                "label": "Type",
+                "name": "type",
+                "value": null,
+                "meta": {
+                    "type": "input",
+                    "content": "text"
+                }
+            }
+        ]
     }]
 }
