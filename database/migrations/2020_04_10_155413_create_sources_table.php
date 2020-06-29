@@ -33,7 +33,7 @@ class CreateSourcesTable extends Migration
             $table->string('group')->nullable();
             $table->integer('gid')->nullable();
             $table->string('quay')->nullable();
-            $table->string('page')->nullable();
+            $table->text('page', 65535)->nullable();
             $table->string('rin')->nullable();
             $table->string('note')->nullable();
             $table->timestamps();

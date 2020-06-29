@@ -1,0 +1,37 @@
+{
+    "name": "Family Event",
+    "routePrefix": "familyevents",
+    "crtNo": true,
+    "buttons": ["excel", "create", "show", "edit", "destroy"],
+    "columns": [{
+        "label": "Id",
+        "name": "id",
+        "data": "family_events.id",
+        "meta": ["searchable", "sortable"]
+    },
+        {
+            "label": "Date",
+            "name": "date",
+            "data": "family_events.date",
+            "meta": ["date","searchable", "sortable"]
+        },
+        {
+            "label": "Title",
+            "name": "title",
+            "data": "family_events.title",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Description",
+            "name": "description",
+            "data": "family_events.description",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Created At",
+            "name": "created_at",
+            "data": "family_events.created_at",
+            "meta": ["date", "searchable", "sortable"]
+        }
+    ]
+}

@@ -2,8 +2,8 @@
 
 namespace App\Http\Middleware;
 
-use Closure;
 use App\Service\MixedConnection;
+use Closure;
 use LaravelEnso\Multitenancy\App\Services\Tenant;
 
 class Multitenant
@@ -39,6 +39,7 @@ class Multitenant
 
         return $next($request);
     }
+
     private function ownerRequestsTenant($request)
     {
         return $request->user()->belongsToAdminGroup()

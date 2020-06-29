@@ -1,0 +1,7 @@
+{
+    "routePrefix": "sourcedataevent",
+    "sections": [{
+        "columns": 2,
+        "fields": []
+    }]
+}

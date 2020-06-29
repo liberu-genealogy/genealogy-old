@@ -1,0 +1,67 @@
+{
+    "name": "Person Lds",
+    "routePrefix": "personlds",
+    "crtNo": true,
+    "buttons": ["excel", "create", "show", "edit", "destroy"],
+    "columns": [{
+        "label": "Id",
+        "name": "id",
+        "data": "person_lds.id",
+        "meta": ["searchable", "sortable"]
+    },
+        {
+            "label": "Group",
+            "name": "group",
+            "data": "person_lds.group",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Gid",
+            "name": "gid",
+            "data": "person_lds.gid",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Type",
+            "name": "type",
+            "data": "person_lds.type",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Stat",
+            "name": "stat",
+            "data": "person_lds.stat",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Date",
+            "name": "date",
+            "data": "person_lds.date",
+            "meta": ["date", "searchable", "sortable"]
+        },
+        {
+            "label": "Place",
+            "name": "plac",
+            "data": "person_lds.plac",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Temp",
+            "name": "temp",
+            "data": "person_lds.temp",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Famc",
+            "name": "famc",
+            "data": "person_lds.famc",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Created At",
+            "name": "created_at",
+            "data": "person_lds.id",
+            "meta": ["date", "searchable", "sortable"]
+        }
+    ]
+}

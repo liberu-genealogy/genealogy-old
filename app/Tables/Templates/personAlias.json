@@ -1,0 +1,37 @@
+{
+    "name": "Person Alia",
+    "routePrefix": "personalias",
+    "crtNo": true,
+    "buttons": ["excel", "create", "show", "edit", "destroy"],
+    "columns": [{
+        "label": "Id",
+        "name": "id",
+        "data": "person_alias.id",
+        "meta": ["searchable", "sortable"]
+    },
+        {
+            "label": "Group",
+            "name": "group",
+            "data": "person_alias.group",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Gid",
+            "name": "gid",
+            "data": "person_alias.gid",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Alias",
+            "name": "alia",
+            "data": "person_alias.alia",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Created At",
+            "name": "created_at",
+            "data": "person_alias.created_at",
+            "meta": ["date", "searchable", "sortable"]
+        }
+    ]
+}

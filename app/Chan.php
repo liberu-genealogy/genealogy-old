@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use LaravelEnso\Tables\App\Traits\TableCache;
 
 /**
  * @property int $id
@@ -15,6 +16,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Chan extends Model
 {
+    use TableCache;
+
     /**
      * The "type" of the auto-incrementing ID.
      *

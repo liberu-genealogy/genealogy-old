@@ -1,8 +1,9 @@
 <template>
     <div>
-        <router-link to="/trees/2/show">Navigate to Person 2</router-link>
-        <div id="panel" style="height:300px;">
-        </div>
+        <router-link to="/trees/2/show">
+Navigate to Person 2
+</router-link>
+        <div id="panel" style="height:300px;"/>
     </div>
 </template>
 <script src="https://cdn.jsdelivr.net/npm/d3-dag@0.3.4/dist/d3-dag.min.js"></script>
@@ -430,7 +431,6 @@ export default {
                     return d.neighbors.filter(n => !n.visible).length > 0 ? "lightsteelblue":"#fff";
                 })
                 .attr('cursor', 'pointer');
-
 
             // Remove any exiting nodes
             var nodeExit = node.exit().transition()
