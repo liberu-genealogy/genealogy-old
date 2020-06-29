@@ -8,5 +8,60 @@
         "name": "id",
         "data": "subms.id",
         "meta": ["searchable", "sortable"]
-    }]
+    },
+        {
+            "label": "Group",
+            "name": "group",
+            "data": "subms.group",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Gid",
+            "name": "gid",
+            "data": "subms.gid",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Name",
+            "name": "name",
+            "data": "subms.name",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Addr Id",
+            "name": "addr_id",
+            "data": "subms.addr_id",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Rin",
+            "name": "rin",
+            "data": "subms.rin",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Rfn",
+            "name": "rfn",
+            "data": "subms.rfn",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Lang",
+            "name": "lang",
+            "data": "subms.lang",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Phone",
+            "name": "phone",
+            "data": "subms.phone",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Created At",
+            "name": "created_at",
+            "data": "subms.created_at",
+            "meta": ["date","searchable", "sortable"]
+        }
+    ]
 }

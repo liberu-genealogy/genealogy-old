@@ -6,7 +6,26 @@
     "columns": [{
         "label": "Id",
         "name": "id",
-        "data": "source_data_evens.id",
+        "data": "source_data_even.id",
         "meta": ["searchable", "sortable"]
-    }]
+    },
+        {
+            "label": "Date",
+            "name": "date",
+            "data": "source_data_even.date",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Place",
+            "name": "plac",
+            "data": "source_data_even.plac",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Created At",
+            "name": "created_at",
+            "data": "source_data_even.created_at",
+            "meta": ["date","searchable", "sortable"]
+        }
+    ]
 }

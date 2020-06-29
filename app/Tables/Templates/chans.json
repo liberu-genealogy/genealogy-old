@@ -8,5 +8,36 @@
         "name": "id",
         "data": "chans.id",
         "meta": ["searchable", "sortable"]
-    }]
+    },
+        {
+            "label": "Group",
+            "name": "group",
+            "data": "chans.group",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Gid",
+            "name": "gid",
+            "data": "chans.gid",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Date",
+            "name": "date",
+            "data": "chans.date",
+            "meta": ["date", "searchable", "sortable"]
+        },
+        {
+            "label": "Time",
+            "name": "time",
+            "data": "chans.time",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Created At",
+            "name": "created_at",
+            "data": "chans.created_at",
+            "meta": ["date", "searchable", "sortable"]
+        }
+    ]
 }

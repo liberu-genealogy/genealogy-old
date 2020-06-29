@@ -49,7 +49,7 @@
             "label": "Created At",
             "name": "created_at",
             "data": "addrs.created_at",
-            "meta": ["searchable", "sortable"]
+            "meta": ["date","searchable", "sortable"]
         }
 
     ]
