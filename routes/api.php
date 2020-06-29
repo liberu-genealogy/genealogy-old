@@ -95,7 +95,7 @@ Route::middleware(['web', 'auth', 'core'])
             });
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Places')
             ->prefix('places')
