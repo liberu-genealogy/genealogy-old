@@ -1,0 +1,12 @@
+{
+    "name": "Addr",
+    "routePrefix": "addresses",
+    "crtNo": true,
+    "buttons": ["excel", "create", "show", "edit", "destroy"],
+    "columns": [{
+        "label": "Id",
+        "name": "id",
+        "data": "addrs.id",
+        "meta": ["searchable", "sortable"]
+    }]
+}

@@ -1,0 +1,12 @@
+{
+    "name": "Source Data",
+    "routePrefix": "sourcedata",
+    "crtNo": true,
+    "buttons": ["excel", "create", "show", "edit", "destroy"],
+    "columns": [{
+        "label": "Id",
+        "name": "id",
+        "data": "source_datas.id",
+        "meta": ["searchable", "sortable"]
+    }]
+}

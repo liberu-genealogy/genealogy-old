@@ -1,0 +1,12 @@
+{
+    "name": "Source Ref Even",
+    "routePrefix": "sourcerefevents",
+    "crtNo": true,
+    "buttons": ["excel", "create", "show", "edit", "destroy"],
+    "columns": [{
+        "label": "Id",
+        "name": "id",
+        "data": "source_ref_evens.id",
+        "meta": ["searchable", "sortable"]
+    }]
+}
