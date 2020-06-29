@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Console\Commands;
+
+use LaravelEnso\Companies\App\Models\Company;
+use App\Jobs\Tenant\ClearStrg as Job;
+use \LaravelEnso\Multitenancy\App\Commands\Tenant;
+
+class ClearStorage extends Tenant
+{
+    protected $signature = 'enso:tenant:clear-storage {--all=false} {--tenantId}';
+
+    protected $description = 'Clears tenant storage';
+
+    public function dispatch(Company $company): void
+    {
+        $this->line(__('Clearing storage for company :company', ['company' => $company->name]));
+
+        Job::dispatch($company);
+    }
+}
