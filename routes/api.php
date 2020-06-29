@@ -281,3 +281,411 @@ Route::middleware(['web', 'auth', 'core'])
                 Route::get('{object}', 'Show')->name('show');
             });
     });
+
+Route::middleware(['web', 'auth', 'core'])
+    ->group(function () {
+        Route::namespace('Addresses')
+            ->prefix('addresses')
+            ->as('addresses.')
+            ->group(function () {
+
+                Route::get('', 'Index')->name('index');
+                Route::get('create', 'Create')->name('create');
+                Route::post('', 'Store')->name('store');
+                Route::get('{addr}/edit', 'Edit')->name('edit');
+
+                Route::patch('{addr}', 'Update')->name('update');
+
+                Route::delete('{addr}', 'Destroy')->name('destroy');
+
+                Route::get('initTable', 'InitTable')->name('initTable');
+                Route::get('tableData', 'TableData')->name('tableData');
+                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+
+                Route::get('options', 'Options')->name('options');
+                Route::get('{addr}', 'Show')->name('show');
+
+
+            });
+    });
+
+Route::middleware(['web', 'auth', 'core'])
+    ->group(function () {
+        Route::namespace('Chan')
+            ->prefix('chan')
+            ->as('chan.')
+            ->group(function () {
+
+                Route::get('', 'Index')->name('index');
+                Route::get('create', 'Create')->name('create');
+                Route::post('', 'Store')->name('store');
+                Route::get('{chan}/edit', 'Edit')->name('edit');
+
+                Route::patch('{chan}', 'Update')->name('update');
+
+                Route::delete('{chan}', 'Destroy')->name('destroy');
+
+                Route::get('initTable', 'InitTable')->name('initTable');
+                Route::get('tableData', 'TableData')->name('tableData');
+                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+
+                Route::get('options', 'Options')->name('options');
+                Route::get('{chan}', 'Show')->name('show');
+
+
+            });
+    });
+
+Route::middleware(['web', 'auth', 'core'])
+    ->group(function () {
+        Route::namespace('Familyevents')
+            ->prefix('familyevents')
+            ->as('familyevents.')
+            ->group(function () {
+
+                Route::get('', 'Index')->name('index');
+                Route::get('create', 'Create')->name('create');
+                Route::post('', 'Store')->name('store');
+                Route::get('{familyEvent}/edit', 'Edit')->name('edit');
+
+                Route::patch('{familyEvent}', 'Update')->name('update');
+
+                Route::delete('{familyEvent}', 'Destroy')->name('destroy');
+
+                Route::get('initTable', 'InitTable')->name('initTable');
+                Route::get('tableData', 'TableData')->name('tableData');
+                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+
+                Route::get('options', 'Options')->name('options');
+                Route::get('{familyEvent}', 'Show')->name('show');
+
+
+            });
+    });
+
+Route::middleware(['web', 'auth', 'core'])
+    ->group(function () {
+        Route::namespace('Familyslugs')
+            ->prefix('familyslugs')
+            ->as('familyslugs.')
+            ->group(function () {
+
+                Route::get('', 'Index')->name('index');
+                Route::get('create', 'Create')->name('create');
+                Route::post('', 'Store')->name('store');
+                Route::get('{familySlgs}/edit', 'Edit')->name('edit');
+
+                Route::patch('{familySlgs}', 'Update')->name('update');
+
+                Route::delete('{familySlgs}', 'Destroy')->name('destroy');
+
+                Route::get('initTable', 'InitTable')->name('initTable');
+                Route::get('tableData', 'TableData')->name('tableData');
+                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+
+                Route::get('options', 'Options')->name('options');
+                Route::get('{familySlgs}', 'Show')->name('show');
+
+
+            });
+    });
+
+Route::middleware(['web', 'auth', 'core'])
+    ->group(function () {
+        Route::namespace('Personalias')
+            ->prefix('personalias')
+            ->as('personalias.')
+            ->group(function () {
+
+                Route::get('', 'Index')->name('index');
+                Route::get('create', 'Create')->name('create');
+                Route::post('', 'Store')->name('store');
+                Route::get('{personAlia}/edit', 'Edit')->name('edit');
+
+                Route::patch('{personAlia}', 'Update')->name('update');
+
+                Route::delete('{personAlia}', 'Destroy')->name('destroy');
+
+                Route::get('initTable', 'InitTable')->name('initTable');
+                Route::get('tableData', 'TableData')->name('tableData');
+                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+
+                Route::get('options', 'Options')->name('options');
+                Route::get('{personAlia}', 'Show')->name('show');
+
+
+            });
+    });
+
+Route::middleware(['web', 'auth', 'core'])
+    ->group(function () {
+        Route::namespace('Personanci')
+            ->prefix('personanci')
+            ->as('personanci.')
+            ->group(function () {
+
+                Route::get('', 'Index')->name('index');
+                Route::get('create', 'Create')->name('create');
+                Route::post('', 'Store')->name('store');
+                Route::get('{personAnci}/edit', 'Edit')->name('edit');
+
+                Route::patch('{personAnci}', 'Update')->name('update');
+
+                Route::delete('{personAnci}', 'Destroy')->name('destroy');
+
+                Route::get('initTable', 'InitTable')->name('initTable');
+                Route::get('tableData', 'TableData')->name('tableData');
+                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+
+                Route::get('options', 'Options')->name('options');
+                Route::get('{personAnci}', 'Show')->name('show');
+
+
+            });
+    });
+
+Route::middleware(['web', 'auth', 'core'])
+    ->group(function () {
+        Route::namespace('Personasso')
+            ->prefix('personasso')
+            ->as('personasso.')
+            ->group(function () {
+
+                Route::get('', 'Index')->name('index');
+                Route::get('create', 'Create')->name('create');
+                Route::post('', 'Store')->name('store');
+                Route::get('{personAsso}/edit', 'Edit')->name('edit');
+
+                Route::patch('{personAsso}', 'Update')->name('update');
+
+                Route::delete('{personAsso}', 'Destroy')->name('destroy');
+
+                Route::get('initTable', 'InitTable')->name('initTable');
+                Route::get('tableData', 'TableData')->name('tableData');
+                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+
+                Route::get('options', 'Options')->name('options');
+                Route::get('{personAsso}', 'Show')->name('show');
+
+
+            });
+    });
+
+Route::middleware(['web', 'auth', 'core'])
+    ->group(function () {
+        Route::namespace('Personevent')
+            ->prefix('personevent')
+            ->as('personevent.')
+            ->group(function () {
+
+                Route::get('', 'Index')->name('index');
+                Route::get('create', 'Create')->name('create');
+                Route::post('', 'Store')->name('store');
+                Route::get('{personEvent}/edit', 'Edit')->name('edit');
+
+                Route::patch('{personEvent}', 'Update')->name('update');
+
+                Route::delete('{personEvent}', 'Destroy')->name('destroy');
+
+                Route::get('initTable', 'InitTable')->name('initTable');
+                Route::get('tableData', 'TableData')->name('tableData');
+                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+
+                Route::get('options', 'Options')->name('options');
+                Route::get('{personEvent}', 'Show')->name('show');
+
+
+            });
+    });
+
+Route::middleware(['web', 'auth', 'core'])
+    ->group(function () {
+        Route::namespace('Personlds')
+            ->prefix('personlds')
+            ->as('personlds.')
+            ->group(function () {
+
+                Route::get('', 'Index')->name('index');
+                Route::get('create', 'Create')->name('create');
+                Route::post('', 'Store')->name('store');
+                Route::get('{personLds}/edit', 'Edit')->name('edit');
+
+                Route::patch('{personLds}', 'Update')->name('update');
+
+                Route::delete('{personLds}', 'Destroy')->name('destroy');
+
+                Route::get('initTable', 'InitTable')->name('initTable');
+                Route::get('tableData', 'TableData')->name('tableData');
+                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+
+                Route::get('options', 'Options')->name('options');
+                Route::get('{personLds}', 'Show')->name('show');
+
+
+            });
+    });
+
+Route::middleware(['web', 'auth', 'core'])
+    ->group(function () {
+        Route::namespace('Refn')
+            ->prefix('refn')
+            ->as('refn.')
+            ->group(function () {
+
+                Route::get('', 'Index')->name('index');
+                Route::get('create', 'Create')->name('create');
+                Route::post('', 'Store')->name('store');
+                Route::get('{refn}/edit', 'Edit')->name('edit');
+
+                Route::patch('{refn}', 'Update')->name('update');
+
+                Route::delete('{refn}', 'Destroy')->name('destroy');
+
+                Route::get('initTable', 'InitTable')->name('initTable');
+                Route::get('tableData', 'TableData')->name('tableData');
+                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+
+                Route::get('options', 'Options')->name('options');
+                Route::get('{refn}', 'Show')->name('show');
+
+
+            });
+    });
+
+Route::middleware(['web', 'auth', 'core'])
+    ->group(function () {
+        Route::namespace('Sourcedata')
+            ->prefix('sourcedata')
+            ->as('sourcedata.')
+            ->group(function () {
+
+                Route::get('', 'Index')->name('index');
+                Route::get('create', 'Create')->name('create');
+                Route::post('', 'Store')->name('store');
+                Route::get('{sourceData}/edit', 'Edit')->name('edit');
+
+                Route::patch('{sourceData}', 'Update')->name('update');
+
+                Route::delete('{sourceData}', 'Destroy')->name('destroy');
+
+                Route::get('initTable', 'InitTable')->name('initTable');
+                Route::get('tableData', 'TableData')->name('tableData');
+                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+
+                Route::get('options', 'Options')->name('options');
+                Route::get('{sourceData}', 'Show')->name('show');
+
+
+            });
+    });
+
+Route::middleware(['web', 'auth', 'core'])
+    ->group(function () {
+        Route::namespace('Sourcedataevent')
+            ->prefix('sourcedataevent')
+            ->as('sourcedataevent.')
+            ->group(function () {
+
+                Route::get('', 'Index')->name('index');
+                Route::get('create', 'Create')->name('create');
+                Route::post('', 'Store')->name('store');
+                Route::get('{sourceDataEven}/edit', 'Edit')->name('edit');
+
+                Route::patch('{sourceDataEven}', 'Update')->name('update');
+
+                Route::delete('{sourceDataEven}', 'Destroy')->name('destroy');
+
+                Route::get('initTable', 'InitTable')->name('initTable');
+                Route::get('tableData', 'TableData')->name('tableData');
+                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+
+                Route::get('options', 'Options')->name('options');
+                Route::get('{sourceDataEven}', 'Show')->name('show');
+
+
+            });
+    });
+
+Route::middleware(['web', 'auth', 'core'])
+    ->group(function () {
+        Route::namespace('Sourcerefevents')
+            ->prefix('sourcerefevents')
+            ->as('sourcerefevents.')
+            ->group(function () {
+
+                Route::get('', 'Index')->name('index');
+                Route::get('create', 'Create')->name('create');
+                Route::post('', 'Store')->name('store');
+                Route::get('{sourceRefEven}/edit', 'Edit')->name('edit');
+
+                Route::patch('{sourceRefEven}', 'Update')->name('update');
+
+                Route::delete('{sourceRefEven}', 'Destroy')->name('destroy');
+
+                Route::get('initTable', 'InitTable')->name('initTable');
+                Route::get('tableData', 'TableData')->name('tableData');
+                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+
+                Route::get('options', 'Options')->name('options');
+                Route::get('{sourceRefEven}', 'Show')->name('show');
+
+
+            });
+    });
+
+
+Route::middleware(['web', 'auth', 'core'])
+    ->group(function () {
+        Route::namespace('Subm')
+            ->prefix('subm')
+            ->as('subm.')
+            ->group(function () {
+
+                Route::get('', 'Index')->name('index');
+                Route::get('create', 'Create')->name('create');
+                Route::post('', 'Store')->name('store');
+                Route::get('{subm}/edit', 'Edit')->name('edit');
+
+                Route::patch('{subm}', 'Update')->name('update');
+
+                Route::delete('{subm}', 'Destroy')->name('destroy');
+
+                Route::get('initTable', 'InitTable')->name('initTable');
+                Route::get('tableData', 'TableData')->name('tableData');
+                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+
+                Route::get('options', 'Options')->name('options');
+                Route::get('{subm}', 'Show')->name('show');
+
+
+            });
+    });
+
+Route::middleware(['web', 'auth', 'core'])
+    ->group(function () {
+        Route::namespace('Subn')
+            ->prefix('subn')
+            ->as('subn.')
+            ->group(function () {
+
+                Route::get('', 'Index')->name('index');
+                Route::get('create', 'Create')->name('create');
+                Route::post('', 'Store')->name('store');
+                Route::get('{subn}/edit', 'Edit')->name('edit');
+
+                Route::patch('{subn}', 'Update')->name('update');
+
+                Route::delete('{subn}', 'Destroy')->name('destroy');
+
+                Route::get('initTable', 'InitTable')->name('initTable');
+                Route::get('tableData', 'TableData')->name('tableData');
+                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+
+                Route::get('options', 'Options')->name('options');
+                Route::get('{subn}', 'Show')->name('show');
+
+
+            });
+    });
+
+

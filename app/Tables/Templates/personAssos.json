@@ -1,0 +1,12 @@
+{
+    "name": "Person Asso",
+    "routePrefix": "personasso",
+    "crtNo": true,
+    "buttons": ["excel", "create", "show", "edit", "destroy"],
+    "columns": [{
+        "label": "Id",
+        "name": "id",
+        "data": "person_assos.id",
+        "meta": ["searchable", "sortable"]
+    }]
+}

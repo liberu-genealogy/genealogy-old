@@ -1,0 +1,12 @@
+{
+    "name": "Family Event",
+    "routePrefix": "familyevents",
+    "crtNo": true,
+    "buttons": ["excel", "create", "show", "edit", "destroy"],
+    "columns": [{
+        "label": "Id",
+        "name": "id",
+        "data": "family_events.id",
+        "meta": ["searchable", "sortable"]
+    }]
+}

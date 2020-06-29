@@ -1,0 +1,12 @@
+{
+    "name": "Source Data Even",
+    "routePrefix": "sourcedataevent",
+    "crtNo": true,
+    "buttons": ["excel", "create", "show", "edit", "destroy"],
+    "columns": [{
+        "label": "Id",
+        "name": "id",
+        "data": "source_data_evens.id",
+        "meta": ["searchable", "sortable"]
+    }]
+}

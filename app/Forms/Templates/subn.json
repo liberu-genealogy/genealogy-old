@@ -1,0 +1,7 @@
+{
+    "routePrefix": "subn",
+    "sections": [{
+        "columns": 2,
+        "fields": []
+    }]
+}
