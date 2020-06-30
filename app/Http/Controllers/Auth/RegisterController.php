@@ -12,6 +12,8 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Traits\ActivationTrait;
+use LaravelEnso\Multitenancy\App\Jobs\CreateDatabase;
+use LaravelEnso\Multitenancy\App\Jobs\Migrate;
 use DB;
 use Str;
 
@@ -70,6 +72,13 @@ class RegisterController extends Controller
             $this->initiateEmailActivation($user);
             DB::commit();
             // send verification email;
+
+
+	   // Dispatch Tenancy Jobs
+
+           $tenant = $user->company->id;
+           CreateDatabase:dispatch($tenant);
+           Migrate:dispatch($tenant);
 
             return $user;
         }catch(\Exception $e){
