@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 // );
 
 // example data for the dashboard
-Route::middleware(['web', 'auth'])
+Route::middleware(['web', 'auth', 'multitenant'])
     ->namespace('Dashboard')
     ->prefix('dashboard')->as('dashboard.')
     ->group(function () {
@@ -30,7 +30,7 @@ Route::middleware(['web', 'auth'])
             ->name('bubble');
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Citations')
             ->prefix('citations')
@@ -54,7 +54,7 @@ Route::middleware(['web', 'auth', 'core'])
             });
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Families')
             ->prefix('families')
@@ -78,7 +78,7 @@ Route::middleware(['web', 'auth', 'core'])
             });
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Notes')
             ->prefix('notes')
@@ -126,7 +126,7 @@ Route::middleware(['web', 'auth', 'core', 'multitenant'])
             });
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Repositories')
             ->prefix('repositories')
@@ -150,7 +150,7 @@ Route::middleware(['web', 'auth', 'core'])
             });
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Sources')
             ->prefix('sources')
@@ -174,7 +174,7 @@ Route::middleware(['web', 'auth', 'core'])
             });
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Types')
             ->prefix('types')
@@ -198,7 +198,7 @@ Route::middleware(['web', 'auth', 'core'])
             });
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Authors')
             ->prefix('authors')
@@ -221,7 +221,7 @@ Route::middleware(['web', 'auth', 'core'])
                 Route::get('{author}', 'Show')->name('show');
             });
     });
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Publications')
             ->prefix('publications')
@@ -245,7 +245,7 @@ Route::middleware(['web', 'auth', 'core'])
             });
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Gedcom')
             ->prefix('gedcom')
@@ -257,7 +257,7 @@ Route::middleware(['web', 'auth', 'core'])
 
 Route::get('gedcom/progress', '\App\Http\Controllers\Gedcom\Progress@index')->name('progress');
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Trees')
             ->prefix('trees')
@@ -267,7 +267,7 @@ Route::middleware(['web', 'auth', 'core'])
             });
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('MediaObjects')
             ->prefix('objects')
@@ -291,7 +291,7 @@ Route::middleware(['web', 'auth', 'core'])
             });
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Addresses')
             ->prefix('addresses')
@@ -318,7 +318,7 @@ Route::middleware(['web', 'auth', 'core'])
             });
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Chan')
             ->prefix('chan')
@@ -345,7 +345,7 @@ Route::middleware(['web', 'auth', 'core'])
             });
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Familyevents')
             ->prefix('familyevents')
@@ -372,7 +372,7 @@ Route::middleware(['web', 'auth', 'core'])
             });
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Familyslugs')
             ->prefix('familyslugs')
@@ -399,7 +399,7 @@ Route::middleware(['web', 'auth', 'core'])
             });
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Personalias')
             ->prefix('personalias')
@@ -426,7 +426,7 @@ Route::middleware(['web', 'auth', 'core'])
             });
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Personanci')
             ->prefix('personanci')
@@ -453,7 +453,7 @@ Route::middleware(['web', 'auth', 'core'])
             });
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Personasso')
             ->prefix('personasso')
@@ -480,7 +480,7 @@ Route::middleware(['web', 'auth', 'core'])
             });
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Personevent')
             ->prefix('personevent')
@@ -507,7 +507,7 @@ Route::middleware(['web', 'auth', 'core'])
             });
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Personlds')
             ->prefix('personlds')
@@ -534,7 +534,7 @@ Route::middleware(['web', 'auth', 'core'])
             });
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Refn')
             ->prefix('refn')
@@ -561,7 +561,7 @@ Route::middleware(['web', 'auth', 'core'])
             });
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Sourcedata')
             ->prefix('sourcedata')
@@ -588,7 +588,7 @@ Route::middleware(['web', 'auth', 'core'])
             });
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Sourcedataevent')
             ->prefix('sourcedataevent')
@@ -615,7 +615,7 @@ Route::middleware(['web', 'auth', 'core'])
             });
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Sourcerefevents')
             ->prefix('sourcerefevents')
@@ -643,7 +643,7 @@ Route::middleware(['web', 'auth', 'core'])
     });
 
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Subm')
             ->prefix('subm')
@@ -670,7 +670,7 @@ Route::middleware(['web', 'auth', 'core'])
             });
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Subn')
             ->prefix('subn')
@@ -697,7 +697,7 @@ Route::middleware(['web', 'auth', 'core'])
             });
     });
 
-Route::middleware(['web', 'auth', 'core'])
+Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('Personsubm')
             ->prefix('personsubm')
