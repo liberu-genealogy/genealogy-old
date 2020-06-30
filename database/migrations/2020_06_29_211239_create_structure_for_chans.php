@@ -26,6 +26,6 @@ class CreateStructureForChans extends Migration
         'name' => 'Chan', 'icon' => 'book', 'route' => 'chan.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected $parentMenu = 'References';
+    protected $parentMenu = 'Information';
 }
 

@@ -26,6 +26,6 @@ class CreateStructureForPersonAssos extends Migration
         'name' => 'Person Association', 'icon' => 'book', 'route' => 'personasso.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected $parentMenu = 'Administration';
+    protected $parentMenu = 'People';
 }
 

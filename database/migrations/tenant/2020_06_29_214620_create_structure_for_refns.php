@@ -26,6 +26,6 @@ class CreateStructureForRefns extends Migration
         'name' => 'Refn', 'icon' => 'book', 'route' => 'refn.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected $parentMenu = 'References';
+    protected $parentMenu = 'Information';
 }
 

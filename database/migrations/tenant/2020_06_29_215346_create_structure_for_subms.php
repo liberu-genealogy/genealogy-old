@@ -26,6 +26,6 @@ class CreateStructureForSubms extends Migration
         'name' => 'Subm', 'icon' => 'book', 'route' => 'subm.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected $parentMenu = 'References';
+    protected $parentMenu = 'Information';
 }
 
