@@ -83,9 +83,9 @@ class RegisterController extends Controller
 		'status' => 1
             ]);
 
-          $company->attachPerson($person->id, 'Owner');
+//          $company->attachPerson($person->id, 'Owner');
 
-          $person->companies()->sync($company->id, ['person_id' => $person->id, 'is_main' => 1, 'is_mandatary' => 1, 'company_id' => $company->id]);
+          $person->companies()->attach($company->id, ['person_id' => $person->id, 'is_main' => 1, 'is_mandatary' => 1, 'company_id' => $company->id]);
 
 	   // Dispatch Tenancy Jobs
 
