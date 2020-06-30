@@ -1106,9 +1106,9 @@
     vuex "^3.0.0"
 
 "@enso-ui/forms@1.4.x":
-  version "1.4.6"
-  resolved "https://registry.yarnpkg.com/@enso-ui/forms/-/forms-1.4.6.tgz#dfed156dd4e836f2630d13047913fd96c8627837"
-  integrity sha512-p5HdM6aHZJIel8yyWPixdmjp5hNl+0ti6e4iQu4FH65IGK6PbQ2B//9fE9ow+XFzsocv+a/00L9RqpMbE9XYrQ==
+  version "1.4.7"
+  resolved "https://registry.yarnpkg.com/@enso-ui/forms/-/forms-1.4.7.tgz#b440bfcf8bf45ce4d9604a24dfc9c4deca9e4767"
+  integrity sha512-UrIp3QKuH2XPcsq+Pi2NczO00xiib0wRd/QYmVJ6AHDlKYYMJ2l6KU6CEs/kDdWqBSd8s65G4FYsU8X3xhzxOg==
   dependencies:
     "@enso-ui/datepicker" "1.1.x"
     "@enso-ui/directives" "1.0.x"
