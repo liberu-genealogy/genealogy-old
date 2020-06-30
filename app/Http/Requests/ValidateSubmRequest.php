@@ -13,8 +13,17 @@ class ValidateSubmRequest extends FormRequest
 
     public function rules()
     {
+        $subm = $this->route('subm');
         return [
-            //
-        ];
+
+            'group' => 'required|max:50',
+            'gid' => 'required|max:50',
+            'name' => 'required|max:50',
+            'addr_id' => 'required|max:50',
+            'rin' => 'required|max:50',
+            'rfn' => 'required|max:50',
+            'lang' => 'required|max:50',
+            'phon' => 'required|max:50'
+            ];
     }
 }

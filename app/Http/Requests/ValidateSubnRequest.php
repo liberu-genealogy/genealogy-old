@@ -13,8 +13,18 @@ class ValidateSubnRequest extends FormRequest
 
     public function rules()
     {
+
+        $subn = $this->route('subn');
         return [
-            //
+
+            'subm' => 'required|max:50',
+            'famf' => 'required|max:50',
+            'temp' => 'required|max:50',
+            'ance' => 'required|max:50',
+            'desc' => 'required|max:50',
+            'ordi' => 'required|max:50',
+            'rin' => 'required|max:50'
+
         ];
     }
 }

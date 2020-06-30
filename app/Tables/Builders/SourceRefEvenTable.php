@@ -13,7 +13,7 @@ class SourceRefEvenTable implements Table
     public function query(): Builder
     {
         return SourceRefEven::selectRaw('
-            source_ref_even.id, source_ref_even.group, source_ref_even.gid, source_ref_even.even, source_ref_even.role, source_ref_even.created_at
+            sourceref_even.id, sourceref_even.group, sourceref_even.gid, sourceref_even.even, sourceref_even.role, sourceref_even.created_at
         ');
     }
 

@@ -13,8 +13,12 @@ class ValidatePersonEventRequest extends FormRequest
 
     public function rules()
     {
+        $personevent = $this->route('personevent');
         return [
-            //
+
+            'title' => 'required|max:50',
+            'description' => 'required|max:50',
+            'date' => 'required|max:50'
         ];
     }
 }
