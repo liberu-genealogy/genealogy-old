@@ -432,8 +432,8 @@ index 0000000..839abfe
 +                {{ meta.appName }}
 +            </h3>
 +            <div class="">
-+                <p class="t-center" v-if="!isSuccessful"> Thank you for your register !</p>
-+                <p class="t-center" v-if="isSuccessful"> Thank you for using Genealogia !</p>
++                <p class="t-center" v-if="!isSuccessful"> Thank you for registering.</p>
++                <p class="t-center" v-if="isSuccessful"> Thank you for using Genealogia.</p>
 +            </div>
 +
 +            <router-link v-if="isLogin"
