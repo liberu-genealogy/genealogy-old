@@ -131,7 +131,7 @@ index 12bf71d..a7248c2 100644
 +            <router-link v-if="isLogin"
 +                :to="'/register'"
 +                class="is-pulled-left">
-+                {{ i18n('Registeration') }}
++                {{ i18n('Registration') }}
 +            </router-link>
              <router-link v-if="isLogin"
                  :to="{ name: 'password.email' }"
