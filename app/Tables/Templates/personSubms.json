@@ -6,31 +6,31 @@
     "columns": [{
         "label": "Id",
         "name": "id",
-        "data": "person_subms.id",
+        "data": "person_subm.id",
         "meta": ["searchable", "sortable"]
     },
         {
             "label": "Group",
             "name": "group",
-            "data": "person_subms.group",
+            "data": "person_subm.group",
             "meta": ["searchable", "sortable"]
         },
         {
             "label": "Gid",
             "name": "gid",
-            "data": "person_subms.gid",
+            "data": "person_subm.gid",
             "meta": ["searchable", "sortable"]
         },
         {
             "label": "Subm",
             "name": "subm",
-            "data": "person_subms.subm",
+            "data": "person_subm.subm",
             "meta": ["searchable", "sortable"]
         },
         {
             "label": "Created At",
             "name": "created_at",
-            "data": "person_subms.created_at",
+            "data": "person_subm.created_at",
             "meta": ["date","searchable", "sortable"]
         }
     ]
