@@ -26,6 +26,6 @@ class CreateStructureForPersonSubms extends Migration
         'name' => 'Person Subm', 'icon' => 'book', 'route' => 'personsubm.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected $parentMenu = 'References';
+    protected $parentMenu = 'People';
 }
 

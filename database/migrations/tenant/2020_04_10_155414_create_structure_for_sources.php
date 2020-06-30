@@ -26,5 +26,5 @@ class CreateStructureForSources extends Migration
         'name' => 'Sources', 'icon' => 'users', 'route' => 'sources.index', 'order_index' => 999, 'has_children' => false,
     ];
 
-    protected $parentMenu = 'References';
+    protected $parentMenu = 'Sources';
 }

@@ -26,6 +26,6 @@ class CreateStructureForSourceDatas extends Migration
         'name' => 'Source Data', 'icon' => 'book', 'route' => 'sourcedata.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected $parentMenu = 'References';
+    protected $parentMenu = 'Sources';
 }
 

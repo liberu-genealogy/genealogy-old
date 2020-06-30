@@ -26,6 +26,6 @@ class CreateStructureForSubns extends Migration
         'name' => 'Subn', 'icon' => 'book', 'route' => 'subn.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected $parentMenu = 'References';
+    protected $parentMenu = 'Information';
 }
 

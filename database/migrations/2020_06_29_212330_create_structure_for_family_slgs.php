@@ -26,6 +26,6 @@ class CreateStructureForFamilySlgs extends Migration
         'name' => 'Family Slugs', 'icon' => 'book', 'route' => 'familyslugs.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected $parentMenu = 'Administration';
+    protected $parentMenu = 'Families';
 }
 
