@@ -80,16 +80,15 @@ class RegisterController extends Controller
                 'email' => $data['email'],
                 'is_active' => 1,
 		'is_tenant' => 1,
-		'status' => 'Active'
+		'status' => 1
             ]);
 
           $company->attachPerson($person->id);
 
 	   // Dispatch Tenancy Jobs
 
-           $tenant = $user->company->id;
-           CreateDatabase:dispatch($tenant);
-           Migrate:dispatch($tenant);
+           CreateDatabase::dispatch($company);
+           Migrate::dispatch($company);
 
             return $user;
         }catch(\Exception $e){
