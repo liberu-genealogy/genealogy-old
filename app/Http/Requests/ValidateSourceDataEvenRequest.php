@@ -13,8 +13,11 @@ class ValidateSourceDataEvenRequest extends FormRequest
 
     public function rules()
     {
+        $sourcedataeven = $this->route('sourcedataeven');
         return [
-            //
+
+            'date' => 'required|max:50',
+            'plac' => 'required|max:50'
         ];
     }
 }
