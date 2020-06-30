@@ -26,5 +26,5 @@ class CreateStructureForRepositories extends Migration
         'name' => 'Repositories', 'icon' => 'users', 'route' => 'repositories.index', 'order_index' => 999, 'has_children' => false,
     ];
 
-    protected $parentMenu = 'References';
+    protected $parentMenu = 'Sources';
 }

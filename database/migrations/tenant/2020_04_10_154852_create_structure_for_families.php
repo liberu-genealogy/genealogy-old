@@ -26,5 +26,5 @@ class CreateStructureForFamilies extends Migration
         'name' => 'Families', 'icon' => 'users', 'route' => 'families.index', 'order_index' => 999, 'has_children' => false,
     ];
 
-    protected $parentMenu = 'Administration';
+    protected $parentMenu = 'Families';
 }

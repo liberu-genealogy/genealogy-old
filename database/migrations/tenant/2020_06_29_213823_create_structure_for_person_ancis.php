@@ -26,6 +26,6 @@ class CreateStructureForPersonAncis extends Migration
         'name' => 'Person Anci', 'icon' => 'book', 'route' => 'personanci.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected $parentMenu = 'Administration';
+    protected $parentMenu = 'People';
 }
 
