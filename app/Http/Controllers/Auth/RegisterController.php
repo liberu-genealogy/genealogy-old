@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Traits\ActivationTrait;
 use LaravelEnso\Multitenancy\App\Jobs\CreateDatabase;
 use LaravelEnso\Multitenancy\App\Jobs\Migrate;
+use LaravelEnso\Companies\App\Models\Company;
 use DB;
 use Str;
 
@@ -73,6 +74,16 @@ class RegisterController extends Controller
             DB::commit();
             // send verification email;
 
+
+            $company = Company::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'is_active' => 1,
+		'is_tenant' => 1,
+		'status' => 'Active'
+            ]);
+
+          $company->attachPerson($person->id);
 
 	   // Dispatch Tenancy Jobs
 
