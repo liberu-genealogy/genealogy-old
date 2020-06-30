@@ -67,7 +67,7 @@ class RegisterController extends Controller
                 'person_id' => $person->id,
                 'group_id' => $user_group->id,
                 'role_id' => $role->id,
-                'is_active' => 0,
+                'is_active' => 1,
                 'active_token' => Str::random(64),
             ]);
             $this->initiateEmailActivation($user);
@@ -83,7 +83,9 @@ class RegisterController extends Controller
 		'status' => 1
             ]);
 
-          $company->attachPerson($person->id);
+          $company->attachPerson($person->id, 'Owner');
+
+          $person->companies()->sync($company->id, ['person_id' => $person->id, 'is_main' => 1, 'is_mandatary' => 1, 'company_id' => $company->id]);
 
 	   // Dispatch Tenancy Jobs
 
