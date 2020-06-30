@@ -26,6 +26,6 @@ class CreateStructureForFamilyEvents extends Migration
         'name' => 'Family Events', 'icon' => 'book', 'route' => 'familyevents.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected $parentMenu = 'References';
+    protected $parentMenu = 'Families';
 }
 

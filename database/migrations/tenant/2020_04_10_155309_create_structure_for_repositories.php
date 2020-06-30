@@ -23,7 +23,7 @@ class CreateStructureForRepositories extends Migration
     ];
 
     protected $menu = [
-        'name' => 'Repositories', 'icon' => 'users', 'route' => 'repositories.index', 'order_index' => 999, 'has_children' => false,
+        'name' => 'Sources', 'icon' => 'users', 'route' => 'repositories.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected $parentMenu = 'References';

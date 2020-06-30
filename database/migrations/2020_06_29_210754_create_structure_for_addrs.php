@@ -26,6 +26,6 @@ class CreateStructureForAddrs extends Migration
         'name' => 'Addresses', 'icon' => 'book', 'route' => 'addrs.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected $parentMenu = 'References';
+    protected $parentMenu = 'Information';
 }
 

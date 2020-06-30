@@ -26,6 +26,6 @@ class CreateStructureForPersonLds extends Migration
         'name' => 'Person LDS', 'icon' => 'book', 'route' => 'personlds.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected $parentMenu = 'Administration';
+    protected $parentMenu = 'People';
 }
 
