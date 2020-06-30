@@ -10,6 +10,7 @@ class RoleSeeder extends Seeder
     private const Roles = [
         ['menu_id' => 1, 'name' => 'admin', 'display_name' => 'Administrator', 'description' => 'Administrator role. Full featured.'],
         ['menu_id' => 1, 'name' => 'supervisor', 'display_name' => 'Supervisor', 'description' => 'Supervisor role.'],
+        ['menu_id' => 1, 'name' => 'user', 'display_name' => 'User', 'description' => 'User role.'],
     ];
 
     public function run()
@@ -21,8 +22,11 @@ class RoleSeeder extends Seeder
 
         $admin->permissions()->sync(Permission::pluck('id'));
 
-        $supervisor = $roles->last();
+        $supervisor = $roles->skip(1)->first();
 
         $supervisor->permissions()->sync(Permission::implicit()->pluck('id'));
+        $user = $roles->last();
+
+        $user->permissions()->sync(Permission::implicit()->pluck('id'));
     }
 }
