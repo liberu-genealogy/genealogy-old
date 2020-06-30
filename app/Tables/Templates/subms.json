@@ -53,8 +53,8 @@
         },
         {
             "label": "Phone",
-            "name": "phone",
-            "data": "subms.phone",
+            "name": "phon",
+            "data": "subms.phon",
             "meta": ["searchable", "sortable"]
         },
         {

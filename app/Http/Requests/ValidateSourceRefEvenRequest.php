@@ -13,8 +13,13 @@ class ValidateSourceRefEvenRequest extends FormRequest
 
     public function rules()
     {
+        $sourcerefeven = $this->route('sourcerefeven');
         return [
-            //
+
+            'group' => 'required|max:50',
+            'gid' => 'required|max:50',
+            'even' => 'required|max:50',
+            'role' => 'required|max:50'
         ];
     }
 }

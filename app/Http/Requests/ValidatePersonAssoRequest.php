@@ -13,8 +13,12 @@ class ValidatePersonAssoRequest extends FormRequest
 
     public function rules()
     {
+        $personassociation = $this->route('personassociation');
         return [
-            //
+
+            'group' => 'required|max:50',
+            'gid' => 'required|max:50',
+            'rela' => 'required|max:50'
         ];
     }
 }

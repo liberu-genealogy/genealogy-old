@@ -13,8 +13,12 @@ class ValidatePersonAliaRequest extends FormRequest
 
     public function rules()
     {
+        $personalias = $this->route('personalias');
         return [
-            //
+
+            'group' => 'required|max:50',
+            'gid' => 'required|max:50',
+            'alia' => 'required|max:50'
         ];
     }
 }

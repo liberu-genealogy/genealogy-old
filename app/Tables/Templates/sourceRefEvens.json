@@ -6,37 +6,37 @@
     "columns": [{
         "label": "Id",
         "name": "id",
-        "data": "source_ref_evens.id",
+        "data": "source_ref_even.id",
         "meta": ["searchable", "sortable"]
     },
         {
             "label": "Group",
             "name": "group",
-            "data": "source_ref_evens.id",
+            "data": "sourceref_even.id",
             "meta": ["searchable", "sortable"]
         },
         {
             "label": "Gid",
             "name": "gid",
-            "data": "source_ref_evens.gid",
+            "data": "sourceref_even.gid",
             "meta": ["searchable", "sortable"]
         },
         {
             "label": "Event",
             "name": "even",
-            "data": "source_ref_evens.even",
+            "data": "sourceref_even.even",
             "meta": ["searchable", "sortable"]
         },
         {
             "label": "Role",
             "name": "role",
-            "data": "source_ref_evens.role",
+            "data": "sourceref_even.role",
             "meta": ["searchable", "sortable"]
         },
         {
             "label": "Created At",
             "name": "created_at",
-            "data": "source_ref_evens.created_at",
+            "data": "sourceref_even.created_at",
             "meta": ["date","searchable", "sortable"]
         }
     ]

@@ -6,37 +6,37 @@
     "columns": [{
         "label": "Id",
         "name": "id",
-        "data": "refns.id",
+        "data": "refn.id",
         "meta": ["searchable", "sortable"]
     },
         {
             "label": "Group",
             "name": "group",
-            "data": "refns.group",
+            "data": "refn.group",
             "meta": ["searchable", "sortable"]
         },
         {
             "label": "Gid",
             "name": "gid",
-            "data": "refns.gid",
+            "data": "refn.gid",
             "meta": ["searchable", "sortable"]
         },
         {
             "label": "Refn",
             "name": "refn",
-            "data": "refns.refn",
+            "data": "refn.refn",
             "meta": ["searchable", "sortable"]
         },
         {
             "label": "Type",
             "name": "type",
-            "data": "refns.type",
+            "data": "refn.type",
             "meta": ["searchable", "sortable"]
         },
         {
             "label": "Created At",
             "name": "created_at",
-            "data": "refns.created_at",
+            "data": "refn.created_at",
             "meta": ["date", "searchable", "sortable"]
         }
     ]
