@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 /**
  * overwrite core
  */
-Route::namespace('\LaravelEnso\Core\App\Http\Controllers')
+Route::namespace('\LaravelEnso\Core\Http\Controllers')
     ->middleware(['multitenant'])
     ->group(function () {
         Route::get('/meta', 'Guest')->name('meta');

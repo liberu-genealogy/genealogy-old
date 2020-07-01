@@ -4,7 +4,7 @@ namespace App\Tables\Builders;
 
 use App\FamilySlgs;
 use Illuminate\Database\Eloquent\Builder;
-use LaravelEnso\Tables\App\Contracts\Table;
+use LaravelEnso\Tables\Contracts\Table;
 
 class FamilySlgsTable implements Table
 {

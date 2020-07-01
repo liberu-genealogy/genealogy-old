@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\Tables\App\Traits\TableCache;
+use LaravelEnso\Tables\Traits\TableCache;
 
 /**
  * @property int $id
