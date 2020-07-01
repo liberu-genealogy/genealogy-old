@@ -14,7 +14,7 @@
         "laravel-enso/cli": "3.4.*",
         "laravel-enso/control-panel-api": "2.5.*",
         "laravel-enso/core": "4.8.*",
-        "laravel-enso/excel": "1.1.*",
+        "laravel-enso/excel": "2.0.*",
         "laravel-enso/pdf": "1.1.*",
         "laravel/horizon": "^4.0",
         "laravel/telescope": "^3.1",
