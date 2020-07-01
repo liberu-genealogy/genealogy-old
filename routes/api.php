@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
 
 // Route::middleware(['web'])->group(
@@ -10,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 // );
 
 /**
- * overwrite core 
+ * overwrite core
  */
 Route::namespace('\LaravelEnso\Core\App\Http\Controllers')
     ->middleware(['multitenant'])
@@ -27,9 +28,9 @@ Route::namespace('\LaravelEnso\Core\App\Http\Controllers')
                 ->as('core.')
                 ->group(function () {
                     Route::get('home', 'Spa')->name('home.index');
-            
+
                     // require 'core/preferences.php';
-                });                
+                });
                 // require 'app/administration.php';
             });
     });
@@ -757,3 +758,5 @@ Route::middleware(['web', 'auth', 'core', 'multitenant'])
             });
     });
 
+
+Broadcast::routes(['middleware' => ['auth:sanctum']]);
