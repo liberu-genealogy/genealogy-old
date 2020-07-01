@@ -12,6 +12,9 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Traits\ActivationTrait;
+use LaravelEnso\Multitenancy\App\Jobs\CreateDatabase;
+use LaravelEnso\Multitenancy\App\Jobs\Migrate;
+use LaravelEnso\Companies\App\Models\Company;
 use DB;
 use Str;
 
@@ -64,12 +67,30 @@ class RegisterController extends Controller
                 'person_id' => $person->id,
                 'group_id' => $user_group->id,
                 'role_id' => $role->id,
-                'is_active' => 0,
+                'is_active' => 1,
                 'active_token' => Str::random(64),
             ]);
             $this->initiateEmailActivation($user);
             DB::commit();
             // send verification email;
+
+
+            $company = Company::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'is_active' => 1,
+		'is_tenant' => 1,
+		'status' => 1
+            ]);
+
+//          $company->attachPerson($person->id, 'Owner');
+
+          $person->companies()->attach($company->id, ['person_id' => $person->id, 'is_main' => 1, 'is_mandatary' => 1, 'company_id' => $company->id]);
+
+	   // Dispatch Tenancy Jobs
+
+           CreateDatabase::dispatch($company);
+           Migrate::dispatch($company);
 
             return $user;
         }catch(\Exception $e){
