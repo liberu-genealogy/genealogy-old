@@ -4,7 +4,7 @@ use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForUsers extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'administration.users.initTable', 'description' => 'Init table for users', 'is_default' => false],
         ['name' => 'administration.users.tableData', 'description' => 'Get table data for users', 'is_default' => false],
         ['name' => 'administration.users.exportExcel', 'description' => 'Export excel for users', 'is_default' => false],
@@ -18,9 +18,9 @@ class CreateStructureForUsers extends Migration
         ['name' => 'administration.users.destroy', 'description' => 'Delete user', 'is_default' => false],
     ];
 
-    protected $menu = [
+    protected array $menu = [
         'name' => 'Users', 'icon' => 'user', 'route' => 'administration.users.index', 'order_index' => 100, 'has_children' => false,
     ];
 
-    protected $parentMenu = 'Administration';
+    protected ?string $parentMenu = 'Administration';
 }

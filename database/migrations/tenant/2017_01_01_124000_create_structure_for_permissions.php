@@ -4,7 +4,7 @@ use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForPermissions extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'system.permissions.index', 'description' => 'Permissions index', 'is_default' => false],
         ['name' => 'system.permissions.create', 'description' => 'Create a new permission', 'is_default' => false],
         ['name' => 'system.permissions.edit', 'description' => 'Edit existing permissions', 'is_default' => false],
@@ -16,9 +16,9 @@ class CreateStructureForPermissions extends Migration
         ['name' => 'system.permissions.initTable', 'description' => 'Init table data for permissions', 'is_default' => false],
     ];
 
-    protected $menu = [
+    protected array $menu = [
         'name' => 'Permissions', 'icon' => 'exclamation-triangle', 'route' => 'system.permissions.index', 'order_index' => 999, 'has_children' => false,
     ];
 
-    protected $parentMenu = 'System';
+    protected ?string $parentMenu = 'System';
 }

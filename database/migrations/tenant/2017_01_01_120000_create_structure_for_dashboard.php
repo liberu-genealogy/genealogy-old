@@ -4,11 +4,11 @@ use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForDashboard extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'dashboard.index', 'description' => 'Dashboard page', 'is_default' => true],
     ];
 
-    protected $menu = [
+    protected array $menu = [
         'name' => 'Dashboard', 'icon' => 'tachometer-alt', 'route' => 'dashboard.index', 'order_index' => 100, 'has_children' => false,
     ];
 }

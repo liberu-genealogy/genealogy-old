@@ -4,7 +4,7 @@ use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForMenus extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'system.menus.index', 'description' => 'Menus index', 'is_default' => false],
         ['name' => 'system.menus.tableData', 'description' => 'Get table data for menus', 'is_default' => false],
         ['name' => 'system.menus.exportExcel', 'description' => 'Export excel for menus', 'is_default' => false],
@@ -17,9 +17,9 @@ class CreateStructureForMenus extends Migration
         ['name' => 'system.menus.organize', 'description' => 'Organize menus', 'is_default' => false],
     ];
 
-    protected $menu = [
+    protected array $menu = [
         'name' => 'Menus', 'icon' => 'list', 'route' => 'system.menus.index', 'order_index' => 999, 'has_children' => false,
     ];
 
-    protected $parentMenu = 'System';
+    protected ?string $parentMenu = 'System';
 }

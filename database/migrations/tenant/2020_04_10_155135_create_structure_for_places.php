@@ -4,7 +4,7 @@ use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForPlaces extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'places.index', 'description' => 'Show index for places', 'is_default' => false],
 
         ['name' => 'places.create', 'description' => 'Create place', 'is_default' => false],
@@ -22,9 +22,9 @@ class CreateStructureForPlaces extends Migration
         ['name' => 'places.options', 'description' => 'Get place options for select', 'is_default' => false],
     ];
 
-    protected $menu = [
+    protected array $menu = [
         'name' => 'Places', 'icon' => 'users', 'route' => 'places.index', 'order_index' => 999, 'has_children' => false,
     ];
 
-    protected $parentMenu = 'References';
+    protected ?string $parentMenu = 'References';
 }

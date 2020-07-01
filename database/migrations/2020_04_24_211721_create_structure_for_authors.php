@@ -4,7 +4,7 @@ use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForAuthors extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'authors.index', 'description' => 'Show index for authors', 'is_default' => false],
 
         ['name' => 'authors.create', 'description' => 'Create author', 'is_default' => false],
@@ -22,9 +22,9 @@ class CreateStructureForAuthors extends Migration
         ['name' => 'authors.options', 'description' => 'Get author options for select', 'is_default' => false],
     ];
 
-    protected $menu = [
+    protected array $menu = [
         'name' => 'Authors', 'icon' => 'users', 'route' => 'authors.index', 'order_index' => 999, 'has_children' => false,
     ];
 
-    protected $parentMenu = 'References';
+    protected ?string $parentMenu = 'References';
 }
