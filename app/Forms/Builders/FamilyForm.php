@@ -5,7 +5,7 @@ namespace App\Forms\Builders;
 use App\Family;
 use App\Person;
 use App\Type;
-use LaravelEnso\Forms\App\Services\Form;
+use LaravelEnso\Forms\Services\Form;
 
 class FamilyForm
 {

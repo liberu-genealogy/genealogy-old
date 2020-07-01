@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 use Illuminate\Http\Request;
-use LaravelEnso\Core\App\Http\Controllers\Auth\LoginController;
+use LaravelEnso\Core\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 use App\Activation;

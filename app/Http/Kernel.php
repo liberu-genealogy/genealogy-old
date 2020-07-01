@@ -57,7 +57,7 @@ class Kernel extends HttpKernel
         // \Illuminate\Session\Middleware\AuthenticateSession::class,
         \Illuminate\Routing\Middleware\SubstituteBindings::class,
         \Illuminate\Auth\Middleware\Authorize::class,
-        \LaravelEnso\ControlPanelApi\App\Http\Middleware\RequestMonitor::class,
+        \LaravelEnso\ControlPanelApi\Http\Middleware\RequestMonitor::class,
         // \App\Http\Middleware\Multitenancy::class,
     ];
 }
