@@ -40,6 +40,8 @@ class ChartController extends Controller
 
     public function pie()
     {
+        // \DB::table('some')->get();
+
         $male = Person::where('sex', 'M')->get()->count();
         $female = Person::where('sex', 'F')->get()->count();
         $unknown = Person::whereNull('sex')->get()->count();

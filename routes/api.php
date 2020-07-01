@@ -9,6 +9,39 @@ use Illuminate\Support\Facades\Route;
 //     }
 // );
 
+/**
+ * overwrite core 
+ */
+Route::namespace('\LaravelEnso\Core\App\Http\Controllers')
+    ->middleware(['multitenant'])
+    ->group(function () {
+        Route::get('/meta', 'Guest')->name('meta');
+
+        Route::middleware(['web', 'auth'])
+            ->group(fn () => Route::get('/sentry', 'Sentry')->name('sentry'));
+
+        Route::middleware(['web', 'auth', 'core'])
+            ->group(function () {
+                // require 'app/core.php';
+                Route::prefix('core')
+                ->as('core.')
+                ->group(function () {
+                    Route::get('home', 'Spa')->name('home.index');
+            
+                    // require 'core/preferences.php';
+                });                
+                // require 'app/administration.php';
+            });
+    });
+
+Route::namespace('Auth')
+    ->middleware('web')
+    ->group(function () {
+        Route::post('login', 'LoginController@login')->name('login');
+        Route::post('logout', 'LoginController@logout')->name('logout');
+        Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+        Route::post('password/reset', 'ResetPasswordController@attemptReset')->name('password.reset');
+    });
 // example data for the dashboard
 Route::middleware(['web', 'auth', 'multitenant'])
     ->namespace('Dashboard')

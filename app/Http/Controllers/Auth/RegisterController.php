@@ -12,9 +12,12 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Traits\ActivationTrait;
-use LaravelEnso\Multitenancy\App\Jobs\CreateDatabase;
-use LaravelEnso\Multitenancy\App\Jobs\Migrate;
+// use LaravelEnso\Multitenancy\App\Jobs\CreateDatabase;
+
+// use LaravelEnso\Multitenancy\App\Jobs\Migrate;
 use LaravelEnso\Companies\App\Models\Company;
+use App\Jobs\Tenant\CreateDB;
+use App\Jobs\Tenant\Migration;
 use DB;
 use Str;
 
@@ -45,52 +48,52 @@ class RegisterController extends Controller
             DB::beginTransaction();
             // create person
             $person = new Person();
+            $person->name = $data['name'];
             $person->email = $data['email'];
             $person->save();
 
             // get user_group_id
-            $user_group = UserGroup::where('name','User')->first();
+            $user_group = UserGroup::where('name','Administrators')->first();
             if($user_group == null) {
                 // create user_group
-                $user_group = UserGroup::create(['name'=>'User', 'description'=>'This is user group']);
+                $user_group = UserGroup::create(['name'=>'Administrators', 'description'=>'Administrator users group']);
             }
 
             // get role_id
             $role = Role::where('name', 'supervisor')->first();
             if($role == null) {
-                $role = Role::create(['menu_id'=>1, 'name'=>'supervisor', 'display_name'=>'User', 'description'=>'This is user']);
+                $role = Role::create(['menu_id'=>1, 'name'=>'supervisor', 'display_name'=>'Supervisor', 'description'=>'Supervisor role.']);
             }
             $user = User::create([
-                'name' => $data['name'],
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
                 'person_id' => $person->id,
                 'group_id' => $user_group->id,
                 'role_id' => $role->id,
                 'is_active' => 1,
-                'active_token' => Str::random(64),
             ]);
-            $this->initiateEmailActivation($user);
-            DB::commit();
             // send verification email;
 
+            $this->initiateEmailActivation($user);
 
             $company = Company::create([
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'is_active' => 1,
-		'is_tenant' => 1,
-		'status' => 1
+                'is_tenant' => 1,
+                'status' => 1
             ]);
 
 //          $company->attachPerson($person->id, 'Owner');
 
-          $person->companies()->attach($company->id, ['person_id' => $person->id, 'is_main' => 1, 'is_mandatary' => 1, 'company_id' => $company->id]);
+            $person->companies()->attach($company->id, ['person_id' => $person->id, 'is_main' => 1, 'is_mandatary' => 1, 'company_id' => $company->id]);
+            DB::commit();
 
-	   // Dispatch Tenancy Jobs
+            // Dispatch Tenancy Jobs
 
-           CreateDatabase::dispatch($company);
-           Migrate::dispatch($company);
+            CreateDB::dispatch($company);
+            Migration::dispatch($company, $data['name'], $data['email'], $data['password']);
+
 
             return $user;
         }catch(\Exception $e){
