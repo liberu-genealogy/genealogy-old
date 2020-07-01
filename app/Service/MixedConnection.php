@@ -9,13 +9,13 @@ class MixedConnection
 {
     public static function set($user, $tenant)
     {
-        if (! $user->belongsToAdminGroup() || $tenant) {
+        if ( $tenant) {
             self::connection(Connections::Tenant);
         } else {
             self::connection('mysql');
         }
         // This is test for tenant db
-        self::connection(Connections::Tenant);
+        // self::connection(Connections::Tenant);
 
         $key = 'database.default';
         $value = Connections::Mixed;

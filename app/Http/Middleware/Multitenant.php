@@ -17,21 +17,33 @@ class Multitenant
      */
     public function handle($request, Closure $next)
     {
+        $db = \Session::get('db');
+        $key = 'database.connections.mysql.database';
+        config([$key => $db]);
+        \DB::purge('mysql');
+        \DB::reconnect('mysql');
+
         if (! $request->user()) {
             return $next($request);
         }
 
-        $company = $this->ownerRequestsTenant($request)
-            ? Company::find($request->get('_tenantId'))
-            : $request->user()->company();
-        if (optional($company)->isTenant()) {
-            Tenant::set($company);
-        }
+        // $company = $this->ownerRequestsTenant($request)
+        //     ? Company::find($request->get('_tenantId'))
+        //     : $request->user()->company();
+        // $company = $request->user()->company();
+        // $tanent = false;
+        // if($company) {
+        //     $tanent = true;
+        // }
+        // if (optional($company)->isTenant()) {
+        //     Tenant::set($company);
+        // }
 
-        MixedConnection::set(
-            $request->user(),
-            $request->has('_tenantId')
-        );
+        // MixedConnection::set(
+        //     $request->user(),
+        //     $tanent
+        //     // $request->has('_tenantId')
+        // );
 
         if ($request->has('_tenantId')) {
             $request->request->remove('_tenantId');
@@ -42,7 +54,8 @@ class Multitenant
 
     private function ownerRequestsTenant($request)
     {
-        return $request->user()->belongsToAdminGroup()
-            && $request->has('_tenantId');
+        return $request->has('_tenantId');
+        // return $request->user()->belongsToAdminGroup()
+        //     && $request->has('_tenantId');
     }
 }
