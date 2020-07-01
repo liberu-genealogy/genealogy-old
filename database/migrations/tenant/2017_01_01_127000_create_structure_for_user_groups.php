@@ -4,7 +4,7 @@ use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForUserGroups extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'administration.userGroups.initTable', 'description' => 'Init table for userGroups', 'is_default' => false],
         ['name' => 'administration.userGroups.tableData', 'description' => 'Get table data for userGroups', 'is_default' => false],
         ['name' => 'administration.userGroups.exportExcel', 'description' => 'Export excel for userGroups', 'is_default' => false],
@@ -17,9 +17,9 @@ class CreateStructureForUserGroups extends Migration
         ['name' => 'administration.userGroups.destroy', 'description' => 'Delete user group', 'is_default' => false],
     ];
 
-    protected $menu = [
+    protected array $menu = [
         'name' => 'User Groups', 'icon' => 'users', 'route' => 'administration.userGroups.index', 'order_index' => 500, 'has_children' => false,
     ];
 
-    protected $parentMenu = 'Administration';
+    protected ?string $parentMenu = 'Administration';
 }

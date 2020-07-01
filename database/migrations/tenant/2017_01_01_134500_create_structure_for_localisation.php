@@ -4,7 +4,7 @@ use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForLocalisation extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'system.localisation.index', 'description' => 'Localisation index', 'is_default' => false],
         ['name' => 'system.localisation.initTable', 'description' => 'Init table data for localisation', 'is_default' => false],
         ['name' => 'system.localisation.tableData', 'description' => 'Get table data for localisation', 'is_default' => false],
@@ -21,9 +21,9 @@ class CreateStructureForLocalisation extends Migration
         ['name' => 'system.localisation.destroy', 'description' => 'Delete language', 'is_default' => false],
     ];
 
-    protected $menu = [
+    protected array $menu = [
         'name' => 'Localisation', 'icon' => 'language', 'route' => 'system.localisation.index', 'order_index' => 999, 'has_children' => false,
     ];
 
-    protected $parentMenu = 'System';
+    protected ?string $parentMenu = 'System';
 }

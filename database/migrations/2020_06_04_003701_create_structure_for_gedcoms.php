@@ -4,7 +4,7 @@ use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForGedcoms extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'gedcom.index', 'description' => 'Show index for gedcoms', 'is_default' => false],
 
         ['name' => 'gedcom.create', 'description' => 'Create gedcom', 'is_default' => false],
@@ -15,9 +15,9 @@ class CreateStructureForGedcoms extends Migration
         ['name' => 'gedcom.destroy', 'description' => 'Delete gedcom', 'is_default' => false],
     ];
 
-    protected $menu = [
+    protected array $menu = [
         'name' => 'Gedcom Import', 'icon' => 'cloud-upload-alt', 'route' => 'gedcom.index', 'order_index' => 801, 'has_children' => false,
     ];
 
-    protected $parentMenu = '';
+    protected ?string $parentMenu = '';
 }

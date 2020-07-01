@@ -4,7 +4,7 @@ use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForRepositories extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'repositories.index', 'description' => 'Show index for repositories', 'is_default' => false],
 
         ['name' => 'repositories.create', 'description' => 'Create repository', 'is_default' => false],
@@ -22,9 +22,9 @@ class CreateStructureForRepositories extends Migration
         ['name' => 'repositories.options', 'description' => 'Get repository options for select', 'is_default' => false],
     ];
 
-    protected $menu = [
+    protected array $menu = [
         'name' => 'Repositories', 'icon' => 'users', 'route' => 'repositories.index', 'order_index' => 999, 'has_children' => false,
     ];
 
-    protected $parentMenu = 'Sources';
+    protected ?string $parentMenu = 'Sources';
 }

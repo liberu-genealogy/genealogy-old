@@ -4,7 +4,7 @@ use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForAddrs extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'addrs.index', 'description' => 'Show index for addrs', 'is_default' => false],
 
         ['name' => 'addrs.create', 'description' => 'Create addr', 'is_default' => false],
@@ -22,10 +22,10 @@ class CreateStructureForAddrs extends Migration
         ['name' => 'addrs.options', 'description' => 'Get addr options for select', 'is_default' => false],
     ];
 
-    protected $menu = [
+    protected array $menu = [
         'name' => 'Addresses', 'icon' => 'book', 'route' => 'addrs.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected $parentMenu = 'Information';
+    protected ?string $parentMenu = 'Information';
 }
 
