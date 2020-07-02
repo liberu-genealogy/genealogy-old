@@ -2297,16 +2297,16 @@
         },
         {
             "name": "laravel-enso/core",
-            "version": "5.0.0",
+            "version": "5.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/core.git",
-                "reference": "147333ae2dbd143630239e5ede0f26017e329502"
+                "reference": "37cd1ca13d1ab8f7d35f09b3df228e5165ff73ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/core/zipball/147333ae2dbd143630239e5ede0f26017e329502",
-                "reference": "147333ae2dbd143630239e5ede0f26017e329502",
+                "url": "https://api.github.com/repos/laravel-enso/core/zipball/37cd1ca13d1ab8f7d35f09b3df228e5165ff73ec",
+                "reference": "37cd1ca13d1ab8f7d35f09b3df228e5165ff73ec",
                 "shasum": ""
             },
             "require": {
@@ -2394,7 +2394,7 @@
                 "vue-bulma",
                 "vue-spa"
             ],
-            "time": "2020-06-30T06:49:41+00:00"
+            "time": "2020-07-01T10:29:25+00:00"
         },
         {
             "name": "laravel-enso/countries",
@@ -2519,16 +2519,16 @@
         },
         {
             "name": "laravel-enso/data-import",
-            "version": "5.0.1",
+            "version": "5.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/data-import.git",
-                "reference": "3221c37b6c313b6fe5c9d3da09ed223047b6984b"
+                "reference": "9bcb9a934984b62910dfaa13d1eb98a077e11e2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/data-import/zipball/3221c37b6c313b6fe5c9d3da09ed223047b6984b",
-                "reference": "3221c37b6c313b6fe5c9d3da09ed223047b6984b",
+                "url": "https://api.github.com/repos/laravel-enso/data-import/zipball/9bcb9a934984b62910dfaa13d1eb98a077e11e2c",
+                "reference": "9bcb9a934984b62910dfaa13d1eb98a077e11e2c",
                 "shasum": ""
             },
             "require": {
@@ -2584,7 +2584,7 @@
                 "excel-importer",
                 "laravel-enso"
             ],
-            "time": "2020-06-30T14:54:33+00:00"
+            "time": "2020-06-30T16:59:03+00:00"
         },
         {
             "name": "laravel-enso/discussions",
@@ -3126,16 +3126,16 @@
         },
         {
             "name": "laravel-enso/how-to",
-            "version": "4.0.0",
+            "version": "4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/how-to.git",
-                "reference": "3183f0c081cb4f4374ecf26b739f3da9943e4d27"
+                "reference": "5efea2a5ede1f14c90226e343ed938b715067e93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/how-to/zipball/3183f0c081cb4f4374ecf26b739f3da9943e4d27",
-                "reference": "3183f0c081cb4f4374ecf26b739f3da9943e4d27",
+                "url": "https://api.github.com/repos/laravel-enso/how-to/zipball/5efea2a5ede1f14c90226e343ed938b715067e93",
+                "reference": "5efea2a5ede1f14c90226e343ed938b715067e93",
                 "shasum": ""
             },
             "require": {
@@ -3178,7 +3178,7 @@
                 "laravel-enso",
                 "vidoes"
             ],
-            "time": "2020-06-25T11:28:28+00:00"
+            "time": "2020-07-01T10:29:25+00:00"
         },
         {
             "name": "laravel-enso/image-transformer",
@@ -5327,7 +5327,7 @@
                 "middleware",
                 "multitenancy"
             ],
-            "time": "2020-07-01T15:19:36+00:00"
+            "time": "2020-07-01T15:48:36+00:00"
         },
         {
             "name": "modularsoftware/php-gedcom",
@@ -5512,16 +5512,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.35.0",
+            "version": "2.36.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "4b9bd835261ef23d36397a46a76b496a458305e5"
+                "reference": "d0b65958d9942fd1b501fdb0800c67e8323aa08d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/4b9bd835261ef23d36397a46a76b496a458305e5",
-                "reference": "4b9bd835261ef23d36397a46a76b496a458305e5",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/d0b65958d9942fd1b501fdb0800c67e8323aa08d",
+                "reference": "d0b65958d9942fd1b501fdb0800c67e8323aa08d",
                 "shasum": ""
             },
             "require": {
@@ -5533,9 +5533,10 @@
             "require-dev": {
                 "doctrine/orm": "^2.7",
                 "friendsofphp/php-cs-fixer": "^2.14 || ^3.0",
-                "kylekatarnls/multi-tester": "^1.1",
+                "kylekatarnls/multi-tester": "^2.0",
                 "phpmd/phpmd": "^2.8",
-                "phpstan/phpstan": "^0.11",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^0.12.30",
                 "phpunit/phpunit": "^7.5 || ^8.0",
                 "squizlabs/php_codesniffer": "^3.4"
             },
@@ -5551,6 +5552,11 @@
                 "laravel": {
                     "providers": [
                         "Carbon\\Laravel\\ServiceProvider"
+                    ]
+                },
+                "phpstan": {
+                    "includes": [
+                        "extension.neon"
                     ]
                 }
             },
@@ -5591,7 +5597,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-05-24T18:27:52+00:00"
+            "time": "2020-06-25T20:20:01+00:00"
         },
         {
             "name": "nikic/php-parser",
