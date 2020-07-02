@@ -10996,6 +10996,13 @@ vue-loader@^15.7.1, vue-loader@^15.9.2:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
+vue-pull-refresh@^0.2.7:
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/vue-pull-refresh/-/vue-pull-refresh-0.2.7.tgz#ee4025fed2c2ff32390153a0ae2fcb86d5eeded6"
+  integrity sha512-SN0DxNeKrcgduybhHrUgHPHiyjHlfLN29ycslfiV/NeQ5qgDaB3COl1m30cpcqQgk0+pKcCUsygdKrj3qB0AFw==
+  dependencies:
+    vue "^2.0.1"
+
 vue-quill-editor@^3.0.6:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/vue-quill-editor/-/vue-quill-editor-3.0.6.tgz#1f85646211d68a31a80a72cb7f45bb2f119bc8fb"
@@ -11046,7 +11053,7 @@ vue-video-player@^5.0:
     videojs-flash "^2.1.0"
     videojs-hotkeys "^0.2.20"
 
-vue@^2.5.16, vue@^2.6.10, vue@^2.6.8:
+vue@^2.0.1, vue@^2.5.16, vue@^2.6.10, vue@^2.6.8:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
   integrity sha512-VfPwgcGABbGAue9+sfrD4PuwFar7gPb1yl1UK1MwXoQPAw0BKSqWfoYCT/ThFrdEVWoI51dBuyCoiNU9bZDZxQ==

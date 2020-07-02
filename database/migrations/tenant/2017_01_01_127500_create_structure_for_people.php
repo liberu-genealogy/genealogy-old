@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\App\Database\Migration;
+use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForPeople extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'administration.people.initTable', 'description' => 'Init table for people', 'is_default' => false],
         ['name' => 'administration.people.tableData', 'description' => 'Get table data for people', 'is_default' => false],
         ['name' => 'administration.people.exportExcel', 'description' => 'Export excel for people', 'is_default' => false],
@@ -17,9 +17,9 @@ class CreateStructureForPeople extends Migration
         ['name' => 'administration.people.destroy', 'description' => 'Delete person', 'is_default' => false],
     ];
 
-    protected $menu = [
+    protected array $menu = [
         'name' => 'People', 'icon' => 'user-tie', 'route' => 'administration.people.index', 'order_index' => 200, 'has_children' => false,
     ];
 
-    protected $parentMenu = 'Administration';
+    protected ?string $parentMenu = 'Administration';
 }

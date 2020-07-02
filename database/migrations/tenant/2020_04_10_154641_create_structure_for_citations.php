@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\App\Database\Migration;
+use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForCitations extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'citations.index', 'description' => 'Show index for citations', 'is_default' => false],
 
         ['name' => 'citations.create', 'description' => 'Create citation', 'is_default' => false],
@@ -22,9 +22,9 @@ class CreateStructureForCitations extends Migration
         ['name' => 'citations.options', 'description' => 'Get citation options for select', 'is_default' => false],
     ];
 
-    protected $menu = [
+    protected array $menu = [
         'name' => 'Citations', 'icon' => 'users', 'route' => 'citations.index', 'order_index' => 999, 'has_children' => false,
     ];
 
-    protected $parentMenu = 'References';
+    protected ?string $parentMenu = 'References';
 }

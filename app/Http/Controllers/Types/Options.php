@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Types;
 use App\Type;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Select\App\Traits\OptionsBuilder;
+use LaravelEnso\Select\Traits\OptionsBuilder;
 
 class Options extends Controller
 {
