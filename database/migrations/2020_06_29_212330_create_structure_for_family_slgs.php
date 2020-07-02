@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\App\Database\Migration;
+use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForFamilySlgs extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'familyslugs.index', 'description' => 'Show index for family slgs', 'is_default' => false],
 
         ['name' => 'familyslugs.create', 'description' => 'Create family slgs', 'is_default' => false],
@@ -22,10 +22,10 @@ class CreateStructureForFamilySlgs extends Migration
         ['name' => 'familyslugs.options', 'description' => 'Get family slgs options for select', 'is_default' => false],
     ];
 
-    protected $menu = [
+    protected array $menu = [
         'name' => 'Family Slugs', 'icon' => 'book', 'route' => 'familyslugs.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected $parentMenu = 'Families';
+    protected ?string $parentMenu = 'Families';
 }
 

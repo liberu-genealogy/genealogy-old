@@ -3,7 +3,7 @@
 namespace App\Forms\Builders;
 
 use App\Subm;
-use LaravelEnso\Forms\App\Services\Form;
+use LaravelEnso\Forms\Services\Form;
 
 class SubmForm
 {

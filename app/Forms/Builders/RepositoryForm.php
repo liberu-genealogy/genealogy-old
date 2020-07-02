@@ -4,7 +4,7 @@ namespace App\Forms\Builders;
 
 use App\Repository;
 use App\Type;
-use LaravelEnso\Forms\App\Services\Form;
+use LaravelEnso\Forms\Services\Form;
 
 class RepositoryForm
 {

@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\App\Database\Migration;
+use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForChans extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'chan.index', 'description' => 'Show index for chans', 'is_default' => false],
 
         ['name' => 'chan.create', 'description' => 'Create chan', 'is_default' => false],
@@ -22,10 +22,10 @@ class CreateStructureForChans extends Migration
         ['name' => 'chan.options', 'description' => 'Get chan options for select', 'is_default' => false],
     ];
 
-    protected $menu = [
+    protected array $menu = [
         'name' => 'Chan', 'icon' => 'book', 'route' => 'chan.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected $parentMenu = 'Information';
+    protected ?string $parentMenu = 'Information';
 }
 

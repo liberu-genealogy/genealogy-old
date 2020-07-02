@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\App\Database\Migration;
+use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForSourceDatas extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'sourcedata.index', 'description' => 'Show index for source datas', 'is_default' => false],
 
         ['name' => 'sourcedata.create', 'description' => 'Create source data', 'is_default' => false],
@@ -22,10 +22,10 @@ class CreateStructureForSourceDatas extends Migration
         ['name' => 'sourcedata.options', 'description' => 'Get source data options for select', 'is_default' => false],
     ];
 
-    protected $menu = [
+    protected array $menu = [
         'name' => 'Source Data', 'icon' => 'book', 'route' => 'sourcedata.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected $parentMenu = 'Sources';
+    protected ?string $parentMenu = 'Sources';
 }
 
