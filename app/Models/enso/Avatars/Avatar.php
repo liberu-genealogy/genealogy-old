@@ -10,6 +10,7 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use LaravelEnso\Helpers\Traits\CascadesMorphMap;
+use LaravelEnso\Multitenancy\Traits\SystemConnection;
 
 /**
  * @property int $id
@@ -20,7 +21,7 @@ use LaravelEnso\Helpers\Traits\CascadesMorphMap;
  */
 class Avatar extends Model implements Attachable
 {
-    use CascadesMorphMap, HasFile;
+    use CascadesMorphMap, HasFile, SystemConnection;
 
     /**
      * The table associated with the model.

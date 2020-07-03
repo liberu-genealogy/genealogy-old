@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use LaravelEnso\Menus\Exceptions\Menu as Exception;
 use LaravelEnso\Tables\Traits\TableCache;
+use LaravelEnso\Multitenancy\Traits\SystemConnection;
 
 /**
  * @property int $id
@@ -26,7 +27,7 @@ use LaravelEnso\Tables\Traits\TableCache;
  */
 class Menu extends Model
 {
-    use TableCache;
+    use TableCache, SystemConnection;
 
     /**
      * The table associated with the model.

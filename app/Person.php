@@ -18,6 +18,7 @@ use LaravelEnso\Rememberable\Traits\Rememberable;
 use LaravelEnso\Tables\Traits\TableCache;
 use LaravelEnso\TrackWho\Traits\CreatedBy;
 use LaravelEnso\TrackWho\Traits\UpdatedBy;
+use LaravelEnso\Multitenancy\Traits\SystemConnection;
 
 class Person extends Model
 {
@@ -30,7 +31,9 @@ class Person extends Model
         RoutesNotifications,
         TableCache,
         UpdatedBy,
-        SoftDeletes;
+        SoftDeletes,
+        SystemConnection;
+
 
     /**
      * The attributes that should be mutated to dates.

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Helpers\Contracts\Activatable;
 use LaravelEnso\Helpers\Traits\ActiveState;
 use LaravelEnso\Tables\Traits\TableCache;
+use LaravelEnso\Multitenancy\Traits\SystemConnection;
 
 /**
  * @property int $id
@@ -26,7 +27,7 @@ class Language extends Model implements Activatable
      */
     protected $table = 'languages';
 
-    use ActiveState, TableCache;
+    use ActiveState, TableCache, SystemConnection;
 
     public const FlagClassPrefix = 'flag-icon flag-icon-';
 
