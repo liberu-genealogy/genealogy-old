@@ -22,9 +22,8 @@ class CreateStructureForPersonEvents extends Migration
         ['name' => 'personevent.options', 'description' => 'Get person event options for select', 'is_default' => false],
     ];
 
-
     protected array $menu = [
-        'name' => 'Person Events', 'icon' => 'book', 'route' => 'personevent.index', 'order_index' => 999, 'has_children' => false
+        'name' => 'Person Events', 'icon' => 'book', 'route' => 'personevent.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected ?string $parentMenu = 'People';

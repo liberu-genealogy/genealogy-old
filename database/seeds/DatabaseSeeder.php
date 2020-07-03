@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             LanguageSeeder::class,
             CountrySeeder::class,
-            CompanySeeder::class
+            CompanySeeder::class,
         ]);
     }
 }

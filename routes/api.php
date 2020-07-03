@@ -10,7 +10,7 @@ Route::post('verify', '\App\Http\Controllers\Auth\VerificationController@verify_
 // );
 
 /**
- * overwrite core
+ * overwrite core.
  */
 Route::namespace('\App\Http\Controllers\enso\core')
     ->group(function () {
@@ -19,7 +19,7 @@ Route::namespace('\App\Http\Controllers\enso\core')
         // Route::middleware(['api', 'auth'])
         //     ->group(fn () => Route::get('/sentry', 'Sentry')->name('sentry'));
 
-        Route::middleware(['api', 'auth', 'core','multitenant'])
+        Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->group(function () {
                 Route::prefix('core')
                     ->as('core.')
@@ -82,7 +82,7 @@ Route::namespace('\App\Http\Controllers\enso\core')
 Route::namespace('Auth')
     ->middleware('api')
     ->group(function () {
-     //   Route::post('login', 'LoginController@login')->name('login');
+        //   Route::post('login', 'LoginController@login')->name('login');
         Route::post('logout', 'LoginController@logout')->name('logout');
         Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
         Route::post('password/reset', 'ResetPasswordController@attemptReset')->name('password.reset');
@@ -375,7 +375,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('addresses')
             ->as('addresses.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -391,8 +390,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{addr}', 'Show')->name('show');
-
-
             });
     });
 
@@ -402,7 +399,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('chan')
             ->as('chan.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -418,8 +414,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{chan}', 'Show')->name('show');
-
-
             });
     });
 
@@ -429,7 +423,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('familyevents')
             ->as('familyevents.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -445,8 +438,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{familyEvent}', 'Show')->name('show');
-
-
             });
     });
 
@@ -456,7 +447,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('familyslugs')
             ->as('familyslugs.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -472,8 +462,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{familySlgs}', 'Show')->name('show');
-
-
             });
     });
 
@@ -483,7 +471,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('personalias')
             ->as('personalias.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -499,8 +486,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{personAlia}', 'Show')->name('show');
-
-
             });
     });
 
@@ -510,7 +495,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('personanci')
             ->as('personanci.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -526,8 +510,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{personAnci}', 'Show')->name('show');
-
-
             });
     });
 
@@ -537,7 +519,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('personasso')
             ->as('personasso.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -553,8 +534,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{personAsso}', 'Show')->name('show');
-
-
             });
     });
 
@@ -564,7 +543,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('personevent')
             ->as('personevent.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -580,8 +558,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{personEvent}', 'Show')->name('show');
-
-
             });
     });
 
@@ -591,7 +567,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('personlds')
             ->as('personlds.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -607,8 +582,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{personLds}', 'Show')->name('show');
-
-
             });
     });
 
@@ -618,7 +591,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('refn')
             ->as('refn.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -634,8 +606,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{refn}', 'Show')->name('show');
-
-
             });
     });
 
@@ -645,7 +615,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('sourcedata')
             ->as('sourcedata.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -661,8 +630,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{sourceData}', 'Show')->name('show');
-
-
             });
     });
 
@@ -672,7 +639,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('sourcedataevent')
             ->as('sourcedataevent.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -688,8 +654,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{sourceDataEven}', 'Show')->name('show');
-
-
             });
     });
 
@@ -699,7 +663,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('sourcerefevents')
             ->as('sourcerefevents.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -715,11 +678,8 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{sourceRefEven}', 'Show')->name('show');
-
-
             });
     });
-
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
@@ -727,7 +687,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('subm')
             ->as('subm.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -743,8 +702,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{subm}', 'Show')->name('show');
-
-
             });
     });
 
@@ -754,7 +711,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('subn')
             ->as('subn.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -770,8 +726,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{subn}', 'Show')->name('show');
-
-
             });
     });
 
@@ -781,7 +735,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('personsubm')
             ->as('personsubm.')
             ->group(function () {
-
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -797,7 +750,5 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{personSubm}', 'Show')->name('show');
-
-
             });
     });
