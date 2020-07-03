@@ -11,9 +11,12 @@ use LaravelEnso\Charts\Factories\Line;
 use LaravelEnso\Charts\Factories\Pie;
 use LaravelEnso\Charts\Factories\Polar;
 use LaravelEnso\Charts\Factories\Radar;
+use LaravelEnso\Multitenancy\Traits\SystemConnection;
 
 class ChartController extends Controller
 {
+    use SystemConnection;
+
     public function line()
     {
         return (new Line())
@@ -42,14 +45,14 @@ class ChartController extends Controller
     {
         // \DB::table('some')->get();
 
-        $male = Person::where('sex', 'M')->get()->count();
-        $female = Person::where('sex', 'F')->get()->count();
-        $unknown = Person::whereNull('sex')->get()->count();
+        // $male = Person::where('sex', 'M')->get()->count();
+        // $female = Person::where('sex', 'F')->get()->count();
+        // $unknown = Person::whereNull('sex')->get()->count();
 
         return (new Pie())
             ->title('Genders')
             ->labels(['Male', 'Female', 'Unknown'])
-            ->datasets([$male, $female, $unknown])
+            ->datasets(['1000', '1000', '1000'])
             ->get();
     }
 
