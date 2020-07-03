@@ -18,18 +18,17 @@
 //     }
 // }
 
-
 namespace App\Http\Controllers\Auth;
 
+use App\Events\enso\core\Login;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
-use App\Events\enso\core\Login;
-use App\Models\User;
-use LaravelEnso\Multitenancy\Services\Tenant;
 use LaravelEnso\Multitenancy\Enums\Connections;
+use LaravelEnso\Multitenancy\Services\Tenant;
 
 class LoginController extends Controller
 {
@@ -79,7 +78,7 @@ class LoginController extends Controller
         $user = User::whereEmail($request->input('email'))->first();
         $company = $user->company();
         $tanent = false;
-        if($company) {
+        if ($company) {
             $tanent = true;
         }
 
@@ -91,10 +90,8 @@ class LoginController extends Controller
 
             // Tenant::set($company);
             $value = Connections::Tenant.$company->id;
-
-        }else{
+        } else {
             // $value = '';
-
         }
         $key = 'database.connections.mysql.database';
         config([$key => $value]);
@@ -119,6 +116,7 @@ class LoginController extends Controller
                 'email' => 'Account disabled. Please contact the administrator.',
             ]);
         }
+
         return $user;
     }
 }
