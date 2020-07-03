@@ -23,9 +23,8 @@ class CreateStructureForSourceRefEvens extends Migration
     ];
 
     protected $menu = [
-        'name' => 'Source Ref Events', 'icon' => 'book', 'route' => 'sourcerefevents.index', 'order_index' => 999, 'has_children' => false
+        'name' => 'Source Ref Events', 'icon' => 'book', 'route' => 'sourcerefevents.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected $parentMenu = 'Sources';
 }
-

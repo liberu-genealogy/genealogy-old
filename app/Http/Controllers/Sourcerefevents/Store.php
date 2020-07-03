@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Sourcerefevents;
 
+use App\Http\Requests\ValidateSourceRefEvenRequest;
 use App\SourceRefEven;
 use Illuminate\Routing\Controller;
-use App\Http\Requests\ValidateSourceRefEvenRequest;
 
 class Store extends Controller
 {

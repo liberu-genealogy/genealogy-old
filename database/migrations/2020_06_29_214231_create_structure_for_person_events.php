@@ -23,9 +23,8 @@ class CreateStructureForPersonEvents extends Migration
     ];
 
     protected $menu = [
-        'name' => 'Person Events', 'icon' => 'book', 'route' => 'personevent.index', 'order_index' => 999, 'has_children' => false
+        'name' => 'Person Events', 'icon' => 'book', 'route' => 'personevent.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected $parentMenu = 'People';
 }
-

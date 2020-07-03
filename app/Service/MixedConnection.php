@@ -9,7 +9,7 @@ class MixedConnection
 {
     public static function set($user, $tenant)
     {
-        if ( $tenant) {
+        if ($tenant) {
             self::connection(Connections::Tenant);
         } else {
             self::connection('mysql');

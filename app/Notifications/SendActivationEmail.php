@@ -48,7 +48,7 @@ class SendActivationEmail extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         $baseUrl = env('APP_URL');
-        $url = $baseUrl."/verify?token=".$this->token;
+        $url = $baseUrl.'/verify?token='.$this->token;
         $message = new MailMessage();
         $message->subject(trans('emails.activationSubject'))
             ->greeting(trans('emails.activationGreeting'))

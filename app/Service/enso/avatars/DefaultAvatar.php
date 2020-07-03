@@ -2,13 +2,13 @@
 
 namespace App\Service\enso\avatars;
 
+use App\Models\enso\Avatars\Avatar;
+use App\Models\User;
 use Illuminate\Http\File;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use App\Models\enso\Avatars\Avatar;
-use App\Models\User;
 use Laravolt\Avatar\Facade as Service;
 
 class DefaultAvatar

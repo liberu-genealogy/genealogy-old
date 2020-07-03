@@ -2,10 +2,10 @@
 
 namespace App\Contracts\enso\files;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Http\File;
 use Illuminate\Http\UploadedFile;
-use App\Models\User;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 interface Attachable

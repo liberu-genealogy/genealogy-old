@@ -2,22 +2,28 @@
 
 namespace App\Models;
 
+use App\Models\enso\core\Preference;
+use App\Models\enso\core\UserGroup;
+use App\Models\enso\Roles\Role;
+use App\Person;
+use App\Traits\enso\avatars\HasAvatar;
+use App\Traits\enso\DynamicMethods\Relations;
 use Exception;
-use LaravelEnso\Comments\App\Traits\Comments;
-use LaravelEnso\Discussions\App\Traits\Discussions;
-use LaravelEnso\Discussions\App\Traits\Replies;
 use Illuminate\Contracts\Translation\HasLocalePreference;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use LaravelEnso\ActionLogger\App\Traits\ActionLogs;
-use App\Traits\enso\avatars\HasAvatar;
+use LaravelEnso\Calendar\App\Models\Event;
+use LaravelEnso\Comments\App\Traits\Comments;
 use LaravelEnso\Core\App\Enums\UserGroups;
 use LaravelEnso\Core\App\Exceptions\UserConflict;
 use LaravelEnso\Core\App\Services\DefaultPreferences;
 use LaravelEnso\Core\App\Traits\HasPassword;
-use App\Traits\enso\DynamicMethods\Relations;
+use LaravelEnso\Discussions\App\Traits\Discussions;
+use LaravelEnso\Discussions\App\Traits\Replies;
+use LaravelEnso\Files\App\Models\File;
 use LaravelEnso\Files\App\Traits\Uploads;
 use LaravelEnso\Helpers\App\Contracts\Activatable;
 use LaravelEnso\Helpers\App\Traits\ActiveState;
@@ -29,12 +35,6 @@ use LaravelEnso\Rememberable\App\Traits\Rememberable;
 use LaravelEnso\Roles\App\Enums\Roles;
 use LaravelEnso\Tables\App\Traits\TableCache;
 use LaravelEnso\Teams\App\Models\Team;
-use LaravelEnso\Calendar\App\Models\Event;
-use LaravelEnso\Files\App\Models\File;
-use App\Person;
-use App\Models\enso\Roles\Role;
-use App\Models\enso\core\Preference;
-use App\Models\enso\core\UserGroup;
 
 class User extends Authenticatable implements Activatable, HasLocalePreference
 {
@@ -44,7 +44,7 @@ class User extends Authenticatable implements Activatable, HasLocalePreference
 
     protected $hidden = ['password', 'remember_token', 'password_updated_at'];
 
-    protected $fillable = ['person_id', 'group_id', 'role_id', 'email', 'is_active','email_verified_at','password'];
+    protected $fillable = ['person_id', 'group_id', 'role_id', 'email', 'is_active', 'email_verified_at', 'password'];
 
     protected $casts = [
         'is_active' => 'boolean', 'person_id' => 'int', 'group_id' => 'int', 'role_id' => 'int',

@@ -2,16 +2,17 @@
 
 namespace App\Models\enso\Tutorials;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Models\Permissions\Permission;
+use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Tables\App\Traits\TableCache;
+
 /**
  * @property int $id
  * @property int $permission_id
  * @property string $element
  * @property string $title
  * @property string $content
- * @property boolean $placement
+ * @property bool $placement
  * @property int $order_index
  * @property string $created_at
  * @property string $updated_at
@@ -23,7 +24,7 @@ class Tutorial extends Model
 
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'tutorials';
@@ -31,7 +32,6 @@ class Tutorial extends Model
     /**
      * @var array
      */
-
     protected $fillable = [
         'permission_id', 'element', 'title', 'content', 'placement',
         'order_index',
