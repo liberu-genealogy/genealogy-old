@@ -22,9 +22,8 @@ class CreateStructureForChans extends Migration
         ['name' => 'chan.options', 'description' => 'Get chan options for select', 'is_default' => false],
     ];
 
-
     protected array $menu = [
-        'name' => 'Chan', 'icon' => 'book', 'route' => 'chan.index', 'order_index' => 999, 'has_children' => false
+        'name' => 'Chan', 'icon' => 'book', 'route' => 'chan.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected ?string $parentMenu = 'Information';
