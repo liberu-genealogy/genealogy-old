@@ -12,6 +12,7 @@ use LaravelEnso\Rememberable\Traits\Rememberable;
 use LaravelEnso\Roles\Exceptions\RoleConflict;
 use LaravelEnso\Roles\Services\ConfigWriter;
 use LaravelEnso\Tables\Traits\TableCache;
+use LaravelEnso\Multitenancy\Traits\SystemConnection;
 
 /**
  * @property int $id
@@ -28,7 +29,7 @@ use LaravelEnso\Tables\Traits\TableCache;
  */
 class Role extends Model
 {
-    use Rememberable, TableCache;
+    use Rememberable, TableCache, SystemConnection;
 
     protected $fillable = ['menu_id', 'name', 'display_name', 'description'];
 

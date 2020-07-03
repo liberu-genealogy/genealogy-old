@@ -18,7 +18,7 @@ use LaravelEnso\Core\Services\Inspiring;
 use LaravelEnso\Core\Services\LocalState;
 use LaravelEnso\Enums\Facades\Enums;
 use LaravelEnso\Enums\Services\Enum;
-use LaravelEnso\Helpers\Classes\JsonReader;
+use LaravelEnso\Helpers\Services\JsonReader;
 use LaravelEnso\Menus\Http\Resources\Menu;
 use LaravelEnso\Menus\Services\TreeBuilder;
 use LaravelEnso\Roles\Enums\Roles;

@@ -9,6 +9,7 @@ use LaravelEnso\Core\Exceptions\UserGroupConflict;
 use LaravelEnso\Rememberable\Traits\Rememberable;
 use LaravelEnso\Roles\Traits\HasRoles;
 use LaravelEnso\Tables\Traits\TableCache;
+use LaravelEnso\Multitenancy\Traits\SystemConnection;
 
 /**
  * @property int $id
@@ -27,7 +28,7 @@ class UserGroup extends Model
      * @var string
      */
     protected $table = 'user_groups';
-    use HasRoles, Rememberable, TableCache;
+    use HasRoles, Rememberable, TableCache, SystemConnection;
 
     protected $fillable = ['name', 'description'];
 
