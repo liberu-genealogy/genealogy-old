@@ -1,115 +1,81 @@
 <?php
 
-use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
 
 // Route::middleware(['api'])->group(
 //     function() {
-        Route::post('register', '\App\Http\Controllers\Auth\RegisterController@register');
-        Route::post('verify', '\App\Http\Controllers\Auth\VerificationController@verify_user');
+Route::post('register', '\App\Http\Controllers\Auth\RegisterController@register');
+Route::post('verify', '\App\Http\Controllers\Auth\VerificationController@verify_user');
 //     }
 // );
 
 /**
-<<<<<<< HEAD
- * overwrite core.
+ * overwrite core
  */
 Route::namespace('\App\Http\Controllers\enso\core')
     ->group(function () {
         Route::get('/meta', 'Guest')->name('meta');
 
-        // Route::middleware(['web', 'auth'])
+        // Route::middleware(['api', 'auth'])
         //     ->group(fn () => Route::get('/sentry', 'Sentry')->name('sentry'));
 
-        Route::middleware(['web', 'auth', 'core', 'multitenant'])
-=======
- * overwrite core
- */
-Route::namespace('\LaravelEnso\Core\Http\Controllers')
-    ->middleware(['multitenant'])
-    ->group(function () {
-        Route::get('/meta', 'Guest')->name('meta');
-
-        Route::namespace('Auth')
-            ->middleware('api')
-            ->group(function () {
-                Route::middleware('guest')->group(function () {
-                    Route::post('login', 'LoginController@login')->name('login');
-                    Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-                    Route::post('password/reset', 'ResetPasswordController@attemptReset')->name('password.reset');
-                });
-
-                Route::middleware('auth')->group(function () {
-                    Route::post('logout', 'LoginController@logout')->name('logout');
-                });
-            });
-
-        Route::middleware(['api ', 'auth'])
-            ->group(fn () => Route::get('/sentry', 'Sentry')->name('sentry'));
-
-        Route::middleware(['api', 'auth', 'core'])
->>>>>>> parent of a7f00d69... Revert "Merge remote-tracking branch 'origin/master' into jyyblue"
+        Route::middleware(['api', 'auth', 'core','multitenant'])
             ->group(function () {
                 Route::prefix('core')
-                ->as('core.')
-                ->group(function () {
-                    Route::get('home', 'Spa')->name('home.index');
-<<<<<<< HEAD
-                    // require 'core/preferences.php';
-                    Route::namespace('Preferences')
-                    ->prefix('preferences')
-                    ->as('preferences.')
+                    ->as('core.')
                     ->group(function () {
-                        Route::patch('store/{route?}', 'Store')->name('store');
-                        Route::post('reset/{route?}', 'Reset')->name('reset');
+                        Route::get('home', 'Spa')->name('home.index');
+                        // require 'core/preferences.php';
+                        Route::namespace('Preferences')
+                            ->prefix('preferences')
+                            ->as('preferences.')
+                            ->group(function () {
+                                Route::patch('store/{route?}', 'Store')->name('store');
+                                Route::post('reset/{route?}', 'Reset')->name('reset');
+                            });
                     });
-=======
-
-                    // require 'core/preferences.php';
->>>>>>> parent of a7f00d69... Revert "Merge remote-tracking branch 'origin/master' into jyyblue"
-                });
                 // require 'app/administration.php';
                 Route::namespace('Administration')
-                ->prefix('administration')
-                ->as('administration.')
-                ->group(function () {
-                    // require 'administration/userGroups.php';
-                    Route::namespace('UserGroup')
-                    ->prefix('userGroups')
-                    ->as('userGroups.')
+                    ->prefix('administration')
+                    ->as('administration.')
                     ->group(function () {
-                        // Route::get('create', 'Create')->name('create');
-                        // Route::post('', 'Store')->name('store');
-                        Route::get('{userGroup}/edit', 'Edit')->name('edit');
-                        // Route::patch('{userGroup}', 'Update')->name('update');
-                        // Route::delete('{userGroup}', 'Destroy')->name('destroy');
+                        // require 'administration/userGroups.php';
+                        Route::namespace('UserGroup')
+                            ->prefix('userGroups')
+                            ->as('userGroups.')
+                            ->group(function () {
+                                // Route::get('create', 'Create')->name('create');
+                                // Route::post('', 'Store')->name('store');
+                                Route::get('{userGroup}/edit', 'Edit')->name('edit');
+                                // Route::patch('{userGroup}', 'Update')->name('update');
+                                // Route::delete('{userGroup}', 'Destroy')->name('destroy');
 
-                        // Route::get('initTable', 'InitTable')->name('initTable');
-                        // Route::get('tableData', 'TableData')->name('tableData');
-                        // Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+                                // Route::get('initTable', 'InitTable')->name('initTable');
+                                // Route::get('tableData', 'TableData')->name('tableData');
+                                // Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
 
-                        // Route::get('options', 'Options')->name('options');
+                                // Route::get('options', 'Options')->name('options');
+                            });
+                        // require 'administration/users.php';
+                        Route::namespace('User')
+                            ->prefix('users')
+                            ->as('users.')
+                            ->group(function () {
+                                // Route::get('create/{person}', 'Create')->name('create');
+                                // Route::post('', 'Store')->name('store');
+                                Route::get('{user}/edit', 'Edit')->name('edit');
+                                // Route::patch('{user}', 'Update')->name('update');
+                                // Route::delete('{user}', 'Destroy')->name('destroy');
+
+                                // Route::get('initTable', 'InitTable')->name('initTable');
+                                // Route::get('tableData', 'TableData')->name('tableData');
+                                // Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+
+                                // Route::get('options', 'Options')->name('options');
+
+                                // Route::get('{user}', 'Show')->name('show');
+                            });
                     });
-                    // require 'administration/users.php';
-                    Route::namespace('User')
-                    ->prefix('users')
-                    ->as('users.')
-                    ->group(function () {
-                        // Route::get('create/{person}', 'Create')->name('create');
-                        // Route::post('', 'Store')->name('store');
-                        Route::get('{user}/edit', 'Edit')->name('edit');
-                        // Route::patch('{user}', 'Update')->name('update');
-                        // Route::delete('{user}', 'Destroy')->name('destroy');
-
-                        // Route::get('initTable', 'InitTable')->name('initTable');
-                        // Route::get('tableData', 'TableData')->name('tableData');
-                        // Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
-
-                        // Route::get('options', 'Options')->name('options');
-
-                        // Route::get('{user}', 'Show')->name('show');
-                    });
-                });
             });
     });
 
@@ -409,6 +375,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('addresses')
             ->as('addresses.')
             ->group(function () {
+
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -424,6 +391,8 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{addr}', 'Show')->name('show');
+
+
             });
     });
 
@@ -433,6 +402,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('chan')
             ->as('chan.')
             ->group(function () {
+
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -448,6 +418,8 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{chan}', 'Show')->name('show');
+
+
             });
     });
 
@@ -457,6 +429,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('familyevents')
             ->as('familyevents.')
             ->group(function () {
+
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -472,6 +445,8 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{familyEvent}', 'Show')->name('show');
+
+
             });
     });
 
@@ -481,6 +456,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('familyslugs')
             ->as('familyslugs.')
             ->group(function () {
+
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -496,6 +472,8 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{familySlgs}', 'Show')->name('show');
+
+
             });
     });
 
@@ -505,6 +483,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('personalias')
             ->as('personalias.')
             ->group(function () {
+
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -520,6 +499,8 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{personAlia}', 'Show')->name('show');
+
+
             });
     });
 
@@ -529,6 +510,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('personanci')
             ->as('personanci.')
             ->group(function () {
+
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -544,6 +526,8 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{personAnci}', 'Show')->name('show');
+
+
             });
     });
 
@@ -553,6 +537,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('personasso')
             ->as('personasso.')
             ->group(function () {
+
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -568,6 +553,8 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{personAsso}', 'Show')->name('show');
+
+
             });
     });
 
@@ -577,6 +564,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('personevent')
             ->as('personevent.')
             ->group(function () {
+
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -592,6 +580,8 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{personEvent}', 'Show')->name('show');
+
+
             });
     });
 
@@ -601,6 +591,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('personlds')
             ->as('personlds.')
             ->group(function () {
+
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -616,6 +607,8 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{personLds}', 'Show')->name('show');
+
+
             });
     });
 
@@ -625,6 +618,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('refn')
             ->as('refn.')
             ->group(function () {
+
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -640,6 +634,8 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{refn}', 'Show')->name('show');
+
+
             });
     });
 
@@ -649,6 +645,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('sourcedata')
             ->as('sourcedata.')
             ->group(function () {
+
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -664,6 +661,8 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{sourceData}', 'Show')->name('show');
+
+
             });
     });
 
@@ -673,6 +672,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('sourcedataevent')
             ->as('sourcedataevent.')
             ->group(function () {
+
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -688,6 +688,8 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{sourceDataEven}', 'Show')->name('show');
+
+
             });
     });
 
@@ -697,6 +699,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('sourcerefevents')
             ->as('sourcerefevents.')
             ->group(function () {
+
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -712,20 +715,19 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{sourceRefEven}', 'Show')->name('show');
+
+
             });
     });
 
-<<<<<<< HEAD
-Route::middleware(['web', 'auth', 'core', 'multitenant'])
-=======
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
->>>>>>> parent of a7f00d69... Revert "Merge remote-tracking branch 'origin/master' into jyyblue"
     ->group(function () {
         Route::namespace('Subm')
             ->prefix('subm')
             ->as('subm.')
             ->group(function () {
+
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -741,6 +743,8 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{subm}', 'Show')->name('show');
+
+
             });
     });
 
@@ -750,6 +754,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('subn')
             ->as('subn.')
             ->group(function () {
+
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -765,6 +770,8 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{subn}', 'Show')->name('show');
+
+
             });
     });
 
@@ -774,6 +781,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('personsubm')
             ->as('personsubm.')
             ->group(function () {
+
                 Route::get('', 'Index')->name('index');
                 Route::get('create', 'Create')->name('create');
                 Route::post('', 'Store')->name('store');
@@ -789,6 +797,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', 'Options')->name('options');
                 Route::get('{personSubm}', 'Show')->name('show');
+
+
             });
     });
-Broadcast::routes(['middleware' => ['auth:sanctum']]);

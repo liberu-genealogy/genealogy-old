@@ -14,15 +14,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
-use LaravelEnso\ActionLogger\Traits\ActionLogs;
 use LaravelEnso\Calendar\Models\Event;
-use LaravelEnso\Comments\Traits\Comments;
 use LaravelEnso\Core\Enums\UserGroups;
 use LaravelEnso\Core\Exceptions\UserConflict;
 use LaravelEnso\Core\Services\DefaultPreferences;
 use LaravelEnso\Core\Traits\HasPassword;
-use LaravelEnso\Discussions\Traits\Discussions;
-use LaravelEnso\Discussions\Traits\Replies;
 use LaravelEnso\Files\Models\File;
 use LaravelEnso\Files\Traits\Uploads;
 use LaravelEnso\Helpers\Contracts\Activatable;
@@ -38,7 +34,7 @@ use LaravelEnso\Teams\Models\Team;
 
 class User extends Authenticatable implements Activatable, HasLocalePreference
 {
-    use Comments, Discussions, Replies, ActionLogs, ActiveState, AvoidsDeletionConflicts, CascadesMorphMap,
+    use ActiveState, AvoidsDeletionConflicts, CascadesMorphMap,
         HasAvatar, HasPassword, Impersonates, IsPerson, Notifiable,
         Relations, Rememberable, TableCache, Uploads;
 
