@@ -26,7 +26,7 @@
         "@enso-ui/calendar": "1.4.x",
         "@enso-ui/directives": "1.0.x",
         "@enso-ui/filters": "1.4.x",
-        "@enso-ui/forms": "1.4.x",
+        "@enso-ui/forms": "2.0.x",
         "@enso-ui/mixins": "1.1.x",
         "@enso-ui/tables": "1.4.x",
         "@enso-ui/themes": "1.1.x",
