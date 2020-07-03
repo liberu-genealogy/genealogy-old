@@ -12,7 +12,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel Enso'),
+    'name' => env('APP_NAME', 'Genealogy'),
 
     /*
     |--------------------------------------------------------------------------
@@ -66,7 +66,7 @@ return [
     |
     */
 
-    'timezone' => 'Europe/Bucharest',
+    'timezone' => 'Europe/London',
 
     /*
     |--------------------------------------------------------------------------
