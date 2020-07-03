@@ -3,7 +3,7 @@
 namespace App\Service;
 
 use Illuminate\Support\Facades\DB;
-use LaravelEnso\Multitenancy\App\Enums\Connections;
+use LaravelEnso\Multitenancy\Enums\Connections;
 
 class MixedConnection
 {

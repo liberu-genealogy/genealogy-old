@@ -5,10 +5,10 @@ namespace App\Models\enso\core;
 use App\Models\Roles\Role;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
-use LaravelEnso\Core\App\Exceptions\UserGroupConflict;
-use LaravelEnso\Rememberable\App\Traits\Rememberable;
-use LaravelEnso\Roles\App\Traits\HasRoles;
-use LaravelEnso\Tables\App\Traits\TableCache;
+use LaravelEnso\Core\Exceptions\UserGroupConflict;
+use LaravelEnso\Rememberable\Traits\Rememberable;
+use LaravelEnso\Roles\Traits\HasRoles;
+use LaravelEnso\Tables\Traits\TableCache;
 
 /**
  * @property int $id

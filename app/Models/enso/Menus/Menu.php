@@ -7,8 +7,8 @@ use App\Models\enso\Roles\Role;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use LaravelEnso\Menus\App\Exceptions\Menu as Exception;
-use LaravelEnso\Tables\App\Traits\TableCache;
+use LaravelEnso\Menus\Exceptions\Menu as Exception;
+use LaravelEnso\Tables\Traits\TableCache;
 
 /**
  * @property int $id

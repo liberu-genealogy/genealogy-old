@@ -9,9 +9,9 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use LaravelEnso\Files\App\Services\FileValidator;
-use LaravelEnso\Files\App\Services\ImageProcessor;
-use LaravelEnso\Files\App\Services\UploadedFileValidator;
+use LaravelEnso\Files\Services\FileValidator;
+use LaravelEnso\Files\Services\ImageProcessor;
+use LaravelEnso\Files\Services\UploadedFileValidator;
 use Symfony\Component\HttpFoundation\File\File as BaseFile;
 
 class Files

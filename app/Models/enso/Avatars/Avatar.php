@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use LaravelEnso\Helpers\App\Traits\CascadesMorphMap;
+use LaravelEnso\Helpers\Traits\CascadesMorphMap;
 
 /**
  * @property int $id

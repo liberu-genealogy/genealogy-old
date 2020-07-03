@@ -14,33 +14,33 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
-use LaravelEnso\ActionLogger\App\Traits\ActionLogs;
-use LaravelEnso\Calendar\App\Models\Event;
-use LaravelEnso\Comments\App\Traits\Comments;
-use LaravelEnso\Core\App\Enums\UserGroups;
-use LaravelEnso\Core\App\Exceptions\UserConflict;
-use LaravelEnso\Core\App\Services\DefaultPreferences;
-use LaravelEnso\Core\App\Traits\HasPassword;
-use LaravelEnso\Discussions\App\Traits\Discussions;
-use LaravelEnso\Discussions\App\Traits\Replies;
-use LaravelEnso\Files\App\Models\File;
-use LaravelEnso\Files\App\Traits\Uploads;
-use LaravelEnso\Helpers\App\Contracts\Activatable;
-use LaravelEnso\Helpers\App\Traits\ActiveState;
-use LaravelEnso\Helpers\App\Traits\AvoidsDeletionConflicts;
-use LaravelEnso\Helpers\App\Traits\CascadesMorphMap;
-use LaravelEnso\Impersonate\App\Traits\Impersonates;
-use LaravelEnso\People\App\Traits\IsPerson;
-use LaravelEnso\Rememberable\App\Traits\Rememberable;
-use LaravelEnso\Roles\App\Enums\Roles;
-use LaravelEnso\Tables\App\Traits\TableCache;
-use LaravelEnso\Teams\App\Models\Team;
+use LaravelEnso\ActionLogger\Traits\ActionLogs;
+use LaravelEnso\Calendar\Models\Event;
+use LaravelEnso\Comments\Traits\Comments;
+use LaravelEnso\Core\Enums\UserGroups;
+use LaravelEnso\Core\Exceptions\UserConflict;
+use LaravelEnso\Core\Services\DefaultPreferences;
+use LaravelEnso\Core\Traits\HasPassword;
+use LaravelEnso\Discussions\Traits\Discussions;
+use LaravelEnso\Discussions\Traits\Replies;
+use LaravelEnso\Files\Models\File;
+use LaravelEnso\Files\Traits\Uploads;
+use LaravelEnso\Helpers\Contracts\Activatable;
+use LaravelEnso\Helpers\Traits\ActiveState;
+use LaravelEnso\Helpers\Traits\AvoidsDeletionConflicts;
+use LaravelEnso\Helpers\Traits\CascadesMorphMap;
+use LaravelEnso\Impersonate\Traits\Impersonates;
+use LaravelEnso\People\Traits\IsPerson;
+use LaravelEnso\Rememberable\Traits\Rememberable;
+use LaravelEnso\Roles\Enums\Roles;
+use LaravelEnso\Tables\Traits\TableCache;
+use LaravelEnso\Teams\Models\Team;
 
 class User extends Authenticatable implements Activatable, HasLocalePreference
 {
     use Comments, Discussions, Replies, ActionLogs, ActiveState, AvoidsDeletionConflicts, CascadesMorphMap,
-    HasAvatar, HasPassword, Impersonates, IsPerson, Notifiable,
-    Relations, Rememberable, TableCache, Uploads;
+        HasAvatar, HasPassword, Impersonates, IsPerson, Notifiable,
+        Relations, Rememberable, TableCache, Uploads;
 
     protected $hidden = ['password', 'remember_token', 'password_updated_at'];
 

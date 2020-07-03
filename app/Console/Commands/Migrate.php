@@ -4,8 +4,8 @@ namespace App\Console\Commands;
 
 use App\Jobs\Tenant\Migration as Job;
 use Illuminate\Console\Command;
-use LaravelEnso\Companies\App\Models\Company;
-use LaravelEnso\Multitenancy\App\Commands\Tenant;
+use LaravelEnso\Companies\Models\Company;
+use LaravelEnso\Multitenancy\Commands\Tenant;
 
 class Migrate extends Tenant
 {

@@ -3,8 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
-use LaravelEnso\Tables\App\Traits\TableCache;
+<<<<<<< HEAD
+use LaravelEnso\Tables\Traits\TableCache;
 use ModularSoftware\LaravelGedcom\Observers\EventActionsObserver;
+=======
+use ModularSoftware\LaravelGedcom\Observers\EventActionsObserver;
+use LaravelEnso\Tables\Traits\TableCache;
+>>>>>>> parent of a7f00d69... Revert "Merge remote-tracking branch 'origin/master' into jyyblue"
 
 class PersonEvent extends Event
 {

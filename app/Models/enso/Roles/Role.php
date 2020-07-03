@@ -8,10 +8,10 @@ use App\Models\enso\Permissions\Permission;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
-use LaravelEnso\Rememberable\App\Traits\Rememberable;
-use LaravelEnso\Roles\App\Exceptions\RoleConflict;
-use LaravelEnso\Roles\App\Services\ConfigWriter;
-use LaravelEnso\Tables\App\Traits\TableCache;
+use LaravelEnso\Rememberable\Traits\Rememberable;
+use LaravelEnso\Roles\Exceptions\RoleConflict;
+use LaravelEnso\Roles\Services\ConfigWriter;
+use LaravelEnso\Tables\Traits\TableCache;
 
 /**
  * @property int $id

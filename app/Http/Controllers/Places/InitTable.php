@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Places;
 
 use App\Tables\Builders\PlaceTable;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\App\Traits\Init;
+use LaravelEnso\Tables\Traits\Init;
 
 class InitTable extends Controller
 {

@@ -27,8 +27,10 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
-use LaravelEnso\Multitenancy\App\Enums\Connections;
-use LaravelEnso\Multitenancy\App\Services\Tenant;
+use LaravelEnso\Core\Events\Login;
+use LaravelEnso\Core\Models\User;
+use LaravelEnso\Multitenancy\Services\Tenant;
+use LaravelEnso\Multitenancy\Enums\Connections;
 
 class LoginController extends Controller
 {
@@ -98,7 +100,14 @@ class LoginController extends Controller
 
         \DB::purge('mysql');
 
-        \DB::reconnect('mysql');
+
+        }
+            $key = 'database.connections.mysql.database';
+            config([$key => $value]);
+
+            \DB::purge('mysql');
+
+            \DB::reconnect('mysql');
 
         \Session::put('db', $value);
 
