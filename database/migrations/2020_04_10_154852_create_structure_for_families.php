@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\Database\Migration;
+use LaravelEnso\Migrator\App\Database\Migration;
 
 class CreateStructureForFamilies extends Migration
 {
-    protected array $permissions = [
+    protected $permissions = [
         ['name' => 'families.index', 'description' => 'Show index for families', 'is_default' => false],
 
         ['name' => 'families.create', 'description' => 'Create family', 'is_default' => false],
@@ -22,9 +22,9 @@ class CreateStructureForFamilies extends Migration
         ['name' => 'families.options', 'description' => 'Get family options for select', 'is_default' => false],
     ];
 
-    protected array $menu = [
+    protected $menu = [
         'name' => 'Families', 'icon' => 'users', 'route' => 'families.index', 'order_index' => 999, 'has_children' => false,
     ];
 
-    protected ?string $parentMenu = 'Families';
+    protected $parentMenu = 'Families';
 }

@@ -4,7 +4,7 @@ namespace App\Tables\Builders;
 
 use App\Family;
 use Illuminate\Database\Eloquent\Builder;
-use LaravelEnso\Tables\Contracts\Table;
+use LaravelEnso\Tables\App\Contracts\Table;
 
 class FamilyTable implements Table
 {

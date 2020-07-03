@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\Database\Migration;
+use LaravelEnso\Migrator\App\Database\Migration;
 
 class CreateStructureForFamilyEvents extends Migration
 {
-    protected array $permissions = [
+    protected $permissions = [
         ['name' => 'familyevents.index', 'description' => 'Show index for family events', 'is_default' => false],
 
         ['name' => 'familyevents.create', 'description' => 'Create family event', 'is_default' => false],
@@ -22,10 +22,10 @@ class CreateStructureForFamilyEvents extends Migration
         ['name' => 'familyevents.options', 'description' => 'Get family event options for select', 'is_default' => false],
     ];
 
-    protected array $menu = [
+    protected $menu = [
         'name' => 'Family Events', 'icon' => 'book', 'route' => 'familyevents.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected ?string $parentMenu = 'Families';
+    protected $parentMenu = 'Families';
 }
 

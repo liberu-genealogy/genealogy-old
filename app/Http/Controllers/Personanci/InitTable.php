@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Personanci;
 
 use App\Tables\Builders\PersonAnciTable;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\Traits\Init;
+use LaravelEnso\Tables\App\Traits\Init;
 
 class InitTable extends Controller
 {

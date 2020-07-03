@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\Database\Migration;
+use LaravelEnso\Migrator\App\Database\Migration;
 
 class CreateStructureForRoles extends Migration
 {
-    protected array $permissions = [
+    protected $permissions = [
         ['name' => 'system.roles.tableData', 'description' => 'Get table data for roles', 'is_default' => false],
         ['name' => 'system.roles.exportExcel', 'description' => 'Export excel for roles', 'is_default' => false],
         ['name' => 'system.roles.initTable', 'description' => 'Init table for roles menu', 'is_default' => false],
@@ -21,9 +21,9 @@ class CreateStructureForRoles extends Migration
         ['name' => 'system.roles.permissions.write', 'description' => 'Write role configuration file', 'is_default' => false],
     ];
 
-    protected array $menu = [
+    protected $menu = [
         'name' => 'Roles', 'icon' => 'universal-access', 'route' => 'system.roles.index', 'order_index' => 999, 'has_children' => false,
     ];
 
-    protected ?string $parentMenu = 'System';
+    protected $parentMenu = 'System';
 }

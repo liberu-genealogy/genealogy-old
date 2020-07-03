@@ -4,7 +4,7 @@ namespace App\Tables\Builders;
 
 use App\PersonAlia;
 use Illuminate\Database\Eloquent\Builder;
-use LaravelEnso\Tables\Contracts\Table;
+use LaravelEnso\Tables\App\Contracts\Table;
 
 class PersonAliaTable implements Table
 {

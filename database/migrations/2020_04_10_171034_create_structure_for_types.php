@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\Database\Migration;
+use LaravelEnso\Migrator\App\Database\Migration;
 
 class CreateStructureForTypes extends Migration
 {
-    protected array $permissions = [
+    protected $permissions = [
         ['name' => 'types.index', 'description' => 'Show index for types', 'is_default' => false],
 
         ['name' => 'types.create', 'description' => 'Create type', 'is_default' => false],
@@ -22,9 +22,9 @@ class CreateStructureForTypes extends Migration
         ['name' => 'types.options', 'description' => 'Get type options for select', 'is_default' => false],
     ];
 
-    protected array $menu = [
+    protected $menu = [
         'name' => 'Types', 'icon' => 'users', 'route' => 'types.index', 'order_index' => 999, 'has_children' => false,
     ];
 
-    protected ?string $parentMenu = 'References';
+    protected $parentMenu = 'References';
 }

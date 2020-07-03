@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\Database\Migration;
+use LaravelEnso\Migrator\App\Database\Migration;
 
 class CreateStructureForSourceRefEvens extends Migration
 {
-    protected array $permissions = [
+    protected $permissions = [
         ['name' => 'sourcerefevents.index', 'description' => 'Show index for source ref evens', 'is_default' => false],
 
         ['name' => 'sourcerefevents.create', 'description' => 'Create source ref even', 'is_default' => false],
@@ -22,10 +22,10 @@ class CreateStructureForSourceRefEvens extends Migration
         ['name' => 'sourcerefevents.options', 'description' => 'Get source ref even options for select', 'is_default' => false],
     ];
 
-    protected array $menu = [
+    protected $menu = [
         'name' => 'Source Ref Events', 'icon' => 'book', 'route' => 'sourcerefevents.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected ?string $parentMenu = 'Sources';
+    protected $parentMenu = 'Sources';
 }
 

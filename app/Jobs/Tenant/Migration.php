@@ -8,13 +8,13 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Artisan;
-use LaravelEnso\Companies\Models\Company;
-use LaravelEnso\Multitenancy\Enums\Connections;
-use LaravelEnso\Multitenancy\Services\Tenant;
+use LaravelEnso\Companies\App\Models\Company;
+use LaravelEnso\Multitenancy\App\Enums\Connections;
+use LaravelEnso\Multitenancy\App\Services\Tenant;
 use App\Models\User;
 use App\Person;
-use LaravelEnso\Roles\Models\Role;
-use LaravelEnso\Core\Models\UserGroup;
+use LaravelEnso\Roles\App\Models\Role;
+use LaravelEnso\Core\App\Models\UserGroup;
 use Illuminate\Support\Facades\Hash;
 use DB;
 use Str;
@@ -68,7 +68,7 @@ class Migration implements ShouldQueue
             'name' => $this->name,
             ]);
         // get user_group_id
-        $user_group = 1;
+        $user_group = 1; 
 
         // get role_id
         $role = 1;

@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\Database\Migration;
+use LaravelEnso\Migrator\App\Database\Migration;
 
 class CreateStructureForPersonEvents extends Migration
 {
-    protected array $permissions = [
+    protected $permissions = [
         ['name' => 'personevent.index', 'description' => 'Show index for person events', 'is_default' => false],
 
         ['name' => 'personevent.create', 'description' => 'Create person event', 'is_default' => false],
@@ -22,10 +22,10 @@ class CreateStructureForPersonEvents extends Migration
         ['name' => 'personevent.options', 'description' => 'Get person event options for select', 'is_default' => false],
     ];
 
-    protected array $menu = [
+    protected $menu = [
         'name' => 'Person Events', 'icon' => 'book', 'route' => 'personevent.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected ?string $parentMenu = 'People';
+    protected $parentMenu = 'People';
 }
 

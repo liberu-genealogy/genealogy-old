@@ -1,16 +1,16 @@
 <?php
 
-use LaravelEnso\Migrator\Database\Migration;
+use LaravelEnso\Migrator\App\Database\Migration;
 
 class CreateStructureForTrees extends Migration
 {
-    protected array $permissions = [
+    protected $permissions = [
         ['name' => 'trees.show', 'description' => 'Show tree', 'is_default' => false],
     ];
 
-    protected array $menu = [
+    protected $menu = [
         'name' => 'Show', 'icon' => 'eye', 'route' => 'trees.show', 'order_index' => 999, 'has_children' => false,
     ];
 
-    protected ?string $parentMenu = 'Trees';
+    protected $parentMenu = 'Trees';
 }

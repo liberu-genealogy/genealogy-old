@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Personsubm;
 
 use App\Tables\Builders\PersonSubmTable;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\Traits\Init;
+use LaravelEnso\Tables\App\Traits\Init;
 
 class InitTable extends Controller
 {

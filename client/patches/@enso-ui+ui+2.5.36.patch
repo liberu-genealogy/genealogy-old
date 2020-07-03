@@ -38,219 +38,6 @@ index cfb133c..a88a151 100644
                              target="_blank">
                              <span class="icon">
                                  <fa :icon="['fab', 'github']"/>
-diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/AppUpdate.vue b/node_modules/@enso-ui/ui/src/bulma/components/navbar/AppUpdate.vue
-index c93f97a..dc128e6 100644
---- a/node_modules/@enso-ui/ui/src/bulma/components/navbar/AppUpdate.vue
-+++ b/node_modules/@enso-ui/ui/src/bulma/components/navbar/AppUpdate.vue
-@@ -11,7 +11,7 @@
- </template>
- 
- <script>
--import { mapState, mapMutations, mapGetters } from 'vuex';
-+import { mapState, mapActions, mapGetters } from 'vuex';
- import { VTooltip } from 'v-tooltip';
- import { library } from '@fortawesome/fontawesome-svg-core';
- import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
-@@ -41,7 +41,7 @@ export default {
-     },
- 
-     methods: {
--        ...mapMutations('websockets', ['connect']),
-+        ...mapActions('websockets', ['connect']),
-         listen() {
-             window.Echo.private(this.appUpdates)
-                 .listen('.new-update', ({ title, message, tooltip }) => {
-diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/NavbarRefreshable.vue b/node_modules/@enso-ui/ui/src/bulma/components/navbar/NavbarRefreshable.vue
-new file mode 100644
-index 0000000..66e7976
---- /dev/null
-+++ b/node_modules/@enso-ui/ui/src/bulma/components/navbar/NavbarRefreshable.vue
-@@ -0,0 +1,47 @@
-+<template>
-+    <vue-pull-refresh
-+        :config="config"
-+        :on-refresh="refresh">
-+        <navbar class="animated slideInDown"/>
-+    </vue-pull-refresh>
-+</template>
-+
-+<script>
-+
-+import VuePullRefresh from "vue-pull-refresh";
-+import Navbar from "@enso-ui/ui/src/bulma/components/navbar/Navbar";
-+
-+export default {
-+    name: 'NavbarRefreshable',
-+
-+    components: {
-+        VuePullRefresh, Navbar
-+    },
-+
-+    inject: ['i18n'],
-+
-+    computed: {
-+        config() {
-+            return {
-+                startLabel: this.i18n('Pull down to refresh'),
-+                readyLabel: this.i18n('Release to refresh'),
-+                loadingLabel: this.i18n('Refreshing...'),
-+                errorLabel: this.i18n('Something wrong happened'),
-+            }
-+        }
-+    },
-+    methods: {
-+        refresh() {
-+            return new Promise(function (resolve, reject) {
-+                window.location.reload(true);
-+            });
-+        },
-+    }
-+};
-+</script>
-+
-+<style>
-+    .pull-down-header {
-+        z-index: 1000;
-+    }
-+</style>
-diff --git a/node_modules/@enso-ui/ui/src/bulma/layouts/Default.vue b/node_modules/@enso-ui/ui/src/bulma/layouts/Default.vue
-index e16415c..4943a04 100644
---- a/node_modules/@enso-ui/ui/src/bulma/layouts/Default.vue
-+++ b/node_modules/@enso-ui/ui/src/bulma/layouts/Default.vue
-@@ -5,7 +5,7 @@
-         }">
-         <div class="app-main"
-             :class="{ 'lights-off': lightsOff }">
--            <navbar class="animated slideInDown"/>
-+            <navbar-refreshable/>
-             <slide-down>
-                 <bookmarks :class="[
-                         { 'with-sidebar': sidebar.isVisible },
-@@ -41,7 +41,7 @@
- import { SlideDown, HorizontalSlide } from '@enso-ui/transitions';
- import ScrollToTop from '@enso-ui/scroll-to-top/bulma';
- import CoreDefault from '../../core/layouts/Default.vue';
--import Navbar from '../components/navbar/Navbar.vue';
-+import NavbarRefreshable from '../components/navbar/NavbarRefreshable.vue';
- import Sidebar from '../components/menu/Sidebar.vue';
- import Settings from '../components/settings/Settings.vue';
- import AppFooter from '../components/AppFooter.vue';
-@@ -56,7 +56,7 @@ export default {
-         CoreDefault,
-         SlideDown,
-         HorizontalSlide,
--        Navbar,
-+        NavbarRefreshable,
-         Sidebar,
-         Settings,
-         ScrollToTop,
-diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/Edit.vue b/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/Edit.vue
-index 6c8c3ec..7dadfde 100644
---- a/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/Edit.vue
-+++ b/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/Edit.vue
-@@ -63,33 +63,51 @@
-                             <span class="is-hidden-mobile"/>
-                         </a>
-                     </div>
-+                    <div class="level-item"
-+                        v-if="canAccess('administration.users.token')">
-+                        <a class="button is-link"
-+                           @click="generateToken"
-+                           v-if="ready">
-+                            <span class="is-hidden-mobile">
-+                                {{ i18n('Generate Token') }}
-+                            </span>
-+                            <span class="icon">
-+                                <fa icon="key"/>
-+                            </span>
-+                            <span class="is-hidden-mobile"/>
-+                        </a>
-+                    </div>
-                 </template>
-             </enso-form>
-             <delete-modal :user-id="deletableUser"
-                 @close="deletableUser = null"
-                 @destroyed="navigateToIndex"
-                 v-if="!!deletableUser"/>
-+            <url :show="token !== ''"
-+                :link="token"
-+                @close="token = ''"/>
-         </div>
-     </div>
- </template>
- 
- <script>
- import { library } from '@fortawesome/fontawesome-svg-core';
--import { faUserTie, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-+import { faUserTie, faTrashAlt, faKey } from '@fortawesome/free-solid-svg-icons';
- import { EnsoForm, FormField } from '@enso-ui/forms/bulma';
- import PasswordStrength from '../../auth/components/PasswordStrength.vue';
- import DeleteModal from './components/DeleteModal.vue';
-+import Url from '@enso-ui/files/src/bulma/pages/files/components/Url.vue'; // TODO:: refactor to a package
- 
--library.add(faUserTie, faTrashAlt);
-+library.add(faUserTie, faTrashAlt, faKey);
- 
- export default {
-     name: 'Edit',
- 
-     components: {
--        EnsoForm, FormField, PasswordStrength, DeleteModal,
-+        EnsoForm, FormField, PasswordStrength, DeleteModal, Url
-     },
- 
--    inject: ['i18n', 'canAccess'],
-+    inject: ['i18n', 'canAccess', 'route'],
- 
-     data: () => ({
-         deletableUser: null,
-@@ -97,6 +115,7 @@ export default {
-         pivotParams: { userGroups: { id: null } },
-         password: null,
-         passwordConfirmation: null,
-+        token: '',
-     }),
- 
-     methods: {
-@@ -109,6 +128,12 @@ export default {
-                 });
-             });
-         },
-+        generateToken() {
-+            axios.post(this.route('administration.users.token', this.$route.params))
-+                .then(({data}) => {
-+                    this.token = data.token;
-+                });
-+        },
-     },
- };
- </script>
-diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/Login.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/Login.vue
-index f53508c..9b4de24 100644
---- a/node_modules/@enso-ui/ui/src/bulma/pages/auth/Login.vue
-+++ b/node_modules/@enso-ui/ui/src/bulma/pages/auth/Login.vue
-@@ -6,7 +6,7 @@
- </template>
- 
- <script>
--import { mapMutations, mapState } from 'vuex';
-+import { mapMutations, mapActions, mapState } from 'vuex';
- import AuthForm from './components/AuthForm.vue';
- 
- export default {
-@@ -24,7 +24,11 @@ export default {
-         ...mapMutations(['setShowQuote', 'setCsrfToken']),
-         init(data) {
-             this.setShowQuote(this.meta.showQuote);
--            this.setCsrfToken(data.csrfToken);
-+
-+            if (data.csrfToken) {
-+                this.setCsrfToken(data.csrfToken);
-+            }
-+
-             setTimeout(() => {
-                 this.login();
-                 this.home(true);
 diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/Register.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/Register.vue
 new file mode 100644
 index 0000000..d79156f
@@ -334,68 +121,29 @@ index 0000000..df56819
 +};
 +</script>
 diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/AuthForm.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/AuthForm.vue
-index 12bf71d..776dd35 100644
+index 12bf71d..a7248c2 100644
 --- a/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/AuthForm.vue
 +++ b/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/AuthForm.vue
-@@ -7,6 +7,7 @@
-                     <img src="/images/logo.svg">
-                 </figure>
-                 {{ meta.appName }}
-+                <span v-if="isWebview"> Mobile</span>
-             </h3>
-             <form class="has-margin-bottom-medium"
-                 @submit.prevent="submit()">
-@@ -95,7 +96,7 @@
-                         {{ errors.get('password') }}
-                     </p>
+@@ -116,6 +116,11 @@
+                     </button>
                  </div>
--                <div v-if="isLogin" class="field">
-+                <div v-if="isLogin && !isWebview" class="field">
-                     <div class="control">
-                         <label class="checkbox">
-                         <input v-model="remember"
-@@ -127,7 +128,7 @@
- </template>
- 
- <script>
--import { mapState } from 'vuex';
-+import { mapState, mapGetters } from 'vuex';
- import { library } from '@fortawesome/fontawesome-svg-core';
- import {
-     faEnvelope, faCheck, faExclamationTriangle, faLock, faUser,
-@@ -189,6 +190,7 @@ export default {
- 
-     computed: {
-         ...mapState(['meta']),
-+        ...mapGetters(['isWebview']),
-         token() {
-             return this.isReset
-                 ? this.$route.params.token
-@@ -212,8 +214,14 @@ export default {
-         },
-         loginParams() {
-             const { email, password, remember } = this;
-+            const device_name = this.isWebview ? 'mobile_app' : undefined;
- 
--            return { email, password, remember };
-+            return { email, password, remember, device_name };
-+        },
-+        config() {
-+            return this.isWebview
-+                ? { headers: { 'webview': this.isWebview } }
-+                : {};
-         },
-         resetParams() {
-             const { email, password, token } = this;
-@@ -227,7 +235,7 @@ export default {
-             this.loading = true;
-             this.isSuccessful = false;
- 
--            axios.post(this.routeResolver(this.route), this.postParams)
-+            axios.post(this.routeResolver(this.route), this.postParams, this.config)
-                 .then(({ data }) => {
-                     this.loading = false;
-                     this.isSuccessful = true;
+             </form>
++            <router-link v-if="isLogin"
++                :to="'/register'"
++                class="is-pulled-left">
++                {{ i18n('Registration') }}
++            </router-link>
+             <router-link v-if="isLogin"
+                 :to="{ name: 'password.email' }"
+                 class="is-pulled-right">
+@@ -240,6 +245,7 @@ export default {
+                     switch (status) {
+                         case 422:
+                             this.errors.set(data.errors);
++                            // go to email verify page
+                             break;
+                         case 429:
+                             this.$toastr.error(data.message);
 diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/RegisterForm.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/RegisterForm.vue
 new file mode 100644
 index 0000000..cfe5fe5
@@ -669,7 +417,7 @@ index 0000000..cfe5fe5
 +</style>
 diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/VerifyForm.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/VerifyForm.vue
 new file mode 100644
-index 0000000..09d2707
+index 0000000..839abfe
 --- /dev/null
 +++ b/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/VerifyForm.vue
 @@ -0,0 +1,174 @@
@@ -904,114 +652,6 @@ index 0000000..b155389
 +    },
 +}];
 \ No newline at end of file
-diff --git a/node_modules/@enso-ui/ui/src/core/components/navbar/IO.vue b/node_modules/@enso-ui/ui/src/core/components/navbar/IO.vue
-index 43e9741..5a273b7 100644
---- a/node_modules/@enso-ui/ui/src/core/components/navbar/IO.vue
-+++ b/node_modules/@enso-ui/ui/src/core/components/navbar/IO.vue
-@@ -1,5 +1,5 @@
- <script>
--import { mapState, mapMutations, mapGetters } from 'vuex';
-+import {mapState, mapGetters, mapActions} from 'vuex';
- import Pusher from 'pusher-js'; //TODO remove?
- 
- export default {
-@@ -26,7 +26,7 @@ export default {
-     },
- 
-     methods: {
--        ...mapMutations('websockets', ['connect']),
-+        ...mapActions('websockets', ['connect']),
-         listen() {
-             window.Echo.private(this.ioChannel)
-                 .listen('.io-started', ({ operation }) => {
-diff --git a/node_modules/@enso-ui/ui/src/core/components/navbar/Notifications.vue b/node_modules/@enso-ui/ui/src/core/components/navbar/Notifications.vue
-index 1e7dcb3..a86f93e 100644
---- a/node_modules/@enso-ui/ui/src/core/components/navbar/Notifications.vue
-+++ b/node_modules/@enso-ui/ui/src/core/components/navbar/Notifications.vue
-@@ -1,6 +1,6 @@
- <script>
- import debounce from 'lodash/debounce';
--import { mapState, mapMutations, mapGetters } from 'vuex';
-+import { mapState, mapMutations, mapGetters, mapActions } from 'vuex';
- import Pusher from 'pusher-js';
- import Echo from 'laravel-echo';
- import Favico from 'favico.js';
-@@ -38,6 +38,7 @@ export default {
- 
-     computed: {
-         ...mapGetters('websockets', ['privateChannel']),
-+        ...mapGetters(['isWebview']),
-         ...mapState(['user']),
-         ...mapState('layout', ['isTouch']),
-     },
-@@ -58,7 +59,7 @@ export default {
-     },
- 
-     methods: {
--        ...mapMutations('websockets', ['connect']),
-+        ...mapActions('websockets', ['connect']),
-         toggle() {
-             this.visible = !this.visible;
- 
-@@ -131,23 +132,15 @@ export default {
-             });
-         },
-         listen() {
--            window.Echo.private(this.privateChannel).notification(({
--                level, body, title, icon,
--            }) => {
-+            window.Echo.private(this.privateChannel).notification( (notification) => {
-                 this.unread++;
-                 this.needsUpdate = true;
-                 this.offset = 0;
- 
--                if (document.hidden && this.desktopNotifications) {
--                    const notification = new Notification(title, { body });
--                    notification.onclick = () => (window.focus());
--                    window.navigator.vibrate(500);
--                    return;
--                }
-+                this.toast(notification);
- 
--                this.$toastr.when(title, toastr => toastr.title(title))
--                    .when(icon, toastr => toastr.icon(icon))
--                    .when(level, toastr => toastr[level](body), toastr => toastr.info(body));
-+                return this.webview(notification)
-+                    || this.desktop(notification);
-             });
-         },
-         computeScrollPosition(event) {
-@@ -196,6 +189,30 @@ export default {
-         now() {
-             return format(new Date());
-         },
-+        webview({body, title}) {
-+            if (this.isWebview) {
-+                ReactNativeWebView.postMessage(JSON.stringify({
-+                    title, body,
-+                    type: 'notification',
-+                }));
-+
-+                return true;
-+            }
-+        },
-+        desktop({body, title}) {
-+            if (document.hidden && this.desktopNotifications) {
-+                const notification = new Notification(title, { body });
-+                notification.onclick = () => (window.focus());
-+                window.navigator.vibrate(500);
-+
-+                return true;
-+            }
-+        },
-+        toast({level, body, title, icon}) {
-+            this.$toastr.when(title, toastr => toastr.title(title))
-+                .when(icon, toastr => toastr.icon(icon))
-+                .when(level, toastr => toastr[level](body), toastr => toastr.info(body));
-+        }
-     },
- 
-     render() {
 diff --git a/node_modules/@enso-ui/ui/src/core/layouts/Home.vue b/node_modules/@enso-ui/ui/src/core/layouts/Home.vue
 index 23bc732..b639410 100644
 --- a/node_modules/@enso-ui/ui/src/core/layouts/Home.vue
@@ -1024,43 +664,3 @@ index 23bc732..b639410 100644
          ...mapMutations('layout', ['home']),
          ...mapActions(['loadAppState']),
          ...mapActions('layout', ['setTheme']),
-diff --git a/node_modules/@enso-ui/ui/src/modules/store.js b/node_modules/@enso-ui/ui/src/modules/store.js
-index 4cfa90d..bc3d8f8 100644
---- a/node_modules/@enso-ui/ui/src/modules/store.js
-+++ b/node_modules/@enso-ui/ui/src/modules/store.js
-@@ -24,6 +24,7 @@ const coreState = {
- 
- const coreGetters = {
-     routes: state => Object.keys(state.routes),
-+    isWebview: () => typeof ReactNativeWebView !== 'undefined',
-     requests: state => state.requests.length,
-     requestIndex: state => ({ url, method }) => state.requests
-         .findIndex(request => method === request.method && url === request.url),
-diff --git a/node_modules/@enso-ui/ui/src/modules/store/auth.js b/node_modules/@enso-ui/ui/src/modules/store/auth.js
-index 02040ac..1f7e079 100644
---- a/node_modules/@enso-ui/ui/src/modules/store/auth.js
-+++ b/node_modules/@enso-ui/ui/src/modules/store/auth.js
-@@ -14,6 +14,7 @@ export const mutations = {
-     logout(state) {
-         state.isAuth = false;
-         localStorage.setItem('isAuth', false);
-+        localStorage.removeItem('authorization');
-     },
-     setIntendedRoute: (state, value) => (state.intendedRoute = value),
-     setIntendedPath: (state, value) => (state.intendedPath = value),
-diff --git a/node_modules/@enso-ui/ui/src/modules/store/websockets.js b/node_modules/@enso-ui/ui/src/modules/store/websockets.js
-index 6bf8a0d..5981703 100644
---- a/node_modules/@enso-ui/ui/src/modules/store/websockets.js
-+++ b/node_modules/@enso-ui/ui/src/modules/store/websockets.js
-@@ -20,7 +20,10 @@ export const mutations = {
-         state.channels = config.channels;
-         state.pusher = config.pusher;
-     },
--    connect: (state) => {
-+};
-+
-+export const actions = {
-+    connect: ({state}) => {
-         if (!window.Echo) {
-             window.Echo = new Echo({
-                 broadcaster: 'pusher',

@@ -4,10 +4,31 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Collection;
+use LaravelEnso\Addresses\App\Traits\Addressable;
+use LaravelEnso\Companies\App\Models\Company;
+use App\Models\User;
+use LaravelEnso\DynamicMethods\App\Traits\Relations;
+use LaravelEnso\Helpers\App\Traits\AvoidsDeletionConflicts;
+use LaravelEnso\Helpers\App\Traits\CascadesMorphMap;
+use LaravelEnso\People\App\Enums\Genders;
+use LaravelEnso\People\App\Enums\Titles;
+use LaravelEnso\Rememberable\App\Traits\Rememberable;
+use LaravelEnso\Tables\App\Traits\TableCache;
+use LaravelEnso\TrackWho\App\Traits\CreatedBy;
+use LaravelEnso\TrackWho\App\Traits\UpdatedBy;
 
-class Person extends \LaravelEnso\People\Models\Person
+
+class Person extends \LaravelEnso\People\App\Models\Person
 {
-    use SoftDeletes;
+    use SoftDeletes, CascadesMorphMap,
+        Addressable,
+        AvoidsDeletionConflicts,
+        CreatedBy,
+        Relations,
+        Rememberable,
+        TableCache,
+        UpdatedBy;
 
     /**
      * The attributes that should be mutated to dates.
@@ -123,5 +144,57 @@ class Person extends \LaravelEnso\People\Models\Person
     public function appellative()
     {
         return $this->givn;
+    }
+
+    protected $touches = ['user'];
+
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
+
+    public function companies()
+    {
+        return $this->belongsToMany(Company::class)
+            ->withPivot(['position', 'is_main']);
+    }
+
+    public function hasUser()
+    {
+        return $this->user()->exists();
+    }
+
+    public function company()
+    {
+        return $this->companies()->wherePivot('is_main', true)->first();
+    }
+
+    public function gender()
+    {
+        if (! $this->title) {
+            return;
+        }
+
+        return $this->title === Titles::Mr
+            ? Genders::Male
+            : Genders::Female;
+    }
+
+    public function position(Company $company)
+    {
+        return $this->companies()
+            ->wherePivot('company_id', $company->id)
+            ->first()->pivot->position;
+    }
+
+    public function syncCompanies($companyIds, $mainCompanyId)
+    {
+        $pivotIds = (new Collection($companyIds))
+            ->reduce(fn ($pivot, $value) => $pivot->put($value, [
+                'is_main' => $value === $mainCompanyId,
+                'is_mandatary' => false,
+            ]), new Collection());
+
+        $this->companies()->sync($pivotIds->toArray());
     }
 }

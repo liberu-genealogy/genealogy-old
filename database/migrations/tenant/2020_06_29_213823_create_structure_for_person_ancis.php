@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\Database\Migration;
+use LaravelEnso\Migrator\App\Database\Migration;
 
 class CreateStructureForPersonAncis extends Migration
 {
-    protected array $permissions = [
+    protected $permissions = [
         ['name' => 'personanci.index', 'description' => 'Show index for person ancis', 'is_default' => false],
 
         ['name' => 'personanci.create', 'description' => 'Create person anci', 'is_default' => false],
@@ -22,10 +22,10 @@ class CreateStructureForPersonAncis extends Migration
         ['name' => 'personanci.options', 'description' => 'Get person anci options for select', 'is_default' => false],
     ];
 
-    protected array $menu = [
+    protected $menu = [
         'name' => 'Person Anci', 'icon' => 'book', 'route' => 'personanci.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected ?string $parentMenu = 'People';
+    protected $parentMenu = 'People';
 }
 
