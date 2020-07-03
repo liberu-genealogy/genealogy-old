@@ -19,6 +19,9 @@ class ImportGedcom implements ShouldQueue
     protected $slug;
     protected $user_id;
 
+    public $tries = 1;
+    public $timeout = 0;
+
     /**
      * Create a new job instance.
      *
