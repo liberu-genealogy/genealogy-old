@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\Database\Migration;
+use LaravelEnso\Migrator\App\Database\Migration;
 
 class CreateStructureForPersonAssos extends Migration
 {
-    protected array $permissions = [
+    protected $permissions = [
         ['name' => 'personasso.index', 'description' => 'Show index for person assos', 'is_default' => false],
 
         ['name' => 'personasso.create', 'description' => 'Create person asso', 'is_default' => false],
@@ -22,10 +22,10 @@ class CreateStructureForPersonAssos extends Migration
         ['name' => 'personasso.options', 'description' => 'Get person asso options for select', 'is_default' => false],
     ];
 
-    protected array $menu = [
+    protected $menu = [
         'name' => 'Person Association', 'icon' => 'book', 'route' => 'personasso.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected ?string $parentMenu = 'People';
+    protected $parentMenu = 'People';
 }
 

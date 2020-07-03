@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Chan;
 
 use App\Tables\Builders\ChanTable;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\Traits\Excel;
+use LaravelEnso\Tables\App\Traits\Excel;
 
 class ExportExcel extends Controller
 {

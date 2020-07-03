@@ -3,8 +3,8 @@
 namespace App\Console\Commands;
 
 use App\Jobs\Tenant\CreateDB as Job;
-use LaravelEnso\Companies\Models\Company;
-use LaravelEnso\Multitenancy\Commands\Tenant;
+use LaravelEnso\Companies\App\Models\Company;
+use LaravelEnso\Multitenancy\App\Commands\Tenant;
 
 class CreateDatabase extends Tenant
 {

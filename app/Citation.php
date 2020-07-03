@@ -4,7 +4,7 @@ namespace App;
 
 use App\Source;
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\Tables\Traits\TableCache;
+use LaravelEnso\Tables\App\Traits\TableCache;
 
 class Citation extends Model
 {

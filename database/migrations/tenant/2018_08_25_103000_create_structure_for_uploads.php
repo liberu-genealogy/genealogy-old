@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\Database\Migration;
+use LaravelEnso\Migrator\App\Database\Migration;
 
 class CreateStructureForUploads extends Migration
 {
-    protected array $permissions = [
+    protected $permissions = [
         ['name' => 'core.uploads.store', 'description' => 'Upload file', 'is_default' => true],
         ['name' => 'core.uploads.destroy', 'description' => 'Delete upload', 'is_default' => true],
     ];

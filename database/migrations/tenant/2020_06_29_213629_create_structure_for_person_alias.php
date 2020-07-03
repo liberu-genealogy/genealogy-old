@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\Database\Migration;
+use LaravelEnso\Migrator\App\Database\Migration;
 
 class CreateStructureForPersonAlias extends Migration
 {
-    protected array $permissions = [
+    protected $permissions = [
         ['name' => 'personalias.index', 'description' => 'Show index for person alias', 'is_default' => false],
 
         ['name' => 'personalias.create', 'description' => 'Create person alia', 'is_default' => false],
@@ -22,10 +22,10 @@ class CreateStructureForPersonAlias extends Migration
         ['name' => 'personalias.options', 'description' => 'Get person alia options for select', 'is_default' => false],
     ];
 
-    protected array $menu = [
+    protected $menu = [
         'name' => 'Person Aliases', 'icon' => 'book', 'route' => 'personalias.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected ?string $parentMenu = 'People';
+    protected $parentMenu = 'People';
 }
 

@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\Database\Migration;
+use LaravelEnso\Migrator\App\Database\Migration;
 
 class CreateStructureForSourceDataEvens extends Migration
 {
-    protected array $permissions = [
+    protected $permissions = [
         ['name' => 'sourcedataevent.index', 'description' => 'Show index for source data evens', 'is_default' => false],
 
         ['name' => 'sourcedataevent.create', 'description' => 'Create source data even', 'is_default' => false],
@@ -22,10 +22,10 @@ class CreateStructureForSourceDataEvens extends Migration
         ['name' => 'sourcedataevent.options', 'description' => 'Get source data even options for select', 'is_default' => false],
     ];
 
-    protected array $menu = [
+    protected $menu = [
         'name' => 'Source Data Events', 'icon' => 'book', 'route' => 'sourcedataevent.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected ?string $parentMenu = 'Sources';
+    protected $parentMenu = 'Sources';
 }
 

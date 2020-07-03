@@ -7,7 +7,7 @@ use App\Publication;
 use App\Repository;
 use App\Source;
 use App\Type;
-use LaravelEnso\Forms\Services\Form;
+use LaravelEnso\Forms\App\Services\Form;
 
 class SourceForm
 {

@@ -3,7 +3,7 @@
 namespace App\Forms\Builders;
 
 use App\Addr;
-use LaravelEnso\Forms\Services\Form;
+use LaravelEnso\Forms\App\Services\Form;
 
 class AddrForm
 {

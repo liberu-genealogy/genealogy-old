@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\Database\Migration;
+use LaravelEnso\Migrator\App\Database\Migration;
 
 class CreateStructureForPeopleParent extends Migration
 {
-    protected array $menu = [
+    protected $menu = [
         'name' => 'People', 'icon' => 'book', 'route' => null, 'order_index' => 794, 'has_children' => true,
     ];
 }

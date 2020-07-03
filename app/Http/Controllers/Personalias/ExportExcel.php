@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Personalias;
 
 use App\Tables\Builders\PersonAliaTable;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\Traits\Excel;
+use LaravelEnso\Tables\App\Traits\Excel;
 
 class ExportExcel extends Controller
 {

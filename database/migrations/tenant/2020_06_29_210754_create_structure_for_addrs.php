@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\Database\Migration;
+use LaravelEnso\Migrator\App\Database\Migration;
 
 class CreateStructureForAddrs extends Migration
 {
-    protected array $permissions = [
+    protected $permissions = [
         ['name' => 'addrs.index', 'description' => 'Show index for addrs', 'is_default' => false],
 
         ['name' => 'addrs.create', 'description' => 'Create addr', 'is_default' => false],
@@ -22,10 +22,10 @@ class CreateStructureForAddrs extends Migration
         ['name' => 'addrs.options', 'description' => 'Get addr options for select', 'is_default' => false],
     ];
 
-    protected array $menu = [
+    protected $menu = [
         'name' => 'Addresses', 'icon' => 'book', 'route' => 'addrs.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected ?string $parentMenu = 'Information';
+    protected $parentMenu = 'Information';
 }
 
