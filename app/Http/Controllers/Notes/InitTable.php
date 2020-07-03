@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Notes;
 
 use App\Tables\Builders\NoteTable;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\Traits\Init;
+use LaravelEnso\Tables\App\Traits\Init;
 
 class InitTable extends Controller
 {

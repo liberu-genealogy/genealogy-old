@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\Database\Migration;
+use LaravelEnso\Migrator\App\Database\Migration;
 
 class CreateStructureForLocalisation extends Migration
 {
-    protected array $permissions = [
+    protected $permissions = [
         ['name' => 'system.localisation.index', 'description' => 'Localisation index', 'is_default' => false],
         ['name' => 'system.localisation.initTable', 'description' => 'Init table data for localisation', 'is_default' => false],
         ['name' => 'system.localisation.tableData', 'description' => 'Get table data for localisation', 'is_default' => false],
@@ -21,9 +21,9 @@ class CreateStructureForLocalisation extends Migration
         ['name' => 'system.localisation.destroy', 'description' => 'Delete language', 'is_default' => false],
     ];
 
-    protected array $menu = [
+    protected $menu = [
         'name' => 'Localisation', 'icon' => 'language', 'route' => 'system.localisation.index', 'order_index' => 999, 'has_children' => false,
     ];
 
-    protected ?string $parentMenu = 'System';
+    protected $parentMenu = 'System';
 }

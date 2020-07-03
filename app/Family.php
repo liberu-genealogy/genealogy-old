@@ -3,9 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\People\Models\Person;
+use LaravelEnso\People\App\Models\Person;
 // use App\Person;
-use LaravelEnso\Tables\Traits\TableCache;
+use LaravelEnso\Tables\App\Traits\TableCache;
 
 class Family extends Model
 {

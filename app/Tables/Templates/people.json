@@ -25,7 +25,7 @@
                 "searchable",
                 "sortable"
             ],
-            "enum": "LaravelEnso\\People\\\Enums\\Titles"
+            "enum": "LaravelEnso\\People\\App\\Enums\\Titles"
         },
         {
             "label": "Given",

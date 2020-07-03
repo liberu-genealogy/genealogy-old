@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\Database\Migration;
+use LaravelEnso\Migrator\App\Database\Migration;
 
 class CreateStructureForRefns extends Migration
 {
-    protected array $permissions = [
+    protected $permissions = [
         ['name' => 'refn.index', 'description' => 'Show index for refns', 'is_default' => false],
 
         ['name' => 'refn.create', 'description' => 'Create refn', 'is_default' => false],
@@ -22,10 +22,10 @@ class CreateStructureForRefns extends Migration
         ['name' => 'refn.options', 'description' => 'Get refn options for select', 'is_default' => false],
     ];
 
-    protected array $menu = [
+    protected $menu = [
         'name' => 'Refn', 'icon' => 'book', 'route' => 'refn.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected ?string $parentMenu = 'Information';
+    protected $parentMenu = 'Information';
 }
 

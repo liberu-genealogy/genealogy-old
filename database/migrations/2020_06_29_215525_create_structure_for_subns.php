@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\Database\Migration;
+use LaravelEnso\Migrator\App\Database\Migration;
 
 class CreateStructureForSubns extends Migration
 {
-    protected array $permissions = [
+    protected $permissions = [
         ['name' => 'subn.index', 'description' => 'Show index for subns', 'is_default' => false],
 
         ['name' => 'subn.create', 'description' => 'Create subn', 'is_default' => false],
@@ -22,10 +22,10 @@ class CreateStructureForSubns extends Migration
         ['name' => 'subn.options', 'description' => 'Get subn options for select', 'is_default' => false],
     ];
 
-    protected array $menu = [
+    protected $menu = [
         'name' => 'Subn', 'icon' => 'book', 'route' => 'subn.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected ?string $parentMenu = 'Information';
+    protected $parentMenu = 'Information';
 }
 

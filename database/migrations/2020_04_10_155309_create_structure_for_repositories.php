@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\Database\Migration;
+use LaravelEnso\Migrator\App\Database\Migration;
 
 class CreateStructureForRepositories extends Migration
 {
-    protected array $permissions = [
+    protected $permissions = [
         ['name' => 'repositories.index', 'description' => 'Show index for repositories', 'is_default' => false],
 
         ['name' => 'repositories.create', 'description' => 'Create repository', 'is_default' => false],
@@ -22,9 +22,9 @@ class CreateStructureForRepositories extends Migration
         ['name' => 'repositories.options', 'description' => 'Get repository options for select', 'is_default' => false],
     ];
 
-    protected array $menu = [
+    protected $menu = [
         'name' => 'Repositories', 'icon' => 'users', 'route' => 'repositories.index', 'order_index' => 999, 'has_children' => false,
     ];
 
-    protected ?string $parentMenu = 'Sources';
+    protected $parentMenu = 'Sources';
 }

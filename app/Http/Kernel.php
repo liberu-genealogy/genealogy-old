@@ -7,7 +7,6 @@ use Illuminate\Foundation\Http\Kernel as HttpKernel;
 class Kernel extends HttpKernel
 {
     protected $middleware = [
-        \LaravelEnso\Core\Http\Middleware\AuthorizationCookie::class,
         \App\Http\Middleware\TrustProxies::class,
         \Fruitcake\Cors\HandleCors::class,
         \App\Http\Middleware\CheckForMaintenanceMode::class,
@@ -25,11 +24,10 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            \LaravelEnso\ControlPanelApi\Http\Middleware\RequestMonitor::class,
+            \LaravelEnso\ControlPanelApi\App\Http\Middleware\RequestMonitor::class,
         ],
 
         'api' => [
-            \LaravelEnso\Core\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             'throttle:60,1',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
@@ -57,7 +55,7 @@ class Kernel extends HttpKernel
         // \Illuminate\Session\Middleware\AuthenticateSession::class,
         \Illuminate\Routing\Middleware\SubstituteBindings::class,
         \Illuminate\Auth\Middleware\Authorize::class,
-        \LaravelEnso\ControlPanelApi\Http\Middleware\RequestMonitor::class,
+        \LaravelEnso\ControlPanelApi\App\Http\Middleware\RequestMonitor::class,
         // \App\Http\Middleware\Multitenancy::class,
     ];
 }

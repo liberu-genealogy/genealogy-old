@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Sourcerefevents;
 use App\SourceRefEven;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Select\Traits\OptionsBuilder;
+use LaravelEnso\Select\App\Traits\OptionsBuilder;
 
 class Options extends Controller
 {

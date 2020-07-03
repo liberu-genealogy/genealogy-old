@@ -26,10 +26,10 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
-use LaravelEnso\Core\Events\Login;
-use LaravelEnso\Core\Models\User;
-use LaravelEnso\Multitenancy\Services\Tenant;
-use LaravelEnso\Multitenancy\Enums\Connections;
+use App\Events\enso\core\Login;
+use App\Models\User;
+use LaravelEnso\Multitenancy\App\Services\Tenant;
+use LaravelEnso\Multitenancy\App\Enums\Connections;
 
 class LoginController extends Controller
 {
@@ -83,24 +83,24 @@ class LoginController extends Controller
             $tanent = true;
         }
 
-        if ($company->isTenant()) {
+        $value = env('DB_DATABASE');
+        if (optional($company)->isTenant()) {
             // $key = 'database.default';
             // $value = Connections::Tenant;
             // config([$key => $value]);
-
 
             // Tenant::set($company);
             $value = Connections::Tenant.$company->id;
 
         }else{
-            $value = '';
+            // $value = '';
 
         }
             $key = 'database.connections.mysql.database';
             config([$key => $value]);
-
+    
             \DB::purge('mysql');
-
+    
             \DB::reconnect('mysql');
 
             \Session::put('db', $value);

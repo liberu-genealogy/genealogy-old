@@ -5,11 +5,11 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
-use LaravelEnso\Helpers\Services\JsonReader;
+use LaravelEnso\Helpers\App\Classes\JsonReader;
 
 class LocalitySeeder extends Seeder
 {
-    const Localities = __DIR__.'/../../vendor/laravel-enso/addresses/database/localities';
+    const Localities = __DIR__.'/../../vendor/laravel-enso/addresses/src/database/localities';
 
     public function run()
     {

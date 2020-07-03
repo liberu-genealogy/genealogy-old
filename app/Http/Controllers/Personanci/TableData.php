@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Personanci;
 
 use App\Tables\Builders\PersonAnciTable;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\Traits\Data;
+use LaravelEnso\Tables\App\Traits\Data;
 
 class TableData extends Controller
 {

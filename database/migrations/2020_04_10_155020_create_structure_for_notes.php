@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\Database\Migration;
+use LaravelEnso\Migrator\App\Database\Migration;
 
 class CreateStructureForNotes extends Migration
 {
-    protected array $permissions = [
+    protected $permissions = [
         ['name' => 'notes.index', 'description' => 'Show index for notes', 'is_default' => false],
 
         ['name' => 'notes.create', 'description' => 'Create note', 'is_default' => false],
@@ -22,9 +22,9 @@ class CreateStructureForNotes extends Migration
         ['name' => 'notes.options', 'description' => 'Get note options for select', 'is_default' => false],
     ];
 
-    protected array $menu = [
+    protected $menu = [
         'name' => 'Notes', 'icon' => 'users', 'route' => 'notes.index', 'order_index' => 999, 'has_children' => false,
     ];
 
-    protected ?string $parentMenu = 'References';
+    protected $parentMenu = 'References';
 }

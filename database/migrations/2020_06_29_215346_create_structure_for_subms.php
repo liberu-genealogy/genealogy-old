@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\Database\Migration;
+use LaravelEnso\Migrator\App\Database\Migration;
 
 class CreateStructureForSubms extends Migration
 {
-    protected array $permissions = [
+    protected $permissions = [
         ['name' => 'subm.index', 'description' => 'Show index for subms', 'is_default' => false],
 
         ['name' => 'subm.create', 'description' => 'Create subm', 'is_default' => false],
@@ -22,10 +22,10 @@ class CreateStructureForSubms extends Migration
         ['name' => 'subm.options', 'description' => 'Get subm options for select', 'is_default' => false],
     ];
 
-    protected array $menu = [
+    protected $menu = [
         'name' => 'Subm', 'icon' => 'book', 'route' => 'subm.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected ?string $parentMenu = 'Information';
+    protected $parentMenu = 'Information';
 }
 
