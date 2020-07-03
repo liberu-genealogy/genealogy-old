@@ -23,7 +23,7 @@ class CreateStructureForPersonAncis extends Migration
     ];
 
     protected array $menu = [
-        'name' => 'Person Anci', 'icon' => 'book', 'route' => 'personanci.index', 'order_index' => 999, 'has_children' => false
+        'name' => 'Person Anci', 'icon' => 'book', 'route' => 'personanci.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected ?string $parentMenu = 'People';

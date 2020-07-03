@@ -22,9 +22,8 @@ class CreateStructureForPersonLds extends Migration
         ['name' => 'personlds.options', 'description' => 'Get person lds options for select', 'is_default' => false],
     ];
 
-
     protected array $menu = [
-        'name' => 'Person LDS', 'icon' => 'book', 'route' => 'personlds.index', 'order_index' => 999, 'has_children' => false
+        'name' => 'Person LDS', 'icon' => 'book', 'route' => 'personlds.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected ?string $parentMenu = 'People';
