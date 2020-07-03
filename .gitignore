@@ -31,3 +31,4 @@ Homestead.yaml
 *.njsproj
 *.sln
 *.sw*
+*.lock
