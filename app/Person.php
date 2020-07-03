@@ -5,6 +5,7 @@ namespace App;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Notifications\RoutesNotifications;
 use Illuminate\Support\Collection;
 use LaravelEnso\Addresses\Traits\Addressable;
 use LaravelEnso\Companies\Models\Company;
@@ -18,16 +19,19 @@ use LaravelEnso\Tables\Traits\TableCache;
 use LaravelEnso\TrackWho\Traits\CreatedBy;
 use LaravelEnso\TrackWho\Traits\UpdatedBy;
 
-class Person extends \LaravelEnso\People\Models\Person
+class Person extends Model
 {
-    use SoftDeletes, CascadesMorphMap,
-        Addressable,
+    use Addressable,
         AvoidsDeletionConflicts,
+        CascadesMorphMap,
         CreatedBy,
         Relations,
         Rememberable,
+        RoutesNotifications,
         TableCache,
-        UpdatedBy;
+        UpdatedBy,
+        SoftDeletes;
+
 
     /**
      * The attributes that should be mutated to dates.
