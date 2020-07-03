@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\App\Database\Migration;
+use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForSubns extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'subn.index', 'description' => 'Show index for subns', 'is_default' => false],
 
         ['name' => 'subn.create', 'description' => 'Create subn', 'is_default' => false],
@@ -22,9 +22,14 @@ class CreateStructureForSubns extends Migration
         ['name' => 'subn.options', 'description' => 'Get subn options for select', 'is_default' => false],
     ];
 
+<<<<<<< HEAD
     protected $menu = [
         'name' => 'Subn', 'icon' => 'book', 'route' => 'subn.index', 'order_index' => 999, 'has_children' => false,
+=======
+    protected array $menu = [
+        'name' => 'Subn', 'icon' => 'book', 'route' => 'subn.index', 'order_index' => 999, 'has_children' => false
+>>>>>>> parent of a7f00d69... Revert "Merge remote-tracking branch 'origin/master' into jyyblue"
     ];
 
-    protected $parentMenu = 'Information';
+    protected ?string $parentMenu = 'Information';
 }

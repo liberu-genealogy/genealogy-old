@@ -9,7 +9,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use LaravelEnso\Core\App\Http\Controllers\Auth\LoginController;
+use LaravelEnso\Core\Http\Controllers\Auth\LoginController;
 use Symfony\Component\HttpFoundation\Response as Response;
 
 class VerificationController extends Controller

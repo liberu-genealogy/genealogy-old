@@ -4,9 +4,9 @@ namespace App\Tables\Builders;
 
 use App\Person;
 use Illuminate\Database\Eloquent\Builder;
-use LaravelEnso\Tables\App\Contracts\Table;
+use LaravelEnso\Tables\Contracts\Table;
 
-class PersonTable extends \LaravelEnso\People\App\Tables\Builders\PersonTable
+class PersonTable extends \LaravelEnso\People\Tables\Builders\PersonTable
 {
     protected const TemplatePath = __DIR__.'/../Templates/people.json';
 

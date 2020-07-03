@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Citations;
 
 use App\Tables\Builders\CitationTable;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\App\Traits\Init;
+use LaravelEnso\Tables\Traits\Init;
 
 class InitTable extends Controller
 {

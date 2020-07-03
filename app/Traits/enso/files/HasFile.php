@@ -10,7 +10,7 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
-use LaravelEnso\Files\App\Models\File;
+use LaravelEnso\Files\Models\File;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 trait HasFile

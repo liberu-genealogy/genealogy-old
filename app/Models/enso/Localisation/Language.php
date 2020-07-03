@@ -3,9 +3,9 @@
 namespace App\Models\enso\Localisation;
 
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\Helpers\App\Contracts\Activatable;
-use LaravelEnso\Helpers\App\Traits\ActiveState;
-use LaravelEnso\Tables\App\Traits\TableCache;
+use LaravelEnso\Helpers\Contracts\Activatable;
+use LaravelEnso\Helpers\Traits\ActiveState;
+use LaravelEnso\Tables\Traits\TableCache;
 
 /**
  * @property int $id

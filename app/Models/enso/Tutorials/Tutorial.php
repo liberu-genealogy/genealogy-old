@@ -4,7 +4,7 @@ namespace App\Models\enso\Tutorials;
 
 use App\Models\Permissions\Permission;
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\Tables\App\Traits\TableCache;
+use LaravelEnso\Tables\Traits\TableCache;
 
 /**
  * @property int $id

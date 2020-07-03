@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\App\Database\Migration;
+use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForPersonSubms extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'personsubm.index', 'description' => 'Show index for person subms', 'is_default' => false],
 
         ['name' => 'personsubm.create', 'description' => 'Create person subm', 'is_default' => false],
@@ -22,9 +22,10 @@ class CreateStructureForPersonSubms extends Migration
         ['name' => 'personsubm.options', 'description' => 'Get person subm options for select', 'is_default' => false],
     ];
 
-    protected $menu = [
-        'name' => 'Person Subm', 'icon' => 'book', 'route' => 'personsubm.index', 'order_index' => 999, 'has_children' => false,
+
+    protected array $menu = [
+        'name' => 'Person Subm', 'icon' => 'book', 'route' => 'personsubm.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected $parentMenu = 'People';
+    protected ?string $parentMenu = 'People';
 }

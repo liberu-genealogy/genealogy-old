@@ -12,13 +12,13 @@ use App\Traits\ActivationTrait;
 use DB;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
-// use LaravelEnso\Multitenancy\App\Jobs\CreateDatabase;
+// use LaravelEnso\Multitenancy\Jobs\CreateDatabase;
 
-// use LaravelEnso\Multitenancy\App\Jobs\Migrate;
+// use LaravelEnso\Multitenancy\Jobs\Migrate;
 use Illuminate\Support\Facades\Validator;
-use LaravelEnso\Companies\App\Models\Company;
-use LaravelEnso\Core\App\Models\UserGroup;
-use LaravelEnso\Roles\App\Models\Role;
+use LaravelEnso\Companies\Models\Company;
+use LaravelEnso\Core\Models\UserGroup;
+use LaravelEnso\Roles\Models\Role;
 use Str;
 
 class RegisterController extends Controller

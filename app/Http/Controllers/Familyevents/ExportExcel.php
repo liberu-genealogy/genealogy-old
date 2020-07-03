@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Familyevents;
 
 use App\Tables\Builders\FamilyEventTable;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\App\Traits\Excel;
+use LaravelEnso\Tables\Traits\Excel;
 
 class ExportExcel extends Controller
 {

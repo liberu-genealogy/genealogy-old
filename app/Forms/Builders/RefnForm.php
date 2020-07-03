@@ -3,7 +3,7 @@
 namespace App\Forms\Builders;
 
 use App\Refn;
-use LaravelEnso\Forms\App\Services\Form;
+use LaravelEnso\Forms\Services\Form;
 
 class RefnForm
 {

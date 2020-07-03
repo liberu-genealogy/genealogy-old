@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\enso\core\Administration\UserGroup;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Core\App\Forms\Builders\UserGroupForm;
-use LaravelEnso\Core\App\Models\UserGroup;
+use LaravelEnso\Core\Forms\Builders\UserGroupForm;
+use LaravelEnso\Core\Models\UserGroup;
 
 class Edit extends Controller
 {
