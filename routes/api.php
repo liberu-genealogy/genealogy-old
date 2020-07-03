@@ -82,7 +82,7 @@ Route::namespace('\App\Http\Controllers\enso\core')
 Route::namespace('Auth')
     ->middleware('api')
     ->group(function () {
-        Route::post('login', 'LoginController@login')->name('login');
+     //   Route::post('login', 'LoginController@login')->name('login');
         Route::post('logout', 'LoginController@logout')->name('logout');
         Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
         Route::post('password/reset', 'ResetPasswordController@attemptReset')->name('password.reset');
