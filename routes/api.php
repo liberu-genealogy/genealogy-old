@@ -12,25 +12,70 @@ use Illuminate\Support\Facades\Route;
 /**
  * overwrite core 
  */
-Route::namespace('\LaravelEnso\Core\App\Http\Controllers')
-    ->middleware(['multitenant'])
+Route::namespace('\App\Http\Controllers\enso\core')
     ->group(function () {
         Route::get('/meta', 'Guest')->name('meta');
 
-        Route::middleware(['web', 'auth'])
-            ->group(fn () => Route::get('/sentry', 'Sentry')->name('sentry'));
+        // Route::middleware(['web', 'auth'])
+        //     ->group(fn () => Route::get('/sentry', 'Sentry')->name('sentry'));
 
-        Route::middleware(['web', 'auth', 'core'])
+        Route::middleware(['web', 'auth', 'core','multitenant'])
             ->group(function () {
-                // require 'app/core.php';
                 Route::prefix('core')
                 ->as('core.')
                 ->group(function () {
                     Route::get('home', 'Spa')->name('home.index');
-            
                     // require 'core/preferences.php';
-                });                
+                    Route::namespace('Preferences')
+                    ->prefix('preferences')
+                    ->as('preferences.')
+                    ->group(function () {
+                        Route::patch('store/{route?}', 'Store')->name('store');
+                        Route::post('reset/{route?}', 'Reset')->name('reset');
+                    });
+                });
                 // require 'app/administration.php';
+                Route::namespace('Administration')
+                ->prefix('administration')
+                ->as('administration.')
+                ->group(function () {
+                    // require 'administration/userGroups.php';
+                    Route::namespace('UserGroup')
+                    ->prefix('userGroups')
+                    ->as('userGroups.')
+                    ->group(function () {
+                        // Route::get('create', 'Create')->name('create');
+                        // Route::post('', 'Store')->name('store');
+                        Route::get('{userGroup}/edit', 'Edit')->name('edit');
+                        // Route::patch('{userGroup}', 'Update')->name('update');
+                        // Route::delete('{userGroup}', 'Destroy')->name('destroy');
+                
+                        // Route::get('initTable', 'InitTable')->name('initTable');
+                        // Route::get('tableData', 'TableData')->name('tableData');
+                        // Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+                
+                        // Route::get('options', 'Options')->name('options');
+                    });                    
+                    // require 'administration/users.php';
+                    Route::namespace('User')
+                    ->prefix('users')
+                    ->as('users.')
+                    ->group(function () {
+                        // Route::get('create/{person}', 'Create')->name('create');
+                        // Route::post('', 'Store')->name('store');
+                        Route::get('{user}/edit', 'Edit')->name('edit');
+                        // Route::patch('{user}', 'Update')->name('update');
+                        // Route::delete('{user}', 'Destroy')->name('destroy');
+                
+                        // Route::get('initTable', 'InitTable')->name('initTable');
+                        // Route::get('tableData', 'TableData')->name('tableData');
+                        // Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+                
+                        // Route::get('options', 'Options')->name('options');
+                
+                        // Route::get('{user}', 'Show')->name('show');
+                    });                    
+                });                
             });
     });
 
