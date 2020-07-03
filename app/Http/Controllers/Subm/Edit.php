@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Subm;
 
+use App\Forms\Builders\SubmForm;
 use App\Subm;
 use Illuminate\Routing\Controller;
-use App\Forms\Builders\SubmForm;
 
 class Edit extends Controller
 {

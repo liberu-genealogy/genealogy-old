@@ -2,13 +2,13 @@
 
 namespace App\Models\enso\Avatars;
 
+use App\Contracts\enso\files\Attachable;
+use App\Models\User;
+use App\Traits\enso\files\HasFile;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use App\Models\User;
-use App\Contracts\enso\files\Attachable;
-use App\Traits\enso\files\HasFile;
 use LaravelEnso\Helpers\App\Traits\CascadesMorphMap;
 
 /**
@@ -24,7 +24,7 @@ class Avatar extends Model implements Attachable
 
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'avatars';
@@ -32,7 +32,6 @@ class Avatar extends Model implements Attachable
     /**
      * @var array
      */
-
     public const Width = 250;
     public const Height = 250;
 

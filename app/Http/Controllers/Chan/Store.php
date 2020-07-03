@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Chan;
 
 use App\Chan;
-use Illuminate\Routing\Controller;
 use App\Http\Requests\ValidateChanRequest;
+use Illuminate\Routing\Controller;
 
 class Store extends Controller
 {

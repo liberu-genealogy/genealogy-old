@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Models\enso\core;
+
+use App\Models\Roles\Role;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use LaravelEnso\Core\App\Exceptions\UserGroupConflict;
 use LaravelEnso\Rememberable\App\Traits\Rememberable;
-use App\Models\Roles\Role;
 use LaravelEnso\Roles\App\Traits\HasRoles;
 use LaravelEnso\Tables\App\Traits\TableCache;
 
@@ -22,7 +23,7 @@ class UserGroup extends Model
 {
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'user_groups';

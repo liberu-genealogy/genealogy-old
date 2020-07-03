@@ -2,12 +2,12 @@
 
 namespace App\Models\enso\Roles;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 use App\Models\enso\core\UserGroup;
 use App\Models\enso\Menus\Menu;
 use App\Models\enso\Permissions\Permission;
+use App\Models\User;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use LaravelEnso\Rememberable\App\Traits\Rememberable;
 use LaravelEnso\Roles\App\Exceptions\RoleConflict;
 use LaravelEnso\Roles\App\Services\ConfigWriter;

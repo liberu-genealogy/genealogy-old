@@ -15,8 +15,7 @@ class AddColumnsForUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('email_verified_at')->after('is_active')->nullable();
-            
-        });    
+        });
     }
 
     /**

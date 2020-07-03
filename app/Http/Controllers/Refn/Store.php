@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Refn;
 
+use App\Http\Requests\ValidateRefnRequest;
 use App\Refn;
 use Illuminate\Routing\Controller;
-use App\Http\Requests\ValidateRefnRequest;
 
 class Store extends Controller
 {

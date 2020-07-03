@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Addresses;
 
 use App\Addr;
-use Illuminate\Routing\Controller;
 use App\Http\Requests\ValidateAddrRequest;
+use Illuminate\Routing\Controller;
 
 class Update extends Controller
 {

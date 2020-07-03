@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Personlds;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\PersonLdsForm;
+use Illuminate\Routing\Controller;
 
 class Create extends Controller
 {

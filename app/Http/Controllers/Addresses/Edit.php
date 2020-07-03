@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Addresses;
 
 use App\Addr;
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\AddrForm;
+use Illuminate\Routing\Controller;
 
 class Edit extends Controller
 {

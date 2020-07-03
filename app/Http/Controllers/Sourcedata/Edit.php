@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Sourcedata;
 
+use App\Forms\Builders\SourceDataForm;
 use App\SourceData;
 use Illuminate\Routing\Controller;
-use App\Forms\Builders\SourceDataForm;
 
 class Edit extends Controller
 {

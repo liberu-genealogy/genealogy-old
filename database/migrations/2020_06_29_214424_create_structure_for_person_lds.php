@@ -23,9 +23,8 @@ class CreateStructureForPersonLds extends Migration
     ];
 
     protected $menu = [
-        'name' => 'Person LDS', 'icon' => 'book', 'route' => 'personlds.index', 'order_index' => 999, 'has_children' => false
+        'name' => 'Person LDS', 'icon' => 'book', 'route' => 'personlds.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected $parentMenu = 'People';
 }
-
