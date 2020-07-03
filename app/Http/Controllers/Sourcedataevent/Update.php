@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Sourcedataevent;
 
+use App\Http\Requests\ValidateSourceDataEvenRequest;
 use App\SourceDataEven;
 use Illuminate\Routing\Controller;
-use App\Http\Requests\ValidateSourceDataEvenRequest;
 
 class Update extends Controller
 {

@@ -3,8 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
-use ModularSoftware\LaravelGedcom\Observers\EventActionsObserver;
 use LaravelEnso\Tables\App\Traits\TableCache;
+use ModularSoftware\LaravelGedcom\Observers\EventActionsObserver;
 
 class PersonEvent extends Event
 {

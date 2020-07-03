@@ -2,22 +2,22 @@
 
 namespace App\Models\enso\Permissions;
 
+use App\Models\enso\Menus\Menu;
+use App\Models\Roles\Role;
+use App\Models\Tutorials\Tutorial;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Route;
-use App\Models\enso\Menus\Menu;
 use LaravelEnso\Permissions\App\Enums\Types;
 use LaravelEnso\Permissions\App\Enums\Verbs;
 use LaravelEnso\Permissions\App\Exceptions\Permission as Exception;
-use App\Models\Roles\Role;
 use LaravelEnso\Roles\App\Traits\HasRoles;
 use LaravelEnso\Tables\App\Traits\TableCache;
-use App\Models\Tutorials\Tutorial;
 
 /**
  * @property int $id
  * @property string $name
  * @property string $description
- * @property boolean $is_default
+ * @property bool $is_default
  * @property string $created_at
  * @property string $updated_at
  * @property Menu[] $menuses
@@ -28,7 +28,7 @@ class Permission extends Model
 {
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'permissions';

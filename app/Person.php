@@ -2,12 +2,12 @@
 
 namespace App;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Collection;
 use LaravelEnso\Addresses\App\Traits\Addressable;
 use LaravelEnso\Companies\App\Models\Company;
-use App\Models\User;
 use LaravelEnso\DynamicMethods\App\Traits\Relations;
 use LaravelEnso\Helpers\App\Traits\AvoidsDeletionConflicts;
 use LaravelEnso\Helpers\App\Traits\CascadesMorphMap;
@@ -17,7 +17,6 @@ use LaravelEnso\Rememberable\App\Traits\Rememberable;
 use LaravelEnso\Tables\App\Traits\TableCache;
 use LaravelEnso\TrackWho\App\Traits\CreatedBy;
 use LaravelEnso\TrackWho\App\Traits\UpdatedBy;
-
 
 class Person extends \LaravelEnso\People\App\Models\Person
 {

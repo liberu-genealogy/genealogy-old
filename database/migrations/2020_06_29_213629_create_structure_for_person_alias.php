@@ -23,9 +23,8 @@ class CreateStructureForPersonAlias extends Migration
     ];
 
     protected $menu = [
-        'name' => 'Person Aliases', 'icon' => 'book', 'route' => 'personalias.index', 'order_index' => 999, 'has_children' => false
+        'name' => 'Person Aliases', 'icon' => 'book', 'route' => 'personalias.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected $parentMenu = 'People';
 }
-

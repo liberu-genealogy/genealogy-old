@@ -6,13 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Helpers\App\Contracts\Activatable;
 use LaravelEnso\Helpers\App\Traits\ActiveState;
 use LaravelEnso\Tables\App\Traits\TableCache;
+
 /**
  * @property int $id
  * @property string $name
  * @property string $display_name
  * @property string $flag
- * @property boolean $is_rtl
- * @property boolean $is_active
+ * @property bool $is_rtl
+ * @property bool $is_active
  * @property string $created_at
  * @property string $updated_at
  */
@@ -20,7 +21,7 @@ class Language extends Model implements Activatable
 {
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'languages';

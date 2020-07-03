@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Activation;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\VerifiesEmails;
 use Illuminate\Http\Request;
-use LaravelEnso\Core\App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Validator;
-use App\Models\User;
-use App\Activation;
+use LaravelEnso\Core\App\Http\Controllers\Auth\LoginController;
 use Symfony\Component\HttpFoundation\Response as Response;
 
 class VerificationController extends Controller
@@ -33,35 +33,34 @@ class VerificationController extends Controller
     }
 
     /**
-     * verify user token
+     * verify user token.
      */
-    public function verify_user(Request $request) {
+    public function verify_user(Request $request)
+    {
         $data = $request->all();
         $this->validator($data)->validate();
-        try{
+        try {
             $token = $request->get('token');
             $activation = Activation::where('token', $token)->first();
-            if($activation === null) {
+            if ($activation === null) {
                 return response()->json(
                     [
-                        'error' =>
-                                [
-                                    'code' => 300,
-                                    'message' => 'Send activation code again.'
-                                ],
+                        'error' => [
+                            'code' => 300,
+                            'message' => 'Send activation code again.',
+                        ],
                     ],
                     Response::HTTP_UNPROCESSABLE_ENTITY);
             }
             $user_id = $activation->user_id;
             $user = User::find($user_id);
-            if($user === null) {
+            if ($user === null) {
                 return response()->json(
                     [
-                        'error' =>
-                                [
-                                    'code' => 301,
-                                    'message' => 'There is not such user.'
-                                ],
+                        'error' => [
+                            'code' => 301,
+                            'message' => 'There is not such user.',
+                        ],
                     ],
                     Response::HTTP_UNPROCESSABLE_ENTITY);
             }
@@ -69,10 +68,11 @@ class VerificationController extends Controller
             $user->email_verified_at = date('Y-m-d H:i:s');
             $user->save();
             Activation::where('user_id', $user_id)->delete();
+
             return response()->json([
                 'csrfToken' => csrf_token(),
             ]);
-        }catch(\Exception $e) {
+        } catch (\Exception $e) {
             throw $e;
         }
     }

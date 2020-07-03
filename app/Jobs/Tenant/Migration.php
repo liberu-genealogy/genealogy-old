@@ -2,21 +2,21 @@
 
 namespace App\Jobs\Tenant;
 
+use App\Models\User;
+use App\Person;
+use DB;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Hash;
 use LaravelEnso\Companies\App\Models\Company;
+use LaravelEnso\Core\App\Models\UserGroup;
 use LaravelEnso\Multitenancy\App\Enums\Connections;
 use LaravelEnso\Multitenancy\App\Services\Tenant;
-use App\Models\User;
-use App\Person;
 use LaravelEnso\Roles\App\Models\Role;
-use LaravelEnso\Core\App\Models\UserGroup;
-use Illuminate\Support\Facades\Hash;
-use DB;
 use Str;
 
 class Migration implements ShouldQueue
@@ -26,17 +26,18 @@ class Migration implements ShouldQueue
     private $name;
     private $email;
     private $password;
+
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct(Company $tenant, $name='', $email='', $password='')
+    public function __construct(Company $tenant, $name = '', $email = '', $password = '')
     {
         //
         $this->tenant = $tenant;
         $this->name = $name;
-        $this->email= $email;
+        $this->email = $email;
         $this->password = $password;
         // $this->queue = 'sync';
     }
@@ -66,9 +67,9 @@ class Migration implements ShouldQueue
         $person = DB::connection(Connections::Tenant)->table('people')->insert([
             'email'=>$this->email,
             'name' => $this->name,
-            ]);
+        ]);
         // get user_group_id
-        $user_group = 1; 
+        $user_group = 1;
 
         // get role_id
         $role = 1;

@@ -24,7 +24,7 @@ return [
     'activationButton'   => 'Activate',
     'activationThanks'   => 'Thank you for using our application!',
 
-     /*
+    /*
      * Activate new c user account email.
      *
      */

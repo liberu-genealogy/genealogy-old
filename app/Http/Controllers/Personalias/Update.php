@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Personalias;
 
+use App\Http\Requests\ValidatePersonAliaRequest;
 use App\PersonAlia;
 use Illuminate\Routing\Controller;
-use App\Http\Requests\ValidatePersonAliaRequest;
 
 class Update extends Controller
 {
