@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Collection;
-use LaravelEnso\Localisation\Models\Language;
+use LaravelEnso\Localisation\App\Models\Language;
 
 class LanguageSeeder extends Seeder
 {

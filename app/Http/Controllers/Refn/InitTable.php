@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Refn;
 
 use App\Tables\Builders\RefnTable;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\Traits\Init;
+use LaravelEnso\Tables\App\Traits\Init;
 
 class InitTable extends Controller
 {

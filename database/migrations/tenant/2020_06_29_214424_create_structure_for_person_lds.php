@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\Database\Migration;
+use LaravelEnso\Migrator\App\Database\Migration;
 
 class CreateStructureForPersonLds extends Migration
 {
-    protected array $permissions = [
+    protected $permissions = [
         ['name' => 'personlds.index', 'description' => 'Show index for person lds', 'is_default' => false],
 
         ['name' => 'personlds.create', 'description' => 'Create person lds', 'is_default' => false],
@@ -22,10 +22,10 @@ class CreateStructureForPersonLds extends Migration
         ['name' => 'personlds.options', 'description' => 'Get person lds options for select', 'is_default' => false],
     ];
 
-    protected array $menu = [
+    protected $menu = [
         'name' => 'Person LDS', 'icon' => 'book', 'route' => 'personlds.index', 'order_index' => 999, 'has_children' => false
     ];
 
-    protected ?string $parentMenu = 'People';
+    protected $parentMenu = 'People';
 }
 

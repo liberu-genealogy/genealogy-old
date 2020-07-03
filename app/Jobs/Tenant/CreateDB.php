@@ -8,9 +8,9 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\DB;
-use LaravelEnso\Companies\Models\Company;
-use LaravelEnso\Multitenancy\Services\Tenant;
-use LaravelEnso\Multitenancy\Traits\TenantResolver;
+use LaravelEnso\Companies\App\Models\Company;
+use LaravelEnso\Multitenancy\App\Services\Tenant;
+use LaravelEnso\Multitenancy\App\Traits\TenantResolver;
 
 class CreateDB implements ShouldQueue
 {
