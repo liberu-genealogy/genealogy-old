@@ -22,9 +22,8 @@ class CreateStructureForSourceDatas extends Migration
         ['name' => 'sourcedata.options', 'description' => 'Get source data options for select', 'is_default' => false],
     ];
 
-
     protected array $menu = [
-        'name' => 'Source Data', 'icon' => 'book', 'route' => 'sourcedata.index', 'order_index' => 999, 'has_children' => false
+        'name' => 'Source Data', 'icon' => 'book', 'route' => 'sourcedata.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected ?string $parentMenu = 'Sources';

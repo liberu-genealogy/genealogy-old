@@ -22,9 +22,8 @@ class CreateStructureForSubns extends Migration
         ['name' => 'subn.options', 'description' => 'Get subn options for select', 'is_default' => false],
     ];
 
-
     protected array $menu = [
-        'name' => 'Subn', 'icon' => 'book', 'route' => 'subn.index', 'order_index' => 999, 'has_children' => false
+        'name' => 'Subn', 'icon' => 'book', 'route' => 'subn.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected ?string $parentMenu = 'Information';

@@ -32,7 +32,6 @@ class Person extends Model
         UpdatedBy,
         SoftDeletes;
 
-
     /**
      * The attributes that should be mutated to dates.
      *
