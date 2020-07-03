@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Refn;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\RefnForm;
+use Illuminate\Routing\Controller;
 
 class Create extends Controller
 {

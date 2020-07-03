@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Personsubm;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\PersonSubmForm;
+use Illuminate\Routing\Controller;
 
 class Create extends Controller
 {

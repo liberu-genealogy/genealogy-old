@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Personlds;
 
+use App\Http\Requests\ValidatePersonLdsRequest;
 use App\PersonLds;
 use Illuminate\Routing\Controller;
-use App\Http\Requests\ValidatePersonLdsRequest;
 
 class Update extends Controller
 {

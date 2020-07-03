@@ -14,6 +14,7 @@ class ValidatePersonLdsRequest extends FormRequest
     public function rules()
     {
         $personlds = $this->route('personlds');
+
         return [
 
             'group' => 'required|max:50',
@@ -23,7 +24,7 @@ class ValidatePersonLdsRequest extends FormRequest
             'date' => 'required|max:50',
             'plac' => 'required|max:50',
             'temp' => 'required|max:50',
-            'slac_famc' => 'required|max:50'
+            'slac_famc' => 'required|max:50',
         ];
     }
 }

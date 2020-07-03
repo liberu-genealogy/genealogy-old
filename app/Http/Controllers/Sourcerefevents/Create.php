@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Sourcerefevents;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\SourceRefEvenForm;
+use Illuminate\Routing\Controller;
 
 class Create extends Controller
 {

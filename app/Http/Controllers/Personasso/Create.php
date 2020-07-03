@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Personasso;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\PersonAssoForm;
+use Illuminate\Routing\Controller;
 
 class Create extends Controller
 {
