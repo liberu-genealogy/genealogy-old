@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\App\Database\Migration;
+use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForSubms extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'subm.index', 'description' => 'Show index for subms', 'is_default' => false],
 
         ['name' => 'subm.create', 'description' => 'Create subm', 'is_default' => false],
@@ -22,10 +22,14 @@ class CreateStructureForSubms extends Migration
         ['name' => 'subm.options', 'description' => 'Get subm options for select', 'is_default' => false],
     ];
 
+<<<<<<< HEAD
     protected $menu = [
+        'name' => 'Subm', 'icon' => 'book', 'route' => 'subm.index', 'order_index' => 999, 'has_children' => false,
+=======
+    protected array $menu = [
         'name' => 'Subm', 'icon' => 'book', 'route' => 'subm.index', 'order_index' => 999, 'has_children' => false
+>>>>>>> parent of a7f00d69... Revert "Merge remote-tracking branch 'origin/master' into jyyblue"
     ];
 
-    protected $parentMenu = 'Information';
+    protected ?string $parentMenu = 'Information';
 }
-

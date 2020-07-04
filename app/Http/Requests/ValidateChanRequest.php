@@ -14,12 +14,13 @@ class ValidateChanRequest extends FormRequest
     public function rules()
     {
         $chan = $this->route('chan');
+
         return [
 
             'group' => 'required|max:50',
             'gid' => 'required|max:50',
             'date' => 'required|max:50',
-            'time' => 'required|max:50'
+            'time' => 'required|max:50',
         ];
     }
 }

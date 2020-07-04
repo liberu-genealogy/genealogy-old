@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\App\Database\Migration;
+use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForMediaObjects extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'objects.index', 'description' => 'Show index for objects', 'is_default' => false],
 
         ['name' => 'objects.create', 'description' => 'Create object', 'is_default' => false],
@@ -22,9 +22,9 @@ class CreateStructureForMediaObjects extends Migration
         ['name' => 'objects.options', 'description' => 'Get object options for select', 'is_default' => false],
     ];
 
-    protected $menu = [
+    protected array $menu = [
         'name' => 'Objects', 'icon' => 'book', 'route' => 'objects.index', 'order_index' => 999, 'has_children' => false,
     ];
 
-    protected $parentMenu = 'Information';
+    protected ?string $parentMenu = 'Information';
 }

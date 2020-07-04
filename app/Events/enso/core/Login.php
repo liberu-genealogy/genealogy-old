@@ -2,9 +2,9 @@
 
 namespace App\Events\enso\core;
 
+use App\Models\User;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
-use App\Models\User;
 
 class Login
 {

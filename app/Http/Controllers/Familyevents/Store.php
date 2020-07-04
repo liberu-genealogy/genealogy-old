@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Familyevents;
 
 use App\FamilyEvent;
-use Illuminate\Routing\Controller;
 use App\Http\Requests\ValidateFamilyEventRequest;
+use Illuminate\Routing\Controller;
 
 class Store extends Controller
 {

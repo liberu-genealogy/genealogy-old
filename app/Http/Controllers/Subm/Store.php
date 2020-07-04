@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Subm;
 
+use App\Http\Requests\ValidateSubmRequest;
 use App\Subm;
 use Illuminate\Routing\Controller;
-use App\Http\Requests\ValidateSubmRequest;
 
 class Store extends Controller
 {

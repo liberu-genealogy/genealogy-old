@@ -3,13 +3,13 @@
 namespace App\Service;
 
 use Illuminate\Support\Facades\DB;
-use LaravelEnso\Multitenancy\App\Enums\Connections;
+use LaravelEnso\Multitenancy\Enums\Connections;
 
 class MixedConnection
 {
     public static function set($user, $tenant)
     {
-        if ( $tenant) {
+        if ($tenant) {
             self::connection(Connections::Tenant);
         } else {
             self::connection('mysql');

@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\App\Database\Migration;
+use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForPersonAlias extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'personalias.index', 'description' => 'Show index for person alias', 'is_default' => false],
 
         ['name' => 'personalias.create', 'description' => 'Create person alia', 'is_default' => false],
@@ -22,10 +22,14 @@ class CreateStructureForPersonAlias extends Migration
         ['name' => 'personalias.options', 'description' => 'Get person alia options for select', 'is_default' => false],
     ];
 
+<<<<<<< HEAD
     protected $menu = [
+        'name' => 'Person Aliases', 'icon' => 'book', 'route' => 'personalias.index', 'order_index' => 999, 'has_children' => false,
+=======
+    protected array $menu = [
         'name' => 'Person Aliases', 'icon' => 'book', 'route' => 'personalias.index', 'order_index' => 999, 'has_children' => false
+>>>>>>> parent of a7f00d69... Revert "Merge remote-tracking branch 'origin/master' into jyyblue"
     ];
 
-    protected $parentMenu = 'People';
+    protected ?string $parentMenu = 'People';
 }
-

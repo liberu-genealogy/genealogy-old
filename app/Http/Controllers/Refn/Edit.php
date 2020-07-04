@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Refn;
 
+use App\Forms\Builders\RefnForm;
 use App\Refn;
 use Illuminate\Routing\Controller;
-use App\Forms\Builders\RefnForm;
 
 class Edit extends Controller
 {

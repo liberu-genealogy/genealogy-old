@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Notes;
 
 use App\Tables\Builders\NoteTable;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\App\Traits\Data;
+use LaravelEnso\Tables\Traits\Data;
 
 class TableData extends Controller
 {

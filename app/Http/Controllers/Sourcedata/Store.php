@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Sourcedata;
 
+use App\Http\Requests\ValidateSourceDataRequest;
 use App\SourceData;
 use Illuminate\Routing\Controller;
-use App\Http\Requests\ValidateSourceDataRequest;
 
 class Store extends Controller
 {

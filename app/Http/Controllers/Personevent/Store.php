@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Personevent;
 
+use App\Http\Requests\ValidatePersonEventRequest;
 use App\PersonEvent;
 use Illuminate\Routing\Controller;
-use App\Http\Requests\ValidatePersonEventRequest;
 
 class Store extends Controller
 {

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Personasso;
 
+use App\Http\Requests\ValidatePersonAssoRequest;
 use App\PersonAsso;
 use Illuminate\Routing\Controller;
-use App\Http\Requests\ValidatePersonAssoRequest;
 
 class Store extends Controller
 {

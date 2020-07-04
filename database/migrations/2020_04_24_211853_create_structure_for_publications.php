@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\App\Database\Migration;
+use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForPublications extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'publications.index', 'description' => 'Show index for publications', 'is_default' => false],
 
         ['name' => 'publications.create', 'description' => 'Create publication', 'is_default' => false],
@@ -22,9 +22,9 @@ class CreateStructureForPublications extends Migration
         ['name' => 'publications.options', 'description' => 'Get publication options for select', 'is_default' => false],
     ];
 
-    protected $menu = [
+    protected array $menu = [
         'name' => 'Publications', 'icon' => 'users', 'route' => 'publications.index', 'order_index' => 999, 'has_children' => false,
     ];
 
-    protected $parentMenu = 'References';
+    protected ?string $parentMenu = 'References';
 }

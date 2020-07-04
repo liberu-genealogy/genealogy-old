@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Subm;
 
 use App\Tables\Builders\SubmTable;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\App\Traits\Excel;
+use LaravelEnso\Tables\Traits\Excel;
 
 class ExportExcel extends Controller
 {

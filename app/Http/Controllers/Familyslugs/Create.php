@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Familyslugs;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\FamilySlgsForm;
+use Illuminate\Routing\Controller;
 
 class Create extends Controller
 {

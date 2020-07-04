@@ -1,13 +1,15 @@
 <?php
 
 namespace App\Models\enso\core;
+
+use App\Models\Roles\Role;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
-use LaravelEnso\Core\App\Exceptions\UserGroupConflict;
-use LaravelEnso\Rememberable\App\Traits\Rememberable;
-use App\Models\Roles\Role;
-use LaravelEnso\Roles\App\Traits\HasRoles;
-use LaravelEnso\Tables\App\Traits\TableCache;
+use LaravelEnso\Core\Exceptions\UserGroupConflict;
+use LaravelEnso\Rememberable\Traits\Rememberable;
+use LaravelEnso\Roles\Traits\HasRoles;
+use LaravelEnso\Tables\Traits\TableCache;
+use LaravelEnso\Multitenancy\Traits\SystemConnection;
 
 /**
  * @property int $id
@@ -22,11 +24,11 @@ class UserGroup extends Model
 {
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'user_groups';
-    use HasRoles, Rememberable, TableCache;
+    use HasRoles, Rememberable, TableCache, SystemConnection;
 
     protected $fillable = ['name', 'description'];
 

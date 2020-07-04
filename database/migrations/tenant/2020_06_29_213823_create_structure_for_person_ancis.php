@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\App\Database\Migration;
+use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForPersonAncis extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'personanci.index', 'description' => 'Show index for person ancis', 'is_default' => false],
 
         ['name' => 'personanci.create', 'description' => 'Create person anci', 'is_default' => false],
@@ -22,10 +22,14 @@ class CreateStructureForPersonAncis extends Migration
         ['name' => 'personanci.options', 'description' => 'Get person anci options for select', 'is_default' => false],
     ];
 
+<<<<<<< HEAD
     protected $menu = [
+        'name' => 'Person Anci', 'icon' => 'book', 'route' => 'personanci.index', 'order_index' => 999, 'has_children' => false,
+=======
+    protected array $menu = [
         'name' => 'Person Anci', 'icon' => 'book', 'route' => 'personanci.index', 'order_index' => 999, 'has_children' => false
+>>>>>>> parent of a7f00d69... Revert "Merge remote-tracking branch 'origin/master' into jyyblue"
     ];
 
-    protected $parentMenu = 'People';
+    protected ?string $parentMenu = 'People';
 }
-
