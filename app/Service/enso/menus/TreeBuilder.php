@@ -2,10 +2,10 @@
 
 namespace App\Service\enso\menus;
 
+use App\Models\enso\Menus\Menu;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
-use App\Models\enso\Menus\Menu;
 
 class TreeBuilder
 {

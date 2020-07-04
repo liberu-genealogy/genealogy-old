@@ -62,5 +62,5 @@ return [
         'core.calendar.index',
         'core.calendar.options',
         'test',
-    ]
+    ],
 ];

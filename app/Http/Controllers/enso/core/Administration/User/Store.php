@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\enso\core\Administration\User;
 
+use App\Models\User;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Core\Http\Requests\ValidateUserRequest;
-use App\Models\User;
 
 class Store extends Controller
 {

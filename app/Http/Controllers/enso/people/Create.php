@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\enso\people;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\PersonForm;
+use Illuminate\Routing\Controller;
 
 class Create extends Controller
 {

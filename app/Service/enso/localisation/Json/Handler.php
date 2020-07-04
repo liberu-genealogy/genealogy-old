@@ -2,10 +2,10 @@
 
 namespace App\Service\enso\Localisation\Json;
 
+use App\Models\enso\Localisation\Language;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
 use LaravelEnso\Helpers\Services\JsonReader;
-use App\Models\enso\Localisation\Language;
 use LaravelEnso\Localisation\Services\SanitizeAppKeys;
 use LaravelEnso\Localisation\Services\Traits\JsonFilePathResolver;
 

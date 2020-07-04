@@ -2,10 +2,10 @@
 
 namespace App\Http\Resources\enso\core;
 
-use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\enso\avatars\Avatar;
 use App\Http\Resources\enso\people\Person;
 use App\Http\Resources\enso\roles\Role;
+use Illuminate\Http\Resources\Json\JsonResource;
 
 class User extends JsonResource
 {

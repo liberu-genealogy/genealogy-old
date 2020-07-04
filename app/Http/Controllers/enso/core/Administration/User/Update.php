@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\enso\core\Administration\User;
 
+use App\Models\User;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Event;
 use LaravelEnso\Core\Http\Requests\ValidateUserRequest;
-use App\Models\User;
 
 class Update extends Controller
 {

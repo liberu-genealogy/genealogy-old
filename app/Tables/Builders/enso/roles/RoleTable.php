@@ -2,8 +2,8 @@
 
 namespace App\Tables\Builders\enso\Roles;
 
-use Illuminate\Database\Eloquent\Builder;
 use App\Models\enso\Roles\Role;
+use Illuminate\Database\Eloquent\Builder;
 use LaravelEnso\Tables\Contracts\Table;
 
 class RoleTable implements Table

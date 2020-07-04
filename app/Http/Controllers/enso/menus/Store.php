@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\enso\Menus;
 
+use App\Models\enso\Menus\Menu;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Menus\Http\Requests\ValidateMenuRequest;
-use App\Models\enso\Menus\Menu;
 
 class Store extends Controller
 {

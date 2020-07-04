@@ -2,9 +2,9 @@
 
 namespace App\Service\enso\Localisation\Json;
 
+use App\Models\enso\Localisation\Language;
 use Illuminate\Support\Collection;
 use LaravelEnso\Helpers\Services\JsonReader;
-use App\Models\enso\Localisation\Language;
 
 class Updater extends Handler
 {

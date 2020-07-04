@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\enso\people;
 
-use Illuminate\Routing\Controller;
 use App\Person;
+use Illuminate\Routing\Controller;
 use LaravelEnso\Select\Traits\OptionsBuilder;
 
 class Options extends Controller

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\enso\teams;
 
+use App\Models\enso\teams\Team;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Select\Traits\OptionsBuilder;
-use App\Models\enso\teams\Team;
 
 class Options extends Controller
 {

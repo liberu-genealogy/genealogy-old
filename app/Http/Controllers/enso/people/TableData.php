@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\enso\people;
 
-use Illuminate\Routing\Controller;
 use App\Tables\Builders\PersonTable;
+use Illuminate\Routing\Controller;
 use LaravelEnso\Tables\Traits\Data;
 
 class TableData extends Controller
