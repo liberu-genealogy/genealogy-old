@@ -133,7 +133,7 @@ Route::namespace('Auth')
         Route::post('password/reset', 'ResetPasswordController@attemptReset')->name('password.reset');
     });
 // example data for the dashboard
-Route::middleware(['api', 'auth'])
+Route::middleware(['api', 'auth','multitenancy'])
     ->namespace('Dashboard')
     ->prefix('dashboard')->as('dashboard.')
     ->group(function () {
