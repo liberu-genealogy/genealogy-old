@@ -44,7 +44,7 @@ index c93f97a..dc128e6 100644
 +++ b/node_modules/@enso-ui/ui/src/bulma/components/navbar/AppUpdate.vue
 @@ -11,7 +11,7 @@
  </template>
- 
+
  <script>
 -import { mapState, mapMutations, mapGetters } from 'vuex';
 +import { mapState, mapActions, mapGetters } from 'vuex';
@@ -53,7 +53,7 @@ index c93f97a..dc128e6 100644
  import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 @@ -41,7 +41,7 @@ export default {
      },
- 
+
      methods: {
 -        ...mapMutations('websockets', ['connect']),
 +        ...mapActions('websockets', ['connect']),
@@ -178,7 +178,7 @@ index 6c8c3ec..7dadfde 100644
          </div>
      </div>
  </template>
- 
+
  <script>
  import { library } from '@fortawesome/fontawesome-svg-core';
 -import { faUserTie, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
@@ -187,21 +187,21 @@ index 6c8c3ec..7dadfde 100644
  import PasswordStrength from '../../auth/components/PasswordStrength.vue';
  import DeleteModal from './components/DeleteModal.vue';
 +import Url from '@enso-ui/files/src/bulma/pages/files/components/Url.vue'; // TODO:: refactor to a package
- 
+
 -library.add(faUserTie, faTrashAlt);
 +library.add(faUserTie, faTrashAlt, faKey);
- 
+
  export default {
      name: 'Edit',
- 
+
      components: {
 -        EnsoForm, FormField, PasswordStrength, DeleteModal,
 +        EnsoForm, FormField, PasswordStrength, DeleteModal, Url
      },
- 
+
 -    inject: ['i18n', 'canAccess'],
 +    inject: ['i18n', 'canAccess', 'route'],
- 
+
      data: () => ({
          deletableUser: null,
 @@ -97,6 +115,7 @@ export default {
@@ -210,7 +210,7 @@ index 6c8c3ec..7dadfde 100644
          passwordConfirmation: null,
 +        token: '',
      }),
- 
+
      methods: {
 @@ -109,6 +128,12 @@ export default {
                  });
@@ -231,12 +231,12 @@ index f53508c..9b4de24 100644
 +++ b/node_modules/@enso-ui/ui/src/bulma/pages/auth/Login.vue
 @@ -6,7 +6,7 @@
  </template>
- 
+
  <script>
 -import { mapMutations, mapState } from 'vuex';
 +import { mapMutations, mapActions, mapState } from 'vuex';
  import AuthForm from './components/AuthForm.vue';
- 
+
  export default {
 @@ -24,7 +24,11 @@ export default {
          ...mapMutations(['setShowQuote', 'setCsrfToken']),
@@ -356,7 +356,7 @@ index 12bf71d..776dd35 100644
                          <input v-model="remember"
 @@ -127,7 +128,7 @@
  </template>
- 
+
  <script>
 -import { mapState } from 'vuex';
 +import { mapState, mapGetters } from 'vuex';
@@ -364,7 +364,7 @@ index 12bf71d..776dd35 100644
  import {
      faEnvelope, faCheck, faExclamationTriangle, faLock, faUser,
 @@ -189,6 +190,7 @@ export default {
- 
+
      computed: {
          ...mapState(['meta']),
 +        ...mapGetters(['isWebview']),
@@ -376,7 +376,7 @@ index 12bf71d..776dd35 100644
          loginParams() {
              const { email, password, remember } = this;
 +            const device_name = this.isWebview ? 'mobile_app' : undefined;
- 
+
 -            return { email, password, remember };
 +            return { email, password, remember, device_name };
 +        },
@@ -390,7 +390,7 @@ index 12bf71d..776dd35 100644
 @@ -227,7 +235,7 @@ export default {
              this.loading = true;
              this.isSuccessful = false;
- 
+
 -            axios.post(this.routeResolver(this.route), this.postParams)
 +            axios.post(this.routeResolver(this.route), this.postParams, this.config)
                  .then(({ data }) => {
@@ -631,7 +631,7 @@ index 0000000..cfe5fe5
 +                    this.loading = false;
 +                    this.isSuccessful = true;
 +                    this.$emit('success', data);
-+                    
++
 +                }).catch((error) => {
 +                    this.loading = false;
 +
@@ -752,7 +752,7 @@ index 0000000..09d2707
 +        token() {
 +            return this.$route.query.token;
 +        },
-+        
++
 +        postParams() {
 +            return this.verifyParams;
 +        },
@@ -913,111 +913,23 @@ index 43e9741..5a273b7 100644
 -import { mapState, mapMutations, mapGetters } from 'vuex';
 +import {mapState, mapGetters, mapActions} from 'vuex';
  import Pusher from 'pusher-js'; //TODO remove?
- 
+
  export default {
 @@ -26,7 +26,7 @@ export default {
      },
- 
+
      methods: {
 -        ...mapMutations('websockets', ['connect']),
 +        ...mapActions('websockets', ['connect']),
          listen() {
              window.Echo.private(this.ioChannel)
                  .listen('.io-started', ({ operation }) => {
-diff --git a/node_modules/@enso-ui/ui/src/core/components/navbar/Notifications.vue b/node_modules/@enso-ui/ui/src/core/components/navbar/Notifications.vue
-index 1e7dcb3..a86f93e 100644
---- a/node_modules/@enso-ui/ui/src/core/components/navbar/Notifications.vue
-+++ b/node_modules/@enso-ui/ui/src/core/components/navbar/Notifications.vue
-@@ -1,6 +1,6 @@
- <script>
- import debounce from 'lodash/debounce';
--import { mapState, mapMutations, mapGetters } from 'vuex';
-+import { mapState, mapMutations, mapGetters, mapActions } from 'vuex';
- import Pusher from 'pusher-js';
- import Echo from 'laravel-echo';
- import Favico from 'favico.js';
-@@ -38,6 +38,7 @@ export default {
- 
-     computed: {
-         ...mapGetters('websockets', ['privateChannel']),
-+        ...mapGetters(['isWebview']),
-         ...mapState(['user']),
-         ...mapState('layout', ['isTouch']),
-     },
-@@ -58,7 +59,7 @@ export default {
-     },
- 
-     methods: {
--        ...mapMutations('websockets', ['connect']),
-+        ...mapActions('websockets', ['connect']),
-         toggle() {
-             this.visible = !this.visible;
- 
-@@ -131,23 +132,15 @@ export default {
-             });
-         },
-         listen() {
--            window.Echo.private(this.privateChannel).notification(({
--                level, body, title, icon,
--            }) => {
-+            window.Echo.private(this.privateChannel).notification( (notification) => {
-                 this.unread++;
-                 this.needsUpdate = true;
-                 this.offset = 0;
- 
--                if (document.hidden && this.desktopNotifications) {
--                    const notification = new Notification(title, { body });
--                    notification.onclick = () => (window.focus());
--                    window.navigator.vibrate(500);
--                    return;
--                }
-+                this.toast(notification);
- 
--                this.$toastr.when(title, toastr => toastr.title(title))
--                    .when(icon, toastr => toastr.icon(icon))
--                    .when(level, toastr => toastr[level](body), toastr => toastr.info(body));
-+                return this.webview(notification)
-+                    || this.desktop(notification);
-             });
-         },
-         computeScrollPosition(event) {
-@@ -196,6 +189,30 @@ export default {
-         now() {
-             return format(new Date());
-         },
-+        webview({body, title}) {
-+            if (this.isWebview) {
-+                ReactNativeWebView.postMessage(JSON.stringify({
-+                    title, body,
-+                    type: 'notification',
-+                }));
-+
-+                return true;
-+            }
-+        },
-+        desktop({body, title}) {
-+            if (document.hidden && this.desktopNotifications) {
-+                const notification = new Notification(title, { body });
-+                notification.onclick = () => (window.focus());
-+                window.navigator.vibrate(500);
-+
-+                return true;
-+            }
-+        },
-+        toast({level, body, title, icon}) {
-+            this.$toastr.when(title, toastr => toastr.title(title))
-+                .when(icon, toastr => toastr.icon(icon))
-+                .when(level, toastr => toastr[level](body), toastr => toastr.info(body));
-+        }
-     },
- 
-     render() {
 diff --git a/node_modules/@enso-ui/ui/src/core/layouts/Home.vue b/node_modules/@enso-ui/ui/src/core/layouts/Home.vue
 index 23bc732..b639410 100644
 --- a/node_modules/@enso-ui/ui/src/core/layouts/Home.vue
 +++ b/node_modules/@enso-ui/ui/src/core/layouts/Home.vue
 @@ -28,6 +28,7 @@ export default {
- 
+
      methods: {
          ...mapMutations('auth', ['setIntendedRoute', 'setIntendedPath']),
 +        ...mapMutations('register', ['register']),
@@ -1029,7 +941,7 @@ index 4cfa90d..bc3d8f8 100644
 --- a/node_modules/@enso-ui/ui/src/modules/store.js
 +++ b/node_modules/@enso-ui/ui/src/modules/store.js
 @@ -24,6 +24,7 @@ const coreState = {
- 
+
  const coreGetters = {
      routes: state => Object.keys(state.routes),
 +    isWebview: () => typeof ReactNativeWebView !== 'undefined',

@@ -88,6 +88,24 @@ module.exports = {
                 ...options, name: 'images/[name].[ext]',
             }));
     },
+    config.plugin('html').tap(args => {
+        args[0].meta = [
+            {
+                property: 'og:image',
+                content: `${environment_url}/images/preview.png`,
+            },
+            {
+                property: 'og:image:width',
+                content: '1200',
+            },
+            {
+                property: 'og:image:height',
+                content: '1200',
+            },
+        ];
+        return args;
+    });
+
     productionSourceMap: false,
     css: {
         extract: false,
