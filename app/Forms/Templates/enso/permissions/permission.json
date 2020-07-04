@@ -1,0 +1,47 @@
+{
+    "routePrefix": "system.permissions",
+    "sections": [
+        {
+            "columns": 2,
+            "fields": [
+                {
+                    "label": "Name",
+                    "name": "name",
+                    "value": "",
+                    "meta": {
+                        "type": "input",
+                        "content": "text"
+                    }
+                },
+                {
+                    "label": "Description",
+                    "name": "description",
+                    "value": "",
+                    "meta": {
+                        "type": "input",
+                        "content": "text"
+                    }
+                },
+                {
+                    "label": "Roles",
+                    "name": "roles",
+                    "value": [],
+                    "meta": {
+                        "type": "select",
+                        "multiple": true,
+                        "options": []
+                    }
+                },
+                {
+                    "label": "Default",
+                    "name": "is_default",
+                    "value": false,
+                    "meta": {
+                        "type": "input",
+                        "content": "checkbox"
+                    }
+                }
+            ]
+        }
+    ]
+}

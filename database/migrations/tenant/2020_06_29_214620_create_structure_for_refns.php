@@ -22,13 +22,8 @@ class CreateStructureForRefns extends Migration
         ['name' => 'refn.options', 'description' => 'Get refn options for select', 'is_default' => false],
     ];
 
-<<<<<<< HEAD
-    protected $menu = [
-        'name' => 'Refn', 'icon' => 'book', 'route' => 'refn.index', 'order_index' => 999, 'has_children' => false,
-=======
     protected array $menu = [
         'name' => 'Refn', 'icon' => 'book', 'route' => 'refn.index', 'order_index' => 999, 'has_children' => false
->>>>>>> parent of a7f00d69... Revert "Merge remote-tracking branch 'origin/master' into jyyblue"
     ];
 
     protected ?string $parentMenu = 'Information';

@@ -37,8 +37,7 @@ class DefaultAvatar
 
     private function findOrCreate(): self
     {
-        $this->avatar = $this->user->avatar()
-            ->firstOrCreate(['user_id' => $this->user->id]);
+        $this->avatar = $this->user->avatar()->firstOrCreate(['user_id' => $this->user->id]);
 
         return $this;
     }

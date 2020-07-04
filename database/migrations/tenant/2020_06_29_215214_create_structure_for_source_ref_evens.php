@@ -22,13 +22,8 @@ class CreateStructureForSourceRefEvens extends Migration
         ['name' => 'sourcerefevents.options', 'description' => 'Get source ref even options for select', 'is_default' => false],
     ];
 
-<<<<<<< HEAD
-    protected $menu = [
-        'name' => 'Source Ref Events', 'icon' => 'book', 'route' => 'sourcerefevents.index', 'order_index' => 999, 'has_children' => false,
-=======
     protected array $menu = [
         'name' => 'Source Ref Events', 'icon' => 'book', 'route' => 'sourcerefevents.index', 'order_index' => 999, 'has_children' => false
->>>>>>> parent of a7f00d69... Revert "Merge remote-tracking branch 'origin/master' into jyyblue"
     ];
 
     protected ?string $parentMenu = 'Sources';
