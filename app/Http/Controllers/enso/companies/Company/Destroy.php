@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\enso\companies\Company;
 
+use App\Models\enso\companies\Company;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Routing\Controller;
-use App\Models\enso\companies\Company;
 
 class Destroy extends Controller
 {

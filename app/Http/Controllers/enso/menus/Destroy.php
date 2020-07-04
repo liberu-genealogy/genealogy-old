@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\enso\Menus;
 
-use Illuminate\Routing\Controller;
 use App\Models\enso\Menus\Menu;
+use Illuminate\Routing\Controller;
 
 class Destroy extends Controller
 {

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\enso\permissions;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\enso\permissions\PermissionForm;
+use Illuminate\Routing\Controller;
 
 class Create extends Controller
 {

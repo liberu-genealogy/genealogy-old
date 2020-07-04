@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\enso\companies\Person;
 
-use Illuminate\Routing\Controller;
 use App\Http\Resources\enso\people\Person as Resource;
 use App\Models\enso\companies\Company;
+use Illuminate\Routing\Controller;
 
 class Index extends Controller
 {

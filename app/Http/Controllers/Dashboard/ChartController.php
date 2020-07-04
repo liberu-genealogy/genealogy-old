@@ -11,6 +11,7 @@ use LaravelEnso\Charts\Factories\Line;
 use LaravelEnso\Charts\Factories\Pie;
 use LaravelEnso\Charts\Factories\Polar;
 use LaravelEnso\Charts\Factories\Radar;
+
 // use LaravelEnso\Multitenancy\Traits\SystemConnection;
 
 class ChartController extends Controller

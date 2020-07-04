@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\enso\people;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\PersonForm;
 use App\Person;
+use Illuminate\Routing\Controller;
 
 class Edit extends Controller
 {

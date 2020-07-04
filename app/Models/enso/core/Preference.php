@@ -3,8 +3,8 @@
 namespace App\Models\enso\core;
 
 use Illuminate\Database\Eloquent\Model;
-use LaravelEnso\Rememberable\Traits\Rememberable;
 use LaravelEnso\Multitenancy\Traits\SystemConnection;
+use LaravelEnso\Rememberable\Traits\Rememberable;
 
 class Preference extends Model
 {

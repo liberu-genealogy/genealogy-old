@@ -2,8 +2,8 @@
 
 namespace App\Service\enso\core;
 
-use Carbon\Carbon;
 use App\Models\User;
+use Carbon\Carbon;
 use LaravelEnso\Helpers\Services\Decimals;
 
 class ProfileBuilder
