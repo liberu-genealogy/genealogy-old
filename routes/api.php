@@ -117,14 +117,14 @@ Route::namespace('\App\Http\Controllers\enso\companies')
             Route::get('{company}/edit', 'Edit')->name('edit');
             Route::patch('{company}', 'Update')->name('update');
             Route::delete('{company}', 'Destroy')->name('destroy');
-    
+
             Route::get('initTable', 'InitTable')->name('initTable');
             Route::get('tableData', 'TableData')->name('tableData');
             Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
-    
+
             Route::get('options', 'Options')->name('options');
         });
-    
+
         // require 'app/people.php';
         Route::namespace('Person')
         ->group(function () {
@@ -139,13 +139,13 @@ Route::namespace('\App\Http\Controllers\enso\companies')
                     Route::delete('{company}/{person}', 'Destroy')->name('destroy');
                 });
         });
-    
+
     });
 
     /**
      * overwrite team
      */
-    Route::namespace('\App\Http\Controllers\enso\Teams')
+    Route::namespace('\App\Http\Controllers\enso\teams')
     ->middleware(['api', 'auth', 'core'])
     ->prefix('administration/teams')
     ->as('administration.teams.')
@@ -162,7 +162,7 @@ Route::namespace('\App\Http\Controllers\enso\companies')
 
     Route::middleware(['api', 'auth', 'core'])
     ->prefix('system/permissions')->as('system.permissions.')
-    ->namespace('\App\Http\Controllers\enso\Permissions')
+    ->namespace('\App\Http\Controllers\enso\permissions')
     ->group(function () {
         Route::get('create', 'Create')->name('create');
         Route::post('', 'Store')->name('store');
@@ -181,7 +181,7 @@ Route::namespace('\App\Http\Controllers\enso\companies')
     Route::middleware(['api', 'auth', 'core'])
     ->prefix('api/system/menus')
     ->as('system.menus.')
-    ->namespace('\App\Http\Controllers\enso\Menus')
+    ->namespace('\App\Http\Controllers\enso\menus')
     ->group(function () {
         Route::get('create', 'Create')->name('create');
         Route::post('', 'Store')->name('store');
@@ -200,18 +200,18 @@ Route::namespace('\App\Http\Controllers\enso\companies')
      */
     Route::middleware(['api', 'auth', 'core'])
     ->prefix('system/roles')->as('system.roles.')
-    ->namespace('\App\Http\Controllers\enso\Roles')
+    ->namespace('\App\Http\Controllers\enso\roles')
     ->group(function () {
         Route::get('create', 'Create')->name('create');
         Route::post('', 'Store')->name('store');
         Route::get('{role}/edit', 'Edit')->name('edit');
         Route::patch('{role}', 'Update')->name('update');
         Route::delete('{role}', 'Destroy')->name('destroy');
-        
+
         Route::get('initTable', 'InitTable')->name('initTable');
         Route::get('tableData', 'TableData')->name('tableData');
         Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
-        
+
         Route::get('options', 'Options')->name('options');
 
         Route::namespace('Permission')
@@ -227,7 +227,7 @@ Route::namespace('\App\Http\Controllers\enso\companies')
      * overwrite logs
      */
     Route::middleware(['api', 'auth', 'core'])
-    ->namespace('\App\Http\Controllers\enso\Logs')
+    ->namespace('\App\Http\Controllers\enso\logs')
     ->prefix('system/logs')
     ->as('system.logs.')
     ->group(function () {
@@ -236,13 +236,13 @@ Route::namespace('\App\Http\Controllers\enso\companies')
         Route::delete('{log}', 'Destroy')->name('destroy');
         Route::get('{log}/download', 'Download')->name('download');
         Route::get('{log}', 'Show')->name('show');
-    });    
+    });
 
     /**
      * overwrite localisation
      */
     Route::middleware(['api', 'auth', 'core'])
-    ->namespace('\App\Http\Controllers\enso\Localisation')
+    ->namespace('\App\Http\Controllers\enso\localisation')
     ->prefix('system/localisation')
     ->as('system.localisation.')
     ->group(function () {
@@ -254,7 +254,7 @@ Route::namespace('\App\Http\Controllers\enso\companies')
             Route::patch('saveLangFile/{language}/{subDir}', 'Update')->name('saveLangFile');
             Route::patch('addKey', 'AddKey')->name('addKey');
             Route::patch('merge/{locale?}', 'Merge')->name('merge');
-        });        
+        });
         // require 'app/language.php';
         Route::namespace('Language')
         ->group(function () {
@@ -263,11 +263,11 @@ Route::namespace('\App\Http\Controllers\enso\companies')
             Route::get('{language}/edit', 'Edit')->name('edit');
             Route::patch('{language}', 'Update')->name('update');
             Route::delete('{language}', 'Destroy')->name('destroy');
-    
+
             Route::get('initTable', 'InitTable')->name('initTable');
             Route::get('tableData', 'TableData')->name('tableData');
             Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
-        });        
+        });
     });
 
     Route::namespace('System')
@@ -317,7 +317,7 @@ Route::namespace('\App\Http\Controllers\enso\companies')
 
     /**
      * file
-     * 
+     *
      */
     Route::middleware(['web', 'auth', 'core'])
     ->namespace('enso\files')
@@ -335,7 +335,7 @@ Route::namespace('\App\Http\Controllers\enso\companies')
             Route::delete('{file}', 'Destroy')->name('destroy');
             Route::get('show/{file}', 'Show')->name('show');
         });
-    
+
         // require 'app/uploads.php';
         Route::namespace('Upload')
         ->prefix('uploads')
