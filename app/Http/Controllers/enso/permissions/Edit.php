@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\enso\Permissions;
+namespace App\Http\Controllers\enso\permissions;
 
 use Illuminate\Routing\Controller;
-use App\Forms\Builders\enso\Permissions\PermissionForm;
-use App\Models\enso\Permissions\Permission;
+use App\Forms\Builders\enso\permissions\PermissionForm;
+use App\Models\enso\permissions\Permission;
 
 class Edit extends Controller
 {

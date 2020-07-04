@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\enso\Permissions;
+namespace App\Http\Controllers\enso\permissions;
 
 use Illuminate\Routing\Controller;
-use App\Forms\Builders\enso\Permissions\PermissionForm;
+use App\Forms\Builders\enso\permissions\PermissionForm;
 
 class Create extends Controller
 {
