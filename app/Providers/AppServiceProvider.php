@@ -55,8 +55,6 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(PersonForm::class, function () {
             return new LocalPersonForm();
         });
-        // $this->app['router']->aliasMiddleware('action-logger', ActionLogger::class);
-
     }
 
     public function register()
