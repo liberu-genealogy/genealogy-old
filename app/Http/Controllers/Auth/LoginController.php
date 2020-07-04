@@ -82,25 +82,25 @@ class LoginController extends Controller
             $tanent = true;
         }
 
-        $value = env('DB_DATABASE');
-        if (optional($company)->isTenant()) {
-            // $key = 'database.default';
-            // $value = Connections::Tenant;
-            // config([$key => $value]);
+        // $value = env('DB_DATABASE');
+        // if (optional($company)->isTenant()) {
+        //     // $key = 'database.default';
+        //     // $value = Connections::Tenant;
+        //     // config([$key => $value]);
 
-            // Tenant::set($company);
-            $value = Connections::Tenant.$company->id;
-        } else {
-            // $value = '';
-        }
-        $key = 'database.connections.mysql.database';
-        config([$key => $value]);
+        //     // Tenant::set($company);
+        //     $value = Connections::Tenant.$company->id;
+        // } else {
+        //     // $value = '';
+        // }
+        // $key = 'database.connections.mysql.database';
+        // config([$key => $value]);
 
-        \DB::purge('mysql');
+        // \DB::purge('mysql');
 
-        \DB::reconnect('mysql');
+        // \DB::reconnect('mysql');
 
-        \Session::put('db', $value);
+        // \Session::put('db', $value);
 
         if (! optional($user)->currentPasswordIs($request->input('password'))) {
             return;

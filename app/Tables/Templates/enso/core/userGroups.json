@@ -1,0 +1,21 @@
+{
+    "routePrefix": "administration.userGroups",
+    "crtNo": true,
+    "buttons": ["excel", "create", "edit", "destroy"],
+    "columns": [{
+        "label": "Name",
+        "name": "name",
+        "data": "user_groups.name",
+        "meta": ["searchable", "sortable"]
+    }, {
+        "label": "Description",
+        "name": "description",
+        "data": "user_groups.description",
+        "meta": ["searchable", "sortable"]
+    }, {
+        "label": "Created At",
+        "name": "created_at",
+        "data": "user_groups.created_at",
+        "meta": ["date"]
+    }]
+}

@@ -22,13 +22,8 @@ class CreateStructureForAddrs extends Migration
         ['name' => 'addrs.options', 'description' => 'Get addr options for select', 'is_default' => false],
     ];
 
-<<<<<<< HEAD
-    protected $menu = [
-        'name' => 'Addresses', 'icon' => 'book', 'route' => 'addrs.index', 'order_index' => 999, 'has_children' => false,
-=======
     protected array $menu = [
         'name' => 'Addresses', 'icon' => 'book', 'route' => 'addrs.index', 'order_index' => 999, 'has_children' => false
->>>>>>> parent of a7f00d69... Revert "Merge remote-tracking branch 'origin/master' into jyyblue"
     ];
 
     protected ?string $parentMenu = 'Information';

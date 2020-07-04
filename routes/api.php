@@ -19,7 +19,7 @@ Route::namespace('\App\Http\Controllers\enso\core')
         // Route::middleware(['api', 'auth'])
         //     ->group(fn () => Route::get('/sentry', 'Sentry')->name('sentry'));
 
-        Route::middleware(['api', 'auth', 'core', 'multitenant'])
+        Route::middleware(['api', 'auth', 'core'])
             ->group(function () {
                 Route::prefix('core')
                     ->as('core.')
@@ -44,36 +44,36 @@ Route::namespace('\App\Http\Controllers\enso\core')
                             ->prefix('userGroups')
                             ->as('userGroups.')
                             ->group(function () {
-                                // Route::get('create', 'Create')->name('create');
-                                // Route::post('', 'Store')->name('store');
+                                Route::get('create', 'Create')->name('create');
+                                Route::post('', 'Store')->name('store');
                                 Route::get('{userGroup}/edit', 'Edit')->name('edit');
-                                // Route::patch('{userGroup}', 'Update')->name('update');
-                                // Route::delete('{userGroup}', 'Destroy')->name('destroy');
+                                Route::patch('{userGroup}', 'Update')->name('update');
+                                Route::delete('{userGroup}', 'Destroy')->name('destroy');
 
-                                // Route::get('initTable', 'InitTable')->name('initTable');
-                                // Route::get('tableData', 'TableData')->name('tableData');
-                                // Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+                                Route::get('initTable', 'InitTable')->name('initTable');
+                                Route::get('tableData', 'TableData')->name('tableData');
+                                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
 
-                                // Route::get('options', 'Options')->name('options');
+                                Route::get('options', 'Options')->name('options');
                             });
                         // require 'administration/users.php';
                         Route::namespace('User')
                             ->prefix('users')
                             ->as('users.')
                             ->group(function () {
-                                // Route::get('create/{person}', 'Create')->name('create');
-                                // Route::post('', 'Store')->name('store');
+                                Route::get('create/{person}', 'Create')->name('create');
+                                Route::post('', 'Store')->name('store');
                                 Route::get('{user}/edit', 'Edit')->name('edit');
-                                // Route::patch('{user}', 'Update')->name('update');
-                                // Route::delete('{user}', 'Destroy')->name('destroy');
+                                Route::patch('{user}', 'Update')->name('update');
+                                Route::delete('{user}', 'Destroy')->name('destroy');
 
-                                // Route::get('initTable', 'InitTable')->name('initTable');
-                                // Route::get('tableData', 'TableData')->name('tableData');
-                                // Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+                                Route::get('initTable', 'InitTable')->name('initTable');
+                                Route::get('tableData', 'TableData')->name('tableData');
+                                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
 
-                                // Route::get('options', 'Options')->name('options');
+                                Route::get('options', 'Options')->name('options');
 
-                                // Route::get('{user}', 'Show')->name('show');
+                                Route::get('{user}', 'Show')->name('show');
                             });
                     });
             });
@@ -119,21 +119,60 @@ Route::namespace('System')
 
                 // Route::get('{user}', 'Show')->name('show');
          //   });
-   // });
-// });
-});
+        // });
+        // });
+        });
+    });
+
+    /**
+     * file
+     * 
+     */
+    Route::middleware(['web', 'auth', 'core'])
+    ->namespace('enso\files')
+    ->prefix('core')
+    ->as('core.')
+    ->group(function () {
+        // require 'app/files.php';
+        Route::namespace('File')
+        ->prefix('files')
+        ->as('files.')
+        ->group(function () {
+            Route::get('', 'Index')->name('index');
+            Route::get('link/{file}', 'Link')->name('link');
+            Route::get('download/{file}', 'Download')->name('download');
+            Route::delete('{file}', 'Destroy')->name('destroy');
+            Route::get('show/{file}', 'Show')->name('show');
+        });
+    
+        // require 'app/uploads.php';
+        Route::namespace('Upload')
+        ->prefix('uploads')
+        ->as('uploads.')
+        ->group(function () {
+            Route::post('store', 'Store')->name('store');
+            Route::delete('{upload}', 'Destroy')->name('destroy');
+        });
+    });
+
+    Route::middleware(['signed', 'bindings'])
+    ->namespace('enso\files\File')
+    ->prefix('core/files')
+    ->as('core.files.')
+    ->group(function () {
+        Route::get('share/{file}', 'Share')->name('share');
     });
 
 Route::namespace('Auth')
-    ->middleware('api')
+    ->middleware('web')
     ->group(function () {
-        //   Route::post('login', 'LoginController@login')->name('login');
+        Route::post('login', 'LoginController@login')->name('login');
         Route::post('logout', 'LoginController@logout')->name('logout');
         Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
         Route::post('password/reset', 'ResetPasswordController@attemptReset')->name('password.reset');
     });
 // example data for the dashboard
-Route::middleware(['api', 'auth'])
+Route::middleware(['web', 'auth'])
     ->namespace('Dashboard')
     ->prefix('dashboard')->as('dashboard.')
     ->group(function () {
