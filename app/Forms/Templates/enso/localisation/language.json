@@ -1,0 +1,71 @@
+{
+    "routePrefix": "system.localisation",
+    "sections": [
+        {
+            "columns": "custom",
+            "fields": [
+                {
+                    "label": "Display Name",
+                    "name": "display_name",
+                    "column": 6,
+                    "value": "",
+                    "meta": {
+                        "type": "input",
+                        "content": "text"
+                    }
+                },
+                {
+                    "label": "Name",
+                    "name": "name",
+                    "value": "",
+                    "column": 3,
+                    "meta": {
+                        "type": "input",
+                        "content": "text"
+                    }
+                },
+                {
+                    "label": "Flag Sufix",
+                    "name": "flag_sufix",
+                    "value": "",
+                    "column": 3,
+                    "meta": {
+                        "type": "input",
+                        "content": "text"
+                    }
+                },
+                {
+                    "label": "Flag",
+                    "name": "flag",
+                    "value": null,
+                    "column": 6,
+                    "meta": {
+                        "custom": "true",
+                        "type": "text",
+                        "disabled": true
+                    }
+                },
+                {
+                    "label": "RTL",
+                    "name": "is_rtl",
+                    "value": false,
+                    "column": 3,
+                    "meta": {
+                        "type": "input",
+                        "content": "checkbox"
+                    }
+                },
+                {
+                    "label": "Active",
+                    "name": "is_active",
+                    "value": true,
+                    "column": 3,
+                    "meta": {
+                        "type": "input",
+                        "content": "checkbox"
+                    }
+                }
+            ]
+        }
+    ]
+}
