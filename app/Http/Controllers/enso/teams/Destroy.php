@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\enso\teams;
 
-use Illuminate\Routing\Controller;
 use App\Models\enso\teams\Team;
+use Illuminate\Routing\Controller;
 
 class Destroy extends Controller
 {

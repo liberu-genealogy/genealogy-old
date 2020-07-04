@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\enso\files\File;
 
-use Illuminate\Routing\Controller;
 use App\Http\Response\enso\files\Files;
+use Illuminate\Routing\Controller;
 
 class Index extends Controller
 {

@@ -9,9 +9,9 @@ Route::post('verify', '\App\Http\Controllers\Auth\VerificationController@verify_
 //     }
 // );
 
-/**
- * overwrite core.
- */
+    /**
+     * overwrite core.
+     */
     Route::namespace('\App\Http\Controllers\enso\core')
     ->group(function () {
         Route::get('/meta', 'Guest')->name('meta');
@@ -77,13 +77,12 @@ Route::post('verify', '\App\Http\Controllers\Auth\VerificationController@verify_
                             });
                     });
             });
-    //
+        //
 
-/**
- * overwirte people
- */
-
-Route::namespace('\App\Http\Controllers\enso\people')
+        /**
+         * overwirte people.
+         */
+        Route::namespace('\App\Http\Controllers\enso\people')
 ->middleware(['api', 'auth', 'core'])
 ->prefix('administration/people')
 ->as('administration.people.')
@@ -101,10 +100,10 @@ Route::namespace('\App\Http\Controllers\enso\people')
     Route::get('options', 'Options')->name('options');
 });
 
-/**
- * overwrite companies
- */
-Route::namespace('\App\Http\Controllers\enso\companies')
+        /**
+         * overwrite companies.
+         */
+        Route::namespace('\App\Http\Controllers\enso\companies')
     ->middleware(['api', 'auth', 'core'])
     ->prefix('administration/companies')
     ->as('administration.companies.')
@@ -139,13 +138,12 @@ Route::namespace('\App\Http\Controllers\enso\companies')
                     Route::delete('{company}/{person}', 'Destroy')->name('destroy');
                 });
         });
-
     });
 
-    /**
-     * overwrite team
-     */
-    Route::namespace('\App\Http\Controllers\enso\teams')
+        /**
+         * overwrite team.
+         */
+        Route::namespace('\App\Http\Controllers\enso\teams')
     ->middleware(['api', 'auth', 'core'])
     ->prefix('administration/teams')
     ->as('administration.teams.')
@@ -156,11 +154,10 @@ Route::namespace('\App\Http\Controllers\enso\companies')
         Route::get('options', 'Options')->name('options');
     });
 
-    /**
-     * overwrite permission
-     */
-
-    Route::middleware(['api', 'auth', 'core'])
+        /**
+         * overwrite permission.
+         */
+        Route::middleware(['api', 'auth', 'core'])
     ->prefix('system/permissions')->as('system.permissions.')
     ->namespace('\App\Http\Controllers\enso\permissions')
     ->group(function () {
@@ -175,10 +172,10 @@ Route::namespace('\App\Http\Controllers\enso\companies')
         Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
     });
 
-    /**
-     * overwrite menus
-     */
-    Route::middleware(['api', 'auth', 'core'])
+        /**
+         * overwrite menus.
+         */
+        Route::middleware(['api', 'auth', 'core'])
     ->prefix('api/system/menus')
     ->as('system.menus.')
     ->namespace('\App\Http\Controllers\enso\menus')
@@ -195,10 +192,10 @@ Route::namespace('\App\Http\Controllers\enso\companies')
         Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
     });
 
-    /**
-     * overwrite roles
-     */
-    Route::middleware(['api', 'auth', 'core'])
+        /**
+         * overwrite roles.
+         */
+        Route::middleware(['api', 'auth', 'core'])
     ->prefix('system/roles')->as('system.roles.')
     ->namespace('\App\Http\Controllers\enso\roles')
     ->group(function () {
@@ -223,10 +220,10 @@ Route::namespace('\App\Http\Controllers\enso\companies')
         });
     });
 
-    /**
-     * overwrite logs
-     */
-    Route::middleware(['api', 'auth', 'core'])
+        /**
+         * overwrite logs.
+         */
+        Route::middleware(['api', 'auth', 'core'])
     ->namespace('\App\Http\Controllers\enso\logs')
     ->prefix('system/logs')
     ->as('system.logs.')
@@ -238,10 +235,10 @@ Route::namespace('\App\Http\Controllers\enso\companies')
         Route::get('{log}', 'Show')->name('show');
     });
 
-    /**
-     * overwrite localisation
-     */
-    Route::middleware(['api', 'auth', 'core'])
+        /**
+         * overwrite localisation.
+         */
+        Route::middleware(['api', 'auth', 'core'])
     ->namespace('\App\Http\Controllers\enso\localisation')
     ->prefix('system/localisation')
     ->as('system.localisation.')
@@ -270,7 +267,7 @@ Route::namespace('\App\Http\Controllers\enso\companies')
         });
     });
 
-    Route::namespace('System')
+        Route::namespace('System')
     ->prefix('system')
     ->as('system.')
     ->group(function () {
@@ -312,12 +309,11 @@ Route::namespace('\App\Http\Controllers\enso\companies')
          //   });
         // });
         // });
-        });
+    });
     });
 
     /**
-     * file
-     *
+     * file.
      */
     Route::middleware(['web', 'auth', 'core'])
     ->namespace('enso\files')

@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\App;
 
 class Spa extends Controller
 {
-
     public function __invoke()
     {
         return App::make(AppState::class);

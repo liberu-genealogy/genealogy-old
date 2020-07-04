@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\enso\companies\Person;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\PersonForm;
 use App\Models\enso\companies\Company;
+use Illuminate\Routing\Controller;
 
 class Create extends Controller
 {

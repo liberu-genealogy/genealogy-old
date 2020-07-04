@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\enso\Roles;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\enso\Roles\RoleForm;
+use Illuminate\Routing\Controller;
 
 class Create extends Controller
 {

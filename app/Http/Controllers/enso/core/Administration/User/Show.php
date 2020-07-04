@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\enso\core\Administration\User;
 
-use Illuminate\Routing\Controller;
 use App\Models\User;
 use App\Service\enso\core\ProfileBuilder;
+use Illuminate\Routing\Controller;
 
 class Show extends Controller
 {

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\enso\Menus;
 
+use App\Service\enso\menus\Organizer;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use App\Service\enso\menus\Organizer;
 
 class Organize extends Controller
 {

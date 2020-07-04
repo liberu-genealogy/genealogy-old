@@ -8,11 +8,11 @@ use App\Models\enso\Permissions\Permission;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use LaravelEnso\Multitenancy\Traits\SystemConnection;
 use LaravelEnso\Rememberable\Traits\Rememberable;
 use LaravelEnso\Roles\Exceptions\RoleConflict;
 use LaravelEnso\Roles\Services\ConfigWriter;
 use LaravelEnso\Tables\Traits\TableCache;
-use LaravelEnso\Multitenancy\Traits\SystemConnection;
 
 /**
  * @property int $id

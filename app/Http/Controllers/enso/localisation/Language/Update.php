@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\enso\Localisation\Language;
 
+use App\Models\enso\Localisation\Language;
+use App\Service\enso\Localisation\Updater;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Localisation\Http\Requests\ValidateLanguageRequest;
-use App\Service\enso\Localisation\Updater;
-use App\Models\enso\Localisation\Language;
 
 class Update extends Controller
 {

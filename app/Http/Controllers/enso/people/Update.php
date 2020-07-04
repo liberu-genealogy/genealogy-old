@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\enso\people;
 
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Routing\Controller;
 use App\Http\Requests\ValidatePersonRequest;
 use App\Person;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Routing\Controller;
 
 class Update extends Controller
 {

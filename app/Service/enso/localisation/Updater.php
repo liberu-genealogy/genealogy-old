@@ -2,9 +2,9 @@
 
 namespace App\Service\enso\Localisation;
 
+use App\Models\enso\Localisation\Language;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
-use App\Models\enso\Localisation\Language;
 use LaravelEnso\Localisation\Services\Traits\JsonFilePathResolver;
 use LaravelEnso\Localisation\Services\Traits\LegacyFolderPathResolver;
 

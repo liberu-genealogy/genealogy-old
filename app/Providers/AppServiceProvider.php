@@ -13,6 +13,8 @@ use App\Models\User;
 use App\Person as LocalPerson;
 use App\Tables\Builders\PersonTable as LocalPersonTable;
 use Illuminate\Support\ServiceProvider;
+use LaravelEnso\ActionLogger\DynamicsRelations\ActionLogs;
+use LaravelEnso\ActionLogger\Http\Middleware\ActionLogger;
 use LaravelEnso\Companies\Models\Company;
 use LaravelEnso\Core\Models\User as BaseUser;
 use LaravelEnso\DynamicMethods\Services\Methods;
@@ -22,9 +24,6 @@ use LaravelEnso\People\Http\Requests\ValidatePersonStore;
 use LaravelEnso\People\Http\Requests\ValidatePersonUpdate;
 use LaravelEnso\People\Models\Person;
 use LaravelEnso\People\Tables\Builders\PersonTable;
-
-use LaravelEnso\ActionLogger\DynamicsRelations\ActionLogs;
-use LaravelEnso\ActionLogger\Http\Middleware\ActionLogger;
 
 class AppServiceProvider extends ServiceProvider
 {

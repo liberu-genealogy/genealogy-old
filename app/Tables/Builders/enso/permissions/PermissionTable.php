@@ -2,8 +2,8 @@
 
 namespace App\Tables\Builders\enso\Permissions;
 
-use Illuminate\Database\Eloquent\Builder;
 use App\Models\enso\Permissions\Permission;
+use Illuminate\Database\Eloquent\Builder;
 use LaravelEnso\Tables\Contracts\Table;
 
 class PermissionTable implements Table
