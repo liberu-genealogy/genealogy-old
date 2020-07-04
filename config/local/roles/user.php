@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'order' => 2,
-    'role' => ['name' => 'supervisor', 'display_name' => 'Supervisor'],
+    'order' => 3,
+    'role' => ['name' => 'user', 'display_name' => 'User'],
     'default_menu' => 'howTo.videos.index',
     'permissions' => [
         'howTo.videos.index',

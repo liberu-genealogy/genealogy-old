@@ -12,7 +12,7 @@ Route::post('verify', '\App\Http\Controllers\Auth\VerificationController@verify_
 /**
  * overwrite core.
  */
-Route::namespace('\App\Http\Controllers\enso\core')
+    Route::namespace('\App\Http\Controllers\enso\core')
     ->group(function () {
         Route::get('/meta', 'Guest')->name('meta');
 
@@ -79,7 +79,152 @@ Route::namespace('\App\Http\Controllers\enso\core')
             });
     //
 
-Route::namespace('System')
+/**
+ * overwirte people
+ */
+
+Route::namespace('\App\Http\Controllers\enso\people')
+->middleware(['api', 'auth', 'core'])
+->prefix('administration/people')
+->as('administration.people.')
+->group(function () {
+    Route::get('create', 'Create')->name('create');
+    Route::post('', 'Store')->name('store');
+    Route::get('{person}/edit', 'Edit')->name('edit');
+    Route::patch('{person}', 'Update')->name('update');
+    Route::delete('{person}', 'Destroy')->name('destroy');
+
+    Route::get('initTable', 'InitTable')->name('initTable');
+    Route::get('tableData', 'TableData')->name('tableData');
+    Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+
+    Route::get('options', 'Options')->name('options');
+});
+
+/**
+ * overwrite companies
+ */
+Route::namespace('\App\Http\Controllers\enso\companies')
+    ->middleware(['api', 'auth', 'core'])
+    ->prefix('administration/companies')
+    ->as('administration.companies.')
+    ->group(function () {
+        // require 'app/companies.php';
+        Route::namespace('Company')
+        ->group(function () {
+            Route::get('create', 'Create')->name('create');
+            Route::post('', 'Store')->name('store');
+            Route::get('{company}/edit', 'Edit')->name('edit');
+            Route::patch('{company}', 'Update')->name('update');
+            Route::delete('{company}', 'Destroy')->name('destroy');
+    
+            Route::get('initTable', 'InitTable')->name('initTable');
+            Route::get('tableData', 'TableData')->name('tableData');
+            Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+    
+            Route::get('options', 'Options')->name('options');
+        });
+    
+        // require 'app/people.php';
+        Route::namespace('Person')
+        ->group(function () {
+            Route::prefix('people')
+                ->as('people.')
+                ->group(function () {
+                    Route::get('{company}', 'Index')->name('index');
+                    Route::get('{company}/create', 'Create')->name('create');
+                    Route::get('{company}/{person}/edit', 'Edit')->name('edit');
+                    Route::patch('{person}', 'Update')->name('update');
+                    Route::post('', 'Store')->name('store');
+                    Route::delete('{company}/{person}', 'Destroy')->name('destroy');
+                });
+        });
+    
+    });
+
+    /**
+     * overwrite team
+     */
+    Route::namespace('\App\Http\Controllers\enso\Teams')
+    ->middleware(['api', 'auth', 'core'])
+    ->prefix('administration/teams')
+    ->as('administration.teams.')
+    ->group(function () {
+        Route::get('', 'Index')->name('index');
+        Route::post('', 'Store')->name('store');
+        Route::delete('{team}', 'Destroy')->name('destroy');
+        Route::get('options', 'Options')->name('options');
+    });
+
+    /**
+     * overwrite permission
+     */
+
+    Route::middleware(['api', 'auth', 'core'])
+    ->prefix('system/permissions')->as('system.permissions.')
+    ->namespace('\App\Http\Controllers\enso\Permissions')
+    ->group(function () {
+        Route::get('create', 'Create')->name('create');
+        Route::post('', 'Store')->name('store');
+        Route::get('{permission}/edit', 'Edit')->name('edit');
+        Route::patch('{permission}', 'Update')->name('update');
+        Route::delete('{permission}', 'Destroy')->name('destroy');
+
+        Route::get('initTable', 'InitTable')->name('initTable');
+        Route::get('tableData', 'TableData')->name('tableData');
+        Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+    });
+
+    /**
+     * overwrite menus
+     */
+    Route::middleware(['api', 'auth', 'core'])
+    ->prefix('api/system/menus')
+    ->as('system.menus.')
+    ->namespace('\App\Http\Controllers\enso\Menus')
+    ->group(function () {
+        Route::get('create', 'Create')->name('create');
+        Route::post('', 'Store')->name('store');
+        Route::get('{menu}/edit', 'Edit')->name('edit');
+        Route::patch('{menu}', 'Update')->name('update');
+        Route::delete('{menu}', 'Destroy')->name('destroy');
+        Route::put('organize', 'Organize')->name('organize');
+
+        Route::get('initTable', 'InitTable')->name('initTable');
+        Route::get('tableData', 'TableData')->name('tableData');
+        Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+    });
+
+    /**
+     * overwrite roles
+     */
+    Route::middleware(['api', 'auth', 'core'])
+    ->prefix('system/roles')->as('system.roles.')
+    ->namespace('\App\Http\Controllers\enso\Roles')
+    ->group(function () {
+        Route::get('create', 'Create')->name('create');
+        Route::post('', 'Store')->name('store');
+        Route::get('{role}/edit', 'Edit')->name('edit');
+        Route::patch('{role}', 'Update')->name('update');
+        Route::delete('{role}', 'Destroy')->name('destroy');
+        
+        Route::get('initTable', 'InitTable')->name('initTable');
+        Route::get('tableData', 'TableData')->name('tableData');
+        Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+        
+        Route::get('options', 'Options')->name('options');
+
+        Route::namespace('Permission')
+        ->prefix('permissions')->as('permissions.')
+        ->group(function () {
+            Route::get('get/{role}', 'Index')->name('get');
+            Route::post('set/{role}', 'Update')->name('set');
+            Route::post('write/{role}', 'ConfigWriter')->name('write');
+        });
+    });
+
+
+    Route::namespace('System')
     ->prefix('system')
     ->as('system.')
     ->group(function () {
