@@ -12,6 +12,7 @@ use LaravelEnso\Permissions\Enums\Verbs;
 use LaravelEnso\Permissions\Exceptions\Permission as Exception;
 use LaravelEnso\Roles\Traits\HasRoles;
 use LaravelEnso\Tables\Traits\TableCache;
+use LaravelEnso\Multitenancy\Traits\SystemConnection;
 
 /**
  * @property int $id
@@ -33,7 +34,7 @@ class Permission extends Model
      */
     protected $table = 'permissions';
 
-    use HasRoles, TableCache;
+    use HasRoles, TableCache, SystemConnection;
 
     protected $fillable = ['name', 'description', 'is_default'];
 
