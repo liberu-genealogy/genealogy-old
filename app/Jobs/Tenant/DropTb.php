@@ -8,9 +8,9 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\DB;
-use LaravelEnso\Companies\App\Models\Company;
-use LaravelEnso\Multitenancy\App\Enums\Connections;
-use LaravelEnso\Multitenancy\App\Services\Tenant;
+use LaravelEnso\Companies\Models\Company;
+use LaravelEnso\Multitenancy\Enums\Connections;
+use LaravelEnso\Multitenancy\Services\Tenant;
 
 class DropTb implements ShouldQueue
 {

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Personevent;
 
+use App\Forms\Builders\PersonEventForm;
 use App\PersonEvent;
 use Illuminate\Routing\Controller;
-use App\Forms\Builders\PersonEventForm;
 
 class Edit extends Controller
 {

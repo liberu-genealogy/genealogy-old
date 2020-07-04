@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\App\Database\Migration;
+use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForPersonLds extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'personlds.index', 'description' => 'Show index for person lds', 'is_default' => false],
 
         ['name' => 'personlds.create', 'description' => 'Create person lds', 'is_default' => false],
@@ -22,10 +22,14 @@ class CreateStructureForPersonLds extends Migration
         ['name' => 'personlds.options', 'description' => 'Get person lds options for select', 'is_default' => false],
     ];
 
+<<<<<<< HEAD
     protected $menu = [
+        'name' => 'Person LDS', 'icon' => 'book', 'route' => 'personlds.index', 'order_index' => 999, 'has_children' => false,
+=======
+    protected array $menu = [
         'name' => 'Person LDS', 'icon' => 'book', 'route' => 'personlds.index', 'order_index' => 999, 'has_children' => false
+>>>>>>> parent of a7f00d69... Revert "Merge remote-tracking branch 'origin/master' into jyyblue"
     ];
 
-    protected $parentMenu = 'People';
+    protected ?string $parentMenu = 'People';
 }
-

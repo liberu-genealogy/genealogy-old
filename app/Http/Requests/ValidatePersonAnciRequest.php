@@ -14,11 +14,12 @@ class ValidatePersonAnciRequest extends FormRequest
     public function rules()
     {
         $personanci = $this->route('personanci');
+
         return [
 
             'group' => 'required|max:50',
             'gid' => 'required|max:50',
-            'anci' => 'required|max:50'
+            'anci' => 'required|max:50',
         ];
     }
 }

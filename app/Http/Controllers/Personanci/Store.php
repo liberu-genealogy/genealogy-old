@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Personanci;
 
+use App\Http\Requests\ValidatePersonAnciRequest;
 use App\PersonAnci;
 use Illuminate\Routing\Controller;
-use App\Http\Requests\ValidatePersonAnciRequest;
 
 class Store extends Controller
 {

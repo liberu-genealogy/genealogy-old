@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use App\Service\MixedConnection;
 use Closure;
-use LaravelEnso\Multitenancy\App\Services\Tenant;
+use LaravelEnso\Multitenancy\Services\Tenant;
 
 class Multitenant
 {

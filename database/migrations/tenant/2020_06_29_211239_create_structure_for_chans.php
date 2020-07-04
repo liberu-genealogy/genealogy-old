@@ -1,10 +1,10 @@
 <?php
 
-use LaravelEnso\Migrator\App\Database\Migration;
+use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForChans extends Migration
 {
-    protected $permissions = [
+    protected array $permissions = [
         ['name' => 'chan.index', 'description' => 'Show index for chans', 'is_default' => false],
 
         ['name' => 'chan.create', 'description' => 'Create chan', 'is_default' => false],
@@ -22,10 +22,14 @@ class CreateStructureForChans extends Migration
         ['name' => 'chan.options', 'description' => 'Get chan options for select', 'is_default' => false],
     ];
 
+<<<<<<< HEAD
     protected $menu = [
+        'name' => 'Chan', 'icon' => 'book', 'route' => 'chan.index', 'order_index' => 999, 'has_children' => false,
+=======
+    protected array $menu = [
         'name' => 'Chan', 'icon' => 'book', 'route' => 'chan.index', 'order_index' => 999, 'has_children' => false
+>>>>>>> parent of a7f00d69... Revert "Merge remote-tracking branch 'origin/master' into jyyblue"
     ];
 
-    protected $parentMenu = 'Information';
+    protected ?string $parentMenu = 'Information';
 }
-

@@ -14,11 +14,12 @@ class ValidateFamilyEventRequest extends FormRequest
     public function rules()
     {
         $familyevent = $this->route('familyevent');
+
         return [
 
             'date' => 'required|max:50',
             'title' => 'required|max:50',
-            'description' => 'required|max:50'
+            'description' => 'required|max:50',
         ];
     }
 }

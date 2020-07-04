@@ -2,13 +2,15 @@
 
 namespace App\Models\enso\Menus;
 
+use App\Models\enso\Permissions\Permission;
+use App\Models\enso\Roles\Role;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use LaravelEnso\Menus\App\Exceptions\Menu as Exception;
-use App\Models\enso\Permissions\Permission;
-use App\Models\enso\Roles\Role;
-use LaravelEnso\Tables\App\Traits\TableCache;
+use LaravelEnso\Menus\Exceptions\Menu as Exception;
+use LaravelEnso\Tables\Traits\TableCache;
+use LaravelEnso\Multitenancy\Traits\SystemConnection;
+
 /**
  * @property int $id
  * @property int $parent_id
@@ -16,7 +18,7 @@ use LaravelEnso\Tables\App\Traits\TableCache;
  * @property string $name
  * @property string $icon
  * @property int $order_index
- * @property boolean $has_children
+ * @property bool $has_children
  * @property string $created_at
  * @property string $updated_at
  * @property Menu $menu
@@ -25,11 +27,11 @@ use LaravelEnso\Tables\App\Traits\TableCache;
  */
 class Menu extends Model
 {
-    use TableCache;
+    use TableCache, SystemConnection;
 
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'menus';
@@ -38,8 +40,6 @@ class Menu extends Model
      * @var array
      */
     protected $fillable = ['parent_id', 'permission_id', 'name', 'icon', 'order_index', 'has_children', 'created_at', 'updated_at'];
-
-
 
     protected $casts = [
         'has_children' => 'boolean', 'parent_id' => 'integer', 'permission_id' => 'integer',

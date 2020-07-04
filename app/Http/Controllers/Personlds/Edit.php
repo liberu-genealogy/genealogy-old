@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Personlds;
 
+use App\Forms\Builders\PersonLdsForm;
 use App\PersonLds;
 use Illuminate\Routing\Controller;
-use App\Forms\Builders\PersonLdsForm;
 
 class Edit extends Controller
 {

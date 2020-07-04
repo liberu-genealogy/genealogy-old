@@ -3,8 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
+use LaravelEnso\Tables\Traits\TableCache;
 use ModularSoftware\LaravelGedcom\Observers\EventActionsObserver;
-use LaravelEnso\Tables\App\Traits\TableCache;
 
 class FamilyEvent extends Event
 {

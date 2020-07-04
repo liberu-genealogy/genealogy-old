@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Chan;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\ChanForm;
+use Illuminate\Routing\Controller;
 
 class Create extends Controller
 {

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Personalias;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\PersonAliaForm;
+use Illuminate\Routing\Controller;
 
 class Create extends Controller
 {

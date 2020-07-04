@@ -2,16 +2,17 @@
 
 namespace App\Models\enso\Roles;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 use App\Models\enso\core\UserGroup;
 use App\Models\enso\Menus\Menu;
 use App\Models\enso\Permissions\Permission;
-use LaravelEnso\Rememberable\App\Traits\Rememberable;
-use LaravelEnso\Roles\App\Exceptions\RoleConflict;
-use LaravelEnso\Roles\App\Services\ConfigWriter;
-use LaravelEnso\Tables\App\Traits\TableCache;
+use App\Models\User;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
+use LaravelEnso\Rememberable\Traits\Rememberable;
+use LaravelEnso\Roles\Exceptions\RoleConflict;
+use LaravelEnso\Roles\Services\ConfigWriter;
+use LaravelEnso\Tables\Traits\TableCache;
+use LaravelEnso\Multitenancy\Traits\SystemConnection;
 
 /**
  * @property int $id
@@ -28,7 +29,7 @@ use LaravelEnso\Tables\App\Traits\TableCache;
  */
 class Role extends Model
 {
-    use Rememberable, TableCache;
+    use Rememberable, TableCache, SystemConnection;
 
     protected $fillable = ['menu_id', 'name', 'display_name', 'description'];
 

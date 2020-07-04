@@ -9,6 +9,7 @@ use App\Notifications\SendActivationEmailApi;
 // use App\Traits\CaptureIpTrait;
 use Carbon\Carbon;
 use Str;
+
 class ActivationRepository
 {
     /**
@@ -42,8 +43,6 @@ class ActivationRepository
         self::sendNewActivationEmail($user, $activation->token);
     }
 
-
-    
     /**
      * Creates a new activation token.
      *
@@ -74,9 +73,8 @@ class ActivationRepository
         $user->notify(new SendActivationEmail($token));
     }
 
-
-     /**
-     * Creates a token and send email.- api
+    /**
+     * Creates a token and send email.- api.
      *
      * @param \App\Models\User $user
      *
@@ -115,7 +113,7 @@ class ActivationRepository
      */
     public function createNewActivationTokenApi(User $user)
     {
-        $token = sprintf("%06d", mt_rand(1, 999999));
+        $token = sprintf('%06d', mt_rand(1, 999999));
         // $ipAddress = new CaptureIpTrait();
         $activation = new Activation();
         $activation->user_id = $user->id;

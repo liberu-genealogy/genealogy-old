@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Collection;
 use Illuminate\Validation\Rule;
-use LaravelEnso\People\App\Http\Requests\ValidatePersonRequest as EnsoPersonRequest;
+use LaravelEnso\People\Http\Requests\ValidatePersonRequest as EnsoPersonRequest;
 
 class ValidatePersonRequest extends EnsoPersonRequest
 {

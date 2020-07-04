@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Personalias;
 
+use App\Forms\Builders\PersonAliaForm;
 use App\PersonAlia;
 use Illuminate\Routing\Controller;
-use App\Forms\Builders\PersonAliaForm;
 
 class Edit extends Controller
 {

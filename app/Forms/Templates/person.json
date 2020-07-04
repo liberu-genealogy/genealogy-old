@@ -13,7 +13,7 @@
                     "column": 2,
                     "meta": {
                         "type": "select",
-                        "options": "LaravelEnso\\People\\App\\Enums\\Titles"
+                        "options": "LaravelEnso\\People\\\Enums\\Titles"
                     }
                 },
                 {

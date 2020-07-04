@@ -2,33 +2,38 @@
 
 namespace App;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Notifications\RoutesNotifications;
 use Illuminate\Support\Collection;
-use LaravelEnso\Addresses\App\Traits\Addressable;
-use LaravelEnso\Companies\App\Models\Company;
-use App\Models\User;
-use LaravelEnso\DynamicMethods\App\Traits\Relations;
-use LaravelEnso\Helpers\App\Traits\AvoidsDeletionConflicts;
-use LaravelEnso\Helpers\App\Traits\CascadesMorphMap;
-use LaravelEnso\People\App\Enums\Genders;
-use LaravelEnso\People\App\Enums\Titles;
-use LaravelEnso\Rememberable\App\Traits\Rememberable;
-use LaravelEnso\Tables\App\Traits\TableCache;
-use LaravelEnso\TrackWho\App\Traits\CreatedBy;
-use LaravelEnso\TrackWho\App\Traits\UpdatedBy;
+use LaravelEnso\Addresses\Traits\Addressable;
+use LaravelEnso\Companies\Models\Company;
+use LaravelEnso\DynamicMethods\Traits\Relations;
+use LaravelEnso\Helpers\Traits\AvoidsDeletionConflicts;
+use LaravelEnso\Helpers\Traits\CascadesMorphMap;
+use LaravelEnso\People\Enums\Genders;
+use LaravelEnso\People\Enums\Titles;
+use LaravelEnso\Rememberable\Traits\Rememberable;
+use LaravelEnso\Tables\Traits\TableCache;
+use LaravelEnso\TrackWho\Traits\CreatedBy;
+use LaravelEnso\TrackWho\Traits\UpdatedBy;
+use LaravelEnso\Multitenancy\Traits\SystemConnection;
 
-
-class Person extends \LaravelEnso\People\App\Models\Person
+class Person extends Model
 {
-    use SoftDeletes, CascadesMorphMap,
-        Addressable,
+    use Addressable,
         AvoidsDeletionConflicts,
+        CascadesMorphMap,
         CreatedBy,
         Relations,
         Rememberable,
+        RoutesNotifications,
         TableCache,
-        UpdatedBy;
+        UpdatedBy,
+        SoftDeletes,
+        SystemConnection;
+
 
     /**
      * The attributes that should be mutated to dates.

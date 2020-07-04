@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Familyslugs;
 
 use App\FamilySlgs;
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\FamilySlgsForm;
+use Illuminate\Routing\Controller;
 
 class Edit extends Controller
 {

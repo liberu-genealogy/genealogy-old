@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Familyslugs;
 
 use App\FamilySlgs;
-use Illuminate\Routing\Controller;
 use App\Http\Requests\ValidateFamilySlgsRequest;
+use Illuminate\Routing\Controller;
 
 class Store extends Controller
 {
