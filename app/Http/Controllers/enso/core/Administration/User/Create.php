@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\enso\core\Administration\User;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\enso\core\UserForm;
 use App\Person;
+use Illuminate\Routing\Controller;
 
 class Create extends Controller
 {

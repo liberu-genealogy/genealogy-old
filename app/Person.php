@@ -2,23 +2,23 @@
 
 namespace App;
 
+use App\Models\enso\companies\Company;
 use App\Models\User;
+use App\Traits\enso\DynamicMethods\Relations;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\RoutesNotifications;
 use Illuminate\Support\Collection;
 use LaravelEnso\Addresses\Traits\Addressable;
-use App\Models\enso\companies\Company;
-use App\Traits\enso\DynamicMethods\Relations;
 use LaravelEnso\Helpers\Traits\AvoidsDeletionConflicts;
 use LaravelEnso\Helpers\Traits\CascadesMorphMap;
+use LaravelEnso\Multitenancy\Traits\SystemConnection;
 use LaravelEnso\People\Enums\Genders;
 use LaravelEnso\People\Enums\Titles;
 use LaravelEnso\Rememberable\Traits\Rememberable;
 use LaravelEnso\Tables\Traits\TableCache;
 use LaravelEnso\TrackWho\Traits\CreatedBy;
 use LaravelEnso\TrackWho\Traits\UpdatedBy;
-use LaravelEnso\Multitenancy\Traits\SystemConnection;
 
 class Person extends Model
 {
@@ -33,7 +33,6 @@ class Person extends Model
         UpdatedBy,
         SoftDeletes,
         SystemConnection;
-
 
     /**
      * The attributes that should be mutated to dates.

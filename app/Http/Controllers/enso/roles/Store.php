@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\enso\Roles;
 
+use App\Models\enso\Roles\Role;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Roles\Http\Requests\ValidateRoleRequest;
-use App\Models\enso\Roles\Role;
 
 class Store extends Controller
 {

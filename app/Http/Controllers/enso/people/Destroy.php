@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\enso\people;
 
+use App\Person;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Routing\Controller;
-use App\Person;
 
 class Destroy extends Controller
 {

@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use LaravelEnso\Menus\Exceptions\Menu as Exception;
-use LaravelEnso\Tables\Traits\TableCache;
 use LaravelEnso\Multitenancy\Traits\SystemConnection;
+use LaravelEnso\Tables\Traits\TableCache;
 
 /**
  * @property int $id

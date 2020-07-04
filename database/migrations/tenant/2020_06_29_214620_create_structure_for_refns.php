@@ -23,7 +23,7 @@ class CreateStructureForRefns extends Migration
     ];
 
     protected array $menu = [
-        'name' => 'Refn', 'icon' => 'book', 'route' => 'refn.index', 'order_index' => 999, 'has_children' => false
+        'name' => 'Refn', 'icon' => 'book', 'route' => 'refn.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected ?string $parentMenu = 'Information';

@@ -2,9 +2,9 @@
 
 namespace App\Forms\Builders\enso\Permissions;
 
-use LaravelEnso\Forms\Services\Form;
 use App\Models\enso\Permissions\Permission;
 use App\Models\enso\Roles\Role;
+use LaravelEnso\Forms\Services\Form;
 
 class PermissionForm
 {

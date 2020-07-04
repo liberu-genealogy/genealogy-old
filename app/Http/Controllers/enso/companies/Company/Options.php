@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\enso\companies\Company;
 
-use Illuminate\Routing\Controller;
 use App\Models\enso\companies\Company;
+use Illuminate\Routing\Controller;
 use LaravelEnso\Select\Traits\OptionsBuilder;
 
 class Options extends Controller

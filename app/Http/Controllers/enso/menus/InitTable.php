@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\enso\Menus;
 
-use Illuminate\Routing\Controller;
 use App\Tables\Builders\enso\Menus\MenuTable;
+use Illuminate\Routing\Controller;
 use LaravelEnso\Tables\Traits\Init;
 
 class InitTable extends Controller

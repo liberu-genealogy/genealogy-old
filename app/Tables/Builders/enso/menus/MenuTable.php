@@ -2,8 +2,8 @@
 
 namespace App\Tables\Builders\enso\Menus;
 
-use Illuminate\Database\Eloquent\Builder;
 use App\Models\enso\Menus\Menu;
+use Illuminate\Database\Eloquent\Builder;
 use LaravelEnso\Tables\Contracts\Table;
 
 class MenuTable implements Table
