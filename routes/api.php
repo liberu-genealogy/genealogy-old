@@ -238,6 +238,38 @@ Route::namespace('\App\Http\Controllers\enso\companies')
         Route::get('{log}', 'Show')->name('show');
     });    
 
+    /**
+     * overwrite localisation
+     */
+    Route::middleware(['api', 'auth', 'core'])
+    ->namespace('\App\Http\Controllers\enso\Localisation')
+    ->prefix('system/localisation')
+    ->as('system.localisation.')
+    ->group(function () {
+        // require 'app/json.php';
+        Route::namespace('Json')
+        ->group(function () {
+            Route::get('editTexts', 'Index')->name('editTexts');
+            Route::get('getLangFile/{language}/{subDir}', 'Edit')->name('getLangFile');
+            Route::patch('saveLangFile/{language}/{subDir}', 'Update')->name('saveLangFile');
+            Route::patch('addKey', 'AddKey')->name('addKey');
+            Route::patch('merge/{locale?}', 'Merge')->name('merge');
+        });        
+        // require 'app/language.php';
+        Route::namespace('Language')
+        ->group(function () {
+            Route::get('create', 'Create')->name('create');
+            Route::post('', 'Store')->name('store');
+            Route::get('{language}/edit', 'Edit')->name('edit');
+            Route::patch('{language}', 'Update')->name('update');
+            Route::delete('{language}', 'Destroy')->name('destroy');
+    
+            Route::get('initTable', 'InitTable')->name('initTable');
+            Route::get('tableData', 'TableData')->name('tableData');
+            Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+        });        
+    });
+
     Route::namespace('System')
     ->prefix('system')
     ->as('system.')
