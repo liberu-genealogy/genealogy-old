@@ -3,7 +3,7 @@
 namespace App\Models\enso\Permissions;
 
 use App\Models\enso\Menus\Menu;
-use App\Models\Roles\Role;
+use App\Models\enso\Roles\Role;
 use App\Models\Tutorials\Tutorial;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Route;

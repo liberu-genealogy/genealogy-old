@@ -22,13 +22,8 @@ class CreateStructureForFamilyEvents extends Migration
         ['name' => 'familyevents.options', 'description' => 'Get family event options for select', 'is_default' => false],
     ];
 
-<<<<<<< HEAD
-    protected $menu = [
-        'name' => 'Family Events', 'icon' => 'book', 'route' => 'familyevents.index', 'order_index' => 999, 'has_children' => false,
-=======
     protected array $menu = [
         'name' => 'Family Events', 'icon' => 'book', 'route' => 'familyevents.index', 'order_index' => 999, 'has_children' => false
->>>>>>> parent of a7f00d69... Revert "Merge remote-tracking branch 'origin/master' into jyyblue"
     ];
 
     protected ?string $parentMenu = 'Families';

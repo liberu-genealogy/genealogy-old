@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\enso\core\Administration\User;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Core\Forms\Builders\UserForm;
-use LaravelEnso\Core\Models\User;
+use App\Forms\Builders\enso\core\UserForm;
+use App\Models\User;
 
 class Edit extends Controller
 {

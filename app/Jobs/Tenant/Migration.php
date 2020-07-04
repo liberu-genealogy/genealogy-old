@@ -3,10 +3,7 @@
 namespace App\Jobs\Tenant;
 
 use App\Models\User;
-use App\Models\User;
 use App\Person;
-use App\Person;
-use DB;
 use DB;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;

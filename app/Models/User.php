@@ -31,6 +31,7 @@ use LaravelEnso\Rememberable\Traits\Rememberable;
 use LaravelEnso\Roles\Enums\Roles;
 use LaravelEnso\Tables\Traits\TableCache;
 use LaravelEnso\Teams\Models\Team;
+use App\Models\enso\core\Login;
 
 class User extends Authenticatable implements Activatable, HasLocalePreference
 {

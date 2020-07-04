@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Hash;
 // use LaravelEnso\Multitenancy\Jobs\Migrate;
 use Illuminate\Support\Facades\Validator;
 use LaravelEnso\Companies\Models\Company;
-use LaravelEnso\Core\Models\UserGroup;
-use LaravelEnso\Roles\Models\Role;
+use App\Models\enso\core\UserGroup;
+use App\Models\enso\Roles\Role;
 use Str;
 
 class RegisterController extends Controller
@@ -45,7 +45,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         try {
-            DB::beginTransaction();
+            // DB::beginTransaction();
             // create person
             $person = new Person();
             $person->name = $data['name'];
@@ -79,15 +79,15 @@ class RegisterController extends Controller
             $company = Company::create([
                 'name' => $data['name'],
                 'email' => $data['email'],
-                'is_active' => 1,
+                // 'is_active' => 1,
                 'is_tenant' => 1,
                 'status' => 1,
             ]);
 
 //          $company->attachPerson($person->id, 'Owner');
+            // DB::commit();
 
             $person->companies()->attach($company->id, ['person_id' => $person->id, 'is_main' => 1, 'is_mandatary' => 1, 'company_id' => $company->id]);
-            DB::commit();
 
             // Dispatch Tenancy Jobs
 
@@ -96,7 +96,7 @@ class RegisterController extends Controller
 
             return $user;
         } catch (\Exception $e) {
-            DB::rollBack();
+            // DB::rollBack();
             throw $e;
         }
     }
