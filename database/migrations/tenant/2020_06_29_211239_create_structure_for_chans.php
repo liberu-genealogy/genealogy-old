@@ -22,13 +22,8 @@ class CreateStructureForChans extends Migration
         ['name' => 'chan.options', 'description' => 'Get chan options for select', 'is_default' => false],
     ];
 
-<<<<<<< HEAD
-    protected $menu = [
-        'name' => 'Chan', 'icon' => 'book', 'route' => 'chan.index', 'order_index' => 999, 'has_children' => false,
-=======
     protected array $menu = [
         'name' => 'Chan', 'icon' => 'book', 'route' => 'chan.index', 'order_index' => 999, 'has_children' => false
->>>>>>> parent of a7f00d69... Revert "Merge remote-tracking branch 'origin/master' into jyyblue"
     ];
 
     protected ?string $parentMenu = 'Information';

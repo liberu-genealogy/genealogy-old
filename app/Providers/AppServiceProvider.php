@@ -23,6 +23,9 @@ use LaravelEnso\People\Http\Requests\ValidatePersonUpdate;
 use LaravelEnso\People\Models\Person;
 use LaravelEnso\People\Tables\Builders\PersonTable;
 
+use LaravelEnso\ActionLogger\DynamicsRelations\ActionLogs;
+use LaravelEnso\ActionLogger\Http\Middleware\ActionLogger;
+
 class AppServiceProvider extends ServiceProvider
 {
     public $bindings = [
@@ -52,10 +55,13 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(PersonForm::class, function () {
             return new LocalPersonForm();
         });
+        // $this->app['router']->aliasMiddleware('action-logger', ActionLogger::class);
+
     }
 
     public function register()
     {
         Methods::bind(Company::class, [Comments::class, Discussions::class, Documents::class]);
+        Methods::bind(User::class, [ActionLogs::class]);
     }
 }
