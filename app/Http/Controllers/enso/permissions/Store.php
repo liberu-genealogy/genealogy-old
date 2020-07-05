@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\enso\Permissions;
+namespace App\Http\Controllers\enso\permissions;
 
+use App\Models\enso\permissions\Permission;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Permissions\Http\Requests\ValidatePermissionRequest;
-use App\Models\enso\Permissions\Permission;
+use Laravelenso\permissions\Http\Requests\ValidatePermissionRequest;
 
 class Store extends Controller
 {

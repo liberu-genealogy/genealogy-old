@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\enso\companies\Person;
 
-use Illuminate\Routing\Controller;
-use App\Person;
-use App\Models\enso\companies\Company;
 use App\Forms\Builders\PersonForm;
+use App\Models\enso\companies\Company;
+use App\Person;
+use Illuminate\Routing\Controller;
 
 class Edit extends Controller
 {

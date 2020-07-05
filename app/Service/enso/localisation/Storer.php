@@ -2,9 +2,9 @@
 
 namespace App\Service\enso\Localisation;
 
-use Illuminate\Support\Facades\DB;
 use App\Models\enso\Localisation\Language;
 use App\Service\enso\Localisation\Json\Storer as JsonStorer;
+use Illuminate\Support\Facades\DB;
 use LaravelEnso\Localisation\Services\Legacy\Storer as LegacyStorer;
 
 class Storer

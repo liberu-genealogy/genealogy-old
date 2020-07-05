@@ -2,8 +2,8 @@
 
 namespace App\Tables\Builders\enso\Localisation;
 
-use Illuminate\Database\Eloquent\Builder;
 use App\Models\enso\Localisation\Language;
+use Illuminate\Database\Eloquent\Builder;
 use LaravelEnso\Tables\Contracts\Table;
 
 class LanguageTable implements Table

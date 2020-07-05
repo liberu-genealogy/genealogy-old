@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\enso\Permissions;
+namespace App\Http\Controllers\enso\permissions;
 
+use App\Models\enso\permissions\Permission;
 use Illuminate\Routing\Controller;
-use App\Models\enso\Permissions\Permission;
 
 class Destroy extends Controller
 {

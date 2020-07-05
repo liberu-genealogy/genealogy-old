@@ -2,9 +2,9 @@
 
 namespace App\Forms\Builders\enso\Roles;
 
-use LaravelEnso\Forms\Services\Form;
 use App\Models\enso\Menus\Menu;
 use App\Models\enso\Roles\Role;
+use LaravelEnso\Forms\Services\Form;
 
 class RoleForm
 {

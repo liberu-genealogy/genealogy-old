@@ -2,8 +2,8 @@
 
 namespace App\Http\Resources\enso\Teams;
 
-use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\enso\core\User;
+use Illuminate\Http\Resources\Json\JsonResource;
 
 class Team extends JsonResource
 {
