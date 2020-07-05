@@ -111,9 +111,9 @@ class ChartController extends Controller
         $user->role_id = 1;
         $user->save();
         $company = $user->company();
-        $tanent = false;
+        $tenant = false;
         if ($company) {
-            $tanent = true;
+            $tenant = true;
         }
         $value = env('DB_DATABASE');
         if (optional($company)->isTenant()) {

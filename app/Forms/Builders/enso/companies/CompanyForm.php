@@ -2,9 +2,9 @@
 
 namespace App\Forms\Builders\enso\Companies;
 
+use App\Models\enso\companies\Company;
 use LaravelEnso\Companies\Enums\Statuses;
 use LaravelEnso\Forms\Services\Form;
-use App\Models\enso\companies\Company;
 
 class CompanyForm
 {

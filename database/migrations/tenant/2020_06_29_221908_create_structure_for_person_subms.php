@@ -23,7 +23,7 @@ class CreateStructureForPersonSubms extends Migration
     ];
 
     protected array $menu = [
-        'name' => 'Person Subm', 'icon' => 'book', 'route' => 'personsubm.index', 'order_index' => 999, 'has_children' => false
+        'name' => 'Person Subm', 'icon' => 'book', 'route' => 'personsubm.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected ?string $parentMenu = 'People';

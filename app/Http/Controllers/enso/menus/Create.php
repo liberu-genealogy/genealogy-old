@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\enso\Menus;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\enso\Menus\MenuForm;
+use Illuminate\Routing\Controller;
 
 class Create extends Controller
 {
