@@ -1,0 +1,71 @@
+{
+    "routePrefix": "system.tutorials",
+    "sections": [{
+            "columns": 2,
+            "fields": [{
+                    "label": "Permission",
+                    "name": "permission_id",
+                    "value": null,
+                    "meta": {
+                        "type": "select",
+                        "multiple": false,
+                        "options": []
+                    }
+                },
+                {
+                    "label": "Element",
+                    "name": "element",
+                    "value": "",
+                    "meta": {
+                        "type": "input",
+                        "content": "text"
+                    }
+                }
+            ]
+        },
+        {
+            "columns": 3,
+            "fields": [{
+                    "label": "Title",
+                    "name": "title",
+                    "value": "",
+                    "meta": {
+                        "type": "input",
+                        "content": "text"
+                    }
+                },
+                {
+                    "label": "Placement",
+                    "name": "placement",
+                    "value": null,
+                    "meta": {
+                        "type": "select",
+                        "multiple": false,
+                        "options": "LaravelEnso\\Tutorials\\Enums\\Placement"
+                    }
+                },
+                {
+                    "label": "Order",
+                    "name": "order_index",
+                    "value": false,
+                    "meta": {
+                        "type": "input",
+                        "content": "number"
+                    }
+                }
+            ]
+        },
+        {
+            "columns": 1,
+            "fields": [{
+                "label": "Content",
+                "name": "content",
+                "value": null,
+                "meta": {
+                    "type": "textarea",
+                    "rows": 3
+                }
+            }]
+        }
+    ]
+}

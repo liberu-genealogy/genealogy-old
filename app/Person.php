@@ -34,6 +34,12 @@ class Person extends Model
         SoftDeletes,
         SystemConnection;
 
+        public function __construct(Array $attributes = [])
+        {
+            parent::__construct($attributes);
+    
+            $this->setConnection('mysql'); // see config/database.php where you have specified this second connection to a different DB
+        }
     /**
      * The attributes that should be mutated to dates.
      *
