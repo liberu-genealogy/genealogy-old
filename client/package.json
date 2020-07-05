@@ -21,17 +21,20 @@
     },
     "main": "vue.config.js",
     "dependencies": {
-        "@enso-ui/accessories": "2.4.x",
-        "@enso-ui/bulma": "2.3.x",
-        "@enso-ui/calendar": "1.4.x",
+        "@enso-ui/accessories": "^3.0",
+        "@enso-ui/activity-log": "^2.0",
+        "@enso-ui/bulma": "^3.0",
+        "@enso-ui/calendar": "^2.0",
         "@enso-ui/directives": "1.0.x",
-        "@enso-ui/filters": "1.4.x",
-        "@enso-ui/forms": "1.4.x",
-        "@enso-ui/mixins": "1.1.x",
-        "@enso-ui/tables": "1.4.x",
+        "@enso-ui/filters": "^2.0",
+        "@enso-ui/forms": "^2.0",
+        "@enso-ui/how-to": "^2.0",
+        "@enso-ui/mixins": "^2.0",
+        "@enso-ui/tables": "^2.0",
         "@enso-ui/themes": "1.1.x",
         "@enso-ui/transitions": "1.0.x",
-        "@enso-ui/ui": "2.5.x",
+        "@enso-ui/tutorials": "^2.0",
+        "@enso-ui/ui": "^3.0",
         "@fortawesome/fontawesome-free": "^5.2.0",
         "@fortawesome/fontawesome-svg-core": "^1.2.2",
         "@fortawesome/free-brands-svg-icons": "^5.2.0",
@@ -77,7 +80,7 @@
         "eslint-plugin-vue": "^6.0.0",
         "file-loader": "^1.1.11",
         "ignore-assets-webpack-plugin": "^2.0.1",
-        "mini-css-extract-plugin": "^0.8.0",
+        "mini-css-extract-plugin": "^0.9.0",
         "node-sass": "^4.9.0",
         "postcss-cssnext": "^3.1.0",
         "postcss-import": "^12.0.1",
@@ -130,3 +133,4 @@
         "url": "http://github.com/modularsoftware/genealogy"
     }
 }
+
