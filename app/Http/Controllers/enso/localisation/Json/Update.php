@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\enso\Localisation\Json;
 
-use Illuminate\Http\Request;
 use App\Models\enso\Localisation\Language;
 use App\Service\enso\Localisation\Json\Updater;
+use Illuminate\Http\Request;
 
 class Update
 {

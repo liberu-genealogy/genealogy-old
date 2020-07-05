@@ -3,14 +3,15 @@
 namespace App\Models\enso\core;
 
 use App\Models\enso\Roles\Role;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use LaravelEnso\Core\Exceptions\UserGroupConflict;
+use LaravelEnso\Multitenancy\Traits\SystemConnection;
 use LaravelEnso\Rememberable\Traits\Rememberable;
 use LaravelEnso\Roles\Traits\HasRoles;
 use LaravelEnso\Tables\Traits\TableCache;
-use LaravelEnso\Multitenancy\Traits\SystemConnection;
-use App\Models\User;
+
 /**
  * @property int $id
  * @property string $name

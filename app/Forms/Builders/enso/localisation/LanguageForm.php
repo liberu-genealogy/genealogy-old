@@ -2,8 +2,8 @@
 
 namespace App\Forms\Builders\enso\Localisation;
 
-use LaravelEnso\Forms\Services\Form;
 use App\Models\enso\Localisation\Language;
+use LaravelEnso\Forms\Services\Form;
 
 class LanguageForm
 {

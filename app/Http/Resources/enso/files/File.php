@@ -2,8 +2,8 @@
 
 namespace App\Http\Resources\enso\files;
 
-use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\enso\core\User;
+use Illuminate\Http\Resources\Json\JsonResource;
 
 class File extends JsonResource
 {

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\enso\permissions;
 
-use Illuminate\Routing\Controller;
 use App\Models\enso\permissions\Permission;
+use Illuminate\Routing\Controller;
 
 class Destroy extends Controller
 {

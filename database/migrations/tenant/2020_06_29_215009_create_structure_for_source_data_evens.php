@@ -23,7 +23,7 @@ class CreateStructureForSourceDataEvens extends Migration
     ];
 
     protected array $menu = [
-        'name' => 'Source Data Events', 'icon' => 'book', 'route' => 'sourcedataevent.index', 'order_index' => 999, 'has_children' => false
+        'name' => 'Source Data Events', 'icon' => 'book', 'route' => 'sourcedataevent.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected ?string $parentMenu = 'Sources';

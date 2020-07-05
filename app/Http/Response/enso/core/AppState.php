@@ -5,6 +5,7 @@ namespace App\Http\Response\enso\core;
 use App\Models\enso\Localisation\Language;
 use App\Models\enso\Permissions\Permission;
 use App\Models\enso\Roles\Role;
+use App\Service\enso\menus\TreeBuilder;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\App;
@@ -20,7 +21,6 @@ use LaravelEnso\Enums\Facades\Enums;
 use LaravelEnso\Enums\Services\Enum;
 use LaravelEnso\Helpers\Services\JsonReader;
 use LaravelEnso\Menus\Http\Resources\Menu;
-use App\Service\enso\menus\TreeBuilder;
 use LaravelEnso\Roles\Enums\Roles;
 
 class AppState implements Responsable

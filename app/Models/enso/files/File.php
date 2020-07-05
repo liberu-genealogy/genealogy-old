@@ -2,11 +2,11 @@
 
 namespace App\Models\enso\files;
 
+use App\Traits\enso\files\FilePolicies;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use LaravelEnso\Files\Facades\FileBrowser;
-use App\Traits\enso\files\FilePolicies;
 use LaravelEnso\TrackWho\Traits\CreatedBy;
 
 class File extends Model
