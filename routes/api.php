@@ -19,7 +19,7 @@ Route::post('verify', '\App\Http\Controllers\Auth\VerificationController@verify_
         // Route::middleware(['api', 'auth'])
         //     ->group(fn () => Route::get('/sentry', 'Sentry')->name('sentry'));
 
-        Route::middleware(['api', 'auth', 'core'])
+        Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->group(function () {
                 Route::prefix('core')
                     ->as('core.')
@@ -80,11 +80,11 @@ Route::post('verify', '\App\Http\Controllers\Auth\VerificationController@verify_
     //
 
 /**
- * overwirte people
+ * overwrite people
  */
 
 Route::namespace('\App\Http\Controllers\enso\people')
-->middleware(['api', 'auth', 'core'])
+->middleware(['api', 'auth', 'core', 'multitenant'])
 ->prefix('administration/people')
 ->as('administration.people.')
 ->group(function () {
@@ -105,7 +105,7 @@ Route::namespace('\App\Http\Controllers\enso\people')
  * overwrite companies
  */
 Route::namespace('\App\Http\Controllers\enso\companies')
-    ->middleware(['api', 'auth', 'core'])
+    ->middleware(['api', 'auth', 'core', 'multitenant'])
     ->prefix('administration/companies')
     ->as('administration.companies.')
     ->group(function () {
@@ -146,7 +146,7 @@ Route::namespace('\App\Http\Controllers\enso\companies')
      * overwrite team
      */
     Route::namespace('\App\Http\Controllers\enso\teams')
-    ->middleware(['api', 'auth', 'core'])
+    ->middleware(['api', 'auth', 'core', 'multitenant'])
     ->prefix('administration/teams')
     ->as('administration.teams.')
     ->group(function () {
@@ -160,7 +160,7 @@ Route::namespace('\App\Http\Controllers\enso\companies')
      * overwrite permission
      */
 
-    Route::middleware(['api', 'auth', 'core'])
+    Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->prefix('system/permissions')->as('system.permissions.')
     ->namespace('\App\Http\Controllers\enso\permissions')
     ->group(function () {
@@ -178,7 +178,7 @@ Route::namespace('\App\Http\Controllers\enso\companies')
     /**
      * overwrite menus
      */
-    Route::middleware(['api', 'auth', 'core'])
+    Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->prefix('api/system/menus')
     ->as('system.menus.')
     ->namespace('\App\Http\Controllers\enso\menus')
@@ -198,7 +198,7 @@ Route::namespace('\App\Http\Controllers\enso\companies')
     /**
      * overwrite roles
      */
-    Route::middleware(['api', 'auth', 'core'])
+    Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->prefix('system/roles')->as('system.roles.')
     ->namespace('\App\Http\Controllers\enso\roles')
     ->group(function () {
@@ -226,7 +226,7 @@ Route::namespace('\App\Http\Controllers\enso\companies')
     /**
      * overwrite logs
      */
-    Route::middleware(['api', 'auth', 'core'])
+    Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->namespace('\App\Http\Controllers\enso\logs')
     ->prefix('system/logs')
     ->as('system.logs.')
@@ -241,7 +241,7 @@ Route::namespace('\App\Http\Controllers\enso\companies')
     /**
      * overwrite localisation
      */
-    Route::middleware(['api', 'auth', 'core'])
+    Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->namespace('\App\Http\Controllers\enso\localisation')
     ->prefix('system/localisation')
     ->as('system.localisation.')
@@ -319,7 +319,7 @@ Route::namespace('\App\Http\Controllers\enso\companies')
      * file
      *
      */
-    Route::middleware(['web', 'auth', 'core'])
+    Route::middleware(['web', 'auth', 'core', 'multitenant'])
     ->namespace('enso\files')
     ->prefix('core')
     ->as('core.')
