@@ -337,6 +337,44 @@ Route::namespace('\App\Http\Controllers\enso\companies')
     ->as('core.activityLogs.')
     ->group(fn () => Route::get('', 'Index')->name('index'));
 
+    /**
+     * overwrite howto video
+     */
+    Route::middleware(['api', 'auth', 'core'])
+    ->prefix('howTo')->as('howTo.')
+    ->namespace('\App\Http\Controllers\enso\HowTo')
+    ->group(function () {
+        Route::namespace('Video')
+        ->prefix('videos')
+        ->as('videos.')
+        ->group(function () {
+            Route::get('', 'Index')->name('index');
+            Route::post('', 'Store')->name('store');
+            Route::patch('{video}', 'Update')->name('update');
+            Route::delete('{video}', 'Destroy')->name('destroy');
+            Route::get('{video}', 'Show')->name('show');
+        });
+    
+        Route::namespace('Poster')
+        ->prefix('posters')
+        ->as('posters.')
+        ->group(function () {
+            Route::post('', 'Store')->name('store');
+            Route::delete('{poster}', 'Destroy')->name('destroy');
+            Route::get('{poster}', 'Show')->name('show');
+        });        
+
+        Route::namespace('Tag')
+        ->prefix('tags')
+        ->as('tags.')
+        ->group(function () {
+            Route::get('', 'Index')->name('index');
+            Route::post('', 'Store')->name('store');
+            Route::delete('{tag}', 'Destroy')->name('destroy');
+            Route::patch('{tag}', 'Update')->name('update');
+        });
+    });
+
     Route::namespace('System')
     ->prefix('system')
     ->as('system.')
