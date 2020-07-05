@@ -270,6 +270,64 @@ Route::namespace('\App\Http\Controllers\enso\companies')
         });        
     });
 
+    /**
+     * overwrite tutorial
+     */
+    Route::middleware(['api', 'auth', 'core'])
+    ->prefix('system/tutorials')
+    ->as('system.tutorials.')
+    ->namespace('\App\Http\Controllers\enso\Tutorials')
+    ->group(function () {
+        Route::get('create', 'Create')->name('create');
+        Route::post('', 'Store')->name('store');
+        Route::get('{tutorial}/edit', 'Edit')->name('edit');
+        Route::patch('{tutorial}', 'Update')->name('update');
+        Route::delete('{tutorial}', 'Destroy')->name('destroy');
+
+        Route::get('initTable', 'InitTable')->name('initTable');
+        Route::get('tableData', 'TableData')->name('tableData');
+        Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+
+        Route::get('load', 'Load')->name('load');
+    });
+
+    /**
+     * overwrite data-import
+     */
+    Route::middleware(['api', 'auth', 'core'])
+    ->namespace('\App\Http\Controllers\enso\dataimport')
+    ->prefix('import')->as('import.')
+    ->group(function () {
+        // require 'app/imports.php';
+        Route::namespace('Import')
+        ->group(function () {
+            Route::get('', 'Index')->name('index');
+            Route::delete('{dataImport}', 'Destroy')->name('destroy');
+            Route::post('store', 'Store')->name('store');
+            Route::get('download/{dataImport}', 'Download')->name('download');
+    
+            Route::get('initTable', 'InitTable')->name('initTable');
+            Route::get('tableData', 'TableData')->name('tableData');
+            Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+        });
+    
+        // require 'app/rejected.php';
+        Route::namespace('Rejected')
+        ->group(function () {
+            Route::get('downloadRejected/{rejectedImport}', 'Download')->name('downloadRejected');
+        });
+    
+        // require 'app/template.php';
+        Route::namespace('Template')
+        ->group(function () {
+            Route::get('template/{type}', 'Show')->name('template');
+            Route::post('uploadTemplate', 'Store')->name('uploadTemplate');
+            Route::delete('deleteTemplate/{importTemplate}', 'Destroy')->name('deleteTemplate');
+            Route::get('downloadTemplate/{importTemplate}', 'Download')->name('downloadTemplate');
+        });
+    
+    });
+
     Route::namespace('System')
     ->prefix('system')
     ->as('system.')
