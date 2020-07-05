@@ -1,5 +1,46 @@
+diff --git a/node_modules/@enso-ui/ui/.eslintrc.js b/node_modules/@enso-ui/ui/.eslintrc.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/.github/issue_template.md b/node_modules/@enso-ui/ui/.github/issue_template.md
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/LICENSE b/node_modules/@enso-ui/ui/LICENSE
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/README.md b/node_modules/@enso-ui/ui/README.md
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/bulma/index.js b/node_modules/@enso-ui/ui/bulma/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/renderless/components/index.js b/node_modules/@enso-ui/ui/renderless/components/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/renderless/components/menu/index.js b/node_modules/@enso-ui/ui/renderless/components/menu/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/renderless/components/navbar/index.js b/node_modules/@enso-ui/ui/renderless/components/navbar/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/renderless/components/navbar/io/index.js b/node_modules/@enso-ui/ui/renderless/components/navbar/io/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/renderless/components/settings/index.js b/node_modules/@enso-ui/ui/renderless/components/settings/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/renderless/index.js b/node_modules/@enso-ui/ui/renderless/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/renderless/layouts/index.js b/node_modules/@enso-ui/ui/renderless/layouts/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/App.vue b/node_modules/@enso-ui/ui/src/bulma/App.vue
+old mode 100644
+new mode 100755
 diff --git a/node_modules/@enso-ui/ui/src/bulma/components/AppFooter.vue b/node_modules/@enso-ui/ui/src/bulma/components/AppFooter.vue
-index cfb133c..a88a151 100644
+old mode 100644
+new mode 100755
+index cfb133c..a88a151
 --- a/node_modules/@enso-ui/ui/src/bulma/components/AppFooter.vue
 +++ b/node_modules/@enso-ui/ui/src/bulma/components/AppFooter.vue
 @@ -15,6 +15,14 @@
@@ -38,13 +79,42 @@ index cfb133c..a88a151 100644
                              target="_blank">
                              <span class="icon">
                                  <fa :icon="['fab', 'github']"/>
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/Bookmarks.vue b/node_modules/@enso-ui/ui/src/bulma/components/Bookmarks.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/Breadcrumbs.vue b/node_modules/@enso-ui/ui/src/bulma/components/Breadcrumbs.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/Loader.vue b/node_modules/@enso-ui/ui/src/bulma/components/Loader.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/PageHeader.vue b/node_modules/@enso-ui/ui/src/bulma/components/PageHeader.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/VueAside.vue b/node_modules/@enso-ui/ui/src/bulma/components/VueAside.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/menu/MenuItem.vue b/node_modules/@enso-ui/ui/src/bulma/components/menu/MenuItem.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/menu/Menus.vue b/node_modules/@enso-ui/ui/src/bulma/components/menu/Menus.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/menu/Sidebar.vue b/node_modules/@enso-ui/ui/src/bulma/components/menu/Sidebar.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/menu/icons/index.js b/node_modules/@enso-ui/ui/src/bulma/components/menu/icons/index.js
+old mode 100644
+new mode 100755
 diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/AppUpdate.vue b/node_modules/@enso-ui/ui/src/bulma/components/navbar/AppUpdate.vue
-index c93f97a..dc128e6 100644
+old mode 100644
+new mode 100755
+index a7005d8..45f630f
 --- a/node_modules/@enso-ui/ui/src/bulma/components/navbar/AppUpdate.vue
 +++ b/node_modules/@enso-ui/ui/src/bulma/components/navbar/AppUpdate.vue
 @@ -11,7 +11,7 @@
  </template>
-
+ 
  <script>
 -import { mapState, mapMutations, mapGetters } from 'vuex';
 +import { mapState, mapActions, mapGetters } from 'vuex';
@@ -53,15 +123,24 @@ index c93f97a..dc128e6 100644
  import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 @@ -41,7 +41,7 @@ export default {
      },
-
+ 
      methods: {
 -        ...mapMutations('websockets', ['connect']),
 +        ...mapActions('websockets', ['connect']),
          listen() {
              window.Echo.private(this.appUpdates)
                  .listen('.new-update', ({ title, message, tooltip }) => {
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/IO.vue b/node_modules/@enso-ui/ui/src/bulma/components/navbar/IO.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/MissingKeys.vue b/node_modules/@enso-ui/ui/src/bulma/components/navbar/MissingKeys.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/Navbar.vue b/node_modules/@enso-ui/ui/src/bulma/components/navbar/Navbar.vue
+old mode 100644
+new mode 100755
 diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/NavbarRefreshable.vue b/node_modules/@enso-ui/ui/src/bulma/components/navbar/NavbarRefreshable.vue
-new file mode 100644
+new file mode 100755
 index 0000000..66e7976
 --- /dev/null
 +++ b/node_modules/@enso-ui/ui/src/bulma/components/navbar/NavbarRefreshable.vue
@@ -113,8 +192,85 @@ index 0000000..66e7976
 +        z-index: 1000;
 +    }
 +</style>
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/Notifications.vue b/node_modules/@enso-ui/ui/src/bulma/components/navbar/Notifications.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/ProfileControl.vue b/node_modules/@enso-ui/ui/src/bulma/components/navbar/ProfileControl.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/Search.vue b/node_modules/@enso-ui/ui/src/bulma/components/navbar/Search.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/SettingsControl.vue b/node_modules/@enso-ui/ui/src/bulma/components/navbar/SettingsControl.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/icons/app.js b/node_modules/@enso-ui/ui/src/bulma/components/navbar/icons/app.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/icons/enso.js b/node_modules/@enso-ui/ui/src/bulma/components/navbar/icons/enso.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/icons/index.js b/node_modules/@enso-ui/ui/src/bulma/components/navbar/icons/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/io/Operation.vue b/node_modules/@enso-ui/ui/src/bulma/components/navbar/io/Operation.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/BookmarksState.vue b/node_modules/@enso-ui/ui/src/bulma/components/settings/BookmarksState.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/KeyCollector.vue b/node_modules/@enso-ui/ui/src/bulma/components/settings/KeyCollector.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/LanguageSelector.vue b/node_modules/@enso-ui/ui/src/bulma/components/settings/LanguageSelector.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/MenuOrganizer.vue b/node_modules/@enso-ui/ui/src/bulma/components/settings/MenuOrganizer.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/Settings.vue b/node_modules/@enso-ui/ui/src/bulma/components/settings/Settings.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/SidebarState.vue b/node_modules/@enso-ui/ui/src/bulma/components/settings/SidebarState.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/ThemeSelector.vue b/node_modules/@enso-ui/ui/src/bulma/components/settings/ThemeSelector.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/ToastrPosition.vue b/node_modules/@enso-ui/ui/src/bulma/components/settings/ToastrPosition.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/Tutorial.vue b/node_modules/@enso-ui/ui/src/bulma/components/settings/Tutorial.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/corners/bottom-center.svg b/node_modules/@enso-ui/ui/src/bulma/components/settings/corners/bottom-center.svg
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/corners/bottom-left.svg b/node_modules/@enso-ui/ui/src/bulma/components/settings/corners/bottom-left.svg
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/corners/bottom-right.svg b/node_modules/@enso-ui/ui/src/bulma/components/settings/corners/bottom-right.svg
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/corners/top-center.svg b/node_modules/@enso-ui/ui/src/bulma/components/settings/corners/top-center.svg
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/corners/top-left.svg b/node_modules/@enso-ui/ui/src/bulma/components/settings/corners/top-left.svg
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/corners/top-right.svg b/node_modules/@enso-ui/ui/src/bulma/components/settings/corners/top-right.svg
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/flags/flags.scss b/node_modules/@enso-ui/ui/src/bulma/components/settings/flags/flags.scss
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/layouts/Auth.vue b/node_modules/@enso-ui/ui/src/bulma/layouts/Auth.vue
+old mode 100644
+new mode 100755
 diff --git a/node_modules/@enso-ui/ui/src/bulma/layouts/Default.vue b/node_modules/@enso-ui/ui/src/bulma/layouts/Default.vue
-index e16415c..4943a04 100644
+old mode 100644
+new mode 100755
+index e16415c..4943a04
 --- a/node_modules/@enso-ui/ui/src/bulma/layouts/Default.vue
 +++ b/node_modules/@enso-ui/ui/src/bulma/layouts/Default.vue
 @@ -5,7 +5,7 @@
@@ -144,8 +300,37 @@ index e16415c..4943a04 100644
          Sidebar,
          Settings,
          ScrollToTop,
+diff --git a/node_modules/@enso-ui/ui/src/bulma/layouts/Home.vue b/node_modules/@enso-ui/ui/src/bulma/layouts/Home.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/MainRouter.vue b/node_modules/@enso-ui/ui/src/bulma/pages/MainRouter.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/NotFound.vue b/node_modules/@enso-ui/ui/src/bulma/pages/NotFound.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/Router.vue b/node_modules/@enso-ui/ui/src/bulma/pages/Router.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/Unauthorized.vue b/node_modules/@enso-ui/ui/src/bulma/pages/Unauthorized.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/administration/userGroups/Create.vue b/node_modules/@enso-ui/ui/src/bulma/pages/administration/userGroups/Create.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/administration/userGroups/Edit.vue b/node_modules/@enso-ui/ui/src/bulma/pages/administration/userGroups/Edit.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/administration/userGroups/Index.vue b/node_modules/@enso-ui/ui/src/bulma/pages/administration/userGroups/Index.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/Create.vue b/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/Create.vue
+old mode 100644
+new mode 100755
 diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/Edit.vue b/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/Edit.vue
-index 6c8c3ec..7dadfde 100644
+old mode 100644
+new mode 100755
+index 6c8c3ec..7dadfde
 --- a/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/Edit.vue
 +++ b/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/Edit.vue
 @@ -63,33 +63,51 @@
@@ -178,7 +363,7 @@ index 6c8c3ec..7dadfde 100644
          </div>
      </div>
  </template>
-
+ 
  <script>
  import { library } from '@fortawesome/fontawesome-svg-core';
 -import { faUserTie, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
@@ -187,21 +372,21 @@ index 6c8c3ec..7dadfde 100644
  import PasswordStrength from '../../auth/components/PasswordStrength.vue';
  import DeleteModal from './components/DeleteModal.vue';
 +import Url from '@enso-ui/files/src/bulma/pages/files/components/Url.vue'; // TODO:: refactor to a package
-
+ 
 -library.add(faUserTie, faTrashAlt);
 +library.add(faUserTie, faTrashAlt, faKey);
-
+ 
  export default {
      name: 'Edit',
-
+ 
      components: {
 -        EnsoForm, FormField, PasswordStrength, DeleteModal,
 +        EnsoForm, FormField, PasswordStrength, DeleteModal, Url
      },
-
+ 
 -    inject: ['i18n', 'canAccess'],
 +    inject: ['i18n', 'canAccess', 'route'],
-
+ 
      data: () => ({
          deletableUser: null,
 @@ -97,6 +115,7 @@ export default {
@@ -210,7 +395,7 @@ index 6c8c3ec..7dadfde 100644
          passwordConfirmation: null,
 +        token: '',
      }),
-
+ 
      methods: {
 @@ -109,6 +128,12 @@ export default {
                  });
@@ -225,18 +410,35 @@ index 6c8c3ec..7dadfde 100644
      },
  };
  </script>
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/Index.vue b/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/Index.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/Show.vue b/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/Show.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/components/Avatar.vue b/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/components/Avatar.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/components/DeleteModal.vue b/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/components/DeleteModal.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/components/UserProfile.vue b/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/components/UserProfile.vue
+old mode 100644
+new mode 100755
 diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/Login.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/Login.vue
-index f53508c..9b4de24 100644
+old mode 100644
+new mode 100755
+index f53508c..9b4de24
 --- a/node_modules/@enso-ui/ui/src/bulma/pages/auth/Login.vue
 +++ b/node_modules/@enso-ui/ui/src/bulma/pages/auth/Login.vue
 @@ -6,7 +6,7 @@
  </template>
-
+ 
  <script>
 -import { mapMutations, mapState } from 'vuex';
 +import { mapMutations, mapActions, mapState } from 'vuex';
  import AuthForm from './components/AuthForm.vue';
-
+ 
  export default {
 @@ -24,7 +24,11 @@ export default {
          ...mapMutations(['setShowQuote', 'setCsrfToken']),
@@ -252,7 +454,7 @@ index f53508c..9b4de24 100644
                  this.login();
                  this.home(true);
 diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/Register.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/Register.vue
-new file mode 100644
+new file mode 100755
 index 0000000..d79156f
 --- /dev/null
 +++ b/node_modules/@enso-ui/ui/src/bulma/pages/auth/Register.vue
@@ -294,7 +496,7 @@ index 0000000..d79156f
 +};
 +</script>
 diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/Verify.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/Verify.vue
-new file mode 100644
+new file mode 100755
 index 0000000..df56819
 --- /dev/null
 +++ b/node_modules/@enso-ui/ui/src/bulma/pages/auth/Verify.vue
@@ -334,7 +536,9 @@ index 0000000..df56819
 +};
 +</script>
 diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/AuthForm.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/AuthForm.vue
-index 12bf71d..776dd35 100644
+old mode 100644
+new mode 100755
+index cc3bbcd..356c00b
 --- a/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/AuthForm.vue
 +++ b/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/AuthForm.vue
 @@ -7,6 +7,7 @@
@@ -354,29 +558,41 @@ index 12bf71d..776dd35 100644
                      <div class="control">
                          <label class="checkbox">
                          <input v-model="remember"
-@@ -127,7 +128,7 @@
+@@ -116,6 +117,11 @@
+                     </button>
+                 </div>
+             </form>
++            <router-link v-if="isLogin"
++                         :to="{ name: 'register' }"
++                         class="is-pulled-left">
++                Register
++            </router-link>
+             <router-link v-if="isLogin"
+                 :to="{ name: 'password.email' }"
+                 class="is-pulled-right">
+@@ -127,7 +133,7 @@
  </template>
-
+ 
  <script>
 -import { mapState } from 'vuex';
 +import { mapState, mapGetters } from 'vuex';
  import { library } from '@fortawesome/fontawesome-svg-core';
  import {
      faEnvelope, faCheck, faExclamationTriangle, faLock, faUser,
-@@ -189,6 +190,7 @@ export default {
-
+@@ -190,6 +196,7 @@ export default {
+ 
      computed: {
          ...mapState(['meta']),
 +        ...mapGetters(['isWebview']),
          token() {
              return this.isReset
                  ? this.$route.params.token
-@@ -212,8 +214,14 @@ export default {
+@@ -213,8 +220,14 @@ export default {
          },
          loginParams() {
              const { email, password, remember } = this;
 +            const device_name = this.isWebview ? 'mobile_app' : undefined;
-
+ 
 -            return { email, password, remember };
 +            return { email, password, remember, device_name };
 +        },
@@ -387,18 +603,21 @@ index 12bf71d..776dd35 100644
          },
          resetParams() {
              const { email, password, token } = this;
-@@ -227,7 +235,7 @@ export default {
+@@ -230,7 +243,7 @@ export default {
              this.loading = true;
              this.isSuccessful = false;
-
+ 
 -            axios.post(this.routeResolver(this.route), this.postParams)
 +            axios.post(this.routeResolver(this.route), this.postParams, this.config)
                  .then(({ data }) => {
                      this.loading = false;
                      this.isSuccessful = true;
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/PasswordStrength.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/PasswordStrength.vue
+old mode 100644
+new mode 100755
 diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/RegisterForm.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/RegisterForm.vue
-new file mode 100644
-index 0000000..cfe5fe5
+new file mode 100755
+index 0000000..2e10e97
 --- /dev/null
 +++ b/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/RegisterForm.vue
 @@ -0,0 +1,265 @@
@@ -668,8 +887,8 @@ index 0000000..cfe5fe5
 +    }
 +</style>
 diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/VerifyForm.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/VerifyForm.vue
-new file mode 100644
-index 0000000..09d2707
+new file mode 100755
+index 0000000..70a07f4
 --- /dev/null
 +++ b/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/VerifyForm.vue
 @@ -0,0 +1,174 @@
@@ -847,8 +1066,59 @@ index 0000000..09d2707
 +        }
 +    }
 +</style>
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/password/Email.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/password/Email.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/password/Reset.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/password/Reset.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/notifications/Index.vue b/node_modules/@enso-ui/ui/src/bulma/pages/notifications/Index.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes.js b/node_modules/@enso-ui/ui/src/bulma/routes.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/administration.js b/node_modules/@enso-ui/ui/src/bulma/routes/administration.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/administration/userGroups.js b/node_modules/@enso-ui/ui/src/bulma/routes/administration/userGroups.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/administration/userGroups/create.js b/node_modules/@enso-ui/ui/src/bulma/routes/administration/userGroups/create.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/administration/userGroups/edit.js b/node_modules/@enso-ui/ui/src/bulma/routes/administration/userGroups/edit.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/administration/userGroups/index.js b/node_modules/@enso-ui/ui/src/bulma/routes/administration/userGroups/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/administration/users.js b/node_modules/@enso-ui/ui/src/bulma/routes/administration/users.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/administration/users/create.js b/node_modules/@enso-ui/ui/src/bulma/routes/administration/users/create.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/administration/users/edit.js b/node_modules/@enso-ui/ui/src/bulma/routes/administration/users/edit.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/administration/users/index.js b/node_modules/@enso-ui/ui/src/bulma/routes/administration/users/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/administration/users/show.js b/node_modules/@enso-ui/ui/src/bulma/routes/administration/users/show.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/auth.js b/node_modules/@enso-ui/ui/src/bulma/routes/auth.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/notFound.js b/node_modules/@enso-ui/ui/src/bulma/routes/notFound.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/notifications.js b/node_modules/@enso-ui/ui/src/bulma/routes/notifications.js
+old mode 100644
+new mode 100755
 diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/register.js b/node_modules/@enso-ui/ui/src/bulma/routes/register.js
-new file mode 100644
+new file mode 100755
 index 0000000..d1752b4
 --- /dev/null
 +++ b/node_modules/@enso-ui/ui/src/bulma/routes/register.js
@@ -875,8 +1145,14 @@ index 0000000..d1752b4
 +        title: 'Register',
 +    },
 +}];
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/system.js b/node_modules/@enso-ui/ui/src/bulma/routes/system.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/unauthorized.js b/node_modules/@enso-ui/ui/src/bulma/routes/unauthorized.js
+old mode 100644
+new mode 100755
 diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/verify.js b/node_modules/@enso-ui/ui/src/bulma/routes/verify.js
-new file mode 100644
+new file mode 100755
 index 0000000..b155389
 --- /dev/null
 +++ b/node_modules/@enso-ui/ui/src/bulma/routes/verify.js
@@ -904,8 +1180,40 @@ index 0000000..b155389
 +    },
 +}];
 \ No newline at end of file
+diff --git a/node_modules/@enso-ui/ui/src/core/App.vue b/node_modules/@enso-ui/ui/src/core/App.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/AppFooter.vue b/node_modules/@enso-ui/ui/src/core/components/AppFooter.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/Bookmarks.vue b/node_modules/@enso-ui/ui/src/core/components/Bookmarks.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/Breadcrumbs.vue b/node_modules/@enso-ui/ui/src/core/components/Breadcrumbs.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/DocumentTitle.vue b/node_modules/@enso-ui/ui/src/core/components/DocumentTitle.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/Loader.vue b/node_modules/@enso-ui/ui/src/core/components/Loader.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/PageHeader.vue b/node_modules/@enso-ui/ui/src/core/components/PageHeader.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/menu/MenuItem.vue b/node_modules/@enso-ui/ui/src/core/components/menu/MenuItem.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/menu/Menus.vue b/node_modules/@enso-ui/ui/src/core/components/menu/Menus.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/menu/Sidebar.vue b/node_modules/@enso-ui/ui/src/core/components/menu/Sidebar.vue
+old mode 100644
+new mode 100755
 diff --git a/node_modules/@enso-ui/ui/src/core/components/navbar/IO.vue b/node_modules/@enso-ui/ui/src/core/components/navbar/IO.vue
-index 43e9741..5a273b7 100644
+old mode 100644
+new mode 100755
+index 43e9741..5a273b7
 --- a/node_modules/@enso-ui/ui/src/core/components/navbar/IO.vue
 +++ b/node_modules/@enso-ui/ui/src/core/components/navbar/IO.vue
 @@ -1,5 +1,5 @@
@@ -913,35 +1221,168 @@ index 43e9741..5a273b7 100644
 -import { mapState, mapMutations, mapGetters } from 'vuex';
 +import {mapState, mapGetters, mapActions} from 'vuex';
  import Pusher from 'pusher-js'; //TODO remove?
-
+ 
  export default {
 @@ -26,7 +26,7 @@ export default {
      },
-
+ 
      methods: {
 -        ...mapMutations('websockets', ['connect']),
 +        ...mapActions('websockets', ['connect']),
          listen() {
              window.Echo.private(this.ioChannel)
                  .listen('.io-started', ({ operation }) => {
+diff --git a/node_modules/@enso-ui/ui/src/core/components/navbar/MissingKeys.vue b/node_modules/@enso-ui/ui/src/core/components/navbar/MissingKeys.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/navbar/Navbar.vue b/node_modules/@enso-ui/ui/src/core/components/navbar/Navbar.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/navbar/Notifications.vue b/node_modules/@enso-ui/ui/src/core/components/navbar/Notifications.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/navbar/ProfileControl.vue b/node_modules/@enso-ui/ui/src/core/components/navbar/ProfileControl.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/navbar/Search.vue b/node_modules/@enso-ui/ui/src/core/components/navbar/Search.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/navbar/SettingsControl.vue b/node_modules/@enso-ui/ui/src/core/components/navbar/SettingsControl.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/navbar/io/Operation.vue b/node_modules/@enso-ui/ui/src/core/components/navbar/io/Operation.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/settings/BookmarksState.vue b/node_modules/@enso-ui/ui/src/core/components/settings/BookmarksState.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/settings/KeyCollector.vue b/node_modules/@enso-ui/ui/src/core/components/settings/KeyCollector.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/settings/LanguageSelector.vue b/node_modules/@enso-ui/ui/src/core/components/settings/LanguageSelector.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/settings/MenuOrganizer.vue b/node_modules/@enso-ui/ui/src/core/components/settings/MenuOrganizer.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/settings/Settings.vue b/node_modules/@enso-ui/ui/src/core/components/settings/Settings.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/settings/SidebarState.vue b/node_modules/@enso-ui/ui/src/core/components/settings/SidebarState.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/settings/ThemeSelector.vue b/node_modules/@enso-ui/ui/src/core/components/settings/ThemeSelector.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/settings/ToastrPosition.vue b/node_modules/@enso-ui/ui/src/core/components/settings/ToastrPosition.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/settings/Tutorial.vue b/node_modules/@enso-ui/ui/src/core/components/settings/Tutorial.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/layouts/Auth.vue b/node_modules/@enso-ui/ui/src/core/layouts/Auth.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/layouts/Default.vue b/node_modules/@enso-ui/ui/src/core/layouts/Default.vue
+old mode 100644
+new mode 100755
 diff --git a/node_modules/@enso-ui/ui/src/core/layouts/Home.vue b/node_modules/@enso-ui/ui/src/core/layouts/Home.vue
-index 23bc732..b639410 100644
+old mode 100644
+new mode 100755
+index 23bc732..b639410
 --- a/node_modules/@enso-ui/ui/src/core/layouts/Home.vue
 +++ b/node_modules/@enso-ui/ui/src/core/layouts/Home.vue
 @@ -28,6 +28,7 @@ export default {
-
+ 
      methods: {
          ...mapMutations('auth', ['setIntendedRoute', 'setIntendedPath']),
 +        ...mapMutations('register', ['register']),
          ...mapMutations('layout', ['home']),
          ...mapActions(['loadAppState']),
          ...mapActions('layout', ['setTheme']),
+diff --git a/node_modules/@enso-ui/ui/src/middleware/before.js b/node_modules/@enso-ui/ui/src/middleware/before.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/middleware/before/allow.js b/node_modules/@enso-ui/ui/src/middleware/before/allow.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/middleware/before/auth.js b/node_modules/@enso-ui/ui/src/middleware/before/auth.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/middleware/before/guest.js b/node_modules/@enso-ui/ui/src/middleware/before/guest.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/filters/index.js b/node_modules/@enso-ui/ui/src/modules/filters/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/filters/numberFormat.js b/node_modules/@enso-ui/ui/src/modules/filters/numberFormat.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/filters/shortNumber.js b/node_modules/@enso-ui/ui/src/modules/filters/shortNumber.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/importers/RouteMerger.js b/node_modules/@enso-ui/ui/src/modules/importers/RouteMerger.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/importers/routeImporter.js b/node_modules/@enso-ui/ui/src/modules/importers/routeImporter.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/importers/storeImporter.js b/node_modules/@enso-ui/ui/src/modules/importers/storeImporter.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/importers/themeImporter.js b/node_modules/@enso-ui/ui/src/modules/importers/themeImporter.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/index.js b/node_modules/@enso-ui/ui/src/modules/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/axios.js b/node_modules/@enso-ui/ui/src/modules/plugins/axios.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/bookmarkHelpers.js b/node_modules/@enso-ui/ui/src/modules/plugins/bookmarkHelpers.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/bootEnums.js b/node_modules/@enso-ui/ui/src/modules/plugins/bootEnums.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/date-fns/format.js b/node_modules/@enso-ui/ui/src/modules/plugins/date-fns/format.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/date-fns/formatDistance.js b/node_modules/@enso-ui/ui/src/modules/plugins/date-fns/formatDistance.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/date-fns/i18n.js b/node_modules/@enso-ui/ui/src/modules/plugins/date-fns/i18n.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/date-fns/unicode2php.js b/node_modules/@enso-ui/ui/src/modules/plugins/date-fns/unicode2php.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/fontawesome.js b/node_modules/@enso-ui/ui/src/modules/plugins/fontawesome.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/i18n.js b/node_modules/@enso-ui/ui/src/modules/plugins/i18n.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/index.js b/node_modules/@enso-ui/ui/src/modules/plugins/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/menuOrganizer.js b/node_modules/@enso-ui/ui/src/modules/plugins/menuOrganizer.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/route.js b/node_modules/@enso-ui/ui/src/modules/plugins/route.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/toastr.js b/node_modules/@enso-ui/ui/src/modules/plugins/toastr.js
+old mode 100644
+new mode 100755
 diff --git a/node_modules/@enso-ui/ui/src/modules/store.js b/node_modules/@enso-ui/ui/src/modules/store.js
-index 4cfa90d..bc3d8f8 100644
+old mode 100644
+new mode 100755
+index 9bfc253..64a927d
 --- a/node_modules/@enso-ui/ui/src/modules/store.js
 +++ b/node_modules/@enso-ui/ui/src/modules/store.js
 @@ -24,6 +24,7 @@ const coreState = {
-
+ 
  const coreGetters = {
      routes: state => Object.keys(state.routes),
 +    isWebview: () => typeof ReactNativeWebView !== 'undefined',
@@ -949,7 +1390,9 @@ index 4cfa90d..bc3d8f8 100644
      requestIndex: state => ({ url, method }) => state.requests
          .findIndex(request => method === request.method && url === request.url),
 diff --git a/node_modules/@enso-ui/ui/src/modules/store/auth.js b/node_modules/@enso-ui/ui/src/modules/store/auth.js
-index 02040ac..1f7e079 100644
+old mode 100644
+new mode 100755
+index 02040ac..1f7e079
 --- a/node_modules/@enso-ui/ui/src/modules/store/auth.js
 +++ b/node_modules/@enso-ui/ui/src/modules/store/auth.js
 @@ -14,6 +14,7 @@ export const mutations = {
@@ -960,8 +1403,34 @@ index 02040ac..1f7e079 100644
      },
      setIntendedRoute: (state, value) => (state.intendedRoute = value),
      setIntendedPath: (state, value) => (state.intendedPath = value),
+diff --git a/node_modules/@enso-ui/ui/src/modules/store/bookmarks.js b/node_modules/@enso-ui/ui/src/modules/store/bookmarks.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/store/layout.js b/node_modules/@enso-ui/ui/src/modules/store/layout.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/store/layout/search.js b/node_modules/@enso-ui/ui/src/modules/store/layout/search.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/store/layout/settings.js b/node_modules/@enso-ui/ui/src/modules/store/layout/settings.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/store/layout/sidebar.js b/node_modules/@enso-ui/ui/src/modules/store/layout/sidebar.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/store/localisation.js b/node_modules/@enso-ui/ui/src/modules/store/localisation.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/store/menu.js b/node_modules/@enso-ui/ui/src/modules/store/menu.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/store/preferences.js b/node_modules/@enso-ui/ui/src/modules/store/preferences.js
+old mode 100644
+new mode 100755
 diff --git a/node_modules/@enso-ui/ui/src/modules/store/websockets.js b/node_modules/@enso-ui/ui/src/modules/store/websockets.js
-index 6bf8a0d..5981703 100644
+old mode 100644
+new mode 100755
+index 6bf8a0d..5981703
 --- a/node_modules/@enso-ui/ui/src/modules/store/websockets.js
 +++ b/node_modules/@enso-ui/ui/src/modules/store/websockets.js
 @@ -20,7 +20,10 @@ export const mutations = {
