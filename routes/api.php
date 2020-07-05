@@ -328,6 +328,15 @@ Route::namespace('\App\Http\Controllers\enso\companies')
     
     });
 
+    /**
+     * overwrite activity-log
+     */
+    Route::middleware(['api', 'auth', 'core'])
+    ->namespace('\App\Http\Controllers\enso\ActivityLog')
+    ->prefix('core/activityLogs')
+    ->as('core.activityLogs.')
+    ->group(fn () => Route::get('', 'Index')->name('index'));
+
     Route::namespace('System')
     ->prefix('system')
     ->as('system.')
