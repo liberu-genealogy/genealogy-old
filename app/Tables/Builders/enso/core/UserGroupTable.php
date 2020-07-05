@@ -2,8 +2,8 @@
 
 namespace App\Tables\Builders\enso\core;
 
-use Illuminate\Database\Eloquent\Builder;
 use App\Models\enso\core\UserGroup;
+use Illuminate\Database\Eloquent\Builder;
 use LaravelEnso\Tables\Contracts\Table;
 
 class UserGroupTable implements Table

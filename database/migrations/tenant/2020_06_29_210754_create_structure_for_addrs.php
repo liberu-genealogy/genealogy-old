@@ -23,7 +23,7 @@ class CreateStructureForAddrs extends Migration
     ];
 
     protected array $menu = [
-        'name' => 'Addresses', 'icon' => 'book', 'route' => 'addrs.index', 'order_index' => 999, 'has_children' => false
+        'name' => 'Addresses', 'icon' => 'book', 'route' => 'addrs.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected ?string $parentMenu = 'Information';

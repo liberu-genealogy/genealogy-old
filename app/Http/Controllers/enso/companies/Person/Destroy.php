@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\enso\companies\Person;
 
+use App\Models\enso\companies\Company;
+use App\Person;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Companies\Exceptions\Company as Exception;
-use App\Person;
-use App\Models\enso\companies\Company;
 
 class Destroy extends Controller
 {

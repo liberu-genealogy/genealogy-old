@@ -5,20 +5,20 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Jobs\Tenant\CreateDB;
 use App\Jobs\Tenant\Migration;
+use App\Models\enso\core\UserGroup;
+use App\Models\enso\Roles\Role;
 use App\Models\User;
 use App\Person;
 use App\Providers\RouteServiceProvider;
 use App\Traits\ActivationTrait;
 use DB;
-use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Support\Facades\Hash;
 // use LaravelEnso\Multitenancy\Jobs\CreateDatabase;
 
 // use LaravelEnso\Multitenancy\Jobs\Migrate;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use LaravelEnso\Companies\Models\Company;
-use App\Models\enso\core\UserGroup;
-use App\Models\enso\Roles\Role;
 use Str;
 
 class RegisterController extends Controller

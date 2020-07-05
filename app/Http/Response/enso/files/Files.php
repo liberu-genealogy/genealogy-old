@@ -2,10 +2,10 @@
 
 namespace App\Http\Response\enso\files;
 
-use Illuminate\Contracts\Support\Responsable;
-use LaravelEnso\Files\Http\Resources\Collection;
 use App\Http\Resources\enso\files\File as Resource;
 use App\Models\enso\files\File;
+use Illuminate\Contracts\Support\Responsable;
+use LaravelEnso\Files\Http\Resources\Collection;
 
 class Files implements Responsable
 {

@@ -7,12 +7,12 @@ use App\Models\enso\Roles\Role;
 use App\Models\Tutorials\Tutorial;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Route;
+use LaravelEnso\Multitenancy\Traits\SystemConnection;
 use LaravelEnso\Permissions\Enums\Types;
 use LaravelEnso\Permissions\Enums\Verbs;
 use LaravelEnso\Permissions\Exceptions\Permission as Exception;
 use LaravelEnso\Roles\Traits\HasRoles;
 use LaravelEnso\Tables\Traits\TableCache;
-use LaravelEnso\Multitenancy\Traits\SystemConnection;
 
 /**
  * @property int $id

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\enso\Localisation\Language;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\enso\Localisation\LanguageForm;
+use Illuminate\Routing\Controller;
 
 class Create extends Controller
 {

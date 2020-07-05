@@ -2,12 +2,12 @@
 
 namespace App\Models\enso\files;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Contracts\enso\files\Attachable;
 use App\Contracts\enso\files\AuthorizesFileAccess;
 use App\Service\enso\files\UploadManager;
 use App\Traits\enso\files\FilePolicies;
 use App\Traits\enso\files\HasFile;
+use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Helpers\Traits\CascadesMorphMap;
 
 class Upload extends Model implements Attachable, AuthorizesFileAccess

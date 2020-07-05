@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\enso\Localisation\Language;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\enso\Localisation\LanguageForm;
 use App\Models\enso\Localisation\Language;
+use Illuminate\Routing\Controller;
 
 class Edit extends Controller
 {

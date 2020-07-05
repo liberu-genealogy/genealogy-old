@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\enso\files\Upload;
 
+use App\Models\enso\files\Upload;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use App\Models\enso\files\Upload;
 
 class Store extends Controller
 {

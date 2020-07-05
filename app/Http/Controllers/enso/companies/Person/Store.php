@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\enso\companies\Person;
 
+use App\Models\enso\companies\Company;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Companies\Http\Requests\ValidatePersonStore;
-use App\Models\enso\companies\Company;
 
 class Store extends Controller
 {

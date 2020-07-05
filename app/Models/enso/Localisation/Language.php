@@ -5,8 +5,8 @@ namespace App\Models\enso\Localisation;
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Helpers\Contracts\Activatable;
 use LaravelEnso\Helpers\Traits\ActiveState;
-use LaravelEnso\Tables\Traits\TableCache;
 use LaravelEnso\Multitenancy\Traits\SystemConnection;
+use LaravelEnso\Tables\Traits\TableCache;
 
 /**
  * @property int $id
