@@ -2,121 +2,113 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Route::middleware(['api'])->group(
-//     function() {
-Route::post('register', '\App\Http\Controllers\Auth\RegisterController@register');
-Route::post('verify', '\App\Http\Controllers\Auth\VerificationController@verify_user');
-//     }
-// );
+    // Route::middleware(['api'])->group(
+    //     function() {
+    Route::post('register', '\App\Http\Controllers\Auth\RegisterController@register');
+    Route::post('verify', '\App\Http\Controllers\Auth\VerificationController@verify_user');
+    //     }
+    // );
 
-/**
- * overwrite core.
- */
+    /**
+     * overwrite core.
+     */
     Route::namespace('\App\Http\Controllers\enso\core')
     ->group(function () {
         Route::get('/meta', 'Guest')->name('meta');
 
+        // require 'app/auth.php';
+        Route::namespace('Auth')
+        ->middleware('api')
+        ->group(function () {
+            Route::middleware('guest')->group(function () {
+                Route::post('login', 'LoginController@login')->name('login');
+                Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+                Route::post('password/reset', 'ResetPasswordController@attemptReset')->name('password.reset');
+            });
+    
+            Route::middleware('auth')->group(function () {
+                Route::post('logout', 'LoginController@logout')->name('logout');
+            });
+        });
+
         // Route::middleware(['api', 'auth'])
         //     ->group(fn () => Route::get('/sentry', 'Sentry')->name('sentry'));
 
-        Route::middleware(['api', 'auth', 'core', 'multitenant'])
+        Route::middleware(['api', 'auth', 'core'])
             ->group(function () {
                 Route::prefix('core')
-                    ->as('core.')
+                ->as('core.')
+                ->group(function () {
+                    Route::get('home', 'Spa')->name('home.index');
+            
+                    Route::namespace('Preferences')
+                    ->prefix('preferences')
+                    ->as('preferences.')
                     ->group(function () {
-                        Route::get('home', 'Spa')->name('home.index');
-                        // require 'core/preferences.php';
-                        Route::namespace('Preferences')
-                            ->prefix('preferences')
-                            ->as('preferences.')
-                            ->group(function () {
-                                Route::patch('store/{route?}', 'Store')->name('store');
-                                Route::post('reset/{route?}', 'Reset')->name('reset');
-                            });
-                    });
-                // require 'app/administration.php';
+                        Route::patch('store/{route?}', 'Store')->name('store');
+                        Route::post('reset/{route?}', 'Reset')->name('reset');
+                    });                    
+                });
+            
                 Route::namespace('Administration')
-                    ->prefix('administration')
-                    ->as('administration.')
+                ->prefix('administration')
+                ->as('administration.')
+                ->group(function () {
+                    // require 'administration/userGroups.php';
+                    Route::namespace('UserGroup')
+                    ->prefix('userGroups')
+                    ->as('userGroups.')
                     ->group(function () {
-                        // require 'administration/userGroups.php';
-                        Route::namespace('UserGroup')
-                            ->prefix('userGroups')
-                            ->as('userGroups.')
-                            ->group(function () {
-                                Route::get('create', 'Create')->name('create');
-                                Route::post('', 'Store')->name('store');
-                                Route::get('{userGroup}/edit', 'Edit')->name('edit');
-                                Route::patch('{userGroup}', 'Update')->name('update');
-                                Route::delete('{userGroup}', 'Destroy')->name('destroy');
-
-                                Route::get('initTable', 'InitTable')->name('initTable');
-                                Route::get('tableData', 'TableData')->name('tableData');
-                                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
-
-                                Route::get('options', 'Options')->name('options');
-                            });
-                        // require 'administration/users.php';
-                        Route::namespace('User')
-                            ->prefix('users')
-                            ->as('users.')
-                            ->group(function () {
-                                Route::get('create/{person}', 'Create')->name('create');
-                                Route::post('', 'Store')->name('store');
-                                Route::get('{user}/edit', 'Edit')->name('edit');
-                                Route::patch('{user}', 'Update')->name('update');
-                                Route::delete('{user}', 'Destroy')->name('destroy');
-
-                                Route::get('initTable', 'InitTable')->name('initTable');
-                                Route::get('tableData', 'TableData')->name('tableData');
-                                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
-
-                                Route::get('options', 'Options')->name('options');
-
-                                Route::get('{user}', 'Show')->name('show');
-                            });
+                        Route::get('create', 'Create')->name('create');
+                        Route::post('', 'Store')->name('store');
+                        Route::get('{userGroup}/edit', 'Edit')->name('edit');
+                        Route::patch('{userGroup}', 'Update')->name('update');
+                        Route::delete('{userGroup}', 'Destroy')->name('destroy');
+                
+                        Route::get('initTable', 'InitTable')->name('initTable');
+                        Route::get('tableData', 'TableData')->name('tableData');
+                        Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+                
+                        Route::get('options', 'Options')->name('options');
                     });
+                    Route::namespace('User')
+                    ->prefix('users')
+                    ->as('users.')
+                    ->group(function () {
+                        Route::get('create/{person}', 'Create')->name('create');
+                        Route::post('', 'Store')->name('store');
+                        Route::get('{user}/edit', 'Edit')->name('edit');
+                        Route::patch('{user}', 'Update')->name('update');
+                        Route::delete('{user}', 'Destroy')->name('destroy');
+                
+                        Route::get('initTable', 'InitTable')->name('initTable');
+                        Route::get('tableData', 'TableData')->name('tableData');
+                        Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+                
+                        Route::get('options', 'Options')->name('options');
+                
+                        Route::get('{user}', 'Show')->name('show');
+                
+                        Route::post('{user}/token', 'Token')->name('token');
+                    });                    
+                });                
             });
-    //
+    });
 
-/**
- * overwrite people
- */
+    /**
+     * overwirte people
+     */
 
-Route::namespace('\App\Http\Controllers\enso\people')
-->middleware(['api', 'auth', 'core', 'multitenant'])
-->prefix('administration/people')
-->as('administration.people.')
-->group(function () {
-    Route::get('create', 'Create')->name('create');
-    Route::post('', 'Store')->name('store');
-    Route::get('{person}/edit', 'Edit')->name('edit');
-    Route::patch('{person}', 'Update')->name('update');
-    Route::delete('{person}', 'Destroy')->name('destroy');
-
-    Route::get('initTable', 'InitTable')->name('initTable');
-    Route::get('tableData', 'TableData')->name('tableData');
-    Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
-
-    Route::get('options', 'Options')->name('options');
-});
-
-/**
- * overwrite companies
- */
-Route::namespace('\App\Http\Controllers\enso\companies')
-    ->middleware(['api', 'auth', 'core', 'multitenant'])
-    ->prefix('administration/companies')
-    ->as('administration.companies.')
-    ->group(function () {
-        // require 'app/companies.php';
-        Route::namespace('Company')
+    Route::namespace('\App\Http\Controllers\enso\people')
+        ->middleware(['api', 'auth', 'core'])
+        ->prefix('administration/people')
+        ->as('administration.people.')
         ->group(function () {
             Route::get('create', 'Create')->name('create');
             Route::post('', 'Store')->name('store');
-            Route::get('{company}/edit', 'Edit')->name('edit');
-            Route::patch('{company}', 'Update')->name('update');
-            Route::delete('{company}', 'Destroy')->name('destroy');
+            Route::get('{person}/edit', 'Edit')->name('edit');
+            Route::patch('{person}', 'Update')->name('update');
+            Route::delete('{person}', 'Destroy')->name('destroy');
 
             Route::get('initTable', 'InitTable')->name('initTable');
             Route::get('tableData', 'TableData')->name('tableData');
@@ -125,245 +117,329 @@ Route::namespace('\App\Http\Controllers\enso\companies')
             Route::get('options', 'Options')->name('options');
         });
 
-        // require 'app/people.php';
-        Route::namespace('Person')
+    /**
+     * overwrite companies
+     */
+    Route::namespace('\App\Http\Controllers\enso\companies')
+        ->middleware(['api', 'auth', 'core'])
+        ->prefix('administration/companies')
+        ->as('administration.companies.')
         ->group(function () {
-            Route::prefix('people')
-                ->as('people.')
-                ->group(function () {
-                    Route::get('{company}', 'Index')->name('index');
-                    Route::get('{company}/create', 'Create')->name('create');
-                    Route::get('{company}/{person}/edit', 'Edit')->name('edit');
-                    Route::patch('{person}', 'Update')->name('update');
-                    Route::post('', 'Store')->name('store');
-                    Route::delete('{company}/{person}', 'Destroy')->name('destroy');
-                });
+            // require 'app/companies.php';
+            Route::namespace('Company')
+            ->group(function () {
+                Route::get('create', 'Create')->name('create');
+                Route::post('', 'Store')->name('store');
+                Route::get('{company}/edit', 'Edit')->name('edit');
+                Route::patch('{company}', 'Update')->name('update');
+                Route::delete('{company}', 'Destroy')->name('destroy');
+        
+                Route::get('initTable', 'InitTable')->name('initTable');
+                Route::get('tableData', 'TableData')->name('tableData');
+                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+        
+                Route::get('options', 'Options')->name('options');
+            });
+        
+            // require 'app/people.php';
+            Route::namespace('Person')
+            ->group(function () {
+                Route::prefix('people')
+                    ->as('people.')
+                    ->group(function () {
+                        Route::get('{company}', 'Index')->name('index');
+                        Route::get('{company}/create', 'Create')->name('create');
+                        Route::get('{company}/{person}/edit', 'Edit')->name('edit');
+                        Route::patch('{person}', 'Update')->name('update');
+                        Route::post('', 'Store')->name('store');
+                        Route::delete('{company}/{person}', 'Destroy')->name('destroy');
+                    });
+            });
+        
         });
-
-    });
 
     /**
      * overwrite team
      */
-    Route::namespace('\App\Http\Controllers\enso\teams')
-    ->middleware(['api', 'auth', 'core', 'multitenant'])
-    ->prefix('administration/teams')
-    ->as('administration.teams.')
-    ->group(function () {
-        Route::get('', 'Index')->name('index');
-        Route::post('', 'Store')->name('store');
-        Route::delete('{team}', 'Destroy')->name('destroy');
-        Route::get('options', 'Options')->name('options');
-    });
+    Route::namespace('\App\Http\Controllers\enso\Teams')
+        ->middleware(['api', 'auth', 'core'])
+        ->prefix('administration/teams')
+        ->as('administration.teams.')
+        ->group(function () {
+            Route::get('', 'Index')->name('index');
+            Route::post('', 'Store')->name('store');
+            Route::delete('{team}', 'Destroy')->name('destroy');
+            Route::get('options', 'Options')->name('options');
+        });
 
     /**
      * overwrite permission
      */
 
     Route::middleware(['api', 'auth', 'core', 'multitenant'])
-    ->prefix('system/permissions')->as('system.permissions.')
-    ->namespace('\App\Http\Controllers\enso\permissions')
-    ->group(function () {
-        Route::get('create', 'Create')->name('create');
-        Route::post('', 'Store')->name('store');
-        Route::get('{permission}/edit', 'Edit')->name('edit');
-        Route::patch('{permission}', 'Update')->name('update');
-        Route::delete('{permission}', 'Destroy')->name('destroy');
-
-        Route::get('initTable', 'InitTable')->name('initTable');
-        Route::get('tableData', 'TableData')->name('tableData');
-        Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
-    });
-
-    /**
-     * overwrite menus
-     */
-    Route::middleware(['api', 'auth', 'core', 'multitenant'])
-    ->prefix('api/system/menus')
-    ->as('system.menus.')
-    ->namespace('\App\Http\Controllers\enso\menus')
-    ->group(function () {
-        Route::get('create', 'Create')->name('create');
-        Route::post('', 'Store')->name('store');
-        Route::get('{menu}/edit', 'Edit')->name('edit');
-        Route::patch('{menu}', 'Update')->name('update');
-        Route::delete('{menu}', 'Destroy')->name('destroy');
-        Route::put('organize', 'Organize')->name('organize');
-
-        Route::get('initTable', 'InitTable')->name('initTable');
-        Route::get('tableData', 'TableData')->name('tableData');
-        Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
-    });
-
-    /**
-     * overwrite roles
-     */
-    Route::middleware(['api', 'auth', 'core', 'multitenant'])
-    ->prefix('system/roles')->as('system.roles.')
-    ->namespace('\App\Http\Controllers\enso\roles')
-    ->group(function () {
-        Route::get('create', 'Create')->name('create');
-        Route::post('', 'Store')->name('store');
-        Route::get('{role}/edit', 'Edit')->name('edit');
-        Route::patch('{role}', 'Update')->name('update');
-        Route::delete('{role}', 'Destroy')->name('destroy');
-
-        Route::get('initTable', 'InitTable')->name('initTable');
-        Route::get('tableData', 'TableData')->name('tableData');
-        Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
-
-        Route::get('options', 'Options')->name('options');
-
-        Route::namespace('Permission')
-        ->prefix('permissions')->as('permissions.')
-        ->group(function () {
-            Route::get('get/{role}', 'Index')->name('get');
-            Route::post('set/{role}', 'Update')->name('set');
-            Route::post('write/{role}', 'ConfigWriter')->name('write');
-        });
-    });
-
-    /**
-     * overwrite logs
-     */
-    Route::middleware(['api', 'auth', 'core', 'multitenant'])
-    ->namespace('\App\Http\Controllers\enso\logs')
-    ->prefix('system/logs')
-    ->as('system.logs.')
-    ->group(function () {
-        Route::get('', 'Index')->name('index');
-        Route::delete('{log}', 'Destroy')->name('destroy');
-        Route::delete('{log}', 'Destroy')->name('destroy');
-        Route::get('{log}/download', 'Download')->name('download');
-        Route::get('{log}', 'Show')->name('show');
-    });
-
-    /**
-     * overwrite localisation
-     */
-    Route::middleware(['api', 'auth', 'core', 'multitenant'])
-    ->namespace('\App\Http\Controllers\enso\localisation')
-    ->prefix('system/localisation')
-    ->as('system.localisation.')
-    ->group(function () {
-        // require 'app/json.php';
-        Route::namespace('Json')
-        ->group(function () {
-            Route::get('editTexts', 'Index')->name('editTexts');
-            Route::get('getLangFile/{language}/{subDir}', 'Edit')->name('getLangFile');
-            Route::patch('saveLangFile/{language}/{subDir}', 'Update')->name('saveLangFile');
-            Route::patch('addKey', 'AddKey')->name('addKey');
-            Route::patch('merge/{locale?}', 'Merge')->name('merge');
-        });
-        // require 'app/language.php';
-        Route::namespace('Language')
+        ->prefix('system/permissions')->as('system.permissions.')
+        ->namespace('\App\Http\Controllers\enso\Permissions')
         ->group(function () {
             Route::get('create', 'Create')->name('create');
             Route::post('', 'Store')->name('store');
-            Route::get('{language}/edit', 'Edit')->name('edit');
-            Route::patch('{language}', 'Update')->name('update');
-            Route::delete('{language}', 'Destroy')->name('destroy');
+            Route::get('{permission}/edit', 'Edit')->name('edit');
+            Route::patch('{permission}', 'Update')->name('update');
+            Route::delete('{permission}', 'Destroy')->name('destroy');
 
             Route::get('initTable', 'InitTable')->name('initTable');
             Route::get('tableData', 'TableData')->name('tableData');
             Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
         });
-    });
-
-    Route::namespace('System')
-    ->prefix('system')
-    ->as('system.')
-    ->group(function () {
-        // require 'administration/userGroups.php';
-        Route::namespace('Menu')
-            ->prefix('menu')
-            ->as('menu.')
-            ->group(function () {
-                // Route::get('create', 'Create')->name('create');
-                // Route::post('', 'Store')->name('store');
-                Route::get('{menu}/edit', 'Edit')->name('edit');
-                // Route::patch('{userGroup}', 'Update')->name('update');
-                // Route::delete('{userGroup}', 'Destroy')->name('destroy');
-
-                // Route::get('initTable', 'InitTable')->name('initTable');
-                // Route::get('tableData', 'TableData')->name('tableData');
-                // Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
-
-                // Route::get('options', 'Options')->name('options');
-            });
-        // require 'administration/users.php';
-        //Route::namespace('User')
-          //  ->prefix('users')
-            //->as('users.')
-            //->group(function () {
-                // Route::get('create/{person}', 'Create')->name('create');
-                // Route::post('', 'Store')->name('store');
-                // Route::get('{user}/edit', 'Edit')->name('edit');
-                // Route::patch('{user}', 'Update')->name('update');
-                // Route::delete('{user}', 'Destroy')->name('destroy');
-
-                // Route::get('initTable', 'InitTable')->name('initTable');
-                // Route::get('tableData', 'TableData')->name('tableData');
-                // Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
-
-                // Route::get('options', 'Options')->name('options');
-
-                // Route::get('{user}', 'Show')->name('show');
-         //   });
-        // });
-        // });
-        });
-    });
 
     /**
-     * file
-     *
+     * overwrite menus
      */
-    Route::middleware(['web', 'auth', 'core', 'multitenant'])
-    ->namespace('enso\files')
-    ->prefix('core')
-    ->as('core.')
-    ->group(function () {
-        // require 'app/files.php';
-        Route::namespace('File')
-        ->prefix('files')
-        ->as('files.')
+    Route::middleware(['api', 'auth', 'core'])
+        ->prefix('system/menus')
+        ->as('system.menus.')
+        ->namespace('\App\Http\Controllers\enso\Menus')
+        ->group(function () {
+            Route::get('create', 'Create')->name('create');
+            Route::post('', 'Store')->name('store');
+            Route::get('{menu}/edit', 'Edit')->name('edit');
+            Route::patch('{menu}', 'Update')->name('update');
+            Route::delete('{menu}', 'Destroy')->name('destroy');
+            Route::put('organize', 'Organize')->name('organize');
+
+            Route::get('initTable', 'InitTable')->name('initTable');
+            Route::get('tableData', 'TableData')->name('tableData');
+            Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+        });
+
+    /**
+     * overwrite roles
+     */
+    Route::middleware(['api', 'auth', 'core'])
+        ->prefix('system/roles')->as('system.roles.')
+        ->namespace('\App\Http\Controllers\enso\Roles')
+        ->group(function () {
+            Route::get('create', 'Create')->name('create');
+            Route::post('', 'Store')->name('store');
+            Route::get('{role}/edit', 'Edit')->name('edit');
+            Route::patch('{role}', 'Update')->name('update');
+            Route::delete('{role}', 'Destroy')->name('destroy');
+            
+            Route::get('initTable', 'InitTable')->name('initTable');
+            Route::get('tableData', 'TableData')->name('tableData');
+            Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+            
+            Route::get('options', 'Options')->name('options');
+
+            Route::namespace('Permission')
+            ->prefix('permissions')->as('permissions.')
+            ->group(function () {
+                Route::get('get/{role}', 'Index')->name('get');
+                Route::post('set/{role}', 'Update')->name('set');
+                Route::post('write/{role}', 'ConfigWriter')->name('write');
+            });
+        });
+
+    /**
+     * overwrite logs
+     */
+    Route::middleware(['api', 'auth', 'core'])
+        ->namespace('\App\Http\Controllers\enso\Logs')
+        ->prefix('system/logs')
+        ->as('system.logs.')
         ->group(function () {
             Route::get('', 'Index')->name('index');
-            Route::get('link/{file}', 'Link')->name('link');
-            Route::get('download/{file}', 'Download')->name('download');
-            Route::delete('{file}', 'Destroy')->name('destroy');
-            Route::get('show/{file}', 'Show')->name('show');
+            Route::delete('{log}', 'Destroy')->name('destroy');
+            Route::delete('{log}', 'Destroy')->name('destroy');
+            Route::get('{log}/download', 'Download')->name('download');
+            Route::get('{log}', 'Show')->name('show');
+        });    
+
+    /**
+     * overwrite localisation
+     */
+    Route::middleware(['api', 'auth', 'core'])
+        ->namespace('\App\Http\Controllers\enso\Localisation')
+        ->prefix('system/localisation')
+        ->as('system.localisation.')
+        ->group(function () {
+            // require 'app/json.php';
+            Route::namespace('Json')
+                ->group(function () {
+                    Route::get('editTexts', 'Index')->name('editTexts');
+                    Route::get('getLangFile/{language}/{subDir}', 'Edit')->name('getLangFile');
+                    Route::patch('saveLangFile/{language}/{subDir}', 'Update')->name('saveLangFile');
+                    Route::patch('addKey', 'AddKey')->name('addKey');
+                    Route::patch('merge/{locale?}', 'Merge')->name('merge');
+                });        
+            // require 'app/language.php';
+            Route::namespace('Language')
+                ->group(function () {
+                    Route::get('create', 'Create')->name('create');
+                    Route::post('', 'Store')->name('store');
+                    Route::get('{language}/edit', 'Edit')->name('edit');
+                    Route::patch('{language}', 'Update')->name('update');
+                    Route::delete('{language}', 'Destroy')->name('destroy');
+            
+                    Route::get('initTable', 'InitTable')->name('initTable');
+                    Route::get('tableData', 'TableData')->name('tableData');
+                    Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+                });        
         });
 
-        // require 'app/uploads.php';
-        Route::namespace('Upload')
-        ->prefix('uploads')
-        ->as('uploads.')
+    /**
+     * overwrite tutorial
+     */
+    Route::middleware(['api', 'auth', 'core'])
+        ->prefix('system/tutorials')
+        ->as('system.tutorials.')
+        ->namespace('\App\Http\Controllers\enso\Tutorials')
         ->group(function () {
-            Route::post('store', 'Store')->name('store');
-            Route::delete('{upload}', 'Destroy')->name('destroy');
+            Route::get('create', 'Create')->name('create');
+            Route::post('', 'Store')->name('store');
+            Route::get('{tutorial}/edit', 'Edit')->name('edit');
+            Route::patch('{tutorial}', 'Update')->name('update');
+            Route::delete('{tutorial}', 'Destroy')->name('destroy');
+
+            Route::get('initTable', 'InitTable')->name('initTable');
+            Route::get('tableData', 'TableData')->name('tableData');
+            Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+
+            Route::get('load', 'Load')->name('load');
         });
-    });
+
+    /**
+     * overwrite data-import
+     */
+    Route::middleware(['api', 'auth', 'core'])
+        ->namespace('\App\Http\Controllers\enso\dataimport')
+        ->prefix('import')->as('import.')
+        ->group(function () {
+            // require 'app/imports.php';
+            Route::namespace('Import')
+            ->group(function () {
+                Route::get('', 'Index')->name('index');
+                Route::delete('{dataImport}', 'Destroy')->name('destroy');
+                Route::post('store', 'Store')->name('store');
+                Route::get('download/{dataImport}', 'Download')->name('download');
+        
+                Route::get('initTable', 'InitTable')->name('initTable');
+                Route::get('tableData', 'TableData')->name('tableData');
+                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+            });
+        
+            // require 'app/rejected.php';
+            Route::namespace('Rejected')
+            ->group(function () {
+                Route::get('downloadRejected/{rejectedImport}', 'Download')->name('downloadRejected');
+            });
+        
+            // require 'app/template.php';
+            Route::namespace('Template')
+            ->group(function () {
+                Route::get('template/{type}', 'Show')->name('template');
+                Route::post('uploadTemplate', 'Store')->name('uploadTemplate');
+                Route::delete('deleteTemplate/{importTemplate}', 'Destroy')->name('deleteTemplate');
+                Route::get('downloadTemplate/{importTemplate}', 'Download')->name('downloadTemplate');
+            });
+        
+        });
+
+    /**
+     * overwrite activity-log
+     */
+    Route::middleware(['api', 'auth', 'core'])
+        ->namespace('\App\Http\Controllers\enso\ActivityLog')
+        ->prefix('core/activityLogs')
+        ->as('core.activityLogs.')
+        ->group(fn () => Route::get('', 'Index')->name('index'));
+
+    /**
+     * overwrite howto video
+     */
+    Route::middleware(['api', 'auth', 'core'])
+        ->prefix('howTo')->as('howTo.')
+        ->namespace('\App\Http\Controllers\enso\HowTo')
+        ->group(function () {
+            Route::namespace('Video')
+            ->prefix('videos')
+            ->as('videos.')
+            ->group(function () {
+                Route::get('', 'Index')->name('index');
+                Route::post('', 'Store')->name('store');
+                Route::patch('{video}', 'Update')->name('update');
+                Route::delete('{video}', 'Destroy')->name('destroy');
+                Route::get('{video}', 'Show')->name('show');
+            });
+        
+            Route::namespace('Poster')
+            ->prefix('posters')
+            ->as('posters.')
+            ->group(function () {
+                Route::post('', 'Store')->name('store');
+                Route::delete('{poster}', 'Destroy')->name('destroy');
+                Route::get('{poster}', 'Show')->name('show');
+            });        
+
+            Route::namespace('Tag')
+            ->prefix('tags')
+            ->as('tags.')
+            ->group(function () {
+                Route::get('', 'Index')->name('index');
+                Route::post('', 'Store')->name('store');
+                Route::delete('{tag}', 'Destroy')->name('destroy');
+                Route::patch('{tag}', 'Update')->name('update');
+            });
+        });
+
+    /**
+     * overwritet file
+     */
+    Route::middleware(['api', 'auth', 'core'])
+        ->namespace('enso\files')
+        ->prefix('core')
+        ->as('core.')
+        ->group(function () {
+            // require 'app/files.php';
+            Route::namespace('File')
+            ->prefix('files')
+            ->as('files.')
+            ->group(function () {
+                Route::get('', 'Index')->name('index');
+                Route::get('link/{file}', 'Link')->name('link');
+                Route::get('download/{file}', 'Download')->name('download');
+                Route::delete('{file}', 'Destroy')->name('destroy');
+                Route::get('show/{file}', 'Show')->name('show');
+            });
+        
+            // require 'app/uploads.php';
+            Route::namespace('Upload')
+            ->prefix('uploads')
+            ->as('uploads.')
+            ->group(function () {
+                Route::post('store', 'Store')->name('store');
+                Route::delete('{upload}', 'Destroy')->name('destroy');
+            });
+        });
 
     Route::middleware(['signed', 'bindings'])
-    ->namespace('enso\files\File')
-    ->prefix('core/files')
-    ->as('core.files.')
-    ->group(function () {
-        Route::get('share/{file}', 'Share')->name('share');
-    });
+        ->namespace('enso\files\File')
+        ->prefix('core/files')
+        ->as('core.files.')
+        ->group(function () {
+            Route::get('share/{file}', 'Share')->name('share');
+        });
 
-Route::namespace('Auth')
-    ->middleware('web')
-    ->group(function () {
-        Route::post('login', 'LoginController@login')->name('login');
-        Route::post('logout', 'LoginController@logout')->name('logout');
-        Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-        Route::post('password/reset', 'ResetPasswordController@attemptReset')->name('password.reset');
-    });
+    Route::namespace('Auth')
+        ->middleware('web')
+        ->group(function () {
+            Route::post('login', 'LoginController@login')->name('login');
+            Route::post('logout', 'LoginController@logout')->name('logout');
+            Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+            Route::post('password/reset', 'ResetPasswordController@attemptReset')->name('password.reset');
+        });
+
 // example data for the dashboard
-Route::middleware(['web', 'auth'])
+Route::middleware(['web', 'auth', 'multitenant'])
     ->namespace('Dashboard')
     ->prefix('dashboard')->as('dashboard.')
     ->group(function () {
@@ -381,6 +457,9 @@ Route::middleware(['web', 'auth'])
             ->name('polar');
         Route::get('bubble', 'ChartController@bubble')
             ->name('bubble');
+        Route::get('changedb', 'ChartController@changedb')
+            ->name('changedb');
+        
     });
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])

@@ -17,11 +17,11 @@ class Multitenant
      */
     public function handle($request, Closure $next)
     {
-        $db = \Session::get('db');
+        $db = \Session::get('db', env('DB_DATABASE'));
         $key = 'database.connections.mysql.database';
         config([$key => $db]);
         \DB::purge('mysql');
-        \DB::reconnect('mysql');
+        \DB::setDefaultConnection('mysql');
 
         if (! $request->user()) {
             return $next($request);
