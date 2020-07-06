@@ -40,10 +40,20 @@ new mode 100755
 diff --git a/node_modules/@enso-ui/ui/src/bulma/components/AppFooter.vue b/node_modules/@enso-ui/ui/src/bulma/components/AppFooter.vue
 old mode 100644
 new mode 100755
-index cfb133c..a88a151
+index cfb133c..402d902
 --- a/node_modules/@enso-ui/ui/src/bulma/components/AppFooter.vue
 +++ b/node_modules/@enso-ui/ui/src/bulma/components/AppFooter.vue
-@@ -15,6 +15,14 @@
+@@ -4,6 +4,9 @@
+             <footer class="footer">
+                 <div class="content has-text-centered">
+                     <div class="level">
++                        <div class="level-item">
++                            <a class="button is-link" href="/about">About us</a>
++                        </div>
+                         <div class="level-item">
+                             <strong class="has-margin-right-small">
+                                 {{ meta.appName }} v{{ meta.version }}
+@@ -15,6 +18,14 @@
                              <span class="has-margin-left-small">
                                  +
                              </span>
@@ -58,7 +68,7 @@ index cfb133c..a88a151
                              <a href="https://vuejs.org"
                                  target="_blank">
                                  <img src="/images/vue-badge.png"
-@@ -43,19 +51,8 @@
+@@ -43,19 +54,8 @@
                              </a>
                          </div>
                      </div>
@@ -267,6 +277,40 @@ new mode 100755
 diff --git a/node_modules/@enso-ui/ui/src/bulma/layouts/Auth.vue b/node_modules/@enso-ui/ui/src/bulma/layouts/Auth.vue
 old mode 100644
 new mode 100755
+index 86c4749..7163b60
+--- a/node_modules/@enso-ui/ui/src/bulma/layouts/Auth.vue
++++ b/node_modules/@enso-ui/ui/src/bulma/layouts/Auth.vue
+@@ -1,5 +1,6 @@
+ <template>
+-    <core-auth v-slot:default="{ guestState }">
++    <core-auth v-slot:default="{ guestState, footer, }">
++        <div>
+         <section class="hero is-fullheight is-primary is-bold">
+             <div class="hero-body">
+                 <div class="container">
+@@ -7,16 +8,21 @@
+                 </div>
+             </div>
+         </section>
++            <app-footer class="animated slideInUp"
++                        v-if="footer"/>
++    </div>
+     </core-auth>
++
+ </template>
+ 
+ <script>
+ import CoreAuth from '../../core/layouts/Auth.vue';
+ import Router from '../pages/Router.vue';
++import AppFooter from '../components/AppFooter.vue';
+ 
+ export default {
+     name: 'Auth',
+ 
+-    components: { CoreAuth, Router },
++    components: { CoreAuth, Router, AppFooter },
+ };
+ </script>
 diff --git a/node_modules/@enso-ui/ui/src/bulma/layouts/Default.vue b/node_modules/@enso-ui/ui/src/bulma/layouts/Default.vue
 old mode 100644
 new mode 100755
@@ -303,6 +347,35 @@ index e16415c..4943a04
 diff --git a/node_modules/@enso-ui/ui/src/bulma/layouts/Home.vue b/node_modules/@enso-ui/ui/src/bulma/layouts/Home.vue
 old mode 100644
 new mode 100755
+index 8e070e8..48e6b3e
+--- a/node_modules/@enso-ui/ui/src/bulma/layouts/Home.vue
++++ b/node_modules/@enso-ui/ui/src/bulma/layouts/Home.vue
+@@ -1,5 +1,6 @@
+ <template>
+-    <core-home v-slot:default="{ loading, showQuote, quote, hide }">
++    <div>
++    <core-home v-slot:default="{ loading, showQuote, quote, hide, footer, }">
+         <section class="hero is-fullheight is-primary is-bold">
+             <div class="hero-body">
+                 <div class="container has-text-centered">
+@@ -19,12 +20,17 @@
+                 </div>
+             </div>
+         </section>
++        <app-footer class="animated slideInUp"
++                    v-if="footer"/>
+     </core-home>
++    </div>
++
+ </template>
+ 
+ <script>
+ import Loader from '@enso-ui/loader/bulma';
+ import CoreHome from '../../core/layouts/Home.vue';
++import AppFooter from '../components/AppFooter.vue';
+ 
+ export default {
+     name: 'Home',
 diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/MainRouter.vue b/node_modules/@enso-ui/ui/src/bulma/pages/MainRouter.vue
 old mode 100644
 new mode 100755
@@ -1283,23 +1356,73 @@ new mode 100755
 diff --git a/node_modules/@enso-ui/ui/src/core/layouts/Auth.vue b/node_modules/@enso-ui/ui/src/core/layouts/Auth.vue
 old mode 100644
 new mode 100755
+index a312fb2..ffe1c6f
+--- a/node_modules/@enso-ui/ui/src/core/layouts/Auth.vue
++++ b/node_modules/@enso-ui/ui/src/core/layouts/Auth.vue
+@@ -6,6 +6,10 @@ export default {
+ 
+     computed: {
+         ...mapState(['guestState']),
++        ...mapState('layout', ['footer']),
++        slideIn() {
++            return this.rtl ? 'slideInLeft' : 'slideInRight';
++        },
+     },
+ 
+     created() {
+@@ -19,6 +23,8 @@ export default {
+     render() {
+         return this.$scopedSlots.default({
+             guestState: this.guestState,
++            slideIn: this.slideIn,
++            footer: this.footer,
+         });
+     },
+ };
 diff --git a/node_modules/@enso-ui/ui/src/core/layouts/Default.vue b/node_modules/@enso-ui/ui/src/core/layouts/Default.vue
 old mode 100644
 new mode 100755
 diff --git a/node_modules/@enso-ui/ui/src/core/layouts/Home.vue b/node_modules/@enso-ui/ui/src/core/layouts/Home.vue
 old mode 100644
 new mode 100755
-index 23bc732..b639410
+index 23bc732..df12ef4
 --- a/node_modules/@enso-ui/ui/src/core/layouts/Home.vue
 +++ b/node_modules/@enso-ui/ui/src/core/layouts/Home.vue
-@@ -28,6 +28,7 @@ export default {
+@@ -12,6 +12,10 @@ export default {
+         ...mapState(['meta']),
+         ...mapState('auth', ['isAuth', 'intendedRoute', 'intendedPath']),
+         ...mapState(['appState', 'showQuote']),
++        ...mapState('layout', ['sidebar', 'footer']),
++    },
++    slideIn() {
++        return this.rtl ? 'slideInLeft' : 'slideInRight';
+     },
+ 
+     watch: {
+@@ -28,9 +32,14 @@ export default {
  
      methods: {
          ...mapMutations('auth', ['setIntendedRoute', 'setIntendedPath']),
 +        ...mapMutations('register', ['register']),
          ...mapMutations('layout', ['home']),
++        ...mapMutations('layout/sidebar', { showSidebar: 'show', hideSidebar: 'hide' }),
          ...mapActions(['loadAppState']),
          ...mapActions('layout', ['setTheme']),
++        slideIn() {
++            return this.rtl ? 'slideInLeft' : 'slideInRight';
++        },
+         enterApp() {
+             this.redirectIfNeeded();
+             this.loading = false;
+@@ -62,6 +71,8 @@ export default {
+             showQuote: this.showQuote,
+             quote: this.meta.quote,
+             hide: this.hide,
++            slideIn: this.slideIn,
++            footer: this.footer,
+         });
+     },
+ };
 diff --git a/node_modules/@enso-ui/ui/src/middleware/before.js b/node_modules/@enso-ui/ui/src/middleware/before.js
 old mode 100644
 new mode 100755
