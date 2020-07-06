@@ -39,6 +39,25 @@ class User extends Authenticatable implements Activatable, HasLocalePreference
         HasAvatar, HasPassword, Impersonates, IsPerson, Notifiable,
         Relations, Rememberable, TableCache, Uploads;
 
+    // public function __construct(Array $attributes = [])
+    // {
+    //     parent::__construct($attributes);
+    //     $db = \Session::get('db');
+    //     if(empty($db)) {
+    //         $db = env('DB_DATABASE', 'enso');
+    //     }
+    //     if($db === env('DB_DATABASE')) {
+    //         $key = 'database.connections.mysql.database';
+    //         config([$key => $db]);
+    //     } else { 
+    //         $key = 'database.connections.mysql.database';
+    //         config([$key => $db]);
+    //     }
+    //     \DB::purge('mysql');
+    //     \DB::reconnect('mysql');
+    //     $this->setConnection('mysql');
+    // }
+    
     protected $hidden = ['password', 'remember_token', 'password_updated_at'];
 
     protected $fillable = ['person_id', 'group_id', 'role_id', 'email', 'is_active', 'email_verified_at', 'password'];

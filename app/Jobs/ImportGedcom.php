@@ -11,6 +11,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\File;
 use ModularSoftware\LaravelGedcom\Utils\GedcomParser;
+use Illuminate\Support\Facades\Artisan;
 
 class ImportGedcom implements ShouldQueue
 {
@@ -51,6 +52,7 @@ class ImportGedcom implements ShouldQueue
         $parser = new GedcomParser();
         $parser->parse(storage_path($this->filename), $slug, true);
         File::delete(storage_path($this->filename));
+        
 
         // update import job
         $status = 'complete';

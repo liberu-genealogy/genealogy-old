@@ -10,6 +10,26 @@ use LaravelEnso\Tables\Traits\TableCache;
 class Family extends Model
 {
     use TableCache;
+    // public function __construct(Array $attributes = [])
+    // {
+    //     parent::__construct($attributes);
+    //     $db = \Session::get('db');
+    //     error_log('+++Family++++++++++++++++++++++++++++++++'.$db);
+    //     if(empty($db)) {
+    //         $db = env('DB_DATABASE', 'enso');
+    //     }
+    //     if($db === env('DB_DATABASE')) {
+    //         $key = 'database.connections.mysql.database';
+    //         config([$key => $db]);
+    //     } else { 
+    //         $key = 'database.connections.mysql.database';
+    //         config([$key => $db]);
+    //     }
+    //     \DB::purge('mysql');
+    //     \DB::reconnect('mysql');
+    //     $this->setConnection('mysql');
+    //     error_log('-----------------------------------'.$this->getConnection()->getDatabaseName());
+    // }
     protected $fillable = ['description', 'is_active', 'husband_id', 'wife_id', 'type_id', 'chan', 'nchi', 'rin'];
 
     protected $attributes = ['is_active' => false];
