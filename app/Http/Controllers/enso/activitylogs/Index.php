@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\enso\ActivityLog;
+namespace App\Http\Controllers\enso\activitylogs;
 
 use Illuminate\Routing\Controller;
 use App\Http\Response\enso\ActivityLog\Timeline;
