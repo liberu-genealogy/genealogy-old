@@ -10,7 +10,7 @@
         "build": "npx run-script-os",
         "build:default": "rm -rf ..\\/public/{js,themes,themes-rtl,images} && vue-cli-service build --no-clean --modern",
         "build:windows": "cd ../public && rd /s /q js & rd /s /q themes & rd /s /q themes-rtl & rd /s /q images & cd ../client && node_modules\\.bin\\vue-cli-service lint & node_modules\\.bin\\vue-cli-service build --no-clean --modern --skip-plugins thread-loader",
-        "dev": "npx-run-script-os",
+        "dev": "npx run-script-os",
         "dev:default": "rm -rf ../public/{js,themes,themes-rtl,images} && vue-cli-service build --no-clean --mode development",
         "dev:windows": "cd ../public && rd /s /q js & rd /s /q themes & rd /s /q themes-rtl & rd /s /q images & cd ../client && node_modules\\.bin\\vue-cli-service lint & node_modules\\.bin\\vue-cli-service build --no-clean --mode development --skip-plugins thread-loader",
         "lint": "npx run-script-os",
