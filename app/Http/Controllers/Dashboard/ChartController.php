@@ -47,15 +47,14 @@ class ChartController extends Controller
     public function pie()
     {
         // \DB::table('some')->get();
-
         $male = Person::where('sex', 'M')->get()->count();
         $female = Person::where('sex', 'F')->get()->count();
         $unknown = Person::whereNull('sex')->get()->count();
         $sv = \Session::get('db', env('DB_DATABASE'));
         $user = Auth::user();
-        $sv = \DB::connection()->getDatabaseName();
-
-        // return $user;
+        $companies = $user->person->company();
+        return $companies;
+        // return $sv;
         return (new Pie())
             ->title('Genders')
             ->labels(['Male', 'Female', 'Unknown'])
@@ -107,34 +106,43 @@ class ChartController extends Controller
     }
 
     public function changedb() {
+        $ret = '';
+        $current_db = \Session::get('companyId');
         $user = Auth::user();
-        $user->role_id = 1;
-        $user->save();
-        $company = $user->company();
-        $tenant = false;
-        if ($company) {
-            $tenant = true;
-        }
-        $value = env('DB_DATABASE');
-        if (optional($company)->isTenant()) {
-            // $key = 'database.default';
-            // $value = Connections::Tenant;
+        $email = $user->email;
+        $cn = 'mysql';
+        if(empty($current_db) ) {
+            $company = $user->company();
+            if (optional($company)->isTenant()) {
+                \Session::put('companyId', $company->id);
+                // $value = Connections::Tenant.$company->id;
+                // $key = 'database.connections.mysql.database';
+                // config([$key => $value]);
+
+                // $cn = 'mysql';
+            } else {
+                \Session::put('companyId', null);
+                // $value = env('DB_DATABASE');
+                // $cn = 'mysql';
+                // $key = 'database.connections.mysql.database';
+                // config([$key => $value]);
+            }
+        }else {
+            \Session::put('companyId', null);
+            // $value = env('DB_DATABASE');
+            // $cn = 'mysql';
+            // $key = 'database.connections.mysql.database';
             // config([$key => $value]);
-            // Tenant::set($company);
-            $value = Connections::Tenant.$company->id;
-        } else {
-            // $value = '';
         }
-        $key = 'database.connections.mysql.database';
-        config([$key => $value]);
+        // \Session::put('db', $value);
+        // \DB::purge($cn);
+        // \DB::reconnect($cn);
 
-        \DB::purge('mysql');
+        // $users = \DB::connection($cn)->table('users')->where('email', $email)->first();
+        // $sv = Auth::loginUsingId($users->id);
 
-        \DB::setDefaultConnection('mysql');
-        $users = \DB::table('users')->get();
-        \Session::put('db', $value);
-        $sv = \Session::get('db', env('DB_DATABASE'));
+        $sv =  \Session::get('companyId');
 
-        return $sv;
+        return 'cid: '.$sv."cdb:".$current_db;
     }
 }

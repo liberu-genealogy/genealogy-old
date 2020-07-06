@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\enso\core\Administration\User;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Core\Tables\Builders\UserTable;
+use App\Tables\Builders\enso\core\UserTable;
 use LaravelEnso\Tables\Traits\Data;
 
 class TableData extends Controller

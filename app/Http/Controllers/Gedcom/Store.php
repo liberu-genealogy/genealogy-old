@@ -13,6 +13,8 @@ use Auth;
 use Illuminate\Http\Request;
 use ModularSoftware\LaravelGedcom\Facades\GedcomParserFacade;
 use ModularSoftware\LaravelGedcom\Utils\GedcomParser;
+use Illuminate\Support\Facades\Artisan;
+use LaravelEnso\Multitenancy\Enums\Connections;
 
 class Store extends Controller
 {
@@ -31,11 +33,14 @@ class Store extends Controller
                     $_name = uniqid().'.ged';
                     $request->file->storeAs('gedcom', $_name);
                     define('STDIN', fopen('php://stdin', 'r'));
-                    // $parser = new GedcomParser();
-                    // $parser->parse($request->file('file'), $slug, true);
+                    $parser = new GedcomParser();
+                    $parser->parse($request->file('file'), $slug, true);
                     $filename = 'app/gedcom/'.$_name;
-                    ImportGedcom::dispatch($filename, $slug, $currentUser->id);
-
+                    
+                    // ImportGedcom::dispatch($filename, $slug, $currentUser->id);
+                    // Artisan::call('queue:work');
+                    error_log('_______________'.Connections::Mixed.config('database.connections.'.Connections::Mixed.'.database'));
+                    config('database.connections.'.Connections::Mixed.'.database');
                     return ['File uploaded'];
                 } catch (Exception $e) {
                     return ['Not uploaded'];

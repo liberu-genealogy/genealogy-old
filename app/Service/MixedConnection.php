@@ -17,9 +17,9 @@ class MixedConnection
         // This is test for tenant db
         // self::connection(Connections::Tenant);
 
-        $key = 'database.default';
-        $value = Connections::Mixed;
-        config([$key => $value]);
+        // $key = 'database.default';
+        // $value = Connections::Mixed;
+        // config([$key => $value]);
 
         DB::purge(Connections::Mixed);
 
@@ -30,6 +30,7 @@ class MixedConnection
     {
         $key = 'database.connections.'.Connections::Mixed.'.database';
         $value = config("database.connections.{$connection}.database");
+        error_log('+++++++++++++++++++++++++++++++++++'.$value);
         config([$key => $value]);
     }
 }
