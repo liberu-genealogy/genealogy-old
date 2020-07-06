@@ -161,7 +161,7 @@ use Illuminate\Support\Facades\Route;
     /**
      * overwrite team
      */
-    Route::namespace('\App\Http\Controllers\enso\Teams')
+    Route::namespace('\App\Http\Controllers\enso\teams')
         ->middleware(['api', 'auth', 'core'])
         ->prefix('administration/teams')
         ->as('administration.teams.')
@@ -178,7 +178,7 @@ use Illuminate\Support\Facades\Route;
 
     Route::middleware(['api', 'auth', 'core', 'multitenant'])
         ->prefix('system/permissions')->as('system.permissions.')
-        ->namespace('\App\Http\Controllers\enso\Permissions')
+        ->namespace('\App\Http\Controllers\enso\permissions')
         ->group(function () {
             Route::get('create', 'Create')->name('create');
             Route::post('', 'Store')->name('store');
