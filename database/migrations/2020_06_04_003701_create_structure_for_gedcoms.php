@@ -6,7 +6,6 @@ class CreateStructureForGedcoms extends Migration
 {
     protected array $permissions = [
         ['name' => 'gedcom.index', 'description' => 'Show index for gedcoms', 'is_default' => false],
-
         ['name' => 'gedcom.create', 'description' => 'Create gedcom', 'is_default' => false],
         ['name' => 'gedcom.store', 'description' => 'Store a new gedcom', 'is_default' => false],
         ['name' => 'gedcom.show', 'description' => 'Show gedcom', 'is_default' => false],

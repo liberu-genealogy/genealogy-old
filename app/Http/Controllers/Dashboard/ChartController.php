@@ -14,10 +14,12 @@ use LaravelEnso\Charts\Factories\Radar;
 use Illuminate\Support\Facades\Auth;
 use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\Multitenancy\Services\Tenant;
+use App\Traits\ConnectionTrait;
 // use LaravelEnso\Multitenancy\Traits\SystemConnection;
 
 class ChartController extends Controller
 {
+    use ConnectionTrait;
     // use SystemConnection;
 
     public function line()
@@ -47,15 +49,16 @@ class ChartController extends Controller
     public function pie()
     {
         // \DB::table('some')->get();
-
         $male = Person::where('sex', 'M')->get()->count();
         $female = Person::where('sex', 'F')->get()->count();
         $unknown = Person::whereNull('sex')->get()->count();
         $sv = \Session::get('db', env('DB_DATABASE'));
         $user = Auth::user();
-        $sv = \DB::connection()->getDatabaseName();
+        $companies = $user->person->company();
+        $current_db = \Session::get('companyId');
 
-        // return $user;
+        return $current_db;
+        // return $sv;
         return (new Pie())
             ->title('Genders')
             ->labels(['Male', 'Female', 'Unknown'])
@@ -108,33 +111,16 @@ class ChartController extends Controller
 
     public function changedb() {
         $user = Auth::user();
-        $user->role_id = 1;
-        $user->save();
         $company = $user->company();
-        $tenant = false;
-        if ($company) {
-            $tenant = true;
-        }
-        $value = env('DB_DATABASE');
         if (optional($company)->isTenant()) {
-            // $key = 'database.default';
-            // $value = Connections::Tenant;
-            // config([$key => $value]);
-            // Tenant::set($company);
-            $value = Connections::Tenant.$company->id;
+            $db = Connections::Tenant.$company->id;
+            $key = 'database.connections.tenant.database';
+            config([$key => $db]);
+            $this->setConnection(Connections::Tenant, $db);
         } else {
-            // $value = '';
+            $this->setConnection('mysql');
         }
-        $key = 'database.connections.mysql.database';
-        config([$key => $value]);
-
-        \DB::purge('mysql');
-
-        \DB::setDefaultConnection('mysql');
-        $users = \DB::table('users')->get();
-        \Session::put('db', $value);
-        $sv = \Session::get('db', env('DB_DATABASE'));
-
+        $sv =  $this->getConnection();
         return $sv;
     }
 }

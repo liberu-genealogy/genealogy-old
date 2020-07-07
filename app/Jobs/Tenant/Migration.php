@@ -12,11 +12,11 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
-use LaravelEnso\Companies\Models\Company;
-use LaravelEnso\Core\Models\UserGroup;
+use App\Models\enso\companies\Company;
+use App\Models\enso\core\UserGroup;
 use LaravelEnso\Multitenancy\Enums\Connections;
-use LaravelEnso\Multitenancy\Services\Tenant;
-use LaravelEnso\Roles\Models\Role;
+use App\Service\Tenant;
+use App\Models\enso\Roles\Role;
 use Str;
 
 class Migration implements ShouldQueue
