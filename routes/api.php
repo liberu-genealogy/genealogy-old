@@ -40,16 +40,16 @@ use Illuminate\Support\Facades\Route;
                 ->as('core.')
                 ->group(function () {
                     Route::get('home', 'Spa')->name('home.index');
-            
+
                     Route::namespace('Preferences')
                     ->prefix('preferences')
                     ->as('preferences.')
                     ->group(function () {
                         Route::patch('store/{route?}', 'Store')->name('store');
                         Route::post('reset/{route?}', 'Reset')->name('reset');
-                    });                    
+                    });
                 });
-            
+
                 Route::namespace('Administration')
                 ->prefix('administration')
                 ->as('administration.')
@@ -64,11 +64,11 @@ use Illuminate\Support\Facades\Route;
                         Route::get('{userGroup}/edit', 'Edit')->name('edit');
                         Route::patch('{userGroup}', 'Update')->name('update');
                         Route::delete('{userGroup}', 'Destroy')->name('destroy');
-                
+
                         Route::get('initTable', 'InitTable')->name('initTable');
                         Route::get('tableData', 'TableData')->name('tableData');
                         Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
-                
+
                         Route::get('options', 'Options')->name('options');
                     });
                     Route::namespace('User')
@@ -80,18 +80,18 @@ use Illuminate\Support\Facades\Route;
                         Route::get('{user}/edit', 'Edit')->name('edit');
                         Route::patch('{user}', 'Update')->name('update');
                         Route::delete('{user}', 'Destroy')->name('destroy');
-                
+
                         Route::get('initTable', 'InitTable')->name('initTable');
                         Route::get('tableData', 'TableData')->name('tableData');
                         Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
-                
+
                         Route::get('options', 'Options')->name('options');
-                
+
                         Route::get('{user}', 'Show')->name('show');
-                
+
                         Route::post('{user}/token', 'Token')->name('token');
-                    });                    
-                });                
+                    });
+                });
             });
     });
 
@@ -197,7 +197,7 @@ use Illuminate\Support\Facades\Route;
     Route::middleware(['api', 'auth', 'core'])
         ->prefix('system/menus')
         ->as('system.menus.')
-        ->namespace('\App\Http\Controllers\enso\Menus')
+        ->namespace('\App\Http\Controllers\enso\menus')
         ->group(function () {
             Route::get('create', 'Create')->name('create');
             Route::post('', 'Store')->name('store');
@@ -216,18 +216,18 @@ use Illuminate\Support\Facades\Route;
      */
     Route::middleware(['api', 'auth', 'core'])
         ->prefix('system/roles')->as('system.roles.')
-        ->namespace('\App\Http\Controllers\enso\Roles')
+        ->namespace('\App\Http\Controllers\enso\roles')
         ->group(function () {
             Route::get('create', 'Create')->name('create');
             Route::post('', 'Store')->name('store');
             Route::get('{role}/edit', 'Edit')->name('edit');
             Route::patch('{role}', 'Update')->name('update');
             Route::delete('{role}', 'Destroy')->name('destroy');
-            
+
             Route::get('initTable', 'InitTable')->name('initTable');
             Route::get('tableData', 'TableData')->name('tableData');
             Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
-            
+
             Route::get('options', 'Options')->name('options');
 
             Route::namespace('Permission')
@@ -243,7 +243,7 @@ use Illuminate\Support\Facades\Route;
      * overwrite logs
      */
     Route::middleware(['api', 'auth', 'core'])
-        ->namespace('\App\Http\Controllers\enso\Logs')
+        ->namespace('\App\Http\Controllers\enso\logs')
         ->prefix('system/logs')
         ->as('system.logs.')
         ->group(function () {
@@ -252,13 +252,13 @@ use Illuminate\Support\Facades\Route;
             Route::delete('{log}', 'Destroy')->name('destroy');
             Route::get('{log}/download', 'Download')->name('download');
             Route::get('{log}', 'Show')->name('show');
-        });    
+        });
 
     /**
      * overwrite localisation
      */
     Route::middleware(['api', 'auth', 'core'])
-        ->namespace('\App\Http\Controllers\enso\Localisation')
+        ->namespace('\App\Http\Controllers\enso\localisation')
         ->prefix('system/localisation')
         ->as('system.localisation.')
         ->group(function () {
@@ -270,7 +270,7 @@ use Illuminate\Support\Facades\Route;
                     Route::patch('saveLangFile/{language}/{subDir}', 'Update')->name('saveLangFile');
                     Route::patch('addKey', 'AddKey')->name('addKey');
                     Route::patch('merge/{locale?}', 'Merge')->name('merge');
-                });        
+                });
             // require 'app/language.php';
             Route::namespace('Language')
                 ->group(function () {
@@ -279,11 +279,11 @@ use Illuminate\Support\Facades\Route;
                     Route::get('{language}/edit', 'Edit')->name('edit');
                     Route::patch('{language}', 'Update')->name('update');
                     Route::delete('{language}', 'Destroy')->name('destroy');
-            
+
                     Route::get('initTable', 'InitTable')->name('initTable');
                     Route::get('tableData', 'TableData')->name('tableData');
                     Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
-                });        
+                });
         });
 
     /**
@@ -292,7 +292,7 @@ use Illuminate\Support\Facades\Route;
     Route::middleware(['api', 'auth', 'core'])
         ->prefix('system/tutorials')
         ->as('system.tutorials.')
-        ->namespace('\App\Http\Controllers\enso\Tutorials')
+        ->namespace('\App\Http\Controllers\enso\tutorials')
         ->group(function () {
             Route::get('create', 'Create')->name('create');
             Route::post('', 'Store')->name('store');
@@ -321,18 +321,18 @@ use Illuminate\Support\Facades\Route;
                 Route::delete('{dataImport}', 'Destroy')->name('destroy');
                 Route::post('store', 'Store')->name('store');
                 Route::get('download/{dataImport}', 'Download')->name('download');
-        
+
                 Route::get('initTable', 'InitTable')->name('initTable');
                 Route::get('tableData', 'TableData')->name('tableData');
                 Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
             });
-        
+
             // require 'app/rejected.php';
             Route::namespace('Rejected')
             ->group(function () {
                 Route::get('downloadRejected/{rejectedImport}', 'Download')->name('downloadRejected');
             });
-        
+
             // require 'app/template.php';
             Route::namespace('Template')
             ->group(function () {
@@ -341,14 +341,14 @@ use Illuminate\Support\Facades\Route;
                 Route::delete('deleteTemplate/{importTemplate}', 'Destroy')->name('deleteTemplate');
                 Route::get('downloadTemplate/{importTemplate}', 'Download')->name('downloadTemplate');
             });
-        
+
         });
 
     /**
      * overwrite activity-log
      */
     Route::middleware(['api', 'auth', 'core'])
-        ->namespace('\App\Http\Controllers\enso\ActivityLog')
+        ->namespace('\App\Http\Controllers\enso\activitylogs')
         ->prefix('core/activityLogs')
         ->as('core.activityLogs.')
         ->group(fn () => Route::get('', 'Index')->name('index'));
@@ -358,7 +358,7 @@ use Illuminate\Support\Facades\Route;
      */
     Route::middleware(['api', 'auth', 'core'])
         ->prefix('howTo')->as('howTo.')
-        ->namespace('\App\Http\Controllers\enso\HowTo')
+        ->namespace('\App\Http\Controllers\enso\howto')
         ->group(function () {
             Route::namespace('Video')
             ->prefix('videos')
@@ -370,7 +370,7 @@ use Illuminate\Support\Facades\Route;
                 Route::delete('{video}', 'Destroy')->name('destroy');
                 Route::get('{video}', 'Show')->name('show');
             });
-        
+
             Route::namespace('Poster')
             ->prefix('posters')
             ->as('posters.')
@@ -378,7 +378,7 @@ use Illuminate\Support\Facades\Route;
                 Route::post('', 'Store')->name('store');
                 Route::delete('{poster}', 'Destroy')->name('destroy');
                 Route::get('{poster}', 'Show')->name('show');
-            });        
+            });
 
             Route::namespace('Tag')
             ->prefix('tags')
@@ -410,7 +410,7 @@ use Illuminate\Support\Facades\Route;
                 Route::delete('{file}', 'Destroy')->name('destroy');
                 Route::get('show/{file}', 'Show')->name('show');
             });
-        
+
             // require 'app/uploads.php';
             Route::namespace('Upload')
             ->prefix('uploads')
