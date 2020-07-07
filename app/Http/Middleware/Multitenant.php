@@ -5,7 +5,8 @@ namespace App\Http\Middleware;
 use App\Service\MixedConnection;
 use Closure;
 use LaravelEnso\Multitenancy\Services\Tenant;
-
+// use App\Models\enso\companies\Company;
+use LaravelEnso\Companies\Models\Company;
 class Multitenant
 {
     /**
@@ -17,45 +18,48 @@ class Multitenant
      */
     public function handle($request, Closure $next)
     {
-        $db = \Session::get('db', env('DB_DATABASE'));
-        $key = 'database.connections.mysql.database';
-        config([$key => $db]);
-        \DB::purge('mysql');
-        \DB::setDefaultConnection('mysql');
+        $db = \Session::get('companyId');
 
         if (! $request->user()) {
             return $next($request);
         }
 
-        // $company = $this->ownerRequestsTenant($request)
-        //     ? Company::find($request->get('_tenantId'))
-        //     : $request->user()->company();
-        // $company = $request->user()->company();
-        // $tanent = false;
-        // if($company) {
-        //     $tanent = true;
-        // }
-        // if (optional($company)->isTenant()) {
-        //     Tenant::set($company);
-        // }
+        $cid = $db;
+        $company = Company::find($cid);
 
-        // MixedConnection::set(
-        //     $request->user(),
-        //     $tanent
-        //     // $request->has('_tenantId')
-        // );
+        $tanent = false;
+        if($company) {
+            $tanent = true;
+        }
+        
+        if (optional($company)->isTenant()) {
+            Tenant::set($company);
+        }
+                
+        MixedConnection::set(
+            $request->user(),
+            $tanent
+            // $request->has('_tenantId')
+        );
 
         if ($request->has('_tenantId')) {
             $request->request->remove('_tenantId');
         }
 
+        $conn = \Session::get('conn');
+        $value = \Session::get('db');
+        if($conn === 'tenant') {
+            $key = 'database.connections.tenant.database';
+            config([$key => $value]);
+            $config = json_encode(config('database.connections.'.$conn));
+            error_log('*****************************************************'.$config);
+        }
         return $next($request);
     }
 
     private function ownerRequestsTenant($request)
     {
-        return $request->has('_tenantId');
-        // return $request->user()->belongsToAdminGroup()
-        //     && $request->has('_tenantId');
+        return $request->user()->isSupervisor();
+            // && $request->has('_tenantId');
     }
 }
