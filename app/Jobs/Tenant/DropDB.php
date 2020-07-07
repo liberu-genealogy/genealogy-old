@@ -8,8 +8,8 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\DB;
-use LaravelEnso\Companies\Models\Company;
-use LaravelEnso\Multitenancy\Services\Tenant;
+use App\Models\enso\companies\Company;
+use App\Service\Tenant;
 use LaravelEnso\Multitenancy\Traits\TenantResolver;
 
 class DropDB implements ShouldQueue
