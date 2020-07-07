@@ -5,7 +5,9 @@
                 source="/api/dashboard/pie"/>
         </div>
         <div>
-            <button @click="ChangeDB">change DB</button>
+            <button @click="ChangeDB">
+change DB
+</button>
         </div>
     </div>
 </template>
