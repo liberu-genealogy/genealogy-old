@@ -9,21 +9,21 @@ class MixedConnection
 {
     public static function set($user, $tenant)
     {
-        if ($tenant) {
-            self::connection(Connections::Tenant);
-        } else {
-            self::connection('mysql');
-        }
-        // This is test for tenant db
-        // self::connection(Connections::Tenant);
+        // if ($tenant) {
+        //     self::connection(Connections::Tenant);
+        // } else {
+        //     self::connection('mysql');
+        // }
+        // // This is test for tenant db
+        // // self::connection(Connections::Tenant);
 
-        // $key = 'database.default';
-        // $value = Connections::Mixed;
-        // config([$key => $value]);
+        // // $key = 'database.default';
+        // // $value = Connections::Mixed;
+        // // config([$key => $value]);
 
-        DB::purge(Connections::Mixed);
+        // DB::purge(Connections::Mixed);
 
-        DB::reconnect(Connections::Mixed);
+        // DB::reconnect(Connections::Mixed);
     }
 
     private static function connection($connection)

@@ -14,10 +14,12 @@ use LaravelEnso\Charts\Factories\Radar;
 use Illuminate\Support\Facades\Auth;
 use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\Multitenancy\Services\Tenant;
+use App\Traits\ConnectionTrait;
 // use LaravelEnso\Multitenancy\Traits\SystemConnection;
 
 class ChartController extends Controller
 {
+    use ConnectionTrait;
     // use SystemConnection;
 
     public function line()
@@ -53,7 +55,9 @@ class ChartController extends Controller
         $sv = \Session::get('db', env('DB_DATABASE'));
         $user = Auth::user();
         $companies = $user->person->company();
-        return $companies;
+        $current_db = \Session::get('companyId');
+
+        return $current_db;
         // return $sv;
         return (new Pie())
             ->title('Genders')
@@ -106,43 +110,17 @@ class ChartController extends Controller
     }
 
     public function changedb() {
-        $ret = '';
-        $current_db = \Session::get('companyId');
         $user = Auth::user();
-        $email = $user->email;
-        $cn = 'mysql';
-        if(empty($current_db) ) {
-            $company = $user->company();
-            if (optional($company)->isTenant()) {
-                \Session::put('companyId', $company->id);
-                // $value = Connections::Tenant.$company->id;
-                // $key = 'database.connections.mysql.database';
-                // config([$key => $value]);
-
-                // $cn = 'mysql';
-            } else {
-                \Session::put('companyId', null);
-                // $value = env('DB_DATABASE');
-                // $cn = 'mysql';
-                // $key = 'database.connections.mysql.database';
-                // config([$key => $value]);
-            }
-        }else {
-            \Session::put('companyId', null);
-            // $value = env('DB_DATABASE');
-            // $cn = 'mysql';
-            // $key = 'database.connections.mysql.database';
-            // config([$key => $value]);
+        $company = $user->company();
+        if (optional($company)->isTenant()) {
+            $db = Connections::Tenant.$company->id;
+            $key = 'database.connections.tenant.database';
+            config([$key => $db]);
+            $this->setConnection(Connections::Tenant, $db);
+        } else {
+            $this->setConnection('mysql');
         }
-        // \Session::put('db', $value);
-        // \DB::purge($cn);
-        // \DB::reconnect($cn);
-
-        // $users = \DB::connection($cn)->table('users')->where('email', $email)->first();
-        // $sv = Auth::loginUsingId($users->id);
-
-        $sv =  \Session::get('companyId');
-
-        return 'cid: '.$sv."cdb:".$current_db;
+        $sv =  $this->getConnection();
+        return $sv;
     }
 }

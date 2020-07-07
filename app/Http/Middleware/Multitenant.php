@@ -35,8 +35,7 @@ class Multitenant
         if (optional($company)->isTenant()) {
             Tenant::set($company);
         }
-        error_log('____________________________________________________________________ tenant:'.$tanent.'_cid:'.$cid);
-        
+                
         MixedConnection::set(
             $request->user(),
             $tanent
@@ -47,6 +46,14 @@ class Multitenant
             $request->request->remove('_tenantId');
         }
 
+        $conn = \Session::get('conn');
+        $value = \Session::get('db');
+        if($conn === 'tenant') {
+            $key = 'database.connections.tenant.database';
+            config([$key => $value]);
+            $config = json_encode(config('database.connections.'.$conn));
+            error_log('*****************************************************'.$config);
+        }
         return $next($request);
     }
 
