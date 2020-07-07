@@ -15,9 +15,11 @@ use ModularSoftware\LaravelGedcom\Facades\GedcomParserFacade;
 use ModularSoftware\LaravelGedcom\Utils\GedcomParser;
 use Illuminate\Support\Facades\Artisan;
 use LaravelEnso\Multitenancy\Enums\Connections;
+use App\Traits\ConnectionTrait;
 
 class Store extends Controller
 {
+    use ConnectionTrait;
     /*
     * Api end-point for Gedcom api/gedcom/store
     * Saving uploaded file to storage and starting to read
@@ -29,18 +31,17 @@ class Store extends Controller
         if ($request->hasFile('file')) {
             if ($request->file('file')->isValid()) {
                 try {
+                    $conn = $this->getConnection();
+                    $db = $this->getDB();
                     $currentUser = Auth::user();
                     $_name = uniqid().'.ged';
                     $request->file->storeAs('gedcom', $_name);
                     define('STDIN', fopen('php://stdin', 'r'));
-                    $parser = new GedcomParser();
-                    $parser->parse($request->file('file'), $slug, true);
+                    // $parser = new GedcomParser();
+                    // $parser->parse($request->file('file'), $slug, true);
                     $filename = 'app/gedcom/'.$_name;
-                    
-                    // ImportGedcom::dispatch($filename, $slug, $currentUser->id);
+                    ImportGedcom::dispatch($filename, $slug, $currentUser->id, $conn, $db);
                     // Artisan::call('queue:work');
-                    error_log('_______________'.Connections::Mixed.config('database.connections.'.Connections::Mixed.'.database'));
-                    config('database.connections.'.Connections::Mixed.'.database');
                     return ['File uploaded'];
                 } catch (Exception $e) {
                     return ['Not uploaded'];

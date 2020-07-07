@@ -19,7 +19,8 @@ class ImportGedcom implements ShouldQueue
     protected $filename;
     protected $slug;
     protected $user_id;
-
+    protected $conn;
+    protected $db;
     public $tries = 1;
     public $timeout = 0;
 
@@ -28,12 +29,14 @@ class ImportGedcom implements ShouldQueue
      *
      * @return void
      */
-    public function __construct($filename, $slug, $user_id)
+    public function __construct($filename, $slug, $user_id, $conn, $db)
     {
         //
         $this->filename = $filename;
         $this->slug = $slug;
         $this->user_id = $user_id;
+        $this->conn = $conn;
+        $this->db = $db;
     }
 
     /**
@@ -47,16 +50,21 @@ class ImportGedcom implements ShouldQueue
         $slug = $this->slug;
         $user_id = $this->user_id;
         $status = 'queue';
-        ImportJob::create(compact('user_id', 'slug', 'status'));
+        if($this->conn == 'tenant') {
+            $key = 'database.connections.tenant.database';
+            $value = $this->db;
+            config([$key => $value]);
+        }
+        ImportJob::on($this->conn)->create(compact('user_id', 'slug', 'status'));
 
         $parser = new GedcomParser();
-        $parser->parse(storage_path($this->filename), $slug, true);
+        $parser->parse($this->conn, storage_path($this->filename), $slug, true);
         File::delete(storage_path($this->filename));
         
 
         // update import job
         $status = 'complete';
-        ImportJob::where('slug', $slug)->where('user_id', $user_id)->update(compact('status'));
+        ImportJob::on($this->conn)->where('slug', $slug)->where('user_id', $user_id)->update(compact('status'));
 
         return 0;
     }
