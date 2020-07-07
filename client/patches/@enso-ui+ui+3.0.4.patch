@@ -40,20 +40,23 @@ new mode 100755
 diff --git a/node_modules/@enso-ui/ui/src/bulma/components/AppFooter.vue b/node_modules/@enso-ui/ui/src/bulma/components/AppFooter.vue
 old mode 100644
 new mode 100755
-index cfb133c..402d902
+index cfb133c..9d30bba
 --- a/node_modules/@enso-ui/ui/src/bulma/components/AppFooter.vue
 +++ b/node_modules/@enso-ui/ui/src/bulma/components/AppFooter.vue
-@@ -4,6 +4,9 @@
+@@ -4,6 +4,12 @@
              <footer class="footer">
                  <div class="content has-text-centered">
                      <div class="level">
 +                        <div class="level-item">
-+                            <a class="button is-link" href="/about">About us</a>
++                            <a class="button is-link" href="/contact">Contact</a>&nbsp;
++                            <a class="button is-link" href="/about">About</a>&nbsp;
++                            <a class="button is-link" href="/privacy">Privacy</a>&nbsp;
++                            <a class="button is-link" href="/conditions">Terms and Conditions</a>
 +                        </div>
                          <div class="level-item">
                              <strong class="has-margin-right-small">
                                  {{ meta.appName }} v{{ meta.version }}
-@@ -15,6 +18,14 @@
+@@ -15,6 +21,14 @@
                              <span class="has-margin-left-small">
                                  +
                              </span>
@@ -68,7 +71,7 @@ index cfb133c..402d902
                              <a href="https://vuejs.org"
                                  target="_blank">
                                  <img src="/images/vue-badge.png"
-@@ -43,19 +54,8 @@
+@@ -43,19 +57,8 @@
                              </a>
                          </div>
                      </div>
