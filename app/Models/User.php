@@ -32,11 +32,12 @@ use LaravelEnso\Rememberable\Traits\Rememberable;
 use LaravelEnso\Roles\Enums\Roles;
 use LaravelEnso\Tables\Traits\TableCache;
 use LaravelEnso\Teams\Models\Team;
+use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements Activatable, HasLocalePreference
 {
     use ActiveState, AvoidsDeletionConflicts, CascadesMorphMap,
-        HasAvatar, HasPassword, Impersonates, IsPerson, Notifiable,
+    HasApiTokens, HasAvatar, HasPassword, Impersonates, IsPerson, Notifiable,
         Relations, Rememberable, TableCache, Uploads;
 
     // public function __construct(Array $attributes = [])

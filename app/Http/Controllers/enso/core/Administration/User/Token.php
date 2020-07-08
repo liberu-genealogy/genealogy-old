@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\enso\core\Administration\User;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Core\Models\User;
+use App\Models\User;
 
 class Token extends Controller
 {
