@@ -53,6 +53,7 @@ class RegisterController extends Controller
             $person->email = $data['email'];
             $person->save();
 
+            
             // get user_group_id
             $user_group = UserGroup::where('name', 'Administrators')->first();
             if ($user_group == null) {

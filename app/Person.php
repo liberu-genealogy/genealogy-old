@@ -34,27 +34,10 @@ class Person extends Model
         SoftDeletes,
         SystemConnection;
 
-        // public function __construct(Array $attributes = [])
-        // {
-        //     parent::__construct($attributes);
-        //     $db = \Session::get('db');
-        //     if(empty($db)) {
-        //         $db = env('DB_DATABASE', 'enso');
-        //         error_log('+++Person++++++++++++++++++++++++++++++++'.$db);
-        //     }else {
-        //         error_log('+++else++++++++++++++++++++++++++++++++'.$db);
-        //         if($db === env('DB_DATABASE')) {
-        //             $key = 'database.connections.mysql.database';
-        //             config([$key => $db]);
-        //         } else { 
-        //             $key = 'database.connections.mysql.database';
-        //             config([$key => $db]);
-        //         }
-        //         \DB::purge('mysql');
-        //         \DB::reconnect('mysql');
-        //         $this->setConnection('mysql');
-        //     }
-        // }
+        public function __construct(Array $attributes = [])
+        {
+            parent::__construct($attributes);
+        }
 
     /**
      * The attributes that should be mutated to dates.
@@ -71,7 +54,7 @@ class Person extends Model
         'child_in_family_id',
         'description',
         'title', 'name', 'appellative', 'uid', 'email', 'phone', 'birthday',
-        'deathday', 'bank', 'bank_account', 'obs',
+        'deathday', 'bank', 'bank_account',
         'uid', 'chan', 'rin', 'resn', 'rfn', 'afn',
     ];
 

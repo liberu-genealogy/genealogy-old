@@ -100,7 +100,7 @@ use Illuminate\Support\Facades\Route;
      */
 
     Route::namespace('\App\Http\Controllers\enso\people')
-        ->middleware(['api', 'auth', 'core'])
+        ->middleware(['api', 'auth', 'core', 'multitenant'])
         ->prefix('administration/people')
         ->as('administration.people.')
         ->group(function () {
@@ -120,43 +120,43 @@ use Illuminate\Support\Facades\Route;
     /**
      * overwrite companies
      */
-    // Route::namespace('\App\Http\Controllers\enso\companies')
-    //     ->middleware(['api', 'auth', 'core'])
-    //     ->prefix('administration/companies')
-    //     ->as('administration.companies.')
-    //     ->group(function () {
-    //         // require 'app/companies.php';
-    //         Route::namespace('Company')
-    //         ->group(function () {
-    //             Route::get('create', 'Create')->name('create');
-    //             Route::post('', 'Store')->name('store');
-    //             Route::get('{company}/edit', 'Edit')->name('edit');
-    //             Route::patch('{company}', 'Update')->name('update');
-    //             Route::delete('{company}', 'Destroy')->name('destroy');
+    Route::namespace('\App\Http\Controllers\enso\companies')
+        ->middleware(['api', 'auth', 'core'])
+        ->prefix('administration/companies')
+        ->as('administration.companies.')
+        ->group(function () {
+            // require 'app/companies.php';
+            Route::namespace('Company')
+            ->group(function () {
+                Route::get('create', 'Create')->name('create');
+                Route::post('', 'Store')->name('store');
+                Route::get('{company}/edit', 'Edit')->name('edit');
+                Route::patch('{company}', 'Update')->name('update');
+                Route::delete('{company}', 'Destroy')->name('destroy');
         
-    //             Route::get('initTable', 'InitTable')->name('initTable');
-    //             Route::get('tableData', 'TableData')->name('tableData');
-    //             Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
+                Route::get('initTable', 'InitTable')->name('initTable');
+                Route::get('tableData', 'TableData')->name('tableData');
+                Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
         
-    //             Route::get('options', 'Options')->name('options');
-    //         });
+                Route::get('options', 'Options')->name('options');
+            });
         
-    //         // require 'app/people.php';
-    //         Route::namespace('Person')
-    //         ->group(function () {
-    //             Route::prefix('people')
-    //                 ->as('people.')
-    //                 ->group(function () {
-    //                     Route::get('{company}', 'Index')->name('index');
-    //                     Route::get('{company}/create', 'Create')->name('create');
-    //                     Route::get('{company}/{person}/edit', 'Edit')->name('edit');
-    //                     Route::patch('{person}', 'Update')->name('update');
-    //                     Route::post('', 'Store')->name('store');
-    //                     Route::delete('{company}/{person}', 'Destroy')->name('destroy');
-    //                 });
-    //         });
+            // require 'app/people.php';
+            Route::namespace('Person')
+            ->group(function () {
+                Route::prefix('people')
+                    ->as('people.')
+                    ->group(function () {
+                        Route::get('{company}', 'Index')->name('index');
+                        Route::get('{company}/create', 'Create')->name('create');
+                        Route::get('{company}/{person}/edit', 'Edit')->name('edit');
+                        Route::patch('{person}', 'Update')->name('update');
+                        Route::post('', 'Store')->name('store');
+                        Route::delete('{company}/{person}', 'Destroy')->name('destroy');
+                    });
+            });
         
-    //     });
+        });
 
     /**
      * overwrite team
@@ -430,7 +430,7 @@ use Illuminate\Support\Facades\Route;
         });
 
     
-        Route::namespace('Auth')
+    Route::namespace('Auth')
         ->middleware('web')
         ->group(function () {
             Route::post('login', 'LoginController@login')->name('login');
@@ -439,7 +439,31 @@ use Illuminate\Support\Facades\Route;
             Route::post('password/reset', 'ResetPasswordController@attemptReset')->name('password.reset');
         });
 
-// example data for the dashboard
+    /**
+     * overwrite impersonate
+     */
+    Route::middleware(['web', 'auth:web', 'core'])
+        ->namespace('\App\Http\Controllers\enso\Impersonate')
+        ->prefix('api/core/impersonate')->as('core.impersonate.')
+        ->group(function () {
+            Route::get('stop', 'Stop')->name('stop');
+            Route::get('{user}', 'Start')->name('start');
+        });
+
+    /**
+     * overwrite core-avatar
+     */
+    Route::middleware(['api', 'auth', 'core'])
+        ->namespace('\App\Http\Controllers\enso\Avatars')
+        ->prefix('api/core/avatars')
+        ->as('core.avatars.')
+        ->group(function () {
+            Route::post('', 'Store')->name('store');
+            Route::patch('{avatar}', 'Update')->name('update');
+            Route::get('{avatar}', 'Show')->name('show');
+        });
+    
+        // example data for the dashboard
 Route::middleware(['web', 'auth', 'multitenant'])
     ->namespace('Dashboard')
     ->prefix('dashboard')->as('dashboard.')
@@ -677,7 +701,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             });
     });
 
-Route::middleware(['api', 'auth', 'core', 'multitenant'])
+Route::middleware(['api', 'auth', 'core'])
     ->group(function () {
         Route::namespace('Gedcom')
             ->prefix('gedcom')

@@ -16,7 +16,7 @@ class Update extends Controller
 
     public function __invoke(ValidateUserRequest $request, User $user)
     {
-        $this->authorize('handle', $user);
+        // $this->authorize('handle', $user);
 
         if ($request->filled('password')) {
             $this->authorize('change-password', $user);
