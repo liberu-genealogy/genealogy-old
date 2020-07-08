@@ -64,7 +64,7 @@ class Migration implements ShouldQueue
             '--force' => true,
         ]);
 
-        $person = DB::connection(Connections::Tenant)->table('people')->insert([
+        $person = DB::connection(Connections::Tenant)->table('people')->insertGetId([
             'email'=>$this->email,
             'name' => $this->name,
         ]);
