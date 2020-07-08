@@ -5,14 +5,18 @@ namespace App\Tables\Builders;
 use App\Person;
 use Illuminate\Database\Eloquent\Builder;
 use LaravelEnso\Tables\Contracts\Table;
+use App\Traits\ConnectionTrait;
+
 
 class PersonTable extends \LaravelEnso\People\Tables\Builders\PersonTable
 {
+    use ConnectionTrait;
     protected const TemplatePath = __DIR__.'/../Templates/people.json';
 
     public function query(): Builder
     {
-        return Person::selectRaw('
+        $conn =  $this->getConnection();
+        return Person::on($conn)->selectRaw('
             people.id, people.title, people.givn, people.surn,  people.appellative, people.email, people.phone,
             people.birthday, CASE WHEN users.id is null THEN 0 ELSE 1 END as "user",
             companies.name as company, people.created_at

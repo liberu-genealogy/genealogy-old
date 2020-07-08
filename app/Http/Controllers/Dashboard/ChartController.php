@@ -120,7 +120,7 @@ class ChartController extends Controller
         } else {
             $this->setConnection('mysql');
         }
-        $sv =  $this->getConnection();
-        return $sv;
+        $conn =  $this->getConnection();
+        return $conn;
     }
 }

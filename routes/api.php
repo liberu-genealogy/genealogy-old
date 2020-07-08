@@ -100,7 +100,7 @@ use Illuminate\Support\Facades\Route;
      */
 
     Route::namespace('\App\Http\Controllers\enso\people')
-        ->middleware(['api', 'auth', 'core'])
+        ->middleware(['api', 'auth', 'core', 'multitenant'])
         ->prefix('administration/people')
         ->as('administration.people.')
         ->group(function () {
