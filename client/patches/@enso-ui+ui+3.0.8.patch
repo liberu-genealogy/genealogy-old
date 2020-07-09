@@ -345,6 +345,21 @@ index 0000000..ba084e6
 diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/AuthForm.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/AuthForm.vue
 old mode 100644
 new mode 100755
+index 8e4e7b1..ed53df4
+--- a/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/AuthForm.vue
++++ b/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/AuthForm.vue
+@@ -117,6 +117,11 @@
+                     </button>
+                 </div>
+             </form>
++            <router-link v-if="isLogin"
++                         :to="{ name: 'register' }"
++                         class="is-pulled-left">
++                {{ i18n('Register') }}
++            </router-link>
+             <router-link v-if="isLogin"
+                 :to="{ name: 'password.email' }"
+                 class="is-pulled-right">
 diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/PasswordStrength.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/PasswordStrength.vue
 old mode 100644
 new mode 100755
@@ -878,6 +893,34 @@ new mode 100755
 diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/notifications.js b/node_modules/@enso-ui/ui/src/bulma/routes/notifications.js
 old mode 100644
 new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/register.js b/node_modules/@enso-ui/ui/src/bulma/routes/register.js
+new file mode 100755
+index 0000000..8c9ba1f
+--- /dev/null
++++ b/node_modules/@enso-ui/ui/src/bulma/routes/register.js
+@@ -0,0 +1,22 @@
++import store from '@root/store';
++
++    const Register = () => import('../pages/auth/Register.vue');
++
++    const redirect = (to, from, next) => {
++        if (store.state.auth.isAuth) {
++                next({ path: '/' });
++            } else {
++                next();
++            }
++    };
++
++    export default [{
++    name: 'register',
++        path: '/register',
++        component: Register,
++        beforeEnter: redirect,
++        meta: {
++            guestGuard: true,
++                title: 'Register',
++            },
++}];
 diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/system.js b/node_modules/@enso-ui/ui/src/bulma/routes/system.js
 old mode 100644
 new mode 100755
