@@ -54,11 +54,10 @@
         "opencollective-postinstall": "^2.0.0",
         "patch-package": "^6.0.2",
         "postinstall-postinstall": "^2.0.0",
-        "pusher-js": "^6.0.3",
+        "pusher-js": "^5.0.0",
         "v-tooltip": "^2.0.0-rc.32",
         "vue": "^2.6.10",
         "vue-cal": "^2.0.1",
-        "vue-pull-refresh": "^0.2.7",
         "vue-router": "^3.0.1",
         "vuex": "^3.0.0",
         "vuex-router-sync": "^5.0.0"
@@ -133,4 +132,3 @@
         "url": "http://github.com/modularsoftware/genealogy"
     }
 }
-

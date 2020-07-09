@@ -1,0 +1,1112 @@
+diff --git a/node_modules/@enso-ui/ui/.eslintrc.js b/node_modules/@enso-ui/ui/.eslintrc.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/.github/issue_template.md b/node_modules/@enso-ui/ui/.github/issue_template.md
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/LICENSE b/node_modules/@enso-ui/ui/LICENSE
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/README.md b/node_modules/@enso-ui/ui/README.md
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/bulma/index.js b/node_modules/@enso-ui/ui/bulma/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/renderless/components/index.js b/node_modules/@enso-ui/ui/renderless/components/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/renderless/components/menu/index.js b/node_modules/@enso-ui/ui/renderless/components/menu/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/renderless/components/navbar/index.js b/node_modules/@enso-ui/ui/renderless/components/navbar/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/renderless/components/navbar/io/index.js b/node_modules/@enso-ui/ui/renderless/components/navbar/io/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/renderless/components/settings/index.js b/node_modules/@enso-ui/ui/renderless/components/settings/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/renderless/index.js b/node_modules/@enso-ui/ui/renderless/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/renderless/layouts/index.js b/node_modules/@enso-ui/ui/renderless/layouts/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/App.vue b/node_modules/@enso-ui/ui/src/bulma/App.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/AppFooter.vue b/node_modules/@enso-ui/ui/src/bulma/components/AppFooter.vue
+old mode 100644
+new mode 100755
+index cfb133c..73e9652
+--- a/node_modules/@enso-ui/ui/src/bulma/components/AppFooter.vue
++++ b/node_modules/@enso-ui/ui/src/bulma/components/AppFooter.vue
+@@ -4,6 +4,12 @@
+             <footer class="footer">
+                 <div class="content has-text-centered">
+                     <div class="level">
++                                                <div class="level-item">
++                                                    <a class="button is-link" href="/contact">Contact</a>&nbsp;
++                                                    <a class="button is-link" href="/about">About</a>&nbsp;
++                                                    <a class="button is-link" href="/privacy">Privacy</a>&nbsp;
++                                                    <a class="button is-link" href="/conditions">Terms and Conditions</a>
++                                                </div>
+                         <div class="level-item">
+                             <strong class="has-margin-right-small">
+                                 {{ meta.appName }} v{{ meta.version }}
+@@ -15,6 +21,14 @@
+                             <span class="has-margin-left-small">
+                                 +
+                             </span>
++                                                        <a href="https://github.com/laravel-enso/enso"
++                                                                                            target="_blank">
++                                                            <img src="/images/enso.svg"
++                                                                                                      alt="Made with Laravel Enso"
++                                                                                                      width="28"
++                                                                                                      height="28">
++                                                        </a>
++                            			    +
+                             <a href="https://vuejs.org"
+                                 target="_blank">
+                                 <img src="/images/vue-badge.png"
+@@ -43,19 +57,8 @@
+                             </a>
+                         </div>
+                     </div>
+-                    <div class="level">
+-                        <div class="level-item">
+-                            <strong>Backed by:</strong>
+-                            <a href="https://earthlink.ro"
+-                                target="_blank">
+-                                <figure class="image earthlink">
+-                                    <img src="/images/earthlink.svg">
+-                                </figure>
+-                            </a>
+-                        </div>
+-                    </div>
+                     <div>
+-                        <a href="https://github.com/laravel-enso/enso"
++                        <a href="https://github.com/modularsoftware/genealogy"
+                             target="_blank">
+                             <span class="icon">
+                                 <fa :icon="['fab', 'github']"/>
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/Bookmarks.vue b/node_modules/@enso-ui/ui/src/bulma/components/Bookmarks.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/Breadcrumbs.vue b/node_modules/@enso-ui/ui/src/bulma/components/Breadcrumbs.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/Loader.vue b/node_modules/@enso-ui/ui/src/bulma/components/Loader.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/PageHeader.vue b/node_modules/@enso-ui/ui/src/bulma/components/PageHeader.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/VueAside.vue b/node_modules/@enso-ui/ui/src/bulma/components/VueAside.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/menu/MenuItem.vue b/node_modules/@enso-ui/ui/src/bulma/components/menu/MenuItem.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/menu/Menus.vue b/node_modules/@enso-ui/ui/src/bulma/components/menu/Menus.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/menu/Sidebar.vue b/node_modules/@enso-ui/ui/src/bulma/components/menu/Sidebar.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/menu/icons/index.js b/node_modules/@enso-ui/ui/src/bulma/components/menu/icons/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/AppUpdate.vue b/node_modules/@enso-ui/ui/src/bulma/components/navbar/AppUpdate.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/IO.vue b/node_modules/@enso-ui/ui/src/bulma/components/navbar/IO.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/MissingKeys.vue b/node_modules/@enso-ui/ui/src/bulma/components/navbar/MissingKeys.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/Navbar.vue b/node_modules/@enso-ui/ui/src/bulma/components/navbar/Navbar.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/NavbarRefresh.vue b/node_modules/@enso-ui/ui/src/bulma/components/navbar/NavbarRefresh.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/Notifications.vue b/node_modules/@enso-ui/ui/src/bulma/components/navbar/Notifications.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/ProfileControl.vue b/node_modules/@enso-ui/ui/src/bulma/components/navbar/ProfileControl.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/Search.vue b/node_modules/@enso-ui/ui/src/bulma/components/navbar/Search.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/SettingsControl.vue b/node_modules/@enso-ui/ui/src/bulma/components/navbar/SettingsControl.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/icons/app.js b/node_modules/@enso-ui/ui/src/bulma/components/navbar/icons/app.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/icons/enso.js b/node_modules/@enso-ui/ui/src/bulma/components/navbar/icons/enso.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/icons/index.js b/node_modules/@enso-ui/ui/src/bulma/components/navbar/icons/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/navbar/io/Operation.vue b/node_modules/@enso-ui/ui/src/bulma/components/navbar/io/Operation.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/BookmarksState.vue b/node_modules/@enso-ui/ui/src/bulma/components/settings/BookmarksState.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/KeyCollector.vue b/node_modules/@enso-ui/ui/src/bulma/components/settings/KeyCollector.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/LanguageSelector.vue b/node_modules/@enso-ui/ui/src/bulma/components/settings/LanguageSelector.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/MenuOrganizer.vue b/node_modules/@enso-ui/ui/src/bulma/components/settings/MenuOrganizer.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/Settings.vue b/node_modules/@enso-ui/ui/src/bulma/components/settings/Settings.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/SidebarState.vue b/node_modules/@enso-ui/ui/src/bulma/components/settings/SidebarState.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/ThemeSelector.vue b/node_modules/@enso-ui/ui/src/bulma/components/settings/ThemeSelector.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/ToastrPosition.vue b/node_modules/@enso-ui/ui/src/bulma/components/settings/ToastrPosition.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/Tutorial.vue b/node_modules/@enso-ui/ui/src/bulma/components/settings/Tutorial.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/corners/bottom-center.svg b/node_modules/@enso-ui/ui/src/bulma/components/settings/corners/bottom-center.svg
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/corners/bottom-left.svg b/node_modules/@enso-ui/ui/src/bulma/components/settings/corners/bottom-left.svg
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/corners/bottom-right.svg b/node_modules/@enso-ui/ui/src/bulma/components/settings/corners/bottom-right.svg
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/corners/top-center.svg b/node_modules/@enso-ui/ui/src/bulma/components/settings/corners/top-center.svg
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/corners/top-left.svg b/node_modules/@enso-ui/ui/src/bulma/components/settings/corners/top-left.svg
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/corners/top-right.svg b/node_modules/@enso-ui/ui/src/bulma/components/settings/corners/top-right.svg
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/components/settings/flags/flags.scss b/node_modules/@enso-ui/ui/src/bulma/components/settings/flags/flags.scss
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/layouts/Auth.vue b/node_modules/@enso-ui/ui/src/bulma/layouts/Auth.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/layouts/Default.vue b/node_modules/@enso-ui/ui/src/bulma/layouts/Default.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/layouts/Home.vue b/node_modules/@enso-ui/ui/src/bulma/layouts/Home.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/MainRouter.vue b/node_modules/@enso-ui/ui/src/bulma/pages/MainRouter.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/NotFound.vue b/node_modules/@enso-ui/ui/src/bulma/pages/NotFound.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/Router.vue b/node_modules/@enso-ui/ui/src/bulma/pages/Router.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/Unauthorized.vue b/node_modules/@enso-ui/ui/src/bulma/pages/Unauthorized.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/administration/userGroups/Create.vue b/node_modules/@enso-ui/ui/src/bulma/pages/administration/userGroups/Create.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/administration/userGroups/Edit.vue b/node_modules/@enso-ui/ui/src/bulma/pages/administration/userGroups/Edit.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/administration/userGroups/Index.vue b/node_modules/@enso-ui/ui/src/bulma/pages/administration/userGroups/Index.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/Create.vue b/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/Create.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/Edit.vue b/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/Edit.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/Index.vue b/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/Index.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/Show.vue b/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/Show.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/components/Avatar.vue b/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/components/Avatar.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/components/DeleteModal.vue b/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/components/DeleteModal.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/components/UserProfile.vue b/node_modules/@enso-ui/ui/src/bulma/pages/administration/users/components/UserProfile.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/Login.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/Login.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/Register.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/Register.vue
+new file mode 100755
+index 0000000..aa296ae
+--- /dev/null
++++ b/node_modules/@enso-ui/ui/src/bulma/pages/auth/Register.vue
+@@ -0,0 +1,36 @@
++<template>
++        <register-form
++            action="Register"
++            route="register"
++            @success="init"/>
++    </template>
++
++<script>
++    import { mapMutations, mapState } from 'vuex';
++    import RegisterForm from './components/RegisterForm.vue';
++
++        export default {
++        name: 'Register',
++
++                components: { RegisterForm },
++
++            computed: {
++                ...mapState(['meta']),
++                },
++
++            methods: {
++                ...mapMutations('auth', ['login']),
++                    ...mapMutations('layout', ['home']),
++                    ...mapMutations(['setShowQuote', 'setCsrfToken']),
++                    init(data) {
++                        this.setShowQuote(this.meta.showQuote);
++                        this.setCsrfToken(data.csrfToken);
++                        setTimeout(() => {
++                                this.$router.push({ name: 'verify' });
++                                // this.login();
++                                    // this.home(true);
++                                    }, 500);
++                    },
++            },
++    };
++    </script>
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/Verify.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/Verify.vue
+new file mode 100755
+index 0000000..ba084e6
+--- /dev/null
++++ b/node_modules/@enso-ui/ui/src/bulma/pages/auth/Verify.vue
+@@ -0,0 +1,34 @@
++<template>
++        <verify-form
++            action="Resend"
++            @verified="init"/>
++    </template>
++
++<script>
++    import { mapMutations, mapState } from 'vuex';
++    import VerifyForm from './components/VerifyForm.vue';
++
++        export default {
++        name: 'Verify',
++
++                components: { VerifyForm },
++
++            computed: {
++                ...mapState(['meta']),
++                },
++
++            methods: {
++                ...mapMutations('auth', ['login']),
++                    ...mapMutations('layout', ['home']),
++                    ...mapMutations(['setShowQuote', 'setCsrfToken']),
++                    init(data) {
++                        this.setShowQuote(this.meta.showQuote);
++                        this.setCsrfToken(data.csrfToken);
++                        setTimeout(() => {
++                                this.login();
++                                this.home(true);
++                            }, 3000);
++                    },
++            },
++    };
++    </script>
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/AuthForm.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/AuthForm.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/PasswordStrength.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/PasswordStrength.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/RegisterForm.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/RegisterForm.vue
+new file mode 100755
+index 0000000..6784dd1
+--- /dev/null
++++ b/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/RegisterForm.vue
+@@ -0,0 +1,265 @@
++<template>
++        <div class="login">
++            <div class="box has-padding-medium">
++                <h3 class="title is-3 has-text-black has-text-centered has-margin-bottom-medium">
++                    <figure class="image is-24x24 logo is-clickable"
++                                                 @click="$router.push({ name: 'login' })">
++                        <img src="/images/logo.svg">
++                    </figure>
++                    {{ meta.appName }}
++                </h3>
++                <form class="has-margin-bottom-medium"
++                                       @submit.prevent="submit()">
++                    <div class="field">
++                        <div class="control has-icons-left has-icons-right">
++                            <input v-model="name"
++                                                                v-focus
++                                                                class="input"
++                                                                type="text"
++                                                                :class="{ 'is-danger': errors.has('name'), 'is-success': isSuccessful }"
++                                                                :placeholder="i18n('User Name')"
++                                                                @input="errors.clear('name')">
++                            <span class="icon is-small is-left">
++                            <fa icon="user"/>
++                        </span>
++                            <span v-if="isSuccessful"
++                                                               class="icon is-small is-right has-text-success">
++                            <fa icon="check"/>
++                        </span>
++                            <span v-if="errors.has('name')"
++                                                               class="icon is-small is-right has-text-danger">
++                            <fa icon="exclamation-triangle"/>
++                        </span>
++                        </div>
++                        <p class="has-text-left has-text-danger is-size-7"
++                                                    v-if="errors.has('name')">
++                            {{ errors.get('name') }}
++                        </p>
++                    </div>
++                    <div class="field">
++                        <div class="control has-icons-left has-icons-right">
++                            <input v-model="email"
++                                                                v-focus
++                                                                class="input"
++                                                                type="email"
++                                                                :class="{ 'is-danger': errors.has('email'), 'is-success': isSuccessful }"
++                                                                :placeholder="i18n('Email')"
++                                                                @input="errors.clear('email')">
++                            <span class="icon is-small is-left">
++                            <fa icon="envelope"/>
++                        </span>
++                            <span v-if="isSuccessful"
++                                                               class="icon is-small is-right has-text-success">
++                            <fa icon="check"/>
++                        </span>
++                            <span v-if="errors.has('email')"
++                                                               class="icon is-small is-right has-text-danger">
++                            <fa icon="exclamation-triangle"/>
++                        </span>
++                        </div>
++                        <p class="has-text-left has-text-danger is-size-7"
++                                                    v-if="errors.has('email')">
++                            {{ errors.get('email') }}
++                        </p>
++                    </div>
++                    <div class="field">
++                        <div class="control has-icons-left has-icons-right">
++                            <input v-model="password"
++                                                                class="input"
++                                                                :type="passwordMeta.content"
++                                                                :class="{ 'is-danger': errors.has('password'), 'is-success': isSuccessful }"
++                                                                :placeholder="i18n('Password')"
++                                                                @input="errors.clear('password')">
++                            <span class="icon is-small is-left">
++                            <fa icon="lock"/>
++                        </span>
++                            <reveal-password :meta="passwordMeta"
++                                                                          :class="{ 'is-spaced': isSuccessful || errors.has('password') }"
++                                                                          v-if="password"/>
++                            <span v-if="isSuccessful"
++                                                               class="icon is-small is-right has-text-success">
++                            <fa icon="check"/>
++                        </span>
++                            <span v-if="errors.has('password')"
++                                                               class="icon is-small is-right has-text-danger">
++                            <fa icon="exclamation-triangle"/>
++                        </span>
++                            <slot name="password-strength"
++                                                               :password="password"
++                                                               :has-password="hasPassword"/>
++                        </div>
++                        <p class="has-text-left has-text-danger is-size-7"
++                                                    v-if="errors.has('password')">
++                            {{ errors.get('password') }}
++                        </p>
++                    </div>
++                    <div class="field">
++                        <div class="control has-icons-left has-icons-right">
++                            <input v-model="password_confirmation"
++                                                                class="input"
++                                                                :type="confirmationMeta.content"
++                                                                :class="{ 'is-danger': errors.has('password'), 'is-success': isSuccessful }"
++                                                                :placeholder="i18n('Repeat Password')"
++                                                                @input="errors.clear('password')">
++                            <span class="icon is-small is-left">
++                            <fa icon="lock"/>
++                        </span>
++                            <reveal-password :meta="confirmationMeta"
++                                                                          :class="{ 'is-spaced': match || isSuccessful || errors.has('password')}"
++                                                                          v-if="password_confirmation"/>
++                            <span v-if="errors.has('password')"
++                                                               class="icon is-small is-right has-text-danger">
++                            <fa icon="exclamation-triangle"/>
++                        </span>
++                            <span v-if="match && !errors.has('password') || isSuccessful"
++                                                               class="icon is-small is-right has-text-success">
++                            <fa icon="check"/>
++                        </span>
++                        </div>
++                        <p class="has-text-left has-text-danger is-size-7"
++                                                    v-if="errors.has('password')">
++                            {{ errors.get('password') }}
++                        </p>
++                    </div>
++
++                    <div class="field">
++                        <button class="button is-primary is-fullwidth"
++                                                         :class="{ 'is-loading': loading }"
++                                                         type="submit"
++                                                         @click.prevent="submit()">
++                            <span class="icon is-small">
++                            <fa :icon="'user'"/>
++                        </span>
++                            <span>{{ i18n(action) }}</span>
++                        </button>
++                    </div>
++                </form>
++                <router-link
++                    :to="'/login'"
++                    class="is-pulled-right">
++                    {{ i18n('Log in') }}
++                </router-link>
++                <div class="is-clearfix"/>
++            </div>
++        </div>
++    </template>
++
++<script>
++    import { mapState } from 'vuex';
++    import { library } from '@fortawesome/fontawesome-svg-core';
++    import {
++        faEnvelope, faCheck, faExclamationTriangle, faLock, faUser,
++        } from '@fortawesome/free-solid-svg-icons';
++    import { focus } from '@enso-ui/directives';
++    import Errors from '@enso-ui/laravel-validation';
++    import RevealPassword from '@enso-ui/forms/src/bulma/parts/RevealPassword.vue';
++
++        library.add([
++                faEnvelope, faCheck, faExclamationTriangle, faLock, faUser,
++            ]);
++
++        export default {
++        name: 'RegisterForm',
++
++                components: { RevealPassword },
++
++            directives: { focus },
++
++            inject: {
++                i18n: { from: 'i18n' },
++            },
++
++            props: {
++                action: {
++                        required: true,
++                            type: String
++                    },
++                route: {
++                        required: true,
++                            type: String
++                    }
++            },
++
++            data: () => ({
++                name: '',
++                email: '',
++                errors: new Errors(),
++                isSuccessful: false,
++                loading: false,
++                password: '',
++                passwordMeta: {
++                    content: 'password',
++                    },
++            password_confirmation: null,
++                confirmationMeta: {
++                    content: 'password',
++                    },
++        }),
++
++            computed: {
++                ...mapState(['meta']),
++                    hasPassword() {
++                        return this.password !== null && this.password.length;
++                    },
++                match() {
++                        return this.hasPassword
++                                && this.password === this.password_confirmation;
++                    },
++                postParams() {
++                        return this.registerParams;
++                    },
++                registerParams() {
++                        const { email, password, name, password_confirmation } = this;
++
++                            return { email, password, name, password_confirmation};
++                    },
++                registerLink() {
++                        return '/api/register';
++                    },
++            },
++
++            methods: {
++                submit() {
++                        this.loading = true;
++                        this.isSuccessful = false;
++                        axios.post(this.registerLink, this.postParams)
++                            .then(({ data }) => {
++                                    this.loading = false;
++                                    this.isSuccessful = true;
++                                    this.$emit('success', data);
++
++                                    }).catch((error) => {
++                                    this.loading = false;
++
++                                        const { status, data } = error.response;
++
++                                        switch (status) {
++                                            case 422:
++                                                    this.errors.set(data.errors);
++                                                    break;
++                                                case 429:
++                                                    this.$toastr.error(data.message);
++                                                    break;
++                                                default:
++                                                    throw error;
++                                            }
++                                });
++                    },
++            },
++    };
++    </script>
++
++<style lang="scss">
++        .login {
++            max-width: 400px;
++            margin: auto;
++
++                .is-spaced {
++                    margin-right: 1.6em;
++                }
++
++                figure.logo {
++                    display: inline-block;
++                }
++        }
++    </style>
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/VerifyForm.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/VerifyForm.vue
+new file mode 100755
+index 0000000..e9b04f1
+--- /dev/null
++++ b/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/VerifyForm.vue
+@@ -0,0 +1,202 @@
++<template>
++        <div class="login">
++            <div class="box has-padding-medium">
++                <h3 class="title is-3 has-text-black has-text-centered has-margin-bottom-medium">
++                    <figure class="image is-24x24 logo is-clickable"
++                                                 @click="$router.push({ name: 'login' })">
++                        <img src="/images/logo.svg">
++                    </figure>
++                    {{ meta.appName }}
++                </h3>
++                <div class="">
++                    <p class="t-center" v-if="!isSuccessful"> Thank you for registering.</p>
++                    <p class="t-center" v-if="isSuccessful"> Thank you for using Genealogia.</p>
++                </div>
++
++                <router-link v-if="isLogin"
++                                              :to="{ name: 'login' }"
++                                              class="is-pulled-right">
++                    {{ i18n('Log in') }}
++                </router-link>
++                <div class="is-clearfix"/>
++            </div>
++        </div>
++    </template>
++
++<script>
++    import { mapState } from 'vuex';
++    import { library } from '@fortawesome/fontawesome-svg-core';
++    import {
++        faEnvelope, faCheck, faExclamationTriangle, faLock, faUser,
++        } from '@fortawesome/free-solid-svg-icons';
++    import { focus } from '@enso-ui/directives';
++    import Errors from '@enso-ui/laravel-validation';
++    import RevealPassword from '@enso-ui/forms/src/bulma/parts/RevealPassword.vue';
++
++        library.add([
++                faEnvelope, faCheck, faExclamationTriangle, faLock, faUser,
++            ]);
++
++        export default {
++        name: 'VerifyForm',
++
++                directives: { focus },
++
++            inject: {
++                i18n: { from: 'i18n' },
++                routeResolver: { from: 'route' },
++            },
++
++            props: {
++                action: {
++                        required: true,
++                            type: String
++                    },
++                isLogin: {
++                        default: false,
++                            type: Boolean
++                    },
++                isReset: {
++                        default: false,
++                            type: Boolean
++                    },
++                route: {
++                        required: true,
++                            type: String
++                    }
++            },
++
++            data: () => ({
++                errors: new Errors(),
++                isSuccessful: false,
++                loading: false,
++            }),
++
++            computed: {
++                ...mapState(['meta']),
++                    token() {
++                        return this.$route.query.token;
++                    },
++
++                    postParams() {
++                        return this.verifyParams;
++                    },
++                verifyParams() {
++                        const { token, loading } = this;
++                        return { token , loading};
++                    },
++                verifyLink() {
++                        return '/api/verify';
++                    },
++                resendLink() {
++                        return '/api/resend';
++                    },
++            },
++        mounted() {
++                this.verify();
++            },
++        methods: {
++                verify() {
++                        this.loading = true;
++                        this.isSuccessful = false;
++
++                            axios.post(this.verifyLink, this.postParams)
++                            .then(({ data }) => {
++                                    this.loading = false;
++                                    this.isSuccessful = true;
++                                    this.$emit('verified', data);
++                                }).catch((error) => {
++                                    this.loading = false;
++
++                                        const { status, data } = error.response;
++
++                                        switch (status) {
++                                            case 422:
++                                                    this.errors.set(data.errors);
++                                                    // go to email verify page
++                                                        break;
++                                                case 429:
++                                                    this.$toastr.error(data.message);
++                                                    break;
++                                                default:
++                                                    throw error;
++                                            }
++                                });
++                    },
++                resend() {
++                        this.loading = true;
++                        this.isSuccessful = false;
++
++                            axios.post(this.resendLink, this.postParams)
++                            .then(({ data }) => {
++                                    this.loading = false;
++                                    this.isSuccessful = true;
++                                    this.$emit('success', data);
++                                }).catch((error) => {
++                                    this.loading = false;
++
++                                        const { status, data } = error.response;
++
++                                        switch (status) {
++                                            case 422:
++                                                    this.errors.set(data.errors);
++                                                    // go to email verify page
++                                                        break;
++                                                case 429:
++                                                    this.$toastr.error(data.message);
++                                                    break;
++                                                default:
++                                                    throw error;
++                                            }
++                                });
++                    },
++
++                },
++    };
++    </script>
++
++<style lang="scss">
++        .login {
++            max-width: 400px;
++            margin: auto;
++
++                .is-spaced {
++                    margin-right: 1.6em;
++                }
++
++                figure.logo {
++                    display: inline-block;
++                }
++                .t-center {
++                    text-align: center;
++                }
++        }
++    </style>
++diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/register.js b/node_modules/@enso-ui/ui/src/bulma/routes/register.js
++new file mode 100755
++index 0000000..d1752b4
++--- /dev/null
++ b/node_modules/@enso-ui/ui/src/bulma/routes/register.js
++@@ -0,0 1,22 @@
++import store from '@root/store';
++
++const Register = () => import('../pages/auth/Register.vue');
++
++const redirect = (to, from, next) => {
++    if (store.state.auth.isAuth) {
++        next({ path: '/' });
++    } else {
++        next();
++    }
++};
++
++export default [{
++    name: 'register',
++    path: '/register',
++    component: Register,
++    beforeEnter: redirect,
++    meta: {
++        guestGuard: true,
++        title: 'Register',
++    },
++}];
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/password/Email.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/password/Email.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/password/Reset.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/password/Reset.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/notifications/Index.vue b/node_modules/@enso-ui/ui/src/bulma/pages/notifications/Index.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes.js b/node_modules/@enso-ui/ui/src/bulma/routes.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/administration.js b/node_modules/@enso-ui/ui/src/bulma/routes/administration.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/administration/userGroups.js b/node_modules/@enso-ui/ui/src/bulma/routes/administration/userGroups.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/administration/userGroups/create.js b/node_modules/@enso-ui/ui/src/bulma/routes/administration/userGroups/create.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/administration/userGroups/edit.js b/node_modules/@enso-ui/ui/src/bulma/routes/administration/userGroups/edit.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/administration/userGroups/index.js b/node_modules/@enso-ui/ui/src/bulma/routes/administration/userGroups/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/administration/users.js b/node_modules/@enso-ui/ui/src/bulma/routes/administration/users.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/administration/users/create.js b/node_modules/@enso-ui/ui/src/bulma/routes/administration/users/create.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/administration/users/edit.js b/node_modules/@enso-ui/ui/src/bulma/routes/administration/users/edit.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/administration/users/index.js b/node_modules/@enso-ui/ui/src/bulma/routes/administration/users/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/administration/users/show.js b/node_modules/@enso-ui/ui/src/bulma/routes/administration/users/show.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/auth.js b/node_modules/@enso-ui/ui/src/bulma/routes/auth.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/notFound.js b/node_modules/@enso-ui/ui/src/bulma/routes/notFound.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/notifications.js b/node_modules/@enso-ui/ui/src/bulma/routes/notifications.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/system.js b/node_modules/@enso-ui/ui/src/bulma/routes/system.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/unauthorized.js b/node_modules/@enso-ui/ui/src/bulma/routes/unauthorized.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/bulma/routes/verify.js b/node_modules/@enso-ui/ui/src/bulma/routes/verify.js
+new file mode 100755
+index 0000000..84d71c8
+--- /dev/null
++++ b/node_modules/@enso-ui/ui/src/bulma/routes/verify.js
+@@ -0,0 +1,22 @@
++import store from '@root/store';
++
++    const Verify = () => import('../pages/auth/Verify.vue');
++
++    const redirect = (to, from, next) => {
++        if (store.state.auth.isAuth) {
++                next({ path: '/' });
++            } else {
++                next();
++            }
++    };
++
++    export default [{
++    name: 'verify',
++        path: '/verify',
++        component: Verify,
++        beforeEnter: redirect,
++        meta: {
++            guestGuard: true,
++                title: 'Activate Account',
++            },
++}];
+diff --git a/node_modules/@enso-ui/ui/src/core/App.vue b/node_modules/@enso-ui/ui/src/core/App.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/AppFooter.vue b/node_modules/@enso-ui/ui/src/core/components/AppFooter.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/Bookmarks.vue b/node_modules/@enso-ui/ui/src/core/components/Bookmarks.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/Breadcrumbs.vue b/node_modules/@enso-ui/ui/src/core/components/Breadcrumbs.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/DocumentTitle.vue b/node_modules/@enso-ui/ui/src/core/components/DocumentTitle.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/Loader.vue b/node_modules/@enso-ui/ui/src/core/components/Loader.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/PageHeader.vue b/node_modules/@enso-ui/ui/src/core/components/PageHeader.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/menu/MenuItem.vue b/node_modules/@enso-ui/ui/src/core/components/menu/MenuItem.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/menu/Menus.vue b/node_modules/@enso-ui/ui/src/core/components/menu/Menus.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/menu/Sidebar.vue b/node_modules/@enso-ui/ui/src/core/components/menu/Sidebar.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/navbar/IO.vue b/node_modules/@enso-ui/ui/src/core/components/navbar/IO.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/navbar/MissingKeys.vue b/node_modules/@enso-ui/ui/src/core/components/navbar/MissingKeys.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/navbar/Navbar.vue b/node_modules/@enso-ui/ui/src/core/components/navbar/Navbar.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/navbar/Notifications.vue b/node_modules/@enso-ui/ui/src/core/components/navbar/Notifications.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/navbar/ProfileControl.vue b/node_modules/@enso-ui/ui/src/core/components/navbar/ProfileControl.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/navbar/Search.vue b/node_modules/@enso-ui/ui/src/core/components/navbar/Search.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/navbar/SettingsControl.vue b/node_modules/@enso-ui/ui/src/core/components/navbar/SettingsControl.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/navbar/io/Operation.vue b/node_modules/@enso-ui/ui/src/core/components/navbar/io/Operation.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/settings/BookmarksState.vue b/node_modules/@enso-ui/ui/src/core/components/settings/BookmarksState.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/settings/KeyCollector.vue b/node_modules/@enso-ui/ui/src/core/components/settings/KeyCollector.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/settings/LanguageSelector.vue b/node_modules/@enso-ui/ui/src/core/components/settings/LanguageSelector.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/settings/MenuOrganizer.vue b/node_modules/@enso-ui/ui/src/core/components/settings/MenuOrganizer.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/settings/Settings.vue b/node_modules/@enso-ui/ui/src/core/components/settings/Settings.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/settings/SidebarState.vue b/node_modules/@enso-ui/ui/src/core/components/settings/SidebarState.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/settings/ThemeSelector.vue b/node_modules/@enso-ui/ui/src/core/components/settings/ThemeSelector.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/settings/ToastrPosition.vue b/node_modules/@enso-ui/ui/src/core/components/settings/ToastrPosition.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/components/settings/Tutorial.vue b/node_modules/@enso-ui/ui/src/core/components/settings/Tutorial.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/layouts/Auth.vue b/node_modules/@enso-ui/ui/src/core/layouts/Auth.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/layouts/Default.vue b/node_modules/@enso-ui/ui/src/core/layouts/Default.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/core/layouts/Home.vue b/node_modules/@enso-ui/ui/src/core/layouts/Home.vue
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/middleware/before.js b/node_modules/@enso-ui/ui/src/middleware/before.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/middleware/before/allow.js b/node_modules/@enso-ui/ui/src/middleware/before/allow.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/middleware/before/auth.js b/node_modules/@enso-ui/ui/src/middleware/before/auth.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/middleware/before/guest.js b/node_modules/@enso-ui/ui/src/middleware/before/guest.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/filters/index.js b/node_modules/@enso-ui/ui/src/modules/filters/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/filters/numberFormat.js b/node_modules/@enso-ui/ui/src/modules/filters/numberFormat.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/filters/shortNumber.js b/node_modules/@enso-ui/ui/src/modules/filters/shortNumber.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/importers/RouteMerger.js b/node_modules/@enso-ui/ui/src/modules/importers/RouteMerger.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/importers/routeImporter.js b/node_modules/@enso-ui/ui/src/modules/importers/routeImporter.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/importers/storeImporter.js b/node_modules/@enso-ui/ui/src/modules/importers/storeImporter.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/importers/themeImporter.js b/node_modules/@enso-ui/ui/src/modules/importers/themeImporter.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/index.js b/node_modules/@enso-ui/ui/src/modules/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/axios.js b/node_modules/@enso-ui/ui/src/modules/plugins/axios.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/bookmarkHelpers.js b/node_modules/@enso-ui/ui/src/modules/plugins/bookmarkHelpers.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/bootEnums.js b/node_modules/@enso-ui/ui/src/modules/plugins/bootEnums.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/date-fns/format.js b/node_modules/@enso-ui/ui/src/modules/plugins/date-fns/format.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/date-fns/formatDistance.js b/node_modules/@enso-ui/ui/src/modules/plugins/date-fns/formatDistance.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/date-fns/i18n.js b/node_modules/@enso-ui/ui/src/modules/plugins/date-fns/i18n.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/date-fns/unicode2php.js b/node_modules/@enso-ui/ui/src/modules/plugins/date-fns/unicode2php.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/fontawesome.js b/node_modules/@enso-ui/ui/src/modules/plugins/fontawesome.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/i18n.js b/node_modules/@enso-ui/ui/src/modules/plugins/i18n.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/index.js b/node_modules/@enso-ui/ui/src/modules/plugins/index.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/menuOrganizer.js b/node_modules/@enso-ui/ui/src/modules/plugins/menuOrganizer.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/route.js b/node_modules/@enso-ui/ui/src/modules/plugins/route.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/plugins/toastr.js b/node_modules/@enso-ui/ui/src/modules/plugins/toastr.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/store.js b/node_modules/@enso-ui/ui/src/modules/store.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/store/auth.js b/node_modules/@enso-ui/ui/src/modules/store/auth.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/store/bookmarks.js b/node_modules/@enso-ui/ui/src/modules/store/bookmarks.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/store/layout.js b/node_modules/@enso-ui/ui/src/modules/store/layout.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/store/layout/search.js b/node_modules/@enso-ui/ui/src/modules/store/layout/search.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/store/layout/settings.js b/node_modules/@enso-ui/ui/src/modules/store/layout/settings.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/store/layout/sidebar.js b/node_modules/@enso-ui/ui/src/modules/store/layout/sidebar.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/store/localisation.js b/node_modules/@enso-ui/ui/src/modules/store/localisation.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/store/menu.js b/node_modules/@enso-ui/ui/src/modules/store/menu.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/store/preferences.js b/node_modules/@enso-ui/ui/src/modules/store/preferences.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/@enso-ui/ui/src/modules/store/websockets.js b/node_modules/@enso-ui/ui/src/modules/store/websockets.js
+old mode 100644
+new mode 100755
