@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7cc3a2cd8d466c161adb9b91ae984030",
+    "content-hash": "f715651d2cde02b6192a242079e11d6e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1986,16 +1986,16 @@
         },
         {
             "name": "laravel-enso/comments",
-            "version": "4.0.1",
+            "version": "4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/comments.git",
-                "reference": "bd988f7d2d2dbe302e13e071cb61e92c59d78fae"
+                "reference": "8e5f4e79569f88c714e997cf187c8a2b191fd52d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/comments/zipball/bd988f7d2d2dbe302e13e071cb61e92c59d78fae",
-                "reference": "bd988f7d2d2dbe302e13e071cb61e92c59d78fae",
+                "url": "https://api.github.com/repos/laravel-enso/comments/zipball/8e5f4e79569f88c714e997cf187c8a2b191fd52d",
+                "reference": "8e5f4e79569f88c714e997cf187c8a2b191fd52d",
                 "shasum": ""
             },
             "require": {
@@ -2040,7 +2040,7 @@
                 "comments-manager",
                 "laravel-enso"
             ],
-            "time": "2020-06-30T14:54:52+00:00"
+            "time": "2020-07-10T08:41:30+00:00"
         },
         {
             "name": "laravel-enso/companies",
