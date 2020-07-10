@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7cc3a2cd8d466c161adb9b91ae984030",
+    "content-hash": "f715651d2cde02b6192a242079e11d6e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2514,16 +2514,16 @@
         },
         {
             "name": "laravel-enso/discussions",
-            "version": "3.0.0",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/discussions.git",
-                "reference": "28e368cb1e8ec4047110f5e2d607a7cc504a1dc7"
+                "reference": "0f63425bafb1e3084a3f5a322f1e97867837719d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/discussions/zipball/28e368cb1e8ec4047110f5e2d607a7cc504a1dc7",
-                "reference": "28e368cb1e8ec4047110f5e2d607a7cc504a1dc7",
+                "url": "https://api.github.com/repos/laravel-enso/discussions/zipball/0f63425bafb1e3084a3f5a322f1e97867837719d",
+                "reference": "0f63425bafb1e3084a3f5a322f1e97867837719d",
                 "shasum": ""
             },
             "require": {
@@ -2566,7 +2566,7 @@
                 "discussions",
                 "laravel-enso"
             ],
-            "time": "2020-06-24T17:35:45+00:00"
+            "time": "2020-07-10T09:37:38+00:00"
         },
         {
             "name": "laravel-enso/documents",
