@@ -15,7 +15,7 @@ class Store extends Controller
     {
         $user->fill($request->validated());
 
-        $this->authorize('handle', $user);
+        // $this->authorize('handle', $user);
 
         tap($user)->save()
             ->sendResetPasswordEmail();

@@ -8,7 +8,8 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Event;
-use LaravelEnso\Core\Http\Requests\ValidateUserRequest;
+use App\Http\Requests\enso\Core\ValidateUserRequest;
+use Illuminate\Support\Facades\Hash;
 
 class Update extends Controller
 {
@@ -18,12 +19,12 @@ class Update extends Controller
     {
         // $this->authorize('handle', $user);
 
-        if ($request->filled('password')) {
-            $this->authorize('change-password', $user);
-            $user->password = bcrypt($request->get('password'));
-        }
 
         $user->fill($request->validated());
+        if ($request->filled('password')) {
+            // $this->authorize('change-password', $user);
+            $user->password = Hash::make($request->get('password'));
+        }
 
         if ($user->isDirty('group_id')) {
             $this->authorize('change-group', $user);

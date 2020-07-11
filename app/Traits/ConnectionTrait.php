@@ -29,5 +29,4 @@ trait ConnectionTrait
         $db = \Session::get('db');
         return $db;
     }
-
 }
