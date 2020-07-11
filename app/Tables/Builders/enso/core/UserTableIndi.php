@@ -5,9 +5,10 @@ namespace App\Tables\Builders\enso\core;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use LaravelEnso\Tables\Contracts\Table;
-class UserTable implements Table
+use Auth;
+class UserTableIndi implements Table
 {
-    protected const TemplatePath = __DIR__.'/../../../Templates/enso/core/users.json';
+    protected const TemplatePath = __DIR__.'/../../../Templates/enso/core/user.json';
 
     protected $query;
 
@@ -19,7 +20,8 @@ class UserTable implements Table
             users.created_at, users.person_id
         ')->join('people', 'users.person_id', '=', 'people.id')
             ->join('user_groups', 'users.group_id', '=', 'user_groups.id')
-            ->join('roles', 'users.role_id', '=', 'roles.id');
+            ->join('roles', 'users.role_id', '=', 'roles.id')
+            ->where('users.id', Auth::user()->id);
     }
 
     public function templatePath(): string

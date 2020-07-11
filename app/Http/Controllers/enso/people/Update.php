@@ -14,7 +14,6 @@ class Update extends Controller
     public function __invoke(ValidatePersonRequest $request, Person $person)
     {
         // $this->authorize('update', [$person, $request->get('companies')]);
-
         tap($person)->update($request->validatedExcept('companies', 'company'))
             ->syncCompanies(
                 $request->get('companies'),

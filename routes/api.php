@@ -100,7 +100,7 @@ use Illuminate\Support\Facades\Route;
      */
 
     Route::namespace('\App\Http\Controllers\enso\people')
-        ->middleware(['api', 'auth', 'core', 'multitenant'])
+        ->middleware(['api', 'auth', 'core'])
         ->prefix('administration/people')
         ->as('administration.people.')
         ->group(function () {
@@ -133,7 +133,6 @@ use Illuminate\Support\Facades\Route;
                 Route::get('{company}/edit', 'Edit')->name('edit');
                 Route::patch('{company}', 'Update')->name('update');
                 Route::delete('{company}', 'Destroy')->name('destroy');
-        
                 Route::get('initTable', 'InitTable')->name('initTable');
                 Route::get('tableData', 'TableData')->name('tableData');
                 Route::get('exportExcel', 'ExportExcel')->name('exportExcel');
@@ -482,8 +481,10 @@ Route::middleware(['web', 'auth', 'multitenant'])
             ->name('polar');
         Route::get('bubble', 'ChartController@bubble')
             ->name('bubble');
-        Route::get('changedb', 'ChartController@changedb')
+        Route::post('changedb', 'ChartController@changedb')
             ->name('changedb');
+        Route::post('getdb', 'ChartController@getDB')
+            ->name('getdb');
     });
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
