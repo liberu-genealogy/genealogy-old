@@ -15,8 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\Multitenancy\Services\Tenant;
 use App\Traits\ConnectionTrait;
-// use LaravelEnso\Multitenancy\Traits\SystemConnection;
-
+use Illuminate\Http\Request;
 class ChartController extends Controller
 {
     use ConnectionTrait;
@@ -57,7 +56,7 @@ class ChartController extends Controller
         $companies = $user->person->company();
         $current_db = \Session::get('companyId');
 
-        return $current_db;
+        // return $current_db;
         // return $sv;
         return (new Pie())
             ->title('Genders')
@@ -109,11 +108,11 @@ class ChartController extends Controller
             ])->get();
     }
 
-    public function changedb() {
-        $user = Auth::user();
-        $company = $user->company();
-        if (optional($company)->isTenant()) {
-            $db = Connections::Tenant.$company->id;
+    // change database to use
+    public function changedb(Request $request) {
+        $company_id = $request->get('comid');
+        if(!empty($company_id)){
+            $db = Connections::Tenant.$company_id;
             $key = 'database.connections.tenant.database';
             config([$key => $db]);
             $this->setConnection(Connections::Tenant, $db);
@@ -122,5 +121,14 @@ class ChartController extends Controller
         }
         $conn =  $this->getConnection();
         return $conn;
+    }
+
+    // get companies of user.
+    public function getDB(){
+        $user = Auth::user();
+        $companies = $user->person->companies()->get();
+        $ret = array();
+        $ret['company'] = $companies;
+        return $ret;
     }
 }

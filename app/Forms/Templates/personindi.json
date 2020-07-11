@@ -1,0 +1,135 @@
+{
+    "routePrefix": "administration.people",
+    "tabs": true,
+    "sections": [
+        {
+            "tab": "Personal",
+            "columns": "custom",
+            "fields": [
+                {
+                    "label": "Title",
+                    "name": "title",
+                    "value": null,
+                    "column": 2,
+                    "meta": {
+                        "type": "select",
+                        "options": "LaravelEnso\\People\\Enums\\Titles"
+                    }
+                },
+                {
+                    "label": "Given",
+                    "name": "givn",
+                    "value": "",
+                    "column": 6,
+                    "meta": {
+                        "type": "input",
+                        "content": "text"
+                    }
+                },
+                {
+                    "label": "Surname",
+                    "name": "surn",
+                    "value": "",
+                    "column": 4,
+                    "meta": {
+                        "type": "input",
+                        "content": "text"
+                    }
+                }
+            ]
+        },
+        {
+            "tab": "Personal",
+            "columns": 4,
+            "fields": [
+                {
+                    "label": "Email",
+                    "name": "email",
+                    "value": null,
+                    "meta": {
+                        "type": "input",
+                        "content": "email"
+                    }
+                },
+                {
+                    "label": "Phone Number",
+                    "name": "phone",
+                    "value": "",
+                    "meta": {
+                        "type": "input",
+                        "content": "text"
+                    }
+                },
+                {
+                    "label": "Birthday",
+                    "name": "birthday",
+                    "value": null,
+                    "meta": {
+                        "type": "datepicker"
+                    }
+                },
+                {
+                    "label": "Deathday",
+                    "name": "deathday",
+                    "value": null,
+                    "meta": {
+                        "type": "datepicker"
+                    }
+                }
+            ]
+        },
+        {
+            "tab": "Personal",
+            "columns": "custom",
+            "fields": [
+                {
+                    "column": 4,
+                    "label": "Unique Identifier",
+                    "name": "uid",
+                    "value": "",
+                    "meta": {
+                        "type": "input",
+                        "content": "text"
+                    }
+                },
+                {
+                    "column": 12,
+                    "label": "Notes",
+                    "name": "obs",
+                    "value": null,
+                    "meta": {
+                        "type": "textarea",
+                        "rows": 3
+                    }
+                }
+            ]
+        },
+        {
+            "tab": "Companies",
+            "columns": 2,
+            "fields": [
+                {
+                    "label": "Companies",
+                    "name": "companies",
+                    "value": [],
+                    "meta": {
+                        "custom": true,
+                        "type": "select",
+                        "multiple": true,
+                        "source": "administration.companies.options"
+                    }
+                },
+                {
+                    "label": "Main Company",
+                    "name": "company",
+                    "value": null,
+                    "meta": {
+                        "custom": true,
+                        "type": "select",
+                        "source": "administration.companies.options"
+                    }
+                }
+            ]
+        }
+    ]
+}

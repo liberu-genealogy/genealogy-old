@@ -13,7 +13,7 @@ class Update extends Controller
 
     public function __invoke(ValidateCompanyRequest $request, Company $company)
     {
-        $this->authorize('update', $company);
+        // $this->authorize('update', $company);
 
         tap($company)->update($request->validatedExcept('mandatary'))
             ->updateMandatary($request->get('mandatary'));

@@ -74,6 +74,7 @@
                     "column": 3,
                     "meta": {
                         "custom": true,
+                        "hidden": true,
                         "type": "select",
                         "multiple": false,
                         "options": [],
@@ -87,6 +88,7 @@
                     "column": 3,
                     "meta": {
                         "custom": true,
+                        "hidden": true,
                         "type": "select",
                         "options": [],
                         "source": "system.roles.options"
@@ -127,6 +129,7 @@
                     "value": false,
                     "meta": {
                         "type": "input",
+                        "hidden": true,
                         "content": "checkbox"
                     }
                 }

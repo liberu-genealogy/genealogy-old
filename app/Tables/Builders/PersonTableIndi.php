@@ -5,11 +5,11 @@ namespace App\Tables\Builders;
 use App\Person;
 use Illuminate\Database\Eloquent\Builder;
 use LaravelEnso\Tables\Contracts\Table;
+use Auth;
 
-
-class PersonTable extends \LaravelEnso\People\Tables\Builders\PersonTable
+class PersonTableIndi extends \LaravelEnso\People\Tables\Builders\PersonTable
 {
-    protected const TemplatePath = __DIR__.'/../Templates/people.json';
+    protected const TemplatePath = __DIR__.'/../Templates/peopleindi.json';
 
     public function query(): Builder
     {
@@ -23,6 +23,7 @@ class PersonTable extends \LaravelEnso\People\Tables\Builders\PersonTable
                 fn ($join) => $join
                     ->on('people.id', '=', 'company_person.person_id')
                     ->where('company_person.is_main', true)
-            )->leftJoin('companies', 'company_person.company_id', 'companies.id');
+            )->leftJoin('companies', 'company_person.company_id', 'companies.id')
+            ->where('people.id', Auth::user()->person_id);
     }
 }
