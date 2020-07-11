@@ -1,7 +1,0 @@
-{
-    "routePrefix": "profile",
-    "sections": [{
-        "columns": 2,
-        "fields": []
-    }]
-}
