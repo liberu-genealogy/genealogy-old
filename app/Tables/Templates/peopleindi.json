@@ -1,0 +1,102 @@
+{
+    "routePrefix": "administration.people",
+    "crtNo": true,
+    "buttons": [
+        "excel",
+        "edit"
+    ],
+    "filters": [
+        {
+            "label": "Has User",
+            "data": "user.exists",
+            "type": "boolean",
+            "custom": true,
+            "value": false
+        }
+    ],
+    "columns": [
+        {
+            "label": "Title",
+            "name": "title",
+            "data": "people.title",
+            "meta": [
+                "searchable",
+                "sortable"
+            ],
+            "enum": "LaravelEnso\\People\\Enums\\Titles"
+        },
+        {
+            "label": "Given",
+            "name": "givn",
+            "data": "people.givn",
+            "meta": [
+                "searchable",
+                "sortable"
+            ]
+        },
+        {
+            "label": "Surname",
+            "name": "surn",
+            "data": "people.surn",
+            "meta": [
+                "searchable",
+                "sortable"
+            ]
+        },
+        {
+            "label": "Company",
+            "name": "company",
+            "data": "companies.name",
+            "meta": [
+                "searchable",
+                "sortable"
+            ]
+        },
+        {
+            "label": "Email",
+            "name": "email",
+            "data": "people.email",
+            "meta": [
+                "searchable",
+                "sortable"
+            ]
+        },
+        {
+            "label": "Phone",
+            "name": "phone",
+            "data": "people.phone",
+            "meta": [
+                "searchable",
+                "sortable"
+            ]
+        },
+        {
+            "label": "Birthday",
+            "name": "birthday",
+            "data": "people.birthday",
+            "meta": [
+                "searchable",
+                "sortable",
+                "date"
+            ]
+        },
+        {
+            "label": "User",
+            "name": "user",
+            "data": "users.id",
+            "meta": [
+                "boolean",
+                "sortable"
+            ]
+        },
+        {
+            "label": "Created at",
+            "name": "created_at",
+            "data": "people.created_at",
+            "meta": [
+                "date",
+                "sortable"
+            ]
+        }
+    ]
+}

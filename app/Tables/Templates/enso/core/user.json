@@ -1,9 +1,8 @@
 {
     "routePrefix": "administration.users",
-    "crtNo": true,
+    "crtNo": false,
     "buttons": [
         "excel",
-        "create",
         "show",
         "edit",
         {
