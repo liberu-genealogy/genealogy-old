@@ -1130,23 +1130,3 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
                 Route::get('{personSubm}', 'Show')->name('show');
             });
     });
-
-    /**
-     * profile 
-     */
-    Route::middleware(['api', 'auth', 'core'])
-    ->group(function () {
-        Route::namespace('Profile')
-            ->prefix('profile')
-            ->as('profile.')
-            ->group(function () {
-                
-                Route::get('', 'Index')->name('index');
-                Route::get('{profile}/edit', 'Edit')->name('edit');
-
-                Route::patch('{profile}', 'Update')->name('update');
-
-                Route::get('options', 'Options')->name('options');
-                Route::get('show', 'Show')->name('show');
-        });
-    });    
