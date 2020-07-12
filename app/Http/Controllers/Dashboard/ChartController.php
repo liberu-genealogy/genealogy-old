@@ -113,8 +113,6 @@ class ChartController extends Controller
         $company_id = $request->get('comid');
         if(!empty($company_id)){
             $db = Connections::Tenant.$company_id;
-            $key = 'database.connections.tenant.database';
-            config([$key => $db]);
             $this->setConnection(Connections::Tenant, $db);
         } else {
             $this->setConnection('mysql');
