@@ -4,11 +4,11 @@
             <chart-card class="is-rounded raises-on-hover has-margin-bottom-large"
                 source="/api/dashboard/pie"/>
         </div>
-        <div>
-            <table class="">
+        <div class="column is-one-third">
+            <table class="fullwidth">
                 <tr v-for="item in companies" :key="item.id">
-                    <td>
-                        <button class="button is-info" @click="ChangeDB(item.id)">
+                    <td class="p01">
+                        <button class="button is-fullwidth is-info" @click="ChangeDB(item.id)">
                             Use Tree: {{item.name}}
                         </button>
                     </td>
@@ -65,3 +65,11 @@ export default {
 };
 
 </script>
+<style lang="scss">
+.p01{
+    padding:0.1em;
+}
+.fullwidth{
+    width:100% !important;
+}
+</style>
