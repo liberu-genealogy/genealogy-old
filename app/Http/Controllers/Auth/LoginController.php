@@ -1,23 +1,5 @@
 <?php
 
-// namespace App\Http\Controllers\Auth;
-
-// use App\Http\Controllers\Controller;
-// use App\Providers\RouteServiceProvider;
-// use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
-// class LoginController extends Controller
-// {
-//     use AuthenticatesUsers;
-
-//     protected $redirectTo = RouteServiceProvider::HOME;
-
-//     public function __construct()
-//     {
-//         $this->middleware('guest')->except('logout');
-//     }
-// }
-
 namespace App\Http\Controllers\Auth;
 
 use App\Events\enso\core\Login;
@@ -29,10 +11,11 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\Multitenancy\Services\Tenant;
+use App\Traits\ConnectionTrait;
 
 class LoginController extends Controller
 {
-    use AuthenticatesUsers;
+    use AuthenticatesUsers, ConnectionTrait;
 
     protected $redirectTo = '/';
 
@@ -81,26 +64,13 @@ class LoginController extends Controller
         if ($company) {
             $tanent = true;
         }
-
-        // $value = env('DB_DATABASE');
-        // if (optional($company)->isTenant()) {
-        //     // $key = 'database.default';
-        //     // $value = Connections::Tenant;
-        //     // config([$key => $value]);
-
-        //     // Tenant::set($company);
-        //     $value = Connections::Tenant.$company->id;
-        // } else {
-        //     // $value = '';
-        // }
-        // $key = 'database.connections.mysql.database';
-        // config([$key => $value]);
-
-        // \DB::purge('mysql');
-
-        // \DB::reconnect('mysql');
-
-        // \Session::put('db', $value);
+        // set company id as default
+        $main_company = $user->person->company();
+        if($main_company !== null && !($user->isAdmin())) {
+            $c_id = $main_company->id;
+            $db = Connections::Tenant.$c_id;
+            $this->setConnection(Connections::Tenant, $db);
+        }
 
         if (! optional($user)->currentPasswordIs($request->input('password'))) {
             return;

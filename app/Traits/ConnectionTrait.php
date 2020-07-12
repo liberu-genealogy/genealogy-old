@@ -3,11 +3,16 @@
 namespace App\Traits;
 
 use Illuminate\Support\Facades\Validator;
+use LaravelEnso\Multitenancy\Enums\Connections;
 
 trait ConnectionTrait
 {
     public function setConnection($conn='mysql', $db='enso')
     {
+        if($conn == Connections::Tenant) {
+            $key = 'database.connections.tenant.database';
+            config([$key => $db]);
+        }
         \Session::put('conn', $conn);
         \Session::put('db', $db);
     }
