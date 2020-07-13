@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7cc3a2cd8d466c161adb9b91ae984030",
+    "content-hash": "726b086b2aafca4f80d4d5763b37914d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1564,16 +1564,16 @@
         },
         {
             "name": "laravel-enso/action-logger",
-            "version": "3.0.0",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/action-logger.git",
-                "reference": "430afd0ae00dc82a3c9855e5bfc78b7208a1c273"
+                "reference": "c52399339a8531b025cf6aa0d0d9ba57e1368574"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/action-logger/zipball/430afd0ae00dc82a3c9855e5bfc78b7208a1c273",
-                "reference": "430afd0ae00dc82a3c9855e5bfc78b7208a1c273",
+                "url": "https://api.github.com/repos/laravel-enso/action-logger/zipball/c52399339a8531b025cf6aa0d0d9ba57e1368574",
+                "reference": "c52399339a8531b025cf6aa0d0d9ba57e1368574",
                 "shasum": ""
             },
             "require": {
@@ -1614,7 +1614,7 @@
                 "laravel-enso",
                 "logging"
             ],
-            "time": "2020-06-30T13:19:22+00:00"
+            "time": "2020-07-10T08:44:19+00:00"
         },
         {
             "name": "laravel-enso/activity-log",
@@ -2111,16 +2111,16 @@
         },
         {
             "name": "laravel-enso/control-panel-api",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/control-panel-api.git",
-                "reference": "9c8e6de7f2341fa0c2642517d93c31bb4aa9256e"
+                "reference": "e8ab0614c4745c5073c84ac1a44ae295cb5ada14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/control-panel-api/zipball/9c8e6de7f2341fa0c2642517d93c31bb4aa9256e",
-                "reference": "9c8e6de7f2341fa0c2642517d93c31bb4aa9256e",
+                "url": "https://api.github.com/repos/laravel-enso/control-panel-api/zipball/e8ab0614c4745c5073c84ac1a44ae295cb5ada14",
+                "reference": "e8ab0614c4745c5073c84ac1a44ae295cb5ada14",
                 "shasum": ""
             },
             "require": {
@@ -2170,7 +2170,7 @@
                 "laravel",
                 "laravel-enso"
             ],
-            "time": "2020-06-30T15:39:52+00:00"
+            "time": "2020-07-10T07:09:49+00:00"
         },
         {
             "name": "laravel-enso/control-panel-common",
@@ -2901,16 +2901,16 @@
         },
         {
             "name": "laravel-enso/forms",
-            "version": "4.0.0",
+            "version": "4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/forms.git",
-                "reference": "ca2629ca17689cce353cd8c2a8227ddbb7427847"
+                "reference": "a699b8a2d248f3c0d82f7f21f080c5e7868dcb49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/forms/zipball/ca2629ca17689cce353cd8c2a8227ddbb7427847",
-                "reference": "ca2629ca17689cce353cd8c2a8227ddbb7427847",
+                "url": "https://api.github.com/repos/laravel-enso/forms/zipball/a699b8a2d248f3c0d82f7f21f080c5e7868dcb49",
+                "reference": "a699b8a2d248f3c0d82f7f21f080c5e7868dcb49",
                 "shasum": ""
             },
             "require": {
@@ -2953,7 +2953,7 @@
                 "json-templates",
                 "laravel-enso"
             ],
-            "time": "2020-06-24T18:24:01+00:00"
+            "time": "2020-07-13T08:52:53+00:00"
         },
         {
             "name": "laravel-enso/helpers",
@@ -4006,16 +4006,16 @@
         },
         {
             "name": "laravel-enso/tables",
-            "version": "4.0.0",
+            "version": "4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/tables.git",
-                "reference": "4966ee9c60acd172d4ea36d9d6f8812b2a9ea6bf"
+                "reference": "a699dd6fa6c7a3924eaabad459d7f708a533d94b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/tables/zipball/4966ee9c60acd172d4ea36d9d6f8812b2a9ea6bf",
-                "reference": "4966ee9c60acd172d4ea36d9d6f8812b2a9ea6bf",
+                "url": "https://api.github.com/repos/laravel-enso/tables/zipball/a699dd6fa6c7a3924eaabad459d7f708a533d94b",
+                "reference": "a699dd6fa6c7a3924eaabad459d7f708a533d94b",
                 "shasum": ""
             },
             "require": {
@@ -4060,7 +4060,7 @@
                 "datatable",
                 "laravel-enso"
             ],
-            "time": "2020-06-24T16:10:21+00:00"
+            "time": "2020-07-13T05:47:32+00:00"
         },
         {
             "name": "laravel-enso/teams",
@@ -4274,16 +4274,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v7.19.0",
+            "version": "v7.19.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "67d6d9688122dcf6c449b74ddc873fc9934e81e6"
+                "reference": "4f373c373915ec828e3374029919a6fe946ed6d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/67d6d9688122dcf6c449b74ddc873fc9934e81e6",
-                "reference": "67d6d9688122dcf6c449b74ddc873fc9934e81e6",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/4f373c373915ec828e3374029919a6fe946ed6d9",
+                "reference": "4f373c373915ec828e3374029919a6fe946ed6d9",
                 "shasum": ""
             },
             "require": {
@@ -4427,7 +4427,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-07-07T14:11:36+00:00"
+            "time": "2020-07-10T16:41:39+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -9506,26 +9506,26 @@
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
-            "version": "2.2.2",
+            "version": "2.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tijsverkoyen/CssToInlineStyles.git",
-                "reference": "dda2ee426acd6d801d5b7fd1001cde9b5f790e15"
+                "reference": "b43b05cf43c1b6d849478965062b6ef73e223bb5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tijsverkoyen/CssToInlineStyles/zipball/dda2ee426acd6d801d5b7fd1001cde9b5f790e15",
-                "reference": "dda2ee426acd6d801d5b7fd1001cde9b5f790e15",
+                "url": "https://api.github.com/repos/tijsverkoyen/CssToInlineStyles/zipball/b43b05cf43c1b6d849478965062b6ef73e223bb5",
+                "reference": "b43b05cf43c1b6d849478965062b6ef73e223bb5",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-libxml": "*",
-                "php": "^5.5 || ^7.0",
+                "php": "^5.5 || ^7.0 || ^8.0",
                 "symfony/css-selector": "^2.7 || ^3.0 || ^4.0 || ^5.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0"
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0 || ^7.5"
             },
             "type": "library",
             "extra": {
@@ -9551,7 +9551,7 @@
             ],
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
             "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
-            "time": "2019-10-24T08:53:34+00:00"
+            "time": "2020-07-13T06:12:54+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -9760,6 +9760,12 @@
                 "laravel",
                 "profiler",
                 "webprofiler"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/barryvdh",
+                    "type": "github"
+                }
             ],
             "time": "2020-05-05T10:53:32+00:00"
         },
@@ -13427,6 +13433,20 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-05-24T08:33:35+00:00"
         },
         {
