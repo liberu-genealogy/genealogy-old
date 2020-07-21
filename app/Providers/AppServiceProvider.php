@@ -59,6 +59,6 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         Methods::bind(Company::class, [Comments::class, Discussions::class, Documents::class]);
-        Methods::bind(User::class, [ActionLogs::class]);
+        //Methods::bind(User::class, [ActionLogs::class]);
     }
 }
