@@ -2,8 +2,12 @@
 
 namespace App\Jobs\Tenant;
 
+use App\Models\enso\companies\Company;
+use App\Models\enso\core\UserGroup;
+use App\Models\enso\Roles\Role;
 use App\Models\User;
 use App\Person;
+use App\Service\Tenant;
 use DB;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -12,11 +16,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
-use App\Models\enso\companies\Company;
-use App\Models\enso\core\UserGroup;
 use LaravelEnso\Multitenancy\Enums\Connections;
-use App\Service\Tenant;
-use App\Models\enso\Roles\Role;
 use Str;
 
 class Migration implements ShouldQueue
