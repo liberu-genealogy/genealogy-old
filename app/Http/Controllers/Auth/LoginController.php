@@ -5,13 +5,13 @@ namespace App\Http\Controllers\Auth;
 use App\Events\enso\core\Login;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Traits\ConnectionTrait;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\Multitenancy\Services\Tenant;
-use App\Traits\ConnectionTrait;
 
 class LoginController extends Controller
 {
@@ -66,7 +66,7 @@ class LoginController extends Controller
         }
         // set company id as default
         $main_company = $user->person->company();
-        if($main_company !== null && !($user->isAdmin())) {
+        if ($main_company !== null && ! ($user->isAdmin())) {
             $c_id = $main_company->id;
             $db = Connections::Tenant.$c_id;
             $this->setConnection(Connections::Tenant, $db);

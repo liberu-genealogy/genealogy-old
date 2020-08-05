@@ -9,13 +9,13 @@ use App\Jobs\ImportGedcom;
 use App\Note;
 use App\Person;
 use App\Source;
+use App\Traits\ConnectionTrait;
 use Auth;
 use Illuminate\Http\Request;
-use ModularSoftware\LaravelGedcom\Facades\GedcomParserFacade;
-use ModularSoftware\LaravelGedcom\Utils\GedcomParser;
 use Illuminate\Support\Facades\Artisan;
 use LaravelEnso\Multitenancy\Enums\Connections;
-use App\Traits\ConnectionTrait;
+use ModularSoftware\LaravelGedcom\Facades\GedcomParserFacade;
+use ModularSoftware\LaravelGedcom\Utils\GedcomParser;
 
 class Store extends Controller
 {

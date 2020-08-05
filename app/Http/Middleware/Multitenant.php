@@ -4,9 +4,10 @@ namespace App\Http\Middleware;
 
 use App\Service\MixedConnection;
 use Closure;
-use LaravelEnso\Multitenancy\Services\Tenant;
-// use App\Models\enso\companies\Company;
 use LaravelEnso\Companies\Models\Company;
+// use App\Models\enso\companies\Company;
+use LaravelEnso\Multitenancy\Services\Tenant;
+
 class Multitenant
 {
     /**
@@ -20,11 +21,11 @@ class Multitenant
     {
         $conn = \Session::get('conn');
         $value = \Session::get('db');
-        if($conn === 'tenant') {
+        if ($conn === 'tenant') {
             $key = 'database.connections.tenant.database';
             config([$key => $value]);
             config(['database.default'=>'tenant']);
-        }else {
+        } else {
             config(['database.default'=>'mysql']);
         }
 
@@ -38,6 +39,6 @@ class Multitenant
     private function ownerRequestsTenant($request)
     {
         return $request->user()->isSupervisor();
-            // && $request->has('_tenantId');
+        // && $request->has('_tenantId');
     }
 }
