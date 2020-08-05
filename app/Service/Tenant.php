@@ -2,9 +2,9 @@
 
 namespace App\Service;
 
+use App\Models\enso\companies\Company;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use App\Models\enso\companies\Company;
 use LaravelEnso\Multitenancy\Enums\Connections;
 
 class Tenant

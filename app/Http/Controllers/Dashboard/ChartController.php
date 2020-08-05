@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Person;
+use App\Traits\ConnectionTrait;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 use LaravelEnso\Charts\Factories\Bar;
 use LaravelEnso\Charts\Factories\Bubble;
 use LaravelEnso\Charts\Factories\Doughnut;
@@ -11,11 +14,9 @@ use LaravelEnso\Charts\Factories\Line;
 use LaravelEnso\Charts\Factories\Pie;
 use LaravelEnso\Charts\Factories\Polar;
 use LaravelEnso\Charts\Factories\Radar;
-use Illuminate\Support\Facades\Auth;
 use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\Multitenancy\Services\Tenant;
-use App\Traits\ConnectionTrait;
-use Illuminate\Http\Request;
+
 class ChartController extends Controller
 {
     use ConnectionTrait;
@@ -109,24 +110,28 @@ class ChartController extends Controller
     }
 
     // change database to use
-    public function changedb(Request $request) {
+    public function changedb(Request $request)
+    {
         $company_id = $request->get('comid');
-        if(!empty($company_id)){
+        if (! empty($company_id)) {
             $db = Connections::Tenant.$company_id;
             $this->setConnection(Connections::Tenant, $db);
         } else {
             $this->setConnection('mysql');
         }
-        $conn =  $this->getConnection();
+        $conn = $this->getConnection();
+
         return $conn;
     }
 
     // get companies of user.
-    public function getDB(){
+    public function getDB()
+    {
         $user = Auth::user();
         $companies = $user->person->companies()->get();
-        $ret = array();
+        $ret = [];
         $ret['company'] = $companies;
+
         return $ret;
     }
 }
