@@ -7,7 +7,6 @@ use App\Traits\ConnectionTrait;
 use Illuminate\Database\Eloquent\Builder;
 use LaravelEnso\Tables\Contracts\Table;
 
-
 class PersonTable extends \LaravelEnso\People\Tables\Builders\PersonTable
 {
     use ConnectionTrait;
@@ -37,5 +36,4 @@ class PersonTable extends \LaravelEnso\People\Tables\Builders\PersonTable
     {
         return static::TemplatePath;
     }
-
 }

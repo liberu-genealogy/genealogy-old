@@ -2,14 +2,14 @@
 
 namespace App;
 
-use LaravelEnso\Companies\Models\Company;
 use App\Models\User;
-use LaravelEnso\DynamicMethods\Traits\Relations;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\RoutesNotifications;
 use Illuminate\Support\Collection;
 use LaravelEnso\Addresses\Traits\Addressable;
+use LaravelEnso\Companies\Models\Company;
+use LaravelEnso\DynamicMethods\Traits\Relations;
 use LaravelEnso\Helpers\Traits\AvoidsDeletionConflicts;
 use LaravelEnso\Helpers\Traits\CascadesMorphMap;
 use LaravelEnso\Multitenancy\Traits\SystemConnection;
@@ -34,7 +34,7 @@ class Person extends Model
         SoftDeletes,
         SystemConnection;
 
-    public function __construct(Array $attributes = [])
+    public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
     }
