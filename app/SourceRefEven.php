@@ -28,7 +28,7 @@ class SourceRefEven extends Model
     //     if($db === env('DB_DATABASE')) {
     //         $key = 'database.connections.mysql.database';
     //         config([$key => $db]);
-    //     } else { 
+    //     } else {
     //         $key = 'database.connections.mysql.database';
     //         config([$key => $db]);
     //     }

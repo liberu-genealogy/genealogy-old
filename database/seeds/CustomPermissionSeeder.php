@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use LaravelEnso\Permissions\Models\Permission;
 use LaravelEnso\Roles\Models\Role;
+
 class CustomPermissionSeeder extends Seeder
 {
     /**
@@ -50,13 +51,14 @@ class CustomPermissionSeeder extends Seeder
         'administration.companies.people.update',
         'administration.companies.people.destroy',
     ];
+
     public function run()
     {
         $c_role = Role::where('name', 'supervisor')->first();
         $role_id = $c_role->id;
-        foreach($this->link as $link){
+        foreach ($this->link as $link) {
             $permission = Permission::where('name', $link)->first();
-            if($permission !== null ) {
+            if ($permission !== null) {
                 $permission->roles()->detach($role_id);
                 $permission->roles()->attach($role_id);
             }

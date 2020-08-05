@@ -21,7 +21,7 @@ class FamilyEvent extends Event
     //     if($db === env('DB_DATABASE')) {
     //         $key = 'database.connections.mysql.database';
     //         config([$key => $db]);
-    //     } else { 
+    //     } else {
     //         $key = 'database.connections.mysql.database';
     //         config([$key => $db]);
     //     }
