@@ -31,6 +31,7 @@ class PersonFormIndi
             )->readonly('email');
         }
         $actions = ['back', 'update'];
+
         return $this->form
             ->value('company', optional($person->company())->id)
             ->append('userId', optional($person->user)->id)
