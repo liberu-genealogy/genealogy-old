@@ -5,20 +5,21 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Jobs\Tenant\CreateDB;
 use App\Jobs\Tenant\Migration;
-use App\Models\enso\core\UserGroup;
-use App\Models\enso\Roles\Role;
+use LaravelEnso\Companies\Models\Company;
+use LaravelEnso\Core\Models\UserGroup;
+use LaravelEnso\Roles\Models\Role;
 use App\Models\User;
 use App\Person;
 use App\Providers\RouteServiceProvider;
 use App\Traits\ActivationTrait;
-use DB;
+use Illuminate\Support\Facades\DB;
 // use LaravelEnso\Multitenancy\Jobs\CreateDatabase;
-
 // use LaravelEnso\Multitenancy\Jobs\Migrate;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use App\Models\enso\companies\Company;
+use App\Traits\ConnectionTrait;
+use LaravelEnso\Multitenancy\Enums\Connections;
 
 use Str;
 
@@ -53,7 +54,7 @@ class RegisterController extends Controller
             $person->email = $data['email'];
             $person->save();
 
-            
+
             // get user_group_id
             $user_group = UserGroup::where('name', 'Administrators')->first();
             if ($user_group == null) {

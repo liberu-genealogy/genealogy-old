@@ -2,9 +2,9 @@
 
 namespace App;
 
-use App\Models\enso\companies\Company;
+use LaravelEnso\Companies\Models\Company;
 use App\Models\User;
-use App\Traits\enso\DynamicMethods\Relations;
+use LaravelEnso\DynamicMethods\Traits\Relations;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\RoutesNotifications;
@@ -34,10 +34,10 @@ class Person extends Model
         SoftDeletes,
         SystemConnection;
 
-        public function __construct(Array $attributes = [])
-        {
-            parent::__construct($attributes);
-        }
+    public function __construct(Array $attributes = [])
+    {
+        parent::__construct($attributes);
+    }
 
     /**
      * The attributes that should be mutated to dates.
