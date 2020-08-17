@@ -2070,16 +2070,16 @@
         },
         {
             "name": "laravel-enso/cli",
-            "version": "4.0.0",
+            "version": "4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/cli.git",
-                "reference": "d5c4f99e07c3ebb0f27b495bb42f7efff78b2c5c"
+                "reference": "0f0a332a13114a03f84552df3ce3a9252792104d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/cli/zipball/d5c4f99e07c3ebb0f27b495bb42f7efff78b2c5c",
-                "reference": "d5c4f99e07c3ebb0f27b495bb42f7efff78b2c5c",
+                "url": "https://api.github.com/repos/laravel-enso/cli/zipball/0f0a332a13114a03f84552df3ce3a9252792104d",
+                "reference": "0f0a332a13114a03f84552df3ce3a9252792104d",
                 "shasum": ""
             },
             "require": {
@@ -2124,7 +2124,7 @@
                 "enso-helper",
                 "laravel-enso"
             ],
-            "time": "2020-06-30T10:56:59+00:00"
+            "time": "2020-08-12T14:35:28+00:00"
         },
         {
             "name": "laravel-enso/comments",
