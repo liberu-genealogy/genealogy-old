@@ -5245,16 +5245,16 @@
         },
         {
             "name": "modularsoftware/laravel-gedcom",
-            "version": "v1.3.2",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/modularsoftware/laravel-gedcom.git",
-                "reference": "ccbdc8048fae459508c6561555a86c949d0e73d2"
+                "reference": "d96d4910d092c4f3e36f61980cf6d75c6f56565b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/modularsoftware/laravel-gedcom/zipball/ccbdc8048fae459508c6561555a86c949d0e73d2",
-                "reference": "ccbdc8048fae459508c6561555a86c949d0e73d2",
+                "url": "https://api.github.com/repos/modularsoftware/laravel-gedcom/zipball/d96d4910d092c4f3e36f61980cf6d75c6f56565b",
+                "reference": "d96d4910d092c4f3e36f61980cf6d75c6f56565b",
                 "shasum": ""
             },
             "require": {
@@ -5284,7 +5284,7 @@
                 }
             ],
             "description": "A package that converts gedcom files to Eloquent models",
-            "time": "2020-08-03T17:03:30+00:00"
+            "time": "2020-09-02T07:50:52+00:00"
         },
         {
             "name": "modularsoftware/multitenancy",
@@ -5343,16 +5343,16 @@
         },
         {
             "name": "modularsoftware/php-gedcom",
-            "version": "v1.1.3",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/modularsoftware/php-gedcom.git",
-                "reference": "2eec70405e5f6e7327d1503a28ab518c183bbd52"
+                "reference": "34c9bb51987cda86798eb90c735ff345743d3bed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/modularsoftware/php-gedcom/zipball/2eec70405e5f6e7327d1503a28ab518c183bbd52",
-                "reference": "2eec70405e5f6e7327d1503a28ab518c183bbd52",
+                "url": "https://api.github.com/repos/modularsoftware/php-gedcom/zipball/34c9bb51987cda86798eb90c735ff345743d3bed",
+                "reference": "34c9bb51987cda86798eb90c735ff345743d3bed",
                 "shasum": ""
             },
             "require": {
@@ -5378,7 +5378,7 @@
                 "gedcom",
                 "parser"
             ],
-            "time": "2020-07-22T03:33:12+00:00"
+            "time": "2020-09-02T07:54:05+00:00"
         },
         {
             "name": "monolog/monolog",
