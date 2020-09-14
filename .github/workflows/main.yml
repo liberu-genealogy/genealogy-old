@@ -1,0 +1,20 @@
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  static_analysis:
+    runs-on: ubuntu-latest
+    name: Static analysis
+    steps:
+      # You must check out your repository, so we can analyse it
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: PHP Insights App
+        uses: worksome/phpinsights-app@v0.1
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          workingDir: '.'
+          memory_limit: '1024M'
