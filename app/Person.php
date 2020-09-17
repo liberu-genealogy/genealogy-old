@@ -2,16 +2,18 @@
 
 namespace App;
 
+use LaravelEnso\Companies\Models\Company;
 use App\Models\User;
+use App\Family;
+use App\Place;
+use App\PersonEvent;
+use LaravelEnso\DynamicMethods\Traits\Relations;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\RoutesNotifications;
 use Illuminate\Support\Collection;
 use LaravelEnso\Addresses\Traits\Addressable;
-use LaravelEnso\Companies\Models\Company;
-use LaravelEnso\DynamicMethods\Traits\Relations;
 use LaravelEnso\Helpers\Traits\AvoidsDeletionConflicts;
-use LaravelEnso\Helpers\Traits\CascadesMorphMap;
 use LaravelEnso\Multitenancy\Traits\SystemConnection;
 use LaravelEnso\People\Enums\Genders;
 use LaravelEnso\People\Enums\Titles;
@@ -20,11 +22,10 @@ use LaravelEnso\Tables\Traits\TableCache;
 use LaravelEnso\TrackWho\Traits\CreatedBy;
 use LaravelEnso\TrackWho\Traits\UpdatedBy;
 
-class Person extends Model
+class Person extends \LaravelEnso\People\Models\Person
 {
     use Addressable,
         AvoidsDeletionConflicts,
-        CascadesMorphMap,
         CreatedBy,
         Relations,
         Rememberable,
@@ -34,17 +35,21 @@ class Person extends Model
         SoftDeletes,
         SystemConnection;
 
-    public function __construct(array $attributes = [])
-    {
-        parent::__construct($attributes);
-    }
+
+         public function __construct(Array $attributes = [])
+        {
+            parent::__construct($attributes);
+        }
+
 
     /**
      * The attributes that should be mutated to dates.
      *
      * @var array
      */
-    protected $dates = ['deleted_at', 'birthday'];
+    protected $dates = ['deleted_at', 'birthday','deathday'];
+
+    protected $guarded = ['id'];
 
     protected $fillable = [
         'gid',
@@ -159,7 +164,7 @@ class Person extends Model
 
     public function user()
     {
-        return $this->hasOne(User::class);
+        return $this->hasOne(\LaravelEnso\Core\Models\User::class);
     }
 
     public function companies()

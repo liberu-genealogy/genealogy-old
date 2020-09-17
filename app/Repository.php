@@ -8,26 +8,7 @@ use LaravelEnso\Tables\Traits\TableCache;
 class Repository extends Model
 {
     use TableCache;
-    // public function __construct(Array $attributes = [])
-    // {
-    //     parent::__construct($attributes);
-    //     $db = \Session::get('db');
-    //     error_log('+++++++++++++++++++++++++++++++++++'.$db);
-    //     if(empty($db)) {
-    //         $db = env('DB_DATABASE', 'enso');
-    //     }
-    //     if($db === env('DB_DATABASE')) {
-    //         $key = 'database.connections.mysql.database';
-    //         config([$key => $db]);
-    //     } else {
-    //         $key = 'database.connections.mysql.database';
-    //         config([$key => $db]);
-    //     }
-    //     \DB::purge('mysql');
-    //     \DB::reconnect('mysql');
-    //     $this->setConnection('mysql');
-    //     error_log('-----------------------------------'.$this->getConnection()->getDatabaseName());
-    // }
+
     /**
      * The "type" of the auto-incrementing ID.
      *
@@ -35,7 +16,7 @@ class Repository extends Model
      */
     protected $keyType = 'integer';
 
-    protected $fillable = ['repo', 'name', 'addr_id', 'rin', 'phon', 'name', 'description', 'type_id', 'is_active'];
+    protected $fillable = ['repo', 'name', 'addr_id', 'rin', 'phon','email','fax','www', 'name', 'description', 'type_id', 'is_active'];
 
     protected $attributes = ['is_active' => false];
 
