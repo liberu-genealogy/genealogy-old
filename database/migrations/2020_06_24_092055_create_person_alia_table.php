@@ -18,6 +18,7 @@ class CreatePersonAliaTable extends Migration
             $table->string('group')->nullable();
             $table->integer('gid')->nullable();
             $table->string('alia')->nullable();
+            $table->integer('import_confirm')->default(0);
             $table->timestamps();
         });
     }

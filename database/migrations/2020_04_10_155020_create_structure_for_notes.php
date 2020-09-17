@@ -23,7 +23,7 @@ class CreateStructureForNotes extends Migration
     ];
 
     protected array $menu = [
-        'name' => 'Notes', 'icon' => 'users', 'route' => 'notes.index', 'order_index' => 999, 'has_children' => true,
+        'name' => 'Notes', 'icon' => 'users', 'route' => 'notes.index', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected ?string $parentMenu = 'References';

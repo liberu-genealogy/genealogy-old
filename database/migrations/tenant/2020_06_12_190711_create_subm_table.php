@@ -23,6 +23,9 @@ class CreateSubmTable extends Migration
             $table->string('rfn')->nullable();
             $table->string('lang')->nullable();
             $table->string('phon')->nullable();
+            $table->string('email')->nullable();
+            $table->string('fax')->nullable();
+            $table->string('www')->nullable();
             $table->timestamps();
         });
     }

@@ -17,11 +17,8 @@ class CreateMediaObjectsTable extends Migration
             $table->id();
             $table->integer('gid')->nullable();
             $table->string('group')->nullable();
-            $table->string('form')->nullable();
             $table->string('titl')->nullable();
-            $table->string('blob')->nullable();
-            $table->string('rin')->nullable();
-            $table->string('file')->nullable();
+            $table->string('obje_id')->nullable();
             $table->timestamps();
         });
     }

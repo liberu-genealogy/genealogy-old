@@ -5,14 +5,13 @@ use LaravelEnso\Migrator\Database\Migration;
 class CreateStructureForGedcoms extends Migration
 {
     protected array $permissions = [
-        ['name' => 'gedcom.index', 'description' => 'Show index for gedcoms', 'is_default' => false],
-
-        ['name' => 'gedcom.create', 'description' => 'Create gedcom', 'is_default' => false],
-        ['name' => 'gedcom.store', 'description' => 'Store a new gedcom', 'is_default' => false],
-        ['name' => 'gedcom.show', 'description' => 'Show gedcom', 'is_default' => false],
-        ['name' => 'gedcom.edit', 'description' => 'Edit gedcom', 'is_default' => false],
-        ['name' => 'gedcom.update', 'description' => 'Update gedcom', 'is_default' => false],
-        ['name' => 'gedcom.destroy', 'description' => 'Delete gedcom', 'is_default' => false],
+        ['name' => 'gedcom.index', 'description' => 'Show index for gedcoms', 'is_default' => true],
+        ['name' => 'gedcom.create', 'description' => 'Create gedcom', 'is_default' => true],
+        ['name' => 'gedcom.store', 'description' => 'Store a new gedcom', 'is_default' => true],
+        ['name' => 'gedcom.show', 'description' => 'Show gedcom', 'is_default' => true],
+        ['name' => 'gedcom.edit', 'description' => 'Edit gedcom', 'is_default' => true],
+        ['name' => 'gedcom.update', 'description' => 'Update gedcom', 'is_default' => true],
+        ['name' => 'gedcom.destroy', 'description' => 'Delete gedcom', 'is_default' => true],
     ];
 
     protected array $menu = [
