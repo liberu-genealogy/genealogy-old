@@ -2,6 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::namespace('Auth')
+    ->middleware('api')
+    ->group(function () {
+        Route::middleware('guest')->group(function () {
+            Route::post('login', 'LoginController@login')->name('login');
+        });
+
+        Route::middleware('auth')->group(function () {
+            Route::post('logout', 'LoginController@logout')->name('logout');
+        });
+    });
+
 // example data for the dashboard
 Route::middleware(['web', 'auth', 'multitenant'])
     ->namespace('Dashboard')
