@@ -17,7 +17,9 @@ class CreatePersonAssoTable extends Migration
             $table->id();
             $table->string('group')->nullable();
             $table->integer('gid')->nullable();
+            $table->string('indi')->nullable();
             $table->string('rela')->nullable();
+            $table->integer('import_confirm')->default(0);
             $table->timestamps();
         });
     }

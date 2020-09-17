@@ -15,6 +15,8 @@ class CreateSourceDataEvenTable extends Migration
     {
         Schema::create('source_data_even', function (Blueprint $table) {
             $table->id();
+            $table->string('group')->nullable();
+            $table->string('gid')->nullable();
             $table->string('date')->nullable();
             $table->string('plac')->nullable();
             $table->timestamps();

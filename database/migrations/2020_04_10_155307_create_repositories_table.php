@@ -26,6 +26,9 @@ class CreateRepositoriesTable extends Migration
             $table->integer('addr_id')->nullable();
             $table->string('rin')->nullable();
             $table->string('phon')->nullable();
+            $table->string('email')->nullable();
+            $table->string('fax')->nullable();
+            $table->string('www')->nullable();
             $table->timestamps();
         });
     }
