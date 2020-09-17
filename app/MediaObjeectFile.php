@@ -5,16 +5,9 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Tables\Traits\TableCache;
 
-/**
- * @property int $id
- * @property string $group
- * @property int $gid
- * @property string $rela
- * @property string $created_at
- * @property string $updated_at
- */
-class PersonAsso extends Model
+class MediaObjeectFile extends Model
 {
+    //
     use TableCache;
 
     /**
@@ -22,7 +15,7 @@ class PersonAsso extends Model
      *
      * @var string
      */
-    protected $table = 'person_asso';
+    protected $table = 'media_objects_file';
 
     /**
      * The "type" of the auto-incrementing ID.
@@ -34,5 +27,6 @@ class PersonAsso extends Model
     /**
      * @var array
      */
-    protected $fillable = ['group', 'gid', 'indi', 'rela','import_confirm', 'created_at', 'updated_at'];
+    protected $fillable = ['gid', 'group', 'form', 'medi', 'type', 'created_at', 'updated_at'];
+
 }

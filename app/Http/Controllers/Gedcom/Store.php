@@ -9,13 +9,13 @@ use App\Jobs\ImportGedcom;
 use App\Note;
 use App\Person;
 use App\Source;
-use App\Traits\ConnectionTrait;
 use Auth;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Artisan;
-use LaravelEnso\Multitenancy\Enums\Connections;
 use ModularSoftware\LaravelGedcom\Facades\GedcomParserFacade;
 use ModularSoftware\LaravelGedcom\Utils\GedcomParser;
+use Illuminate\Support\Facades\Artisan;
+use LaravelEnso\Multitenancy\Enums\Connections;
+use App\Traits\ConnectionTrait;
 
 class Store extends Controller
 {
@@ -41,9 +41,8 @@ class Store extends Controller
                     // $parser->parse($request->file('file'), $slug, true);
                     $filename = 'app/gedcom/'.$_name;
                     ImportGedcom::dispatch($filename, $slug, $currentUser->id, $conn, $db);
-                    // Artisan::call('queue:work');
-                    return ['File uploaded'];
-                } catch (Exception $e) {
+                    return ['File uploaded: conn:-'.$conn.'-'];
+                } catch (\Exception $e) {
                     return ['Not uploaded'];
                 }
             }
