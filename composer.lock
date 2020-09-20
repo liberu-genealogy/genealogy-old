@@ -547,30 +547,30 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "2.10.4",
+            "version": "2.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "47433196b6390d14409a33885ee42b6208160643"
+                "reference": "0d4e1a8b29dd987704842f0465aded378f441dca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/47433196b6390d14409a33885ee42b6208160643",
-                "reference": "47433196b6390d14409a33885ee42b6208160643",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/0d4e1a8b29dd987704842f0465aded378f441dca",
+                "reference": "0d4e1a8b29dd987704842f0465aded378f441dca",
                 "shasum": ""
             },
             "require": {
                 "doctrine/cache": "^1.0",
                 "doctrine/event-manager": "^1.0",
                 "ext-pdo": "*",
-                "php": "^7.2"
+                "php": "^7.3"
             },
             "require-dev": {
                 "doctrine/coding-standard": "^8.1",
                 "jetbrains/phpstorm-stubs": "^2019.1",
                 "nikic/php-parser": "^4.4",
                 "phpstan/phpstan": "^0.12.40",
-                "phpunit/phpunit": "^8.5.5",
+                "phpunit/phpunit": "^9.3",
                 "psalm/plugin-phpunit": "^0.10.0",
                 "symfony/console": "^2.0.5|^3.0|^4.0|^5.0",
                 "vimeo/psalm": "^3.14.2"
@@ -584,8 +584,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.10.x-dev",
-                    "dev-develop": "3.0.x-dev"
+                    "dev-master": "4.0.x-dev"
                 }
             },
             "autoload": {
@@ -652,7 +651,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-12T21:20:41+00:00"
+            "time": "2020-09-20T23:24:53+00:00"
         },
         {
             "name": "doctrine/event-manager",
@@ -5249,12 +5248,12 @@
             "version": "v1.4.9",
             "source": {
                 "type": "git",
-                "url": "https://github.com/modularsoftware/laravel-gedcom.git",
+                "url": "https://github.com/genealogiawebsite/laravel-gedcom.git",
                 "reference": "ef492e5d2a1641157efa458443b8ddefcc973719"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/modularsoftware/laravel-gedcom/zipball/ef492e5d2a1641157efa458443b8ddefcc973719",
+                "url": "https://api.github.com/repos/genealogiawebsite/laravel-gedcom/zipball/ef492e5d2a1641157efa458443b8ddefcc973719",
                 "reference": "ef492e5d2a1641157efa458443b8ddefcc973719",
                 "shasum": ""
             },
@@ -5285,6 +5284,12 @@
                 }
             ],
             "description": "A package that converts gedcom files to Eloquent models",
+            "funding": [
+                {
+                    "url": "https://opencollective.com/genealogy",
+                    "type": "open_collective"
+                }
+            ],
             "time": "2020-09-12T14:24:06+00:00"
         },
         {
@@ -5347,12 +5352,12 @@
             "version": "v1.2.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/modularsoftware/php-gedcom.git",
+                "url": "https://github.com/genealogiawebsite/php-gedcom.git",
                 "reference": "32fd88e4a6369dc6f7eb7c600461b6ca2264d835"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/modularsoftware/php-gedcom/zipball/32fd88e4a6369dc6f7eb7c600461b6ca2264d835",
+                "url": "https://api.github.com/repos/genealogiawebsite/php-gedcom/zipball/32fd88e4a6369dc6f7eb7c600461b6ca2264d835",
                 "reference": "32fd88e4a6369dc6f7eb7c600461b6ca2264d835",
                 "shasum": ""
             },
@@ -5378,6 +5383,12 @@
             "keywords": [
                 "gedcom",
                 "parser"
+            ],
+            "funding": [
+                {
+                    "url": "https://opencollective.com/genealogy",
+                    "type": "open_collective"
+                }
             ],
             "time": "2020-09-04T03:02:32+00:00"
         },
