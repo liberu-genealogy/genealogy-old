@@ -28,5 +28,4 @@ class MediaObjeectFile extends Model
      * @var array
      */
     protected $fillable = ['gid', 'group', 'form', 'medi', 'type', 'created_at', 'updated_at'];
-
 }

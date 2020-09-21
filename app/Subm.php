@@ -35,5 +35,5 @@ class Subm extends Model
     /**
      * @var array
      */
-    protected $fillable = ['group', 'gid', 'name', 'addr_id', 'rin', 'rfn', 'lang','phon','email','fax','www', 'created_at', 'updated_at'];
+    protected $fillable = ['group', 'gid', 'name', 'addr_id', 'rin', 'rfn', 'lang', 'phon', 'email', 'fax', 'www', 'created_at', 'updated_at'];
 }
