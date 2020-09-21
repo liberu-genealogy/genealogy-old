@@ -34,5 +34,5 @@ class PersonAlia extends Model
     /**
      * @var array
      */
-    protected $fillable = ['group', 'gid', 'alia','import_confirm', 'created_at', 'updated_at'];
+    protected $fillable = ['group', 'gid', 'alia', 'import_confirm', 'created_at', 'updated_at'];
 }

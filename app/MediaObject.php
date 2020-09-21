@@ -28,5 +28,5 @@ class MediaObject extends Model
     /**
      * @var array
      */
-    protected $fillable = ['gid', 'group', 'titl', 'obje_id','rin', 'created_at', 'updated_at'];
+    protected $fillable = ['gid', 'group', 'titl', 'obje_id', 'rin', 'created_at', 'updated_at'];
 }
