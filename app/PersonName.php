@@ -20,7 +20,6 @@ use LaravelEnso\Tables\Traits\TableCache;
  * @property string $created_at
  * @property string $updated_at
  */
-
 class PersonName extends Model
 {
     use TableCache;
@@ -42,6 +41,5 @@ class PersonName extends Model
     /**
      * @var array
      */
-    protected $fillable = ['group', 'gid', 'type','name','npfx','givn','nick','spfx','surn','nsfx','created_at', 'updated_at'];
-
+    protected $fillable = ['group', 'gid', 'type', 'name', 'npfx', 'givn', 'nick', 'spfx', 'surn', 'nsfx', 'created_at', 'updated_at'];
 }
