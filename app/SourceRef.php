@@ -37,6 +37,5 @@ class SourceRef extends Model
     /**
      * @var array
      */
-    protected $fillable = ['group', 'gid', 'sour_id','text','quay','page','created_at', 'updated_at'];
-
+    protected $fillable = ['group', 'gid', 'sour_id', 'text', 'quay', 'page', 'created_at', 'updated_at'];
 }

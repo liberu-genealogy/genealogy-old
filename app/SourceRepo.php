@@ -26,6 +26,5 @@ class SourceRepo extends Model
     /**
      * @var array
      */
-    protected $fillable = ['group', 'gid', 'repo_id','caln','created_at', 'updated_at'];
-
+    protected $fillable = ['group', 'gid', 'repo_id', 'caln', 'created_at', 'updated_at'];
 }

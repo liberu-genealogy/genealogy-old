@@ -7,7 +7,7 @@ use LaravelEnso\Tables\Traits\TableCache;
 
 class Tree extends Model
 {
-	use TableCache;
+    use TableCache;
 
     /**
      * @var array
