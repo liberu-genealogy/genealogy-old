@@ -10,7 +10,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Http\Request;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use ModularSoftware\LaravelGedcom\Utils\GedcomGenerator;
+use GenealogiaWebsite\LaravelGedcom\Utils\GedcomGenerator;
 
 class ExportGedCom implements ShouldQueue
 {
