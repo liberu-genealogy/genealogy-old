@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 use LaravelEnso\Tables\Traits\TableCache;
-use ModularSoftware\LaravelGedcom\Observers\EventActionsObserver;
+use GenealogiaWebsite\LaravelGedcom\Observers\EventActionsObserver;
 
 class PersonEvent extends Event
 {

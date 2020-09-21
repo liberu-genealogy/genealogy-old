@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\File;
-use ModularSoftware\LaravelGedcom\Utils\GedcomParser;
+use GenealogiaWebsite\LaravelGedcom\Utils\GedcomParser;
 use Illuminate\Support\Facades\Artisan;
 
 class ImportGedcom implements ShouldQueue
@@ -62,7 +62,7 @@ class ImportGedcom implements ShouldQueue
 
         ImportJob::on($this->conn)->create(compact('user_id', 'slug', 'status'));
 
-        $parser = new \ModularSoftware\LaravelGedcom\Utils\GedcomParser();
+        $parser = new \GenealogiaWebsite\LaravelGedcom\Utils\GedcomParser();
         $parser->parse($this->conn, storage_path($this->filename), $slug, true);
         File::delete(storage_path($this->filename));
 
