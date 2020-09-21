@@ -34,5 +34,5 @@ class PersonAsso extends Model
     /**
      * @var array
      */
-    protected $fillable = ['group', 'gid', 'indi', 'rela','import_confirm', 'created_at', 'updated_at'];
+    protected $fillable = ['group', 'gid', 'indi', 'rela', 'import_confirm', 'created_at', 'updated_at'];
 }
