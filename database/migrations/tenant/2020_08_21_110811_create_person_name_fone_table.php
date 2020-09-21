@@ -24,7 +24,7 @@ class CreatePersonNameFoneTable extends Migration
             $table->string('nick')->nullable();
             $table->string('spfx')->nullable();
             $table->string('surn')->nullable();
-            $table->string('nsfx')->nullable();            
+            $table->string('nsfx')->nullable();
             $table->timestamps();
         });
     }

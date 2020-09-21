@@ -16,7 +16,7 @@ class Repository extends Model
      */
     protected $keyType = 'integer';
 
-    protected $fillable = ['repo', 'name', 'addr_id', 'rin', 'phon','email','fax','www', 'name', 'description', 'type_id', 'is_active'];
+    protected $fillable = ['repo', 'name', 'addr_id', 'rin', 'phon', 'email', 'fax', 'www', 'name', 'description', 'type_id', 'is_active'];
 
     protected $attributes = ['is_active' => false];
 
