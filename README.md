@@ -4,9 +4,9 @@
 [![Build Status](https://scrutinizer-ci.com/g/modularsoftware/genealogy/badges/build.png?b=master)](https://scrutinizer-ci.com/g/modularsoftware/genealogy/build-status/master)
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/modularsoftware/genealogy/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 [![StyleCI](https://github.styleci.io/repos/135390590/shield?branch=master)](https://github.styleci.io/repos/135390590)
-[![CodeFactor](https://www.codefactor.io/repository/github/modularsoftware/genealogy/badge/master)](https://www.codefactor.io/repository/github/modularsoftware/genealogy/overview/master)
+[![CodeFactor](https://www.codefactor.io/repository/github/genealogiawebsite/genealogy/badge/master)](https://www.codefactor.io/repository/github/genealogiawebsite/genealogy/overview/master)
 [![codebeat badge](https://codebeat.co/badges/911f9e33-212a-4dfa-a860-751cdbbacff7)](https://codebeat.co/projects/github-com-modulargenealogy-genealogy-master)
-[![Build Status](https://travis-ci.org/modularsoftware/genealogy.svg?branch=master)](https://travis-ci.org/modularsoftware/genealogy)
+[![Build Status](https://travis-ci.org/genealogiawebsite/genealogy.svg?branch=master)](https://travis-ci.org/genealogiawebsite/genealogy)
 
 
 ## Description
@@ -18,7 +18,7 @@ smart matching with other servers.
 
 ## Demo
 
-https://genealogia.co.uk/ - register a free trial account
+https://genealogia.co.uk/ - register a free account
 
 <!--h-->
 ### Official Laravel Enso Documentation
@@ -30,7 +30,7 @@ Note that most sections have short demo clips.
 
 ### Installation Steps
 
-1. Download the project with `git clone https://github.com/modularsoftware/genealogy.git --depth 1`
+1. Download the project with `git clone https://github.com/genealogiawebsite/genealogy.git --depth 1`
 
 2. Within the project folder run `composer install`
 
