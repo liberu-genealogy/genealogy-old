@@ -7,9 +7,9 @@ use App\Jobs\ExportGedCom;
 use App\Note;
 use App\Person;
 use File;
+use GenealogiaWebsite\LaravelGedcom\Utils\GedcomGenerator;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use GenealogiaWebsite\LaravelGedcom\Utils\GedcomGenerator;
 use Response;
 
 class Show extends Controller
