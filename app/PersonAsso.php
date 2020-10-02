@@ -2,37 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Tables\Traits\TableCache;
 
-/**
- * @property int $id
- * @property string $group
- * @property int $gid
- * @property string $rela
- * @property string $created_at
- * @property string $updated_at
- */
-class PersonAsso extends Model
+class PersonAsso extends \GenealogiaWebsite\LaravelGedcom\Models\PersonAsso
 {
     use TableCache;
-
-    /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
-    protected $table = 'person_asso';
-
-    /**
-     * The "type" of the auto-incrementing ID.
-     *
-     * @var string
-     */
-    protected $keyType = 'integer';
-
-    /**
-     * @var array
-     */
-    protected $fillable = ['group', 'gid', 'indi', 'rela', 'import_confirm', 'created_at', 'updated_at'];
 }
