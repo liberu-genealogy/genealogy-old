@@ -2,23 +2,23 @@
 
 namespace App;
 
-use App\Family;
+use LaravelEnso\Companies\Models\Company;
 use App\Models\User;
-use App\PersonEvent;
+use App\Family;
 use App\Place;
+use App\PersonEvent;
+use LaravelEnso\DynamicMethods\Traits\Relations;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\RoutesNotifications;
 use Illuminate\Support\Collection;
 use LaravelEnso\Addresses\Traits\Addressable;
-use LaravelEnso\Companies\Models\Company;
-use LaravelEnso\DynamicMethods\Traits\Relations;
 use LaravelEnso\Helpers\Traits\AvoidsDeletionConflicts;
 use LaravelEnso\Multitenancy\Traits\SystemConnection;
 use LaravelEnso\People\Enums\Genders;
 use LaravelEnso\People\Enums\Titles;
 use LaravelEnso\Rememberable\Traits\Rememberable;
-use LaravelEnso\Tables\Traits\TableCache;
+use LaravelEnso\Tables\Traits\TableCache
 use LaravelEnso\TrackWho\Traits\CreatedBy;
 use LaravelEnso\TrackWho\Traits\UpdatedBy;
 
@@ -35,17 +35,19 @@ class Person extends \LaravelEnso\People\Models\Person
         SoftDeletes,
         SystemConnection;
 
-    public function __construct(array $attributes = [])
+
+    public function __construct(Array $attributes = [])
     {
         parent::__construct($attributes);
     }
+
 
     /**
      * The attributes that should be mutated to dates.
      *
      * @var array
      */
-    protected $dates = ['deleted_at', 'birthday', 'deathday'];
+    protected $dates = ['deleted_at', 'birthday','deathday'];
 
     protected $guarded = ['id'];
 

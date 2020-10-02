@@ -2,16 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Tables\Traits\TableCache;
 
-class Author extends Model
+class Author extends \GenealogiaWebsite\LaravelGedcom\Models\Author
 {
     use TableCache;
-
-    protected $fillable = ['description', 'is_active', 'name'];
-
-    protected $attributes = ['is_active' => false];
-
-    protected $casts = ['is_active' => 'boolean'];
 }
