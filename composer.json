@@ -24,7 +24,7 @@
         "laravel/telescope": "^3.1",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
-        "genealogiawebsite/laravel-gedcom": "^1.3",
+        "genealogiawebsite/laravel-gedcom": "^2.0",
         "laravel-enso/multitenancy": "^2.0",
         "pusher/pusher-php-server": "^4.1",
         "sentry/sentry-laravel": "^1.0.0"
