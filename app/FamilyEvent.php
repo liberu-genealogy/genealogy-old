@@ -2,9 +2,9 @@
 
 namespace App;
 
+use GenealogiaWebsite\LaravelGedcom\Observers\EventActionsObserver;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use LaravelEnso\Tables\Traits\TableCache;
-use GenealogiaWebsite\LaravelGedcom\Observers\EventActionsObserver;
 
 class FamilyEvent extends Event
 {

@@ -4,13 +4,13 @@ namespace App\Jobs;
 
 use Auth;
 use File;
+use GenealogiaWebsite\LaravelGedcom\Utils\GedcomGenerator;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Http\Request;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use GenealogiaWebsite\LaravelGedcom\Utils\GedcomGenerator;
 
 class ExportGedCom implements ShouldQueue
 {
