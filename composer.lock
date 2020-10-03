@@ -1849,16 +1849,16 @@
         },
         {
             "name": "laravel-enso/activity-log",
-            "version": "4.0.0",
+            "version": "4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/activity-log.git",
-                "reference": "83095ad70f9f30ddd25db8dda6371c067412edbe"
+                "reference": "da62cb3e992b56d394a4e0db31c2107df0babc1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/activity-log/zipball/83095ad70f9f30ddd25db8dda6371c067412edbe",
-                "reference": "83095ad70f9f30ddd25db8dda6371c067412edbe",
+                "url": "https://api.github.com/repos/laravel-enso/activity-log/zipball/da62cb3e992b56d394a4e0db31c2107df0babc1b",
+                "reference": "da62cb3e992b56d394a4e0db31c2107df0babc1b",
                 "shasum": ""
             },
             "require": {
@@ -1904,7 +1904,7 @@
                 "laravel",
                 "laravel-enso"
             ],
-            "time": "2020-06-30T13:19:22+00:00"
+            "time": "2020-07-09T06:39:13+00:00"
         },
         {
             "name": "laravel-enso/addresses",
