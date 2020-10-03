@@ -11361,12 +11361,7 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-vue-cal@^2.0.1:
-  version "2.24.8"
-  resolved "https://registry.yarnpkg.com/vue-cal/-/vue-cal-2.24.8.tgz#6d12b593825f58977b2fcbdc410537a3c3acac44"
-  integrity sha512-n2aSJlzAHhu1OHECysTzi4xKRA4Myc1cMUZF2zABWFfS0QvXOSQjhSfpgnCahmYYbJ7SFIdgi4fqqN+QKspECg==
-
-vue-cal@^3.0:
+vue-cal@^3.0, vue-cal@^3.7.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/vue-cal/-/vue-cal-3.7.0.tgz#ea5ed39bf2e1f28f0a49713d28108e4fd3e9e051"
   integrity sha512-VthfjsGcf7M2Wn/UvJM/H/Uup51LUsS/SHZUG1TReDGkGHxtD2xbZdPiN7dS4qf/H8VlksPbWMGHM6DbfVDLYQ==
