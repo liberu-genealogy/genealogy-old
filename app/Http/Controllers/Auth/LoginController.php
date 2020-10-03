@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Events\enso\core\Login;
+use LaravelEnso\Core\Events\Login;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Traits\ConnectionTrait;
