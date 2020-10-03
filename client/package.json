@@ -2,7 +2,7 @@
     "name": "genealogy",
     "private": true,
     "description": "[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework) [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework) [![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework) [![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework) [![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)",
-    "author": "Adrian Ocneanu",
+    "author": "Genealogia Ltd",
     "scripts": {
         "serve": "npx-run-script-os",
         "serve:default": "vue-cli-service serve",
@@ -16,6 +16,10 @@
         "lint": "npx run-script-os",
         "lint:default": "vue-cli-service lint",
         "lint:windows": "node_modules\\.bin\\vue-cli-service lint",
+        "serve": "vue-cli-service serve",
+        "build": "rm -rf ../public/{js,themes,themes-rtl,images} && vue-cli-service build --no-clean --modern && rm -rf ../public/js/*.map",
+        "dev": "rm -rf ../public/{js,themes,themes-rtl,images} && vue-cli-service build --no-clean --mode development",
+        "lint": "vue-cli-service lint",
         "postinstall": "opencollective-postinstall && patch-package",
         "prod": "npm run build"
     },
@@ -64,6 +68,7 @@
     },
     "devDependencies": {
         "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+        "@sentry/webpack-plugin": "^1.12.1",
         "@vue/cli-plugin-babel": "^4.0.5",
         "@vue/cli-plugin-eslint": "^4.0.5",
         "@vue/cli-service": "^4.0.5",
@@ -129,6 +134,6 @@
     "license": "ISC",
     "repository": {
         "type": "git",
-        "url": "http://github.com/modularsoftware/genealogy"
+        "url": "http://github.com/genealogia/genealogy"
     }
 }
