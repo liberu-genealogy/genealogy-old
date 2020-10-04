@@ -73,8 +73,8 @@ class LoginController extends Controller
             $this->setConnection(Connections::Tenant, $db);
         }
 
-//        if ($main_company == null && !$user->isAdmin())
-          if ($main_company == null) {
+        if ($main_company == null && !$user->isAdmin()) {
+//          if ($main_company == null) {
               $company_count = Company::count();
 
               $company = Company::create([
