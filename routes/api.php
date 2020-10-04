@@ -685,7 +685,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
     });
 
 Route::namespace('\LaravelEnso\People\Http\Controllers')
-    ->middleware(['api', 'auth', 'core','multitenant'])
+    ->middleware(['api', 'auth', 'core', 'multitenant'])
     ->prefix('api/administration/people')
     ->as('administration.people.')
     ->group(function () {
@@ -703,7 +703,7 @@ Route::namespace('\LaravelEnso\People\Http\Controllers')
     });
 
 Route::namespace('\LaravelEnso\Companies\Http\Controllers')
-    ->middleware(['api', 'auth', 'core','multitenant'])
+    ->middleware(['api', 'auth', 'core', 'multitenant'])
     ->prefix('api/administration/companies')
     ->as('administration.companies.')
     ->group(function () {
@@ -734,5 +734,4 @@ Route::namespace('\LaravelEnso\Companies\Http\Controllers')
                         Route::delete('{company}/{person}', 'Destroy')->name('destroy');
                     });
             });
-
     });
