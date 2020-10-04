@@ -3,8 +3,8 @@
 namespace App\Forms\Builders;
 
 // use App\Person;
-use LaravelEnso\People\Models\Person;
 use LaravelEnso\Forms\Services\Form;
+use LaravelEnso\People\Models\Person;
 
 class PersonForm extends \LaravelEnso\People\Forms\Builders\PersonForm
 {
