@@ -8,12 +8,10 @@ use LaravelEnso\Tables\Contracts\Table;
 
 class PersonTable extends \LaravelEnso\People\Tables\Builders\PersonTable
 {
-
     protected const TemplatePath = __DIR__.'/../Templates/people.json';
 
     public function query(): Builder
     {
-
         return Person::selectRaw('
             people.id
             , people.title, people.givn, people.surn,  people.appellative, people.email, people.phone,
