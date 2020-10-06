@@ -27,7 +27,7 @@
         "genealogiawebsite/laravel-gedcom": "^2.0",
         "laravel-enso/multitenancy": "^2.0",
         "pusher/pusher-php-server": "^4.1",
-        "sentry/sentry-laravel": "^1.0.0"
+        "sentry/sentry-laravel": "^2.1.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.3",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "32a7e07d950a02557aab75712ec1aa9e",
+    "content-hash": "466cf38a4c27b26289af726006723bc9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5550,16 +5550,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.40.1",
+            "version": "2.41.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "d9a76d8b7eb0f97cf3a82529393245212f40ba3b"
+                "reference": "8690b13ad4da6d54d692afea15aab30b36fee52e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/d9a76d8b7eb0f97cf3a82529393245212f40ba3b",
-                "reference": "d9a76d8b7eb0f97cf3a82529393245212f40ba3b",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/8690b13ad4da6d54d692afea15aab30b36fee52e",
+                "reference": "8690b13ad4da6d54d692afea15aab30b36fee52e",
                 "shasum": ""
             },
             "require": {
@@ -5635,7 +5635,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-23T08:17:37+00:00"
+            "time": "2020-10-04T09:11:05+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -7139,21 +7139,21 @@
         },
         {
             "name": "sentry/sdk",
-            "version": "2.2.0",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getsentry/sentry-php-sdk.git",
-                "reference": "089858b1b27d3705a5fd1c32d8d10beb55980190"
+                "reference": "908ea3fd0e7a19ccf4b53d1c247c44231595d008"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getsentry/sentry-php-sdk/zipball/089858b1b27d3705a5fd1c32d8d10beb55980190",
-                "reference": "089858b1b27d3705a5fd1c32d8d10beb55980190",
+                "url": "https://api.github.com/repos/getsentry/sentry-php-sdk/zipball/908ea3fd0e7a19ccf4b53d1c247c44231595d008",
+                "reference": "908ea3fd0e7a19ccf4b53d1c247c44231595d008",
                 "shasum": ""
             },
             "require": {
                 "http-interop/http-factory-guzzle": "^1.0",
-                "sentry/sentry": "^2.5",
+                "sentry/sentry": "^3.0",
                 "symfony/http-client": "^4.3|^5.0"
             },
             "type": "metapackage",
@@ -7188,20 +7188,20 @@
                     "type": "custom"
                 }
             ],
-            "time": "2020-09-14T09:30:55+00:00"
+            "time": "2020-09-28T07:49:07+00:00"
         },
         {
             "name": "sentry/sentry",
-            "version": "2.5.0",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getsentry/sentry-php.git",
-                "reference": "bab5b73dbaf5f0ff62317e1611d952764d5514a9"
+                "reference": "a35c6c71693a72f2fedb9b6f9644ced52268771d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getsentry/sentry-php/zipball/bab5b73dbaf5f0ff62317e1611d952764d5514a9",
-                "reference": "bab5b73dbaf5f0ff62317e1611d952764d5514a9",
+                "url": "https://api.github.com/repos/getsentry/sentry-php/zipball/a35c6c71693a72f2fedb9b6f9644ced52268771d",
+                "reference": "a35c6c71693a72f2fedb9b6f9644ced52268771d",
                 "shasum": ""
             },
             "require": {
@@ -7209,8 +7209,9 @@
                 "ext-mbstring": "*",
                 "guzzlehttp/promises": "^1.3",
                 "guzzlehttp/psr7": "^1.6",
-                "jean85/pretty-package-versions": "^1.2",
-                "php": "^7.1",
+                "jean85/pretty-package-versions": "^1.5",
+                "ocramius/package-versions": "^1.8",
+                "php": "^7.2",
                 "php-http/async-client-implementation": "^1.0",
                 "php-http/client-common": "^1.5|^2.0",
                 "php-http/discovery": "^1.6.1",
@@ -7219,7 +7220,8 @@
                 "psr/http-factory": "^1.0",
                 "psr/http-message-implementation": "^1.0",
                 "psr/log": "^1.0",
-                "symfony/options-resolver": "^2.7|^3.0|^4.0|^5.0",
+                "symfony/options-resolver": "^3.4.4|^4.0|^5.0",
+                "symfony/polyfill-php80": "^1.17",
                 "symfony/polyfill-uuid": "^1.13.1"
             },
             "conflict": {
@@ -7228,6 +7230,7 @@
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.16",
+                "http-interop/http-factory-guzzle": "^1.0",
                 "monolog/monolog": "^1.3|^2.0",
                 "php-http/mock-client": "^1.3",
                 "phpstan/extension-installer": "^1.0",
@@ -7243,7 +7246,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.5.x-dev"
+                    "dev-master": "3.0.x-dev"
                 }
             },
             "autoload": {
@@ -7285,42 +7288,44 @@
                     "type": "custom"
                 }
             ],
-            "time": "2020-09-14T07:02:40+00:00"
+            "time": "2020-10-02T14:16:36+00:00"
         },
         {
             "name": "sentry/sentry-laravel",
-            "version": "1.9.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getsentry/sentry-laravel.git",
-                "reference": "8567e70d03081cbc04e35eb3fa7389d06816196e"
+                "reference": "1815b6e7c037f9495768e906f978e1a15d7a2944"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getsentry/sentry-laravel/zipball/8567e70d03081cbc04e35eb3fa7389d06816196e",
-                "reference": "8567e70d03081cbc04e35eb3fa7389d06816196e",
+                "url": "https://api.github.com/repos/getsentry/sentry-laravel/zipball/1815b6e7c037f9495768e906f978e1a15d7a2944",
+                "reference": "1815b6e7c037f9495768e906f978e1a15d7a2944",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": "5.0 - 5.8 | ^6.0 | ^7.0 | ^8.0",
-                "php": "^7.1",
-                "sentry/sdk": "^2.1"
+                "php": "^7.2",
+                "sentry/sdk": "^3.0"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "2.16.*",
                 "laravel/framework": "^7.0",
+                "mockery/mockery": "1.3.*",
                 "orchestra/testbench": "^5.0",
                 "phpunit/phpunit": "^8.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev",
+                    "dev-master": "2.x-dev",
                     "dev-0.x": "0.x-dev"
                 },
                 "laravel": {
                     "providers": [
-                        "Sentry\\Laravel\\ServiceProvider"
+                        "Sentry\\Laravel\\ServiceProvider",
+                        "Sentry\\Laravel\\Tracing\\ServiceProvider"
                     ],
                     "aliases": {
                         "Sentry": "Sentry\\Laravel\\Facade"
@@ -7364,7 +7369,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2020-09-07T07:16:41+00:00"
+            "time": "2020-10-06T08:40:32+00:00"
         },
         {
             "name": "spatie/image-optimizer",
