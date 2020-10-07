@@ -16,10 +16,6 @@
         "lint": "npx run-script-os",
         "lint:default": "vue-cli-service lint",
         "lint:windows": "node_modules\\.bin\\vue-cli-service lint",
-        "serve": "vue-cli-service serve",
-        "build": "rm -rf ../public/{js,themes,themes-rtl,images} && vue-cli-service build --no-clean --modern && rm -rf ../public/js/*.map",
-        "dev": "rm -rf ../public/{js,themes,themes-rtl,images} && vue-cli-service build --no-clean --mode development",
-        "lint": "vue-cli-service lint",
         "postinstall": "opencollective-postinstall && patch-package",
         "prod": "npm run build"
     },
