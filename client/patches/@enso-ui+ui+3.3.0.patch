@@ -178,10 +178,10 @@ index 0000000..9624504
 +    };
 +    </script>
 diff --git a/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/AuthForm.vue b/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/AuthForm.vue
-index 8e4e7b1..ddac858 100644
+index 8e4e7b1..d2e5b64 100644
 --- a/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/AuthForm.vue
 +++ b/node_modules/@enso-ui/ui/src/bulma/pages/auth/components/AuthForm.vue
-@@ -117,11 +117,47 @@
+@@ -117,11 +117,45 @@
                      </button>
                  </div>
              </form>
@@ -221,10 +221,8 @@ index 8e4e7b1..ddac858 100644
 +                            {{ i18n('Terms and Conditions') }}
 +                        </router-link>
 +            </div>
-+            <br /><br /><br />  
++            <br /><br /><br />
 +            <div>
-+            Copyright 2020 Genealogia Ltd. International House, 12 Constance Street
-+            London, E16 2DQ. Company Number: 12734769
 +            </div>
              <div class="is-clearfix"/>
          </div>
