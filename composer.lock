@@ -1162,16 +1162,16 @@
         },
         {
             "name": "genealogiawebsite/laravel-gedcom",
-            "version": "v2.0.7",
+            "version": "v2.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/genealogiawebsite/laravel-gedcom.git",
-                "reference": "927003087ba3a1245bae471901e2858231b2c41b"
+                "reference": "72007cead9b74a6b7169095daf22c07b844c5732"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/genealogiawebsite/laravel-gedcom/zipball/927003087ba3a1245bae471901e2858231b2c41b",
-                "reference": "927003087ba3a1245bae471901e2858231b2c41b",
+                "url": "https://api.github.com/repos/genealogiawebsite/laravel-gedcom/zipball/72007cead9b74a6b7169095daf22c07b844c5732",
+                "reference": "72007cead9b74a6b7169095daf22c07b844c5732",
                 "shasum": ""
             },
             "require": {
@@ -1197,11 +1197,11 @@
             "description": "A package that converts gedcom files to Eloquent models",
             "funding": [
                 {
-                    "url": "https://opencollective.com/genealogy",
-                    "type": "open_collective"
+                    "url": "https://github.com/genealogiawebsite",
+                    "type": "github"
                 }
             ],
-            "time": "2020-10-05T13:16:41+00:00"
+            "time": "2020-10-09T18:55:33+00:00"
         },
         {
             "name": "genealogiawebsite/php-gedcom",
@@ -7550,12 +7550,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "04c3a31fe8ea94b42c9e2d1acc93d19782133b00"
+                "reference": "ae789a8a2ad189ce7e8216942cdb9b77319f5eb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/04c3a31fe8ea94b42c9e2d1acc93d19782133b00",
-                "reference": "04c3a31fe8ea94b42c9e2d1acc93d19782133b00",
+                "url": "https://api.github.com/repos/symfony/console/zipball/ae789a8a2ad189ce7e8216942cdb9b77319f5eb8",
+                "reference": "ae789a8a2ad189ce7e8216942cdb9b77319f5eb8",
                 "shasum": ""
             },
             "require": {
@@ -7635,7 +7635,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-18T14:27:32+00:00"
+            "time": "2020-10-07T15:23:00+00:00"
         },
         {
             "name": "symfony/css-selector",
