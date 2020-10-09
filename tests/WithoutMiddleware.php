@@ -12,6 +12,25 @@
          *
          * @throws \Exception
          */
+
+        public function withoutMiddleware($middleware = null)
+        {
+            if (is_null($middleware)) {
+                $this->app->instance('middleware.disable', true);
+                return $this;
+            }
+            $nullMiddleware = new class {
+                public function handle($request, $next)
+                {
+                    return $next($request);
+                }
+            };
+            foreach ((array) $middleware as $abstract) {
+                $this->app->instance($abstract, $nullMiddleware);
+            }
+            return $this;
+        }
+
         public function disableMiddlewareForAllTests()
         {
 
