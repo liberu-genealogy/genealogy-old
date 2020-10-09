@@ -13,7 +13,7 @@ abstract class TestCase extends BaseTestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->withoutMiddleware([\LaravelEnso\Multitenancy\Http\Middleware\Multitenancy::class]);
+        $this->withoutMiddleware([Multitenancy::class]);
     }
 
 }
