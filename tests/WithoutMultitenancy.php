@@ -3,11 +3,9 @@
     namespace Tests;
 
     use Exception;
-    use Illuminate\Foundation\Testing\Concerns\MakesHttpRequests;
 
     trait WithoutMultitenancy
     {
-        use MakesHttpRequests;
 
         /**
          * Prevent all middleware from being executed for this test class.
