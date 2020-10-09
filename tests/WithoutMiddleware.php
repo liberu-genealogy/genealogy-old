@@ -15,12 +15,8 @@
         public function disableMiddlewareForAllTests()
         {
 
-            $middlewaresToDisable = [
-                \LaravelEnso\Multitenancy\Http\Middleware\Multitenancy::class,
-            ];
-
             if (method_exists($this, 'withoutMiddleware')) {
-                $this->withoutMiddleware($middlewaresToDisable);
+                $this->withoutMiddleware(\LaravelEnso\Multitenancy\Http\Middleware\Multitenancy::class);
             } else {
                 throw new Exception('Unable to disable middleware. MakesHttpRequests trait not used.');
             }
