@@ -3,7 +3,6 @@
     namespace Tests;
 
     use Exception;
-    use Illuminate\Foundation\Testing\WithoutMiddleware;
 
     trait WithoutMultitenancy
     {
@@ -14,7 +13,7 @@
          */
         public function disableMiddlewareForAllTests()
         {
-            if (method_exists($this, 'withoutMiddleware')) {
+            if (method_exists($this, 'withoutMultitenancy')) {
                 $this->withoutMiddleware([Multitenancy::class]);
             } else {
                 throw new Exception('Unable to disable middleware. MakesHttpRequests trait not used.');
