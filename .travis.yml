@@ -15,7 +15,6 @@ services:
 
 before_install:
   - mysql -e 'create database enso;'
-  - mysql -e 'create database tenant1_1;'
 
 before_script:
   - cp .env.example .env
