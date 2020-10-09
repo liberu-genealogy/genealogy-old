@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "32a7e07d950a02557aab75712ec1aa9e",
+    "content-hash": "97c98573b084b7ff8f65848495cb4321",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1202,6 +1202,61 @@
                 }
             ],
             "time": "2020-10-09T19:50:46+00:00"
+        },
+        {
+            "name": "genealogiawebsite/multitenancy",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/genealogiawebsite/multitenancy.git",
+                "reference": "1b627c3ba8d2328a9a84e689bd82931ca10be52b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/genealogiawebsite/multitenancy/zipball/1b627c3ba8d2328a9a84e689bd82931ca10be52b",
+                "reference": "1b627c3ba8d2328a9a84e689bd82931ca10be52b",
+                "shasum": ""
+            },
+            "require": {
+                "laravel-enso/companies": "^3.0",
+                "laravel-enso/core": "^5.0|^6.0",
+                "laravel-enso/enums": "^2.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelEnso\\Multitenancy\\AppServiceProvider"
+                    ],
+                    "aliases": []
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelEnso\\Multitenancy\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adrian Ocneanu",
+                    "email": "aocneanu@gmail.com",
+                    "homepage": "https://laravel-enso.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "User actions logger dependency for Laravel Enso",
+            "homepage": "https://github.com/laravel-enso/multitenancy",
+            "keywords": [
+                "laravel",
+                "laravel-enso",
+                "middleware",
+                "multitenancy"
+            ],
+            "time": "2020-10-08T06:38:21+00:00"
         },
         {
             "name": "genealogiawebsite/php-gedcom",
@@ -3728,61 +3783,6 @@
                 "migrator"
             ],
             "time": "2020-10-08T07:32:12+00:00"
-        },
-        {
-            "name": "laravel-enso/multitenancy",
-            "version": "2.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel-enso/multitenancy.git",
-                "reference": "1b627c3ba8d2328a9a84e689bd82931ca10be52b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/multitenancy/zipball/1b627c3ba8d2328a9a84e689bd82931ca10be52b",
-                "reference": "1b627c3ba8d2328a9a84e689bd82931ca10be52b",
-                "shasum": ""
-            },
-            "require": {
-                "laravel-enso/companies": "^3.0",
-                "laravel-enso/core": "^5.0|^6.0",
-                "laravel-enso/enums": "^2.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "LaravelEnso\\Multitenancy\\AppServiceProvider"
-                    ],
-                    "aliases": []
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "LaravelEnso\\Multitenancy\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Adrian Ocneanu",
-                    "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "User actions logger dependency for Laravel Enso",
-            "homepage": "https://github.com/laravel-enso/multitenancy",
-            "keywords": [
-                "laravel",
-                "laravel-enso",
-                "middleware",
-                "multitenancy"
-            ],
-            "time": "2020-10-08T06:38:21+00:00"
         },
         {
             "name": "laravel-enso/notifications",
