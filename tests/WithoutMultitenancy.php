@@ -4,6 +4,7 @@
 
     use Exception;
     use \LaravelEnso\Multitenancy\Http\Middleware\Multitenancy;
+    use Illuminate\Foundation\Testing\WithoutMiddleware;
 
     trait WithoutMultitenancy
     {
