@@ -1162,16 +1162,16 @@
         },
         {
             "name": "genealogiawebsite/laravel-gedcom",
-            "version": "v2.0.11",
+            "version": "v2.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/genealogiawebsite/laravel-gedcom.git",
-                "reference": "9cbe9619e6726fb855ba392bedb71bb4c612c7f3"
+                "reference": "ab57094cefba54c09515508e0260390b442c656b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/genealogiawebsite/laravel-gedcom/zipball/9cbe9619e6726fb855ba392bedb71bb4c612c7f3",
-                "reference": "9cbe9619e6726fb855ba392bedb71bb4c612c7f3",
+                "url": "https://api.github.com/repos/genealogiawebsite/laravel-gedcom/zipball/ab57094cefba54c09515508e0260390b442c656b",
+                "reference": "ab57094cefba54c09515508e0260390b442c656b",
                 "shasum": ""
             },
             "require": {
@@ -1201,7 +1201,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-09T19:27:34+00:00"
+            "time": "2020-10-09T19:50:46+00:00"
         },
         {
             "name": "genealogiawebsite/php-gedcom",
