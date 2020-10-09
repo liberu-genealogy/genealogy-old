@@ -9,7 +9,7 @@
                 <tr v-for="item in companies" :key="item.id">
                     <td class="p01">
                         <button class="button is-fullwidth is-info" @click="ChangeDB(item.id)">
-                            Use Tree: {{item.name}}
+                            Use Tree: {{ item.name }}
                         </button>
                     </td>
                 </tr>
@@ -30,9 +30,6 @@ export default {
     data: () => ({
         companies: [],
     }),
-    created() {
-        this.getCompany();
-    },
     computed: {
         getDBLink() {
             return '/api/dashboard/getdb';
@@ -40,6 +37,9 @@ export default {
         changeDBLink() {
             return '/api/dashboard/changedb';
         },
+    },
+    created() {
+        this.getCompany();
     },
     methods: {
         getCompany() {
