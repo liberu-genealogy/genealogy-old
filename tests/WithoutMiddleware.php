@@ -4,7 +4,7 @@
 
     use Exception;
 
-    trait WithoutMultitenancy
+    trait WithoutMiddleware
     {
 
         /**
@@ -12,7 +12,7 @@
          *
          * @throws \Exception
          */
-        public function disableMultitenancyForAllTests()
+        public function disableMiddlewareForAllTests()
         {
 
             $middlewaresToDisable = [
