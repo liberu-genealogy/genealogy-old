@@ -1205,16 +1205,16 @@
         },
         {
             "name": "genealogiawebsite/multitenancy",
-            "version": "2.0.5",
+            "version": "2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/genealogiawebsite/multitenancy.git",
-                "reference": "5692b2c83b36ff33ab4964975f84d94f0675a9f6"
+                "reference": "5f68d83b0aaa8d22022ced66eea7b26abc8f1c83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/genealogiawebsite/multitenancy/zipball/5692b2c83b36ff33ab4964975f84d94f0675a9f6",
-                "reference": "5692b2c83b36ff33ab4964975f84d94f0675a9f6",
+                "url": "https://api.github.com/repos/genealogiawebsite/multitenancy/zipball/5f68d83b0aaa8d22022ced66eea7b26abc8f1c83",
+                "reference": "5f68d83b0aaa8d22022ced66eea7b26abc8f1c83",
                 "shasum": ""
             },
             "require": {
@@ -1256,7 +1256,7 @@
                 "middleware",
                 "multitenancy"
             ],
-            "time": "2020-10-10T00:10:26+00:00"
+            "time": "2020-10-10T12:13:09+00:00"
         },
         {
             "name": "genealogiawebsite/php-gedcom",
@@ -5548,16 +5548,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.41.0",
+            "version": "2.41.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "8690b13ad4da6d54d692afea15aab30b36fee52e"
+                "reference": "91d8d8dca31936a137213d7c48f8ac981e501ff4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/8690b13ad4da6d54d692afea15aab30b36fee52e",
-                "reference": "8690b13ad4da6d54d692afea15aab30b36fee52e",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/91d8d8dca31936a137213d7c48f8ac981e501ff4",
+                "reference": "91d8d8dca31936a137213d7c48f8ac981e501ff4",
                 "shasum": ""
             },
             "require": {
@@ -5633,7 +5633,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-04T09:11:05+00:00"
+            "time": "2020-10-10T11:06:56+00:00"
         },
         {
             "name": "nikic/php-parser",
