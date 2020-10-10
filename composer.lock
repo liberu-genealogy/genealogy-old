@@ -1205,16 +1205,16 @@
         },
         {
             "name": "genealogiawebsite/multitenancy",
-            "version": "2.0.3",
+            "version": "2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/genealogiawebsite/multitenancy.git",
-                "reference": "36d45120a5f13d7d2236a8cfed8761bb4a41035f"
+                "reference": "d28262f437f409c1d0c833833e2c4eefb3fae6f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/genealogiawebsite/multitenancy/zipball/36d45120a5f13d7d2236a8cfed8761bb4a41035f",
-                "reference": "36d45120a5f13d7d2236a8cfed8761bb4a41035f",
+                "url": "https://api.github.com/repos/genealogiawebsite/multitenancy/zipball/d28262f437f409c1d0c833833e2c4eefb3fae6f5",
+                "reference": "d28262f437f409c1d0c833833e2c4eefb3fae6f5",
                 "shasum": ""
             },
             "require": {
@@ -1256,7 +1256,7 @@
                 "middleware",
                 "multitenancy"
             ],
-            "time": "2020-10-09T23:33:07+00:00"
+            "time": "2020-10-09T23:55:12+00:00"
         },
         {
             "name": "genealogiawebsite/php-gedcom",
