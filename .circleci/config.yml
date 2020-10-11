@@ -37,6 +37,7 @@ jobs:
       - run: sudo apt install -y mysql-client libxml2-dev libpng-dev libfreetype6-dev libjpeg62-turbo-dev libfreetype6-dev libpng-dev libjpeg-dev libzip-dev 
       #- run: sudo docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-webp-dir=/usr/include/  --with-jpeg-dir=/usr/include/ && \
       - run: sudo docker-php-ext-configure gd --with-freetype --with-jpeg
+      - run: sudo docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd
       - run: sudo docker-php-ext-install zip pdo_mysql bcmath pcntl soap gd
 
       #- run: pecl install xdebug && docker-php-ext-enable xdebug
