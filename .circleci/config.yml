@@ -74,5 +74,5 @@ jobs:
       - run: php artisan migrate
       - run: mkdir -p build/logs
       - run: cp -rf .env.testing-docker .env
-      - run: php artisan config:cache
+      - run: php artisan config:cache --env=testing
       - run: php vendor/bin/phpunit
