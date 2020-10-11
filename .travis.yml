@@ -23,7 +23,7 @@ before_script:
   - php artisan key:generate
   - php artisan migrate
 
-script: vendor/bin/phpunit
+script: APP_ENV=testing vendor/bin/phpunit
 
 after_success:
   - curl -s $DEPLOY_WEBHOOK
