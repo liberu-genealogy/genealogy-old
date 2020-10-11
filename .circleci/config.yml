@@ -10,6 +10,9 @@ jobs:
       - image: circleci/php:7.4-node-browsers
         environment: 
           working_directory: ~/genealogy
+          DB_CONNECTION: mysql
+          DB_HOST: 127.0.0.1
+          DB_PORT: 3306
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -23,6 +26,8 @@ jobs:
           MYSQL_USER: root
           MYSQL_ROOT_PASSWORD: password
           MYSQL_ROOT_HOST: "%"
+          DB_HOST: 127.0.0.1
+          DB_PORT: 3306
           working_directory: ~/genealogy
       #
       # - image: redis:2.8.19
@@ -78,6 +83,4 @@ jobs:
       - run: php artisan key:generate
       - run: php artisan migrate
       - run: mkdir -p build/logs
-      - run: cp -rf .env.testing-docker .env
-      - run: php artisan config:cache --env=testing
-      - run: vendor/bin/phpunit
+      - run: php vendor/bin/phpunit
