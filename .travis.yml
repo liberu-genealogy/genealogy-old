@@ -7,7 +7,7 @@ matrix:
     - php: 7.4
 
 env:
-  APP_ENV=testing
+    - APP_ENV=testing
 
 cache:
   directories:
