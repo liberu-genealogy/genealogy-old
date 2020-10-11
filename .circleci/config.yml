@@ -8,6 +8,7 @@ jobs:
     docker:
       # Specify the version you desire here
       - image: circleci/php:7.4-node-browsers
+        environment: working_directory: ~/genealogy
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -20,7 +21,8 @@ jobs:
         environment:
           MYSQL_USER: root
           MYSQL_ROOT_PASSWORD: password
-          MYSQL_ROOT_HOST: 127.0.0.1
+          MYSQL_ROOT_HOST: "%"
+          working_directory: ~/genealogy
       #
       # - image: redis:2.8.19
 
