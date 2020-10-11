@@ -117,7 +117,6 @@
         <server name="MAIL_MAILER" value="array"/>
         <server name="QUEUE_CONNECTION" value="sync"/>
         <server name="SESSION_DRIVER" value="array"/>
-        <env name="DB_HOST" value="127.0.0.1"/>
         <ini name="memory_limit" value="-1"/>
     </php>
 </phpunit>
