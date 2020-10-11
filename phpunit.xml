@@ -111,6 +111,7 @@
         </whitelist>
     </filter>
     <php>
+        <server name="DB_HOST" value="127.0.0.1"/>
         <server name="DB_CONNECTION" value="mysql"/>
         <server name="DB_DATABASE" value="enso"/>
         <server name="APP_ENV" value="testing" force="true"/>
