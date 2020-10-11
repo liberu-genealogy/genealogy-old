@@ -29,8 +29,8 @@ jobs:
       #    docker_layer_caching: true
           
       # - run: docker-build
-      - run: apt-get update
-      - run: apt-get install lsb-release
+      - run: sudo apt-get update
+      - run: sudo apt-get install lsb-release
       - run: wget https://dev.mysql.com/get/mysql-apt-config_0.8.15-1_all.deb
       - run: sudo dpkg -i mysql-apt-config_0.8.15-1_all.deb
       - run: sudo apt update # PHP CircleCI 2.0 Configuration File# PHP CircleCI 2.0 Configuration File sudo apt install zlib1g-dev libsqlite3-dev
