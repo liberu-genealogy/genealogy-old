@@ -30,7 +30,7 @@ jobs:
           
       # - run: docker-build
       - run: sudo apt update # PHP CircleCI 2.0 Configuration File# PHP CircleCI 2.0 Configuration File sudo apt install zlib1g-dev libsqlite3-dev
-      - run: sudo apt install -y default-mysql-client libxml2-dev
+      - run: sudo apt install -y default-mysql-client libxml2-dev libpng-dev libfreetype6-dev libjpeg62-turbo-dev libfreetype6-dev libpng-dev libjpeg-dev libzip-dev 
       - run: sudo docker-php-ext-install zip intl pdo_mysql bcmath pcntl soap gd
       - run: pecl install xdebug && docker-php-ext-enable xdebug
       
