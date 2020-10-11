@@ -18,6 +18,7 @@ services:
 
 before_install:
   - mysql -e 'create database enso;'
+  - mysql -uroot -p -e "GRANT ALL PRIVILEGES ON enso.* TO enso@127.0.0.1 IDENTIFIED BY 'password'"
 
 before_script:
   - cp .env.testing .env
