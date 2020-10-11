@@ -30,8 +30,9 @@ jobs:
           
       # - run: docker-build
       - run: sudo apt update # PHP CircleCI 2.0 Configuration File# PHP CircleCI 2.0 Configuration File sudo apt install zlib1g-dev libsqlite3-dev
-      - run: sudo docker-php-ext-install zip intl sodium
-      - run: sudo apt install -y default-mysql-client
+      - run: sudo docker-php-ext-install zip intl sodium pdo_mysql bcmath pcntl soap gd
+      - run: pecl install xdebug && docker-php-ext-enable xdebug
+      - run: sudo apt install -y default-mysql-client libsodium
 
       # Download and cache dependencies
       - restore_cache:
