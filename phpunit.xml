@@ -112,8 +112,8 @@
     </filter>
     <php>
         <server name="APP_ENV" value="testing" force="true"/>
-        <server name="DB_HOST" value="127.0.0.1"/>
         <server name="DB_CONNECTION" value="mysql"/>
+        <server name="DB_HOST" value="localhost"/>
         <server name="DB_DATABASE" value="enso"/>
         <server name="DB_USERNAME" value="root"/>
         <server name="DB_PASSWORD" value="password"/>
