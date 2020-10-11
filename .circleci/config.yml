@@ -3,6 +3,10 @@
 # Check https://circleci.com/docs/2.0/language-php/ for more details
 #
 version: 2
+machine:
+  # Override /etc/hosts
+  hosts:
+      localhost: 127.0.0.1
 jobs:
   build:
     docker:
