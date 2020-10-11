@@ -115,7 +115,7 @@
         <server name="DB_HOST" value="127.0.0.1"/>
         <server name="DB_CONNECTION" value="mysql"/>
         <server name="DB_DATABASE" value="enso"/>
-        <server name="DB_USERNAME" value="enso"/>
+        <server name="DB_USERNAME" value="root"/>
         <server name="DB_PASSWORD" value="password"/>
         <server name="BCRYPT_ROUNDS" value="4"/>
         <server name="CACHE_DRIVER" value="array"/>
