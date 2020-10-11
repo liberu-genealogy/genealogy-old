@@ -73,4 +73,5 @@ jobs:
       - run: php artisan key:generate
       - run: php artisan migrate
       - run: mkdir -p build/logs
+      - run: cp -rf .env.testing-docker .env
       - run: php vendor/bin/phpunit
