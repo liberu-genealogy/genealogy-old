@@ -30,7 +30,7 @@ jobs:
           
       # - run: docker-build
       - run: wget https://dev.mysql.com/get/mysql-apt-config_0.8.15-1_all.deb
-      - run: dpkg -i mysql-apt-config_0.8.15-1_all.deb
+      - run: sudo dpkg -i mysql-apt-config_0.8.15-1_all.deb
       - run: sudo apt update # PHP CircleCI 2.0 Configuration File# PHP CircleCI 2.0 Configuration File sudo apt install zlib1g-dev libsqlite3-dev
       - run: sudo apt install -y mysql-client libxml2-dev libpng-dev libfreetype6-dev libjpeg62-turbo-dev libfreetype6-dev libpng-dev libjpeg-dev libzip-dev 
       - run: sudo docker-php-ext-install zip pdo_mysql bcmath pcntl soap gd
