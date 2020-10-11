@@ -21,6 +21,7 @@ before_install:
 
 before_script:
   - cp .env.testing .env
+  - php artisan config:cache --env=testing
   - composer self-update
   - composer install --no-interaction
   - php artisan key:generate
