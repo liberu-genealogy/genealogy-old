@@ -70,6 +70,7 @@ jobs:
       - run:
           name: Mysql database
           command: mysql  -h 127.0.0.1 -u root -ppassword -e "create database enso;"
+      - run sudo echo "localhost 127.0.0.1" >> /etc/hosts
       - run: cp .env.testing .env
       - run: php artisan key:generate
       - run: php artisan migrate
