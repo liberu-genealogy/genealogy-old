@@ -68,8 +68,7 @@ jobs:
             - node_modules
       - run:
           name: Mysql database
-          command: mysql  -h 127.0.0.1 -u root -e "create database enso;"
-          command: mysql -uroot -p -e "GRANT ALL PRIVILEGES ON enso.* TO enso@127.0.0.1 IDENTIFIED BY 'password'"
+          command: mysql  -h 127.0.0.1 -u root -e "create database enso;";mysql -uroot -p -e "GRANT ALL PRIVILEGES ON enso.* TO enso@127.0.0.1 IDENTIFIED BY 'password'"
       - run: cp .env.testing .env
       - run: php artisan key:generate
       - run: php artisan migrate
