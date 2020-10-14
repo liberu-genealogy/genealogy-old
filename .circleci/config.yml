@@ -89,4 +89,6 @@ jobs:
       - run: mysql  -h 127.0.0.1 -u root -ppassword -e "drop database enso;"
       - run: mysql  -h 127.0.0.1 -u root -ppassword -e "create database enso;"
       - run: mkdir -p build/logs
-      - run: php vendor/bin/phpunit
+      - run: php artisan test
+  #    - run: php vendor/bin/phpunit
+  
