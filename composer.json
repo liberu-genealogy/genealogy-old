@@ -7,6 +7,8 @@
         "doctrine/dbal": "^2.8",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
+        "genealogiawebsite/laravel-gedcom": "^2.0",
+        "genealogiawebsite/multitenancy": "^2.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel-enso/activity-log": "^4.0",
         "laravel-enso/calendar": "^2.0",
@@ -24,8 +26,6 @@
         "laravel/telescope": "^3.1",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
-        "genealogiawebsite/laravel-gedcom": "^2.0",
-        "genealogiawebsite/multitenancy": "^2.0",
         "pusher/pusher-php-server": "^4.1",
         "sentry/sentry-laravel": "^1.0.0"
     },
