@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use CompanySeeder;
-use CustomPermissionSeeder;
+use Database\Seeders\CompanySeeder;
+use Database\Seeders\CustomPermissionSeeder;
 use Illuminate\Database\Seeder;
 use LaravelEnso\Core\Database\Seeders\UserGroupSeeder;
 use LaravelEnso\Core\Database\Seeders\UserSeeder;
