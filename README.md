@@ -1,8 +1,8 @@
 # Modular Genealogy Software
- ![Latest Stable Version](https://img.shields.io/github/release/modularsoftware/genealogy.svg) 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/modularsoftware/genealogy/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/modularsoftware/genealogy/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/modularsoftware/genealogy/badges/build.png?b=master)](https://scrutinizer-ci.com/g/modularsoftware/genealogy/build-status/master)
-[![Code Intelligence Status](https://scrutinizer-ci.com/g/modularsoftware/genealogy/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
+ ![Latest Stable Version](https://img.shields.io/github/release/genealogiawebsite/genealogy.svg) 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/genealogiawebsite/genealogy/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/genealogiawebsite/genealogy/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/genealogiawebsite/genealogy/badges/build.png?b=master)](https://scrutinizer-ci.com/g/genealogiawebsite/genealogy/build-status/master)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/genealogiawebsite/genealogy/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 [![StyleCI](https://github.styleci.io/repos/135390590/shield?branch=master)](https://github.styleci.io/repos/135390590)
 [![CodeFactor](https://www.codefactor.io/repository/github/genealogiawebsite/genealogy/badge/master)](https://www.codefactor.io/repository/github/genealogiawebsite/genealogy/overview/master)
 [![codebeat badge](https://codebeat.co/badges/911f9e33-212a-4dfa-a860-751cdbbacff7)](https://codebeat.co/projects/github-com-modulargenealogy-genealogy-master)
