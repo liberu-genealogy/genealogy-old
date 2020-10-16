@@ -1,4 +1,4 @@
-# Modular Genealogy Software
+## Genealogia Open Source Family Tree Software
  ![Latest Stable Version](https://img.shields.io/github/release/genealogiawebsite/genealogy.svg) 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/genealogiawebsite/genealogy/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/genealogiawebsite/genealogy/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/genealogiawebsite/genealogy/badges/build.png?b=master)](https://scrutinizer-ci.com/g/genealogiawebsite/genealogy/build-status/master)
