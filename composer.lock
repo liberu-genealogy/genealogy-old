@@ -1174,16 +1174,16 @@
         },
         {
             "name": "genealogiawebsite/laravel-gedcom",
-            "version": "v2.0.12",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/genealogiawebsite/laravel-gedcom.git",
-                "reference": "ab57094cefba54c09515508e0260390b442c656b"
+                "reference": "98b8590cb5ab42bed40d3cd9a6ec93975a7ab50c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/genealogiawebsite/laravel-gedcom/zipball/ab57094cefba54c09515508e0260390b442c656b",
-                "reference": "ab57094cefba54c09515508e0260390b442c656b",
+                "url": "https://api.github.com/repos/genealogiawebsite/laravel-gedcom/zipball/98b8590cb5ab42bed40d3cd9a6ec93975a7ab50c",
+                "reference": "98b8590cb5ab42bed40d3cd9a6ec93975a7ab50c",
                 "shasum": ""
             },
             "require": {
@@ -1213,7 +1213,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-09T19:50:46+00:00"
+            "time": "2020-10-16T18:24:46+00:00"
         },
         {
             "name": "genealogiawebsite/multitenancy",
@@ -13267,16 +13267,16 @@
         },
         {
             "name": "scrivo/highlight.php",
-            "version": "v9.18.1.2",
+            "version": "v9.18.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/scrivo/highlight.php.git",
-                "reference": "efb6e445494a9458aa59b0af5edfa4bdcc6809d9"
+                "reference": "6a1699707b099081f20a488ac1f92d682181018c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/scrivo/highlight.php/zipball/efb6e445494a9458aa59b0af5edfa4bdcc6809d9",
-                "reference": "efb6e445494a9458aa59b0af5edfa4bdcc6809d9",
+                "url": "https://api.github.com/repos/scrivo/highlight.php/zipball/6a1699707b099081f20a488ac1f92d682181018c",
+                "reference": "6a1699707b099081f20a488ac1f92d682181018c",
                 "shasum": ""
             },
             "require": {
@@ -13338,7 +13338,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-08-27T03:24:44+00:00"
+            "time": "2020-10-16T07:43:22+00:00"
         },
         {
             "name": "sebastian/cli-parser",
