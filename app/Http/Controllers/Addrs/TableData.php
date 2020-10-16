@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Addresses;
+namespace App\Http\Controllers\Addrs;
 
 use App\Tables\Builders\AddrTable;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\Traits\Init;
+use LaravelEnso\Tables\Traits\Data;
 
-class InitTable extends Controller
+class TableData extends Controller
 {
-    use Init;
+    use Data;
 
     protected string $tableClass = AddrTable::class;
 }

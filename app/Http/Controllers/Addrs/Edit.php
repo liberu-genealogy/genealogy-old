@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Addresses;
+namespace App\Http\Controllers\Addrs;
 
 use App\Addr;
 use App\Forms\Builders\AddrForm;
