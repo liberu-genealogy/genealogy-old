@@ -1,4 +1,5 @@
 <?php
+namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use LaravelEnso\Companies\Enums\Statuses;
@@ -17,7 +18,7 @@ class CompanySeeder extends Seeder
 
     private function company()
     {
-        return factory(Company::class)->create([
+        return Company::create([
             'name' => 'Admin Root',
             'is_tenant' => 0,
             'email' => 'admin@genealogia.co.uk',
