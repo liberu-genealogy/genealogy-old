@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Addresses;
+namespace App\Http\Controllers\Addrs;
 
 use App\Tables\Builders\AddrTable;
 use Illuminate\Routing\Controller;
