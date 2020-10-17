@@ -1174,16 +1174,16 @@
         },
         {
             "name": "genealogiawebsite/laravel-gedcom",
-            "version": "v2.1.0",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/genealogiawebsite/laravel-gedcom.git",
-                "reference": "98b8590cb5ab42bed40d3cd9a6ec93975a7ab50c"
+                "reference": "53ea04464c0ce045da4bf96fe6a5831a3fbf409d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/genealogiawebsite/laravel-gedcom/zipball/98b8590cb5ab42bed40d3cd9a6ec93975a7ab50c",
-                "reference": "98b8590cb5ab42bed40d3cd9a6ec93975a7ab50c",
+                "url": "https://api.github.com/repos/genealogiawebsite/laravel-gedcom/zipball/53ea04464c0ce045da4bf96fe6a5831a3fbf409d",
+                "reference": "53ea04464c0ce045da4bf96fe6a5831a3fbf409d",
                 "shasum": ""
             },
             "require": {
@@ -1213,7 +1213,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-16T18:24:46+00:00"
+            "time": "2020-10-17T14:25:37+00:00"
         },
         {
             "name": "genealogiawebsite/multitenancy",
@@ -7880,7 +7880,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-18T14:27:32+00:00"
+            "time": "2020-10-07T15:23:00+00:00"
         },
         {
             "name": "symfony/css-selector",
