@@ -12,7 +12,7 @@ jobs:
     docker:
       # Specify the version you desire here
       - image: circleci/php:7.4-node-browsers
-        environment: 
+        environment:
           working_directory: ~/genealogy
           DB_CONNECTION: mysql
           DB_HOST: 127.0.0.1
@@ -27,8 +27,9 @@ jobs:
       #  command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_bin --innodb-large-prefix=true --innodb-file-format=Barracuda
         command: mysqld
         environment:
-          MYSQL_USER: root
-          MYSQL_ROOT_PASSWORD: password
+          MYSQL_USER: enso
+          MYSQL_PASSWORD: password
+          MYSQL_ALLOW_EMPTY_PASSWORD: true
           MYSQL_ROOT_HOST: "%"
           DB_HOST: 127.0.0.1
           DB_PORT: 3306
@@ -40,14 +41,14 @@ jobs:
       - checkout
       #- setup_remote_docker:
       #    docker_layer_caching: true
-          
+
       # - run: docker-build
       - run: sudo apt-get update
       - run: sudo apt-get install lsb-release
       - run: wget https://dev.mysql.com/get/mysql-apt-config_0.8.15-1_all.deb
       - run: sudo dpkg -i mysql-apt-config_0.8.15-1_all.deb
       - run: sudo apt update # PHP CircleCI 2.0 Configuration File# PHP CircleCI 2.0 Configuration File sudo apt install zlib1g-dev libsqlite3-dev
-      - run: sudo apt install -y mysql-client libxml2-dev libpng-dev libfreetype6-dev libjpeg62-turbo-dev libfreetype6-dev libpng-dev libjpeg-dev libzip-dev 
+      - run: sudo apt install -y mysql-client libxml2-dev libpng-dev libfreetype6-dev libjpeg62-turbo-dev libfreetype6-dev libpng-dev libjpeg-dev libzip-dev
       #- run: sudo docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-webp-dir=/usr/include/  --with-jpeg-dir=/usr/include/ && \
       - run: sudo docker-php-ext-configure gd --with-freetype --with-jpeg
       - run: sudo docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd
@@ -81,12 +82,12 @@ jobs:
             - node_modules
       - run:
           name: Mysql database
-          command: mysql  -h 127.0.0.1 -u root -ppassword -e "create database enso;"
+          command: mysql  -h 127.0.0.1 -u root -e "create database enso;"
     #  - run: sudo echo "localhost 127.0.0.1" >> /etc/hosts
       - run: cp .env.testing .env
       - run: php artisan key:generate
       - run: php artisan migrate
       - run: mkdir -p build/logs
-      - run: php artisan test
-  #    - run: php vendor/bin/phpunit
-  
+  #   - run: php artisan test
+      - run: php vendor/bin/phpunit
+
