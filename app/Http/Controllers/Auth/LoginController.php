@@ -32,12 +32,14 @@ class LoginController extends Controller
         $this->maxAttempts = config('enso.auth.maxLoginAttempts');
     }
 
+/**
     public function logout(Request $request)
     {
         $this->guard()->logout();
 
         $request->session()->invalidate();
     }
+**/
 
     protected function attemptLogin(Request $request)
     {
