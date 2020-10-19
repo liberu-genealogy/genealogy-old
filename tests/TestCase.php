@@ -18,6 +18,5 @@ abstract class TestCase extends BaseTestCase
         parent::setUp();
 
         $this->withoutMiddleware(\App\Http\Middleware\Multitenant::class);
-        \Illuminate\Support\Facades\Request::setSession($this->app['session.store']);
     }
 }
