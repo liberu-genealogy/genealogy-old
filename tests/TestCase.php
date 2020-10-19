@@ -18,6 +18,5 @@ abstract class TestCase extends BaseTestCase
         parent::setUp();
 
         $this->withoutMiddleware(\App\Http\Middleware\Multitenant::class);
-        $this->app['request']->setSession($this->app['session']->driver('array'));
     }
 }
