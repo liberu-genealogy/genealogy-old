@@ -114,7 +114,7 @@
     <server name="DB_DATABASE" value=":memory:"/>
     <server name="MAIL_MAILER" value="array"/>
     <server name="QUEUE_CONNECTION" value="sync"/>
-    <server name="SESSION_DRIVER" value="array" force="true"/>
+    <server name="SESSION_DRIVER" value="array"/>
     <ini name="memory_limit" value="-1"/>
   </php>
 </phpunit>
