@@ -22,6 +22,7 @@ class ValidatePersonRequest extends EnsoPersonRequest
             'title' => 'integer|nullable',
             'givn' => 'max:100|nullable',
             'surn' => 'string|max:100|nullable',
+            'name' => 'string|max:100|nullable',
             'uid' => ['string', 'nullable', $this->unique('uid')],
             'email' => ['email', 'nullable', $this->unique('email')],
             'phone' => 'max:30|nullable',
