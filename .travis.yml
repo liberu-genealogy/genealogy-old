@@ -23,6 +23,7 @@ before_script:
   - cp .env.testing .env
   - composer self-update
   - composer install --no-interaction
+  - chmod -R 777 storage
   - php artisan key:generate
   - php artisan migrate
 
