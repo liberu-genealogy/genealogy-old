@@ -1174,16 +1174,16 @@
         },
         {
             "name": "genealogiawebsite/laravel-gedcom",
-            "version": "v2.1.0",
+            "version": "v2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/genealogiawebsite/laravel-gedcom.git",
-                "reference": "98b8590cb5ab42bed40d3cd9a6ec93975a7ab50c"
+                "reference": "53ea04464c0ce045da4bf96fe6a5831a3fbf409d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/genealogiawebsite/laravel-gedcom/zipball/98b8590cb5ab42bed40d3cd9a6ec93975a7ab50c",
-                "reference": "98b8590cb5ab42bed40d3cd9a6ec93975a7ab50c",
+                "url": "https://api.github.com/repos/genealogiawebsite/laravel-gedcom/zipball/53ea04464c0ce045da4bf96fe6a5831a3fbf409d",
+                "reference": "53ea04464c0ce045da4bf96fe6a5831a3fbf409d",
                 "shasum": ""
             },
             "require": {
@@ -1213,7 +1213,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-16T18:24:46+00:00"
+            "time": "2020-10-17T14:25:37+00:00"
         },
         {
             "name": "genealogiawebsite/multitenancy",
@@ -11537,25 +11537,25 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.7.3",
+            "version": "2.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "5d5fe9bb3d656b514d455645b3addc5f7ba7714d"
+                "reference": "fa50d9db1c0c2fae99cf988d27023effda5524a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/5d5fe9bb3d656b514d455645b3addc5f7ba7714d",
-                "reference": "5d5fe9bb3d656b514d455645b3addc5f7ba7714d",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/fa50d9db1c0c2fae99cf988d27023effda5524a3",
+                "reference": "fa50d9db1c0c2fae99cf988d27023effda5524a3",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.5.9 || ^7.0",
+                "php": "^5.5.9 || ^7.0 || ^8.0",
                 "psr/log": "^1.0.1"
             },
             "require-dev": {
                 "mockery/mockery": "^0.9 || ^1.0",
-                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0",
+                "phpunit/phpunit": "^4.8.36 || ^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.5.8 || ^9.3.3",
                 "symfony/var-dumper": "^2.6 || ^3.0 || ^4.0 || ^5.0"
             },
             "suggest": {
@@ -11565,7 +11565,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.6-dev"
+                    "dev-master": "2.7-dev"
                 }
             },
             "autoload": {
@@ -11594,7 +11594,7 @@
                 "throwable",
                 "whoops"
             ],
-            "time": "2020-06-14T09:00:00+00:00"
+            "time": "2020-10-17T09:00:00+00:00"
         },
         {
             "name": "friendsofphp/php-cs-fixer",
