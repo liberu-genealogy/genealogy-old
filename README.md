@@ -7,6 +7,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/genealogiawebsite/genealogy/badge/master)](https://www.codefactor.io/repository/github/genealogiawebsite/genealogy/overview/master)
 [![codebeat badge](https://codebeat.co/badges/911f9e33-212a-4dfa-a860-751cdbbacff7)](https://codebeat.co/projects/github-com-modulargenealogy-genealogy-master)
 [![Build Status](https://travis-ci.org/genealogiawebsite/genealogy.svg?branch=master)](https://travis-ci.org/genealogiawebsite/genealogy)
+[![CircleCI](https://circleci.com/gh/genealogiawebsite/genealogy.svg?style=svg)](https://circleci.com/gh/genalogiawebsite/genealogy)
 
 
 ## Description
