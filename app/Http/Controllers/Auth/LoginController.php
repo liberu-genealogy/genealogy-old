@@ -90,7 +90,7 @@ class LoginController extends Controller
     {
         $user = User::whereEmail($request->input('email'))->first();
 
-        if (! App::runningUnitTests()) {
+        if (! \App::runningUnitTests()) {
             $company = $user->company();
             $tanent = false;
             if ($company) {
