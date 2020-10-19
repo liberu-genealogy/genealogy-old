@@ -18,6 +18,7 @@ services:
 
 before_install:
   - mysql -e 'create database enso;'
+  - mysql -uroot e "GRANT ALL PRIVILEGES ON enso.* TO root@127.0.0.1 IDENTIFIED BY 'password'"
 
 before_script:
   - cp .env.testing .env
@@ -25,8 +26,8 @@ before_script:
   - composer install --no-interaction
   - php artisan key:generate
   - php artisan migrate
-  - php artisan config:clear
-  - php artisan test
+
+script: vendor/bin/phpunit
 
 after_success:
   - curl -s $DEPLOY_WEBHOOK
