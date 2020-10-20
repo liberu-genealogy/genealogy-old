@@ -1174,16 +1174,16 @@
         },
         {
             "name": "genealogiawebsite/laravel-gedcom",
-            "version": "v2.2.0",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/genealogiawebsite/laravel-gedcom.git",
-                "reference": "53ea04464c0ce045da4bf96fe6a5831a3fbf409d"
+                "reference": "f633a8682bdc769394e2eb35bf5c332d63dc42e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/genealogiawebsite/laravel-gedcom/zipball/53ea04464c0ce045da4bf96fe6a5831a3fbf409d",
-                "reference": "53ea04464c0ce045da4bf96fe6a5831a3fbf409d",
+                "url": "https://api.github.com/repos/genealogiawebsite/laravel-gedcom/zipball/f633a8682bdc769394e2eb35bf5c332d63dc42e7",
+                "reference": "f633a8682bdc769394e2eb35bf5c332d63dc42e7",
                 "shasum": ""
             },
             "require": {
@@ -1213,7 +1213,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-17T14:25:37+00:00"
+            "time": "2020-10-20T12:26:06+00:00"
         },
         {
             "name": "genealogiawebsite/multitenancy",
