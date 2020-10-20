@@ -90,8 +90,29 @@ class LoginController extends Controller
     {
         $user = User::whereEmail($request->input('email'))->first();
 
+        if (! optional($user)->currentPasswordIs($request->input('password'))) {
+            return;
+        }
+
+        if (! $user->email) {
+            throw ValidationException::withMessages([
+                'email' => 'Email does not exist.',
+            ]);
+        }
+
+        if ($user->passwordExpired()) {
+            throw ValidationException::withMessages([
+                'email' => 'Password expired. Please set a new one.',
+            ]);
+        }
+        if ($user->isInactive()) {
+            throw ValidationException::withMessages([
+                'email' => 'Account disabled. Please contact the administrator.',
+            ]);
+        }
+
         if (! \App::runningUnitTests()) {
-            $company = $user->company();
+            $company = $user->person->company();
             $tanent = false;
             if ($company) {
                 $tanent = true;
@@ -136,20 +157,6 @@ class LoginController extends Controller
                 CreateDB::dispatch($company, $user_id);
                 Migration::dispatch($company_id, $user_id, $person_name, $user_email);
             }
-        }
-        if (! optional($user)->currentPasswordIs($request->input('password'))) {
-            return;
-        }
-
-        if ($user->passwordExpired()) {
-            throw ValidationException::withMessages([
-                'email' => 'Password expired. Please set a new one.',
-            ]);
-        }
-        if ($user->isInactive()) {
-            throw ValidationException::withMessages([
-                'email' => 'Account disabled. Please contact the administrator.',
-            ]);
         }
 
         return $user;
