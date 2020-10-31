@@ -8,20 +8,20 @@
     "packages": [
         {
             "name": "asm89/stack-cors",
-            "version": "v2.0.1",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/asm89/stack-cors.git",
-                "reference": "23f469e81c65e2fb7fc7bce371fbdc363fe32adf"
+                "reference": "8d8f88b3b3830916be94292c1fbce84433efb1aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asm89/stack-cors/zipball/23f469e81c65e2fb7fc7bce371fbdc363fe32adf",
-                "reference": "23f469e81c65e2fb7fc7bce371fbdc363fe32adf",
+                "url": "https://api.github.com/repos/asm89/stack-cors/zipball/8d8f88b3b3830916be94292c1fbce84433efb1aa",
+                "reference": "8d8f88b3b3830916be94292c1fbce84433efb1aa",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.0",
+                "php": "^7.0|^8.0",
                 "symfony/http-foundation": "~2.7|~3.0|~4.0|~5.0",
                 "symfony/http-kernel": "~2.7|~3.0|~4.0|~5.0"
             },
@@ -56,7 +56,7 @@
                 "cors",
                 "stack"
             ],
-            "time": "2020-05-31T07:17:05+00:00"
+            "time": "2020-10-29T16:03:21+00:00"
         },
         {
             "name": "barryvdh/laravel-snappy",
@@ -1100,22 +1100,22 @@
         },
         {
             "name": "fruitcake/laravel-cors",
-            "version": "v2.0.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fruitcake/laravel-cors.git",
-                "reference": "4b19bfc3bd422948af37a42a62fad7f49025894a"
+                "reference": "01de0fe5f71c70d1930ee9a80385f9cc28e0f63a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fruitcake/laravel-cors/zipball/4b19bfc3bd422948af37a42a62fad7f49025894a",
-                "reference": "4b19bfc3bd422948af37a42a62fad7f49025894a",
+                "url": "https://api.github.com/repos/fruitcake/laravel-cors/zipball/01de0fe5f71c70d1930ee9a80385f9cc28e0f63a",
+                "reference": "01de0fe5f71c70d1930ee9a80385f9cc28e0f63a",
                 "shasum": ""
             },
             "require": {
                 "asm89/stack-cors": "^2.0.1",
-                "illuminate/contracts": "^6|^7|^8",
-                "illuminate/support": "^6|^7|^8",
+                "illuminate/contracts": "^6|^7|^8|^9",
+                "illuminate/support": "^6|^7|^8|^9",
                 "php": ">=7.2",
                 "symfony/http-foundation": "^4|^5",
                 "symfony/http-kernel": "^4.3.4|^5"
@@ -1169,7 +1169,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-09-07T11:48:52+00:00"
+            "time": "2020-10-22T13:57:20+00:00"
         },
         {
             "name": "genealogiawebsite/laravel-gedcom",
@@ -5374,16 +5374,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "1.5.6",
+            "version": "1.5.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "a56e91e0fa1f6d0049153a9c34f63488f6b7ce61"
+                "reference": "11df9b36fd4f1d2b727a73bf14931d81373b9a54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/a56e91e0fa1f6d0049153a9c34f63488f6b7ce61",
-                "reference": "a56e91e0fa1f6d0049153a9c34f63488f6b7ce61",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/11df9b36fd4f1d2b727a73bf14931d81373b9a54",
+                "reference": "11df9b36fd4f1d2b727a73bf14931d81373b9a54",
                 "shasum": ""
             },
             "require": {
@@ -5465,7 +5465,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-17T21:33:03+00:00"
+            "time": "2020-10-31T13:49:32+00:00"
         },
         {
             "name": "league/flysystem",
