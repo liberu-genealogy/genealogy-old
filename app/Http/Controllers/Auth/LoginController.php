@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use LaravelEnso\Core\Models\User;
 use App\Traits\ConnectionTrait;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -11,9 +10,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 use LaravelEnso\Companies\Models\Company;
 use LaravelEnso\Core\Events\Login;
+use LaravelEnso\Core\Models\User;
+use LaravelEnso\Core\Traits\Logout;
 use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\Multitenancy\Services\Tenant;
-use LaravelEnso\Core\Traits\Logout;
 
 class LoginController extends Controller
 {
@@ -32,15 +32,14 @@ class LoginController extends Controller
         $this->maxAttempts = config('enso.auth.maxLoginAttempts');
     }
 
-/**
-    public function logout(Request $request)
-    {
-        $this->guard()->logout();
-
-        $request->session()->invalidate();
-    }
-**/
-
+    /**
+     * public function logout(Request $request)
+     * {
+     * $this->guard()->logout();
+     *
+     * $request->session()->invalidate();
+     * }
+     **/
     protected function attemptLogin(Request $request)
     {
         $this->user = $this->loggableUser($request);
@@ -119,18 +118,18 @@ class LoginController extends Controller
             }
             // set company id as default
             $main_company = $user->person->company();
-            if ($main_company !== null && !($user->isAdmin())) {
+            if ($main_company !== null && ! ($user->isAdmin())) {
                 $c_id = $main_company->id;
-                $db = Connections::Tenant . $c_id;
+                $db = Connections::Tenant.$c_id;
                 $this->setConnection(Connections::Tenant, $db);
             }
 
-            if ($main_company == null && !$user->isAdmin()) {
+            if ($main_company == null && ! $user->isAdmin()) {
 //          if ($main_company == null) {
                 $company_count = Company::count();
 
                 $company = Company::create([
-                    'name' => $user->email . ($company_count + 1),
+                    'name' => $user->email.($company_count + 1),
                     'email' => $user->email,
                     // 'is_active' => 1,
                     'is_tenant' => 1,
