@@ -353,7 +353,7 @@ use LaravelEnso\People\Http\Controllers\Update as PeopleUpdate;
  * Route::middleware(['guest'])
  * ->prefix('api')
  * ->group(
- * function() {
+ * function() {.
  *
  * Route::namespace('')
  * ->prefix('about')
