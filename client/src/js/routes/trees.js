@@ -1,7 +1,7 @@
-import routeImporter from '@core/modules/importers/routeImporter';
+import routeImporter from '@enso-ui/ui/src/modules/importers/routeImporter';
 
 const routes = routeImporter(require.context('./trees', false, /.*\.js$/));
-const RouterView = () => import('@core/bulma/pages/Router.vue');
+const RouterView = () => import('@enso-ui/ui/src/bulma/pages/Router.vue');
 
 export default {
     path: '/trees',
