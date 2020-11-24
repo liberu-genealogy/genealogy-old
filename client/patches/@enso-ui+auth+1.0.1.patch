@@ -599,11 +599,11 @@ index 0000000..208dc2f
 +    </style>
 diff --git a/node_modules/@enso-ui/auth/src/bulma/routes/register.js b/node_modules/@enso-ui/auth/src/bulma/routes/register.js
 new file mode 100644
-index 0000000..2babb8a
+index 0000000..1b643e6
 --- /dev/null
 +++ b/node_modules/@enso-ui/auth/src/bulma/routes/register.js
 @@ -0,0 +1,22 @@
-+import store from '@root/store';
++import store from '@enso-ui/ui/src/core/services/store';
 +
 +        const Register = () => import('../pages/auth/Register.vue');
 +
@@ -627,11 +627,11 @@ index 0000000..2babb8a
 +}];
 diff --git a/node_modules/@enso-ui/auth/src/bulma/routes/verify.js b/node_modules/@enso-ui/auth/src/bulma/routes/verify.js
 new file mode 100644
-index 0000000..5682839
+index 0000000..233ca25
 --- /dev/null
 +++ b/node_modules/@enso-ui/auth/src/bulma/routes/verify.js
 @@ -0,0 +1,22 @@
-+import store from '@root/store';
++import store from '@enso-ui/ui/src/core/services/store';
 +
 +        const Verify = () => import('../pages/auth/Verify.vue');
 +
