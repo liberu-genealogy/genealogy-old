@@ -19,7 +19,7 @@ smart matching with other servers.
 
 ## Demo
 
-https://genealogia.co.uk/ - register a free account
+https://www.familytree365.com - register a free account
 
 <!--h-->
 ### Official Laravel Enso Documentation
@@ -57,7 +57,7 @@ for the back-end API (which you've configured at step 4)
 
 ### Thanks
 
-Built with Laravel Enso 4.x which is crafted on Laravel 7, Bulma, Vuejs and:
+Built with Laravel Enso 4.x which is crafted on Laravel 8, Bulma, Vuejs and:
 
 [Vue Router](https://router.vuejs.org/en), [Vuex](https://vuex.vuejs.org/en/), [Axios](https://github.com/axios/axios),
 [Font awesome 5](https://fontawesome.com), [Animate.css](https://daneden.github.io/animate.css/), 
