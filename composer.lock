@@ -4538,16 +4538,16 @@
         },
         {
             "name": "laravel-enso/tasks",
-            "version": "1.1.7",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/tasks.git",
-                "reference": "ff86cf14af3e38536d8b939280e6de98a18e1f1c"
+                "reference": "af5ed11e7279c64eef0ba774376365e9d68eeb1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/tasks/zipball/ff86cf14af3e38536d8b939280e6de98a18e1f1c",
-                "reference": "ff86cf14af3e38536d8b939280e6de98a18e1f1c",
+                "url": "https://api.github.com/repos/laravel-enso/tasks/zipball/af5ed11e7279c64eef0ba774376365e9d68eeb1f",
+                "reference": "af5ed11e7279c64eef0ba774376365e9d68eeb1f",
                 "shasum": ""
             },
             "type": "library",
@@ -4557,6 +4557,7 @@
                         "LaravelEnso\\Tasks\\AppServiceProvider",
                         "LaravelEnso\\Tasks\\AuthServiceProvider",
                         "LaravelEnso\\Tasks\\BroadcastServiceProvider",
+                        "LaravelEnso\\Tasks\\WebsocketServiceProvider",
                         "LaravelEnso\\Tasks\\EnumServiceProvider"
                     ]
                 }
@@ -4592,7 +4593,7 @@
                 "laravel-enso",
                 "task-management"
             ],
-            "time": "2020-11-08T13:52:23+00:00"
+            "time": "2020-11-19T11:50:28+00:00"
         },
         {
             "name": "laravel-enso/teams",
@@ -11687,6 +11688,7 @@
                 "faker",
                 "fixtures"
             ],
+            "abandoned": true,
             "time": "2019-12-12T13:22:17+00:00"
         },
         {
