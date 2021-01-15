@@ -5061,25 +5061,25 @@
         },
         {
             "name": "laravel/horizon",
-            "version": "v5.4.0",
+            "version": "v5.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "d08d10ee12f53b7ba2cbb938eb23857e93fe51d3"
+                "reference": "9f0ed546f82e2290e6c8de6151d4da8d29f34a0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/d08d10ee12f53b7ba2cbb938eb23857e93fe51d3",
-                "reference": "d08d10ee12f53b7ba2cbb938eb23857e93fe51d3",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/9f0ed546f82e2290e6c8de6151d4da8d29f34a0f",
+                "reference": "9f0ed546f82e2290e6c8de6151d4da8d29f34a0f",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-pcntl": "*",
                 "ext-posix": "*",
-                "illuminate/contracts": "^8.0",
-                "illuminate/queue": "^8.0",
-                "illuminate/support": "^8.0",
+                "illuminate/contracts": "^8.17",
+                "illuminate/queue": "^8.17",
+                "illuminate/support": "^8.17",
                 "nesbot/carbon": "^2.17",
                 "php": "^7.3|^8.0",
                 "ramsey/uuid": "^4.0",
@@ -5130,7 +5130,7 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2020-11-03T16:55:40+00:00"
+            "time": "2021-01-12T16:51:53+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -14390,6 +14390,7 @@
                 }
             ],
             "description": "A security checker for your composer.lock",
+            "abandoned": "https://github.com/fabpot/local-php-security-checker",
             "time": "2019-11-01T13:20:14+00:00"
         },
         {
