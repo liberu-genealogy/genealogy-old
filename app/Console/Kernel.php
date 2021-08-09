@@ -4,27 +4,28 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Facades\App;
 
 class Kernel extends ConsoleKernel
 {
-    /**
-     * The Artisan commands provided by your application.
-     *
-     * @var array
-     */
-    protected $commands = [
-        Commands\CreateDatabase::class,
-        Commands\ClearStorage::class,
-        Commands\DropDatabase::class,
-        Commands\DropTables::class,
-        Commands\Migrate::class,
-    ];
+    protected $commands = [];
+
+    private Schedule $schedule;
 
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('telescope:prune')->daily();
+        if (App::runningUnitTests()) {
+            return;
+        }
 
-        // $schedule->command('enso:calendar:send-reminders')->everyMinute();
+        $this->schedule = $schedule;
+
+        $this->pruneFailedJobs()
+            ->horizonSnapshot();
+
+        if (App::isProduction()) {
+            //
+        }
     }
 
     protected function commands()
@@ -32,5 +33,19 @@ class Kernel extends ConsoleKernel
         $this->load(__DIR__.'/Commands');
 
         require base_path('routes/console.php');
+    }
+
+    private function pruneFailedJobs(): self
+    {
+        $this->schedule->command('queue:prune-failed', ['--hours' => 7 * 24])
+            ->weekly();
+
+        return $this;
+    }
+
+    private function horizonSnapshot(): void
+    {
+        $this->schedule->command('horizon:snapshot')
+            ->everyFiveMinutes();
     }
 }

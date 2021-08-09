@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Genealogy'),
+    'name' => env('APP_NAME', 'Laravel Enso'),
 
     /*
     |--------------------------------------------------------------------------
@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'Europe/London',
+    'timezone' => 'Europe/Bucharest',
 
     /*
     |--------------------------------------------------------------------------
@@ -176,7 +176,6 @@ return [
         App\Providers\HorizonServiceProvider::class,
         App\Providers\TelescopeServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\LoggerServiceProvider::class,
         App\Providers\CalendarServiceProvider::class,
     ],
 

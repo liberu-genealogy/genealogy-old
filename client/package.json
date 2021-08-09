@@ -1,21 +1,13 @@
 {
-    "name": "genealogy",
+    "name": "enso",
     "private": true,
     "description": "[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework) [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework) [![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework) [![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework) [![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)",
-    "author": "Genealogia Ltd",
+    "author": "Adrian Ocneanu",
     "scripts": {
-        "serve": "npx run-script-os",
-        "serve:default": "vue-cli-service serve",
-        "serve:windows": "node_modules\\.bin\\vue-cli-service serve",
-        "build": "npx run-script-os",
-        "build:default": "rm -rf ..\\/public/{js,themes,themes-rtl,images} && vue-cli-service build --no-clean && rm -rf ../public/js/*.map",
-        "build:windows": "cd ../public && rd /s /q index.html & rd /s /q js & rd /s /q themes & rd /s /q themes-rtl & rd /s /q images & cd ../client && node_modules\\.bin\\vue-cli-service lint & cross-env NODE_ENV=production node_modules\\.bin\\vue-cli-service build --no-clean --skip-plugins thread-loader & cd ..\\public\\js & rd /s /q *.map & cd ..\\..",
-        "dev": "npx run-script-os",
-        "dev:default": "rm -rf ../public/{js,themes,themes-rtl,images} && vue-cli-service build --no-clean --mode development",
-        "dev:windows": "cd ../public && rd /s /q index.html && rd /s /q js & rd /s /q themes & rd /s /q themes-rtl & rd /s /q images & cd ../client && node_modules\\.bin\\vue-cli-service lint & cross-env NODE_ENV=development node_modules\\.bin\\vue-cli-service build --no-clean --mode development --skip-plugins thread-loader",
-        "lint": "npx run-script-os",
-        "lint:default": "vue-cli-service lint",
-        "lint:windows": "node_modules\\.bin\\vue-cli-service lint",
+        "serve": "vue-cli-service serve",
+        "dev": "rm -rf ../public/{js,themes,themes-rtl,images} && vue-cli-service build --no-clean --mode development",
+        "build": "rm -rf ../public/{js,themes,themes-rtl,images} && vue-cli-service build --no-clean && rm -rf ../public/js/*.map",
+        "lint": "vue-cli-service lint",
         "postinstall": "opencollective-postinstall && patch-package",
         "prod": "npm run build"
     },
@@ -33,6 +25,7 @@
         "@enso-ui/mixins": "^2.0",
         "@enso-ui/tables": "^2.0",
         "@enso-ui/tasks": "^2.0",
+        "@enso-ui/teams": "^3.0",
         "@enso-ui/themes": "^2.0",
         "@enso-ui/transitions": "^1.0",
         "@enso-ui/tutorials": "^3.0",
@@ -44,12 +37,9 @@
         "@fortawesome/free-solid-svg-icons": "^5.2.0",
         "@fortawesome/vue-fontawesome": "^0.1.1",
         "animate.css": "^4.0.0",
-        "axios": "^0.21.1",
+        "axios": "^0.19.0",
         "bulma": "^0.8.0",
         "core-js": "^3.3.2",
-        "d3": "^5.16.0",
-        "d3-dag": "^0.3.5",
-        "d3-tip": "^0.9.1",
         "eslint-import-resolver-alias": "^1.1.2",
         "extract-text-webpack-plugin": "^3.0.2",
         "opencollective": "^1.0.3",
@@ -83,7 +73,7 @@
         "eslint-plugin-vue": "^6.0.0",
         "file-loader": "^1.1.11",
         "ignore-assets-webpack-plugin": "^2.0.1",
-        "mini-css-extract-plugin": "^0.9.0",
+        "mini-css-extract-plugin": "^0.8.0",
         "node-sass": "^4.9.0",
         "postcss-cssnext": "^3.1.0",
         "postcss-import": "^12.0.1",
@@ -120,7 +110,7 @@
     ],
     "collective": {
         "type": "opencollective",
-        "url": "https://opencollective.com/genealogy"
+        "url": "https://opencollective.com/Enso"
     },
     "directories": {
         "test": "tests"
@@ -133,6 +123,6 @@
     "license": "ISC",
     "repository": {
         "type": "git",
-        "url": "http://github.com/genealogiawebsite/genealogy"
+        "url": "http://github.com/laravel-enso/enso"
     }
 }
