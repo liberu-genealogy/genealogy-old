@@ -2,11 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Person;
-use App\Traits\ConnectionTrait;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Auth;
 use LaravelEnso\Charts\Factories\Bar;
 use LaravelEnso\Charts\Factories\Bubble;
 use LaravelEnso\Charts\Factories\Doughnut;
@@ -14,14 +10,9 @@ use LaravelEnso\Charts\Factories\Line;
 use LaravelEnso\Charts\Factories\Pie;
 use LaravelEnso\Charts\Factories\Polar;
 use LaravelEnso\Charts\Factories\Radar;
-use LaravelEnso\Multitenancy\Enums\Connections;
-use LaravelEnso\Multitenancy\Services\Tenant;
 
 class ChartController extends Controller
 {
-    use ConnectionTrait;
-    // use SystemConnection;
-
     public function line()
     {
         return (new Line())
@@ -48,21 +39,10 @@ class ChartController extends Controller
 
     public function pie()
     {
-        // \DB::table('some')->get();
-        $male = Person::where('sex', 'M')->get()->count();
-        $female = Person::where('sex', 'F')->get()->count();
-        $unknown = Person::whereNull('sex')->get()->count();
-        $sv = \Session::get('db', env('DB_DATABASE'));
-        $user = Auth::user();
-        $companies = $user->person->company();
-        $current_db = \Session::get('companyId');
-
-        // return $current_db;
-        // return $sv;
         return (new Pie())
-            ->title('Genders')
-            ->labels(['Male', 'Female', 'Unknown'])
-            ->datasets([$male, $female, $unknown])
+            ->title('Colors')
+            ->labels(['Green', 'Red', 'Azzure'])
+            ->datasets([400, 50, 100])
             ->get();
     }
 
@@ -107,31 +87,5 @@ class ChartController extends Controller
                 1 => [[2010, 48, 1700], [1211, 67, 1200], [2012, 96, 1233], [813, 35, 3000]],
                 2 => [[1510, 44, 2000], [811, 62, 1500], [212, 55, 1299], [1213, 39, 4000]],
             ])->get();
-    }
-
-    // change database to use
-    public function changedb(Request $request)
-    {
-        $company_id = $request->get('comid');
-        if (! empty($company_id)) {
-            $db = Connections::Tenant.$company_id;
-            $this->setConnection(Connections::Tenant, $db);
-        } else {
-            $this->setConnection('mysql');
-        }
-        $conn = $this->getConnection();
-
-        return $conn;
-    }
-
-    // get companies of user.
-    public function getDB()
-    {
-        $user = Auth::user();
-        $companies = $user->person->companies()->get();
-        $ret = [];
-        $ret['company'] = $companies;
-
-        return $ret;
     }
 }
