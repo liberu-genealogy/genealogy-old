@@ -54,6 +54,7 @@
         "vue": "^2.6.10",
         "vue-cal": "^2.0.1",
         "vue-router": "^3.0.1",
+        "vue-select": "^3.12.2",
         "vuex": "^3.0.0",
         "vuex-router-sync": "^5.0.0"
     },
