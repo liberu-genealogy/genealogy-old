@@ -110,10 +110,10 @@ export default {
     ]
   },
 
-  echo: {
-    broadcaster: 'socket.io',
-    host: `${process.env.HOSTNAME}:${process.env.ECHO_PORT}`,
-  },
+//  echo: {
+//    broadcaster: 'socket.io',
+//    host: `${process.env.HOSTNAME}:${process.env.ECHO_PORT}`,
+//  },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
@@ -123,7 +123,7 @@ export default {
     '@nuxtjs/auth',
     '@nuxt/content',
     '@nuxtjs/sitemap',
-    'nuxt-socket-io',
+//    'nuxt-socket-io',
     [
       'nuxt-fontawesome', {
       imports: [
@@ -185,13 +185,13 @@ export default {
     },
     localStorage: false
   },
-  io: {
-    // module options
-    sockets: [{
-      name: 'main',
-      url: 'http://localhost:3000'
-    }]
-  },
+//  io: {
+//   // module options
+//    sockets: [{
+//      name: 'main',
+//      url: 'http://localhost:3000'
+//    }]
+//  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
