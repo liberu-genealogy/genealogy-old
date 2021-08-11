@@ -8,7 +8,7 @@ export default {
 
   server: {
     host: process.env.HOST ||'localhost' // default: localhost
-  }
+  },
 
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL || 'http://localhost:8000',
