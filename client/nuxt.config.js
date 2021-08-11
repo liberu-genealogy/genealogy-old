@@ -6,6 +6,10 @@ export default {
   // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
   ssr: false,
 
+  server: {
+    host: process.env.HOST ||'localhost' // default: localhost
+  }
+
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL || 'http://localhost:8000',
     appEnv: process.env.APP_ENV || 'production'
