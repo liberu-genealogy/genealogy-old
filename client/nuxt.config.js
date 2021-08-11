@@ -81,7 +81,9 @@ export default {
     {src: '~/plugins/vue-fb-customer-chat.js', ssr: false},
 //    {src: '~/plugins/vue-instantsearch.js', ssr: false},
     // {src: '~/plugins/echo.js', ssr: false},
-  ],
+//  '@babel/plugin-proposal-class-properties',
+//  '@babel/plugin-proposal-private-methods',
+],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -214,6 +216,10 @@ export default {
         }
       }
     },
+  babel: {
+    plugins: [['@babel/plugin-proposal-private-methods', { loose: true }]],
+    plugins: [['@babel/plugin-proposal-private-property-in-object', { loose: true }]]
+  },
     transpile: ['d3-dag']
   }
 }
