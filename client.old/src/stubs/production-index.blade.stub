@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ app()->getLocale() }}">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Genealogia - Family Trees">
+    <meta property="og:description" content="Build your own family trees.">
+    <meta property="og:image" content="https://www.genealogia.co.uk/images/thumbnail.png">
+    <meta property="og:url" content="https://www.genealogia.co.uk">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <title>Genealogia</title>
+</head>
+<body>
+<noscript>
+    <strong>We're sorry but the frontend doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+</noscript>
+<div id="app"></div>
+<!-- built files will be auto injected -->
+</body>
+</html>
