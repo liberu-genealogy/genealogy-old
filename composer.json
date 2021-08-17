@@ -1,10 +1,10 @@
 {
-    "name": "laravel-enso/enso",
-    "description": "Laravel Enso can be a solid start for any SPA based on Laravel 7.x, Vue and Bulma",
+    "name": "familytree365/genealogy",
+    "description": "Genealogy can be a solid start for any family tree builder application based on Laravel 8.x, Vue and Bulma",
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=7.4.0",
+        "php": ">=8.0.0",
         "doctrine/dbal": "^2.8",
         "familytree365/laravel-gedcom": "^3.1",
         "familytree365/multitenancy": "^2.0",
