@@ -1052,16 +1052,16 @@
         },
         {
             "name": "familytree365/laravel-gedcom",
-            "version": "v3.1.4",
+            "version": "v3.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/familytree365/laravel-gedcom.git",
-                "reference": "1c5078e65074b383798bb4610d75f87e144e917c"
+                "reference": "b117c63e39533cb828d23d9f2b0ff0980950c4be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/familytree365/laravel-gedcom/zipball/1c5078e65074b383798bb4610d75f87e144e917c",
-                "reference": "1c5078e65074b383798bb4610d75f87e144e917c",
+                "url": "https://api.github.com/repos/familytree365/laravel-gedcom/zipball/b117c63e39533cb828d23d9f2b0ff0980950c4be",
+                "reference": "b117c63e39533cb828d23d9f2b0ff0980950c4be",
                 "shasum": ""
             },
             "require": {
@@ -1088,7 +1088,7 @@
             "description": "A package that converts gedcom files to Eloquent models",
             "support": {
                 "issues": "https://github.com/familytree365/laravel-gedcom/issues",
-                "source": "https://github.com/familytree365/laravel-gedcom/tree/v3.1.4"
+                "source": "https://github.com/familytree365/laravel-gedcom/tree/v3.1.5"
             },
             "funding": [
                 {
@@ -1096,7 +1096,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-08-17T05:24:21+00:00"
+            "time": "2021-08-17T05:28:35+00:00"
         },
         {
             "name": "familytree365/multitenancy",
