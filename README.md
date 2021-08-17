@@ -1,13 +1,13 @@
 ## Genealogia Open Source Family Tree Software
- ![Latest Stable Version](https://img.shields.io/github/release/genealogiawebsite/genealogy.svg) 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/genealogiawebsite/genealogy/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/genealogiawebsite/genealogy/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/genealogiawebsite/genealogy/badges/build.png?b=master)](https://scrutinizer-ci.com/g/genealogiawebsite/genealogy/build-status/master)
-[![Code Intelligence Status](https://scrutinizer-ci.com/g/genealogiawebsite/genealogy/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
+ ![Latest Stable Version](https://img.shields.io/github/release/familytree365/genealogy.svg) 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/familytree365/genealogy/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/familytree365/genealogy/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/familytree365/genealogy/badges/build.png?b=master)](https://scrutinizer-ci.com/g/familytree365/genealogy/build-status/master)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/familytree365/genealogy/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 [![StyleCI](https://github.styleci.io/repos/135390590/shield?branch=master)](https://github.styleci.io/repos/135390590)
-[![CodeFactor](https://www.codefactor.io/repository/github/genealogiawebsite/genealogy/badge/master)](https://www.codefactor.io/repository/github/genealogiawebsite/genealogy/overview/master)
+[![CodeFactor](https://www.codefactor.io/repository/github/familytree365/genealogy/badge/master)](https://www.codefactor.io/repository/github/familytree365/genealogy/overview/master)
 [![codebeat badge](https://codebeat.co/badges/911f9e33-212a-4dfa-a860-751cdbbacff7)](https://codebeat.co/projects/github-com-modulargenealogy-genealogy-master)
-[![Build Status](https://travis-ci.org/genealogiawebsite/genealogy.svg?branch=master)](https://travis-ci.org/genealogiawebsite/genealogy)
-[![CircleCI](https://circleci.com/gh/genealogiawebsite/genealogy.svg?style=svg)](https://circleci.com/gh/genealogiawebsite/genealogy)
+[![Build Status](https://travis-ci.org/familytree365/genealogy.svg?branch=master)](https://travis-ci.org/familytree365/genealogy)
+[![CircleCI](https://circleci.com/gh/familytree365/genealogy.svg?style=svg)](https://circleci.com/gh/familytree365/genealogy)
 
 
 ## Description
@@ -19,7 +19,7 @@ smart matching with other servers.
 
 ## Demo
 
-https://genealogia.co.uk/ - register a free account
+https://www.familytree365.com- register a free account
 
 <!--h-->
 ### Official Laravel Enso Documentation
