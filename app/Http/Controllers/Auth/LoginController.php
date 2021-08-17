@@ -84,7 +84,7 @@ class LoginController extends Controller
             'csrfToken' => csrf_token(),
         ]);
     }
-    
+
     protected function validateLogin(Request $request)
     {
         $attributes = [
@@ -98,7 +98,6 @@ class LoginController extends Controller
 
         $request->validate($attributes);
     }
-
 
     private function loggableUser(Request $request)
     {
