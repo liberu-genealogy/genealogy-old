@@ -84,6 +84,21 @@ class LoginController extends Controller
             'csrfToken' => csrf_token(),
         ]);
     }
+    
+    protected function validateLogin(Request $request)
+    {
+        $attributes = [
+            $this->username() => 'required|string',
+            'password' => 'required|string',
+        ];
+
+        if (! $request->attributes->get('sanctum')) {
+            $attributes['device_name'] = 'required|string';
+        }
+
+        $request->validate($attributes);
+    }
+
 
     private function loggableUser(Request $request)
     {
