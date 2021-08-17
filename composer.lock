@@ -1048,7 +1048,7 @@
         },
         {
             "name": "familytree365/laravel-gedcom",
-            "version": "v3.1.1",
+            "version": "v3.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/familytree365/laravel-gedcom.git",
