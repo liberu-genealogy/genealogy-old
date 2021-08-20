@@ -3,9 +3,9 @@
 namespace Database\Factories;
 
 use App\Models\Company;
-use Illuminate\Database\Eloquent\Factories\Factory;
+use LaravelEnso\Companies\Database\Factories\CompanyFactory as CoreCompanyFactory;
 
-class CompanyFactory extends Factory
+class CompanyFactory extends CoreCompanyFactory
 {
     /**
      * The name of the factory's corresponding model.
@@ -13,18 +13,4 @@ class CompanyFactory extends Factory
      * @var string
      */
     protected $model = Company::class;
-
-    /**
-     * Define the model's default state.
-     *
-     * @return array
-     */
-    public function definition()
-    {
-        return [
-            'name' => $this->faker->company(),
-            'status' => $this->faker->randomElement('active', 'inactive'),
-            'current_tenant' => $this->faker->randomElement('1', '2')
-        ];
-    }
 }
