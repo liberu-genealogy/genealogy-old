@@ -3,9 +3,9 @@
 namespace Database\Factories;
 
 use App\Models\Event;
-use Illuminate\Database\Eloquent\Factories\Factory;
+use LaravelEnso\Calendar\Database\Factories\EventFactory as CoreEventFactory;
 
-class EventFactory extends Factory
+class EventFactory extends CoreEventFactory
 {
     /**
      * The name of the factory's corresponding model.
@@ -13,16 +13,4 @@ class EventFactory extends Factory
      * @var string
      */
     protected $model = Event::class;
-
-    /**
-     * Define the model's default state.
-     *
-     * @return array
-     */
-    public function definition()
-    {
-        return [
-            //
-        ];
-    }
 }
