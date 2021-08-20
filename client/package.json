@@ -12,6 +12,7 @@
     "postinstall": "opencollective-postinstall && patch-package"
   },
   "dependencies": {
+    "@enso-ui/bulma": "^4.0.7",
     "@enso-ui/enums": "^1.0.3",
     "@enso-ui/route-mapper": "^1.0.1",
     "@enso-ui/sentry": "^1.0.4",

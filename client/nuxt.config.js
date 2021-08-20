@@ -112,6 +112,7 @@ nuxtContentAlgolia: {
             "@sentry/integrations",
             "@enso-ui/sentry",
             "@enso-ui/route-mapper",
+	    "d3-dag",
         ],
     },
 };
