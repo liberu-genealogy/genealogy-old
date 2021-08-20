@@ -26,7 +26,8 @@
     "opencollective-postinstall": "^2.0.3",
     "patch-package": "^6.4.7",
     "postinstall-postinstall": "^2.1.0",
-    "pusher-js": "^7.0.3"
+    "pusher-js": "^7.0.3",
+    "vue-fb-customer-chat": "^0.2.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",
