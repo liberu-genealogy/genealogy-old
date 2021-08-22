@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Models;
 
 use LaravelEnso\People\Models\Person as CorePerson;
 
