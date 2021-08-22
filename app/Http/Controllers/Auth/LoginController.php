@@ -14,6 +14,7 @@ use LaravelEnso\Core\Models\User;
 use LaravelEnso\Core\Traits\Logout;
 use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\Multitenancy\Services\Tenant;
+use LaravelEnso\Users\Models\User;
 
 class LoginController extends Controller
 {
