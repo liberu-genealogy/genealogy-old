@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 use LaravelEnso\Companies\Models\Company;
 use LaravelEnso\Core\Events\Login;
-use LaravelEnso\Core\Models\User;
+use LaravelEnso\Core\Models\User as LoginUser;
 use LaravelEnso\Core\Traits\Logout;
 use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\Multitenancy\Services\Tenant;
@@ -24,7 +24,7 @@ class LoginController extends Controller
 
     protected $redirectTo = '/';
 
-    private ?User $user;
+    private ?LoginUser $user;
 
     public function __construct()
     {
