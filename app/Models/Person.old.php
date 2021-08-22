@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use App\Models\Family;
-use App\Models\Models\User;
+use App\Models\User;
 use App\Models\PersonEvent;
 use App\Models\Place;
 use Illuminate\Database\Eloquent\Model;
