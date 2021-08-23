@@ -23,7 +23,7 @@ class ForumTopicFactory extends Factory
     public function definition()
     {
         return [
-            'category_id' => ForumCategory::factory(), 'title' => $this->faker->word(), 'slug' => $this->faker->word(), 'content' => $this->faker->title(), 'created_by'
+            'category_id' => ForumCategory::factory(), 'title' => $this->faker->word(), 'slug' => $this->faker->word(), 'content' => $this->faker->title(), 'created_by',
         ];
     }
 }

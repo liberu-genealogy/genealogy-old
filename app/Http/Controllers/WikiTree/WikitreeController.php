@@ -29,18 +29,18 @@ class WikitreeController extends Controller
         $userInfo = json_decode($response->getBody(), true); */
 
         // return response()->json($userInfo);
-        $redirectTo = config('services.wikitree.api') . '?action=clientLogin&returnURL=' . url('api/wikitree/get-authcode-callback');
+        $redirectTo = config('services.wikitree.api').'?action=clientLogin&returnURL='.url('api/wikitree/get-authcode-callback');
+
         return redirect($redirectTo);
     }
 
     public function getAuthCodeCallBack(Request $request)
     {
-        return 'Auth code recieved :: ' . $request->authcode;
+        return 'Auth code recieved :: '.$request->authcode;
     }
 
     public function searchPerson(Request $request)
     {
-
         $authCode = $request->authcode;
         $client = new \GuzzleHttp\Client();
 
@@ -51,8 +51,8 @@ class WikitreeController extends Controller
             'FirstName' => $request->FirstName,
             'LastName' => $request->LastName,
             'limit' => $request->per_page, // 100
-            'start' => ($request->per_page*$request->page) - $request->per_page, // 2,
-            'fields' => 'Id, Name, FirstName, MiddleName'
+            'start' => ($request->per_page * $request->page) - $request->per_page, // 2,
+            'fields' => 'Id, Name, FirstName, MiddleName',
         ]]);
 
         $statusCode = $response->getStatusCode();
@@ -61,12 +61,11 @@ class WikitreeController extends Controller
 
         $newPersons = [];
         foreach ($persons[0]['matches'] as $person) {
-
             $response = $client->request('POST', $this->wikitreeApi, ['query' => [
                 'authcode' => $authCode,
                 'action' => 'getAncestors',
                 'format' => 'json',
-                'key' => $person['Id']
+                'key' => $person['Id'],
             ]]);
 
             $statusCode = $response->getStatusCode();
@@ -76,6 +75,7 @@ class WikitreeController extends Controller
             $person['ancestors'] = $ancestors;
             array_push($newPersons, $person);
         }
+
         return response()->json($newPersons);
     }
 }

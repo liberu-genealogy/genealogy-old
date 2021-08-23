@@ -34,9 +34,8 @@ abstract class Sync implements ShouldQueue, NotTenantAware
     public function __construct(int $page = 1, int $retry = 0)
     {
         $this->current_page = $page;
-        $this->retry        = $retry;
+        $this->retry = $retry;
     }
-
 
     /**
      * Execute the job.
@@ -51,7 +50,7 @@ abstract class Sync implements ShouldQueue, NotTenantAware
         $response = Http::get($url);
 
         if ($response->failed()) {
-            if(self::$is_testing) {
+            if (self::$is_testing) {
                 $response->throw();
             }
 
@@ -65,7 +64,7 @@ abstract class Sync implements ShouldQueue, NotTenantAware
 
         $result = $response->json();
 
-        if ( ! self::$is_testing) {
+        if (! self::$is_testing) {
             $has_more_result = $result['total'] > $result['page'];
             if ($has_more_result) {
                 dispatch(new static(++$this->current_page))
@@ -92,7 +91,7 @@ abstract class Sync implements ShouldQueue, NotTenantAware
     }
 
     /**
-     * get the fields to store
+     * get the fields to store.
      *
      * @return mixed
      */

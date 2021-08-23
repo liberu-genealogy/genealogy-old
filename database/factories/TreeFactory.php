@@ -27,7 +27,7 @@ class TreeFactory extends Factory
             'name' => $this->faker->word(),
             'description' => $this->faker->text(),
             'company_id' => Company::factory(),
-            'current_tenant' => $this->faker->randomElement('1', '2')
+            'current_tenant' => $this->faker->randomElement('1', '2'),
         ];
     }
 }

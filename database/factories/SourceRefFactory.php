@@ -25,7 +25,7 @@ class SourceRefFactory extends Factory
         return [
             'group' => $this->faker->word(),
             'gid' => $this->faker->randomElement('1', '2'), 'sour_id' => Source::factory(),
-            'text' => $this->faker->word(), 'quay' => $this->faker->word(), 'page' => $this->faker->word(), 'created_at', 'updated_at'
+            'text' => $this->faker->word(), 'quay' => $this->faker->word(), 'page' => $this->faker->word(), 'created_at', 'updated_at',
         ];
     }
 }

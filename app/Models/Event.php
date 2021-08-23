@@ -7,5 +7,5 @@ use LaravelEnso\Multitenancy\Traits\SystemConnection;
 
 class Event extends CoreEvent
 {
-use SystemConnection;
+    use SystemConnection;
 }

@@ -22,8 +22,8 @@ class PersonAssoFactory extends Factory
     public function definition()
     {
         return [
-            'group' => $this->faker->word(), 'gid' => $this->faker->randomElement('1', '2'), 
-             'indi'=>$this->faker->word(), 'rela'=> $this->faker->word(), 'import_confirm', 'created_at', 'updated_at'
+            'group' => $this->faker->word(), 'gid' => $this->faker->randomElement('1', '2'),
+            'indi'=>$this->faker->word(), 'rela'=> $this->faker->word(), 'import_confirm', 'created_at', 'updated_at',
         ];
     }
 }
