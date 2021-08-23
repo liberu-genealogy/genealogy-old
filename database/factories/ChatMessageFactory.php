@@ -26,7 +26,7 @@ class ChatMessageFactory extends Factory
             'message' => $this->faker->words(),
             'sender_id' => $this->faker->randomElement(1, 2, 3, 4),
             'chat_id' => Chat::factory(),
-            'reply_to' => $this->faker->randomElement(1, 2, 3, 4)
+            'reply_to' => $this->faker->randomElement(1, 2, 3, 4),
         ];
     }
 }

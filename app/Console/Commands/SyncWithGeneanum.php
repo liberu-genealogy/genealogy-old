@@ -11,7 +11,7 @@ use App\Jobs\Geneanum\Malta\SyncPassports as SyncMaltaPassports;
 use App\Jobs\Geneanum\Sync;
 use App\Jobs\Geneanum\Tunisia\SyncBirthsNBaptisms as SyncTunisiaBirthsNBaptisms;
 use App\Jobs\Geneanum\Tunisia\SyncBurials as SyncTunisiaBurials;
-use App\Jobs\Geneanum\Tunisia\SyncMarriages as SyncTunisiaMarriages ;
+use App\Jobs\Geneanum\Tunisia\SyncMarriages as SyncTunisiaMarriages;
 use Illuminate\Console\Command;
 
 class SyncWithGeneanum extends Command

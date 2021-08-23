@@ -22,7 +22,7 @@ class PlaceFactory extends Factory
     public function definition()
     {
         return [
-            'description' => $this->faker->words(), 'title' => $this->faker->word(), 'date' => $this->faker->date()
+            'description' => $this->faker->words(), 'title' => $this->faker->word(), 'date' => $this->faker->date(),
         ];
     }
 }

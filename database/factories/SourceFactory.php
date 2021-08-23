@@ -1,6 +1,6 @@
 @<?php
 
-    namespace Database\Factories;
+namespace Database\Factories;
 
     use App\Models\Author;
     use App\Models\Publication;
@@ -42,7 +42,7 @@
                 'is_active', 'group' => $this->faker->word(),
                 'gid' => $this->faker->word(),
                 'quay' => $this->faker->word(),
-                'page' => $this->faker->word()
+                'page' => $this->faker->word(),
             ];
         }
     }

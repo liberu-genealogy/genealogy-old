@@ -24,7 +24,7 @@ class ForumPostFactory extends Factory
     public function definition()
     {
         return [
-            'topic_id' => ForumTopic::factory(), 'content' => $this->faker->text(), 'author' => $this->faker->name()
+            'topic_id' => ForumTopic::factory(), 'content' => $this->faker->text(), 'author' => $this->faker->name(),
         ];
     }
 }
