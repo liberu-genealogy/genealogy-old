@@ -44,12 +44,12 @@ and consider using [Valet](https://laravel.com/docs/6.x/valet) for a better expe
 
 5. Run `php artisan migrate --seed`
 
-6. Open the `client` folder, copy the `.env.example` file, save it as `.env` and set the URL 
+6. Download the Nuxt client project with `git clone https://github.com/familytree365/nuxt.git --depth 1`pen the `client` folder, copy the `.env.example` file, save it as `.env` and set the URL 
 for the back-end API (which you've configured at step 4)
 
 7. Run `yarn && yarn build`
 
-8. Launch the site and log into the project with user: `admin@genealogia.co.uk`, password: `password`
+8. Launch the site and log into the project with user: `admin@familytree365.com`, password: `password`
 
 9. For live reload / hot module replacement functionality run `yarn serve`
 
