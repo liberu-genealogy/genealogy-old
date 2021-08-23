@@ -5,13 +5,7 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-
-  - package-ecosystem: "yarn"
-    # Files stored in `app` directory
-    directory: "/client"
-    schedule:
-      interval: "daily"
-
+      
   - package-ecosystem: "github-actions"
     # Workflow files stored in the
     # default location of `.github/workflows`
