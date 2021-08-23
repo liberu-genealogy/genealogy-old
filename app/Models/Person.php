@@ -2,18 +2,18 @@
 
 namespace App\Models;
 
-use LaravelEnso\People\Models\Person as CorePerson;
-use LaravelEnso\Multitenancy\Traits\SystemConnection;
 use App\Models\Family;
-use App\Models\User;
 use App\Models\PersonEvent;
 use App\Models\Place;
+use App\Models\User;
+use LaravelEnso\Multitenancy\Traits\SystemConnection;
+use LaravelEnso\People\Models\Person as CorePerson;
 
 class Person extends CorePerson
 {
     use SystemConnection;
-    
-     public function __construct(array $attributes = [])
+
+    public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
     }

@@ -13,7 +13,7 @@ class ForumCategoryFactory extends Factory
      * @var string
      */
     protected $model = ForumCategory::class;
-    
+
     /**
      * Define the model's default state.
      *
@@ -22,7 +22,7 @@ class ForumCategoryFactory extends Factory
     public function definition()
     {
         return [
-            'name'=>$this->faker->word(), 'slug' => $this->faker->word()
+            'name'=>$this->faker->word(), 'slug' => $this->faker->word(),
         ];
     }
 }
