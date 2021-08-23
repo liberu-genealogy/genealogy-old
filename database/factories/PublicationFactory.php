@@ -22,7 +22,7 @@ class PublicationFactory extends Factory
     public function definition()
     {
         return [
-            'description' => $this->faker->text(), 'is_active', 'name' => $this->faker->word()
+            'description' => $this->faker->text(), 'is_active', 'name' => $this->faker->word(),
         ];
     }
 }

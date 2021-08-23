@@ -23,7 +23,7 @@ class PersonAliaFactory extends Factory
     {
         return [
             'group' => $this->faker->word(), 'gid' => $this->faker->randomElement('1', '2'),
-            $this->faker->word(), 'import_confirm', 'created_at', 'updated_at'
+            $this->faker->word(), 'import_confirm', 'created_at', 'updated_at',
         ];
     }
 }

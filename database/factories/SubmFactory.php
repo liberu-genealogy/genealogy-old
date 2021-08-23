@@ -32,7 +32,7 @@ class SubmFactory extends Factory
             'lang' => $this->faker->languageCode(),
             'phon' => $this->faker->phoneNumber(),
             'email' => $this->faker->email(), 'fax' => $this->faker->word(), 'www' => $this->faker->url(),
-            'created_at' => $this->faker->date(), 'updated_at'
+            'created_at' => $this->faker->date(), 'updated_at',
         ];
     }
 }

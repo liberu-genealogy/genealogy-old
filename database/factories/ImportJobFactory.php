@@ -22,7 +22,7 @@ class ImportJobFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => $this->faker->randomElement(1, 2), 'slug' => $this->faker->word(), 'status', 'created_at', 'updated_at'
+            'user_id' => $this->faker->randomElement(1, 2), 'slug' => $this->faker->word(), 'status', 'created_at', 'updated_at',
         ];
     }
 }

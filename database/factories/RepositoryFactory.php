@@ -35,7 +35,7 @@ class RepositoryFactory extends Factory
             'name' => $this->faker->name(),
             'description' => $this->faker->text(),
             'type_id' => Type::factory(),
-            'is_active'
+            'is_active',
         ];
     }
 }

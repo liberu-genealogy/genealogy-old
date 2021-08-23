@@ -15,13 +15,13 @@ trait CreatesApplication
         $app = require __DIR__.'/../bootstrap/app.php';
 
         $app->make(Kernel::class)->bootstrap();
-        
+
         $this->clearCache(); // NEW LINE -- Testing doesn't work properly with cached stuff.
 
         return $app;
     }
-    
-        /**
+
+    /**
      * Clears Laravel Cache.
      */
     protected function clearCache()

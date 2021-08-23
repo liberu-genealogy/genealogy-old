@@ -24,7 +24,7 @@ class FamilySlgsFactory extends Factory
     {
         return [
             'family_id' => Family::factory(), 'stat' => $this->faker->words(),
-            'date' => $this->faker->date(), 'plac' => $this->faker->word(), 'temp' => $this->faker->word(), 'created_at', 'updated_at'
+            'date' => $this->faker->date(), 'plac' => $this->faker->word(), 'temp' => $this->faker->word(), 'created_at', 'updated_at',
         ];
     }
 }
