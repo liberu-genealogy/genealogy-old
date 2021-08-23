@@ -1,4 +1,4 @@
-## Genealogia Open Source Family Tree Software
+## Family Tree 365 - Open Source Family Tree Software - Laravel 8 backend
  ![Latest Stable Version](https://img.shields.io/github/release/familytree365/genealogy.svg) 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/familytree365/genealogy/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/familytree365/genealogy/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/familytree365/genealogy/badges/build.png?b=master)](https://scrutinizer-ci.com/g/familytree365/genealogy/build-status/master)
@@ -15,7 +15,7 @@
 Browser based Genealogy software for interacting and processing data efficiently. Easily create your
 own family tree by importing your existing data or manual data entry. Storage of all data is securely on your own server and does
 not leave your environment without your permission. In the future there will be optional
-smart matching with other servers.
+smart matching with other servers. This is the Laravel 8 backend using the Laravel Enso collection of modules. Please see https://github.com/familytree365/nuxt for the client.
 
 ## Demo
 
@@ -44,25 +44,13 @@ and consider using [Valet](https://laravel.com/docs/6.x/valet) for a better expe
 
 5. Run `php artisan migrate --seed`
 
-6. Download the Nuxt client project with `git clone https://github.com/familytree365/nuxt.git --depth 1`pen the `client` folder, copy the `.env.example` file, save it as `.env` and set the URL 
-for the back-end API (which you've configured at step 4)
+6. Launch the site and log into the project with user: `admin@familytree365.com`, password: `password`
 
-7. Run `yarn && yarn build`
-
-8. Launch the site and log into the project with user: `admin@familytree365.com`, password: `password`
-
-9. For live reload / hot module replacement functionality run `yarn serve`
-
-10. (optional) Setup the configuration files as needed, in `config/enso/*.php`
+7. (optional) Setup the configuration files as needed, in `config/enso/*.php`
 
 ### Thanks
 
-Built with Laravel Enso 4.x which is crafted on Laravel 8, Bulma, Vuejs and:
-
-[Vue Router](https://router.vuejs.org/en), [Vuex](https://vuex.vuejs.org/en/), [Axios](https://github.com/axios/axios),
-[Font awesome 5](https://fontawesome.com), [Animate.css](https://daneden.github.io/animate.css/), 
-[Bulma-Extensions](https://wikiki.github.io/bulma-extensions/overview), [Driver.js](https://kamranahmed.info/driver.js/),
-[Chart.js](http://chartjs.org), [Flatpickr](https://chmln.github.io/flatpickr/), 
+Built with Laravel Enso 4.x which is crafted on Laravel 8.
 
 Special thanks to [Taylor Otwell](https://laravel.com/), [Jeffrey Way](https://laracasts.com), [Evan You](https://vuejs.org/) and [Jeremy Thomas](https://bulma.io). [Laravel Enso](https://github.com/laravel-enso)
 
