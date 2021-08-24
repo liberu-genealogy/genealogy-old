@@ -294,6 +294,7 @@ use App\Http\Controllers\Types\Show as TypesShow;
 use App\Http\Controllers\Types\Store as TypesStore;
 use App\Http\Controllers\Types\TableData as TypesTableData;
 use App\Http\Controllers\Types\Update as TypesUpdate;
+use App\Http\Controllers\Wikitree\WikitreeController;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
 use LaravelEnso\Addresses\Http\Controllers\Create as AddressCreate;
@@ -654,6 +655,11 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
     });
 
 Route::get('gedcom/progress', '\App\Http\Controllers\Gedcom\Progress@index')->name('progress');
+
+// Wikitree
+Route::get('wikitree/get-authcode', [WikitreeController::class, 'getAuthCode'])->name('wikitree.get-authcode');
+Route::get('wikitree/clientLoginResponse', [WikitreeController::class, 'getAuthCodeCallBack'])->name('wikitree.clientLoginResponse');
+Route::get('wikitree/search-person', [WikitreeController::class, 'searchPerson'])->name('wikitree.search-person');
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
