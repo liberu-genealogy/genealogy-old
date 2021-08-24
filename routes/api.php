@@ -386,6 +386,9 @@ Route::namespace('Auth')
     ->middleware('api')
     ->group(function () {
         Route::middleware('guest')->group(function () {
+            Route::get('login/{provider}', [LoginController::class, 'redirectToProvider'])->name('auth.provider');
+            Route::get('login/{provider}/callback', [LoginController::class, 'handleProviderCallback'])->name('auth.provider.callback');
+
             Route::post('login', [LoginController::class, 'login'])->name('login');
         });
 
