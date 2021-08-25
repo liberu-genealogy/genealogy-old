@@ -11,6 +11,12 @@
     </include>
   </coverage>
   <testsuites>
+    <testsuite name="Feature">
+      <directory suffix="Test.php">./tests/Feature</directory>
+    </testsuite>
+    <testsuite name="Unit">
+      <directory suffix="Test.php">./tests/Unit</directory>
+    </testsuite>
     <testsuite name="parallel">
       <directory suffix="Test.php">./tests</directory>
       <directory suffix="Test.php">./vendor/laravel-enso/action-logger/tests</directory>
