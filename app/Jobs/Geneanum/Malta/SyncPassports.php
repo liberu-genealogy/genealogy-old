@@ -6,7 +6,6 @@ use App\Jobs\Geneanum\Sync;
 
 class SyncPassports extends Sync
 {
-
     protected const AREA = 'Malta';
     protected const DATABASE = 'Passports';
     protected const URL = 'https://static.geneanum.com/libs/grid/malte_passeport.php?annee_limite=75&_search=false&nd=%s&rows=100&page=%s&sidx=nom&sord=asc';

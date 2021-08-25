@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Openarch;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class OpenArchController extends Controller
@@ -15,14 +16,13 @@ class OpenArchController extends Controller
 
     public function searchPerson(Request $request)
     {
-
         $authCode = $request->authcode;
         $client = new \GuzzleHttp\Client();
 
-        $response = $client->request('POST', $this->openArchRecordsApi . "/search.json", ['query' => [
+        $response = $client->request('POST', $this->openArchRecordsApi.'/search.json', ['query' => [
             'name' => $request->name,
             'number_show' => $request->per_page, // 100
-            'start' => ($request->per_page*$request->page) - $request->per_page, // 2,
+            'start' => ($request->per_page * $request->page) - $request->per_page, // 2,
         ]]);
 
         $statusCode = $response->getStatusCode();

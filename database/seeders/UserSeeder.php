@@ -31,7 +31,7 @@ class UserSeeder extends Seeder
             'title' => Titles::Mr,
             'name' => 'Admin Root',
             'appellative' => 'Admin',
-            'email' => 'admin@genealogia.co.uk',
+            'email' => 'admin@familytree365.com',
             'birthday' => '1970-01-01',
             'phone' => '+4412345678910',
         ]);

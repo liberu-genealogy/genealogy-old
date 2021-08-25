@@ -23,7 +23,7 @@ class PersonDesiFactory extends Factory
     {
         return [
             'group' => $this->faker->word(), 'gid' => $this->faker->randomElement('1', '2'),
-            'desi' =>$this->faker->word(),, 'created_at', 'updated_at'
+            'desi' =>$this->faker->word(), , 'created_at', 'updated_at',
         ];
     }
 }

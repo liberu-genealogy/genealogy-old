@@ -28,7 +28,7 @@ class CitationFactory extends Factory
             'volume' => $this->faker->randomElement(1, 2, 3, 4, 5),
             'page' => $this->faker->randomNumber(500), 'is_active',
             'confidence' => $this->faker->word(),
-            'source_id' => $this->faker->randomElement(1, 2, 3, 4)
+            'source_id' => $this->faker->randomElement(1, 2, 3, 4),
 
         ];
     }

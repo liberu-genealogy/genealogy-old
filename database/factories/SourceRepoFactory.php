@@ -27,7 +27,7 @@ class SourceRepoFactory extends Factory
             'gid' => $this->faker->randomElement('1', '2'),
             'repo_id' => Repository::factory(),
             'caln' => $this->faker->word(),
-            'created_at', 'updated_at'
+            'created_at', 'updated_at',
         ];
     }
 }
