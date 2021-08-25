@@ -8,13 +8,13 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
+use Laravel\Socialite\Facades\Socialite;
 use LaravelEnso\Companies\Models\Company;
 use LaravelEnso\Core\Events\Login;
 use LaravelEnso\Core\Traits\Logout;
 use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\Multitenancy\Services\Tenant;
 use LaravelEnso\Users\Models\User;
-use Laravel\Socialite\Facades\Socialite;
 
 class LoginController extends Controller
 {
@@ -179,7 +179,7 @@ class LoginController extends Controller
     public function redirectToProvider($provider)
     {
         $validated = $this->validateProvider($provider);
-        if (!is_null($validated)) {
+        if (! is_null($validated)) {
             return $validated;
         }
 
@@ -190,7 +190,7 @@ class LoginController extends Controller
                 ->getTargetUrl()
         );
 
-         // return Socialite::driver($provider)->stateless()->redirect();
+        // return Socialite::driver($provider)->stateless()->redirect();
     }
 
     /**
@@ -202,13 +202,14 @@ class LoginController extends Controller
     public function handleProviderCallback($provider)
     {
         $validated = $this->validateProvider($provider);
-        if (!is_null($validated)) {
+        if (! is_null($validated)) {
             return $validated;
         }
         try {
             $user = Socialite::driver($provider)->stateless()->user();
         } catch (ClientException $exception) {
             $output = ['data' => [], 'message' => 'Invalid credentials provided!', 'success' => false, 'error' => true];
+
             return view('callback', $output);
             // return response()->json(['error' => 'Invalid credentials provided.'], 422);
         }
@@ -217,6 +218,7 @@ class LoginController extends Controller
             Auth::loginUsingId($IfExists->id, $remember = true);
             $token = $IfExists->createToken('token-name')->plainTextToken;
             $output = ['access_token' => $token, 'data' => json_encode($IfExists), 'message' => 'Login Success!', 'success' => true, 'error' => false];
+
             return view('callback', $output);
         } else {
             try {
@@ -248,12 +250,13 @@ class LoginController extends Controller
                 $output = ['access_token' => $token, 'data' => json_encode($userCreated), 'message' => 'Login Success!', 'success' => true, 'error' => false];
 
                 DB::connection($this->getConnectionName())->commit();
-                return view('callback', $output);
 
+                return view('callback', $output);
             } catch (Exception $e) {
                 DB::connection($this->getConnectionName())->rollback();
             }
         }
+
         return response()->json($userCreated, 200, ['Access-Token' => $token]);
     }
 
@@ -263,7 +266,7 @@ class LoginController extends Controller
      */
     protected function validateProvider($provider)
     {
-        if (!in_array($provider, ['facebook', 'google', 'github'])) {
+        if (! in_array($provider, ['facebook', 'google', 'github'])) {
             return response()->json(['error' => 'Please login using facebook or google or github'], 422);
         }
     }
@@ -276,7 +279,7 @@ class LoginController extends Controller
         $user->assignRole('free');
         $random = $this->unique_random('companies', 'name', 5);
         $company_id = DB::connection($this->getConnectionName())->table('companies')->insertGetId([
-            'name' => 'company' . $random,
+            'name' => 'company'.$random,
             'status' => 1,
             'current_tenant' => 1,
         ]);
@@ -288,18 +291,18 @@ class LoginController extends Controller
 
         $tree_id = DB::connection($this->getConnectionName())->table('trees')->insertGetId([
             'company_id' => $company_id,
-            'name' => 'tree' . $company_id,
+            'name' => 'tree'.$company_id,
             'description' => '',
             'current_tenant' => 1,
         ]);
 
         $tenant_id = DB::connection($this->getConnectionName())->table('tenants')->insertGetId([
-            'name' => 'tenant' . $tree_id,
+            'name' => 'tenant'.$tree_id,
             'tree_id' => $tree_id,
-            'database' => 'tenant' . $tree_id,
+            'database' => 'tenant'.$tree_id,
         ]);
 
-        DB::statement('create database tenant' . $tree_id);
+        DB::statement('create database tenant'.$tree_id);
 
         Artisan::call('tenants:artisan "migrate --database=tenant --force"');
     }
@@ -338,13 +341,15 @@ class LoginController extends Controller
             // If unique is still false at this point
             // it will just repeat all the steps until
             // it has generated a random string of characters
-        } while (!$unique);
+        } while (! $unique);
 
         return $random;
     }
 
-    public function providerLogin(Request $request, $provider) {
+    public function providerLogin(Request $request, $provider)
+    {
         $data = $request->all();
+
         return response()->json($data);
     }
 }
