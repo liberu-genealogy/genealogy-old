@@ -49,8 +49,8 @@ return [
     ],
     'openarch' => [
         'api' => [
-            'records' => "https://api.openarch.nl/1.0/records"
+            'records' => 'https://api.openarch.nl/1.0/records',
         ],
     ],
-      
+
 ];
