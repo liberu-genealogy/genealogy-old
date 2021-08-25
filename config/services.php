@@ -30,4 +30,10 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'openarch' => [
+        'api' => [
+            'records' => "https://api.openarch.nl/1.0/records"
+        ]
+    ]
+
 ];
