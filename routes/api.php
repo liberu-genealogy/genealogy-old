@@ -107,6 +107,7 @@ use App\Http\Controllers\Notes\Show as NotesShow;
 use App\Http\Controllers\Notes\Store as NotesStore;
 use App\Http\Controllers\Notes\TableData as NotesTableData;
 use App\Http\Controllers\Notes\Update as NotesUpdate;
+use App\Http\Controllers\Openarch\OpenArchController;
 use App\Http\Controllers\Personalias\Create as PersonaliasCreate;
 use App\Http\Controllers\Personalias\Destroy as PersonaliasDestroy;
 use App\Http\Controllers\Personalias\Edit as PersonaliasEdit;
@@ -387,6 +388,9 @@ Route::namespace('Auth')
     ->middleware('api')
     ->group(function () {
         Route::middleware('guest')->group(function () {
+            Route::get('login/{provider}', [LoginController::class, 'redirectToProvider'])->name('login.provider');
+            Route::get('login/{provider}/callback', [LoginController::class, 'handleProviderCallback'])->name('login.provider.callback');
+
             Route::post('login', [LoginController::class, 'login'])->name('login');
         });
 
@@ -660,6 +664,11 @@ Route::get('gedcom/progress', '\App\Http\Controllers\Gedcom\Progress@index')->na
 Route::get('wikitree/get-authcode', [WikitreeController::class, 'getAuthCode'])->name('wikitree.get-authcode');
 Route::get('wikitree/clientLoginResponse', [WikitreeController::class, 'getAuthCodeCallBack'])->name('wikitree.clientLoginResponse');
 Route::get('wikitree/search-person', [WikitreeController::class, 'searchPerson'])->name('wikitree.search-person');
+
+// OpenArch
+Route::prefix('open-arch')->group(function () {
+    Route::get('search-person', [OpenArchController::class, 'searchPerson'])->name('search-person');
+});
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
