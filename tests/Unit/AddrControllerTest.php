@@ -7,6 +7,7 @@ use App\Models\Addr;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 /**
@@ -16,6 +17,7 @@ use Tests\TestCase;
  */
 class AddrControllerTest extends TestCase
 {
+    use RefreshDatabase;
     /**
      *
      */

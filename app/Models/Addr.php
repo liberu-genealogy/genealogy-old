@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use LaravelEnso\Tables\Traits\TableCache;
 
-class Addr extends \GenealogiaWebsite\LaravelGedcom\Models\Addr
+class Addr extends \FamilyTree365\LaravelGedcom\Models\Addr
 {
-    use TableCache;
+    use TableCache, HasFactory;
 }

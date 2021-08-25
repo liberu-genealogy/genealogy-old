@@ -3,6 +3,12 @@
 namespace Tests\Feature;
 
 use App\Models\Addr;
+use LaraveEnso\countries\src\Models\Country;
+use LaraveEnso\post\src\Models\Post;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+// use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 use Illuminate\Http\Response;
 use Tests\TestCase;
 
@@ -12,10 +18,42 @@ use Tests\TestCase;
  */
 class AddrTest extends TestCase {
 
-    /** @test */
+    use WithoutMiddleware, RefreshDatabase;
+
+    public function testAddrIsCreatedSuccessfully() {
+
+        $adr = Addr::create(Addr::factory()->make()->getAttributes());
+        // $adr2 = Addr::create(Addr::factory()->make()->getAttributes());
+
+        $payload = [
+            'adr1'      => $adr->id,
+            'adr2'      => $adr->id,
+            'city'      => $adr->id,
+            'post'      => $adr->id,
+            'ctry'      => $adr->id,
+            'stae'      => rand(0000, 9999)
+        ];
+        $this->json('post', 'api/addrs', $payload)
+            ->assertStatus(Response::HTTP_CREATED)
+            ->assertJsonStructure(
+                [
+                    'data' => [
+                        'id',
+                        'adr1',
+                        'adr2',
+                        'city',
+                        'stae',
+                        'post',
+                        'created_at',
+                    ]
+                ]
+            );
+        $this->assertDatabaseHas('addrs', $payload);
+    }
+
     public function testIndexReturnsDataInValidFormat() {
 
-        $this->json('get', 'api/addr')
+        $this->json('get', 'api/addrs')
             ->assertStatus(Response::HTTP_OK)
             ->assertJsonStructure(
                 [
@@ -35,58 +73,28 @@ class AddrTest extends TestCase {
             );
     }
 
-    /** @test */
-    public function testAddrIsCreatedSuccessfully() {
-
-        $adr = Addr::create(Addr::factory()->make()->getAttributes());
-        $payload = [
-            'adr1'     => $adr->id,
-            'adr2' => $adr2->id,
-            'stae'      => $this->faker->randomNumber(4)
-        ];
-        $this->json('post', 'api/addr', $payload)
-            ->assertStatus(Response::HTTP_CREATED)
-            ->assertJsonStructure(
-                [
-                    'data' => [
-                        'id',
-                        'adr1',
-                        'adr2',
-                        'city',
-                        'stae',
-                        'post',
-                        'created_at',
-                    ]
-                ]
-            );
-        $this->assertDatabaseHas('addrs', $payload);
-    }
-
-    /** @test */
     public function testStoreWithMissingData() {
 
         $payload = [
-            'stae' => $this->faker->randomNumber(4)
+            'stae' => rand(0000, 9999)
         ];
-        $this->json('post', 'api/addr', $payload)
+        $this->json('post', 'api/addrs', $payload)
             ->assertStatus(Response::HTTP_BAD_REQUEST)
             ->assertJsonStructure(['error']);
     }
 
-    /** @test */
     public function testStoreWithMissingAddrAndAdr2() {
 
         $payload = [
             'adr1'     => 0,
             'adr2' => 0,
-            'stae'      => $this->faker->randomNumber(4)
+            'stae'      => rand(0000, 9999)
         ];
-        $this->json('post', 'api/addr', $payload)
+        $this->json('post', 'api/addrs', $payload)
             ->assertStatus(Response::HTTP_NOT_FOUND)
             ->assertJsonStructure(['error']);
     }
 
-    /** @test */
     public function testAddrIsShownCorrectly() {
 
         $addr = Addr::create(
@@ -100,7 +108,7 @@ class AddrTest extends TestCase {
             ]
         );
 
-        $this->json('get', "api/addr/$addr->id")
+        $this->json('get', "api/addrs/$addr->id")
             ->assertStatus(Response::HTTP_OK)
             ->assertExactJson(
                 [
@@ -118,15 +126,13 @@ class AddrTest extends TestCase {
             );
     }
 
-    /** @test */
     public function testShowMissingAddr() {
 
-        $this->json('get', "api/addr/0")
+        $this->json('get', "api/addrs/0")
             ->assertStatus(Response::HTTP_NOT_FOUND)
             ->assertJsonStructure(['error']);
     }
 
-    /** @test */
     public function testDestroyAddr() {
 
         $adr = Addr::create(Addr::factory()->make()->getAttributes());
@@ -140,11 +146,10 @@ class AddrTest extends TestCase {
                 'ctry' => $ctry
             ]
         );
-        $this->json('delete', "api/addr/$addr->id")
+        $this->json('delete', "api/addrs/$addr->id")
             ->assertStatus(Response::HTTP_UNAUTHORIZED);
     }
 
-    /** @test */
     public function testUpdateAddr() {
 
         $adr = Addr::create(Addr::factory()->make()->getAttributes());
@@ -162,7 +167,7 @@ class AddrTest extends TestCase {
             'id'         => $addr->id,
         ];
 
-        $this->json('put', "api/addr/$addr->id", $payload)
+        $this->json('put', "api/addrs/$addr->id", $payload)
             ->assertStatus(Response::HTTP_UNAUTHORIZED);
     }
 }
