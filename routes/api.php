@@ -107,6 +107,7 @@ use App\Http\Controllers\Notes\Show as NotesShow;
 use App\Http\Controllers\Notes\Store as NotesStore;
 use App\Http\Controllers\Notes\TableData as NotesTableData;
 use App\Http\Controllers\Notes\Update as NotesUpdate;
+use App\Http\Controllers\Openarch\OpenArchController;
 use App\Http\Controllers\Personalias\Create as PersonaliasCreate;
 use App\Http\Controllers\Personalias\Destroy as PersonaliasDestroy;
 use App\Http\Controllers\Personalias\Edit as PersonaliasEdit;
@@ -654,6 +655,11 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
     });
 
 Route::get('gedcom/progress', '\App\Http\Controllers\Gedcom\Progress@index')->name('progress');
+
+// OpenArch
+Route::prefix('open-arch')->group(function () {
+    Route::get('search-person', [OpenArchController::class, 'searchPerson'])->name('search-person');
+});
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
