@@ -47,5 +47,9 @@ return [
         'client_secret' => env('GITHUB_CLIENT_SECRET'),
         'redirect' => env('GITHUB_REDIRECT_URI'),
     ],
-
+    'openarch' => [
+        'api' => [
+            'records' => "https://api.openarch.nl/1.0/records"
+        ]
+      
 ];
