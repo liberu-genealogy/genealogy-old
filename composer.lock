@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d814527bd1a75746b3f85895f32d69c8",
+    "content-hash": "bbfbcb8cd78187a28b233053030066ac",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1052,21 +1052,25 @@
         },
         {
             "name": "familytree365/laravel-gedcom",
-            "version": "v3.1.7",
+            "version": "v3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/familytree365/laravel-gedcom.git",
-                "reference": "dab114d677e0a0996da23dbe819bfb4ae12e4a14"
+                "reference": "18108d839b88c9437b3b54c9afe9aa7625f17c2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/familytree365/laravel-gedcom/zipball/dab114d677e0a0996da23dbe819bfb4ae12e4a14",
-                "reference": "dab114d677e0a0996da23dbe819bfb4ae12e4a14",
+                "url": "https://api.github.com/repos/familytree365/laravel-gedcom/zipball/18108d839b88c9437b3b54c9afe9aa7625f17c2b",
+                "reference": "18108d839b88c9437b3b54c9afe9aa7625f17c2b",
                 "shasum": ""
             },
             "require": {
                 "doctrine/dbal": "^2.8|^3.0",
-                "familytree365/php-gedcom": "^1.0"
+                "familytree365/php-gedcom": "^1.0",
+                "php": ">=8.0"
+            },
+            "require-dev": {
+                "rector/rector": "^0.11.49"
             },
             "type": "library",
             "extra": {
@@ -1088,7 +1092,7 @@
             "description": "A package that converts gedcom files to Eloquent models",
             "support": {
                 "issues": "https://github.com/familytree365/laravel-gedcom/issues",
-                "source": "https://github.com/familytree365/laravel-gedcom/tree/v3.1.7"
+                "source": "https://github.com/familytree365/laravel-gedcom/tree/v3.2.1"
             },
             "funding": [
                 {
@@ -1096,7 +1100,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-08-17T06:00:25+00:00"
+            "time": "2021-08-23T17:10:17+00:00"
         },
         {
             "name": "familytree365/multitenancy",
@@ -1158,24 +1162,25 @@
         },
         {
             "name": "familytree365/php-gedcom",
-            "version": "v1.3.17",
+            "version": "v1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/familytree365/php-gedcom.git",
-                "reference": "5d6ecbf89cd57bcbcf1091468456b6b08fe349d3"
+                "reference": "6d289d535768a5b758820a083d0526dfb4d70762"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/familytree365/php-gedcom/zipball/5d6ecbf89cd57bcbcf1091468456b6b08fe349d3",
-                "reference": "5d6ecbf89cd57bcbcf1091468456b6b08fe349d3",
+                "url": "https://api.github.com/repos/familytree365/php-gedcom/zipball/6d289d535768a5b758820a083d0526dfb4d70762",
+                "reference": "6d289d535768a5b758820a083d0526dfb4d70762",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.3"
+                "php": ">=8.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "5.7.*",
-                "squizlabs/php_codesniffer": "3.5.*"
+                "phpunit/phpunit": "9.*",
+                "rector/rector": "^0.11.49",
+                "squizlabs/php_codesniffer": "3.6.*"
             },
             "type": "library",
             "autoload": {
@@ -1187,7 +1192,7 @@
             "license": [
                 "MIT"
             ],
-            "description": "A GEDCOM file parser (read + write) for PHP 7.3+",
+            "description": "A GEDCOM file parser (read + write) for PHP 8.0+",
             "homepage": "http://github.com/familytree365/php-gedcom",
             "keywords": [
                 "gedcom",
@@ -1195,7 +1200,7 @@
             ],
             "support": {
                 "issues": "https://github.com/familytree365/php-gedcom/issues",
-                "source": "https://github.com/familytree365/php-gedcom/tree/v1.3.17"
+                "source": "https://github.com/familytree365/php-gedcom/tree/v1.4"
             },
             "funding": [
                 {
@@ -1203,7 +1208,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-07-18T19:44:46+00:00"
+            "time": "2021-08-23T16:47:34+00:00"
         },
         {
             "name": "fideloper/proxy",
@@ -2110,16 +2115,16 @@
         },
         {
             "name": "laravel-enso/addresses",
-            "version": "4.6.14",
+            "version": "4.6.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/addresses.git",
-                "reference": "42330145b1c2a89ad20b33ac2ec6fedf65ff9f49"
+                "reference": "adec4a41291adbc5f652edc056ef30a1068d5c7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/addresses/zipball/42330145b1c2a89ad20b33ac2ec6fedf65ff9f49",
-                "reference": "42330145b1c2a89ad20b33ac2ec6fedf65ff9f49",
+                "url": "https://api.github.com/repos/laravel-enso/addresses/zipball/adec4a41291adbc5f652edc056ef30a1068d5c7a",
+                "reference": "adec4a41291adbc5f652edc056ef30a1068d5c7a",
                 "shasum": ""
             },
             "require": {
@@ -2175,9 +2180,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/addresses/issues",
-                "source": "https://github.com/laravel-enso/addresses/tree/4.6.14"
+                "source": "https://github.com/laravel-enso/addresses/tree/4.6.16"
             },
-            "time": "2021-08-09T14:09:12+00:00"
+            "time": "2021-08-18T10:02:48+00:00"
         },
         {
             "name": "laravel-enso/api",
@@ -2764,16 +2769,16 @@
         },
         {
             "name": "laravel-enso/core",
-            "version": "7.0.13",
+            "version": "7.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/core.git",
-                "reference": "3bcf5cf1694c04ada2336e588692aab30208045f"
+                "reference": "30b7f95e3ef7ce4b68f1ebc7cfd6cddd82ad1b1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/core/zipball/3bcf5cf1694c04ada2336e588692aab30208045f",
-                "reference": "3bcf5cf1694c04ada2336e588692aab30208045f",
+                "url": "https://api.github.com/repos/laravel-enso/core/zipball/30b7f95e3ef7ce4b68f1ebc7cfd6cddd82ad1b1d",
+                "reference": "30b7f95e3ef7ce4b68f1ebc7cfd6cddd82ad1b1d",
                 "shasum": ""
             },
             "require": {
@@ -2868,9 +2873,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/core/issues",
-                "source": "https://github.com/laravel-enso/core/tree/7.0.13"
+                "source": "https://github.com/laravel-enso/core/tree/7.0.14"
             },
-            "time": "2021-08-13T08:04:08+00:00"
+            "time": "2021-08-19T08:25:13+00:00"
         },
         {
             "name": "laravel-enso/countries",
@@ -3962,16 +3967,16 @@
         },
         {
             "name": "laravel-enso/localisation",
-            "version": "4.3.83",
+            "version": "4.3.86",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/localisation.git",
-                "reference": "a16f6dde9816e5c18f724a903a8d61720f198c08"
+                "reference": "a3f9cd6c21310e43cd5d6c058eda10f8ce10b5a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/localisation/zipball/a16f6dde9816e5c18f724a903a8d61720f198c08",
-                "reference": "a16f6dde9816e5c18f724a903a8d61720f198c08",
+                "url": "https://api.github.com/repos/laravel-enso/localisation/zipball/a3f9cd6c21310e43cd5d6c058eda10f8ce10b5a0",
+                "reference": "a3f9cd6c21310e43cd5d6c058eda10f8ce10b5a0",
                 "shasum": ""
             },
             "require": {
@@ -3980,7 +3985,8 @@
                 "laravel-enso/helpers": "^2.0",
                 "laravel-enso/migrator": "^2.0",
                 "laravel-enso/select": "^4.0",
-                "laravel-enso/tables": "^4.0"
+                "laravel-enso/tables": "^4.0",
+                "php": ">=8.0"
             },
             "type": "library",
             "extra": {
@@ -4019,9 +4025,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/localisation/issues",
-                "source": "https://github.com/laravel-enso/localisation/tree/4.3.83"
+                "source": "https://github.com/laravel-enso/localisation/tree/4.3.86"
             },
-            "time": "2021-07-29T14:58:54+00:00"
+            "time": "2021-08-23T07:32:11+00:00"
         },
         {
             "name": "laravel-enso/logs",
@@ -5352,16 +5358,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.54.0",
+            "version": "v8.56.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "7b88554cd1aeb52b7f82689bf244182e7a81894b"
+                "reference": "d700f336dc672dcbfe46db05d4e5fe9347b3a5b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/7b88554cd1aeb52b7f82689bf244182e7a81894b",
-                "reference": "7b88554cd1aeb52b7f82689bf244182e7a81894b",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/d700f336dc672dcbfe46db05d4e5fe9347b3a5b6",
+                "reference": "d700f336dc672dcbfe46db05d4e5fe9347b3a5b6",
                 "shasum": ""
             },
             "require": {
@@ -5434,7 +5440,7 @@
                 "illuminate/view": "self.version"
             },
             "require-dev": {
-                "aws/aws-sdk-php": "^3.186.4",
+                "aws/aws-sdk-php": "^3.189.0",
                 "doctrine/dbal": "^2.6|^3.0",
                 "filp/whoops": "^2.8",
                 "guzzlehttp/guzzle": "^6.5.5|^7.0.1",
@@ -5447,7 +5453,7 @@
                 "symfony/cache": "^5.1.4"
             },
             "suggest": {
-                "aws/aws-sdk-php": "Required to use the SQS queue driver, DynamoDb failed job storage and SES mail driver (^3.186.4).",
+                "aws/aws-sdk-php": "Required to use the SQS queue driver, DynamoDb failed job storage and SES mail driver (^3.189.0).",
                 "brianium/paratest": "Required to run tests in parallel (^6.0).",
                 "doctrine/dbal": "Required to rename columns and drop SQLite columns (^2.6|^3.0).",
                 "ext-ftp": "Required to use the Flysystem FTP driver.",
@@ -5516,20 +5522,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-08-10T14:25:51+00:00"
+            "time": "2021-08-24T13:46:30+00:00"
         },
         {
             "name": "laravel/horizon",
-            "version": "v5.7.10",
+            "version": "v5.7.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "716e82c850fdee2dd370bdda3851a37c39b8dfa4"
+                "reference": "d0a7fd91f26e95b1b941b33af36a736b70a29505"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/716e82c850fdee2dd370bdda3851a37c39b8dfa4",
-                "reference": "716e82c850fdee2dd370bdda3851a37c39b8dfa4",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/d0a7fd91f26e95b1b941b33af36a736b70a29505",
+                "reference": "d0a7fd91f26e95b1b941b33af36a736b70a29505",
                 "shasum": ""
             },
             "require": {
@@ -5591,9 +5597,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/horizon/issues",
-                "source": "https://github.com/laravel/horizon/tree/v5.7.10"
+                "source": "https://github.com/laravel/horizon/tree/v5.7.11"
             },
-            "time": "2021-08-03T15:54:31+00:00"
+            "time": "2021-08-17T15:30:59+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -5660,17 +5666,86 @@
             "time": "2021-06-15T15:56:21+00:00"
         },
         {
-            "name": "laravel/telescope",
-            "version": "v4.6.1",
+            "name": "laravel/socialite",
+            "version": "v5.2.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/laravel/telescope.git",
-                "reference": "0ad3dfd523f6fda6fa5e7adaa6a72a5d8921f752"
+                "url": "https://github.com/laravel/socialite.git",
+                "reference": "59e2f8d9d9663029c7746a92d60bbb7697953bb9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/0ad3dfd523f6fda6fa5e7adaa6a72a5d8921f752",
-                "reference": "0ad3dfd523f6fda6fa5e7adaa6a72a5d8921f752",
+                "url": "https://api.github.com/repos/laravel/socialite/zipball/59e2f8d9d9663029c7746a92d60bbb7697953bb9",
+                "reference": "59e2f8d9d9663029c7746a92d60bbb7697953bb9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^6.0|^7.0",
+                "illuminate/http": "^6.0|^7.0|^8.0",
+                "illuminate/support": "^6.0|^7.0|^8.0",
+                "league/oauth1-client": "^1.0",
+                "php": "^7.2|^8.0"
+            },
+            "require-dev": {
+                "illuminate/contracts": "^6.0|^7.0",
+                "mockery/mockery": "^1.0",
+                "orchestra/testbench": "^4.0|^5.0|^6.0",
+                "phpunit/phpunit": "^8.0|^9.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Socialite\\SocialiteServiceProvider"
+                    ],
+                    "aliases": {
+                        "Socialite": "Laravel\\Socialite\\Facades\\Socialite"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Socialite\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Laravel wrapper around OAuth 1 & OAuth 2 libraries.",
+            "homepage": "https://laravel.com",
+            "keywords": [
+                "laravel",
+                "oauth"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/socialite/issues",
+                "source": "https://github.com/laravel/socialite"
+            },
+            "time": "2021-08-10T17:44:52+00:00"
+        },
+        {
+            "name": "laravel/telescope",
+            "version": "v4.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/telescope.git",
+                "reference": "e82daf606bf4ac64c445b5bd58f80784dd16f97a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/e82daf606bf4ac64c445b5bd58f80784dd16f97a",
+                "reference": "e82daf606bf4ac64c445b5bd58f80784dd16f97a",
                 "shasum": ""
             },
             "require": {
@@ -5719,9 +5794,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/telescope/issues",
-                "source": "https://github.com/laravel/telescope/tree/v4.6.1"
+                "source": "https://github.com/laravel/telescope/tree/v4.6.2"
             },
-            "time": "2021-08-03T18:44:23+00:00"
+            "time": "2021-08-17T16:10:10+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -6114,16 +6189,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.1.4",
+            "version": "1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "f3ad69181b8afed2c9edf7be5a2918144ff4ea32"
+                "reference": "18634df356bfd4119fe3d6156bdb990c414c14ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/f3ad69181b8afed2c9edf7be5a2918144ff4ea32",
-                "reference": "f3ad69181b8afed2c9edf7be5a2918144ff4ea32",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/18634df356bfd4119fe3d6156bdb990c414c14ea",
+                "reference": "18634df356bfd4119fe3d6156bdb990c414c14ea",
                 "shasum": ""
             },
             "require": {
@@ -6196,7 +6271,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/flysystem/issues",
-                "source": "https://github.com/thephpleague/flysystem/tree/1.1.4"
+                "source": "https://github.com/thephpleague/flysystem/tree/1.1.5"
             },
             "funding": [
                 {
@@ -6204,7 +6279,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2021-06-23T21:56:05+00:00"
+            "time": "2021-08-17T13:49:42+00:00"
         },
         {
             "name": "league/mime-type-detection",
@@ -6261,6 +6336,82 @@
                 }
             ],
             "time": "2021-01-18T20:58:21+00:00"
+        },
+        {
+            "name": "league/oauth1-client",
+            "version": "v1.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/oauth1-client.git",
+                "reference": "88dd16b0cff68eb9167bfc849707d2c40ad91ddc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/oauth1-client/zipball/88dd16b0cff68eb9167bfc849707d2c40ad91ddc",
+                "reference": "88dd16b0cff68eb9167bfc849707d2c40ad91ddc",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-openssl": "*",
+                "guzzlehttp/guzzle": "^6.0|^7.0",
+                "guzzlehttp/psr7": "^1.7|^2.0",
+                "php": ">=7.1||>=8.0"
+            },
+            "require-dev": {
+                "ext-simplexml": "*",
+                "friendsofphp/php-cs-fixer": "^2.17",
+                "mockery/mockery": "^1.3.3",
+                "phpstan/phpstan": "^0.12.42",
+                "phpunit/phpunit": "^7.5||9.5"
+            },
+            "suggest": {
+                "ext-simplexml": "For decoding XML-based responses."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev",
+                    "dev-develop": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\OAuth1\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ben Corlett",
+                    "email": "bencorlett@me.com",
+                    "homepage": "http://www.webcomm.com.au",
+                    "role": "Developer"
+                }
+            ],
+            "description": "OAuth 1.0 Client Library",
+            "keywords": [
+                "Authentication",
+                "SSO",
+                "authorization",
+                "bitbucket",
+                "identity",
+                "idp",
+                "oauth",
+                "oauth1",
+                "single sign on",
+                "trello",
+                "tumblr",
+                "twitter"
+            ],
+            "support": {
+                "issues": "https://github.com/thephpleague/oauth1-client/issues",
+                "source": "https://github.com/thephpleague/oauth1-client/tree/v1.10.0"
+            },
+            "time": "2021-08-15T23:05:49+00:00"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
@@ -6422,16 +6573,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.51.1",
+            "version": "2.52.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "8619c299d1e0d4b344e1f98ca07a1ce2cfbf1922"
+                "reference": "369c0e2737c56a0f39c946dd261855255a6fccbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/8619c299d1e0d4b344e1f98ca07a1ce2cfbf1922",
-                "reference": "8619c299d1e0d4b344e1f98ca07a1ce2cfbf1922",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/369c0e2737c56a0f39c946dd261855255a6fccbe",
+                "reference": "369c0e2737c56a0f39c946dd261855255a6fccbe",
                 "shasum": ""
             },
             "require": {
@@ -6512,7 +6663,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-07-28T13:16:28+00:00"
+            "time": "2021-08-14T19:10:52+00:00"
         },
         {
             "name": "nette/schema",
@@ -12387,16 +12538,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "2.11.3",
+            "version": "2.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "7ac7f9729f178f64335728bcaf1499ec3c6a540f"
+                "reference": "74dcc32a2895a126d1e5f2cd3bbab499cac66db1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/7ac7f9729f178f64335728bcaf1499ec3c6a540f",
-                "reference": "7ac7f9729f178f64335728bcaf1499ec3c6a540f",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/74dcc32a2895a126d1e5f2cd3bbab499cac66db1",
+                "reference": "74dcc32a2895a126d1e5f2cd3bbab499cac66db1",
                 "shasum": ""
             },
             "require": {
@@ -12459,7 +12610,7 @@
                 "issues": "https://github.com/facade/ignition/issues",
                 "source": "https://github.com/facade/ignition"
             },
-            "time": "2021-08-16T13:18:40+00:00"
+            "time": "2021-08-24T09:53:54+00:00"
         },
         {
             "name": "facade/ignition-contracts",

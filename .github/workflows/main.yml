@@ -14,38 +14,6 @@ env:
   DB_PASSWORD: secret
 
 jobs:
-  yarn:
-    runs-on: ubuntu-20.04
-    env:
-      NODE_OPTIONS: --max_old_space_size=3072
-      SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
-      SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
-      SENTRY_URL: ${{ secrets.SENTRY_URL }}
-      SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
-    steps:
-      - uses: actions/checkout@v2
-      - uses: borales/actions-yarn@v2.0.0
-      - uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.0'
-      - name: 'install & build'
-        run: |
-          sudo composer install
-          sed -i 's/GOOGLE_ANALITICS_TOKEN/${{ secrets.GOOGLE_ANALITICS_TOKEN }}/g' resources/views/stubs/production-index.blade.stub
-          sudo cp -f resources/views/stubs/production-index.blade.stub vendor/laravel-enso/core/stubs
-          cd client
-          cp .env.example .env
-          yarn install
-          yarn build
-      - name: Archive production artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: resources
-          path: |
-            public/css/
-            public/js/
-            public/images/
-            resources/views
 
   phpunit:
     runs-on: ubuntu-20.04
@@ -117,7 +85,7 @@ jobs:
   deploy:
     runs-on: ubuntu-20.04
     if: ${{ github.event_name == 'deployment' || github.event_name == 'push' }}
-    needs: [phpunit, phpcpd, migration, yarn, security, php-insights]
+    needs: [phpunit, phpcpd, migration, security, php-insights]
     steps:
       - uses: actions/checkout@v2
       - name: 'Trig envoyer'

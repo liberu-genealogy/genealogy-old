@@ -22,7 +22,7 @@ class ChanFactory extends Factory
     public function definition()
     {
         return [
-            'group' => $this->faker->word(), 'gid' => $this->faker->randomElement(1, 2), 'date' => $this->faker->date(), 'time' => $this->faker->time(), 'created_at', 'updated_at'
+            'group' => $this->faker->word(), 'gid' => $this->faker->randomElement(1, 2), 'date' => $this->faker->date(), 'time' => $this->faker->time(), 'created_at', 'updated_at',
         ];
     }
 }

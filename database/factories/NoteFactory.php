@@ -24,7 +24,7 @@ class NoteFactory extends Factory
         return [
             'group' => $this->faker->word(), 'gid' => $this->faker->randomElement('1', '2'),
             'note' => $this->faker->text(), 'rin' => $this->faker->word(), 'name' => $this->faker->word(),
-            'description' => $this->faker->text(), 'is_active', 'type_id'
+            'description' => $this->faker->text(), 'is_active', 'type_id',
         ];
     }
 }

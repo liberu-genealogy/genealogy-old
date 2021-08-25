@@ -71,15 +71,6 @@ jobs:
           key: v1-dependencies-{{ checksum "composer.json" }}
           paths:
             - ./vendor
-      - restore_cache:
-          keys:
-            - node-v1-{{ checksum "client/package.json" }}
-            - node-v1-
-      - run: yarn install
-      - save_cache:
-          key: node-v1-{{ checksum "client/package.json" }}
-          paths:
-            - node_modules
       - run:
           name: Mysql database
           command: mysql  -h 127.0.0.1 -u root -e "create database enso;"

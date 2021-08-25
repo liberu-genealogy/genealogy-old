@@ -25,7 +25,7 @@ class SubnFactory extends Factory
             //
             'subm' => $this->faker->word(), 'famf' => $this->faker->word(), 'temp' => $this->faker->word(),
             'ance' => $this->faker->word(), 'desc' => $this->faker->randomElement('0', '1'),
-            'ordi' => $this->faker->word(), 'rin' => $this->faker->word()
+            'ordi' => $this->faker->word(), 'rin' => $this->faker->word(),
         ];
     }
 }
