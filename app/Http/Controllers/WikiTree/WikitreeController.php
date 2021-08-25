@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Wikitree;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class WikitreeController extends Controller
@@ -29,7 +30,7 @@ class WikitreeController extends Controller
         $userInfo = json_decode($response->getBody(), true); */
 
         // return response()->json($userInfo);
-        $redirectTo = config('services.wikitree.api').'?action=clientLogin&returnURL='.url('api/wikitree/get-authcode-callback');
+        $redirectTo = config('services.wikitree.api').'?action=clientLogin&returnURL='.url('api/wikitree/clientLoginResponse');
 
         return redirect($redirectTo);
     }
