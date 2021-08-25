@@ -15,6 +15,9 @@ Homestead.yaml
 /packages
 .vagrant
 
+# client
+/client/node_modules
+
 # env
 .env
 
