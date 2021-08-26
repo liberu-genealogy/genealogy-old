@@ -10,6 +10,6 @@ class Index extends Controller
 {
     public function __invoke(Request $request, Addr $addr)
     {
-        return crud_index($request, $addr);
+        return ['addrs' => $addr];
     }
 }

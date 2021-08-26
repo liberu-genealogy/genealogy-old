@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Addrs;
 
-use App\Addr;
+use App\Models\Addr;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Select\Traits\OptionsBuilder;
