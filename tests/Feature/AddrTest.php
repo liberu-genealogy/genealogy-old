@@ -2,172 +2,122 @@
 
 namespace Tests\Feature;
 
-use App\Models\Addr;
-use LaraveEnso\countries\src\Models\Country;
-use LaraveEnso\post\src\Models\Post;
+use Faker\Factory;
+use Faker\Generator as Faker;
+use App\Models\Addr as Model;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
-// use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use Illuminate\Http\Response;
+use LaravelEnso\Users\Models\User;
 use Tests\TestCase;
 
-/**
- * Class AddrTest
- * @package Tests\Feature
- */
 class AddrTest extends TestCase {
 
     use WithoutMiddleware, RefreshDatabase;
 
-    public function testAddrIsCreatedSuccessfully() {
+    public Addr $model;
 
-        $adr = Addr::create(Addr::factory()->make()->getAttributes());
-        // $adr2 = Addr::create(Addr::factory()->make()->getAttributes());
+    /** @test */
+    public function can_create_addr()
+    {
+        $params = Model::factory()->make()->getAttributes();
 
-        $payload = [
-            'adr1'      => $adr->id,
-            'adr2'      => $adr->id,
-            'city'      => $adr->id,
-            'post'      => $adr->id,
-            'ctry'      => $adr->id,
-            'stae'      => rand(0000, 9999)
-        ];
-        $this->json('post', 'api/addrs', $payload)
-            ->assertStatus(Response::HTTP_CREATED)
-            ->assertJsonStructure(
-                [
-                    'data' => [
-                        'id',
-                        'adr1',
-                        'adr2',
-                        'city',
-                        'stae',
-                        'post',
-                        'created_at',
-                    ]
-                ]
-            );
-        $this->assertDatabaseHas('addrs', $payload);
+        $this->post(route('addrs.store'), $params)
+            ->assertStatus(200)
+            ->assertJsonStructure(['message']);
     }
 
-    public function testIndexReturnsDataInValidFormat() {
+    /** @test */
+    public function can_get_addrs_index()
+    {
+        $route = route('addrs.index');
 
-        $this->json('get', 'api/addrs')
-            ->assertStatus(Response::HTTP_OK)
-            ->assertJsonStructure(
-                [
-                    'data' => [
-                        '*' => [
-                            'id',
-                            'adr1',
-                            'adr2',
-                            'city',
-                            'stae',
-                            'post',
-                            'ctry',
-                            'created_at',
-                        ]
-                    ]
-                ]
-            );
+        $this->get($route)
+            ->assert(200)
+            ->assertJsonStructure(['addrs']);
     }
 
-    public function testStoreWithMissingData() {
+    /** @test */
+    public function can_update_addr()
+    {
+        $params = Model::create(Model::factory()->make()->getAttributes());
 
-        $payload = [
-            'stae' => rand(0000, 9999)
-        ];
-        $this->json('post', 'api/addrs', $payload)
-            ->assertStatus(Response::HTTP_BAD_REQUEST)
-            ->assertJsonStructure(['error']);
-    }
-
-    public function testStoreWithMissingAddrAndAdr2() {
-
-        $payload = [
-            'adr1'     => 0,
-            'adr2' => 0,
-            'stae'      => rand(0000, 9999)
-        ];
-        $this->json('post', 'api/addrs', $payload)
-            ->assertStatus(Response::HTTP_NOT_FOUND)
-            ->assertJsonStructure(['error']);
-    }
-
-    public function testAddrIsShownCorrectly() {
-
-        $addr = Addr::create(
+        $addr = Model::create(
             [
-                'adr1'     => $adr,
-                'adr2' => $adr2,
-                'city'  => $city,
-                'stae'      => $stae,
-                'post'     => $post,
-                'ctry'     => $ctry
+                'adr1' => $params->adr1,
+                'adr2' => $params->adr2,
+                'city' => $params->city,
+                'stae' => $params->stae,
+                'post' => $params->post,
+                'ctry' => $params->ctry
             ]
         );
 
-        $this->json('get', "api/addrs/$addr->id")
-            ->assertStatus(Response::HTTP_OK)
-            ->assertExactJson(
-                [
-                    'data' => [
-                        'id'          => $addr->id,
-                        'adr1'     => $addr->adr->id,
-                        'adr2' => $addr->adr2->id,
-                        'city'  => $isSuccessful,
-                        'stae'      => round($addr->stae, 2, PHP_ROUND_HALF_UP),
-                        'post'     => round($addr->post, 2, PHP_ROUND_HALF_UP),
-                        'ctry' => $ctry->id,
-                        'created_at'  => (string)$addr->created_at,
-                    ]
-                ]
-            );
+        $route = route('addrs.update', $addr->id, false);
+
+        $this->patch($route, $addr->toArray())
+            ->assertStatus(200)
+            ->assertJsonStructure(['message' => 'message']);
     }
 
-    public function testShowMissingAddr() {
+    /** @test */
+    public function can_get_create_addr_form()
+    {
+        $params = Model::create(Model::factory()->make()->getAttributes());
 
-        $this->json('get', "api/addrs/0")
-            ->assertStatus(Response::HTTP_NOT_FOUND)
-            ->assertJsonStructure(['error']);
+        // dd($params->toArray());
+
+        $route = route('addrs.create');
+
+        $this->get($route, $params->toArray())
+            ->assertStatus(200)
+            ->assertJsonStructure(['form' => 'form']);
     }
 
-    public function testDestroyAddr() {
+    /** @test */
+    public function can_get_edit_addr_form()
+    {
+        $params = Model::create(Model::factory()->make()->getAttributes());
 
-        $adr = Addr::create(Addr::factory()->make()->getAttributes());
-        $addr = Addr::create(
+        $addr = Model::create(
             [
-                'adr1'     => $adr,
-                'adr2' => $adr2,
-                'city'  => $city,
-                'stae'      => $stae,
-                'post'     => $post,
-                'ctry' => $ctry
+                'adr1' => $params->adr1,
+                'adr2' => $params->adr2,
+                'city' => $params->city,
+                'stae' => $params->stae,
+                'post' => $params->post,
+                'ctry' => $params->ctry
             ]
         );
-        $this->json('delete', "api/addrs/$addr->id")
-            ->assertStatus(Response::HTTP_UNAUTHORIZED);
+
+        $route = route('addrs.edit', $addr->id, false);
+
+        $this->get($route, $addr->toArray())
+            ->assertStatus(200)
+            ->assertJsonStructure(['form' => 'form']);
     }
 
-    public function testUpdateAddr() {
+    /** @test */
+    public function can_delete_addr()
+    {
+        $params = Model::create(Model::factory()->make()->getAttributes());
 
-        $adr = Addr::create(Addr::factory()->make()->getAttributes());
-        $addr = Addr::create(
+        $addr = Model::create(
             [
-                'adr1'     => $adr->id,
-                'adr2' => $adr2->id,
-                'city'  => $city,
-                'stae'      => $stae,
-                'post'     => $post,
-                'ctry' => $ctry,
+                'adr1' => $params->adr1,
+                'adr2' => $params->adr2,
+                'city' => $params->city,
+                'stae' => $params->stae,
+                'post' => $params->post,
+                'ctry' => $params->ctry
             ]
         );
-        $payload = [
-            'id'         => $addr->id,
-        ];
 
-        $this->json('put', "api/addrs/$addr->id", $payload)
-            ->assertStatus(Response::HTTP_UNAUTHORIZED);
+        $route = route('addrs.destroy', $addr->id, false);
+
+        $this->delete($route)->assertStatus(200);
+
+        // $this->assertNull($addr->fresh());
     }
 }
