@@ -2,122 +2,84 @@
 
 namespace Tests\Feature;
 
-use Faker\Factory;
-use Faker\Generator as Faker;
-use App\Models\Addr as Model;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Support\Str;
-use Illuminate\Http\Response;
+use LaravelEnso\Forms\TestTraits\CreateForm;
+use LaravelEnso\Forms\TestTraits\DestroyForm;
+use LaravelEnso\Forms\TestTraits\EditForm;
+use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
+use App\Models\Addr;
 use Tests\TestCase;
 
 class AddrTest extends TestCase {
 
-    use WithoutMiddleware, RefreshDatabase;
+    use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
-    public Addr $model;
+    private $permissionGroup = 'addrs';
+    private $testModel;
 
-    /** @test */
-    public function can_create_addr()
+    protected function setUp(): void
     {
-        $params = Model::factory()->make()->getAttributes();
+        parent::setUp();
 
-        $this->post(route('addrs.store'), $params)
-            ->assertStatus(200)
-            ->assertJsonStructure(['message']);
+        $this->seed()
+            ->actingAs(User::first());
+
+        $this->testModel = Addr::factory()->make();
     }
 
     /** @test */
-    public function can_get_addrs_index()
+    public function can_view_create_form()
     {
-        $route = route('addrs.index');
+        $this->get(route($this->permissionGroup.'.create', false))
+            ->assertStatus(200)
+            ->assertJsonStructure(['form']);
+    }
 
-        $this->get($route)
-            ->assert(200)
-            ->assertJsonStructure(['addrs']);
+    /** @test */
+    public function can_store_addr()
+    {
+        $response = $this->post(
+            route('addrs.store', [], false),
+            $this->testModel->toArray() + []
+        );
+
+        $addr = Addr::where('adr1', $this->testModel->adr1)->first();
+
+        $response->assertStatus(200)
+            ->assertJsonStructure(['message'])
+            ->assertJsonFragment([
+                'redirect' => 'addresses.edit',
+                'param' => ['addr' => $addr->id],
+            ]);
     }
 
     /** @test */
     public function can_update_addr()
     {
-        $params = Model::create(Model::factory()->make()->getAttributes());
+        $this->testModel->save();
 
-        $addr = Model::create(
-            [
-                'adr1' => $params->adr1,
-                'adr2' => $params->adr2,
-                'city' => $params->city,
-                'stae' => $params->stae,
-                'post' => $params->post,
-                'ctry' => $params->ctry
-            ]
-        );
+        $this->testModel->adr1 = 'updated';
 
-        $route = route('addrs.update', $addr->id, false);
+        $this->patch(
+            route('addrs.update', $this->testModel->id, false),
+            $this->testModel->toArray() + []
+        )->assertStatus(200)
+            ->assertJsonStructure(['message']);
 
-        $this->patch($route, $addr->toArray())
-            ->assertStatus(200)
-            ->assertJsonStructure(['message' => 'message']);
+        $this->assertEquals('updated', $this->testModel->fresh()->adr1);
     }
 
     /** @test */
-    public function can_get_create_addr_form()
+    public function get_option_list()
     {
-        $params = Model::create(Model::factory()->make()->getAttributes());
+        $this->testModel->save();
 
-        // dd($params->toArray());
-
-        $route = route('addrs.create');
-
-        $this->get($route, $params->toArray())
+        $this->get(route('addrs.options', [
+            'query' => $this->testModel->adr1,
+            'limit' => 10,
+        ], false))
             ->assertStatus(200)
-            ->assertJsonStructure(['form' => 'form']);
-    }
-
-    /** @test */
-    public function can_get_edit_addr_form()
-    {
-        $params = Model::create(Model::factory()->make()->getAttributes());
-
-        $addr = Model::create(
-            [
-                'adr1' => $params->adr1,
-                'adr2' => $params->adr2,
-                'city' => $params->city,
-                'stae' => $params->stae,
-                'post' => $params->post,
-                'ctry' => $params->ctry
-            ]
-        );
-
-        $route = route('addrs.edit', $addr->id, false);
-
-        $this->get($route, $addr->toArray())
-            ->assertStatus(200)
-            ->assertJsonStructure(['form' => 'form']);
-    }
-
-    /** @test */
-    public function can_delete_addr()
-    {
-        $params = Model::create(Model::factory()->make()->getAttributes());
-
-        $addr = Model::create(
-            [
-                'adr1' => $params->adr1,
-                'adr2' => $params->adr2,
-                'city' => $params->city,
-                'stae' => $params->stae,
-                'post' => $params->post,
-                'ctry' => $params->ctry
-            ]
-        );
-
-        $route = route('addrs.destroy', $addr->id, false);
-
-        $this->delete($route)->assertStatus(200);
-
-        // $this->assertNull($addr->fresh());
+            ->assertJsonFragment(['adr1' => $this->testModel->adr1]);
     }
 }
