@@ -23,7 +23,7 @@ class Person extends CorePerson
      *
      * @var array
      */
-    protected $dates = ['deleted_at', 'birthday', 'deathday'];
+    protected $dates = ['deleted_at', 'birthday', 'deathday', 'burial_day', 'chan'];
 
     protected $guarded = ['id'];
 
@@ -35,7 +35,7 @@ class Person extends CorePerson
         'child_in_family_id',
         'description',
         'title', 'name', 'appellative', 'uid', 'email', 'phone', 'birthday',
-        'deathday', 'bank', 'bank_account',
+        'deathday', 'burial_day', 'bank', 'bank_account',
         'uid', 'chan', 'rin', 'resn', 'rfn', 'afn',
     ];
 
