@@ -1,6 +1,6 @@
 {
     "name": "Addr",
-    "routePrefix": "addresses",
+    "routePrefix": "addrs",
     "crtNo": true,
     "buttons": ["excel", "create", "show", "edit", "destroy"],
     "columns": [{

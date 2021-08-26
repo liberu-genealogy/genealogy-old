@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Addrs;
 
-use App\Addr;
+use App\Models\Addr;
 use App\Http\Requests\ValidateAddrRequest;
 use Illuminate\Routing\Controller;
 
