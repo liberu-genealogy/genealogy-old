@@ -13,7 +13,7 @@ class Options extends Controller
 
     protected string $model = Addr::class;
 
-    //protected $queryAttributes = ['name'];
+    protected $queryAttributes = ['adr1'];
 
     //public function query(Request $request)
     //{
