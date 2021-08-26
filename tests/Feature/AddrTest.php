@@ -76,10 +76,10 @@ class AddrTest extends TestCase {
         $this->testModel->save();
 
         $this->get(route('addrs.options', [
-            'query' => $this->testModel->id,
+            'query' => $this->testModel->adr1,
             'limit' => 10,
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['id' => $this->testModel->id]);
+            ->assertJsonFragment(['adr1' => $this->testModel->adr1]);
     }
 }
