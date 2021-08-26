@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Addr;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class AddrFactory extends Factory
@@ -22,8 +23,8 @@ class AddrFactory extends Factory
     public function definition(): array
     {
         return [
-            'adr1' => $this->faker->address,
-            'adr2' => $this->faker->address,
+            'adr1' => Str::limit($this->faker->address, 30),
+            'adr2' => Str::limit($this->faker->address, 30),
             'city' => $this->faker->city,
             'stae' => $this->faker->state,
             'post' => $this->faker->postcode,
