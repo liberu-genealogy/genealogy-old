@@ -2,7 +2,7 @@
 
 namespace App\Forms\Builders;
 
-use App\PersonAlia;
+use App\Models\PersonAlia;
 use LaravelEnso\Forms\Services\Form;
 
 class PersonAliaForm

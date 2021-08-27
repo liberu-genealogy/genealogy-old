@@ -2,7 +2,7 @@
 
 namespace App\Forms\Builders;
 
-use App\FamilySlgs;
+use App\Models\FamilySlgs;
 use LaravelEnso\Forms\Services\Form;
 
 class FamilySlgsForm

@@ -2,7 +2,7 @@
 
 namespace App\Forms\Builders;
 
-use App\SourceRefEven;
+use App\Models\SourceRefEven;
 use LaravelEnso\Forms\Services\Form;
 
 class SourceRefEvenForm

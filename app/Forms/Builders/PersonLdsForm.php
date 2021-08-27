@@ -2,7 +2,7 @@
 
 namespace App\Forms\Builders;
 
-use App\PersonLds;
+use App\Models\PersonLds;
 use LaravelEnso\Forms\Services\Form;
 
 class PersonLdsForm

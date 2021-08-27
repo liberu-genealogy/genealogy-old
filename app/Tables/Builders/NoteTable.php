@@ -2,7 +2,7 @@
 
 namespace App\Tables\Builders;
 
-use App\Note;
+use App\Models\Note;
 use Illuminate\Database\Eloquent\Builder;
 use LaravelEnso\Tables\Contracts\Table;
 

@@ -2,7 +2,7 @@
 
 namespace App\Tables\Builders;
 
-use App\Family;
+use App\Models\Family;
 use Illuminate\Database\Eloquent\Builder;
 use LaravelEnso\Tables\Contracts\Table;
 

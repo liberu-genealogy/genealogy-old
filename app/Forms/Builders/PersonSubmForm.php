@@ -2,7 +2,7 @@
 
 namespace App\Forms\Builders;
 
-use App\PersonSubm;
+use App\Models\PersonSubm;
 use LaravelEnso\Forms\Services\Form;
 
 class PersonSubmForm

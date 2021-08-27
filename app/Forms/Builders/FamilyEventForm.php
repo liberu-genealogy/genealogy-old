@@ -2,7 +2,7 @@
 
 namespace App\Forms\Builders;
 
-use App\FamilyEvent;
+use App\Models\FamilyEvent;
 use LaravelEnso\Forms\Services\Form;
 
 class FamilyEventForm

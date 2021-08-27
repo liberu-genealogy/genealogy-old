@@ -2,7 +2,7 @@
 
 namespace App\Tables\Builders;
 
-use App\Chan;
+use App\Models\Chan;
 use Illuminate\Database\Eloquent\Builder;
 use LaravelEnso\Tables\Contracts\Table;
 

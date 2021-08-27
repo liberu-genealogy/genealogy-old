@@ -2,7 +2,7 @@
 
 namespace App\Forms\Builders;
 
-use App\SourceData;
+use App\Models\SourceData;
 use LaravelEnso\Forms\Services\Form;
 
 class SourceDataForm
