@@ -9,9 +9,10 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Http;
-use Spatie\Multitenancy\Jobs\NotTenantAware;
+// use Spatie\Multitenancy\Jobs\NotTenantAware;
 
-abstract class Sync implements ShouldQueue, NotTenantAware
+// abstract class Sync implements ShouldQueue, NotTenantAware
+abstract class Sync implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -21,7 +22,7 @@ abstract class Sync implements ShouldQueue, NotTenantAware
     protected const DATABASE = null;
     protected const URL = null;
 
-    public static $is_testing = false;
+    public static $is_testing = false; //change true if want test sync
 
     protected $current_page;
     protected $retry;
