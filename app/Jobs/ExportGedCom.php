@@ -3,8 +3,8 @@
 namespace App\Jobs;
 
 use Auth;
+use FamilyTree365\LaravelGedcom\Utils\GedcomGenerator;
 use File;
-use GenealogiaWebsite\LaravelGedcom\Utils\GedcomGenerator;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -16,17 +16,16 @@ class ExportGedCom implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected $family_id;
+    protected $file;
 
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($family_id, Request $request)
+    public function __construct($file)
     {
-        //
-        $this->family_id = $family_id;
+        $this->file = $file;
     }
 
     /**
@@ -36,25 +35,18 @@ class ExportGedCom implements ShouldQueue
      */
     public function handle()
     {
-        //
-        $headers = [
-            'Content-type' => 'text/txt',
-        ];
-        $p_id = 0;
-        $f_id = $this->family_id;
+        $p_id = 1;
+        $f_id = 1;
         $up_nest = 3;
         $down_nest = 3;
         $writer = new GedcomGenerator($p_id, $f_id, $up_nest, $down_nest);
         $content = $writer->getGedcomPerson();
-        // $user_id = Auth::user()->id;
-        $ts = microtime(true);
-        $file = env('APP_NAME').date('_Ymd_').$ts.'.GED';
         $destinationPath = public_path().'/upload/';
+
         if (! is_dir($destinationPath)) {
             mkdir($destinationPath, 0777, true);
         }
-        File::put($destinationPath.$file, $content);
 
-        return 0;
+        File::put($destinationPath.$this->file, $content);
     }
 }
