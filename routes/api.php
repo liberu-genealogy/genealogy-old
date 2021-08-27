@@ -285,6 +285,7 @@ use App\Http\Controllers\Subn\Show as SubnShow;
 use App\Http\Controllers\Subn\Store as SubnStore;
 use App\Http\Controllers\Subn\TableData as SubnTableData;
 use App\Http\Controllers\Subn\Update as SubnUpdate;
+use App\Http\Controllers\Trees\Show as TreesShow;
 use App\Http\Controllers\Types\Create as TypesCreate;
 use App\Http\Controllers\Types\Destroy as TypesDestroy;
 use App\Http\Controllers\Types\Edit as TypesEdit;
@@ -599,6 +600,16 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', TypesOptions::class)->name('options');
                 Route::get('{type}', TypesShow::class)->name('show');
+            });
+    });
+
+Route::middleware(['api', 'auth', 'core', 'multitenant'])
+    ->group(function () {
+        Route::namespace('')
+            ->prefix('trees')
+            ->as('trees.')
+            ->group(function () {
+                Route::get('show', TreesShow::class)->name('show');
             });
     });
 
