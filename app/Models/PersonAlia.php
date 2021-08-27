@@ -4,7 +4,7 @@ namespace App\Models;
 
 use LaravelEnso\Tables\Traits\TableCache;
 
-class PersonAlia extends \GenealogiaWebsite\LaravelGedcom\Models\PersonAlia
+class PersonAlia extends \FamilyTree365\LaravelGedcom\Models\PersonAlia
 {
     use TableCache;
 }

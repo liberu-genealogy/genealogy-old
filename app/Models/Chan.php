@@ -4,7 +4,7 @@ namespace App\Models;
 
 use LaravelEnso\Tables\Traits\TableCache;
 
-class Chan extends \GenealogiaWebsite\LaravelGedcom\Models\Chan
+class Chan extends \FamilyTree365\LaravelGedcom\Models\Chan
 {
     use TableCache;
 }
