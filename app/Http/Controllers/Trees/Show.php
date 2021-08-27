@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Trees;
 
-use App\Family;
+use App\Models\Family;
 use App\Jobs\ExportGedCom;
-use App\Note;
-use App\Person;
+use App\Models\Note;
+use App\Models\Person;
 use File;
 use GenealogiaWebsite\LaravelGedcom\Utils\GedcomGenerator;
 use Illuminate\Http\Request;
