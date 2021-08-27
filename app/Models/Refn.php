@@ -4,7 +4,7 @@ namespace App\Models;
 
 use LaravelEnso\Tables\Traits\TableCache;
 
-class Refn extends \GenealogiaWebsite\LaravelGedcom\Models\Refn
+class Refn extends \FamilyTree365\LaravelGedcom\Models\Refn
 {
     use TableCache;
 }

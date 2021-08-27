@@ -4,7 +4,7 @@ namespace App\Models;
 
 use LaravelEnso\Tables\Traits\TableCache;
 
-class PersonNameFone extends \GenealogiaWebsite\LaravelGedcom\Models\PersonNameFone
+class PersonNameFone extends \FamilyTree365\LaravelGedcom\Models\PersonNameFone
 {
     use TableCache;
 }
