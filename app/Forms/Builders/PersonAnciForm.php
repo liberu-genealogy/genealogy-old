@@ -2,7 +2,7 @@
 
 namespace App\Forms\Builders;
 
-use App\PersonAnci;
+use App\Models\PersonAnci;
 use LaravelEnso\Forms\Services\Form;
 
 class PersonAnciForm

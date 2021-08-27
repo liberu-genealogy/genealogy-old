@@ -2,7 +2,7 @@
 
 namespace App\Tables\Builders;
 
-use App\SourceDataEven;
+use App\Models\SourceDataEven;
 use Illuminate\Database\Eloquent\Builder;
 use LaravelEnso\Tables\Contracts\Table;
 

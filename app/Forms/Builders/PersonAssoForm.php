@@ -2,7 +2,7 @@
 
 namespace App\Forms\Builders;
 
-use App\PersonAsso;
+use App\Models\PersonAsso;
 use LaravelEnso\Forms\Services\Form;
 
 class PersonAssoForm

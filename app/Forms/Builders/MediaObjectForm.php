@@ -2,7 +2,7 @@
 
 namespace App\Forms\Builders;
 
-use App\MediaObject;
+use App\Models\MediaObject;
 use LaravelEnso\Forms\Services\Form;
 
 class MediaObjectForm

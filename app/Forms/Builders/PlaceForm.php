@@ -2,7 +2,7 @@
 
 namespace App\Forms\Builders;
 
-use App\Place;
+use App\Models\Place;
 use LaravelEnso\Forms\Services\Form;
 
 class PlaceForm

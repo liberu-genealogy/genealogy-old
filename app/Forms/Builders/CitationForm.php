@@ -2,7 +2,7 @@
 
 namespace App\Forms\Builders;
 
-use App\Source;
+use App\Models\Source;
 use LaravelEnso\Forms\Services\Form;
 
 class CitationForm

@@ -2,7 +2,7 @@
 
 namespace App\Forms\Builders;
 
-use App\Publication;
+use App\Models\Publication;
 use LaravelEnso\Forms\Services\Form;
 
 class PublicationForm

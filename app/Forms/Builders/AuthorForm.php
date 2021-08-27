@@ -2,7 +2,7 @@
 
 namespace App\Forms\Builders;
 
-use App\Author;
+use App\Models\Author;
 use LaravelEnso\Forms\Services\Form;
 
 class AuthorForm

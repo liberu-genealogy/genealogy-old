@@ -2,7 +2,7 @@
 
 namespace App\Tables\Builders;
 
-use App\MediaObject;
+use App\Models\MediaObject;
 use Illuminate\Database\Eloquent\Builder;
 use LaravelEnso\Tables\Contracts\Table;
 

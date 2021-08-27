@@ -2,7 +2,7 @@
 
 namespace App\Tables\Builders;
 
-use App\PersonSubm;
+use App\Models\PersonSubm;
 use Illuminate\Database\Eloquent\Builder;
 use LaravelEnso\Tables\Contracts\Table;
 

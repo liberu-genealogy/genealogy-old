@@ -2,7 +2,7 @@
 
 namespace App\Forms\Builders;
 
-use App\Chan;
+use App\Models\Chan;
 use LaravelEnso\Forms\Services\Form;
 
 class ChanForm

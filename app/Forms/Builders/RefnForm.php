@@ -2,7 +2,7 @@
 
 namespace App\Forms\Builders;
 
-use App\Refn;
+use App\Models\Refn;
 use LaravelEnso\Forms\Services\Form;
 
 class RefnForm
