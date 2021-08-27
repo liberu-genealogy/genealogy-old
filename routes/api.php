@@ -84,6 +84,7 @@ use App\Http\Controllers\Familyslugs\Show as FamilyslugsShow;
 use App\Http\Controllers\Familyslugs\Store as FamilyslugsStore;
 use App\Http\Controllers\Familyslugs\TableData as FamilyslugsTableData;
 use App\Http\Controllers\Familyslugs\Update as FamilyslugsUpdate;
+use App\Http\Controllers\FamilySearch\FamilySearchController;
 use App\Http\Controllers\Gedcom\Store as GedcomStore;
 use App\Http\Controllers\MediaObjects\Create as MediaobjectsCreate;
 use App\Http\Controllers\MediaObjects\Destroy as MediaobjectsDestroy;
@@ -668,6 +669,11 @@ Route::get('wikitree/search-person', [WikitreeController::class, 'searchPerson']
 // OpenArch
 Route::prefix('open-arch')->group(function () {
     Route::get('search-person', [OpenArchController::class, 'searchPerson'])->name('search-person');
+});
+
+// OpenArch
+Route::prefix('family-search')->group(function () {
+    Route::get('search', [FamilySearchController::class, 'searchPerson'])->name('search-person');
 });
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
