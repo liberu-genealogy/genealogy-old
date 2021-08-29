@@ -38,8 +38,8 @@ class FamilySearchController extends Controller
                     'q.motherSurname' => $request->motherSurname,
                     'q.motherBirthLikePlace' => $request->motherBirthLikePlace,
                     'offset' => $request->offest,
-                    'count' => $request->count
-                ]
+                    'count' => $request->count,
+                ],
             ]);
 
             $statusCode = $response->getStatusCode();
@@ -47,14 +47,11 @@ class FamilySearchController extends Controller
             $result = json_decode($response->getBody(), true);
 
             return response()->json($result);
-
         } catch (\GuzzleHttp\Exception\ClientException $e) {
-
             $response = $e->getResponse();
             $result = json_decode($response->getBody(), true);
 
             return response()->json($result);
         }
-
     }
 }
