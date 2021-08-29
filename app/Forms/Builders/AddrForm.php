@@ -2,7 +2,7 @@
 
 namespace App\Forms\Builders;
 
-use App\Models\Models\Addr;
+use App\Models\Addr;
 use LaravelEnso\Forms\Services\Form;
 
 class AddrForm
