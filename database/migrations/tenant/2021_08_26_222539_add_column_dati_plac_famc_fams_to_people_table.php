@@ -43,7 +43,7 @@ class AddColumnDatiPlacFamcFamsToPeopleTable extends Migration
                 'burial_day_dati',
                 'burial_day_plac',
                 'famc',
-                'fams'
+                'fams',
             ]);
         });
     }

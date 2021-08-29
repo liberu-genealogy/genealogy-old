@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Addrs;
 
-use App\Models\Addr;
 use App\Http\Requests\ValidateAddrRequest;
+use App\Models\Addr;
 use Illuminate\Routing\Controller;
 
 class Update extends Controller
