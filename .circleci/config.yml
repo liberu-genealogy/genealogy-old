@@ -45,9 +45,9 @@ jobs:
       # - run: docker-build
       - run: sudo apt-get update
       - run: sudo apt-get install lsb-release
-      - run: wget https://dev.mysql.com/get/mysql-apt-config_0.8.18-1_all.deb
-      - run: sudo dpkg -i mysql-apt-config_0.8.18-1_all.deb
-      - run: sudo apt update # PHP CircleCI 2.0 Configuration File# PHP CircleCI 2.0 Configuration File sudo apt install zlib1g-dev libsqlite3-dev
+ #     - run: wget https://dev.mysql.com/get/mysql-apt-config_0.8.18-1_all.deb
+#      - run: sudo dpkg -i mysql-apt-config_0.8.18-1_all.deb
+#      - run: sudo apt update # PHP CircleCI 2.0 Configuration File# PHP CircleCI 2.0 Configuration File sudo apt install zlib1g-dev libsqlite3-dev
       - run: sudo apt install -y mysql-client libxml2-dev libpng-dev libfreetype6-dev libjpeg62-turbo-dev libfreetype6-dev libpng-dev libjpeg-dev libzip-dev
       #- run: sudo docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-webp-dir=/usr/include/  --with-jpeg-dir=/usr/include/ && \
       - run: sudo docker-php-ext-configure gd --with-freetype --with-jpeg
