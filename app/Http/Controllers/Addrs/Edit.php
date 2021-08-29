@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Addrs;
 
-use App\Models\Addr;
 use App\Forms\Builders\AddrForm;
+use App\Models\Addr;
 use Illuminate\Routing\Controller;
 
 class Edit extends Controller
