@@ -22,7 +22,7 @@ abstract class Sync implements ShouldQueue
     protected const DATABASE = null;
     protected const URL = null;
 
-    public static $is_testing = false; //change true if want test sync
+    public static $is_testing = true; //change true if want test sync
 
     protected $current_page;
     protected $retry;
