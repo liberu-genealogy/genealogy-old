@@ -51,17 +51,17 @@ return [
     'openarch' => [
         'api' => [
             'records' => 'https://api.openarch.nl/1.0/records',
-        ]
+        ],
     ],
 
     'familysearch' => [
         'api' => [
             'records' => 'https://api.familysearch.org/platform/tree',
-        ]
+        ],
     ],
 
     'wikitree' => [
-        'api' => env('WIKITREE_API')
-     ],
+        'api' => env('WIKITREE_API'),
+    ],
 
 ];
