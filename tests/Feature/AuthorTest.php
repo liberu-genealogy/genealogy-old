@@ -8,13 +8,14 @@ use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
-use App\Models\Note;
+use App\Models\Author;
 use Tests\TestCase;
-class NoteTest extends TestCase {
+
+class AuthorTest extends TestCase {
 
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
-    private $permissionGroup = 'notes';
+    private $permissionGroup = 'authors';
     private $testModel;
 
     protected function setUp(): void
@@ -24,7 +25,7 @@ class NoteTest extends TestCase {
         $this->seed()
             ->actingAs(User::first());
 
-        $this->testModel = Note::factory()->make();
+        $this->testModel = Author::factory()->make();
     }
 
     /** @test */
@@ -36,32 +37,32 @@ class NoteTest extends TestCase {
     }
 
     /** @test */
-    public function can_store_note()
+    public function can_store_author()
     {
         $response = $this->post(
-            route('notes.store', [], false),
+            route('authors.store', [], false),
             $this->testModel->toArray() + []
         );
 
-        $note = Note::where('name', $this->testModel->name)->first();
+        $author = Author::where('name', $this->testModel->name)->first();
 
         $response->assertStatus(200)
             ->assertJsonStructure(['message'])
             ->assertJsonFragment([
-                'redirect' => 'notes.edit',
-                'param' => ['note' => $note->id],
+                'redirect' => 'authors.edit',
+                'param' => ['author' => $author->id],
             ]);
     }
 
     /** @test */
-    public function can_update_note()
+    public function can_update_author()
     {
         $this->testModel->save();
 
         $this->testModel->name = 'updated';
 
         $this->patch(
-            route('notes.update', $this->testModel->id, false),
+            route('authors.update', $this->testModel->id, false),
             $this->testModel->toArray() + []
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
@@ -74,7 +75,7 @@ class NoteTest extends TestCase {
     {
         $this->testModel->save();
 
-        $this->get(route('notes.options', [
+        $this->get(route('authors.options', [
             'query' => $this->testModel->name,
             'limit' => 10,
         ], false))

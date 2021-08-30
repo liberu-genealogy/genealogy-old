@@ -8,13 +8,14 @@ use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
-use App\Models\Note;
+use App\Models\Chain;
 use Tests\TestCase;
-class NoteTest extends TestCase {
+
+class ChainTest extends TestCase {
 
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
-    private $permissionGroup = 'notes';
+    private $permissionGroup = 'chains';
     private $testModel;
 
     protected function setUp(): void
@@ -24,7 +25,7 @@ class NoteTest extends TestCase {
         $this->seed()
             ->actingAs(User::first());
 
-        $this->testModel = Note::factory()->make();
+        $this->testModel = Chain::factory()->make();
     }
 
     /** @test */
@@ -36,37 +37,37 @@ class NoteTest extends TestCase {
     }
 
     /** @test */
-    public function can_store_note()
+    public function can_store_chain()
     {
         $response = $this->post(
-            route('notes.store', [], false),
+            route('chains.store', [], false),
             $this->testModel->toArray() + []
         );
 
-        $note = Note::where('name', $this->testModel->name)->first();
+        $chain = Chain::where('gid', $this->testModel->gid)->first();
 
         $response->assertStatus(200)
             ->assertJsonStructure(['message'])
             ->assertJsonFragment([
-                'redirect' => 'notes.edit',
-                'param' => ['note' => $note->id],
+                'redirect' => 'chains.edit',
+                'param' => ['chain' => $chain->id],
             ]);
     }
 
     /** @test */
-    public function can_update_note()
+    public function can_update_chain()
     {
         $this->testModel->save();
 
-        $this->testModel->name = 'updated';
+        $this->testModel->gid = 'updated';
 
         $this->patch(
-            route('notes.update', $this->testModel->id, false),
+            route('chains.update', $this->testModel->id, false),
             $this->testModel->toArray() + []
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
 
-        $this->assertEquals('updated', $this->testModel->fresh()->name);
+        $this->assertEquals('updated', $this->testModel->fresh()->gid);
     }
 
     /** @test */
@@ -74,11 +75,11 @@ class NoteTest extends TestCase {
     {
         $this->testModel->save();
 
-        $this->get(route('notes.options', [
-            'query' => $this->testModel->name,
+        $this->get(route('chains.options', [
+            'query' => $this->testModel->gid,
             'limit' => 10,
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['name' => $this->testModel->name]);
+            ->assertJsonFragment(['gid' => $this->testModel->gid]);
     }
 }
