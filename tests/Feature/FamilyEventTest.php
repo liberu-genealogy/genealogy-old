@@ -8,13 +8,14 @@ use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
-use App\Models\Note;
+use App\Models\FamilyEvent;
 use Tests\TestCase;
-class NoteTest extends TestCase {
+
+class FamilyEventTest extends TestCase {
 
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
-    private $permissionGroup = 'notes';
+    private $permissionGroup = 'family_events';
     private $testModel;
 
     protected function setUp(): void
@@ -24,11 +25,11 @@ class NoteTest extends TestCase {
         $this->seed()
             ->actingAs(User::first());
 
-        $this->testModel = Note::factory()->make();
+        $this->testModel = FamilyEvent::factory()->make();
     }
 
     /** @test */
-    public function can_view_create_form()
+    public function can_view_create_family_event()
     {
         $this->get(route($this->permissionGroup.'.create', false))
             ->assertStatus(200)
@@ -36,37 +37,37 @@ class NoteTest extends TestCase {
     }
 
     /** @test */
-    public function can_store_note()
+    public function can_store_family_event()
     {
         $response = $this->post(
-            route('notes.store', [], false),
+            route('family_events.store', [], false),
             $this->testModel->toArray() + []
         );
 
-        $note = Note::where('name', $this->testModel->name)->first();
+        $family_event = FamilyEvent::where('family_id', $this->testModel->family_id)->first();
 
         $response->assertStatus(200)
             ->assertJsonStructure(['message'])
             ->assertJsonFragment([
-                'redirect' => 'notes.edit',
-                'param' => ['note' => $note->id],
+                'redirect' => 'family_events.edit',
+                'param' => ['family_event' => $family_event->id],
             ]);
     }
 
     /** @test */
-    public function can_update_note()
+    public function can_update_family()
     {
         $this->testModel->save();
 
-        $this->testModel->name = 'updated';
+        $this->testModel->family_id = 'updated';
 
         $this->patch(
-            route('notes.update', $this->testModel->id, false),
+            route('family_events.update', $this->testModel->id, false),
             $this->testModel->toArray() + []
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
 
-        $this->assertEquals('updated', $this->testModel->fresh()->name);
+        $this->assertEquals('updated', $this->testModel->fresh()->family_id);
     }
 
     /** @test */
@@ -74,11 +75,11 @@ class NoteTest extends TestCase {
     {
         $this->testModel->save();
 
-        $this->get(route('notes.options', [
-            'query' => $this->testModel->name,
+        $this->get(route('family_events.options', [
+            'query' => $this->testModel->family_id,
             'limit' => 10,
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['name' => $this->testModel->name]);
+            ->assertJsonFragment(['family_id' => $this->testModel->family_id]);
     }
 }
