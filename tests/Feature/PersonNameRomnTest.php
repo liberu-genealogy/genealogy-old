@@ -2,20 +2,20 @@
 
 namespace Tests\Feature;
 
-use App\Models\Addr;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use LaravelEnso\Forms\TestTraits\CreateForm;
 use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
+use App\Models\PersonNameRomn;
 use Tests\TestCase;
 
-class AddrTest extends TestCase
-{
+class PersonNameRomnTest extends TestCase {
+
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
-    private $permissionGroup = 'addrs';
+    private $permissionGroup = 'person_name_romn';
     private $testModel;
 
     protected function setUp(): void
@@ -25,11 +25,11 @@ class AddrTest extends TestCase
         $this->seed()
             ->actingAs(User::first());
 
-        $this->testModel = Addr::factory()->make();
+        $this->testModel = PersonNameRomn::factory()->make();
     }
 
     /** @test */
-    public function can_view_create_form()
+    public function can_view_create_person_name_romn()
     {
         $this->get(route($this->permissionGroup.'.create', false))
             ->assertStatus(200)
@@ -37,37 +37,37 @@ class AddrTest extends TestCase
     }
 
     /** @test */
-    public function can_store_addr()
+    public function can_store_person_name_romn()
     {
         $response = $this->post(
-            route('addrs.store', [], false),
+            route('person_name_romn.store', [], false),
             $this->testModel->toArray() + []
         );
 
-        $addr = Addr::where('adr1', $this->testModel->adr1)->first();
+        $person_name_romn = PersonNameRomn::where('gid', $this->testModel->gid)->first();
 
         $response->assertStatus(200)
             ->assertJsonStructure(['message'])
             ->assertJsonFragment([
-                'redirect' => 'addrs.edit',
-                'param' => ['addr' => $addr->id],
+                'redirect' => 'person_name_romn.edit',
+                'param' => ['person_name_romn' => $person_name_romn->id],
             ]);
     }
 
     /** @test */
-    public function can_update_addr()
+    public function can_update_person_name_romn()
     {
         $this->testModel->save();
 
-        $this->testModel->adr1 = 'updated';
+        $this->testModel->gid = 'updated';
 
         $this->patch(
-            route('addrs.update', $this->testModel->id, false),
+            route('person_name_romn.update', $this->testModel->id, false),
             $this->testModel->toArray() + []
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
 
-        $this->assertEquals('updated', $this->testModel->fresh()->adr1);
+        $this->assertEquals('updated', $this->testModel->fresh()->gid);
     }
 
     /** @test */
@@ -75,11 +75,11 @@ class AddrTest extends TestCase
     {
         $this->testModel->save();
 
-        $this->get(route('addrs.options', [
-            'query' => $this->testModel->adr1,
+        $this->get(route('person_name_romn.options', [
+            'query' => $this->testModel->gid,
             'limit' => 10,
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['adr1' => $this->testModel->adr1]);
+            ->assertJsonFragment(['gid' => $this->testModel->gid]);
     }
 }

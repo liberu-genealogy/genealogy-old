@@ -2,20 +2,20 @@
 
 namespace Tests\Feature;
 
-use App\Models\Addr;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use LaravelEnso\Forms\TestTraits\CreateForm;
 use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
+use App\Models\Geneanum;
 use Tests\TestCase;
 
-class AddrTest extends TestCase
-{
+class GeneanumTest extends TestCase {
+
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
-    private $permissionGroup = 'addrs';
+    private $permissionGroup = 'geneanums';
     private $testModel;
 
     protected function setUp(): void
@@ -25,11 +25,11 @@ class AddrTest extends TestCase
         $this->seed()
             ->actingAs(User::first());
 
-        $this->testModel = Addr::factory()->make();
+        $this->testModel = Geneanum::factory()->make();
     }
 
     /** @test */
-    public function can_view_create_form()
+    public function can_view_create_geneanum()
     {
         $this->get(route($this->permissionGroup.'.create', false))
             ->assertStatus(200)
@@ -37,37 +37,37 @@ class AddrTest extends TestCase
     }
 
     /** @test */
-    public function can_store_addr()
+    public function can_store_geneanum()
     {
         $response = $this->post(
-            route('addrs.store', [], false),
+            route('geneanums.store', [], false),
             $this->testModel->toArray() + []
         );
 
-        $addr = Addr::where('adr1', $this->testModel->adr1)->first();
+        $geneanum = Geneanum::where('remote_id', $this->testModel->remote_id)->first();
 
         $response->assertStatus(200)
             ->assertJsonStructure(['message'])
             ->assertJsonFragment([
-                'redirect' => 'addrs.edit',
-                'param' => ['addr' => $addr->id],
+                'redirect' => 'geneanums.edit',
+                'param' => ['geneanum' => $geneanum->id],
             ]);
     }
 
     /** @test */
-    public function can_update_addr()
+    public function can_update_geneanum()
     {
         $this->testModel->save();
 
-        $this->testModel->adr1 = 'updated';
+        $this->testModel->remote_id = 'updated';
 
         $this->patch(
-            route('addrs.update', $this->testModel->id, false),
+            route('geneanum.update', $this->testModel->id, false),
             $this->testModel->toArray() + []
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
 
-        $this->assertEquals('updated', $this->testModel->fresh()->adr1);
+        $this->assertEquals('updated', $this->testModel->fresh()->remote_id);
     }
 
     /** @test */
@@ -75,11 +75,11 @@ class AddrTest extends TestCase
     {
         $this->testModel->save();
 
-        $this->get(route('addrs.options', [
-            'query' => $this->testModel->adr1,
+        $this->get(route('geneanums.options', [
+            'query' => $this->testModel->remote_id,
             'limit' => 10,
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['adr1' => $this->testModel->adr1]);
+            ->assertJsonFragment(['remote_id' => $this->testModel->remote_id]);
     }
 }

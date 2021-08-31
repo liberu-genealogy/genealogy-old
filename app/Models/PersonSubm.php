@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use LaravelEnso\Tables\Traits\TableCache;
 
 class PersonSubm extends \FamilyTree365\LaravelGedcom\Models\PersonSubm
 {
-    use TableCache;
+    use TableCache, HasFactory;
 }
