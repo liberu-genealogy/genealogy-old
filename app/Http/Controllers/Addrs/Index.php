@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Addrs;
 
-use App\Models\Addr;
 use App\Http\Controllers\Controller;
+use App\Models\Addr;
 use Illuminate\Http\Request;
 
 class Index extends Controller

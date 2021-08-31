@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Trees;
 
-use App\Models\Family;
 use App\Jobs\ExportGedCom;
+use App\Models\Family;
 use App\Models\Note;
 use App\Models\Person;
 use File;

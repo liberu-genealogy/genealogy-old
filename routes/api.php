@@ -73,6 +73,7 @@ use App\Http\Controllers\Familyevents\Show as FamilyeventsShow;
 use App\Http\Controllers\Familyevents\Store as FamilyeventsStore;
 use App\Http\Controllers\Familyevents\TableData as FamilyeventsTableData;
 use App\Http\Controllers\Familyevents\Update as FamilyeventsUpdate;
+use App\Http\Controllers\FamilySearch\FamilySearchController;
 use App\Http\Controllers\Familyslugs\Create as FamilyslugsCreate;
 use App\Http\Controllers\Familyslugs\Destroy as FamilyslugsDestroy;
 use App\Http\Controllers\Familyslugs\Edit as FamilyslugsEdit;
@@ -84,7 +85,6 @@ use App\Http\Controllers\Familyslugs\Show as FamilyslugsShow;
 use App\Http\Controllers\Familyslugs\Store as FamilyslugsStore;
 use App\Http\Controllers\Familyslugs\TableData as FamilyslugsTableData;
 use App\Http\Controllers\Familyslugs\Update as FamilyslugsUpdate;
-use App\Http\Controllers\FamilySearch\FamilySearchController;
 use App\Http\Controllers\Gedcom\Store as GedcomStore;
 use App\Http\Controllers\MediaObjects\Create as MediaobjectsCreate;
 use App\Http\Controllers\MediaObjects\Destroy as MediaobjectsDestroy;
@@ -352,6 +352,10 @@ use LaravelEnso\People\Http\Controllers\Options as PeopleOptions;
 use LaravelEnso\People\Http\Controllers\Store as PeopleStore;
 use LaravelEnso\People\Http\Controllers\TableData as PeopleTableData;
 use LaravelEnso\People\Http\Controllers\Update as PeopleUpdate;
+use LaravelEnso\ControlPanelApi\Http\Controllers\Action as ControlPanelAction;
+use LaravelEnso\ControlPanelApi\Http\Controllers\Actions as ControlPanelActions;
+use LaravelEnso\ControlPanelApi\Http\Controllers\DownloadLog as ControlPanelDownloadLog;
+use LaravelEnso\ControlPanelApi\Http\Controllers\Statistics as ControlPanelStatistics;
 
 /**
  * Route::middleware(['guest'])
@@ -1190,6 +1194,22 @@ Route::middleware(['api', 'auth', 'core'])
         Route::patch('makeShipping/{address}', AddressMakeShipping::class)->name('makeShipping');
 
         Route::get('{address}', AddressShow::class)->name('show');
+    });
+
+Route::name('api.controlPanel.')
+    ->prefix('api/controlpanel')->as('controlpanel.')
+    ->group(function () {
+        Route::middleware(['api', 'auth', 'core'])
+        ->group(function () {
+                Route::get('statistics', ControlPanelStatistics::class)->name('statistics');
+                Route::get('actions', ControlPanelActions::class)->name('actions');
+                Route::any('{action}', ControlPanelAction::class)->name('action');
+            });
+
+        Route::middleware(['signed', 'bindings'])
+            ->prefix('action')
+            ->as('action.')
+            ->group(fn () => Route::get('downloadLog', ControlPanelDownloadLog::class)->name('downloadLog'));
     });
 
 Broadcast::routes(['middleware' => ['auth:sanctum']]);

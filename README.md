@@ -31,20 +31,14 @@ Note that most sections have short demo clips.
 
 ### Installation Steps
 
-1. Download the project with `git clone https://github.com/familytree365/genealogy.git --depth 1`
+1. Download the project with `composer create-project familytree365/genealogy`
 
-2. Within the project folder run `composer install`
-
-3. Create a database for your site (see the [Laravel database documentation](https://laravel.com/docs/6.x/database)), 
-copy or rename the `.env.example` file to `.env`, 
-edit the database configuration information, and run `php artisan key:generate`
-
-4. In order to serve the back-end API, take a look at the Local Development Server section of the [Laravel installation documentation](https://laravel.com/docs/6.x/#installation)
+2. In order to serve the back-end API, take a look at the Local Development Server section of the [Laravel installation documentation](https://laravel.com/docs/6.x/#installation)
 and consider using [Valet](https://laravel.com/docs/6.x/valet) for a better experience
 
-5. Run `php artisan migrate --seed`
+3. Run `php artisan migrate --seed`
 
-6. Launch the site and log into the project with user: `admin@familytree365.com`, password: `password`
+4. Launch the site and log into the project with user: `admin@familytree365.com`, password: `password`
 
 7. (optional) Setup the configuration files as needed, in `config/enso/*.php`
 
