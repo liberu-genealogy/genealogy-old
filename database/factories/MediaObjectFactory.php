@@ -23,7 +23,7 @@ class MediaObjectFactory extends Factory
     {
         return [
             'group' => $this->faker->word(), 'gid' => $this->faker->randomElement('1', '2'),
-            'titl' => $this->faker->word(), , 'obje_id' => $this->faker->randomElement('1', '2'),
+            'titl' => $this->faker->word(), 'obje_id' => $this->faker->randomElement('1', '2'),
             'rin' => $this->faker->word(), 'created_at', 'updated_at',
         ];
     }
