@@ -35,7 +35,7 @@ class ExportGedCom implements ShouldQueue
      */
     public function handle()
     {
-        $p_id = 1;
+        $p_id = 0;
         $f_id = 1;
         $up_nest = 3;
         $down_nest = 3;

@@ -7,5 +7,5 @@ use LaravelEnso\Tables\Traits\TableCache;
 
 class Note extends \FamilyTree365\LaravelGedcom\Models\Note
 {
-    use TableCache, HasFactory;
+    use HasFactory, TableCache;
 }
