@@ -30,7 +30,7 @@ class RepositoryFactory extends Factory
             'rin' => $this->faker->word(),
             'phon' => $this->faker->phoneNumber(),
             'email' => $this->faker->email(),
-            'fax',
+            'fax' => $this->faker->phoneNumber(),
             'www' => $this->faker->url(),
             'name' => $this->faker->name(),
             'description' => $this->faker->text(),
