@@ -2,20 +2,20 @@
 
 namespace Tests\Feature;
 
-use App\Models\Addr;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use LaravelEnso\Forms\TestTraits\CreateForm;
 use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
+use App\Models\FamilySlgs;
 use Tests\TestCase;
 
-class AddrTest extends TestCase
-{
+class FamilySlgsTest extends TestCase {
+
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
-    private $permissionGroup = 'addrs';
+    private $permissionGroup = 'family_slgs';
     private $testModel;
 
     protected function setUp(): void
@@ -25,11 +25,11 @@ class AddrTest extends TestCase
         $this->seed()
             ->actingAs(User::first());
 
-        $this->testModel = Addr::factory()->make();
+        $this->testModel = FamilySlgs::factory()->make();
     }
 
     /** @test */
-    public function can_view_create_form()
+    public function can_view_create_family_slgs()
     {
         $this->get(route($this->permissionGroup.'.create', false))
             ->assertStatus(200)
@@ -37,37 +37,37 @@ class AddrTest extends TestCase
     }
 
     /** @test */
-    public function can_store_addr()
+    public function can_store_family_slgs()
     {
         $response = $this->post(
-            route('addrs.store', [], false),
+            route('family_slgs.store', [], false),
             $this->testModel->toArray() + []
         );
 
-        $addr = Addr::where('adr1', $this->testModel->adr1)->first();
+        $family_slgs = FamilySlgs::where('family_id', $this->testModel->family_id)->first();
 
         $response->assertStatus(200)
             ->assertJsonStructure(['message'])
             ->assertJsonFragment([
-                'redirect' => 'addrs.edit',
-                'param' => ['addr' => $addr->id],
+                'redirect' => 'family_slgs.edit',
+                'param' => ['family_slg' => $family_slgs->id],
             ]);
     }
 
     /** @test */
-    public function can_update_addr()
+    public function can_update_family()
     {
         $this->testModel->save();
 
-        $this->testModel->adr1 = 'updated';
+        $this->testModel->family_id = 'updated';
 
         $this->patch(
-            route('addrs.update', $this->testModel->id, false),
+            route('family_slgs.update', $this->testModel->id, false),
             $this->testModel->toArray() + []
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
 
-        $this->assertEquals('updated', $this->testModel->fresh()->adr1);
+        $this->assertEquals('updated', $this->testModel->fresh()->family_id);
     }
 
     /** @test */
@@ -75,11 +75,11 @@ class AddrTest extends TestCase
     {
         $this->testModel->save();
 
-        $this->get(route('addrs.options', [
-            'query' => $this->testModel->adr1,
+        $this->get(route('family_slgs.options', [
+            'query' => $this->testModel->family_id,
             'limit' => 10,
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['adr1' => $this->testModel->adr1]);
+            ->assertJsonFragment(['family_id' => $this->testModel->family_id]);
     }
 }
