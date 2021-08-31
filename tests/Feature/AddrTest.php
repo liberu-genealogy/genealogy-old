@@ -49,7 +49,7 @@ class AddrTest extends TestCase {
         $response->assertStatus(200)
             ->assertJsonStructure(['message'])
             ->assertJsonFragment([
-                'redirect' => 'addresses.edit',
+                'redirect' => 'addrs.edit',
                 'param' => ['addr' => $addr->id],
             ]);
     }
