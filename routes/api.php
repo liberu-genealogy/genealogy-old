@@ -352,6 +352,10 @@ use LaravelEnso\People\Http\Controllers\Options as PeopleOptions;
 use LaravelEnso\People\Http\Controllers\Store as PeopleStore;
 use LaravelEnso\People\Http\Controllers\TableData as PeopleTableData;
 use LaravelEnso\People\Http\Controllers\Update as PeopleUpdate;
+use LaravelEnso\ControlPanelApi\Http\Controllers\Action as ControlPanelAction;
+use LaravelEnso\ControlPanelApi\Http\Controllers\Actions as ControlPanelActions;
+use LaravelEnso\ControlPanelApi\Http\Controllers\DownloadLog as ControlPanelDownloadLog;
+use LaravelEnso\ControlPanelApi\Http\Controllers\Statistics as ControlPanelStatistics;
 
 /**
  * Route::middleware(['guest'])
@@ -1190,6 +1194,22 @@ Route::middleware(['api', 'auth', 'core'])
         Route::patch('makeShipping/{address}', AddressMakeShipping::class)->name('makeShipping');
 
         Route::get('{address}', AddressShow::class)->name('show');
+    });
+
+Route::name('api.controlPanel.')
+    ->prefix('api/controlpanel')->as('controlpanel.')
+    ->group(function () {
+        Route::middleware(['api', 'auth', 'core'])
+        ->group(function () {
+                Route::get('statistics', ControlPanelStatistics::class)->name('statistics');
+                Route::get('actions', ControlPanelActions::class)->name('actions');
+                Route::any('{action}', ControlPanelAction::class)->name('action');
+            });
+
+        Route::middleware(['signed', 'bindings'])
+            ->prefix('action')
+            ->as('action.')
+            ->group(fn () => Route::get('downloadLog', ControlPanelDownloadLog::class)->name('downloadLog'));
     });
 
 Broadcast::routes(['middleware' => ['auth:sanctum']]);
