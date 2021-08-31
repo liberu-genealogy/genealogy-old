@@ -109,6 +109,11 @@ use App\Http\Controllers\Notes\Store as NotesStore;
 use App\Http\Controllers\Notes\TableData as NotesTableData;
 use App\Http\Controllers\Notes\Update as NotesUpdate;
 use App\Http\Controllers\Openarch\OpenArchController;
+use App\Http\Controllers\Paypal\CreatePlans as PaypalCreatePlans;
+use App\Http\Controllers\Paypal\CreateProduct as PaypalCreateProduct;
+use App\Http\Controllers\Paypal\GetPlans as PaypalGetPlans;
+use App\Http\Controllers\Paypal\HandlePayment as PaypalHandlePayment;
+use App\Http\Controllers\Paypal\Unsubscribe as PaypalUnsubscribe;
 use App\Http\Controllers\Personalias\Create as PersonaliasCreate;
 use App\Http\Controllers\Personalias\Destroy as PersonaliasDestroy;
 use App\Http\Controllers\Personalias\Edit as PersonaliasEdit;
@@ -1220,8 +1225,6 @@ Route::name('api.controlPanel.')
 
 Broadcast::routes(['middleware' => ['auth:sanctum']]);
 
-
-
 Route::namespace('')
     ->prefix('stripe')
     ->as('stripe.')
@@ -1232,4 +1235,15 @@ Route::namespace('')
         Route::get('subscribe', StripeSubscribe::class);
         Route::get('unsubscribe', StripeUnsubscribe::class);
         Route::get('webhook', StripeWebhook::class);
+    });
+
+Route::namespace('')
+    ->prefix('paypal')
+    ->as('paypal.')
+    ->group(function () {
+        Route::post('create-plans', PaypalCreatePlans::class);
+        Route::post('create-product', PaypalCreateProduct::class);
+        Route::get('plans', PaypalGetPlans::class);
+        Route::get('handle-payment', PaypalHandlePayment::class);
+        Route::get('unsubscribe', PaypalUnsubscribe::class);
     });
