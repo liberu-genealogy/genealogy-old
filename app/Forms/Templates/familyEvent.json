@@ -11,6 +11,30 @@
                 "content": "text"
             }
         },
+        {
+        "label": "Family",
+        "name": "family_id",
+        "column": 2,
+            "value": null,
+            "meta": {
+            "type": "select",
+            "multiple": false,
+            "options": []
+            }
+
+        },
+        {
+        "label": "Place",
+        "name": "place_id",
+        "column": 2,
+            "value": null,
+            "meta": {
+            "type": "select",
+            "multiple": false,
+            "options": []
+            }
+
+        },
             {
                 "label": "Title",
                 "name": "title",
