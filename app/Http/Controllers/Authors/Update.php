@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Authors;
 
-use App\Author;
+use App\Models\Author;
 use App\Http\Requests\ValidateAuthorRequest;
 use Illuminate\Routing\Controller;
 
