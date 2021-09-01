@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Citations;
 
-use App\Citation;
+use App\Models\Citation;
 use App\Http\Requests\ValidateCitationRequest;
 use Illuminate\Routing\Controller;
 

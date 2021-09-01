@@ -18,15 +18,11 @@ class CitationForm
 
     public function create()
     {
-        return $this->form
-    ->options('source_id', Source::all())
-    ->create();
+        return $this->form->options('source_id', Source::all())->create();
     }
 
     public function edit(Citation $citation)
     {
-        return $this->form
-    ->options('source_id', Source::all())
-    ->edit($citation);
+        return $this->form->options('source_id', Source::all())->edit($citation);
     }
 }
