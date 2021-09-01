@@ -1,5 +1,5 @@
 {
-    "routePrefix": "chan",
+    "routePrefix": "chans",
     "sections": [{
         "columns": "2",
         "fields": [{
@@ -13,7 +13,7 @@
         },
             {
                 "label": "Gid",
-                "name": "Gid",
+                "name": "gid",
                 "value": null,
                 "meta": {
                     "type": "input",
