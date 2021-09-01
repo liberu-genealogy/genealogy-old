@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Familyevents;
 
-use App\FamilyEvent;
+use App\Models\FamilyEvent;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Select\Traits\OptionsBuilder;
@@ -13,7 +13,7 @@ class Options extends Controller
 
     protected string $model = FamilyEvent::class;
 
-    //protected $queryAttributes = ['name'];
+    protected $queryAttributes = ['title'];
 
     //public function query(Request $request)
     //{
