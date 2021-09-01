@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Familyevents;
 
-use App\FamilyEvent;
+use App\Models\FamilyEvent;
 use App\Forms\Builders\FamilyEventForm;
 use Illuminate\Routing\Controller;
 

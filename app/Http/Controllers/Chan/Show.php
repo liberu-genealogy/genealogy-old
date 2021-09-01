@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Chan;
 
-use App\Chan;
+use App\Models\Chan;
 use Illuminate\Routing\Controller;
 
 class Show extends Controller

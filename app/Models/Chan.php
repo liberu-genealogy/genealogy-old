@@ -7,5 +7,5 @@ use LaravelEnso\Tables\Traits\TableCache;
 
 class Chan extends \FamilyTree365\LaravelGedcom\Models\Chan
 {
-      use TableCache, HasFactory;
+    use TableCache, HasFactory;
 }

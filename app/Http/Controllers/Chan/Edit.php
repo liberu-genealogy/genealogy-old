@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Chan;
 
-use App\Chan;
+use App\Models\Chan;
 use App\Forms\Builders\ChanForm;
 use Illuminate\Routing\Controller;
 
