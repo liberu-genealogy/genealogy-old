@@ -14,7 +14,7 @@ class Store extends Controller
 
         return [
             'message' => __('The addr was successfully created'),
-            'redirect' => 'addresses.edit',
+            'redirect' => 'addrs.edit',
             'param' => ['addr' => $addr->id],
         ];
     }

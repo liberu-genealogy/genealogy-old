@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Chan;
 
-use App\Chan;
+use App\Models\Chan;
 use App\Http\Requests\ValidateChanRequest;
 use Illuminate\Routing\Controller;
 

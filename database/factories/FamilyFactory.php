@@ -23,8 +23,14 @@ class FamilyFactory extends Factory
     public function definition()
     {
         return [
-            'description' => $this->faker->text(), 'is_active', 'husband_id'=> $this->faker->randomElement(1, 2, 3), 'wife_id'=>  $this->faker->randomElement(1, 2, 3), 'type_id' => Type::factory(),
-            'chan' => $this->faker->words(), 'nchi' => $this->faker->words(), 'rin' => $this->faker->word(),
+            'description' => $this->faker->text(),
+            'is_active' => $this->faker->randomDigit(0,1),
+            'husband_id'=> $this->faker->randomDigit(1, 2, 3),
+            'wife_id'=>  $this->faker->randomDigit(1, 2, 3),
+            'type_id' => Type::factory(),
+            'chan' => $this->faker->words(),
+            'nchi' => $this->faker->words(),
+            'rin' => $this->faker->word(),
         ];
     }
 }

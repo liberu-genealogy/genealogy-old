@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Citations;
 
-use App\Citation;
+use App\Models\Citation;
 use Illuminate\Routing\Controller;
 
 class Destroy extends Controller
