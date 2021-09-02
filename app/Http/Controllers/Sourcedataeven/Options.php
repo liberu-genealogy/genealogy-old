@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Sourcedataevent;
+namespace App\Http\Controllers\Sourcedataeven;
 
-use App\SourceDataEven;
+use App\Models\SourceDataEven;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Select\Traits\OptionsBuilder;
@@ -13,7 +13,7 @@ class Options extends Controller
 
     protected string $model = SourceDataEven::class;
 
-    //protected $queryAttributes = ['name'];
+    protected $queryAttributes = ['group'];
 
     //public function query(Request $request)
     //{

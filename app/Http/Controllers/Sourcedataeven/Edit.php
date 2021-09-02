@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Sourcedataevent;
+namespace App\Http\Controllers\Sourcedataeven;
 
 use App\Forms\Builders\SourceDataEvenForm;
-use App\SourceDataEven;
+use App\Models\SourceDataEven;
 use Illuminate\Routing\Controller;
 
 class Edit extends Controller
