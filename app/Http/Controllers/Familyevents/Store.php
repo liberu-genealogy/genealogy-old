@@ -15,7 +15,7 @@ class Store extends Controller
         return [
             'message' => __('The family event was successfully created'),
             'redirect' => 'familyevents.edit',
-            'param' => ['familyEvent' => $familyEvent->id],
+            'param' => ['family_event' => $familyEvent->id],
         ];
     }
 }
