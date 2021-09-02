@@ -16,7 +16,8 @@ class ValidateFamilyEventRequest extends FormRequest
         $familyevent = $this->route('familyevent');
 
         return [
-
+            'family_id' => '',
+            'place_id' => '',
             'date' => 'required|max:50',
             'title' => 'required|max:50',
             'description' => 'required|max:50',
