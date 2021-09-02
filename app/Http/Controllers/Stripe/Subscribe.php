@@ -18,7 +18,7 @@ class Subscribe extends Controller
     {
         $user = auth()->user();
         $user->syncRoles('OTY');
-        $plan_id = 'price_monthly';// request()->plan_id;
+        $plan_id = 'price_monthly'; // request()->plan_id;
         if (request()->has('payment_method')) {
             $paymentMethod = request()->payment_method;
             $user->newSubscription('default', $plan_id)

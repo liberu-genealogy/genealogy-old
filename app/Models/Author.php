@@ -7,5 +7,5 @@ use LaravelEnso\Tables\Traits\TableCache;
 
 class Author extends \FamilyTree365\LaravelGedcom\Models\Author
 {
-      use TableCache, HasFactory;
+    use TableCache, HasFactory;
 }

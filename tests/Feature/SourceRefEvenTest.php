@@ -2,17 +2,17 @@
 
 namespace Tests\Feature;
 
+use App\Models\SourceRefEven;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use LaravelEnso\Forms\TestTraits\CreateForm;
 use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
-use App\Models\SourceRefEven;
 use Tests\TestCase;
 
-class SourceRefEvenTest extends TestCase {
-
+class SourceRefEvenTest extends TestCase
+{
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
     private $permissionGroup = 'sourcerefeven';
