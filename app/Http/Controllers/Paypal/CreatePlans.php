@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Paypal;
 
 use App\Http\Controllers\Controller;
+use App\Models\Plan;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use leifermendez\paypal\PaypalSubscription;
@@ -236,47 +238,33 @@ class CreatePlans extends Controller
             ],
         ];
 
-
         $product = [
             'product_id' => $this->product_id //<--------***** ID DEL PRODUCTO
         ];
 
-        $plans1 = $pp->getPlans();
-        // $plans = $plans['plans'];
-        // // dd($plans);
-        $plans = $plans1['plans'] ?? [];
-        if (count($plans) < 7) {
-            for ($i=0; $i < count($plans); $i++) {
-                $response = $pp->createPlan($plans[$i], $product);
-                // var_dump($response);
-                array_push($this->plans, $response);
-                DB::table('landlord.plans')
-                    ->insert([
-                        'id' => $response['id'],
-                        'name' => $response['name'],
-                        'status' => $response['status'],
-                        'description' => $response['description'],
-                        'usage_type' => $response['usage_type'],
-                        'create_time' => $response['create_time'],
-                    ]);
+        $paypalPlans = $pp->getPlans();
+        $paypalPlans = $paypalPlans['plans'] ?? [];
+
+        foreach($this->plans as $plan) {
+            $countMatch = 0;
+            foreach ($paypalPlans as $paypalPlan) {
+                if ($plan['name'] === $paypalPlan['name']) {
+                    $countMatch++;
+                }
             }
 
-        } else {
-            $plans = DB::table('landlord.plans')
-                ->orderBy('name', 'desc')
-                ->get();
-            for ($i=0; $i < count($plans); $i++) {
-                $plan = [
-                    "id" => $plans[$i]->id,
-                    "name" => $plans[$i]->name,
-                    "status" => $plans[$i]->status,
-                    "description" => $plans[$i]->description,
-                    "usage_type" => $plans[$i]->usage_type,
-                    "create_time" => $plans[$i]->create_time,
-                ];
-                array_push($this->plans, $plan);
+            if ($countMatch < 1) {
+                $response = $pp->createPlan($plan, $product);
+
+                Plan::create([
+                    'plan_id' => $response['id'],
+                    'name' => $response['name'],
+                    'status' => $response['status'],
+                    'description' => $response['description'],
+                    'usage_type' => $response['usage_type'],
+                    'create_time' => Carbon::parse($response['create_time'])->toDateTimeString(),
+                ]);
             }
-            // dd($this->plans);
         }
     }
 }
