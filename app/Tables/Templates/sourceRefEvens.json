@@ -1,6 +1,6 @@
 {
     "name": "Source Ref Even",
-    "routePrefix": "sourcerefevents",
+    "routePrefix": "sourcerefeven",
     "crtNo": true,
     "buttons": ["excel", "create", "show", "edit", "destroy"],
     "columns": [{

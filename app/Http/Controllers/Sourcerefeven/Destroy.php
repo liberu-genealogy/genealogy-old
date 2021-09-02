@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Sourcerefevents;
+namespace App\Http\Controllers\Sourcerefeven;
 
-use App\SourceRefEven;
+use App\Models\SourceRefEven;
 use Illuminate\Routing\Controller;
 
 class Destroy extends Controller

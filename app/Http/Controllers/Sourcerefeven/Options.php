@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Sourcerefevents;
+namespace App\Http\Controllers\Sourcerefeven;
 
-use App\SourceRefEven;
+use App\Models\SourceRefEven;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Select\Traits\OptionsBuilder;
@@ -13,7 +13,7 @@ class Options extends Controller
 
     protected string $model = SourceRefEven::class;
 
-    //protected $queryAttributes = ['name'];
+    protected $queryAttributes = ['even'];
 
     //public function query(Request $request)
     //{

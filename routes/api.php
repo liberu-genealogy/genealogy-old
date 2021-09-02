@@ -246,17 +246,17 @@ use App\Http\Controllers\Sourcedataeven\Show as SourcedataevenShow;
 use App\Http\Controllers\Sourcedataeven\Store as SourcedataevenStore;
 use App\Http\Controllers\Sourcedataeven\TableData as SourcedataevenTableData;
 use App\Http\Controllers\Sourcedataeven\Update as SourcedataevenUpdate;
-use App\Http\Controllers\Sourcerefevents\Create as SourcerefeventsCreate;
-use App\Http\Controllers\Sourcerefevents\Destroy as SourcerefeventsDestroy;
-use App\Http\Controllers\Sourcerefevents\Edit as SourcerefeventsEdit;
-use App\Http\Controllers\Sourcerefevents\ExportExcel as SourcerefeventsExportExcel;
-use App\Http\Controllers\Sourcerefevents\Index as SourcerefeventsIndex;
-use App\Http\Controllers\Sourcerefevents\InitTable as SourcerefeventsInitTable;
-use App\Http\Controllers\Sourcerefevents\Options as SourcerefeventsOptions;
-use App\Http\Controllers\Sourcerefevents\Show as SourcerefeventsShow;
-use App\Http\Controllers\Sourcerefevents\Store as SourcerefeventsStore;
-use App\Http\Controllers\Sourcerefevents\TableData as SourcerefeventsTableData;
-use App\Http\Controllers\Sourcerefevents\Update as SourcerefeventsUpdate;
+use App\Http\Controllers\Sourcerefeven\Create as SourcerefevenCreate;
+use App\Http\Controllers\Sourcerefeven\Destroy as SourcerefevenDestroy;
+use App\Http\Controllers\Sourcerefeven\Edit as SourcerefevenEdit;
+use App\Http\Controllers\Sourcerefeven\ExportExcel as SourcerefevenExportExcel;
+use App\Http\Controllers\Sourcerefeven\Index as SourcerefevenIndex;
+use App\Http\Controllers\Sourcerefeven\InitTable as SourcerefevenInitTable;
+use App\Http\Controllers\Sourcerefeven\Options as SourcerefevenOptions;
+use App\Http\Controllers\Sourcerefeven\Show as SourcerefevenShow;
+use App\Http\Controllers\Sourcerefeven\Store as SourcerefevenStore;
+use App\Http\Controllers\Sourcerefeven\TableData as SourcerefevenTableData;
+use App\Http\Controllers\Sourcerefeven\Update as SourcerefevenUpdate;
 use App\Http\Controllers\Sources\Create as SourcesCreate;
 use App\Http\Controllers\Sources\Destroy as SourcesDestroy;
 use App\Http\Controllers\Sources\Edit as SourcesEdit;
@@ -1017,24 +1017,24 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('')
-            ->prefix('sourcerefevents')
-            ->as('sourcerefevents.')
+            ->prefix('sourcerefeven')
+            ->as('sourcerefeven.')
             ->group(function () {
-                Route::get('', SourcerefeventsIndex::class)->name('index');
-                Route::get('create', SourcerefeventsCreate::class)->name('create');
-                Route::post('', SourcerefeventsStore::class)->name('store');
-                Route::get('{sourceRefEven}/edit', SourcerefeventsEdit::class)->name('edit');
+                Route::get('', SourcerefevenIndex::class)->name('index');
+                Route::get('create', SourcerefevenCreate::class)->name('create');
+                Route::post('', SourcerefevenStore::class)->name('store');
+                Route::get('{sourceRefEven}/edit', SourcerefevenEdit::class)->name('edit');
 
-                Route::patch('{sourceRefEven}', SourcerefeventsUpdate::class)->name('update');
+                Route::patch('{sourceRefEven}', SourcerefevenUpdate::class)->name('update');
 
-                Route::delete('{sourceRefEven}', SourcerefeventsDestroy::class)->name('destroy');
+                Route::delete('{sourceRefEven}', SourcerefevenDestroy::class)->name('destroy');
 
-                Route::get('initTable', SourcerefeventsInitTable::class)->name('initTable');
-                Route::get('tableData', SourcerefeventsTableData::class)->name('tableData');
-                Route::get('exportExcel', SourcerefeventsExportExcel::class)->name('exportExcel');
+                Route::get('initTable', SourcerefevenInitTable::class)->name('initTable');
+                Route::get('tableData', SourcerefevenTableData::class)->name('tableData');
+                Route::get('exportExcel', SourcerefevenExportExcel::class)->name('exportExcel');
 
-                Route::get('options', SourcerefeventsOptions::class)->name('options');
-                Route::get('{sourceRefEven}', SourcerefeventsShow::class)->name('show');
+                Route::get('options', SourcerefevenOptions::class)->name('options');
+                Route::get('{sourceRefEven}', SourcerefevenShow::class)->name('show');
             });
     });
 
