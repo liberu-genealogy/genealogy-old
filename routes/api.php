@@ -235,17 +235,17 @@ use App\Http\Controllers\Sourcedata\Show as SourcedataShow;
 use App\Http\Controllers\Sourcedata\Store as SourcedataStore;
 use App\Http\Controllers\Sourcedata\TableData as SourcedataTableData;
 use App\Http\Controllers\Sourcedata\Update as SourcedataUpdate;
-use App\Http\Controllers\Sourcedataevent\Create as SourcedataeventCreate;
-use App\Http\Controllers\Sourcedataevent\Destroy as SourcedataeventDestroy;
-use App\Http\Controllers\Sourcedataevent\Edit as SourcedataeventEdit;
-use App\Http\Controllers\Sourcedataevent\ExportExcel as SourcedataeventExportExcel;
-use App\Http\Controllers\Sourcedataevent\Index as SourcedataeventIndex;
-use App\Http\Controllers\Sourcedataevent\InitTable as SourcedataeventInitTable;
-use App\Http\Controllers\Sourcedataevent\Options as SourcedataeventOptions;
-use App\Http\Controllers\Sourcedataevent\Show as SourcedataeventShow;
-use App\Http\Controllers\Sourcedataevent\Store as SourcedataeventStore;
-use App\Http\Controllers\Sourcedataevent\TableData as SourcedataeventTableData;
-use App\Http\Controllers\Sourcedataevent\Update as SourcedataeventUpdate;
+use App\Http\Controllers\Sourcedataeven\Create as SourcedataevenCreate;
+use App\Http\Controllers\Sourcedataeven\Destroy as SourcedataevenDestroy;
+use App\Http\Controllers\Sourcedataeven\Edit as SourcedataevenEdit;
+use App\Http\Controllers\Sourcedataeven\ExportExcel as SourcedataevenExportExcel;
+use App\Http\Controllers\Sourcedataeven\Index as SourcedataevenIndex;
+use App\Http\Controllers\Sourcedataeven\InitTable as SourcedataevenInitTable;
+use App\Http\Controllers\Sourcedataeven\Options as SourcedataevenOptions;
+use App\Http\Controllers\Sourcedataeven\Show as SourcedataevenShow;
+use App\Http\Controllers\Sourcedataeven\Store as SourcedataevenStore;
+use App\Http\Controllers\Sourcedataeven\TableData as SourcedataevenTableData;
+use App\Http\Controllers\Sourcedataeven\Update as SourcedataevenUpdate;
 use App\Http\Controllers\Sourcerefevents\Create as SourcerefeventsCreate;
 use App\Http\Controllers\Sourcerefevents\Destroy as SourcerefeventsDestroy;
 use App\Http\Controllers\Sourcerefevents\Edit as SourcerefeventsEdit;
@@ -993,24 +993,24 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('')
-            ->prefix('sourcedataevent')
-            ->as('sourcedataevent.')
+            ->prefix('sourcedataeven')
+            ->as('sourcedataeven.')
             ->group(function () {
-                Route::get('', SourcedataeventIndex::class)->name('index');
-                Route::get('create', SourcedataeventCreate::class)->name('create');
-                Route::post('', SourcedataeventStore::class)->name('store');
-                Route::get('{sourceDataEven}/edit', SourcedataeventEdit::class)->name('edit');
+                Route::get('', SourcedataevenIndex::class)->name('index');
+                Route::get('create', SourcedataevenCreate::class)->name('create');
+                Route::post('', SourcedataevenStore::class)->name('store');
+                Route::get('{sourceDataEven}/edit', SourcedataevenEdit::class)->name('edit');
 
-                Route::patch('{sourceDataEven}', SourcedataeventUpdate::class)->name('update');
+                Route::patch('{sourceDataEven}', SourcedataevenUpdate::class)->name('update');
 
-                Route::delete('{sourceDataEven}', SourcedataeventDestroy::class)->name('destroy');
+                Route::delete('{sourceDataEven}', SourcedataevenDestroy::class)->name('destroy');
 
-                Route::get('initTable', SourcedataeventInitTable::class)->name('initTable');
-                Route::get('tableData', SourcedataeventTableData::class)->name('tableData');
-                Route::get('exportExcel', SourcedataeventExportExcel::class)->name('exportExcel');
+                Route::get('initTable', SourcedataevenInitTable::class)->name('initTable');
+                Route::get('tableData', SourcedataevenTableData::class)->name('tableData');
+                Route::get('exportExcel', SourcedataevenExportExcel::class)->name('exportExcel');
 
-                Route::get('options', SourcedataeventOptions::class)->name('options');
-                Route::get('{sourceDataEven}', SourcedataeventShow::class)->name('show');
+                Route::get('options', SourcedataevenOptions::class)->name('options');
+                Route::get('{sourceDataEven}', SourcedataevenShow::class)->name('show');
             });
     });
 
@@ -1225,25 +1225,25 @@ Route::name('api.controlPanel.')
 
 Broadcast::routes(['middleware' => ['auth:sanctum']]);
 
-Route::namespace('')
-    ->prefix('stripe')
-    ->as('stripe.')
-    ->group(function () {
-        Route::get('current-subscription', StripeGetCurrentSubscription::class);
-        Route::get('intent', StripeGetIntent::class);
-        Route::get('plans', StripeGetPlans::class);
-        Route::get('subscribe', StripeSubscribe::class);
-        Route::get('unsubscribe', StripeUnsubscribe::class);
-        Route::get('webhook', StripeWebhook::class);
-    });
+// Route::namespace('')
+//     ->prefix('stripe')
+//     ->as('stripe.')
+//     ->group(function () {
+//         Route::get('current-subscription', StripeGetCurrentSubscription::class);
+//         Route::get('intent', StripeGetIntent::class);
+//         Route::get('plans', StripeGetPlans::class);
+//         Route::get('subscribe', StripeSubscribe::class);
+//         Route::get('unsubscribe', StripeUnsubscribe::class);
+//         Route::get('webhook', StripeWebhook::class);
+//     });
 
-Route::namespace('')
-    ->prefix('paypal')
-    ->as('paypal.')
-    ->group(function () {
-        Route::post('create-plans', PaypalCreatePlans::class);
-        Route::post('create-product', PaypalCreateProduct::class);
-        Route::get('plans', PaypalGetPlans::class);
-        Route::get('handle-payment', PaypalHandlePayment::class);
-        Route::get('unsubscribe', PaypalUnsubscribe::class);
-    });
+// Route::namespace('')
+//     ->prefix('paypal')
+//     ->as('paypal.')
+//     ->group(function () {
+//         Route::post('create-plans', PaypalCreatePlans::class);
+//         Route::post('create-product', PaypalCreateProduct::class);
+//         Route::get('plans', PaypalGetPlans::class);
+//         Route::get('handle-payment', PaypalHandlePayment::class);
+//         Route::get('unsubscribe', PaypalUnsubscribe::class);
+//     });

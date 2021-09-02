@@ -8,14 +8,14 @@ use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
-use App\Models\SourceDataEvent;
+use App\Models\SourceDataEven;
 use Tests\TestCase;
 
-class SourceDataEventTest extends TestCase {
+class SourceDataEvenTest extends TestCase {
 
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
-    private $permissionGroup = 'source_data_even';
+    private $permissionGroup = 'sourcedataeven';
     private $testModel;
 
     protected function setUp(): void
@@ -25,7 +25,7 @@ class SourceDataEventTest extends TestCase {
         $this->seed()
             ->actingAs(User::first());
 
-        $this->testModel = SourceDataEvent::factory()->make();
+        $this->testModel = SourceDataEven::factory()->make();
     }
 
     /** @test */
@@ -40,17 +40,17 @@ class SourceDataEventTest extends TestCase {
     public function can_store_source_data_even()
     {
         $response = $this->post(
-            route('source_data_even.store', [], false),
+            route('sourcedataeven.store', [], false),
             $this->testModel->toArray() + []
         );
 
-        $source_data_even = SourceDataEvent::where('gid', $this->testModel->gid)->first();
+        $sourcedataeven = SourceDataEven::where('plac', $this->testModel->plac)->first();
 
         $response->assertStatus(200)
             ->assertJsonStructure(['message'])
             ->assertJsonFragment([
-                'redirect' => 'source_data_even.edit',
-                'param' => ['source_data_even' => $source_data_even->id],
+                'redirect' => 'sourcedataeven.edit',
+                'param' => ['sourcedataeven' => $sourcedataeven->id],
             ]);
     }
 
@@ -59,15 +59,15 @@ class SourceDataEventTest extends TestCase {
     {
         $this->testModel->save();
 
-        $this->testModel->gid = 'updated';
+        $this->testModel->plac = 'updated';
 
         $this->patch(
-            route('source_data_even.update', $this->testModel->id, false),
+            route('sourcedataeven.update', $this->testModel->id, false),
             $this->testModel->toArray() + []
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
 
-        $this->assertEquals('updated', $this->testModel->fresh()->gid);
+        $this->assertEquals('updated', $this->testModel->fresh()->plac);
     }
 
     /** @test */
@@ -75,11 +75,11 @@ class SourceDataEventTest extends TestCase {
     {
         $this->testModel->save();
 
-        $this->get(route('source_data_even.options', [
-            'query' => $this->testModel->gid,
+        $this->get(route('sourcedataeven.options', [
+            'query' => $this->testModel->group,
             'limit' => 10,
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['gid' => $this->testModel->gid]);
+            ->assertJsonFragment(['group' => $this->testModel->group]);
     }
 }
