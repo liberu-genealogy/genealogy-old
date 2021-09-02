@@ -13,7 +13,7 @@ class RefnTable implements Table
     public function query(): Builder
     {
         return Refn::selectRaw('
-            refn.id, refn.group, refn.gid, refn.refn, refn.type, refn.created_at
+            refn.id, "refn.group", refn.gid, refn.refn, refn.type, refn.created_at
         ');
     }
 

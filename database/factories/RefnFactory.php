@@ -22,7 +22,10 @@ class RefnFactory extends Factory
     public function definition()
     {
         return [
-            'group' => $this->faker->word(), 'gid' => $this->faker->randomElement('1', '2'), 'refn' => $this->faker->word(), 'type' => $this->faker->word(),
+            'group' => $this->faker->word(),
+            'gid' => $this->faker->randomDigit('1', '2'),
+            'refn' => $this->faker->word(),
+            'type' => $this->faker->word(),
         ];
     }
 }
