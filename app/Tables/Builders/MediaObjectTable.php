@@ -13,7 +13,7 @@ class MediaObjectTable implements Table
     public function query(): Builder
     {
         return MediaObject::selectRaw('
-            media_objects.id, media_objects.gid, media_objects.form, media_objects.titl, media_objects.blob, media_objects.rin, media_objects.file
+            media_objects.id, media_objects.gid, media_objects.titl, media_objects.rin
         ');
     }
 

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\MediaObjects;
 
-use App\MediaObject;
+use App\Models\MediaObject;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Select\Traits\OptionsBuilder;
@@ -13,7 +13,7 @@ class Options extends Controller
 
     protected string $model = MediaObject::class;
 
-    //protected $queryAttributes = ['name'];
+    protected $queryAttributes = ['titl'];
 
     //public function query(Request $request)
     //{

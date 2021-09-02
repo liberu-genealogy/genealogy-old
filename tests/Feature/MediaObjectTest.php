@@ -15,7 +15,7 @@ class MediaObjectTest extends TestCase {
 
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
-    private $permissionGroup = 'media_objects';
+    private $permissionGroup = 'mediaobjects';
     private $testModel;
 
     protected function setUp(): void
@@ -40,7 +40,7 @@ class MediaObjectTest extends TestCase {
     public function can_store_media_object()
     {
         $response = $this->post(
-            route('media_objects.store', [], false),
+            route('mediaobjects.store', [], false),
             $this->testModel->toArray() + []
         );
 
@@ -49,7 +49,7 @@ class MediaObjectTest extends TestCase {
         $response->assertStatus(200)
             ->assertJsonStructure(['message'])
             ->assertJsonFragment([
-                'redirect' => 'media_objects.edit',
+                'redirect' => 'mediaobjects.edit',
                 'param' => ['media_object' => $media_object->id],
             ]);
     }
@@ -59,15 +59,15 @@ class MediaObjectTest extends TestCase {
     {
         $this->testModel->save();
 
-        $this->testModel->gid = 'updated';
+        $this->testModel->titl = 'updated';
 
         $this->patch(
-            route('media_objects.update', $this->testModel->id, false),
+            route('mediaobjects.update', $this->testModel->id, false),
             $this->testModel->toArray() + []
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
 
-        $this->assertEquals('updated', $this->testModel->fresh()->gid);
+        $this->assertEquals('updated', $this->testModel->fresh()->titl);
     }
 
     /** @test */
@@ -75,11 +75,11 @@ class MediaObjectTest extends TestCase {
     {
         $this->testModel->save();
 
-        $this->get(route('media_objects.options', [
-            'query' => $this->testModel->gid,
+        $this->get(route('mediaobjects.options', [
+            'query' => $this->testModel->titl,
             'limit' => 10,
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['gid' => $this->testModel->gid]);
+            ->assertJsonFragment(['titl' => $this->testModel->titl]);
     }
 }

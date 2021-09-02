@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\MediaObjects;
 
-use App\MediaObject;
+use App\Models\MediaObject;
 use Illuminate\Routing\Controller;
 
 class Show extends Controller
 {
-    public function __invoke(MediaObject $object)
+    public function __invoke(MediaObject $media_object)
     {
-        return ['object' => $object];
+        return ['media_object' => $media_object];
     }
 }
