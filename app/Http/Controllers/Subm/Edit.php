@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Subm;
 
 use App\Forms\Builders\SubmForm;
-use App\Subm;
+use App\Models\Subm;
 use Illuminate\Routing\Controller;
 
 class Edit extends Controller

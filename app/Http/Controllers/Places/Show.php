@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Places;
 
-use App\Place;
+use App\Models\Place;
 use Illuminate\Routing\Controller;
 
 class Show extends Controller

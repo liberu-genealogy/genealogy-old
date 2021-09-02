@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Subm;
 
 use App\Http\Requests\ValidateSubmRequest;
-use App\Subm;
+use App\Models\Subm;
 use Illuminate\Routing\Controller;
 
 class Store extends Controller

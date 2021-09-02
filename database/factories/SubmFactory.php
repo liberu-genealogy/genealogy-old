@@ -24,15 +24,17 @@ class SubmFactory extends Factory
     {
         return [
             'group' => $this->faker->word(),
-            'gid' =>  $this->faker->randomElement('1', '2'),
+            'gid' =>  $this->faker->randomDigit('1', '2'),
             'name' => $this->faker->word(),
-            'addr_id' => Addr::factory(),
+            'addr_id' => Addr::create()->id,
             'rin' => $this->faker->word(),
             'rfn' => $this->faker->word(),
             'lang' => $this->faker->languageCode(),
             'phon' => $this->faker->phoneNumber(),
-            'email' => $this->faker->email(), 'fax' => $this->faker->word(), 'www' => $this->faker->url(),
-            'created_at' => $this->faker->date(), 'updated_at',
+            'email' => $this->faker->email(),
+            'fax' => $this->faker->word(),
+            'www' => $this->faker->url(),
+            'created_at' => $this->faker->date()
         ];
     }
 }
