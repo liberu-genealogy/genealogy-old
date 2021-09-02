@@ -34,7 +34,7 @@ class SubmFactory extends Factory
             'email' => $this->faker->email(),
             'fax' => $this->faker->word(),
             'www' => $this->faker->url(),
-            'created_at' => $this->faker->date()
+            'created_at' => $this->faker->date(),
         ];
     }
 }

@@ -2,17 +2,17 @@
 
 namespace Tests\Feature;
 
+use App\Models\Place;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use LaravelEnso\Forms\TestTraits\CreateForm;
 use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
-use App\Models\Place;
 use Tests\TestCase;
 
-class PlaceTest extends TestCase {
-
+class PlaceTest extends TestCase
+{
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
     private $permissionGroup = 'places';

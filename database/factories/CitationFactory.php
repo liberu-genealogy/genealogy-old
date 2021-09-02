@@ -29,7 +29,7 @@ class CitationFactory extends Factory
             // 'repository_id' => Repository::create()->id,
             'volume' => $this->faker->randomDigit(1, 2, 3, 4, 5),
             'page' => $this->faker->randomDigit(500),
-            'is_active' =>$this->faker->randomDigit(0,1),
+            'is_active' =>$this->faker->randomDigit(0, 1),
             'confidence' => $this->faker->word,
             'source_id' => Source::create()->id,
 

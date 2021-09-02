@@ -7,5 +7,5 @@ use LaravelEnso\Tables\Traits\TableCache;
 
 class FamilyEvent extends \FamilyTree365\LaravelGedcom\Models\FamilyEvent
 {
-     use TableCache, HasFactory;
+    use TableCache, HasFactory;
 }

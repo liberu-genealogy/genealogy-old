@@ -354,6 +354,10 @@ use LaravelEnso\Companies\Http\Controllers\Person\Edit as PeopleCompanyEdit;
 use LaravelEnso\Companies\Http\Controllers\Person\Index as PeopleCompany;
 use LaravelEnso\Companies\Http\Controllers\Person\Store as PeopleCompanyStore;
 use LaravelEnso\Companies\Http\Controllers\Person\Update as PeopleCompanyUpdate;
+use LaravelEnso\ControlPanelApi\Http\Controllers\Action as ControlPanelAction;
+use LaravelEnso\ControlPanelApi\Http\Controllers\Actions as ControlPanelActions;
+use LaravelEnso\ControlPanelApi\Http\Controllers\DownloadLog as ControlPanelDownloadLog;
+use LaravelEnso\ControlPanelApi\Http\Controllers\Statistics as ControlPanelStatistics;
 use LaravelEnso\People\Http\Controllers\Create as PeopleCreate;
 use LaravelEnso\People\Http\Controllers\Destroy as PeopleDestroy;
 use LaravelEnso\People\Http\Controllers\Edit as PeopleEdit;
@@ -363,10 +367,6 @@ use LaravelEnso\People\Http\Controllers\Options as PeopleOptions;
 use LaravelEnso\People\Http\Controllers\Store as PeopleStore;
 use LaravelEnso\People\Http\Controllers\TableData as PeopleTableData;
 use LaravelEnso\People\Http\Controllers\Update as PeopleUpdate;
-use LaravelEnso\ControlPanelApi\Http\Controllers\Action as ControlPanelAction;
-use LaravelEnso\ControlPanelApi\Http\Controllers\Actions as ControlPanelActions;
-use LaravelEnso\ControlPanelApi\Http\Controllers\DownloadLog as ControlPanelDownloadLog;
-use LaravelEnso\ControlPanelApi\Http\Controllers\Statistics as ControlPanelStatistics;
 
 /**
  * Route::middleware(['guest'])
@@ -1212,10 +1212,10 @@ Route::name('api.controlPanel.')
     ->group(function () {
         Route::middleware(['api', 'auth', 'core'])
         ->group(function () {
-                Route::get('statistics', ControlPanelStatistics::class)->name('statistics');
-                Route::get('actions', ControlPanelActions::class)->name('actions');
-                Route::any('{action}', ControlPanelAction::class)->name('action');
-            });
+            Route::get('statistics', ControlPanelStatistics::class)->name('statistics');
+            Route::get('actions', ControlPanelActions::class)->name('actions');
+            Route::any('{action}', ControlPanelAction::class)->name('action');
+        });
 
         Route::middleware(['signed', 'bindings'])
             ->prefix('action')

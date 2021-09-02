@@ -2,17 +2,17 @@
 
 namespace Tests\Feature;
 
+use App\Models\PersonAnci;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use LaravelEnso\Forms\TestTraits\CreateForm;
 use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
-use App\Models\PersonAnci;
 use Tests\TestCase;
 
-class PersonAnciTest extends TestCase {
-
+class PersonAnciTest extends TestCase
+{
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
     private $permissionGroup = 'person_anci';

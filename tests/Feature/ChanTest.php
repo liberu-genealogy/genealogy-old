@@ -11,8 +11,8 @@ use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
 use Tests\TestCase;
 
-class ChanTest extends TestCase {
-
+class ChanTest extends TestCase
+{
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
     private $permissionGroup = 'chan';

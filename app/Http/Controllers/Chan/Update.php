@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Chan;
 
-use App\Models\Chan;
 use App\Http\Requests\ValidateChanRequest;
+use App\Models\Chan;
 use Illuminate\Routing\Controller;
 
 class Update extends Controller

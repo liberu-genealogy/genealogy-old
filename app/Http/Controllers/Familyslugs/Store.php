@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Familyslugs;
 
-use App\Models\FamilySlgs;
 use App\Http\Requests\ValidateFamilySlgsRequest;
+use App\Models\FamilySlgs;
 use Illuminate\Routing\Controller;
 
 class Store extends Controller

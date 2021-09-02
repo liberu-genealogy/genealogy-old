@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Families;
 
-use App\Models\Family;
 use App\Http\Requests\ValidateFamilyRequest;
+use App\Models\Family;
 use Illuminate\Routing\Controller;
 
 class Store extends Controller

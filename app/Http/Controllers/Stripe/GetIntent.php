@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 class GetIntent extends Controller
 {
-
     /**
      * Handle the incoming request.
      *
