@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Refn;
 
 use App\Http\Requests\ValidateRefnRequest;
-use App\Refn;
+use App\Models\Refn;
 use Illuminate\Routing\Controller;
 
 class Store extends Controller

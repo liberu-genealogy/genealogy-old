@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Refn;
 
 use App\Forms\Builders\RefnForm;
-use App\Refn;
+use App\Models\Refn;
 use Illuminate\Routing\Controller;
 
 class Edit extends Controller

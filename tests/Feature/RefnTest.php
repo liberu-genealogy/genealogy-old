@@ -76,10 +76,10 @@ class RefnTest extends TestCase {
         $this->testModel->save();
 
         $this->get(route('refn.options', [
-            'query' => $this->testModel->gid,
+            'query' => $this->testModel->refn,
             'limit' => 10,
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['gid' => $this->testModel->gid]);
+            ->assertJsonFragment(['refn' => $this->testModel->refn]);
     }
 }
