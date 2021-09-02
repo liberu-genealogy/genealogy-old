@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Note;
+use App\Models\Type;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class NoteFactory extends Factory
@@ -22,9 +23,15 @@ class NoteFactory extends Factory
     public function definition()
     {
         return [
-            'group' => $this->faker->word(), 'gid' => $this->faker->randomElement('1', '2'),
-            'note' => $this->faker->text(), 'rin' => $this->faker->word(), 'name' => $this->faker->word(),
-            'description' => $this->faker->text(), 'is_active', 'type_id',
+            'group' => $this->faker->word(),
+            'gid' => $this->faker->randomDigit('1', '2'),
+            'note' => $this->faker->text(),
+            'rin' => $this->faker->word(),
+            'name' => $this->faker->word(),
+            'date' => $this->faker->date(),
+            'description' => $this->faker->text(50),
+            'is_active' => $this->faker->randomDigit('1', '2'),
+            'type_id' => Type::create(['name' => $this->faker->name, 'description' => $this->faker->text])->id,
         ];
     }
 }
