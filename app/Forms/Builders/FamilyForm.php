@@ -21,11 +21,11 @@ class FamilyForm
     public function create()
     {
         return $this->form
-    ->options('husband_id', Person::all())
-    ->options('wife_id', Person::all())
-    ->options('type_id', Type::all())
-    ->options('child_id', Person::all())
-    ->create();
+        ->options('husband_id', Person::all())
+        ->options('wife_id', Person::all())
+        ->options('type_id', Type::all())
+        // ->options('child_id', Person::all())
+        ->create();
     }
 
     public function edit(Family $family)
@@ -35,8 +35,8 @@ class FamilyForm
         ->options('wife_id', Person::all())
         ->options('type_id', Type::all())
         ->append('family_id', $family->id)
-        ->value('child_id', $family->children)
-        ->options('child_id', Person::all())
+        // ->value('child_id', $family->children)
+        // ->options('child_id', Person::all())
         ->edit($family);
     }
 }
