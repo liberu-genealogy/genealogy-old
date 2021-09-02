@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Familyslugs;
 
-use App\FamilySlgs;
+use App\Models\FamilySlgs;
 use App\Forms\Builders\FamilySlgsForm;
 use Illuminate\Routing\Controller;
 

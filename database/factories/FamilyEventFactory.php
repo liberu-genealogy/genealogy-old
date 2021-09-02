@@ -24,28 +24,6 @@ class FamilyEventFactory extends Factory
      */
     public function definition()
     {
-        // $type = [
-        //     'name' => $this->faker->name,
-        //     'description' => $this->faker->text(50),
-        //     'is_active' => $this->faker->randomDigit(0,1)
-        // ];
-
-        // $family = [
-        //     'description' => $this->faker->text(),
-        //     'is_active' => $this->faker->randomDigit(0,1),
-        //     'husband_id'=> $this->faker->randomDigit(1, 2, 3),
-        //     'wife_id'=>  $this->faker->randomDigit(1, 2, 3),
-        //     'type_id' => Type::create($type)->id,
-        //     'chan' => $this->faker->words(),
-        //     'nchi' => $this->faker->words(),
-        //     'rin' => $this->faker->word(),
-        // ];
-
-        // $place = [
-        //     'title' => $this->faker->title,
-        //     'date' => $this->faker->date,
-        // ];
-
         return [
             'family_id'=> Family::create()->id,
             'places_id' => Place::create(['title'=> $this->faker->title])->id,
