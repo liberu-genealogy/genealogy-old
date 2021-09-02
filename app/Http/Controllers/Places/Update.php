@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Places;
 
 use App\Http\Requests\ValidatePlaceRequest;
-use App\Place;
+use App\Models\Place;
 use Illuminate\Routing\Controller;
 
 class Update extends Controller
