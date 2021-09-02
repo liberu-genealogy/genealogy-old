@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Families;
 
-use App\Family;
+use App\Models\Family;
 use App\Forms\Builders\FamilyForm;
 use Illuminate\Routing\Controller;
 

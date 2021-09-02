@@ -59,7 +59,7 @@ class FamilyTest extends TestCase {
     {
         $this->testModel->save();
 
-        $this->testModel->type_id = 'updated';
+        $this->testModel->description = 'updated';
 
         $this->patch(
             route('families.update', $this->testModel->id, false),
@@ -67,7 +67,7 @@ class FamilyTest extends TestCase {
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
 
-        $this->assertEquals('updated', $this->testModel->fresh()->type_id);
+        $this->assertEquals('updated', $this->testModel->fresh()->description);
     }
 
     /** @test */
@@ -76,10 +76,10 @@ class FamilyTest extends TestCase {
         $this->testModel->save();
 
         $this->get(route('families.options', [
-            'query' => $this->testModel->type_id,
+            'query' => $this->testModel->chan,
             'limit' => 10,
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['type_id' => $this->testModel->type_id]);
+            ->assertJsonFragment(['chan' => $this->testModel->chan]);
     }
 }
