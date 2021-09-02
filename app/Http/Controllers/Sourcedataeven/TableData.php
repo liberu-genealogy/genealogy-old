@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Sourcedataevent;
+namespace App\Http\Controllers\Sourcedataeven;
 
 use App\Tables\Builders\SourceDataEvenTable;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\Traits\Excel;
+use LaravelEnso\Tables\Traits\Data;
 
-class ExportExcel extends Controller
+class TableData extends Controller
 {
-    use Excel;
+    use Data;
 
     protected string $tableClass = SourceDataEvenTable::class;
 }
