@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Sourcerefevents;
+namespace App\Http\Controllers\Sourcerefeven;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
