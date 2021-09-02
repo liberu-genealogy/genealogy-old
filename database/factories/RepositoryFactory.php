@@ -47,7 +47,7 @@ class RepositoryFactory extends Factory
                 'description' => $this->faker->text(50),
                 'is_active' => $this->faker->randomDigit('0', '1'),
             ])->id,
-            'is_active' => $this->faker->randomDigit('0','1'),
+            'is_active' => $this->faker->randomDigit('0', '1'),
         ];
     }
 }

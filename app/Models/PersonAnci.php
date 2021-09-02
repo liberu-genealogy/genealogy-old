@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use LaravelEnso\Tables\Traits\TableCache;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use LaravelEnso\Tables\Traits\TableCache;
 
 class PersonAnci extends \FamilyTree365\LaravelGedcom\Models\PersonAnci
 {

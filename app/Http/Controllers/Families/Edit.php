@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Families;
 
-use App\Models\Family;
 use App\Forms\Builders\FamilyForm;
+use App\Models\Family;
 use Illuminate\Routing\Controller;
 
 class Edit extends Controller

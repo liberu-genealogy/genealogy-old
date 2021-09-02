@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Familyevents;
 
-use App\Models\FamilyEvent;
 use App\Http\Requests\ValidateFamilyEventRequest;
+use App\Models\FamilyEvent;
 use Illuminate\Routing\Controller;
 
 class Store extends Controller
