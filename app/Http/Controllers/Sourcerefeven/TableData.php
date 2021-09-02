@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Sourcerefevents;
+namespace App\Http\Controllers\Sourcerefeven;
 
 use App\Tables\Builders\SourceRefEvenTable;
 use Illuminate\Routing\Controller;

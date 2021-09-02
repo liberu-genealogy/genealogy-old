@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Sourcerefevents;
+namespace App\Http\Controllers\Sourcerefeven;
 
 use App\Forms\Builders\SourceRefEvenForm;
-use App\SourceRefEven;
+use App\Models\SourceRefEven;
 use Illuminate\Routing\Controller;
 
 class Edit extends Controller

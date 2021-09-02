@@ -15,7 +15,7 @@ class SourceRefEvenTest extends TestCase {
 
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
-    private $permissionGroup = 'sourceref_even';
+    private $permissionGroup = 'sourcerefeven';
     private $testModel;
 
     protected function setUp(): void
@@ -40,7 +40,7 @@ class SourceRefEvenTest extends TestCase {
     public function can_store_sourceref_even()
     {
         $response = $this->post(
-            route('sourceref_even.store', [], false),
+            route('sourcerefeven.store', [], false),
             $this->testModel->toArray() + []
         );
 
@@ -49,8 +49,8 @@ class SourceRefEvenTest extends TestCase {
         $response->assertStatus(200)
             ->assertJsonStructure(['message'])
             ->assertJsonFragment([
-                'redirect' => 'sourceref_even.edit',
-                'param' => ['sourceref_even' => $sourceref_even->id],
+                'redirect' => 'sourcerefeven.edit',
+                'param' => ['sourceRefEven' => $sourceref_even->id],
             ]);
     }
 
@@ -62,7 +62,7 @@ class SourceRefEvenTest extends TestCase {
         $this->testModel->gid = 'updated';
 
         $this->patch(
-            route('sourceref_even.update', $this->testModel->id, false),
+            route('sourcerefeven.update', $this->testModel->id, false),
             $this->testModel->toArray() + []
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
@@ -75,11 +75,11 @@ class SourceRefEvenTest extends TestCase {
     {
         $this->testModel->save();
 
-        $this->get(route('sourceref_even.options', [
-            'query' => $this->testModel->gid,
+        $this->get(route('sourcerefeven.options', [
+            'query' => $this->testModel->even,
             'limit' => 10,
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['gid' => $this->testModel->gid]);
+            ->assertJsonFragment(['even' => $this->testModel->even]);
     }
 }

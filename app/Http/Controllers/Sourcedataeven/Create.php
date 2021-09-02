@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Sourcedataevent;
+namespace App\Http\Controllers\Sourcedataeven;
 
 use App\Forms\Builders\SourceDataEvenForm;
 use Illuminate\Routing\Controller;

@@ -13,7 +13,7 @@ class SourceDataTable implements Table
     public function query(): Builder
     {
         return SourceData::selectRaw('
-            source_data.id, source_data.group, source_data.gid, source_data.date, source_data.text, source_data.agnc, source_data.created_at
+            source_data.id, "source_data.group", source_data.gid, source_data.date, source_data.text, source_data.agnc, source_data.created_at
         ');
     }
 

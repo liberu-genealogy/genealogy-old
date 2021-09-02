@@ -1,10 +1,10 @@
 {
-    "routePrefix": "sourcedataevent",
+    "routePrefix": "SourceDataEven",
     "sections": [{
         "columns": "2",
         "fields": [{
-            "label": "Date",
-            "name": "date",
+            "label": "Group",
+            "name": "group",
             "value": null,
             "meta": {
                 "type": "input",
@@ -12,8 +12,26 @@
             }
         },
             {
+                "label": "Gid",
+                "name": "gid",
+                "value": null,
+                "meta": {
+                    "type": "input",
+                    "content": "text"
+                }
+            },
+            {
+                "label": "Date",
+                "name": "date",
+                "value": null,
+                "meta": {
+                    "type": "input",
+                    "content": "text"
+                }
+            },
+            {
                 "label": "Place",
-                "name": "place",
+                "name": "plac",
                 "value": null,
                 "meta": {
                     "type": "input",

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Sourcerefevents;
+namespace App\Http\Controllers\Sourcerefeven;
 
 use App\Http\Requests\ValidateSourceRefEvenRequest;
-use App\SourceRefEven;
+use App\Models\SourceRefEven;
 use Illuminate\Routing\Controller;
 
 class Store extends Controller
@@ -14,7 +14,7 @@ class Store extends Controller
 
         return [
             'message' => __('The source ref even was successfully created'),
-            'redirect' => 'sourcerefevents.edit',
+            'redirect' => 'sourcerefeven.edit',
             'param' => ['sourceRefEven' => $sourceRefEven->id],
         ];
     }

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Sourcedataevent;
+namespace App\Http\Controllers\Sourcedataeven;
 
 use App\Http\Requests\ValidateSourceDataEvenRequest;
-use App\SourceDataEven;
+use App\Models\SourceDataEven;
 use Illuminate\Routing\Controller;
 
 class Update extends Controller
