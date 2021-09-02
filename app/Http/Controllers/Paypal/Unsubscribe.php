@@ -25,12 +25,13 @@ class Unsubscribe extends Controller
         $response1 = $pp->cancelSubscription($user[0]->paypal_subscription_id);
         DB::table('landlord.users')
             ->where('email', $request->input('email'))
-            ->update(['paypal_subscription_id' => ""]);
+            ->update(['paypal_subscription_id' => '']);
 
         $updated_at = Carbon::now();
         DB::table('landlord.paypal_subscriptions')
             ->where('id', $user[0]->paypal_subscription_id)
-            ->update(['status' => "CANCELLED", 'updated_at' => $updated_at->toAtomString()]);
+            ->update(['status' => 'CANCELLED', 'updated_at' => $updated_at->toAtomString()]);
+
         return $response1;
     }
 }

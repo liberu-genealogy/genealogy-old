@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Citations;
 
-use App\Models\Citation;
 use App\Forms\Builders\CitationForm;
+use App\Models\Citation;
 use Illuminate\Routing\Controller;
 
 class Edit extends Controller

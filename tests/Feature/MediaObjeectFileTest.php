@@ -2,17 +2,17 @@
 
 namespace Tests\Feature;
 
+use App\Models\MediaObjeectFile;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use LaravelEnso\Forms\TestTraits\CreateForm;
 use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
-use App\Models\MediaObjeectFile;
 use Tests\TestCase;
 
-class MediaObjeectFileTest extends TestCase {
-
+class MediaObjeectFileTest extends TestCase
+{
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
     private $permissionGroup = 'media_objects_file';

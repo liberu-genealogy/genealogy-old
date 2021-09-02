@@ -1,13 +1,13 @@
 <?php
 
-    namespace Database\Factories;
+namespace Database\Factories;
 
-    use App\Models\User;
     use App\Models\Author;
     use App\Models\Publication;
     use App\Models\Repository;
     use App\Models\Source;
     use App\Models\Type;
+    use App\Models\User;
     use Illuminate\Database\Eloquent\Factories\Factory;
 
     class SourceFactory extends Factory

@@ -6,9 +6,9 @@ use App\Models\Family;
 use App\Models\PersonEvent;
 use App\Models\Place;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use LaravelEnso\Multitenancy\Traits\SystemConnection;
 use LaravelEnso\People\Models\Person as CorePerson;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Person extends CorePerson
 {

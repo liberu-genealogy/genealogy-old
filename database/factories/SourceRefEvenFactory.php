@@ -26,7 +26,7 @@ class SourceRefEvenFactory extends Factory
             'group' => $this->faker->word(),
             'gid' => $this->faker->randomDigit('1', '2'),
             'even' => $this->faker->word(),
-            'role' => $this->faker->word()
+            'role' => $this->faker->word(),
         ];
     }
 }

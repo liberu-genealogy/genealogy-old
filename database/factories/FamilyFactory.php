@@ -25,7 +25,7 @@ class FamilyFactory extends Factory
     {
         return [
             'description' => $this->faker->text(),
-            'is_active' => $this->faker->randomDigit(0,1),
+            'is_active' => $this->faker->randomDigit(0, 1),
             'husband_id'=>Person::create()->id,
             'wife_id'=> Person::create()->id,
             // 'child_id'=> Person::create()->id,
