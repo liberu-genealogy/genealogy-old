@@ -22,7 +22,9 @@ class TypeFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->word(), 'description' => $this->faker->text(), 'is_active' => $this->faker->boolean(),
+            'name' => $this->faker->word(),
+            'description' => $this->faker->text(50),
+            'is_active' => $this->faker->randomDigit('0', '1'),
         ];
     }
 }
