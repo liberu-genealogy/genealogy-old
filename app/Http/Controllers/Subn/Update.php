@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Subn;
 
 use App\Http\Requests\ValidateSubnRequest;
-use App\Subn;
+use App\Models\Subn;
 use Illuminate\Routing\Controller;
 
 class Update extends Controller
