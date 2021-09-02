@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Repositories;
 
 use App\Forms\Builders\RepositoryForm;
-use App\Repository;
+use App\Models\Repository;
 use Illuminate\Routing\Controller;
 
 class Edit extends Controller
