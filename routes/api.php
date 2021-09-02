@@ -711,18 +711,18 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
                 Route::get('', MediaObjectsIndex::class)->name('index');
                 Route::get('create', MediaObjectsCreate::class)->name('create');
                 Route::post('', MediaObjectsStore::class)->name('store');
-                Route::get('{mediaobjects}/edit', MediaObjectsEdit::class)->name('edit');
+                Route::get('{media_object}/edit', MediaObjectsEdit::class)->name('edit');
 
-                Route::patch('{mediaobjects}', MediaObjectsUpdate::class)->name('update');
+                Route::patch('{media_object}', MediaObjectsUpdate::class)->name('update');
 
-                Route::delete('{mediaobjects}', MediaObjectsDestroy::class)->name('destroy');
+                Route::delete('{media_object}', MediaObjectsDestroy::class)->name('destroy');
 
                 Route::get('initTable', MediaObjectsInitTable::class)->name('initTable');
                 Route::get('tableData', MediaObjectsTableData::class)->name('tableData');
                 Route::get('exportExcel', MediaObjectsExportExcel::class)->name('exportExcel');
 
                 Route::get('options', MediaObjectsOptions::class)->name('options');
-                Route::get('{mediaobject}', MediaObjectsShow::class)->name('show');
+                Route::get('{media_object}', MediaObjectsShow::class)->name('show');
             });
     });
 
