@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Familyslugs;
 
-use App\FamilySlgs;
+use App\Models\FamilySlgs;
 use Illuminate\Routing\Controller;
 
 class Destroy extends Controller
