@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Types;
 
 use App\Forms\Builders\TypeForm;
-use App\Type;
+use App\Models\Type;
 use Illuminate\Routing\Controller;
 
 class Edit extends Controller
