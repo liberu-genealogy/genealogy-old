@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Familyevents;
 
-use App\FamilyEvent;
 use App\Forms\Builders\FamilyEventForm;
+use App\Models\FamilyEvent;
 use Illuminate\Routing\Controller;
 
 class Edit extends Controller

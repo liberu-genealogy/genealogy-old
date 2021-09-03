@@ -2,20 +2,20 @@
 
 namespace Tests\Feature;
 
+use App\Models\PersonLds;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use LaravelEnso\Forms\TestTraits\CreateForm;
 use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
-use App\Models\PersonLds;
 use Tests\TestCase;
 
-class PersonLdsTest extends TestCase {
-
+class PersonLdsTest extends TestCase
+{
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
-    private $permissionGroup = 'person_lds';
+    private $permissionGroup = 'personlds';
     private $testModel;
 
     protected function setUp(): void
@@ -40,7 +40,7 @@ class PersonLdsTest extends TestCase {
     public function can_store_person_lds()
     {
         $response = $this->post(
-            route('person_lds.store', [], false),
+            route('personlds.store', [], false),
             $this->testModel->toArray() + []
         );
 
@@ -49,7 +49,7 @@ class PersonLdsTest extends TestCase {
         $response->assertStatus(200)
             ->assertJsonStructure(['message'])
             ->assertJsonFragment([
-                'redirect' => 'person_lds.edit',
+                'redirect' => 'personlds.edit',
                 'param' => ['person_lds' => $person_lds->id],
             ]);
     }
@@ -62,7 +62,7 @@ class PersonLdsTest extends TestCase {
         $this->testModel->gid = 'updated';
 
         $this->patch(
-            route('person_lds.update', $this->testModel->id, false),
+            route('personlds.update', $this->testModel->id, false),
             $this->testModel->toArray() + []
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
@@ -75,11 +75,11 @@ class PersonLdsTest extends TestCase {
     {
         $this->testModel->save();
 
-        $this->get(route('person_lds.options', [
-            'query' => $this->testModel->gid,
+        $this->get(route('personlds.options', [
+            'query' => $this->testModel->type,
             'limit' => 10,
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['gid' => $this->testModel->gid]);
+            ->assertJsonFragment(['type' => $this->testModel->type]);
     }
 }

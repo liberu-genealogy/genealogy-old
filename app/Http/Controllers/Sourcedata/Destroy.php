@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Sourcedata;
 
-use App\SourceData;
+use App\Models\SourceData;
 use Illuminate\Routing\Controller;
 
 class Destroy extends Controller

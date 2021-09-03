@@ -2,17 +2,17 @@
 
 namespace Tests\Feature;
 
+use App\Models\Refn;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use LaravelEnso\Forms\TestTraits\CreateForm;
 use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
-use App\Models\Refn;
 use Tests\TestCase;
 
-class RefnTest extends TestCase {
-
+class RefnTest extends TestCase
+{
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
     private $permissionGroup = 'refn';
@@ -76,10 +76,10 @@ class RefnTest extends TestCase {
         $this->testModel->save();
 
         $this->get(route('refn.options', [
-            'query' => $this->testModel->gid,
+            'query' => $this->testModel->refn,
             'limit' => 10,
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['gid' => $this->testModel->gid]);
+            ->assertJsonFragment(['refn' => $this->testModel->refn]);
     }
 }

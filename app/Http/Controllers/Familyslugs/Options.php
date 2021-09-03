@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Familyslugs;
 
-use App\FamilySlgs;
+use App\Models\FamilySlgs;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Select\Traits\OptionsBuilder;
@@ -13,7 +13,7 @@ class Options extends Controller
 
     protected string $model = FamilySlgs::class;
 
-    //protected $queryAttributes = ['name'];
+    protected $queryAttributes = ['stat'];
 
     //public function query(Request $request)
     //{

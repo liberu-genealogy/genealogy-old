@@ -2,20 +2,20 @@
 
 namespace Tests\Feature;
 
+use App\Models\Chan;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use LaravelEnso\Forms\TestTraits\CreateForm;
 use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
-use App\Models\Chain;
 use Tests\TestCase;
 
-class ChainTest extends TestCase {
-
+class ChanTest extends TestCase
+{
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
-    private $permissionGroup = 'chains';
+    private $permissionGroup = 'chan';
     private $testModel;
 
     protected function setUp(): void
@@ -25,7 +25,7 @@ class ChainTest extends TestCase {
         $this->seed()
             ->actingAs(User::first());
 
-        $this->testModel = Chain::factory()->make();
+        $this->testModel = Chan::factory()->make();
     }
 
     /** @test */
@@ -37,32 +37,32 @@ class ChainTest extends TestCase {
     }
 
     /** @test */
-    public function can_store_chain()
+    public function can_store_chan()
     {
         $response = $this->post(
-            route('chains.store', [], false),
+            route('chan.store', [], false),
             $this->testModel->toArray() + []
         );
 
-        $chain = Chain::where('gid', $this->testModel->gid)->first();
+        $chan = Chan::where('gid', $this->testModel->gid)->first();
 
         $response->assertStatus(200)
             ->assertJsonStructure(['message'])
             ->assertJsonFragment([
-                'redirect' => 'chains.edit',
-                'param' => ['chain' => $chain->id],
+                'redirect' => 'chan.edit',
+                'param' => ['chan' => $chan->id],
             ]);
     }
 
     /** @test */
-    public function can_update_chain()
+    public function can_update_chan()
     {
         $this->testModel->save();
 
         $this->testModel->gid = 'updated';
 
         $this->patch(
-            route('chains.update', $this->testModel->id, false),
+            route('chan.update', $this->testModel->id, false),
             $this->testModel->toArray() + []
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
@@ -75,11 +75,11 @@ class ChainTest extends TestCase {
     {
         $this->testModel->save();
 
-        $this->get(route('chains.options', [
-            'query' => $this->testModel->gid,
+        $this->get(route('chan.options', [
+            'query' => $this->testModel->group,
             'limit' => 10,
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['gid' => $this->testModel->gid]);
+            ->assertJsonFragment(['group' => $this->testModel->group]);
     }
 }

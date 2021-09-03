@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Publications;
 
-use App\Publication;
+use App\Models\Publication;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Select\Traits\OptionsBuilder;

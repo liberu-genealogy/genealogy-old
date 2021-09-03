@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Places;
 
 use App\Forms\Builders\PlaceForm;
-use App\Place;
+use App\Models\Place;
 use Illuminate\Routing\Controller;
 
 class Edit extends Controller

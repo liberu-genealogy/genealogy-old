@@ -2,17 +2,17 @@
 
 namespace Tests\Feature;
 
+use App\Models\Family;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use LaravelEnso\Forms\TestTraits\CreateForm;
 use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
-use App\Models\Family;
 use Tests\TestCase;
 
-class FamilyTest extends TestCase {
-
+class FamilyTest extends TestCase
+{
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
     private $permissionGroup = 'families';
@@ -59,7 +59,7 @@ class FamilyTest extends TestCase {
     {
         $this->testModel->save();
 
-        $this->testModel->type_id = 'updated';
+        $this->testModel->description = 'updated';
 
         $this->patch(
             route('families.update', $this->testModel->id, false),
@@ -67,7 +67,7 @@ class FamilyTest extends TestCase {
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
 
-        $this->assertEquals('updated', $this->testModel->fresh()->type_id);
+        $this->assertEquals('updated', $this->testModel->fresh()->description);
     }
 
     /** @test */
@@ -76,10 +76,10 @@ class FamilyTest extends TestCase {
         $this->testModel->save();
 
         $this->get(route('families.options', [
-            'query' => $this->testModel->type_id,
+            'query' => $this->testModel->chan,
             'limit' => 10,
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['type_id' => $this->testModel->type_id]);
+            ->assertJsonFragment(['chan' => $this->testModel->chan]);
     }
 }

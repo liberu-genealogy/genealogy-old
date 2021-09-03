@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\MediaObjects;
 
-use App\MediaObject;
+use App\Models\MediaObject;
 use Illuminate\Routing\Controller;
 
 class Destroy extends Controller

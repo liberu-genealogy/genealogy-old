@@ -1,6 +1,6 @@
 {
     "name": "Source Data Even",
-    "routePrefix": "sourcedataevent",
+    "routePrefix": "sourcedataeven",
     "crtNo": true,
     "buttons": ["excel", "create", "show", "edit", "destroy"],
     "columns": [{

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Authors;
 
-use App\Author;
 use App\Forms\Builders\AuthorForm;
+use App\Models\Author;
 use Illuminate\Routing\Controller;
 
 class Edit extends Controller

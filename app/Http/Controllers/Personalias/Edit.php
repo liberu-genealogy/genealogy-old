@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Personalias;
 
 use App\Forms\Builders\PersonAliaForm;
-use App\PersonAlia;
+use App\Models\PersonAlia;
 use Illuminate\Routing\Controller;
 
 class Edit extends Controller

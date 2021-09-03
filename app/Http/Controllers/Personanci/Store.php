@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Personanci;
 
 use App\Http\Requests\ValidatePersonAnciRequest;
-use App\PersonAnci;
+use App\Models\PersonAnci;
 use Illuminate\Routing\Controller;
 
 class Store extends Controller
@@ -15,7 +15,7 @@ class Store extends Controller
         return [
             'message' => __('The person anci was successfully created'),
             'redirect' => 'personanci.edit',
-            'param' => ['personAnci' => $personAnci->id],
+            'param' => ['person_anci' => $personAnci->id],
         ];
     }
 }

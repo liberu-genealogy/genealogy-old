@@ -20,11 +20,14 @@ class FamilySlgsFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition(): array
     {
         return [
-            'family_id' => Family::factory(), 'stat' => $this->faker->words(),
-            'date' => $this->faker->date(), 'plac' => $this->faker->word(), 'temp' => $this->faker->word(), 'created_at', 'updated_at',
+            'family_id' => Family::create()->id,
+            'stat' => $this->faker->word(),
+            'date' => $this->faker->date,
+            'plac' => $this->faker->word(),
+            'temp' => $this->faker->word(),
         ];
     }
 }

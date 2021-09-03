@@ -28,7 +28,7 @@ class CreatePlans extends Controller
                     [
                         'frequency' => [
                             'interval_unit' => 'YEAR',
-                            'interval_count' => '1'
+                            'interval_count' => '1',
                         ],
                         'tenure_type' => 'REGULAR',
                         'sequence' => '1',
@@ -36,24 +36,24 @@ class CreatePlans extends Controller
                         'pricing_scheme' => [
                             'fixed_price' => [
                                 'value' => '75',
-                                'currency_code' => 'GBP'
-                            ]
-                        ]
-                    ]
+                                'currency_code' => 'GBP',
+                            ],
+                        ],
+                    ],
                 ],
                 'payment_preferences' => [
                     'auto_bill_outstanding' => 'true',
                     'setup_fee' => [
                         'value' => '0',
-                        'currency_code' => 'GBP'
+                        'currency_code' => 'GBP',
                     ],
                     'setup_fee_failure_action' => 'CONTINUE',
-                    'payment_failure_threshold' => '3'
+                    'payment_failure_threshold' => '3',
                 ],
                 'taxes' => [
                     'percentage' => '10',
-                    'inclusive' => false
-                ]
+                    'inclusive' => false,
+                ],
             ],
 
             [
@@ -64,7 +64,7 @@ class CreatePlans extends Controller
                     [
                         'frequency' => [
                             'interval_unit' => 'MONTH',
-                            'interval_count' => '1'
+                            'interval_count' => '1',
                         ],
                         'tenure_type' => 'REGULAR',
                         'sequence' => '1',
@@ -72,24 +72,24 @@ class CreatePlans extends Controller
                         'pricing_scheme' => [
                             'fixed_price' => [
                                 'value' => '7.5',
-                                'currency_code' => 'GBP'
-                            ]
-                        ]
-                    ]
+                                'currency_code' => 'GBP',
+                            ],
+                        ],
+                    ],
                 ],
                 'payment_preferences' => [
                     'auto_bill_outstanding' => 'true',
                     'setup_fee' => [
                         'value' => '0',
-                        'currency_code' => 'GBP'
+                        'currency_code' => 'GBP',
                     ],
                     'setup_fee_failure_action' => 'CONTINUE',
-                    'payment_failure_threshold' => '3'
+                    'payment_failure_threshold' => '3',
                 ],
                 'taxes' => [
                     'percentage' => '10',
-                    'inclusive' => false
-                ]
+                    'inclusive' => false,
+                ],
             ],
 
             [
@@ -100,7 +100,7 @@ class CreatePlans extends Controller
                     [
                         'frequency' => [
                             'interval_unit' => 'YEAR',
-                            'interval_count' => '1'
+                            'interval_count' => '1',
                         ],
                         'tenure_type' => 'REGULAR',
                         'sequence' => '1',
@@ -108,24 +108,24 @@ class CreatePlans extends Controller
                         'pricing_scheme' => [
                             'fixed_price' => [
                                 'value' => '25',
-                                'currency_code' => 'GBP'
-                            ]
-                        ]
-                    ]
+                                'currency_code' => 'GBP',
+                            ],
+                        ],
+                    ],
                 ],
                 'payment_preferences' => [
                     'auto_bill_outstanding' => 'true',
                     'setup_fee' => [
                         'value' => '0',
-                        'currency_code' => 'GBP'
+                        'currency_code' => 'GBP',
                     ],
                     'setup_fee_failure_action' => 'CONTINUE',
-                    'payment_failure_threshold' => '3'
+                    'payment_failure_threshold' => '3',
                 ],
                 'taxes' => [
                     'percentage' => '10',
-                    'inclusive' => false
-                ]
+                    'inclusive' => false,
+                ],
             ],
 
             [
@@ -136,7 +136,7 @@ class CreatePlans extends Controller
                     [
                         'frequency' => [
                             'interval_unit' => 'MONTH',
-                            'interval_count' => '1'
+                            'interval_count' => '1',
                         ],
                         'tenure_type' => 'REGULAR',
                         'sequence' => '1',
@@ -144,24 +144,24 @@ class CreatePlans extends Controller
                         'pricing_scheme' => [
                             'fixed_price' => [
                                 'value' => '2.5',
-                                'currency_code' => 'GBP'
-                            ]
-                        ]
-                    ]
+                                'currency_code' => 'GBP',
+                            ],
+                        ],
+                    ],
                 ],
                 'payment_preferences' => [
                     'auto_bill_outstanding' => 'true',
                     'setup_fee' => [
                         'value' => '0',
-                        'currency_code' => 'GBP'
+                        'currency_code' => 'GBP',
                     ],
                     'setup_fee_failure_action' => 'CONTINUE',
-                    'payment_failure_threshold' => '3'
+                    'payment_failure_threshold' => '3',
                 ],
                 'taxes' => [
                     'percentage' => '10',
-                    'inclusive' => false
-                ]
+                    'inclusive' => false,
+                ],
             ],
 
             [
@@ -172,7 +172,7 @@ class CreatePlans extends Controller
                     [
                         'frequency' => [
                             'interval_unit' => 'YEAR',
-                            'interval_count' => '1'
+                            'interval_count' => '1',
                         ],
                         'tenure_type' => 'REGULAR',
                         'sequence' => '1',
@@ -180,24 +180,24 @@ class CreatePlans extends Controller
                         'pricing_scheme' => [
                             'fixed_price' => [
                                 'value' => '10',
-                                'currency_code' => 'GBP'
-                            ]
-                        ]
-                    ]
+                                'currency_code' => 'GBP',
+                            ],
+                        ],
+                    ],
                 ],
                 'payment_preferences' => [
                     'auto_bill_outstanding' => 'true',
                     'setup_fee' => [
                         'value' => '0',
-                        'currency_code' => 'GBP'
+                        'currency_code' => 'GBP',
                     ],
                     'setup_fee_failure_action' => 'CONTINUE',
-                    'payment_failure_threshold' => '3'
+                    'payment_failure_threshold' => '3',
                 ],
                 'taxes' => [
                     'percentage' => '10',
-                    'inclusive' => false
-                ]
+                    'inclusive' => false,
+                ],
             ],
 
             [
@@ -208,7 +208,7 @@ class CreatePlans extends Controller
                     [
                         'frequency' => [
                             'interval_unit' => 'MONTH',
-                            'interval_count' => '1'
+                            'interval_count' => '1',
                         ],
                         'tenure_type' => 'REGULAR',
                         'sequence' => '1',
@@ -216,35 +216,35 @@ class CreatePlans extends Controller
                         'pricing_scheme' => [
                             'fixed_price' => [
                                 'value' => '1',
-                                'currency_code' => 'GBP'
-                            ]
-                        ]
-                    ]
+                                'currency_code' => 'GBP',
+                            ],
+                        ],
+                    ],
                 ],
                 'payment_preferences' => [
                     'auto_bill_outstanding' => 'true',
                     'setup_fee' => [
                         'value' => '0',
-                        'currency_code' => 'GBP'
+                        'currency_code' => 'GBP',
                     ],
                     'setup_fee_failure_action' => 'CONTINUE',
-                    'payment_failure_threshold' => '3'
+                    'payment_failure_threshold' => '3',
                 ],
                 'taxes' => [
                     'percentage' => '10',
-                    'inclusive' => false
-                ]
+                    'inclusive' => false,
+                ],
             ],
         ];
 
         $product = [
-            'product_id' => $this->product_id //<--------***** ID DEL PRODUCTO
+            'product_id' => $this->product_id, //<--------***** ID DEL PRODUCTO
         ];
 
         $paypalPlans = $pp->getPlans();
         $paypalPlans = $paypalPlans['plans'] ?? [];
 
-        foreach($this->plans as $plan) {
+        foreach ($this->plans as $plan) {
             $countMatch = 0;
             foreach ($paypalPlans as $paypalPlan) {
                 if ($plan['name'] === $paypalPlan['name']) {

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Notes;
 
 use App\Http\Requests\ValidateNoteRequest;
-use App\Note;
+use App\Models\Note;
 use Illuminate\Routing\Controller;
 
 class Store extends Controller

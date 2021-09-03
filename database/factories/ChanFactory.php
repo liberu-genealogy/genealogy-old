@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Chan;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class ChanFactory extends Factory
 {
@@ -19,10 +20,13 @@ class ChanFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition(): array
     {
         return [
-            'group' => $this->faker->word(), 'gid' => $this->faker->randomElement(1, 2), 'date' => $this->faker->date(), 'time' => $this->faker->time(), 'created_at', 'updated_at',
+            'gid' => $this->faker->randomDigit(1, 2),
+            'group' => $this->faker->text(50),
+            'date' => $this->faker->date,
+            'time' => $this->faker->time,
         ];
     }
 }

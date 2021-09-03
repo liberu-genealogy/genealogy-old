@@ -2,20 +2,20 @@
 
 namespace Tests\Feature;
 
+use App\Models\FamilySlgs;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use LaravelEnso\Forms\TestTraits\CreateForm;
 use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
-use App\Models\FamilySlgs;
 use Tests\TestCase;
 
-class FamilySlgsTest extends TestCase {
-
+class FamilySlgsTest extends TestCase
+{
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
-    private $permissionGroup = 'family_slgs';
+    private $permissionGroup = 'familyslugs';
     private $testModel;
 
     protected function setUp(): void
@@ -40,7 +40,7 @@ class FamilySlgsTest extends TestCase {
     public function can_store_family_slgs()
     {
         $response = $this->post(
-            route('family_slgs.store', [], false),
+            route('familyslugs.store', [], false),
             $this->testModel->toArray() + []
         );
 
@@ -49,7 +49,7 @@ class FamilySlgsTest extends TestCase {
         $response->assertStatus(200)
             ->assertJsonStructure(['message'])
             ->assertJsonFragment([
-                'redirect' => 'family_slgs.edit',
+                'redirect' => 'familyslugs.edit',
                 'param' => ['family_slg' => $family_slgs->id],
             ]);
     }
@@ -62,7 +62,7 @@ class FamilySlgsTest extends TestCase {
         $this->testModel->family_id = 'updated';
 
         $this->patch(
-            route('family_slgs.update', $this->testModel->id, false),
+            route('familyslugs.update', $this->testModel->id, false),
             $this->testModel->toArray() + []
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
@@ -75,11 +75,11 @@ class FamilySlgsTest extends TestCase {
     {
         $this->testModel->save();
 
-        $this->get(route('family_slgs.options', [
-            'query' => $this->testModel->family_id,
+        $this->get(route('familyslugs.options', [
+            'query' => $this->testModel->stat,
             'limit' => 10,
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['family_id' => $this->testModel->family_id]);
+            ->assertJsonFragment(['stat' => $this->testModel->stat]);
     }
 }

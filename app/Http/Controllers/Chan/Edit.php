@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Chan;
 
-use App\Chan;
 use App\Forms\Builders\ChanForm;
+use App\Models\Chan;
 use Illuminate\Routing\Controller;
 
 class Edit extends Controller

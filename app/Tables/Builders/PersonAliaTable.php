@@ -13,7 +13,7 @@ class PersonAliaTable implements Table
     public function query(): Builder
     {
         return PersonAlia::selectRaw('
-            person_alia.id, person_alia.group, person_alia.gid, person_alia.alia, person_alia.created_at
+            person_alia.id, "person_alia.group", person_alia.gid, person_alia.alia, person_alia.created_at
         ');
     }
 
