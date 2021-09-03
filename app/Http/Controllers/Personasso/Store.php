@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Personasso;
 
 use App\Http\Requests\ValidatePersonAssoRequest;
-use App\PersonAsso;
+use App\Models\PersonAsso;
 use Illuminate\Routing\Controller;
 
 class Store extends Controller
@@ -15,7 +15,7 @@ class Store extends Controller
         return [
             'message' => __('The person asso was successfully created'),
             'redirect' => 'personasso.edit',
-            'param' => ['personAsso' => $personAsso->id],
+            'param' => ['person_asso' => $personAsso->id],
         ];
     }
 }

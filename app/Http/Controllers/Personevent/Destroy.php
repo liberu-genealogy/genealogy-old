@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Personevent;
 
-use App\PersonEvent;
+use App\Models\PersonEvent;
 use Illuminate\Routing\Controller;
 
 class Destroy extends Controller

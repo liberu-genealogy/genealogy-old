@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Personevent;
 
 use App\Http\Requests\ValidatePersonEventRequest;
-use App\PersonEvent;
+use App\Models\PersonEvent;
 use Illuminate\Routing\Controller;
 
 class Store extends Controller
@@ -15,7 +15,7 @@ class Store extends Controller
         return [
             'message' => __('The person event was successfully created'),
             'redirect' => 'personevent.edit',
-            'param' => ['personEvent' => $personEvent->id],
+            'param' => ['person_event' => $personEvent->id],
         ];
     }
 }
