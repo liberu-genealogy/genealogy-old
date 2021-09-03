@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Personanci;
 
 use App\Forms\Builders\PersonAnciForm;
-use App\PersonAnci;
+use App\Models\PersonAnci;
 use Illuminate\Routing\Controller;
 
 class Edit extends Controller

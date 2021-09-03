@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Personanci;
 
 use App\Http\Requests\ValidatePersonAnciRequest;
-use App\PersonAnci;
+use App\Models\PersonAnci;
 use Illuminate\Routing\Controller;
 
 class Update extends Controller
