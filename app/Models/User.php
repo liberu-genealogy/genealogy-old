@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use LaravelEnso\Users\Models\User as CoreUser;
 use Laravel\Cashier\Billable;
+use LaravelEnso\Users\Models\User as CoreUser;
 
 class User extends CoreUser
 {

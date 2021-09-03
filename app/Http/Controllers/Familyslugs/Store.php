@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Familyslugs;
 
-use App\FamilySlgs;
 use App\Http\Requests\ValidateFamilySlgsRequest;
+use App\Models\FamilySlgs;
 use Illuminate\Routing\Controller;
 
 class Store extends Controller
@@ -15,7 +15,7 @@ class Store extends Controller
         return [
             'message' => __('The family slgs was successfully created'),
             'redirect' => 'familyslugs.edit',
-            'param' => ['familySlgs' => $familySlgs->id],
+            'param' => ['family_slg' => $familySlgs->id],
         ];
     }
 }

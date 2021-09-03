@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Personlds;
 
-use App\PersonLds;
+use App\Models\PersonLds;
 use Illuminate\Routing\Controller;
 
 class Show extends Controller

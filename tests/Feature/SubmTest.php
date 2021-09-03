@@ -2,20 +2,20 @@
 
 namespace Tests\Feature;
 
+use App\Models\Subm;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use LaravelEnso\Forms\TestTraits\CreateForm;
 use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
-use App\Models\Subm;
 use Tests\TestCase;
 
-class SubmTest extends TestCase {
-
+class SubmTest extends TestCase
+{
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
-    private $permissionGroup = 'subms';
+    private $permissionGroup = 'subm';
     private $testModel;
 
     protected function setUp(): void
@@ -29,7 +29,7 @@ class SubmTest extends TestCase {
     }
 
     /** @test */
-    public function can_view_create_subms()
+    public function can_view_create_subm()
     {
         $this->get(route($this->permissionGroup.'.create', false))
             ->assertStatus(200)
@@ -37,32 +37,32 @@ class SubmTest extends TestCase {
     }
 
     /** @test */
-    public function can_store_subms()
+    public function can_store_subm()
     {
         $response = $this->post(
-            route('subms.store', [], false),
+            route('subm.store', [], false),
             $this->testModel->toArray() + []
         );
 
-        $subms = Subm::where('gid', $this->testModel->gid)->first();
+        $subm = Subm::where('gid', $this->testModel->gid)->first();
 
         $response->assertStatus(200)
             ->assertJsonStructure(['message'])
             ->assertJsonFragment([
-                'redirect' => 'subms.edit',
-                'param' => ['subms' => $subms->id],
+                'redirect' => 'subm.edit',
+                'param' => ['subm' => $subm->id],
             ]);
     }
 
     /** @test */
-    public function can_update_subms()
+    public function can_update_subm()
     {
         $this->testModel->save();
 
         $this->testModel->gid = 'updated';
 
         $this->patch(
-            route('subms.update', $this->testModel->id, false),
+            route('subm.update', $this->testModel->id, false),
             $this->testModel->toArray() + []
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
@@ -75,11 +75,11 @@ class SubmTest extends TestCase {
     {
         $this->testModel->save();
 
-        $this->get(route('subms.options', [
-            'query' => $this->testModel->gid,
+        $this->get(route('subm.options', [
+            'query' => $this->testModel->name,
             'limit' => 10,
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['gid' => $this->testModel->gid]);
+            ->assertJsonFragment(['name' => $this->testModel->name]);
     }
 }

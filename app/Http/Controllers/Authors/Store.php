@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Authors;
 
-use App\Author;
 use App\Http\Requests\ValidateAuthorRequest;
+use App\Models\Author;
 use Illuminate\Routing\Controller;
 
 class Store extends Controller

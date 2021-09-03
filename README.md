@@ -1,7 +1,6 @@
 ## Family Tree 365 - Open Source Family Tree Software - Laravel 8 backend
  ![Latest Stable Version](https://img.shields.io/github/release/familytree365/genealogy.svg) 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/familytree365/genealogy/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/familytree365/genealogy/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/familytree365/genealogy/badges/build.png?b=master)](https://scrutinizer-ci.com/g/familytree365/genealogy/build-status/master)
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/familytree365/genealogy/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 [![StyleCI](https://github.styleci.io/repos/135390590/shield?branch=master)](https://github.styleci.io/repos/135390590)
 [![CodeFactor](https://www.codefactor.io/repository/github/familytree365/genealogy/badge/master)](https://www.codefactor.io/repository/github/familytree365/genealogy/overview/master)
@@ -14,7 +13,7 @@
 
 Browser based Genealogy software for interacting and processing data efficiently. Easily create your
 own family tree by importing your existing data or manual data entry. Storage of all data is securely on your own server and does
-not leave your environment without your permission. In the future there will be optional
+not leave your environment without your permission. API support for many databases of family tree records. In the future there will be optional
 smart matching with other servers. This is the Laravel 8 backend using the Laravel Enso collection of modules. Please see https://github.com/familytree365/nuxt for the client.
 
 ## Demo

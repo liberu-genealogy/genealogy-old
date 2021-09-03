@@ -13,7 +13,7 @@ class SubmTable implements Table
     public function query(): Builder
     {
         return Subm::selectRaw('
-            subms.id, subms.group, subms.gid, subms.name, subms.addr_id, subms.rin, subms.rfn, subms.lang, subms.phon, subms.created_at
+            subms.id, "subms.group", subms.gid, subms.name, subms.addr_id, subms.rin, subms.rfn, subms.lang, subms.phon, subms.created_at
         ');
     }
 

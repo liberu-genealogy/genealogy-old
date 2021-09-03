@@ -2,20 +2,20 @@
 
 namespace Tests\Feature;
 
+use App\Models\PersonAnci;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use LaravelEnso\Forms\TestTraits\CreateForm;
 use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
-use App\Models\PersonAnci;
 use Tests\TestCase;
 
-class PersonAnciTest extends TestCase {
-
+class PersonAnciTest extends TestCase
+{
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
-    private $permissionGroup = 'person_anci';
+    private $permissionGroup = 'personanci';
     private $testModel;
 
     protected function setUp(): void
@@ -40,7 +40,7 @@ class PersonAnciTest extends TestCase {
     public function can_store_person_anci()
     {
         $response = $this->post(
-            route('person_anci.store', [], false),
+            route('personanci.store', [], false),
             $this->testModel->toArray() + []
         );
 
@@ -49,20 +49,20 @@ class PersonAnciTest extends TestCase {
         $response->assertStatus(200)
             ->assertJsonStructure(['message'])
             ->assertJsonFragment([
-                'redirect' => 'person_anci.edit',
+                'redirect' => 'personanci.edit',
                 'param' => ['person_anci' => $person_anci->id],
             ]);
     }
 
     /** @test */
-    public function can_update_person_alia()
+    public function can_update_person_anci()
     {
         $this->testModel->save();
 
         $this->testModel->gid = 'updated';
 
         $this->patch(
-            route('person_anci.update', $this->testModel->id, false),
+            route('personanci.update', $this->testModel->id, false),
             $this->testModel->toArray() + []
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
@@ -75,11 +75,11 @@ class PersonAnciTest extends TestCase {
     {
         $this->testModel->save();
 
-        $this->get(route('person_anci.options', [
-            'query' => $this->testModel->gid,
+        $this->get(route('personanci.options', [
+            'query' => $this->testModel->anci,
             'limit' => 10,
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['gid' => $this->testModel->gid]);
+            ->assertJsonFragment(['anci' => $this->testModel->anci]);
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Publications;
 
 use App\Forms\Builders\PublicationForm;
-use App\Publication;
+use App\Models\Publication;
 use Illuminate\Routing\Controller;
 
 class Edit extends Controller

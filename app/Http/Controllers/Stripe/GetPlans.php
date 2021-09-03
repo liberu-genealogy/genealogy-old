@@ -24,7 +24,7 @@ class GetPlans extends Controller
      */
     public function __invoke(Request $request)
     {
-        $result = array();
+        $result = [];
         foreach ($this->plans as $plan) {
             // $row = (array) $plan;
             $row ['id'] = $plan->id;

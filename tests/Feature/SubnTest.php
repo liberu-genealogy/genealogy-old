@@ -2,20 +2,20 @@
 
 namespace Tests\Feature;
 
+use App\Models\Subn;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use LaravelEnso\Forms\TestTraits\CreateForm;
 use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
-use App\Models\Subn;
 use Tests\TestCase;
 
-class SubnTest extends TestCase {
-
+class SubnTest extends TestCase
+{
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
-    private $permissionGroup = 'subns';
+    private $permissionGroup = 'subn';
     private $testModel;
 
     protected function setUp(): void
@@ -29,7 +29,7 @@ class SubnTest extends TestCase {
     }
 
     /** @test */
-    public function can_view_create_subns()
+    public function can_view_create_subn()
     {
         $this->get(route($this->permissionGroup.'.create', false))
             ->assertStatus(200)
@@ -37,32 +37,32 @@ class SubnTest extends TestCase {
     }
 
     /** @test */
-    public function can_store_subns()
+    public function can_store_subn()
     {
         $response = $this->post(
-            route('subns.store', [], false),
+            route('subn.store', [], false),
             $this->testModel->toArray() + []
         );
 
-        $subns = Subn::where('subm', $this->testModel->subm)->first();
+        $subn = Subn::where('subm', $this->testModel->subm)->first();
 
         $response->assertStatus(200)
             ->assertJsonStructure(['message'])
             ->assertJsonFragment([
-                'redirect' => 'subns.edit',
-                'param' => ['subns' => $subns->id],
+                'redirect' => 'subn.edit',
+                'param' => ['subn' => $subn->id],
             ]);
     }
 
     /** @test */
-    public function can_update_subns()
+    public function can_update_subn()
     {
         $this->testModel->save();
 
         $this->testModel->subm = 'updated';
 
         $this->patch(
-            route('subns.update', $this->testModel->id, false),
+            route('subn.update', $this->testModel->id, false),
             $this->testModel->toArray() + []
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
@@ -75,7 +75,7 @@ class SubnTest extends TestCase {
     {
         $this->testModel->save();
 
-        $this->get(route('subns.options', [
+        $this->get(route('subn.options', [
             'query' => $this->testModel->subm,
             'limit' => 10,
         ], false))

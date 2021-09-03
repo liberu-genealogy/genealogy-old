@@ -13,7 +13,7 @@ class PersonLdsTable implements Table
     public function query(): Builder
     {
         return PersonLds::selectRaw('
-            person_lds.id, person_lds.group, person_lds.gid, person_lds.type, person_lds.stat, person_lds.date, person_lds.plac, person_lds.temp, person_lds.slac_famc, person_lds.created_at
+            person_lds.id, "person_lds.group", person_lds.gid, person_lds.type, person_lds.stat, person_lds.date, person_lds.plac, person_lds.temp, person_lds.slac_famc, person_lds.created_at
         ');
     }
 

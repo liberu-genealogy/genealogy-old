@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Citations;
 
-use App\Citation;
 use App\Http\Requests\ValidateCitationRequest;
+use App\Models\Citation;
 use Illuminate\Routing\Controller;
 
 class Store extends Controller

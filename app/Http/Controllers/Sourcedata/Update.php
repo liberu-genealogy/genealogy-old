@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Sourcedata;
 
 use App\Http\Requests\ValidateSourceDataRequest;
-use App\SourceData;
+use App\Models\SourceData;
 use Illuminate\Routing\Controller;
 
 class Update extends Controller

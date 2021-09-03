@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Types;
 
-use App\Type;
+use App\Models\Type;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Select\Traits\OptionsBuilder;

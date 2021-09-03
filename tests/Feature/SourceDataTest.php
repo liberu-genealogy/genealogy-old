@@ -2,20 +2,20 @@
 
 namespace Tests\Feature;
 
+use App\Models\SourceData;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use LaravelEnso\Forms\TestTraits\CreateForm;
 use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
-use App\Models\SourceData;
 use Tests\TestCase;
 
-class SourceDataTest extends TestCase {
-
+class SourceDataTest extends TestCase
+{
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
-    private $permissionGroup = 'source_data';
+    private $permissionGroup = 'sourcedata';
     private $testModel;
 
     protected function setUp(): void
@@ -40,7 +40,7 @@ class SourceDataTest extends TestCase {
     public function can_store_source_data()
     {
         $response = $this->post(
-            route('source_data.store', [], false),
+            route('sourcedata.store', [], false),
             $this->testModel->toArray() + []
         );
 
@@ -49,8 +49,8 @@ class SourceDataTest extends TestCase {
         $response->assertStatus(200)
             ->assertJsonStructure(['message'])
             ->assertJsonFragment([
-                'redirect' => 'source_data.edit',
-                'param' => ['source_data' => $source_data->id],
+                'redirect' => 'sourcedata.edit',
+                'param' => ['sourceData' => $source_data->id],
             ]);
     }
 
@@ -62,7 +62,7 @@ class SourceDataTest extends TestCase {
         $this->testModel->gid = 'updated';
 
         $this->patch(
-            route('source_data.update', $this->testModel->id, false),
+            route('sourcedata.update', $this->testModel->id, false),
             $this->testModel->toArray() + []
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
@@ -75,11 +75,11 @@ class SourceDataTest extends TestCase {
     {
         $this->testModel->save();
 
-        $this->get(route('source_data.options', [
-            'query' => $this->testModel->gid,
+        $this->get(route('sourcedata.options', [
+            'query' => $this->testModel->group,
             'limit' => 10,
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['gid' => $this->testModel->gid]);
+            ->assertJsonFragment(['group' => $this->testModel->group]);
     }
 }

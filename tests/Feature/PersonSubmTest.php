@@ -2,20 +2,20 @@
 
 namespace Tests\Feature;
 
+use App\Models\PersonSubm;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use LaravelEnso\Forms\TestTraits\CreateForm;
 use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
-use App\Models\PersonSubm;
 use Tests\TestCase;
 
-class PersonSubmTest extends TestCase {
-
+class PersonSubmTest extends TestCase
+{
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
-    private $permissionGroup = 'person_subm';
+    private $permissionGroup = 'personsubm';
     private $testModel;
 
     protected function setUp(): void
@@ -40,7 +40,7 @@ class PersonSubmTest extends TestCase {
     public function can_store_person_subm()
     {
         $response = $this->post(
-            route('person_subm.store', [], false),
+            route('personsubm.store', [], false),
             $this->testModel->toArray() + []
         );
 
@@ -49,7 +49,7 @@ class PersonSubmTest extends TestCase {
         $response->assertStatus(200)
             ->assertJsonStructure(['message'])
             ->assertJsonFragment([
-                'redirect' => 'person_subm.edit',
+                'redirect' => 'personsubm.edit',
                 'param' => ['person_subm' => $person_subm->id],
             ]);
     }
@@ -62,7 +62,7 @@ class PersonSubmTest extends TestCase {
         $this->testModel->gid = 'updated';
 
         $this->patch(
-            route('person_subm.update', $this->testModel->id, false),
+            route('personsubm.update', $this->testModel->id, false),
             $this->testModel->toArray() + []
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
@@ -75,11 +75,11 @@ class PersonSubmTest extends TestCase {
     {
         $this->testModel->save();
 
-        $this->get(route('person_subm.options', [
-            'query' => $this->testModel->gid,
+        $this->get(route('personsubm.options', [
+            'query' => $this->testModel->subm,
             'limit' => 10,
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['gid' => $this->testModel->gid]);
+            ->assertJsonFragment(['subm' => $this->testModel->subm]);
     }
 }

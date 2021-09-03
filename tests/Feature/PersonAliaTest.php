@@ -2,20 +2,20 @@
 
 namespace Tests\Feature;
 
+use App\Models\PersonAlia;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use LaravelEnso\Forms\TestTraits\CreateForm;
 use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
-use App\Models\PersonAlia;
 use Tests\TestCase;
 
-class PersonAliaTest extends TestCase {
-
+class PersonAliaTest extends TestCase
+{
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
-    private $permissionGroup = 'person_alia';
+    private $permissionGroup = 'personalias';
     private $testModel;
 
     protected function setUp(): void
@@ -40,7 +40,7 @@ class PersonAliaTest extends TestCase {
     public function can_store_person_alia()
     {
         $response = $this->post(
-            route('person_alia.store', [], false),
+            route('personalias.store', [], false),
             $this->testModel->toArray() + []
         );
 
@@ -49,7 +49,7 @@ class PersonAliaTest extends TestCase {
         $response->assertStatus(200)
             ->assertJsonStructure(['message'])
             ->assertJsonFragment([
-                'redirect' => 'person_alia.edit',
+                'redirect' => 'personalias.edit',
                 'param' => ['person_alia' => $person_alia->id],
             ]);
     }
@@ -62,7 +62,7 @@ class PersonAliaTest extends TestCase {
         $this->testModel->gid = 'updated';
 
         $this->patch(
-            route('person_alia.update', $this->testModel->id, false),
+            route('personalias.update', $this->testModel->id, false),
             $this->testModel->toArray() + []
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
@@ -75,11 +75,11 @@ class PersonAliaTest extends TestCase {
     {
         $this->testModel->save();
 
-        $this->get(route('person_alia.options', [
-            'query' => $this->testModel->gid,
+        $this->get(route('personalias.options', [
+            'query' => $this->testModel->alia,
             'limit' => 10,
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['gid' => $this->testModel->gid]);
+            ->assertJsonFragment(['alia' => $this->testModel->alia]);
     }
 }

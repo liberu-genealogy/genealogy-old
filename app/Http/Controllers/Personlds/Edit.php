@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Personlds;
 
 use App\Forms\Builders\PersonLdsForm;
-use App\PersonLds;
+use App\Models\PersonLds;
 use Illuminate\Routing\Controller;
 
 class Edit extends Controller

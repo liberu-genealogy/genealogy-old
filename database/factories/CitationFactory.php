@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Citation;
-use App\Models\Repository;
+use App\Models\Source;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CitationFactory extends Factory
@@ -23,12 +23,15 @@ class CitationFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->word(), 'description' => $this->faker->text(),
-            'repository_id' => Repository::factory(),
-            'volume' => $this->faker->randomElement(1, 2, 3, 4, 5),
-            'page' => $this->faker->randomNumber(500), 'is_active',
-            'confidence' => $this->faker->word(),
-            'source_id' => $this->faker->randomElement(1, 2, 3, 4),
+            'name' => $this->faker->word,
+            'date' => $this->faker->date,
+            'description' => $this->faker->text(50),
+            // 'repository_id' => Repository::create()->id,
+            'volume' => $this->faker->randomDigit(1, 2, 3, 4, 5),
+            'page' => $this->faker->randomDigit(500),
+            'is_active' =>$this->faker->randomDigit(0, 1),
+            'confidence' => $this->faker->word,
+            'source_id' => Source::create()->id,
 
         ];
     }

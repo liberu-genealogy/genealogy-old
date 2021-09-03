@@ -2,20 +2,20 @@
 
 namespace Tests\Feature;
 
+use App\Models\FamilyEvent;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use LaravelEnso\Forms\TestTraits\CreateForm;
 use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use LaravelEnso\Users\Models\User;
-use App\Models\FamilyEvent;
 use Tests\TestCase;
 
-class FamilyEventTest extends TestCase {
-
+class FamilyEventTest extends TestCase
+{
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
-    private $permissionGroup = 'family_events';
+    private $permissionGroup = 'familyevents';
     private $testModel;
 
     protected function setUp(): void
@@ -40,7 +40,7 @@ class FamilyEventTest extends TestCase {
     public function can_store_family_event()
     {
         $response = $this->post(
-            route('family_events.store', [], false),
+            route('familyevents.store', [], false),
             $this->testModel->toArray() + []
         );
 
@@ -49,7 +49,7 @@ class FamilyEventTest extends TestCase {
         $response->assertStatus(200)
             ->assertJsonStructure(['message'])
             ->assertJsonFragment([
-                'redirect' => 'family_events.edit',
+                'redirect' => 'familyevents.edit',
                 'param' => ['family_event' => $family_event->id],
             ]);
     }
@@ -59,15 +59,15 @@ class FamilyEventTest extends TestCase {
     {
         $this->testModel->save();
 
-        $this->testModel->family_id = 'updated';
+        $this->testModel->title = 'updated';
 
         $this->patch(
-            route('family_events.update', $this->testModel->id, false),
+            route('familyevents.update', $this->testModel->id, false),
             $this->testModel->toArray() + []
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
 
-        $this->assertEquals('updated', $this->testModel->fresh()->family_id);
+        $this->assertEquals('updated', $this->testModel->fresh()->title);
     }
 
     /** @test */
@@ -75,11 +75,11 @@ class FamilyEventTest extends TestCase {
     {
         $this->testModel->save();
 
-        $this->get(route('family_events.options', [
-            'query' => $this->testModel->family_id,
+        $this->get(route('familyevents.options', [
+            'query' => $this->testModel->title,
             'limit' => 10,
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['family_id' => $this->testModel->family_id]);
+            ->assertJsonFragment(['title' => $this->testModel->title]);
     }
 }

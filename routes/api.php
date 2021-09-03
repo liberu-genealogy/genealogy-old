@@ -235,28 +235,28 @@ use App\Http\Controllers\Sourcedata\Show as SourcedataShow;
 use App\Http\Controllers\Sourcedata\Store as SourcedataStore;
 use App\Http\Controllers\Sourcedata\TableData as SourcedataTableData;
 use App\Http\Controllers\Sourcedata\Update as SourcedataUpdate;
-use App\Http\Controllers\Sourcedataevent\Create as SourcedataeventCreate;
-use App\Http\Controllers\Sourcedataevent\Destroy as SourcedataeventDestroy;
-use App\Http\Controllers\Sourcedataevent\Edit as SourcedataeventEdit;
-use App\Http\Controllers\Sourcedataevent\ExportExcel as SourcedataeventExportExcel;
-use App\Http\Controllers\Sourcedataevent\Index as SourcedataeventIndex;
-use App\Http\Controllers\Sourcedataevent\InitTable as SourcedataeventInitTable;
-use App\Http\Controllers\Sourcedataevent\Options as SourcedataeventOptions;
-use App\Http\Controllers\Sourcedataevent\Show as SourcedataeventShow;
-use App\Http\Controllers\Sourcedataevent\Store as SourcedataeventStore;
-use App\Http\Controllers\Sourcedataevent\TableData as SourcedataeventTableData;
-use App\Http\Controllers\Sourcedataevent\Update as SourcedataeventUpdate;
-use App\Http\Controllers\Sourcerefevents\Create as SourcerefeventsCreate;
-use App\Http\Controllers\Sourcerefevents\Destroy as SourcerefeventsDestroy;
-use App\Http\Controllers\Sourcerefevents\Edit as SourcerefeventsEdit;
-use App\Http\Controllers\Sourcerefevents\ExportExcel as SourcerefeventsExportExcel;
-use App\Http\Controllers\Sourcerefevents\Index as SourcerefeventsIndex;
-use App\Http\Controllers\Sourcerefevents\InitTable as SourcerefeventsInitTable;
-use App\Http\Controllers\Sourcerefevents\Options as SourcerefeventsOptions;
-use App\Http\Controllers\Sourcerefevents\Show as SourcerefeventsShow;
-use App\Http\Controllers\Sourcerefevents\Store as SourcerefeventsStore;
-use App\Http\Controllers\Sourcerefevents\TableData as SourcerefeventsTableData;
-use App\Http\Controllers\Sourcerefevents\Update as SourcerefeventsUpdate;
+use App\Http\Controllers\Sourcedataeven\Create as SourcedataevenCreate;
+use App\Http\Controllers\Sourcedataeven\Destroy as SourcedataevenDestroy;
+use App\Http\Controllers\Sourcedataeven\Edit as SourcedataevenEdit;
+use App\Http\Controllers\Sourcedataeven\ExportExcel as SourcedataevenExportExcel;
+use App\Http\Controllers\Sourcedataeven\Index as SourcedataevenIndex;
+use App\Http\Controllers\Sourcedataeven\InitTable as SourcedataevenInitTable;
+use App\Http\Controllers\Sourcedataeven\Options as SourcedataevenOptions;
+use App\Http\Controllers\Sourcedataeven\Show as SourcedataevenShow;
+use App\Http\Controllers\Sourcedataeven\Store as SourcedataevenStore;
+use App\Http\Controllers\Sourcedataeven\TableData as SourcedataevenTableData;
+use App\Http\Controllers\Sourcedataeven\Update as SourcedataevenUpdate;
+use App\Http\Controllers\Sourcerefeven\Create as SourcerefevenCreate;
+use App\Http\Controllers\Sourcerefeven\Destroy as SourcerefevenDestroy;
+use App\Http\Controllers\Sourcerefeven\Edit as SourcerefevenEdit;
+use App\Http\Controllers\Sourcerefeven\ExportExcel as SourcerefevenExportExcel;
+use App\Http\Controllers\Sourcerefeven\Index as SourcerefevenIndex;
+use App\Http\Controllers\Sourcerefeven\InitTable as SourcerefevenInitTable;
+use App\Http\Controllers\Sourcerefeven\Options as SourcerefevenOptions;
+use App\Http\Controllers\Sourcerefeven\Show as SourcerefevenShow;
+use App\Http\Controllers\Sourcerefeven\Store as SourcerefevenStore;
+use App\Http\Controllers\Sourcerefeven\TableData as SourcerefevenTableData;
+use App\Http\Controllers\Sourcerefeven\Update as SourcerefevenUpdate;
 use App\Http\Controllers\Sources\Create as SourcesCreate;
 use App\Http\Controllers\Sources\Destroy as SourcesDestroy;
 use App\Http\Controllers\Sources\Edit as SourcesEdit;
@@ -354,6 +354,10 @@ use LaravelEnso\Companies\Http\Controllers\Person\Edit as PeopleCompanyEdit;
 use LaravelEnso\Companies\Http\Controllers\Person\Index as PeopleCompany;
 use LaravelEnso\Companies\Http\Controllers\Person\Store as PeopleCompanyStore;
 use LaravelEnso\Companies\Http\Controllers\Person\Update as PeopleCompanyUpdate;
+use LaravelEnso\ControlPanelApi\Http\Controllers\Action as ControlPanelAction;
+use LaravelEnso\ControlPanelApi\Http\Controllers\Actions as ControlPanelActions;
+use LaravelEnso\ControlPanelApi\Http\Controllers\DownloadLog as ControlPanelDownloadLog;
+use LaravelEnso\ControlPanelApi\Http\Controllers\Statistics as ControlPanelStatistics;
 use LaravelEnso\People\Http\Controllers\Create as PeopleCreate;
 use LaravelEnso\People\Http\Controllers\Destroy as PeopleDestroy;
 use LaravelEnso\People\Http\Controllers\Edit as PeopleEdit;
@@ -363,10 +367,6 @@ use LaravelEnso\People\Http\Controllers\Options as PeopleOptions;
 use LaravelEnso\People\Http\Controllers\Store as PeopleStore;
 use LaravelEnso\People\Http\Controllers\TableData as PeopleTableData;
 use LaravelEnso\People\Http\Controllers\Update as PeopleUpdate;
-use LaravelEnso\ControlPanelApi\Http\Controllers\Action as ControlPanelAction;
-use LaravelEnso\ControlPanelApi\Http\Controllers\Actions as ControlPanelActions;
-use LaravelEnso\ControlPanelApi\Http\Controllers\DownloadLog as ControlPanelDownloadLog;
-use LaravelEnso\ControlPanelApi\Http\Controllers\Statistics as ControlPanelStatistics;
 
 /**
  * Route::middleware(['guest'])
@@ -711,18 +711,18 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
                 Route::get('', MediaObjectsIndex::class)->name('index');
                 Route::get('create', MediaObjectsCreate::class)->name('create');
                 Route::post('', MediaObjectsStore::class)->name('store');
-                Route::get('{mediaobjects}/edit', MediaObjectsEdit::class)->name('edit');
+                Route::get('{media_object}/edit', MediaObjectsEdit::class)->name('edit');
 
-                Route::patch('{mediaobjects}', MediaObjectsUpdate::class)->name('update');
+                Route::patch('{media_object}', MediaObjectsUpdate::class)->name('update');
 
-                Route::delete('{mediaobjects}', MediaObjectsDestroy::class)->name('destroy');
+                Route::delete('{media_object}', MediaObjectsDestroy::class)->name('destroy');
 
                 Route::get('initTable', MediaObjectsInitTable::class)->name('initTable');
                 Route::get('tableData', MediaObjectsTableData::class)->name('tableData');
                 Route::get('exportExcel', MediaObjectsExportExcel::class)->name('exportExcel');
 
                 Route::get('options', MediaObjectsOptions::class)->name('options');
-                Route::get('{mediaobject}', MediaObjectsShow::class)->name('show');
+                Route::get('{media_object}', MediaObjectsShow::class)->name('show');
             });
     });
 
@@ -993,48 +993,48 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('')
-            ->prefix('sourcedataevent')
-            ->as('sourcedataevent.')
+            ->prefix('sourcedataeven')
+            ->as('sourcedataeven.')
             ->group(function () {
-                Route::get('', SourcedataeventIndex::class)->name('index');
-                Route::get('create', SourcedataeventCreate::class)->name('create');
-                Route::post('', SourcedataeventStore::class)->name('store');
-                Route::get('{sourceDataEven}/edit', SourcedataeventEdit::class)->name('edit');
+                Route::get('', SourcedataevenIndex::class)->name('index');
+                Route::get('create', SourcedataevenCreate::class)->name('create');
+                Route::post('', SourcedataevenStore::class)->name('store');
+                Route::get('{sourceDataEven}/edit', SourcedataevenEdit::class)->name('edit');
 
-                Route::patch('{sourceDataEven}', SourcedataeventUpdate::class)->name('update');
+                Route::patch('{sourceDataEven}', SourcedataevenUpdate::class)->name('update');
 
-                Route::delete('{sourceDataEven}', SourcedataeventDestroy::class)->name('destroy');
+                Route::delete('{sourceDataEven}', SourcedataevenDestroy::class)->name('destroy');
 
-                Route::get('initTable', SourcedataeventInitTable::class)->name('initTable');
-                Route::get('tableData', SourcedataeventTableData::class)->name('tableData');
-                Route::get('exportExcel', SourcedataeventExportExcel::class)->name('exportExcel');
+                Route::get('initTable', SourcedataevenInitTable::class)->name('initTable');
+                Route::get('tableData', SourcedataevenTableData::class)->name('tableData');
+                Route::get('exportExcel', SourcedataevenExportExcel::class)->name('exportExcel');
 
-                Route::get('options', SourcedataeventOptions::class)->name('options');
-                Route::get('{sourceDataEven}', SourcedataeventShow::class)->name('show');
+                Route::get('options', SourcedataevenOptions::class)->name('options');
+                Route::get('{sourceDataEven}', SourcedataevenShow::class)->name('show');
             });
     });
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('')
-            ->prefix('sourcerefevents')
-            ->as('sourcerefevents.')
+            ->prefix('sourcerefeven')
+            ->as('sourcerefeven.')
             ->group(function () {
-                Route::get('', SourcerefeventsIndex::class)->name('index');
-                Route::get('create', SourcerefeventsCreate::class)->name('create');
-                Route::post('', SourcerefeventsStore::class)->name('store');
-                Route::get('{sourceRefEven}/edit', SourcerefeventsEdit::class)->name('edit');
+                Route::get('', SourcerefevenIndex::class)->name('index');
+                Route::get('create', SourcerefevenCreate::class)->name('create');
+                Route::post('', SourcerefevenStore::class)->name('store');
+                Route::get('{sourceRefEven}/edit', SourcerefevenEdit::class)->name('edit');
 
-                Route::patch('{sourceRefEven}', SourcerefeventsUpdate::class)->name('update');
+                Route::patch('{sourceRefEven}', SourcerefevenUpdate::class)->name('update');
 
-                Route::delete('{sourceRefEven}', SourcerefeventsDestroy::class)->name('destroy');
+                Route::delete('{sourceRefEven}', SourcerefevenDestroy::class)->name('destroy');
 
-                Route::get('initTable', SourcerefeventsInitTable::class)->name('initTable');
-                Route::get('tableData', SourcerefeventsTableData::class)->name('tableData');
-                Route::get('exportExcel', SourcerefeventsExportExcel::class)->name('exportExcel');
+                Route::get('initTable', SourcerefevenInitTable::class)->name('initTable');
+                Route::get('tableData', SourcerefevenTableData::class)->name('tableData');
+                Route::get('exportExcel', SourcerefevenExportExcel::class)->name('exportExcel');
 
-                Route::get('options', SourcerefeventsOptions::class)->name('options');
-                Route::get('{sourceRefEven}', SourcerefeventsShow::class)->name('show');
+                Route::get('options', SourcerefevenOptions::class)->name('options');
+                Route::get('{sourceRefEven}', SourcerefevenShow::class)->name('show');
             });
     });
 
@@ -1212,10 +1212,10 @@ Route::name('api.controlPanel.')
     ->group(function () {
         Route::middleware(['api', 'auth', 'core'])
         ->group(function () {
-                Route::get('statistics', ControlPanelStatistics::class)->name('statistics');
-                Route::get('actions', ControlPanelActions::class)->name('actions');
-                Route::any('{action}', ControlPanelAction::class)->name('action');
-            });
+            Route::get('statistics', ControlPanelStatistics::class)->name('statistics');
+            Route::get('actions', ControlPanelActions::class)->name('actions');
+            Route::any('{action}', ControlPanelAction::class)->name('action');
+        });
 
         Route::middleware(['signed', 'bindings'])
             ->prefix('action')
@@ -1225,25 +1225,25 @@ Route::name('api.controlPanel.')
 
 Broadcast::routes(['middleware' => ['auth:sanctum']]);
 
-Route::namespace('')
-    ->prefix('stripe')
-    ->as('stripe.')
-    ->group(function () {
-        Route::get('current-subscription', StripeGetCurrentSubscription::class);
-        Route::get('intent', StripeGetIntent::class);
-        Route::get('plans', StripeGetPlans::class);
-        Route::get('subscribe', StripeSubscribe::class);
-        Route::get('unsubscribe', StripeUnsubscribe::class);
-        Route::get('webhook', StripeWebhook::class);
-    });
+// Route::namespace('')
+//     ->prefix('stripe')
+//     ->as('stripe.')
+//     ->group(function () {
+//         Route::get('current-subscription', StripeGetCurrentSubscription::class);
+//         Route::get('intent', StripeGetIntent::class);
+//         Route::get('plans', StripeGetPlans::class);
+//         Route::get('subscribe', StripeSubscribe::class);
+//         Route::get('unsubscribe', StripeUnsubscribe::class);
+//         Route::get('webhook', StripeWebhook::class);
+//     });
 
-Route::namespace('')
-    ->prefix('paypal')
-    ->as('paypal.')
-    ->group(function () {
-        Route::post('create-plans', PaypalCreatePlans::class);
-        Route::post('create-product', PaypalCreateProduct::class);
-        Route::get('plans', PaypalGetPlans::class);
-        Route::get('handle-payment', PaypalHandlePayment::class);
-        Route::get('unsubscribe', PaypalUnsubscribe::class);
-    });
+// Route::namespace('')
+//     ->prefix('paypal')
+//     ->as('paypal.')
+//     ->group(function () {
+//         Route::post('create-plans', PaypalCreatePlans::class);
+//         Route::post('create-product', PaypalCreateProduct::class);
+//         Route::get('plans', PaypalGetPlans::class);
+//         Route::get('handle-payment', PaypalHandlePayment::class);
+//         Route::get('unsubscribe', PaypalUnsubscribe::class);
+//     });

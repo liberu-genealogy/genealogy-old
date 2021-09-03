@@ -21,8 +21,8 @@ class MediaObjectForm
         return $this->form->create();
     }
 
-    public function edit(MediaObject $object)
+    public function edit(MediaObject $media_objects)
     {
-        return $this->form->edit($object);
+        return $this->form->edit($media_objects);
     }
 }

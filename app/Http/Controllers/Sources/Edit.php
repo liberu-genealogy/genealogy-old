@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Sources;
 
 use App\Forms\Builders\SourceForm;
-use App\Source;
+use App\Models\Source;
 use Illuminate\Routing\Controller;
 
 class Edit extends Controller

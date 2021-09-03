@@ -22,7 +22,9 @@ class PersonSubmFactory extends Factory
     public function definition()
     {
         return [
-            'group' => $this->faker->word(), 'gid' => $this->faker->randomElement('1', '2'), 'subm' => $this->faker->word(), 'created_at', 'updated_at',
+            'group' => $this->faker->word(),
+            'gid' => $this->faker->randomDigit('1', '2'),
+            'subm' => $this->faker->word()
         ];
     }
 }

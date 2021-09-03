@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Publications;
 
 use App\Http\Requests\ValidatePublicationRequest;
-use App\Publication;
+use App\Models\Publication;
 use Illuminate\Routing\Controller;
 
 class Update extends Controller

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Types;
 
-use App\Type;
+use App\Models\Type;
 use Illuminate\Routing\Controller;
 
 class Destroy extends Controller
