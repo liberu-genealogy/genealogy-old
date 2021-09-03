@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Personsubm;
 
 use App\Http\Requests\ValidatePersonSubmRequest;
-use App\PersonSubm;
+use App\Models\PersonSubm;
 use Illuminate\Routing\Controller;
 
 class Store extends Controller
@@ -15,7 +15,7 @@ class Store extends Controller
         return [
             'message' => __('The person subm was successfully created'),
             'redirect' => 'personsubm.edit',
-            'param' => ['personSubm' => $personSubm->id],
+            'param' => ['person_subm' => $personSubm->id],
         ];
     }
 }

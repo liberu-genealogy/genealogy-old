@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Personsubm;
 
-use App\PersonSubm;
+use App\Models\PersonSubm;
 use Illuminate\Routing\Controller;
 
 class Destroy extends Controller
