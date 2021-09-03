@@ -13,7 +13,7 @@
 
 Browser based Genealogy software for interacting and processing data efficiently. Easily create your
 own family tree by importing your existing data or manual data entry. Storage of all data is securely on your own server and does
-not leave your environment without your permission. In the future there will be optional
+not leave your environment without your permission. API support for many databases of family tree records. In the future there will be optional
 smart matching with other servers. This is the Laravel 8 backend using the Laravel Enso collection of modules. Please see https://github.com/familytree365/nuxt for the client.
 
 ## Demo
