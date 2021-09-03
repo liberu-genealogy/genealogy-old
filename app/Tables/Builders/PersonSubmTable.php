@@ -13,7 +13,7 @@ class PersonSubmTable implements Table
     public function query(): Builder
     {
         return PersonSubm::selectRaw('
-            person_subm.id, person_subm.group, person_subm.gid, person_subm.subm, person_subm.created_at
+            person_subm.id, "person_subm.group", person_subm.gid, person_subm.subm, person_subm.created_at
         ');
     }
 

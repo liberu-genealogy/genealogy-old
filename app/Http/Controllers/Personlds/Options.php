@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Personlds;
 
-use App\PersonLds;
+use App\Models\PersonLds;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Select\Traits\OptionsBuilder;
@@ -13,7 +13,7 @@ class Options extends Controller
 
     protected string $model = PersonLds::class;
 
-    //protected $queryAttributes = ['name'];
+    protected $queryAttributes = ['type'];
 
     //public function query(Request $request)
     //{

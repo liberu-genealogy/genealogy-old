@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Personsubm;
 
 use App\Http\Requests\ValidatePersonSubmRequest;
-use App\PersonSubm;
+use App\Models\PersonSubm;
 use Illuminate\Routing\Controller;
 
 class Update extends Controller

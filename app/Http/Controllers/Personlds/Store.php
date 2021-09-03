@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Personlds;
 
 use App\Http\Requests\ValidatePersonLdsRequest;
-use App\PersonLds;
+use App\Models\PersonLds;
 use Illuminate\Routing\Controller;
 
 class Store extends Controller
@@ -15,7 +15,7 @@ class Store extends Controller
         return [
             'message' => __('The person lds was successfully created'),
             'redirect' => 'personlds.edit',
-            'param' => ['personLds' => $personLds->id],
+            'param' => ['person_lds' => $personLds->id],
         ];
     }
 }
