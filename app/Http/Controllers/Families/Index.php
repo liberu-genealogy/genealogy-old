@@ -19,8 +19,9 @@ class Index extends Controller
     {
         //1 Progenitor - $husband married $woman $year $location
         //1.1 Child - $husband married $woman $year $location
-            //1.1.1 Grandchild - $husband married $woman $year $location
-        $result = "true";
+        //1.1.1 Grandchild - $husband married $woman $year $location
+        $result = 'true';
+
         return $result;
     }
 }
