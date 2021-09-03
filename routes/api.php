@@ -354,6 +354,15 @@ use LaravelEnso\Companies\Http\Controllers\Person\Edit as PeopleCompanyEdit;
 use LaravelEnso\Companies\Http\Controllers\Person\Index as PeopleCompany;
 use LaravelEnso\Companies\Http\Controllers\Person\Store as PeopleCompanyStore;
 use LaravelEnso\Companies\Http\Controllers\Person\Update as PeopleCompanyUpdate;
+use App\Http\Controllers\Users\Create as UserRestrictCreate;
+use App\Http\Controllers\Users\Destroy as UserRestrictDestroy;
+use App\Http\Controllers\Users\Edit as UserRestrictEdit;
+use App\Http\Controllers\Users\ExportExcel as UserRestrictExportExcel;
+use App\Http\Controllers\Users\InitTable as UserRestrictInitTable;
+use App\Http\Controllers\Users\Options as UserRestrictOptions;
+use App\Http\Controllers\Users\Store as UserRestrictStore;
+use App\Http\Controllers\Users\TableData as UserRestrictTableData;
+use App\Http\Controllers\Users\Update as UserRestrictUpdate;
 use LaravelEnso\ControlPanelApi\Http\Controllers\Action as ControlPanelAction;
 use LaravelEnso\ControlPanelApi\Http\Controllers\Actions as ControlPanelActions;
 use LaravelEnso\ControlPanelApi\Http\Controllers\DownloadLog as ControlPanelDownloadLog;
@@ -1145,6 +1154,27 @@ Route::namespace('')
 
         Route::get('options', CompanyOptions::class)->name('options');
     });
+
+Route::namespace('')
+    ->middleware(['api', 'auth', 'core', 'multitenant'])
+    ->prefix('api/administration/user-restrict')
+    ->as('administration.userrestrict.')
+    ->group(function () {
+        Route::get('create', UserRestrictCreate::class)->name('create');
+        Route::post('', UserRestrictStore::class)->name('store');
+        Route::get('{user}/edit', UserRestrictEdit::class)->name('edit');
+        Route::patch('{user}', UserRestrictUpdate::class)->name('update');
+        Route::delete('{user}', UserRestrictDestroy::class)->name('destroy');
+
+        Route::get('initTable', UserRestrictInitTable::class)->name('initTable');
+        Route::get('tableData', UserRestrictTableData::class)->name('tableData');
+        Route::get('exportExcel', UserRestrictExportExcel::class)->name('exportExcel');
+
+        Route::get('options', UserRestrictOptions::class)->name('options');
+    });
+
+
+
 Route::namespace('')
     ->group(function () {
         Route::prefix('people')

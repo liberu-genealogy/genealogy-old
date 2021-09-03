@@ -13,7 +13,7 @@ class Options extends Controller
 
     protected string $model = Type::class;
 
-    //protected $queryAttributes = ['name'];
+    protected $queryAttributes = ['name'];
 
     //public function query(Request $request)
     //{
