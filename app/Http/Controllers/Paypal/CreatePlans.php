@@ -238,7 +238,7 @@ class CreatePlans extends Controller
         ];
 
         $product = [
-            'product_id' => $this->product_id, //<--------***** ID DEL PRODUCTO
+            'product_id' => $request->product_id, //<--------***** ID DEL PRODUCTO
         ];
 
         $paypalPlans = $pp->getPlans();
