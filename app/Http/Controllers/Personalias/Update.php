@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Personalias;
 
 use App\Http\Requests\ValidatePersonAliaRequest;
-use App\PersonAlia;
+use App\Models\PersonAlia;
 use Illuminate\Routing\Controller;
 
 class Update extends Controller
