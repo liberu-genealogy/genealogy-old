@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Personanci;
 
-use App\PersonAnci;
+use App\Models\PersonAnci;
 use Illuminate\Routing\Controller;
 
 class Show extends Controller
