@@ -13,7 +13,7 @@ class PersonAssoTable implements Table
     public function query(): Builder
     {
         return PersonAsso::selectRaw('
-            person_asso.id, person_asso.group, person_asso.gid, person_asso.rela, person_asso.created_at
+            person_asso.id, "person_asso.group", person_asso.gid, person_asso.rela, person_asso.created_at
         ');
     }
 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Personasso;
 
 use App\Http\Requests\ValidatePersonAssoRequest;
-use App\PersonAsso;
+use App\Models\PersonAsso;
 use Illuminate\Routing\Controller;
 
 class Update extends Controller

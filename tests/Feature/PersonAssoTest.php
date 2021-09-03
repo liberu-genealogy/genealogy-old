@@ -15,7 +15,7 @@ class PersonAssoTest extends TestCase {
 
     use Datatable, DestroyForm, CreateForm, EditForm, RefreshDatabase;
 
-    private $permissionGroup = 'person_asso';
+    private $permissionGroup = 'personasso';
     private $testModel;
 
     protected function setUp(): void
@@ -40,7 +40,7 @@ class PersonAssoTest extends TestCase {
     public function can_store_person_asso()
     {
         $response = $this->post(
-            route('person_asso.store', [], false),
+            route('personasso.store', [], false),
             $this->testModel->toArray() + []
         );
 
@@ -49,7 +49,7 @@ class PersonAssoTest extends TestCase {
         $response->assertStatus(200)
             ->assertJsonStructure(['message'])
             ->assertJsonFragment([
-                'redirect' => 'person_asso.edit',
+                'redirect' => 'personasso.edit',
                 'param' => ['person_asso' => $person_asso->id],
             ]);
     }
@@ -62,7 +62,7 @@ class PersonAssoTest extends TestCase {
         $this->testModel->gid = 'updated';
 
         $this->patch(
-            route('person_asso.update', $this->testModel->id, false),
+            route('personasso.update', $this->testModel->id, false),
             $this->testModel->toArray() + []
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
@@ -75,11 +75,11 @@ class PersonAssoTest extends TestCase {
     {
         $this->testModel->save();
 
-        $this->get(route('person_asso.options', [
-            'query' => $this->testModel->gid,
+        $this->get(route('personasso.options', [
+            'query' => $this->testModel->indi,
             'limit' => 10,
         ], false))
             ->assertStatus(200)
-            ->assertJsonFragment(['gid' => $this->testModel->gid]);
+            ->assertJsonFragment(['indi' => $this->testModel->indi]);
     }
 }

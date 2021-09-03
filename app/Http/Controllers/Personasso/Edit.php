@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Personasso;
 
 use App\Forms\Builders\PersonAssoForm;
-use App\PersonAsso;
+use App\Models\PersonAsso;
 use Illuminate\Routing\Controller;
 
 class Edit extends Controller
