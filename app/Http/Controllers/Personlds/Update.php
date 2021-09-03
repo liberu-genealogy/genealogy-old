@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Personlds;
 
 use App\Http\Requests\ValidatePersonLdsRequest;
-use App\PersonLds;
+use App\Models\PersonLds;
 use Illuminate\Routing\Controller;
 
 class Update extends Controller
