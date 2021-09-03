@@ -1232,18 +1232,18 @@ Route::namespace('')
         Route::get('current-subscription', StripeGetCurrentSubscription::class);
         Route::get('intent', StripeGetIntent::class);
         Route::get('plans', StripeGetPlans::class);
-        Route::get('subscribe', StripeSubscribe::class);
-        Route::get('unsubscribe', StripeUnsubscribe::class);
-        Route::get('webhook', StripeWebhook::class);
+        Route::post('subscribe', StripeSubscribe::class);
+        Route::post('unsubscribe', StripeUnsubscribe::class);
+        Route::post('webhook', StripeWebhook::class);
     });
 
 Route::namespace('')
     ->prefix('paypal')
     ->as('paypal.')
     ->group(function () {
-        Route::post('create-plans', PaypalCreatePlans::class);
-        Route::post('create-product', PaypalCreateProduct::class);
         Route::get('plans', PaypalGetPlans::class);
-        Route::get('handle-payment', PaypalHandlePayment::class);
-        Route::get('unsubscribe', PaypalUnsubscribe::class);
+        Route::post('plans', PaypalCreatePlans::class);
+        Route::post('products', PaypalCreateProduct::class);
+        Route::post('subscribe', PaypalHandlePayment::class);
+        Route::post('unsubscribe', PaypalUnsubscribe::class);
     });
