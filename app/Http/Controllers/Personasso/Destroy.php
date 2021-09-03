@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Personasso;
 
-use App\PersonAsso;
+use App\Models\PersonAsso;
 use Illuminate\Routing\Controller;
 
 class Destroy extends Controller
