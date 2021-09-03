@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Plan;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use leifermendez\paypal\PaypalSubscription;
 
 class CreatePlans extends Controller
@@ -19,7 +18,7 @@ class CreatePlans extends Controller
      */
     public function __invoke(Request $request)
     {
-        $pp = new PaypalSubscription($this->app_id, $this->app_sk, $this->mode);
+        $pp = new PaypalSubscription();
         $this->plans = [
             [
                 'name' => 'UTY',

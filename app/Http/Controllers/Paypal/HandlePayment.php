@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Paypal;
 
 use App\Http\Controllers\Controller;
+use App\Models\PaypalSubscription as PaypalSub;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -18,9 +20,7 @@ class HandlePayment extends Controller
      */
     public function __invoke(Request $request)
     {
-        // return $request;
-
-        $pp = new PaypalSubscription($this->app_id, $this->app_sk, $this->mode);
+        $pp = new PaypalSubscription();
 
         $startdate = Carbon::now();
         $startdate->addMinutes(1);
@@ -71,36 +71,24 @@ class HandlePayment extends Controller
         // 'cancel_url' => 'https://github.com/leifermendez?status=cancelUrl'
 
         $plan = [
-            'plan_id' => $request->input('id') // <-------- ************ ID DEL PLAN CREADO
+            'plan_id' => $request->plan_id // <-------- ************ ID DEL PLAN CREADO
         ];
 
         $response = $pp->createSubscription($subscription, $plan);
 
         // *** Store paypal_subscription_id to USER db
-        $user = DB::table('landlord.users')
-            ->where('email', $request->input('email'))
-            ->get();
+        $user = User::where('email', $request->email)->get();
 
         // if ($user['paypal_subscription_id']) {
 //      $response1 = $pp->cancelSubscription($user[0]->paypal_subscription_id);
         // }
 
-        DB::table('landlord.users')
-            ->where('email', $request->input('email'))
+        User::where('email', $request->email)
             ->update(['paypal_subscription_id' => $response['id']]);
 
-        $updated_at = Carbon::now();
-        DB::table('landlord.paypal_subscriptions')
-            ->where('id', $user[0]->paypal_subscription_id)
-            ->update(['status' => "CANCELLED", 'updated_at' => $updated_at->toAtomString()]);
-
-
+        PaypalSub::where('id', $user[0]->paypal_subscription_id)
+            ->update(['status' => "CANCELLED"]);
 
         return $response['links'][0]['href'];
-        // return $response;
-
-        // $res = $pp->getSubscription($response['id']);
-
-        // dd($res);
     }
 }
