@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Personsubm;
 
-use App\PersonSubm;
+use App\Models\PersonSubm;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Select\Traits\OptionsBuilder;
@@ -13,7 +13,7 @@ class Options extends Controller
 
     protected string $model = PersonSubm::class;
 
-    //protected $queryAttributes = ['name'];
+    protected $queryAttributes = ['subm'];
 
     //public function query(Request $request)
     //{
