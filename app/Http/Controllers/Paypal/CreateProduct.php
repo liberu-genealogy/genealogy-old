@@ -16,14 +16,13 @@ class CreateProduct extends Controller
      */
     public function __invoke(Request $request)
     {
-        $pp = new PaypalSubscription($this->app_id, $this->app_sk, $this->mode);
+        $pp = new PaypalSubscription();
         $product = [
             'name' => 'Family365',
             'description' => 'Family trees',
             'type' => 'SERVICE',
             'category' => 'SOFTWARE',
         ];
-        $res = $pp->createProduct($product);
-        $this->product_id = $res['id'] ?? null;
+        $pp->createProduct($product);
     }
 }
