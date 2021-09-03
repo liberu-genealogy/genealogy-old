@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Personevent;
 
 use App\Http\Requests\ValidatePersonEventRequest;
-use App\PersonEvent;
+use App\Models\PersonEvent;
 use Illuminate\Routing\Controller;
 
 class Update extends Controller
