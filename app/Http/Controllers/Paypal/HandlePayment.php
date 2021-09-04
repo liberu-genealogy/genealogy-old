@@ -20,7 +20,7 @@ class HandlePayment extends Controller
      */
     public function __invoke(Request $request)
     {
-        $pp = new PaypalSubscription();
+        $pp = new PaypalSubscription($this->app_id, $this->app_sk, $this->mode);
 
         $startdate = Carbon::now();
         $startdate->addMinutes(1);
@@ -30,17 +30,17 @@ class HandlePayment extends Controller
             'quantity' => '1',
             'shipping_amount' => [
                 'currency_code' => 'GBP',
-                'value' => '0',
+                'value' => '0'
             ],
             'subscriber' => [
                 'name' => [
                     'given_name' => $request->input('first_name'),
-                    'surname' => $request->input('last_name'),
+                    'surname' => $request->input('last_name')
                 ],
                 'email_address' => $request->input('email'),
                 'shipping_address' => [
                     'name' => [
-                        'full_name' => $request->input('first_name').$request->input('last_name'),
+                        'full_name' => $request->input('first_name').$request->input('last_name')
                     ],
                     'address' => [
                         'address_line_1' => '2211 N First Street',
@@ -48,9 +48,9 @@ class HandlePayment extends Controller
                         'admin_area_2' => 'San Jose',
                         'admin_area_1' => 'CA',
                         'postal_code' => '95131',
-                        'country_code' => 'US',
-                    ],
-                ],
+                        'country_code' => 'US'
+                    ]
+                ]
             ],
             'application_context' => [
                 'brand_name' => 'Racks',
@@ -62,32 +62,24 @@ class HandlePayment extends Controller
                     'payee_preferred' => 'IMMEDIATE_PAYMENT_REQUIRED',
                 ],
                 'return_url' => 'http://127.0.0.1:3000/success',
-                'cancel_url' => 'http://127.0.0.1:3000/cancel',
+                'cancel_url' => 'http://127.0.0.1:3000/cancel'
 
-            ],
+            ]
         ];
 
-        // 'return_url' => 'https://github.com/leifermendez?status=returnSuccess',
-        // 'cancel_url' => 'https://github.com/leifermendez?status=cancelUrl'
-
         $plan = [
-            'plan_id' => $request->plan_id, // <-------- ************ ID DEL PLAN CREADO
+            'plan_id' => $request->plan_id // <-------- ************ ID DEL PLAN CREADO
         ];
 
         $response = $pp->createSubscription($subscription, $plan);
 
-        // *** Store paypal_subscription_id to USER db
-        $user = User::where('email', $request->email)->get();
-
-        // if ($user['paypal_subscription_id']) {
-//      $response1 = $pp->cancelSubscription($user[0]->paypal_subscription_id);
-        // }
-
-        User::where('email', $request->email)
-            ->update(['paypal_subscription_id' => $response['id']]);
-
-        PaypalSub::where('id', $user[0]->paypal_subscription_id)
-            ->update(['status' => 'CANCELLED']);
+        PaypalSub::create([
+            'paypal_subscription_id' => $response['id'],
+            'user_email' => $request->email,
+            'paypal_plan_id' => $request->plan_id,
+            'status' => $response['status'],
+            'start_time' => Carbon::parse($response['create_time'])->toDateTimeString()
+        ]);
 
         return $response['links'][0]['href'];
     }
