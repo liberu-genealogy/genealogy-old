@@ -25,10 +25,10 @@ class Unsubscribe extends Controller
         $response = $pp->cancelSubscription($user->paypal_subscription_id);
 
         User::where('email', $request->email)
-            ->update(['paypal_subscription_id' => ""]);
+            ->update(['paypal_subscription_id' => '']);
 
         PaypalSub::where('id', $user->paypal_subscription_id)
-            ->update(['status' => "CANCELLED"]);
+            ->update(['status' => 'CANCELLED']);
 
         return $response;
     }
