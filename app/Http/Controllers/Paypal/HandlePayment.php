@@ -20,7 +20,7 @@ class HandlePayment extends Controller
      */
     public function __invoke(Request $request)
     {
-        $pp = new PaypalSubscription();
+        $pp = new PaypalSubscription($this->app_id, $this->app_sk, $this->mode);
 
         $startdate = Carbon::now();
         $startdate->addMinutes(1);
@@ -67,27 +67,19 @@ class HandlePayment extends Controller
             ]
         ];
 
-        // 'return_url' => 'https://github.com/leifermendez?status=returnSuccess',
-        // 'cancel_url' => 'https://github.com/leifermendez?status=cancelUrl'
-
         $plan = [
             'plan_id' => $request->plan_id // <-------- ************ ID DEL PLAN CREADO
         ];
 
         $response = $pp->createSubscription($subscription, $plan);
 
-        // *** Store paypal_subscription_id to USER db
-        $user = User::where('email', $request->email)->get();
-
-        // if ($user['paypal_subscription_id']) {
-//      $response1 = $pp->cancelSubscription($user[0]->paypal_subscription_id);
-        // }
-
-        User::where('email', $request->email)
-            ->update(['paypal_subscription_id' => $response['id']]);
-
-        PaypalSub::where('id', $user[0]->paypal_subscription_id)
-            ->update(['status' => "CANCELLED"]);
+        PaypalSub::create([
+            'paypal_subscription_id' => $response['id'],
+            'user_email' => $request->email,
+            'paypal_plan_id' => $request->plan_id,
+            'status' => $response['status'],
+            'start_time' => Carbon::parse($response['create_time'])->toDateTimeString()
+        ]);
 
         return $response['links'][0]['href'];
     }
