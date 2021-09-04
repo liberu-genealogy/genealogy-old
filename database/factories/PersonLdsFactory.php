@@ -29,7 +29,7 @@ class PersonLdsFactory extends Factory
             'date' => $this->faker->date(),
             'plac' => $this->faker->word(),
             'temp' => $this->faker->text(50),
-            'slac_famc' => $this->faker->word()
+            'slac_famc' => $this->faker->word(),
         ];
     }
 }
