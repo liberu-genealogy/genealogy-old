@@ -24,7 +24,7 @@ class PersonSubmFactory extends Factory
         return [
             'group' => $this->faker->word(),
             'gid' => $this->faker->randomDigit('1', '2'),
-            'subm' => $this->faker->word()
+            'subm' => $this->faker->word(),
         ];
     }
 }
