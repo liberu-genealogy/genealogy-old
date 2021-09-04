@@ -4,8 +4,52 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7a2eeb80765153af6971013a148d0c12",
+    "content-hash": "81db94fa2996f7ece025719bc9c1b19b",
     "packages": [
+        {
+            "name": "anlutro/curl",
+            "version": "1.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/anlutro/php-curl.git",
+                "reference": "836c7f79ffe972563cf5e55dafe08eace61454f2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/anlutro/php-curl/zipball/836c7f79ffe972563cf5e55dafe08eace61454f2",
+                "reference": "836c7f79ffe972563cf5e55dafe08eace61454f2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "anlutro\\cURL\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andreas Lutro",
+                    "email": "anlutro@gmail.com"
+                }
+            ],
+            "description": "Simple OOP cURL wrapper.",
+            "support": {
+                "issues": "https://github.com/anlutro/php-curl/issues",
+                "source": "https://github.com/anlutro/php-curl/tree/1.5.1"
+            },
+            "time": "2021-06-14T19:30:35+00:00"
+        },
         {
             "name": "asm89/stack-cors",
             "version": "v2.0.3",
@@ -2390,16 +2434,16 @@
         },
         {
             "name": "laravel-enso/avatars",
-            "version": "3.2.7",
+            "version": "3.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/avatars.git",
-                "reference": "c5571d5fee9327944b59f395ffe9d11b99725096"
+                "reference": "29c2d400d8881cb93577a978614e975f16182cff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/avatars/zipball/c5571d5fee9327944b59f395ffe9d11b99725096",
-                "reference": "c5571d5fee9327944b59f395ffe9d11b99725096",
+                "url": "https://api.github.com/repos/laravel-enso/avatars/zipball/29c2d400d8881cb93577a978614e975f16182cff",
+                "reference": "29c2d400d8881cb93577a978614e975f16182cff",
                 "shasum": ""
             },
             "require": {
@@ -2446,9 +2490,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/avatars/issues",
-                "source": "https://github.com/laravel-enso/avatars/tree/3.2.7"
+                "source": "https://github.com/laravel-enso/avatars/tree/3.2.8"
             },
-            "time": "2021-08-03T07:59:30+00:00"
+            "time": "2021-09-01T07:30:36+00:00"
         },
         {
             "name": "laravel-enso/calendar",
@@ -3706,16 +3750,16 @@
         },
         {
             "name": "laravel-enso/google",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/google.git",
-                "reference": "2aa584afc3099fc802e6aa9a495108afac2ac108"
+                "reference": "27adf62ecf6f0de58a9a8a2ca3019ba18e806cd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/google/zipball/2aa584afc3099fc802e6aa9a495108afac2ac108",
-                "reference": "2aa584afc3099fc802e6aa9a495108afac2ac108",
+                "url": "https://api.github.com/repos/laravel-enso/google/zipball/27adf62ecf6f0de58a9a8a2ca3019ba18e806cd4",
+                "reference": "27adf62ecf6f0de58a9a8a2ca3019ba18e806cd4",
                 "shasum": ""
             },
             "require": {
@@ -3762,22 +3806,22 @@
             "homepage": "https://www.laravel-enso.com",
             "support": {
                 "issues": "https://github.com/laravel-enso/google/issues",
-                "source": "https://github.com/laravel-enso/google/tree/1.0.2"
+                "source": "https://github.com/laravel-enso/google/tree/1.0.3"
             },
-            "time": "2021-08-23T11:56:54+00:00"
+            "time": "2021-09-03T07:09:35+00:00"
         },
         {
             "name": "laravel-enso/helpers",
-            "version": "2.6.6",
+            "version": "2.6.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/helpers.git",
-                "reference": "2ea020b47051dbfaedc5ceb5d2d7315c105b2869"
+                "reference": "3ebf355156c4461fb650a0d11f5888cc26d36b06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/helpers/zipball/2ea020b47051dbfaedc5ceb5d2d7315c105b2869",
-                "reference": "2ea020b47051dbfaedc5ceb5d2d7315c105b2869",
+                "url": "https://api.github.com/repos/laravel-enso/helpers/zipball/3ebf355156c4461fb650a0d11f5888cc26d36b06",
+                "reference": "3ebf355156c4461fb650a0d11f5888cc26d36b06",
                 "shasum": ""
             },
             "require": {
@@ -3817,9 +3861,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/helpers/issues",
-                "source": "https://github.com/laravel-enso/helpers/tree/2.6.6"
+                "source": "https://github.com/laravel-enso/helpers/tree/2.6.7"
             },
-            "time": "2021-08-23T11:19:07+00:00"
+            "time": "2021-09-01T12:08:12+00:00"
         },
         {
             "name": "laravel-enso/history-tracker",
@@ -6633,6 +6677,57 @@
                 "source": "https://github.com/thephpleague/oauth1-client/tree/v1.10.0"
             },
             "time": "2021-08-15T23:05:49+00:00"
+        },
+        {
+            "name": "leifermendez/laravel-paypal-subscription",
+            "version": "v1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/leifermendez/laravel-paypal-subscription.git",
+                "reference": "d1f7168d1a5de16bebf49401be9ea3e14310f76d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/leifermendez/laravel-paypal-subscription/zipball/d1f7168d1a5de16bebf49401be9ea3e14310f76d",
+                "reference": "d1f7168d1a5de16bebf49401be9ea3e14310f76d",
+                "shasum": ""
+            },
+            "require": {
+                "anlutro/curl": "^1.4",
+                "php": ">=7.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "\\leifermendez\\paypal\\ProviderPaypalSubscription"
+                    ],
+                    "aliases": {
+                        "PapyalSubscription": "\\leifermendez\\paypal\\PapyalSubscriptionFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "leifermendez\\paypal\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Leifer Mendez",
+                    "email": "leifer33@gmail.com"
+                }
+            ],
+            "description": "Plugin especial para laravel el cual permite de forma facil el cobro de subscripcion con PAYPAL",
+            "support": {
+                "issues": "https://github.com/leifermendez/laravel-paypal-subscription/issues",
+                "source": "https://github.com/leifermendez/laravel-paypal-subscription/tree/v1.0.4"
+            },
+            "time": "2021-02-18T16:27:20+00:00"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
@@ -15986,6 +16081,7 @@
                     "type": "github"
                 }
             ],
+            "abandoned": true,
             "time": "2020-09-28T06:45:17+00:00"
         },
         {

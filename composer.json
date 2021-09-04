@@ -31,7 +31,8 @@
         "laravel/telescope": "^4.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.0",
-        "sentry/sentry-laravel": "^2.0.0"
+        "sentry/sentry-laravel": "^2.0.0",
+        "leifermendez/laravel-paypal-subscription": "^1.0"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",
