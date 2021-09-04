@@ -30,17 +30,17 @@ class HandlePayment extends Controller
             'quantity' => '1',
             'shipping_amount' => [
                 'currency_code' => 'GBP',
-                'value' => '0'
+                'value' => '0',
             ],
             'subscriber' => [
                 'name' => [
                     'given_name' => $request->input('first_name'),
-                    'surname' => $request->input('last_name')
+                    'surname' => $request->input('last_name'),
                 ],
                 'email_address' => $request->input('email'),
                 'shipping_address' => [
                     'name' => [
-                        'full_name' => $request->input('first_name').$request->input('last_name')
+                        'full_name' => $request->input('first_name').$request->input('last_name'),
                     ],
                     'address' => [
                         'address_line_1' => '2211 N First Street',
@@ -48,9 +48,9 @@ class HandlePayment extends Controller
                         'admin_area_2' => 'San Jose',
                         'admin_area_1' => 'CA',
                         'postal_code' => '95131',
-                        'country_code' => 'US'
-                    ]
-                ]
+                        'country_code' => 'US',
+                    ],
+                ],
             ],
             'application_context' => [
                 'brand_name' => 'Racks',
@@ -62,16 +62,16 @@ class HandlePayment extends Controller
                     'payee_preferred' => 'IMMEDIATE_PAYMENT_REQUIRED',
                 ],
                 'return_url' => 'http://127.0.0.1:3000/success',
-                'cancel_url' => 'http://127.0.0.1:3000/cancel'
+                'cancel_url' => 'http://127.0.0.1:3000/cancel',
 
-            ]
+            ],
         ];
 
         // 'return_url' => 'https://github.com/leifermendez?status=returnSuccess',
         // 'cancel_url' => 'https://github.com/leifermendez?status=cancelUrl'
 
         $plan = [
-            'plan_id' => $request->plan_id // <-------- ************ ID DEL PLAN CREADO
+            'plan_id' => $request->plan_id, // <-------- ************ ID DEL PLAN CREADO
         ];
 
         $response = $pp->createSubscription($subscription, $plan);
@@ -87,7 +87,7 @@ class HandlePayment extends Controller
             ->update(['paypal_subscription_id' => $response['id']]);
 
         PaypalSub::where('id', $user[0]->paypal_subscription_id)
-            ->update(['status' => "CANCELLED"]);
+            ->update(['status' => 'CANCELLED']);
 
         return $response['links'][0]['href'];
     }
