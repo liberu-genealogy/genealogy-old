@@ -1,0 +1,122 @@
+{
+    "routePrefix": "administration.users",
+    "sections": [
+        {
+            "columns": 2,
+            "divider": true,
+            "title": "Personal Info",
+            "fields": [
+                {
+                    "label": "",
+                    "name": "person_id",
+                    "value": "",
+                    "meta": {
+                        "hidden": true,
+                        "type": "input",
+                        "content": "text"
+                    }
+                },
+                {
+                    "label": "Name",
+                    "name": "name",
+                    "value": "",
+                    "meta": {
+                        "readonly": true,
+                        "type": "input",
+                        "content": "text"
+                    }
+                },
+                {
+                    "label": "Appellative",
+                    "name": "appellative",
+                    "value": "",
+                    "meta": {
+                        "readonly": true,
+                        "type": "input",
+                        "content": "text"
+                    }
+                }
+            ]
+        },
+        {
+            "columns": "custom",
+            "divider": true,
+            "title": "User Info",
+            "fields": [
+                {
+                    "label": "Email",
+                    "name": "email",
+                    "value": null,
+                    "column": 6,
+                    "meta": {
+                        "type": "input",
+                        "content": "email"
+                    }
+                },
+                {
+                    "label": "Group",
+                    "name": "group_id",
+                    "value": null,
+                    "column": 3,
+                    "meta": {
+                        "custom": true,
+                        "type": "select",
+                        "multiple": false,
+                        "options": [],
+                        "source": "administration.userGroups.options"
+                    }
+                },
+                {
+                    "label": "Role",
+                    "name": "role_id",
+                    "value": null,
+                    "column": 3,
+                    "meta": {
+                        "custom": true,
+                        "type": "select",
+                        "options": [],
+                        "source": "system.roles.options"
+                    }
+                }
+            ]
+        },
+        {
+            "columns": 2,
+            "fields": [
+                {
+                    "label": "New Password",
+                    "name": "password",
+                    "value": null,
+                    "meta": {
+                        "readonly": true,
+                        "type": "input",
+                        "content": "password",
+                        "hidden": true,
+                        "custom": true
+                    }
+                },
+                {
+                    "label": "Password Confirmation",
+                    "name": "password_confirmation",
+                    "value": null,
+                    "meta": {
+                        "type": "input",
+                        "readonly": true,
+                        "content": "password",
+                        "hidden": true,
+                        "custom": true
+                    }
+                },
+                {
+                    "label": "Active",
+                    "name": "is_active",
+                    "value": false,
+                    "meta": {
+                        "type": "input",
+                        "content": "checkbox"
+                    }
+                }
+            ]
+        }
+    ]
+}
