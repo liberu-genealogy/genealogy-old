@@ -1,18 +1,9 @@
 {
-    "routePrefix": "administration.users",
+    "routePrefix": "administration.userrestrict",
     "crtNo": true,
     "buttons": [
         "excel",
-        "show",
-        "edit",
-        {
-            "type": "row",
-            "icon": "trash-alt",
-            "class": "is-row-button",
-            "event": "destroy",
-            "routeSuffix": "destroy",
-            "slot": "destroy-button"
-        }
+        "show"
     ],
     "filters": [
         {
