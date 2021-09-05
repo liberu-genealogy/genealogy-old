@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Paypal;
 
 use App\Http\Controllers\Controller;
+use App\Models\PaypalProduct;
 use Illuminate\Http\Request;
 use leifermendez\paypal\PaypalSubscription;
 
@@ -18,11 +19,14 @@ class CreateProduct extends Controller
     {
         $pp = new PaypalSubscription();
         $product = [
-            'name' => 'Family365',
-            'description' => 'Family trees',
-            'type' => 'SERVICE',
-            'category' => 'SOFTWARE',
+            'name' => $request->name ?? 'Family365',
+            'description' => $request->desctiption ?? 'Family trees',
+            'type' => $request->type ?? 'SERVICE',
+            'category' => $request->type ?? 'SOFTWARE',
         ];
-        $pp->createProduct($product);
+        $response = $pp->createProduct($product);
+
+        $product['paypal_product_id'] = $response['id'];
+        PaypalProduct::create($product);
     }
 }
