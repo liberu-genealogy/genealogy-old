@@ -1,0 +1,101 @@
+{
+    "routePrefix": "administration.userrestrict",
+    "crtNo": true,
+    "buttons": [
+        "excel",
+        "show"
+    ],
+    "filters": [
+        {
+            "label": "Role",
+            "data": "users.role_id",
+            "type": "select",
+            "value": [],
+            "route": "system.roles.options",
+            "multiple": true
+        }
+    ],
+    "columns": [
+        {
+            "label": "",
+            "name": "avatarId",
+            "data": "avatars.avatarId",
+            "meta": [
+                "slot",
+                "notExportable"
+            ],
+            "class": "is-paddingless"
+        },
+        {
+            "label": "Name",
+            "name": "name",
+            "data": "people.name",
+            "meta": [
+                "sortable",
+                "searchable"
+            ]
+        },
+        {
+            "label": "Appellative",
+            "name": "appellative",
+            "data": "people.appellative",
+            "meta": [
+                "sortable",
+                "searchable"
+            ]
+        },
+        {
+            "label": "Phone",
+            "name": "phone",
+            "data": "people.phone",
+            "meta": [
+                "searchable",
+                "sortable"
+            ]
+        },
+        {
+            "label": "Email",
+            "name": "email",
+            "data": "users.email",
+            "meta": [
+                "searchable",
+                "sortable"
+            ]
+        },
+        {
+            "label": "Role",
+            "name": "role",
+            "data": "roles.name",
+            "meta": [
+                "searchable",
+                "sortable"
+            ]
+        },
+        {
+            "label": "Group",
+            "name": "group",
+            "data": "user_groups.name",
+            "meta": [
+                "searchable",
+                "sortable"
+            ]
+        },
+        {
+            "label": "Active",
+            "name": "is_active",
+            "data": "users.is_active",
+            "meta": [
+                "boolean",
+                "filterable"
+            ]
+        },
+        {
+            "label": "Member Since",
+            "name": "created_at",
+            "data": "users.created_at",
+            "meta": [
+                "date"
+            ]
+        }
+    ]
+}
