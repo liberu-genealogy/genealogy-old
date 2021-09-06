@@ -17,16 +17,22 @@ class CreateProduct extends Controller
      */
     public function __invoke(Request $request)
     {
-        $pp = new PaypalSubscription();
         $product = [
             'name' => $request->name ?? 'Family365',
             'description' => $request->description ?? 'Family trees',
             'type' => $request->type ?? 'SERVICE',
             'category' => $request->type ?? 'SOFTWARE',
         ];
-        $response = $pp->createProduct($product);
 
-        $product['paypal_product_id'] = $response['id'];
-        PaypalProduct::create($product);
+        $paypalProduct = PaypalProduct::where($product)->first();
+
+        if (!$paypalProduct) {
+            $pp = new PaypalSubscription();
+            $response = $pp->createProduct($product);
+            $product['paypal_id'] = $response['id'];
+            $paypalProduct = PaypalProduct::create($product);
+        }
+
+        return $paypalProduct;
     }
 }
