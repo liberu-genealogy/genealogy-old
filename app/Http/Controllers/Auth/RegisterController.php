@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Hash;
 // use LaravelEnso\Multitenancy\Jobs\Migrate;
 use Illuminate\Support\Facades\Validator;
 use LaravelEnso\Companies\Models\Company;
-use LaravelEnso\Core\Models\UserGroup;
+use LaravelEnso\UserGroups\Models\UserGroup;
 use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\Roles\Models\Role;
 use Str;
