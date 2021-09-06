@@ -9,13 +9,15 @@ use leifermendez\paypal\PaypalSubscription;
 
 class CreateProduct extends Controller
 {
+    public string $paypal_id = '';
+
     /**
      * Handle the incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Request $request)
+    public function __invoke()
     {
         $product = [
             'name' => $request->name ?? 'Family365',
@@ -33,6 +35,6 @@ class CreateProduct extends Controller
             $paypalProduct = PaypalProduct::create($product);
         }
 
-        return $paypalProduct;
+        $this->paypal_id = $paypalProduct->paypal_id;
     }
 }
