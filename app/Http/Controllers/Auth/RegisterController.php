@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Jobs\Tenant\CreateDB;
 use App\Jobs\Tenant\Migration;
 use App\Models\User;
-use App\Person;
+use App\Models\Person;
 use App\Providers\RouteServiceProvider;
 use App\Traits\ActivationTrait;
 use App\Traits\ConnectionTrait;
