@@ -37,7 +37,8 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'first_name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:5', 'confirmed'],
         ]);
@@ -49,7 +50,10 @@ class RegisterController extends Controller
             // DB::beginTransaction();
             // create person
             $person = new Person();
-            $person->name = $data['name'];
+            $name = $data['first_name'] . $data['last_name'];
+            $person->name = $name;
+            $person->first_name = $data['first_name'];
+            $person->last_name = $data['last_name'];
             $person->email = $data['email'];
             $person->save();
 
@@ -93,7 +97,7 @@ class RegisterController extends Controller
             // Dispatch Tenancy Jobs
 
             CreateDB::dispatch($company);
-            Migration::dispatch($company, $data['name'], $data['email'], $data['password']);
+            Migration::dispatch($company, $name, $data['email'], $data['password']);
 
             return $user;
         } catch (\Exception $e) {
