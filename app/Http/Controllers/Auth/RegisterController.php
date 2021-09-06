@@ -52,8 +52,6 @@ class RegisterController extends Controller
             $person = new Person();
             $name = $data['first_name'] . $data['last_name'];
             $person->name = $name;
-            $person->first_name = $data['first_name'];
-            $person->last_name = $data['last_name'];
             $person->email = $data['email'];
             $person->save();
 
