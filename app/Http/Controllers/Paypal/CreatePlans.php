@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Paypal;
 
 use App\Http\Controllers\Controller;
-use App\Models\Plan;
+use App\Models\PaypalPlan;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use leifermendez\paypal\PaypalSubscription;
@@ -19,7 +19,7 @@ class CreatePlans extends Controller
     public function __invoke(Request $request)
     {
         $pp = new PaypalSubscription();
-        $this->plans = [
+        $plans = [
             [
                 'name' => 'UTY',
                 'description' => 'Unlimited trees yearly',
@@ -237,26 +237,22 @@ class CreatePlans extends Controller
             ],
         ];
 
+        $paypalProduct = new CreateProduct;
+        $paypalProduct();
+
         $product = [
-            'product_id' => $request->product_id, //<--------***** ID DEL PRODUCTO
+            'product_id' => $paypalProduct->paypal_id, //<--------***** ID DEL PRODUCTO
         ];
 
-        $paypalPlans = $pp->getPlans();
-        $paypalPlans = $paypalPlans['plans'] ?? [];
+        foreach ($plans as $plan) {
+            $paypalPlan = PaypalPlan::where('name', $plan['name'])->first();
 
-        foreach ($this->plans as $plan) {
-            $countMatch = 0;
-            foreach ($paypalPlans as $paypalPlan) {
-                if ($plan['name'] === $paypalPlan['name']) {
-                    $countMatch++;
-                }
-            }
-
-            if ($countMatch < 1) {
+            if (!$paypalPlan) {
                 $response = $pp->createPlan($plan, $product);
 
-                Plan::create([
-                    'plan_id' => $response['id'],
+                PaypalPlan::create([
+                    'paypal_id' => $response['id'],
+                    'paypal_product_id' => $response['product_id'],
                     'name' => $response['name'],
                     'status' => $response['status'],
                     'description' => $response['description'],
