@@ -20,7 +20,7 @@ class CreateProduct extends Controller
         $pp = new PaypalSubscription();
         $product = [
             'name' => $request->name ?? 'Family365',
-            'description' => $request->desctiption ?? 'Family trees',
+            'description' => $request->description ?? 'Family trees',
             'type' => $request->type ?? 'SERVICE',
             'category' => $request->type ?? 'SOFTWARE',
         ];
