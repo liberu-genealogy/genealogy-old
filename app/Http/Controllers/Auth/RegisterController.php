@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Jobs\Tenant\CreateDB;
 use App\Jobs\Tenant\Migration;
 use App\Models\User;
-use App\Person;
+use App\Models\Person;
 use App\Providers\RouteServiceProvider;
 use App\Traits\ActivationTrait;
 use App\Traits\ConnectionTrait;
@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Hash;
 // use LaravelEnso\Multitenancy\Jobs\Migrate;
 use Illuminate\Support\Facades\Validator;
 use LaravelEnso\Companies\Models\Company;
-use LaravelEnso\Core\Models\UserGroup;
+use LaravelEnso\UserGroups\Models\UserGroup;
 use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\Roles\Models\Role;
 use Str;
@@ -37,7 +37,8 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'first_name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:5', 'confirmed'],
         ]);
@@ -49,7 +50,8 @@ class RegisterController extends Controller
             // DB::beginTransaction();
             // create person
             $person = new Person();
-            $person->name = $data['name'];
+            $name = $data['first_name'] . $data['last_name'];
+            $person->name = $name;
             $person->email = $data['email'];
             $person->save();
 
@@ -93,7 +95,7 @@ class RegisterController extends Controller
             // Dispatch Tenancy Jobs
 
             CreateDB::dispatch($company);
-            Migration::dispatch($company, $data['name'], $data['email'], $data['password']);
+            Migration::dispatch($company, $name, $data['email'], $data['password']);
 
             return $user;
         } catch (\Exception $e) {
