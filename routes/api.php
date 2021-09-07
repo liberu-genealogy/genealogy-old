@@ -310,6 +310,7 @@ use App\Http\Controllers\Types\Store as TypesStore;
 use App\Http\Controllers\Types\TableData as TypesTableData;
 use App\Http\Controllers\Types\Update as TypesUpdate;
 use App\Http\Controllers\Wikitree\WikitreeController;
+use App\Http\Controllers\Geneanum\GeneanumController;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
 use LaravelEnso\Addresses\Http\Controllers\Create as AddressCreate;
@@ -710,6 +711,12 @@ Route::prefix('open-arch')->group(function () {
 // OpenArch
 Route::prefix('family-search')->group(function () {
     Route::get('search', [FamilySearchController::class, 'searchPerson'])->name('search-person');
+});
+
+// Geneanum
+Route::prefix('geneanum')->group(function(){
+    Route::get('search-person/{nation}/burials', [GeneanumController::class, 'burials']);
+    Route::get('search-person/{nation}/mariage', [GeneanumController::class, 'mariage']);
 });
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
