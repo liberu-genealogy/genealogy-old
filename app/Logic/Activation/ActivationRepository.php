@@ -2,7 +2,7 @@
 
 namespace App\Logic\Activation;
 
-use App\Activation;
+use App\Models\Activation;
 use App\Models\User;
 use App\Notifications\SendActivationEmail;
 use App\Notifications\SendActivationEmailApi;
