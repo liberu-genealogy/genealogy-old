@@ -309,6 +309,7 @@ use App\Http\Controllers\Types\Store as TypesStore;
 use App\Http\Controllers\Types\TableData as TypesTableData;
 use App\Http\Controllers\Types\Update as TypesUpdate;
 use App\Http\Controllers\Wikitree\WikitreeController;
+use App\Http\Controllers\Geneanum\GeneanumController;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
 use LaravelEnso\Addresses\Http\Controllers\Create as AddressCreate;
@@ -709,6 +710,12 @@ Route::prefix('open-arch')->group(function () {
 // OpenArch
 Route::prefix('family-search')->group(function () {
     Route::get('search', [FamilySearchController::class, 'searchPerson'])->name('search-person');
+});
+
+// Geneanum
+Route::prefix('geneanum')->group(function(){
+    Route::get('search-person/{nation}/burials', [GeneanumController::class, 'burials']);
+    Route::get('search-person/{nation}/mariage', [GeneanumController::class, 'mariage']);
 });
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
@@ -1255,25 +1262,25 @@ Route::name('api.controlPanel.')
 
 Broadcast::routes(['middleware' => ['auth:sanctum']]);
 
-Route::namespace('')
-    ->prefix('stripe')
-    ->as('stripe.')
-    ->group(function () {
-        Route::get('current-subscription', StripeGetCurrentSubscription::class);
-        Route::get('intent', StripeGetIntent::class);
-        Route::get('plans', StripeGetPlans::class);
-        Route::post('subscribe', StripeSubscribe::class);
-        Route::post('unsubscribe', StripeUnsubscribe::class);
-        Route::post('webhook', StripeWebhook::class);
-    });
+// Route::namespace('')
+//     ->prefix('stripe')
+//     ->as('stripe.')
+//     ->group(function () {
+//         Route::get('current-subscription', StripeGetCurrentSubscription::class);
+//         Route::get('intent', StripeGetIntent::class);
+//         Route::get('plans', StripeGetPlans::class);
+//         Route::post('subscribe', StripeSubscribe::class);
+//         Route::post('unsubscribe', StripeUnsubscribe::class);
+//         Route::post('webhook', StripeWebhook::class);
+//     });
 
-Route::namespace('')
-    ->prefix('paypal')
-    ->as('paypal.')
-    ->group(function () {
-        Route::get('plans', PaypalGetPlans::class);
-        Route::post('plans', PaypalCreatePlans::class);
-        Route::post('products', PaypalCreateProduct::class);
-        Route::post('subscribe', PaypalHandlePayment::class);
-        Route::post('unsubscribe', PaypalUnsubscribe::class);
-    });
+// Route::namespace('')
+//     ->prefix('paypal')
+//     ->as('paypal.')
+//     ->group(function () {
+//         Route::get('plans', PaypalGetPlans::class);
+//         Route::post('plans', PaypalCreatePlans::class);
+//         Route::post('products', PaypalCreateProduct::class);
+//         Route::post('subscribe', PaypalHandlePayment::class);
+//         Route::post('unsubscribe', PaypalUnsubscribe::class);
+//     });
