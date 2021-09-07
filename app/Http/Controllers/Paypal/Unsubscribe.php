@@ -21,13 +21,9 @@ class Unsubscribe extends Controller
     public function __invoke(Request $request)
     {
         $pp = new PaypalSubscription();
-        $user = User::where('email', $request->email)->first();
-        $response = $pp->cancelSubscription($user->paypal_subscription_id);
+        $response = $pp->cancelSubscription($request->paypal_subscription_id);
 
-        User::where('email', $request->email)
-            ->update(['paypal_subscription_id' => '']);
-
-        PaypalSub::where('id', $user->paypal_subscription_id)
+        PaypalSub::where('paypal_id', $request->paypal_subscription_id)
             ->update(['status' => 'CANCELLED']);
 
         return $response;

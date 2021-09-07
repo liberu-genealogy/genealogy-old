@@ -114,6 +114,7 @@ use App\Http\Controllers\Paypal\CreateProduct as PaypalCreateProduct;
 use App\Http\Controllers\Paypal\GetPlans as PaypalGetPlans;
 use App\Http\Controllers\Paypal\HandlePayment as PaypalHandlePayment;
 use App\Http\Controllers\Paypal\Unsubscribe as PaypalUnsubscribe;
+use App\Http\Controllers\Paypal\Webhook as PaypalWebhook;
 use App\Http\Controllers\Personalias\Create as PersonaliasCreate;
 use App\Http\Controllers\Personalias\Destroy as PersonaliasDestroy;
 use App\Http\Controllers\Personalias\Edit as PersonaliasEdit;
@@ -1276,4 +1277,5 @@ Route::namespace('')
         Route::post('products', PaypalCreateProduct::class);
         Route::post('subscribe', PaypalHandlePayment::class);
         Route::post('unsubscribe', PaypalUnsubscribe::class);
+        Route::post('webhook', PaypalWebhook::class);
     });
