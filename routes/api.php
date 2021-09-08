@@ -717,6 +717,7 @@ Route::prefix('family-search')->group(function () {
 Route::prefix('geneanum')->group(function () {
     Route::get('search-person/{nation}/burials', [GeneanumController::class, 'burials']);
     Route::get('search-person/{nation}/mariage', [GeneanumController::class, 'mariage']);
+    Route::get('search-person/{nation}/baptism', [GeneanumController::class, 'baptism']);
 });
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
