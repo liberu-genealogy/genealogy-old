@@ -2,9 +2,9 @@
 
 namespace App\Services;
 
+use App\Models\User;
 use Carbon\Carbon;
 use LaravelEnso\Helpers\Services\Decimals;
-use App\Models\User;
 
 class ProfileBuilder
 {

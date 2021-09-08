@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Users;
 
+use App\Models\User;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use App\Models\User;
 
 class Destroy extends Controller
 {

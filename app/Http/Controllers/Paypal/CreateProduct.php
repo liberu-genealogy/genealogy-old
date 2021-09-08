@@ -28,7 +28,7 @@ class CreateProduct extends Controller
 
         $paypalProduct = PaypalProduct::where($product)->first();
 
-        if (!$paypalProduct) {
+        if (! $paypalProduct) {
             $pp = new PaypalSubscription();
             $response = $pp->createProduct($product);
             $product['paypal_id'] = $response['id'];
