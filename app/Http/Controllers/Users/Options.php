@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Users;
 
-use Illuminate\Routing\Controller;
-use LaravelEnso\Select\Traits\OptionsBuilder;
-// use App\Http\Resources\User as Resource;
 use App\Models\User;
+use Illuminate\Routing\Controller;
+// use App\Http\Resources\User as Resource;
+use LaravelEnso\Select\Traits\OptionsBuilder;
 
 class Options extends Controller
 {

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Users;
 
+use App\Models\User;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Password;
-use App\Models\User;
 
 class ResetPassword extends Controller
 {

@@ -86,6 +86,7 @@ use App\Http\Controllers\Familyslugs\Store as FamilyslugsStore;
 use App\Http\Controllers\Familyslugs\TableData as FamilyslugsTableData;
 use App\Http\Controllers\Familyslugs\Update as FamilyslugsUpdate;
 use App\Http\Controllers\Gedcom\Store as GedcomStore;
+use App\Http\Controllers\Geneanum\GeneanumController;
 use App\Http\Controllers\MediaObjects\Create as MediaobjectsCreate;
 use App\Http\Controllers\MediaObjects\Destroy as MediaobjectsDestroy;
 use App\Http\Controllers\MediaObjects\Edit as MediaobjectsEdit;
@@ -309,8 +310,16 @@ use App\Http\Controllers\Types\Show as TypesShow;
 use App\Http\Controllers\Types\Store as TypesStore;
 use App\Http\Controllers\Types\TableData as TypesTableData;
 use App\Http\Controllers\Types\Update as TypesUpdate;
+use App\Http\Controllers\Users\Create as UserRestrictCreate;
+use App\Http\Controllers\Users\Destroy as UserRestrictDestroy;
+use App\Http\Controllers\Users\Edit as UserRestrictEdit;
+use App\Http\Controllers\Users\ExportExcel as UserRestrictExportExcel;
+use App\Http\Controllers\Users\InitTable as UserRestrictInitTable;
+use App\Http\Controllers\Users\Options as UserRestrictOptions;
+use App\Http\Controllers\Users\Store as UserRestrictStore;
+use App\Http\Controllers\Users\TableData as UserRestrictTableData;
+use App\Http\Controllers\Users\Update as UserRestrictUpdate;
 use App\Http\Controllers\Wikitree\WikitreeController;
-use App\Http\Controllers\Geneanum\GeneanumController;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
 use LaravelEnso\Addresses\Http\Controllers\Create as AddressCreate;
@@ -356,15 +365,6 @@ use LaravelEnso\Companies\Http\Controllers\Person\Edit as PeopleCompanyEdit;
 use LaravelEnso\Companies\Http\Controllers\Person\Index as PeopleCompany;
 use LaravelEnso\Companies\Http\Controllers\Person\Store as PeopleCompanyStore;
 use LaravelEnso\Companies\Http\Controllers\Person\Update as PeopleCompanyUpdate;
-use App\Http\Controllers\Users\Create as UserRestrictCreate;
-use App\Http\Controllers\Users\Destroy as UserRestrictDestroy;
-use App\Http\Controllers\Users\Edit as UserRestrictEdit;
-use App\Http\Controllers\Users\ExportExcel as UserRestrictExportExcel;
-use App\Http\Controllers\Users\InitTable as UserRestrictInitTable;
-use App\Http\Controllers\Users\Options as UserRestrictOptions;
-use App\Http\Controllers\Users\Store as UserRestrictStore;
-use App\Http\Controllers\Users\TableData as UserRestrictTableData;
-use App\Http\Controllers\Users\Update as UserRestrictUpdate;
 use LaravelEnso\ControlPanelApi\Http\Controllers\Action as ControlPanelAction;
 use LaravelEnso\ControlPanelApi\Http\Controllers\Actions as ControlPanelActions;
 use LaravelEnso\ControlPanelApi\Http\Controllers\DownloadLog as ControlPanelDownloadLog;
@@ -714,7 +714,7 @@ Route::prefix('family-search')->group(function () {
 });
 
 // Geneanum
-Route::prefix('geneanum')->group(function(){
+Route::prefix('geneanum')->group(function () {
     Route::get('search-person/{nation}/burials', [GeneanumController::class, 'burials']);
     Route::get('search-person/{nation}/mariage', [GeneanumController::class, 'mariage']);
 });
@@ -1180,8 +1180,6 @@ Route::namespace('')
 
         Route::get('options', UserRestrictOptions::class)->name('options');
     });
-
-
 
 Route::namespace('')
     ->group(function () {

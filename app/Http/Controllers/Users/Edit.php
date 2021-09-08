@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Users;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\UserForm;
 use App\Models\User;
+use Illuminate\Routing\Controller;
 
 class Edit extends Controller
 {
