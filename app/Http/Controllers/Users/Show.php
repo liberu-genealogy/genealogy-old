@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Users;
 
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Routing\Controller;
 use App\Models\User;
 use App\Services\ProfileBuilder;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Routing\Controller;
 
 class Show extends Controller
 {

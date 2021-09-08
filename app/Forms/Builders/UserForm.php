@@ -2,9 +2,9 @@
 
 namespace App\Forms\Builders;
 
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use LaravelEnso\Forms\Services\Form;
-use App\Models\User;
 
 class UserForm
 {

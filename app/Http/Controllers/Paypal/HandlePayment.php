@@ -27,7 +27,7 @@ class HandlePayment extends Controller
             'subscriber' => [
                 'name' => [
                     'given_name' => $request->first_name,
-                    'surname' => $request->last_name
+                    'surname' => $request->last_name,
                 ],
                 'email_address' => $request->email,
             ],
@@ -41,12 +41,12 @@ class HandlePayment extends Controller
                     'payee_preferred' => 'IMMEDIATE_PAYMENT_REQUIRED',
                 ],
                 'return_url' => 'http://127.0.0.1:3000/success',
-                'cancel_url' => 'http://127.0.0.1:3000/cancel'
-            ]
+                'cancel_url' => 'http://127.0.0.1:3000/cancel',
+            ],
         ];
 
         $plan = [
-            'plan_id' => $request->plan_id // <-------- ************ ID DEL PLAN CREADO
+            'plan_id' => $request->plan_id, // <-------- ************ ID DEL PLAN CREADO
         ];
 
         $response = $pp->createSubscription($subscription, $plan);
@@ -56,7 +56,7 @@ class HandlePayment extends Controller
             'user_email' => $request->email,
             'paypal_plan_id' => $request->plan_id,
             'status' => $response['status'],
-            'start_time' => Carbon::parse($response['create_time'])->toDateTimeString()
+            'start_time' => Carbon::parse($response['create_time'])->toDateTimeString(),
         ]);
 
         return $response['links'][0]['href'];
