@@ -247,7 +247,7 @@ class CreatePlans extends Controller
         foreach ($plans as $plan) {
             $paypalPlan = PaypalPlan::where('name', $plan['name'])->first();
 
-            if (!$paypalPlan) {
+            if (! $paypalPlan) {
                 $response = $pp->createPlan($plan, $product);
 
                 PaypalPlan::create([

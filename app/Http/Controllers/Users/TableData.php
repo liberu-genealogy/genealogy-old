@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Users;
 
+use App\Tables\Builders\UserTable;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Tables\Traits\Data;
-use App\Tables\Builders\UserTable;
 
 class TableData extends Controller
 {
