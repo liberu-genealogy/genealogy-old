@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Jobs\Tenant\CreateDB;
 use App\Jobs\Tenant\Migration;
-use App\Models\User;
 use App\Models\Person;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use App\Traits\ActivationTrait;
 use App\Traits\ConnectionTrait;
@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Hash;
 // use LaravelEnso\Multitenancy\Jobs\Migrate;
 use Illuminate\Support\Facades\Validator;
 use LaravelEnso\Companies\Models\Company;
-use LaravelEnso\UserGroups\Models\UserGroup;
 use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\Roles\Models\Role;
+use LaravelEnso\UserGroups\Models\UserGroup;
 use Str;
 
 class RegisterController extends Controller
@@ -50,7 +50,7 @@ class RegisterController extends Controller
             // DB::beginTransaction();
             // create person
             $person = new Person();
-            $name = $data['first_name'] . $data['last_name'];
+            $name = $data['first_name'].$data['last_name'];
             $person->name = $name;
             $person->email = $data['email'];
             $person->save();

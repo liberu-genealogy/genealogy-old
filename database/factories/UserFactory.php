@@ -3,10 +3,10 @@
 namespace Database\Factories;
 
 use App\Models\Person;
+use App\Models\User;
 use LaravelEnso\Roles\Models\Role;
 use LaravelEnso\UserGroups\Models\UserGroup;
 use LaravelEnso\Users\Database\Factories\UserFactory as CoreUserFactory;
-use App\Models\User;
 
 class UserFactory extends CoreUserFactory
 {

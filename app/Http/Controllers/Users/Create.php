@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Users;
 
-use Illuminate\Routing\Controller;
-use App\Models\Person;
 use App\Forms\Builders\UserForm;
+use App\Models\Person;
+use Illuminate\Routing\Controller;
 
 class Create extends Controller
 {
