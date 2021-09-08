@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Users;
 
+use App\Tables\Builders\UserTable;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Tables\Traits\Init;
-use App\Tables\Builders\UserTable;
 
 class InitTable extends Controller
 {

@@ -10,4 +10,9 @@ class PaypalPlan extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function paypalSubscription()
+    {
+        return $this->hasOne(PaypalSubscription::class, 'paypal_plan_id', 'paypal_id');
+    }
 }
