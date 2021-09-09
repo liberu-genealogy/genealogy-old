@@ -28,7 +28,7 @@ class GetPlans extends Controller
                 ->where('paypal_plan_id', $plan->paypal_id)
                 ->first();
 
-            $row['id'] = $plan->plan_id;
+            $row['id'] = $plan->paypal_id;
             $row['nickname'] = $plan->name;
             switch ($plan->name) {
                 case 'UTY':
