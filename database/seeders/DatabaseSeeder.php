@@ -7,9 +7,9 @@ use LaravelEnso\Countries\Database\Seeders\CountrySeeder;
 use LaravelEnso\Localisation\Database\Seeders\LanguageSeeder;
 use LaravelEnso\Roles\Database\Seeders\RoleSeeder;
 use LaravelEnso\UserGroups\Database\Seeders\UserGroupSeeder;
-use UserSeeder;
-use CompanySeeder;
-use CustomPermkssionsSeeder;
+use Database\Seeders\UserSeeder;
+use Database\Seeders\CompanySeeder;
+use Database\Seeders\CustomPermkssionsSeeder;
 
 class DatabaseSeeder extends Seeder
 {
