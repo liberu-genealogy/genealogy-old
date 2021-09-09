@@ -46,7 +46,7 @@ class HandlePayment extends Controller
         ];
 
         $plan = [
-            'plan_id' => $request->plan_id, // <-------- ************ ID DEL PLAN CREADO
+            'plan_id' => $request->id, // <-------- ************ ID DEL PLAN CREADO
         ];
 
         $response = $pp->createSubscription($subscription, $plan);
