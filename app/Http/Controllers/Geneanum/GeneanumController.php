@@ -11,9 +11,8 @@ class GeneanumController extends Controller
     {
         $authCode = $request->authcode;
         $client = new \GuzzleHttp\Client();
-      
-        $URI = 'http://static.geneanum.com/libs/grid/'.$country.'_sepulture.php';
 
+        $URI = 'http://static.geneanum.com/libs/grid/'.$country.'_sepulture.php';
 
         $response = $client->request('POST', $URI, ['query' => [
             'prenom' => $request->FirstName,
@@ -35,7 +34,7 @@ class GeneanumController extends Controller
     {
         $authCode = $request->authcode;
         $client = new \GuzzleHttp\Client();
-        $URI = "http://static.geneanum.com/libs/grid/".$nation."_bapteme.php";
+        $URI = 'http://static.geneanum.com/libs/grid/'.$nation.'_bapteme.php';
 
         $response = $client->request('POST', $URI, ['query' => [
             'prenom' => $request->FirstName,
@@ -57,9 +56,8 @@ class GeneanumController extends Controller
     {
         $authCode = $request->authcode;
         $client = new \GuzzleHttp\Client();
-      
-        $URI = 'http://static.geneanum.com/libs/grid/'.$country.'_mariage.php';
 
+        $URI = 'http://static.geneanum.com/libs/grid/'.$country.'_mariage.php';
 
         $response = $client->request('POST', $URI, ['query' => [
             'prenom_homme' => $request->FirstNameMale,
