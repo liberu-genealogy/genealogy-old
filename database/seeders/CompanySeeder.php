@@ -22,7 +22,7 @@ class CompanySeeder extends Seeder
         return Company::create([
             'name' => 'Admin Root',
             'is_tenant' => 0,
-            'email' => 'admin@genealogia.co.uk',
+            'email' => 'admin@familytree365.com',
             'phone' => '+4412345678910',
             'status' => Statuses::Active,
         ]);
