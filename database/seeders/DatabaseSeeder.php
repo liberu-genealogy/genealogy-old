@@ -9,7 +9,7 @@ use LaravelEnso\Roles\Database\Seeders\RoleSeeder;
 use LaravelEnso\UserGroups\Database\Seeders\UserGroupSeeder;
 use Database\Seeders\UserSeeder;
 use Database\Seeders\CompanySeeder;
-use Database\Seeders\CustomPermkssionsSeeder;
+use Database\Seeders\CustomPermissionsSeeder;
 
 class DatabaseSeeder extends Seeder
 {
