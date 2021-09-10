@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Person;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PersonFactory extends Factory
