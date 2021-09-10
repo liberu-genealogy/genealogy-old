@@ -3,9 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use LaravelEnso\Core\Models\User;
-use LaravelEnso\Core\Models\UserGroup;
-use LaravelEnso\People\Enums\Titles;
+use LaravelEnso\Users\Models\User;
+use LaravelEnso\UserGroups\Models\UserGroup;
 use LaravelEnso\People\Models\Person;
 use LaravelEnso\Roles\Models\Role;
 
@@ -28,7 +27,6 @@ class UserSeeder extends Seeder
     private function person()
     {
         return Person::factory()->create([
-            'title' => Titles::Mr,
             'name' => 'Admin Root',
             'appellative' => 'Admin',
             'email' => 'admin@familytree365.com',
