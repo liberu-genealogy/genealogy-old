@@ -22,9 +22,13 @@ class PersonFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
-            'email' => $this->faker->email(),
-            'phone' => $this->faker->phoneNumber(),
+            'name' => $this->faker->name,
+            'appellative' => $this->faker->firstName,
+            'email' => $this->faker->unique()->safeEmail,
+            'phone' => $this->faker->phoneNumber,
+            'birthday' => Carbon::now()->subYears(rand(15, 40)),
+            'bank' => $this->faker->word,
+            'bank_account' => $this->faker->bankAccountNumber,
         ];
     }
 }
