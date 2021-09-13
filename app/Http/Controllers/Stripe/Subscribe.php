@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Stripe;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Notifications\SubscribeSuccessfully;
 use Illuminate\Http\Request;
 
 class Subscribe extends Controller
