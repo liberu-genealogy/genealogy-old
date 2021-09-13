@@ -360,4 +360,3 @@ class LoginController extends Controller
         return response()->json($data);
     }
 }
-Bdc50h9b5N4u
