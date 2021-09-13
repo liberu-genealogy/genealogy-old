@@ -2,19 +2,27 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Traits\ConnectionTrait;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Exception;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Jobs\Tenant\CreateDB;
+use App\Jobs\Tenant\Migration;
+use App\Traits\ConnectionTrait;
+use Illuminate\Support\Facades\DB;
+use LaravelEnso\Core\Events\Login;
+use LaravelEnso\Users\Models\User;
+use Illuminate\Support\Facades\App;
+use LaravelEnso\Core\Traits\Logout;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Validation\ValidationException;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Artisan;
 use Laravel\Socialite\Facades\Socialite;
 use LaravelEnso\Companies\Models\Company;
-use LaravelEnso\Core\Events\Login;
-use LaravelEnso\Core\Traits\Logout;
-use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\Multitenancy\Services\Tenant;
-use LaravelEnso\Users\Models\User;
+use Illuminate\Validation\ValidationException;
+use LaravelEnso\Multitenancy\Enums\Connections;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
@@ -125,7 +133,7 @@ class LoginController extends Controller
             ]);
         }
 
-        if (! \App::runningUnitTests()) {
+        if (! App::runningUnitTests()) {
             $company = $user->person->company();
             $tanent = false;
             if ($company) {
@@ -207,7 +215,7 @@ class LoginController extends Controller
         }
         try {
             $user = Socialite::driver($provider)->stateless()->user();
-        } catch (ClientException $exception) {
+        } catch (Exception $exception) {
             $output = ['data' => [], 'message' => 'Invalid credentials provided!', 'success' => false, 'error' => true];
 
             return view('callback', $output);
@@ -255,9 +263,8 @@ class LoginController extends Controller
             } catch (Exception $e) {
                 DB::connection($this->getConnectionName())->rollback();
             }
+            return response()->json($userCreated, 200, ['Access-Token' => $token]);
         }
-
-        return response()->json($userCreated, 200, ['Access-Token' => $token]);
     }
 
     /**
@@ -353,3 +360,4 @@ class LoginController extends Controller
         return response()->json($data);
     }
 }
+Bdc50h9b5N4u
