@@ -1,5 +1,5 @@
 {
-    "routePrefix": "administration.userrestrict",
+    "routePrefix": "administration.users",
     "crtNo": true,
     "buttons": [
         "excel",
