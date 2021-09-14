@@ -1262,7 +1262,7 @@ Route::name('api.controlPanel.')
 
 Broadcast::routes(['middleware' => ['auth:sanctum']]);
 
-Route::middleware(['web', 'auth', 'multitenant'])
+Route::middleware(['web', 'auth'])
     ->namespace('')
     ->prefix('stripe')
     ->as('stripe.')
@@ -1275,7 +1275,8 @@ Route::middleware(['web', 'auth', 'multitenant'])
         Route::post('webhook', StripeWebhook::class);
     });
 
-Route::namespace('')
+Route::middleware(['web', 'auth'])
+    ->namespace('')
     ->prefix('paypal')
     ->as('paypal.')
     ->group(function () {
