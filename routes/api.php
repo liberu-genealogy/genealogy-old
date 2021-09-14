@@ -1262,7 +1262,8 @@ Route::name('api.controlPanel.')
 
 Broadcast::routes(['middleware' => ['auth:sanctum']]);
 
-Route::namespace('')
+Route::middleware(['web', 'auth', 'multitenant'])
+    ->namespace('')
     ->prefix('stripe')
     ->as('stripe.')
     ->group(function () {
