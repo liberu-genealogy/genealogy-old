@@ -26,7 +26,6 @@ class GetPlans extends Controller
     {
         $result = [];
         foreach ($this->plans as $plan) {
-            // $row = (array) $plan;
             $row ['id'] = $plan->id;
             $row['amount'] = $plan->amount;
             $row['nickname'] = $plan->nickname;

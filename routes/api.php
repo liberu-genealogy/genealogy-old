@@ -1264,27 +1264,28 @@ Route::name('api.controlPanel.')
 
 Broadcast::routes(['middleware' => ['auth:sanctum']]);
 
-// Route::middleware(['web', 'auth', 'multitenant'])
-//     ->namespace('')
-//     ->prefix('stripe')
-//     ->as('stripe.')
-//     ->group(function () {
-//         Route::get('current-subscription', StripeGetCurrentSubscription::class);
-//         Route::get('intent', StripeGetIntent::class);
-//         Route::get('plans', StripeGetPlans::class);
-//         Route::post('subscribe', StripeSubscribe::class);
-//         Route::post('unsubscribe', StripeUnsubscribe::class);
-//         Route::post('webhook', StripeWebhook::class);
-//     });
+Route::middleware(['web', 'auth'])
+    ->namespace('')
+    ->prefix('stripe')
+    ->as('stripe.')
+    ->group(function () {
+        Route::get('current-subscription', StripeGetCurrentSubscription::class);
+        Route::get('intent', StripeGetIntent::class);
+        Route::get('plans', StripeGetPlans::class);
+        Route::post('subscribe', StripeSubscribe::class);
+        Route::post('unsubscribe', StripeUnsubscribe::class);
+        Route::post('webhook', StripeWebhook::class);
+    });
 
-// Route::namespace('')
-//     ->prefix('paypal')
-//     ->as('paypal.')
-//     ->group(function () {
-//         Route::get('plans', PaypalGetPlans::class);
-//         Route::post('plans', PaypalCreatePlans::class);
-//         Route::post('products', PaypalCreateProduct::class);
-//         Route::post('subscribe', PaypalHandlePayment::class);
-//         Route::post('unsubscribe', PaypalUnsubscribe::class);
-//         Route::post('webhook', PaypalWebhook::class);
-//     });
+Route::middleware(['web', 'auth'])
+    ->namespace('')
+    ->prefix('paypal')
+    ->as('paypal.')
+    ->group(function () {
+        Route::get('plans', PaypalGetPlans::class);
+        Route::post('plans', PaypalCreatePlans::class);
+        Route::post('products', PaypalCreateProduct::class);
+        Route::post('subscribe', PaypalHandlePayment::class);
+        Route::post('unsubscribe', PaypalUnsubscribe::class);
+        Route::post('webhook', PaypalWebhook::class);
+    });
