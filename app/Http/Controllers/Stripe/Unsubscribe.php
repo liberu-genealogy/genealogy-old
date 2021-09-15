@@ -20,7 +20,7 @@ class Unsubscribe extends Controller
         $user->subscription('default')->cancel();
         // $user->role_id = 3; //expired role
         $user->save();
-        $user->notify(new UnsubscribeSuccessfully($user->subscription()->stripe_plan));
+        $user->notify(new UnsubscribeSuccessfully($user->subscription()->stripe_price));
 
         return ['success' => true];
     }
