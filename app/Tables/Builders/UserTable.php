@@ -14,13 +14,26 @@ class UserTable implements Table
 
     public function query(): Builder
     {
-        return User::with('avatar:id,user_id')->selectRaw('
-            users.id, user_groups.name as "group", people.name, people.appellative,
-            people.phone, users.email, roles.name as role, users.is_active,
-            users.created_at, users.person_id
-        ')->join('people', 'users.person_id', '=', 'people.id')
-            ->join('user_groups', 'users.group_id', '=', 'user_groups.id')
-            ->join('roles', 'users.role_id', '=', 'roles.id');
+        $auth = \Auth::user()->id;
+        if($auth === 1) {
+            $user = User::with('avatar:id,user_id')->selectRaw('
+                users.id, user_groups.name as "group", people.name, people.appellative,
+                people.phone, users.email, roles.name as role, users.is_active,
+                users.created_at, users.person_id
+            ')->join('people', 'users.person_id', '=', 'people.id')
+                ->join('user_groups', 'users.group_id', '=', 'user_groups.id')
+                ->join('roles', 'users.role_id', '=', 'roles.id');
+        }else{
+            $user = User::with('avatar:id,user_id')->selectRaw('
+                users.id, user_groups.name as "group", people.name, people.appellative,
+                people.phone, users.email, roles.name as role, users.is_active,
+                users.created_at, users.person_id
+            ')->join('people', 'users.person_id', '=', 'people.id')
+                ->join('user_groups', 'users.group_id', '=', 'user_groups.id')
+                ->join('roles', 'users.role_id', '=', 'roles.id')->where('users.id', $auth);
+        }
+
+        return $user;
     }
 
     public function templatePath(): string
