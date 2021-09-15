@@ -310,15 +310,17 @@ use App\Http\Controllers\Types\Show as TypesShow;
 use App\Http\Controllers\Types\Store as TypesStore;
 use App\Http\Controllers\Types\TableData as TypesTableData;
 use App\Http\Controllers\Types\Update as TypesUpdate;
-use App\Http\Controllers\Users\Create as UserRestrictCreate;
-use App\Http\Controllers\Users\Destroy as UserRestrictDestroy;
-use App\Http\Controllers\Users\Edit as UserRestrictEdit;
-use App\Http\Controllers\Users\ExportExcel as UserRestrictExportExcel;
-use App\Http\Controllers\Users\InitTable as UserRestrictInitTable;
-use App\Http\Controllers\Users\Options as UserRestrictOptions;
-use App\Http\Controllers\Users\Store as UserRestrictStore;
-use App\Http\Controllers\Users\TableData as UserRestrictTableData;
-use App\Http\Controllers\Users\Update as UserRestrictUpdate;
+
+use App\Http\Controllers\Users\Create as UserCreate;
+use App\Http\Controllers\Users\Destroy as UserDestroy;
+use App\Http\Controllers\Users\Edit as UserEdit;
+use App\Http\Controllers\Users\ExportExcel as UserExportExcel;
+use App\Http\Controllers\Users\InitTable as UserInitTable;
+use App\Http\Controllers\Users\Options as UserOptions;
+use App\Http\Controllers\Users\Store as UserStore;
+use App\Http\Controllers\Users\TableData as UserTableData;
+use App\Http\Controllers\Users\Update as UserUpdate;
+
 use App\Http\Controllers\Wikitree\WikitreeController;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
@@ -1166,20 +1168,20 @@ Route::namespace('')
 
 Route::namespace('')
     ->middleware(['api', 'auth', 'core', 'multitenant'])
-    ->prefix('api/administration/user-restrict')
-    ->as('administration.userrestrict.')
+    ->prefix('administration/users')
+    ->as('administration.users.')
     ->group(function () {
-        Route::get('create', UserRestrictCreate::class)->name('create');
-        Route::post('', UserRestrictStore::class)->name('store');
-        Route::get('{user}/edit', UserRestrictEdit::class)->name('edit');
-        Route::patch('{user}', UserRestrictUpdate::class)->name('update');
-        Route::delete('{user}', UserRestrictDestroy::class)->name('destroy');
+        Route::get('create', UserCreate::class)->name('create');
+        Route::post('', UserStore::class)->name('store');
+        Route::get('{user}/edit', UserEdit::class)->name('edit');
+        Route::patch('{user}', UserUpdate::class)->name('update');
+        Route::delete('{user}', UserDestroy::class)->name('destroy');
 
-        Route::get('initTable', UserRestrictInitTable::class)->name('initTable');
-        Route::get('tableData', UserRestrictTableData::class)->name('tableData');
-        Route::get('exportExcel', UserRestrictExportExcel::class)->name('exportExcel');
+        Route::get('initTable', UserInitTable::class)->name('initTable');
+        Route::get('tableData', UserTableData::class)->name('tableData');
+        Route::get('exportExcel', UserExportExcel::class)->name('exportExcel');
 
-        Route::get('options', UserRestrictOptions::class)->name('options');
+        Route::get('options', UserOptions::class)->name('options');
     });
 
 Route::namespace('')
