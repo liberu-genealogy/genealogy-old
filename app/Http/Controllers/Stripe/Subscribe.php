@@ -24,11 +24,6 @@ class Subscribe extends Controller
 
             $user->notify(new SubscribeSuccessfully($plan_id));
         }
-        else if ($user->hasDefaultPaymentMethod()) {
-            $paymentMethod = $user->defaultPaymentMethod();
-            $user->newSubscription('default', $plan_id)->create($paymentMethod->id);
-            $user->notify(new SubscribeSuccessfully($plan_id));
-        }
         else {
             $user->subscription('default')->swap($plan_id);
         }
