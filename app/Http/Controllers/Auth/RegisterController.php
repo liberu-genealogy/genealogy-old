@@ -63,7 +63,7 @@ class RegisterController extends Controller
             }
 
             // get role_id
-            $role = Role::where('name', 'supervisor')->first();
+            $role = Role::where('name', 'free')->first();
             if ($role == null) {
                 $role = Role::create(['menu_id'=>1, 'name'=>'supervisor', 'display_name'=>'Supervisor', 'description'=>'Supervisor role.']);
             }
