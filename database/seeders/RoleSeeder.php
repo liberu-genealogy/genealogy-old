@@ -35,7 +35,7 @@ class RoleSeeder extends Seeder
 
         $admin->permissions()->sync(Permission::pluck('id'));
 
-        $supervisor = $roles->where('name' == 'supervisor')->();
+        $supervisor = $roles->where('name', 'supervisor')->first();
 
         $supervisor->permissions()->sync(Permission::implicit()->pluck('id'));
     }
