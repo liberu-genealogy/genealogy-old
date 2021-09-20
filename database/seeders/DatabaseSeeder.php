@@ -4,11 +4,11 @@ namespace Database\Seeders;
 
 use Database\Seeders\CompanySeeder;
 use Database\Seeders\CustomPermissionsSeeder;
+use Database\Seeders\RoleSeeder;
 use Database\Seeders\UserSeeder;
 use Illuminate\Database\Seeder;
 use LaravelEnso\Countries\Database\Seeders\CountrySeeder;
 use LaravelEnso\Localisation\Database\Seeders\LanguageSeeder;
-use LaravelEnso\Roles\Database\Seeders\RoleSeeder;
 use LaravelEnso\UserGroups\Database\Seeders\UserGroupSeeder;
 
 class DatabaseSeeder extends Seeder
