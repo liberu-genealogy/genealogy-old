@@ -50,6 +50,7 @@ use App\Http\Controllers\Citations\Show as CitationsShow;
 use App\Http\Controllers\Citations\Store as CitationsStore;
 use App\Http\Controllers\Citations\TableData as CitationsTableData;
 use App\Http\Controllers\Citations\Update as CitationsUpdate;
+use App\Http\Controllers\Companies\Index as CompanyIndex;
 use App\Http\Controllers\Dashboard\ChartController;
 use App\Http\Controllers\Families\Create as FamiliesCreate;
 use App\Http\Controllers\Families\Destroy as FamiliesDestroy;
@@ -1291,3 +1292,8 @@ Route::middleware(['web', 'auth'])
         Route::post('unsubscribe', PaypalUnsubscribe::class);
         Route::post('webhook', PaypalWebhook::class);
     });
+
+Route::middleware(['auth', 'api'])
+     ->group( function() {
+     	Route::get('get_companies', [CompanyIndex::class, 'getCompany']);
+     });
