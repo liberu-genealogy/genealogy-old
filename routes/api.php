@@ -50,6 +50,7 @@ use App\Http\Controllers\Citations\Show as CitationsShow;
 use App\Http\Controllers\Citations\Store as CitationsStore;
 use App\Http\Controllers\Citations\TableData as CitationsTableData;
 use App\Http\Controllers\Citations\Update as CitationsUpdate;
+use App\Http\Controllers\Companies\Index as CompanyIndex;
 use App\Http\Controllers\Dashboard\ChartController;
 use App\Http\Controllers\Families\Create as FamiliesCreate;
 use App\Http\Controllers\Families\Destroy as FamiliesDestroy;
@@ -270,12 +271,12 @@ use App\Http\Controllers\Sources\Show as SourcesShow;
 use App\Http\Controllers\Sources\Store as SourcesStore;
 use App\Http\Controllers\Sources\TableData as SourcesTableData;
 use App\Http\Controllers\Sources\Update as SourcesUpdate;
-use App\Http\Controllers\Stripe\GetCurrentSubscription as StripeGetCurrentSubscription;
-use App\Http\Controllers\Stripe\GetIntent as StripeGetIntent;
-use App\Http\Controllers\Stripe\GetPlans as StripeGetPlans;
-use App\Http\Controllers\Stripe\Subscribe as StripeSubscribe;
-use App\Http\Controllers\Stripe\Unsubscribe as StripeUnsubscribe;
-use App\Http\Controllers\Stripe\Webhook as StripeWebhook;
+// use App\Http\Controllers\Stripe\GetCurrentSubscription as StripeGetCurrentSubscription;
+// use App\Http\Controllers\Stripe\GetIntent as StripeGetIntent;
+// use App\Http\Controllers\Stripe\GetPlans as StripeGetPlans;
+// use App\Http\Controllers\Stripe\Subscribe as StripeSubscribe;
+// use App\Http\Controllers\Stripe\Unsubscribe as StripeUnsubscribe;
+// use App\Http\Controllers\Stripe\Webhook as StripeWebhook;
 use App\Http\Controllers\Subm\Create as SubmCreate;
 use App\Http\Controllers\Subm\Destroy as SubmDestroy;
 use App\Http\Controllers\Subm\Edit as SubmEdit;
@@ -427,12 +428,14 @@ Route::namespace('Auth')
         Route::middleware('auth')->group(function () {
             Route::post('logout', [LoginController::class, 'logout'])->name('logout');
         });
+
+        Route::post('register', [RegisterController::class, 'create']);
+		Route::post('verify', [RegisterController::class, 'verify_user']);
     });
 
 // Route::middleware(['api'])->group(
 //     function() {
-Route::post('register', [RegisterController::class, 'register']);
-Route::post('verify', [RegisterController::class, 'verify_user']);
+
 //     }
 // );
 
@@ -1264,18 +1267,18 @@ Route::name('api.controlPanel.')
 
 Broadcast::routes(['middleware' => ['auth:sanctum']]);
 
-Route::middleware(['web', 'auth'])
-    ->namespace('')
-    ->prefix('stripe')
-    ->as('stripe.')
-    ->group(function () {
-        Route::get('current-subscription', StripeGetCurrentSubscription::class);
-        Route::get('intent', StripeGetIntent::class);
-        Route::get('plans', StripeGetPlans::class);
-        Route::post('subscribe', StripeSubscribe::class);
-        Route::post('unsubscribe', StripeUnsubscribe::class);
-        Route::post('webhook', StripeWebhook::class);
-    });
+// Route::middleware(['web', 'auth'])
+//     ->namespace('')
+//     ->prefix('stripe')
+//     ->as('stripe.')
+//     ->group(function () {
+//         Route::get('current-subscription', StripeGetCurrentSubscription::class);
+//         Route::get('intent', StripeGetIntent::class);
+//         Route::get('plans', StripeGetPlans::class);
+//         Route::post('subscribe', StripeSubscribe::class);
+//         Route::post('unsubscribe', StripeUnsubscribe::class);
+//         Route::post('webhook', StripeWebhook::class);
+//     });
 
 Route::middleware(['web', 'auth'])
     ->namespace('')
@@ -1289,3 +1292,8 @@ Route::middleware(['web', 'auth'])
         Route::post('unsubscribe', PaypalUnsubscribe::class);
         Route::post('webhook', PaypalWebhook::class);
     });
+
+Route::middleware(['auth', 'api'])
+     ->group( function() {
+     	Route::get('get_companies', [CompanyIndex::class, 'getCompany']);
+     });
