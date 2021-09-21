@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['http://localhost:8080', 'http://pusher.com', 'https://pusher.com', 'http://localhost:3000', 'http://localhost:8000'],
+    'allowed_origins' => ['http://localhost:8080', 'http://pusher.com', 'https://pusher.com', 'http://localhost:3000', 'http://localhost:8000','https://www.familytree365.com','https://familytree365.com'],
 
     'allowed_origins_patterns' => [],
 
