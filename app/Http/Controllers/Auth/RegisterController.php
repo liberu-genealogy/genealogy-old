@@ -20,6 +20,7 @@ use LaravelEnso\Companies\Models\Company;
 use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\Roles\Models\Role;
 use LaravelEnso\UserGroups\Models\UserGroup;
+use Illuminate\Http\Request;
 use Str;
 
 class RegisterController extends Controller
@@ -44,15 +45,15 @@ class RegisterController extends Controller
         ]);
     }
 
-    protected function create(array $data)
+    protected function create(Request $request)
     {
         try {
             // DB::beginTransaction();
             // create person
             $person = new Person();
-            $name = $data['first_name'].$data['last_name'];
+            $name = $request['first_name'].$request['last_name'];
             $person->name = $name;
-            $person->email = $data['email'];
+            $person->email = $request['email'];
             $person->save();
 
             // get user_group_id
@@ -63,13 +64,13 @@ class RegisterController extends Controller
             }
 
             // get role_id
-            $role = Role::where('name', 'supervisor')->first();
+            $role = Role::where('name', 'free')->first();
             if ($role == null) {
                 $role = Role::create(['menu_id'=>1, 'name'=>'supervisor', 'display_name'=>'Supervisor', 'description'=>'Supervisor role.']);
             }
             $user = User::create([
-                'email' => $data['email'],
-                'password' => Hash::make($data['password']),
+                'email' => $request['email'],
+                'password' => Hash::make($request['password']),
                 'person_id' => $person->id,
                 'group_id' => $user_group->id,
                 'role_id' => $role->id,
@@ -80,8 +81,8 @@ class RegisterController extends Controller
             $this->initiateEmailActivation($user);
 
             $company = Company::create([
-                'name' => $data['name'],
-                'email' => $data['email'],
+                'name' => $request['name'],
+                'email' => $request['email'],
                 // 'is_active' => 1,
                 'is_tenant' => 1,
                 'status' => 1,
@@ -95,7 +96,7 @@ class RegisterController extends Controller
             // Dispatch Tenancy Jobs
 
             CreateDB::dispatch($company);
-            Migration::dispatch($company, $name, $data['email'], $data['password']);
+            Migration::dispatch($company, $name, $request['email'], $request['password']);
 
             return $user;
         } catch (\Exception $e) {
