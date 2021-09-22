@@ -10,8 +10,8 @@ class Index extends Controller
 {
     public function getCompany() {
         $user = auth()->user();
-        $company = $user->Company;
-
-        return $company;
+        $company = $user->company();
+        $companies[] = $company;
+        return $companies;
     }
 }
