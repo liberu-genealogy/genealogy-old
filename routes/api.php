@@ -1135,7 +1135,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::namespace('')
     ->middleware(['api', 'auth', 'core', 'multitenant'])
-    ->prefix('api/administration/people')
+    ->prefix('administration/people')
     ->as('administration.people.')
     ->group(function () {
         Route::get('create', PeopleCreate::class)->name('create');
@@ -1153,7 +1153,7 @@ Route::namespace('')
 
 Route::namespace('')
     ->middleware(['api', 'auth', 'core', 'multitenant'])
-    ->prefix('api/administration/companies')
+    ->prefix('administration/companies')
     ->as('administration.companies.')
     ->group(function () {
         Route::get('create', CompanyCreate::class)->name('create');
