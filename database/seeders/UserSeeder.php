@@ -24,8 +24,6 @@ class UserSeeder extends Seeder
             'is_active' => true,
         ])->generateAvatar();
 
-
-
         User::factory()->create([
             'person_id' => $supervisor->id,
             'group_id' => UserGroup::whereName('Administrators')->first()->id,

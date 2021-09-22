@@ -3,15 +3,17 @@
 namespace App\Http\Controllers\Companies;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Http\Request;
 
 class Index extends Controller
 {
-    public function getCompany() {
+    public function getCompany()
+    {
         $user = auth()->user();
-        $company = $user->Company;
+        $company = $user->company();
+        $companies[] = $company;
 
-        return $company;
+        return $companies;
     }
 }
