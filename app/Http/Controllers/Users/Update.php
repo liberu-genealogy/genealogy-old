@@ -18,7 +18,7 @@ class Update extends Controller
     {
         $role = \Auth::user()->role_id;
         // $user_id = \Auth::user()->id;
-        if(in_array($role, [1,2])) {
+        if (in_array($role, [1, 2])) {
             $this->authorize('handle', $user);
 
             if ($request->filled('password')) {
@@ -44,6 +44,7 @@ class Update extends Controller
 
             return ['message' => __('The user was successfully updated')];
         }
+
         return ['error' => __('The user was unsuccessfully updated')];
     }
 }

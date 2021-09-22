@@ -23,8 +23,7 @@ class Subscribe extends Controller
             $user->newSubscription('default', $plan_id)->create($paymentMethod);
 
             $user->notify(new SubscribeSuccessfully($plan_id));
-        }
-        else {
+        } else {
             $user->subscription('default')->swap($plan_id);
         }
 

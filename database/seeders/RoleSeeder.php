@@ -19,8 +19,8 @@ class RoleSeeder extends Seeder
         ['name' => 'oty', 'display_name' => 'One Tree Yearly', 'description' => 'One Tree Yearly Role.'],
         ['name' => 'ttm', 'display_name' => 'Ten Tree Monthly', 'description' => 'Ten Tree Monthly Role.'],
         ['name' => 'tty', 'display_name' => 'Ten Tree Yearly', 'description' => 'Ten Tree Yearly Role.'],
-        ['name' => 'utm', 'display_name' => 'Unlimited Tree Monthly', 'description' => 'Unlimited Tree Monthly Role.'],      
-        ['name' => 'uty', 'display_name' => 'Unlimited Tree Yearly', 'description' => 'Unlimited Tree Yearly Role.'],   
+        ['name' => 'utm', 'display_name' => 'Unlimited Tree Monthly', 'description' => 'Unlimited Tree Monthly Role.'],
+        ['name' => 'uty', 'display_name' => 'Unlimited Tree Yearly', 'description' => 'Unlimited Tree Yearly Role.'],
     ];
 
     public function run()
