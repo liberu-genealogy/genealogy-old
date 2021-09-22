@@ -11,16 +11,16 @@ use App\Providers\RouteServiceProvider;
 use App\Traits\ActivationTrait;
 use App\Traits\ConnectionTrait;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 // use LaravelEnso\Multitenancy\Jobs\CreateDatabase;
 // use LaravelEnso\Multitenancy\Jobs\Migrate;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use LaravelEnso\Companies\Models\Company;
 use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\Roles\Models\Role;
 use LaravelEnso\UserGroups\Models\UserGroup;
-use Illuminate\Http\Request;
 use Str;
 
 class RegisterController extends Controller

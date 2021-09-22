@@ -17,7 +17,7 @@ class UserTable implements Table
         $role = \Auth::user()->role_id;
         $userId = \Auth::user()->id;
 
-        if(in_array($role, [1,2])) {
+        if (in_array($role, [1, 2])) {
             $user = User::with('avatar:id,user_id')->selectRaw('
                 users.id, user_groups.name as "group", people.name, people.appellative,
                 people.phone, users.email, roles.name as role, users.is_active,
@@ -25,7 +25,7 @@ class UserTable implements Table
             ')->join('people', 'users.person_id', '=', 'people.id')
                 ->join('user_groups', 'users.group_id', '=', 'user_groups.id')
                 ->join('roles', 'users.role_id', '=', 'roles.id');
-        }else{
+        } else {
             $user = User::with('avatar:id,user_id')->selectRaw('
                 users.id, user_groups.name as "group", people.name, people.appellative,
                 people.phone, users.email, roles.name as role, users.is_active,
