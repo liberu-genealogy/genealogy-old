@@ -2,27 +2,27 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Exception;
-use Illuminate\Support\Str;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Jobs\Tenant\CreateDB;
 use App\Jobs\Tenant\Migration;
 use App\Traits\ConnectionTrait;
-use Illuminate\Support\Facades\DB;
-use LaravelEnso\Core\Events\Login;
-use LaravelEnso\Users\Models\User;
-use Illuminate\Support\Facades\App;
-use LaravelEnso\Core\Traits\Logout;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
+use Exception;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
+use Illuminate\Validation\ValidationException;
 use Laravel\Socialite\Facades\Socialite;
 use LaravelEnso\Companies\Models\Company;
-use LaravelEnso\Multitenancy\Services\Tenant;
-use Illuminate\Validation\ValidationException;
+use LaravelEnso\Core\Events\Login;
+use LaravelEnso\Core\Traits\Logout;
 use LaravelEnso\Multitenancy\Enums\Connections;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use LaravelEnso\Multitenancy\Services\Tenant;
+use LaravelEnso\Users\Models\User;
 
 class LoginController extends Controller
 {
@@ -263,6 +263,7 @@ class LoginController extends Controller
             } catch (Exception $e) {
                 DB::connection($this->getConnectionName())->rollback();
             }
+
             return response()->json($userCreated, 200, ['Access-Token' => $token]);
         }
     }
