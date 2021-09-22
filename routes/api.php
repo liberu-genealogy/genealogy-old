@@ -311,7 +311,6 @@ use App\Http\Controllers\Types\Show as TypesShow;
 use App\Http\Controllers\Types\Store as TypesStore;
 use App\Http\Controllers\Types\TableData as TypesTableData;
 use App\Http\Controllers\Types\Update as TypesUpdate;
-
 use App\Http\Controllers\Users\Create as UserCreate;
 use App\Http\Controllers\Users\Destroy as UserDestroy;
 use App\Http\Controllers\Users\Edit as UserEdit;
@@ -321,7 +320,6 @@ use App\Http\Controllers\Users\Options as UserOptions;
 use App\Http\Controllers\Users\Store as UserStore;
 use App\Http\Controllers\Users\TableData as UserTableData;
 use App\Http\Controllers\Users\Update as UserUpdate;
-
 use App\Http\Controllers\Wikitree\WikitreeController;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
@@ -430,7 +428,7 @@ Route::namespace('Auth')
         });
 
         Route::post('register', [RegisterController::class, 'create']);
-		Route::post('verify', [RegisterController::class, 'verify_user']);
+        Route::post('verify', [RegisterController::class, 'verify_user']);
     });
 
 // Route::middleware(['api'])->group(
@@ -1272,13 +1270,13 @@ Route::middleware(['web', 'auth'])
      ->prefix('stripe')
      ->as('stripe.')
     ->group(function () {
-         Route::get('current-subscription', StripeGetCurrentSubscription::class);
-         Route::get('intent', StripeGetIntent::class);
-         Route::get('plans', StripeGetPlans::class);
-         Route::post('subscribe', StripeSubscribe::class);
-         Route::post('unsubscribe', StripeUnsubscribe::class);
-         Route::post('webhook', StripeWebhook::class);
-     });
+        Route::get('current-subscription', StripeGetCurrentSubscription::class);
+        Route::get('intent', StripeGetIntent::class);
+        Route::get('plans', StripeGetPlans::class);
+        Route::post('subscribe', StripeSubscribe::class);
+        Route::post('unsubscribe', StripeUnsubscribe::class);
+        Route::post('webhook', StripeWebhook::class);
+    });
 
 Route::middleware(['web', 'auth'])
     ->namespace('')
@@ -1294,6 +1292,6 @@ Route::middleware(['web', 'auth'])
     });
 
 Route::middleware(['auth', 'api'])
-     ->group( function() {
-     	Route::get('get_companies', [CompanyIndex::class, 'getCompany']);
+     ->group(function () {
+         Route::get('get_companies', [CompanyIndex::class, 'getCompany']);
      });
