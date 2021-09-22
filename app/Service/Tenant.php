@@ -2,10 +2,10 @@
 
 namespace App\Service;
 
-use App\Models\enso\companies\Company;
+use LaravelEnso\Companies\Models\Company;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use LaravelEnso\Multitenancy\Enums\Connections;
+use FamilyTree365\Multitenancy\Enums\Connections;
 
 class Tenant
 {

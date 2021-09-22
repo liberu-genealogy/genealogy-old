@@ -2,9 +2,9 @@
 
 namespace App\Jobs\Tenant;
 
-use App\Models\enso\companies\Company;
-use App\Models\enso\core\UserGroup;
-use App\Models\enso\Roles\Role;
+use LaravelEnso\Companies\Models\Company;
+use LaravelEnso\Roles\Models\Role;
+use LaravelEnso\UserGroups\Models\UserGroup;
 use App\Models\User;
 use App\Person;
 use App\Service\Tenant;

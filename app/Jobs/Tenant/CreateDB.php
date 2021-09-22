@@ -2,7 +2,7 @@
 
 namespace App\Jobs\Tenant;
 
-use App\Models\enso\companies\Company;
+use LaravelEnso\Companies\Models\Company;
 use App\Service\Tenant;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
