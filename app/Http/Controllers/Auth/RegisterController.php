@@ -51,11 +51,10 @@ class RegisterController extends Controller
             // DB::beginTransaction();
             // create person
             $person = new Person();
-            $name = $request['first_name'].$request['last_name'];
+            $name = $request['first_name'] . ' ' . $request['last_name'];
             $person->name = $name;
             $person->email = $request['email'];
             $person->save();
-
             // get user_group_id
             $user_group = UserGroup::where('name', 'Administrators')->first();
             if ($user_group == null) {
@@ -70,18 +69,18 @@ class RegisterController extends Controller
             }
             $user = User::create([
                 'email' => $request['email'],
-                'password' => Hash::make($request['password']),
+                'password' => bcrypt($request['password']),
                 'person_id' => $person->id,
                 'group_id' => $user_group->id,
                 'role_id' => $role->id,
                 'is_active' => 1,
             ]);
+
             // send verification email;
 
-            $this->initiateEmailActivation($user);
-
+            //$this->initiateEmailActivation($user);
             $company = Company::create([
-                'name' => $request['name'],
+                'name' => $request['email'],
                 'email' => $request['email'],
                 // 'is_active' => 1,
                 'is_tenant' => 1,
