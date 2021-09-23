@@ -75,7 +75,7 @@ class RegisterController extends Controller
 
             // send verification email;
 
-            //$this->initiateEmailActivation($user);
+            $this->initiateEmailActivation($user);
             $company = Company::create([
                 'name' => $request['email'],
                 'email' => $request['email'],
