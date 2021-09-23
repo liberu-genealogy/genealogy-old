@@ -7,12 +7,12 @@ use App\Models\PersonEvent;
 use App\Models\Place;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use LaravelEnso\Multitenancy\Traits\SystemConnection;
+use LaravelEnso\Multitenancy\Traits\TenantConnection;
 use LaravelEnso\People\Models\Person as CorePerson;
 
 class Person extends CorePerson
 {
-    use SystemConnection, HasFactory;
+    use TenantConnection, HasFactory;
 
     public function __construct(array $attributes = [])
     {
