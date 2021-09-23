@@ -11,8 +11,8 @@ use App\Person;
 use App\Source;
 use App\Traits\ConnectionTrait;
 use Auth;
-use GenealogiaWebsite\LaravelGedcom\Facades\GedcomParserFacade;
-use GenealogiaWebsite\LaravelGedcom\Utils\GedcomParser;
+use FamilyTree365\LaravelGedcom\Facades\GedcomParserFacade;
+use FamilyTree365\LaravelGedcom\Utils\GedcomParser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use LaravelEnso\Multitenancy\Enums\Connections;
@@ -27,7 +27,7 @@ class Store extends Controller
 
     public function __invoke(Request $request)
     {
-        $slug = $request->get('slug');
+        $slug = $request->get('slug') ? $request->get('slug') : '';
         if ($request->hasFile('file')) {
             if ($request->file('file')->isValid()) {
                 try {

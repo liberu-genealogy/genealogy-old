@@ -59,6 +59,7 @@ class Migration implements ShouldQueue
             '--path' => '/database/migrations/tenant',
             '--force' => true,
         ]);
+
         Artisan::call('db:seed', [
             '--database' => Connections::Tenant,
             '--force' => true,

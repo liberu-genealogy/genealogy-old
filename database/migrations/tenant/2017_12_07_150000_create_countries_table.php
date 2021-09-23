@@ -34,7 +34,6 @@ class CreateCountriesTable extends Migration
             $table->string('calling_code', 3)->nullable();
             $table->string('flag', 6)->nullable();
             $table->boolean('is_active')->index();
-
             $table->timestamps();
         });
     }
