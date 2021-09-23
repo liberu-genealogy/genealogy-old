@@ -3,8 +3,8 @@
 namespace App\Jobs;
 
 use App\Events\GedComProgressSent;
-use App\ImportJob;
-use GenealogiaWebsite\LaravelGedcom\Utils\GedcomParser;
+use App\Models\ImportJob;
+use FamilyTree365\LaravelGedcom\Utils\GedcomParser;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -61,7 +61,7 @@ class ImportGedcom implements ShouldQueue
 
         ImportJob::on($this->conn)->create(compact('user_id', 'slug', 'status'));
 
-        $parser = new \GenealogiaWebsite\LaravelGedcom\Utils\GedcomParser();
+        $parser = new GedcomParser();
         $parser->parse($this->conn, storage_path($this->filename), $slug, true);
         File::delete(storage_path($this->filename));
 
