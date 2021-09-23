@@ -6,6 +6,10 @@ class CreateStructureForSubscription extends Migration
 {
     protected array $permissions = [
         ['name' => 'subscription.index', 'description' => 'Show index for subscriptions', 'is_default' => true],
+
+        ['name' => 'subscription.stripe.index', 'description' => 'Payment for Stripe', 'is_default' => true],
+        ['name' => 'subscription.paypal.index', 'description' => 'Payment for PayPal', 'is_default' => true],
+
         ['name' => 'subscription.create', 'description' => 'Create subscription', 'is_default' => true],
         ['name' => 'subscription.store', 'description' => 'Store a new subscription', 'is_default' => true],
         ['name' => 'subscription.show', 'description' => 'Show subscription', 'is_default' => true],

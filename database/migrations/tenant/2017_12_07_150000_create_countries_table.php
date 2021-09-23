@@ -33,7 +33,7 @@ class CreateCountriesTable extends Migration
             $table->boolean('eea')->default(0);
             $table->string('calling_code', 3)->nullable();
             $table->string('flag', 6)->nullable();
-            $table->boolean('is_active')->default(0);
+            $table->boolean('is_active')->index();
             $table->timestamps();
         });
     }
