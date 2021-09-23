@@ -37,7 +37,6 @@ class CreateDB implements ShouldQueue
     {
         //
         Tenant::set($this->tenant);
-
         DB::statement('CREATE DATABASE '.$this->tenantDatabase());
     }
 }

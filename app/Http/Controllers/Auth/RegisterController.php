@@ -13,8 +13,6 @@ use App\Traits\ConnectionTrait;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-// use LaravelEnso\Multitenancy\Jobs\CreateDatabase;
-// use LaravelEnso\Multitenancy\Jobs\Migrate;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use LaravelEnso\Companies\Models\Company;
@@ -48,7 +46,6 @@ class RegisterController extends Controller
     protected function create(Request $request)
     {
         try {
-            // DB::beginTransaction();
             // create person
             $person = new Person();
             $name = $request['first_name'] . ' ' . $request['last_name'];
