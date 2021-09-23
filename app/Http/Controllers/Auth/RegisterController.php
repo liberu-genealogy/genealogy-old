@@ -13,8 +13,6 @@ use App\Traits\ConnectionTrait;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-// use LaravelEnso\Multitenancy\Jobs\CreateDatabase;
-// use LaravelEnso\Multitenancy\Jobs\Migrate;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use LaravelEnso\Companies\Models\Company;
@@ -48,14 +46,12 @@ class RegisterController extends Controller
     protected function create(Request $request)
     {
         try {
-            // DB::beginTransaction();
             // create person
             $person = new Person();
-            $name = $request['first_name'].$request['last_name'];
+            $name = $request['first_name'] . ' ' . $request['last_name'];
             $person->name = $name;
             $person->email = $request['email'];
             $person->save();
-
             // get user_group_id
             $user_group = UserGroup::where('name', 'Administrators')->first();
             if ($user_group == null) {
@@ -70,18 +66,18 @@ class RegisterController extends Controller
             }
             $user = User::create([
                 'email' => $request['email'],
-                'password' => Hash::make($request['password']),
+                'password' => bcrypt($request['password']),
                 'person_id' => $person->id,
                 'group_id' => $user_group->id,
                 'role_id' => $role->id,
                 'is_active' => 1,
             ]);
+
             // send verification email;
 
             $this->initiateEmailActivation($user);
-
             $company = Company::create([
-                'name' => $request['name'],
+                'name' => $request['email'],
                 'email' => $request['email'],
                 // 'is_active' => 1,
                 'is_tenant' => 1,
