@@ -38,5 +38,38 @@ class RoleSeeder extends Seeder
         $supervisor = $roles->where('name', 'supervisor')->first();
 
         $supervisor->permissions()->sync(Permission::implicit()->pluck('id'));
+        
+        $moderator = $roles->where('name', 'moderator')->first();
+
+        $moderator->permissions()->sync(Permission::implicit()->pluck('id'));
+        
+        $free = $roles->where('name', 'free')->first();
+
+        $free->permissions()->sync(Permission::implicit()->pluck('id'));
+        
+        $otm = $roles->where('name', 'otm')->first();
+
+        $otm->permissions()->sync(Permission::implicit()->pluck('id'));
+        
+        $oty = $roles->where('name', 'oty')->first();
+
+        $oty->permissions()->sync(Permission::implicit()->pluck('id'));
+        
+        $ttm = $roles->where('name', 'ttm')->first();
+
+        $ttm->permissions()->sync(Permission::implicit()->pluck('id'));
+        
+        $tty = $roles->where('name', 'tty')->first();
+
+        $tty->permissions()->sync(Permission::implicit()->pluck('id'));
+        
+        $utm = $roles->where('name', 'utm')->first();
+
+        $utm->permissions()->sync(Permission::implicit()->pluck('id'));
+        
+        $uty = $roles->where('name', 'uty')->first();
+        
+        $uty->permissions()->sync(Permission::implicit()->pluck('id'));
+        
     }
 }
