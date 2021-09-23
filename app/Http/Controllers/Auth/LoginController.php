@@ -230,8 +230,8 @@ class LoginController extends Controller
             return view('callback', $output);
         } else {
             try {
-                DB::connection($this->getConnection()->getRawPdo->beginTransaction());
-               $userCreated = User::create(
+                DB::connection($this->getConnectionName())->beginTransaction();
+                $userCreated = User::create(
                     [
                         'first_name' => $user->getName(),
                         'last_name' => $user->getName(),
@@ -257,11 +257,11 @@ class LoginController extends Controller
 
                 $output = ['access_token' => $token, 'data' => json_encode($userCreated), 'message' => 'Login Success!', 'success' => true, 'error' => false];
 
-                DB::connection($this->getConnection())->commit();
+                DB::connection($this->getConnectionName())->commit();
 
                 return view('callback', $output);
             } catch (Exception $e) {
-                DB::connection($this->getConnection())->rollback();
+                DB::connection($this->getConnectionName())->rollback();
             }
 
             return response()->json($userCreated, 200, ['Access-Token' => $token]);
