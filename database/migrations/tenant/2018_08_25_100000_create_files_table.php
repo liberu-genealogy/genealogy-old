@@ -14,7 +14,7 @@ class CreateFilesTable extends Migration
             $table->morphs('attachable');
 
             $table->string('original_name')->index();
-            $table->string('saved_name');
+            $table->string('path');
             $table->integer('size');
             $table->string('mime_type')->nullable();
 
