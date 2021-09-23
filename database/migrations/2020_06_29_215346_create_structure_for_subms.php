@@ -6,6 +6,8 @@ class CreateStructureForSubms extends Migration
 {
     protected array $permissions = [
         ['name' => 'subm.index', 'description' => 'Show index for subms', 'is_default' => true],
+        ['name' => 'subm.stripe.index', 'description' => 'Payment for Stripe', 'is_default' => true],
+        ['name' => 'subm.paypal.index', 'description' => 'Payment for PayPal', 'is_default' => true],
 
         ['name' => 'subm.create', 'description' => 'Create subm', 'is_default' => true],
         ['name' => 'subm.store', 'description' => 'Store a new subm', 'is_default' => true],
