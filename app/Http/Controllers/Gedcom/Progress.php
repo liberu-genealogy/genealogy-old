@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Gedcom;
 
 use App\Http\Controllers\Controller;
-use App\ImportJob;
+use App\Models\ImportJob;
 use Auth;
 use Illuminate\Http\Request;
 
