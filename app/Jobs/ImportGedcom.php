@@ -61,10 +61,20 @@ class ImportGedcom implements ShouldQueue
 
         ImportJob::on($this->conn)->create(compact('user_id', 'slug', 'status'));
 
-        $parser = new GedcomParser();
-        $parser->parse($this->conn, storage_path($this->filename), $slug, true);
-        File::delete(storage_path($this->filename));
+        $parser = new \FamilyTree365\LaravelGedcom\Utils\GedcomParser();
 
+        $parser->parse(
+            $this->conn,
+            storage_path($this->filename),
+            $slug,
+            true,
+            [
+                'name' => "user.{$this->user_id}",
+                "eventName" => 'gedcomProgress',
+            ]
+        );
+
+        File::delete(storage_path($this->filename));
         // update import job
         $status = 'complete';
         ImportJob::on($this->conn)->where('slug', $slug)->where('user_id', $user_id)->update(compact('status'));
