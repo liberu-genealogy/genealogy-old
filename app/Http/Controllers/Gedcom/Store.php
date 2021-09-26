@@ -45,7 +45,7 @@ class Store extends Controller
 
                     return ['File uploaded: conn:-'.$conn.'-'];
                 } catch (\Exception $e) {
-                    return ['Not uploaded'];
+                    return $e->getMessage();
                 }
             }
 
