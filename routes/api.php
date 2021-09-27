@@ -1293,5 +1293,6 @@ Route::middleware(['web', 'auth'])
 
 Route::middleware(['auth', 'api'])
      ->group(function () {
-         Route::get('get_companies', [CompanyIndex::class, 'getCompany']);
+        Route::get('get_companies', [CompanyIndex::class, 'getCompany']);
+        Route::get('get_person', [PersonaliasIndex::class, 'getPerson']);
      });
