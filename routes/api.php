@@ -699,7 +699,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             });
     });
 
-Route::get('gedcom/progress', '\App\Http\Controllers\Gedcom\Progress@index')->name('progress');
+Route::post('gedcom/progress', '\App\Http\Controllers\Gedcom\Progress@index')->name('progress');
 
 // Wikitree
 Route::get('wikitree/get-authcode', [WikitreeController::class, 'getAuthCode'])->name('wikitree.get-authcode');
