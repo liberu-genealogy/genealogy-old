@@ -13,6 +13,10 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
+use App\Service\Tenant;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use LaravelEnso\Multitenancy\Enums\Connections;
 
 class ImportGedcom implements ShouldQueue
 {
@@ -57,6 +61,7 @@ class ImportGedcom implements ShouldQueue
             $key = 'database.connections.tenant.database';
             $value = $this->db;
             config([$key => $value]);
+            $this->resetDatabase();
         }
 
         ImportJob::on($this->conn)->create(compact('user_id', 'slug', 'status'));
@@ -67,11 +72,7 @@ class ImportGedcom implements ShouldQueue
             $this->conn,
             storage_path($this->filename),
             $slug,
-            true,
-            [
-                'name' => "user.{$this->user_id}",
-                "eventName" => 'gedcomProgress',
-            ]
+            true
         );
 
         File::delete(storage_path($this->filename));
@@ -80,5 +81,20 @@ class ImportGedcom implements ShouldQueue
         ImportJob::on($this->conn)->where('slug', $slug)->where('user_id', $user_id)->update(compact('status'));
 
         return 0;
+    }
+
+    public function resetDatabase() {
+       
+        DB::statement("SET foreign_key_checks=0");
+        $databaseName =$this->db;
+        $tables = DB::select("SELECT * FROM information_schema.tables WHERE table_schema = '$databaseName'");
+        foreach ($tables as $table) {
+            $name = $table->TABLE_NAME;
+            if ($name == 'migrations') {
+                continue;
+            }
+            DB::table($name)->truncate();
+        }
+        DB::statement("SET foreign_key_checks=1");
     }
 }
