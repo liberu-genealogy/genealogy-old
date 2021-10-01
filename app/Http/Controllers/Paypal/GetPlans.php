@@ -6,6 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\PaypalPlan;
 use App\Models\PaypalSubscription as PaypalSub;
 use Illuminate\Http\Request;
+use App\Service\Tenant;
+use LaravelEnso\Multitenancy\Enums\Connections;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class GetPlans extends Controller
 {
@@ -17,14 +21,20 @@ class GetPlans extends Controller
      */
     public function __invoke(Request $request)
     {
-        $createPlan = new CreatePlans();
-        $createPlan();
+        $tenant = Auth::user()->company();
+        Tenant::set($tenant);
+        $company = Tenant::get();
+        $db = Connections::Tenant.$company->id;
+
+        // $createPlan = new CreatePlans();
+        // $createPlan();
 
         $result = [];
-        $plans = PaypalPlan::all();
+        $plans = DB::connection(Connections::Tenant)->table('paypal_plans')->get();
 
         foreach ($plans as $plan) {
-            $subscription = PaypalSub::where('user_email', $request->email)
+            $subscription =DB::connection(Connections::Tenant)->table('paypal_subscriptions')
+                ->where('user_email', $request->email)
                 ->where('paypal_plan_id', $plan->paypal_id)
                 ->first();
 
