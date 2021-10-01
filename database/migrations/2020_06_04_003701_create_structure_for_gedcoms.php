@@ -18,5 +18,5 @@ class CreateStructureForGedcoms extends Migration
         'name' => 'Gedcom Import', 'icon' => 'cloud-upload-alt', 'route' => 'gedcom.index', 'order_index' => 801, 'has_children' => false,
     ];
 
-    protected ?string $parentMenu = '';
+    protected ?string $parentMenu = 'Gedcom';
 }
