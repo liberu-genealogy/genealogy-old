@@ -87,6 +87,7 @@ use App\Http\Controllers\Familyslugs\Store as FamilyslugsStore;
 use App\Http\Controllers\Familyslugs\TableData as FamilyslugsTableData;
 use App\Http\Controllers\Familyslugs\Update as FamilyslugsUpdate;
 use App\Http\Controllers\Gedcom\Store as GedcomStore;
+use App\Http\Controllers\Gedcom\Export as GedcomExport;
 use App\Http\Controllers\Geneanum\GeneanumController;
 use App\Http\Controllers\MediaObjects\Create as MediaobjectsCreate;
 use App\Http\Controllers\MediaObjects\Destroy as MediaobjectsDestroy;
@@ -1295,4 +1296,5 @@ Route::middleware(['auth', 'api'])
      ->group(function () {
         Route::get('get_companies', [CompanyIndex::class, 'getCompany']);
         Route::get('get_person', [PersonaliasIndex::class, 'getPerson']);
-     });
+        Route::post('gedcom-export', GedcomExport::class);
+    });
