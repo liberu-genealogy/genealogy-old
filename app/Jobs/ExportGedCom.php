@@ -41,12 +41,12 @@ class ExportGedCom implements ShouldQueue
         $down_nest = 3;
         $writer = new GedcomGenerator($p_id, $f_id, $up_nest, $down_nest);
         $content = $writer->getGedcomPerson();
-        $destinationPath = public_path().'/upload/';
+        $destinationPath = storage_path('public/upload/');
 
-        if (! is_dir($destinationPath)) {
-            mkdir($destinationPath, 0777, true);
-        }
+        // if (! is_dir($destinationPath)) {
+        //     mkdir($destinationPath, 0777, true);
+        // }
 
-        File::put($destinationPath.$this->file, $content);
+        \Storage::disk('public')->put($this->file, $content);
     }
 }
