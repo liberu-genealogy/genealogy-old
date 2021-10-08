@@ -17,4 +17,14 @@ class User extends CoreUser
         'role_id',
         'is_active'
     ];
+
+    public function social()
+    {
+        return $this->hasMany(UserSocial::class, 'user_id', 'id');
+    }
+
+    public function hasSocialLinked($service)
+    {
+        return (bool) $this->social->where('service', $service)->count();
+    }
 }
