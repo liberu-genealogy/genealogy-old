@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Addrs;
+namespace App\Http\Controllers\Dna;
 
-use App\Tables\Builders\AddrTable;
+use App\Tables\Builders\DnaTable;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Tables\Traits\Init;
 
@@ -10,5 +10,5 @@ class InitTable extends Controller
 {
     use Init;
 
-    protected string $tableClass = AddrTable::class;
+    protected string $tableClass = DnaTable::class;
 }
