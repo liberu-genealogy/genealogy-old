@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Addrs;
+namespace App\Http\Controllers\Dna;
 
 use App\Http\Controllers\Controller;
-use App\Models\Addr;
+use App\Models\Dna;
 use Illuminate\Http\Request;
 
 class Index extends Controller
 {
-    public function __invoke(Request $request, Addr $addr)
+    public function __invoke(Request $request, Dna $dna)
     {
-        return ['addrs' => $addr];
+        return ['dnas' => $dna];
     }
 }
