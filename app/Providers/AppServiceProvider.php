@@ -10,6 +10,7 @@ use Illuminate\Support\ServiceProvider;
 use LaravelEnso\Companies\Models\Company;
 use LaravelEnso\DynamicMethods\Services\Methods;
 use LaravelEnso\Users\Models\User as BaseUser;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot()
     {
+        Schema::defaultStringLength(191);
     }
 
     public function register()
