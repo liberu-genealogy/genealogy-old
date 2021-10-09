@@ -16,6 +16,7 @@ use LaravelEnso\Charts\Factories\Polar;
 use LaravelEnso\Charts\Factories\Radar;
 use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\Multitenancy\Services\Tenant;
+use Carbon\Carbon;
 
 class ChartController extends Controller
 {
@@ -49,9 +50,9 @@ class ChartController extends Controller
     public function pie()
     {
         // \DB::table('some')->get();
-        $male = Person::where('sex', 'M')->get()->count();
-        $female = Person::where('sex', 'F')->get()->count();
-        $unknown = Person::whereNull('sex')->get()->count();
+        $male = \DB::table('people')->where('sex', 'M')->get()->count();
+        $female = \DB::table('people')->where('sex', 'F')->get()->count();
+        $unknown = \DB::table('people')->whereNull('sex')->get()->count();
         $sv = \Session::get('db', env('DB_DATABASE'));
         $user = Auth::user();
         $companies = $user->person->company();
@@ -112,7 +113,7 @@ class ChartController extends Controller
     // change database to use
     public function changedb(Request $request)
     {
-        $company_id = $request->get('comid');
+        $company_id = $request->get('company_id');
         if (! empty($company_id)) {
             $db = Connections::Tenant.$company_id;
             $this->setConnection(Connections::Tenant, $db);
@@ -133,5 +134,27 @@ class ChartController extends Controller
         $ret['company'] = $companies;
 
         return $ret;
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+    }
+
+    public function trial()
+    {
+        $user = auth()->user();
+        if ($user->subscribed('default')) {
+            $days = Carbon::now()->diffInDays(Carbon::parse($user->subscription('default')->asStripeSubscription()->current_period_end));
+        } else {
+            $days = Carbon::now()->diffInDays($user->trial_ends_at);
+        }
+
+        return ['days' => $days];
     }
 }

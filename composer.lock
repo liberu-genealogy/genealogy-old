@@ -1756,16 +1756,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "1dc8d9cba3897165e16d12bb13d813afb1eb3fe7"
+                "reference": "089edd38f5b8abba6cb01567c2a8aaa47cec4c72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/1dc8d9cba3897165e16d12bb13d813afb1eb3fe7",
-                "reference": "1dc8d9cba3897165e16d12bb13d813afb1eb3fe7",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/089edd38f5b8abba6cb01567c2a8aaa47cec4c72",
+                "reference": "089edd38f5b8abba6cb01567c2a8aaa47cec4c72",
                 "shasum": ""
             },
             "require": {
@@ -1789,7 +1789,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.0-dev"
+                    "dev-master": "2.1-dev"
                 }
             },
             "autoload": {
@@ -1803,12 +1803,33 @@
             ],
             "authors": [
                 {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
+                },
+                {
                     "name": "Michael Dowling",
                     "email": "mtdowling@gmail.com",
                     "homepage": "https://github.com/mtdowling"
                 },
                 {
+                    "name": "George Mponos",
+                    "email": "gmponos@gmail.com",
+                    "homepage": "https://github.com/gmponos"
+                },
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com",
+                    "homepage": "https://github.com/Nyholm"
+                },
+                {
+                    "name": "Márk Sági-Kazár",
+                    "email": "mark.sagikazar@gmail.com",
+                    "homepage": "https://github.com/sagikazarmark"
+                },
+                {
                     "name": "Tobias Schultze",
+                    "email": "webmaster@tubo-world.de",
                     "homepage": "https://github.com/Tobion"
                 },
                 {
@@ -1830,9 +1851,23 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.0.0"
+                "source": "https://github.com/guzzle/psr7/tree/2.1.0"
             },
-            "time": "2021-06-30T20:03:07+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/Nyholm",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/guzzlehttp/psr7",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-10-06T17:43:30+00:00"
         },
         {
             "name": "http-interop/http-factory-guzzle",
@@ -5543,16 +5578,16 @@
         },
         {
             "name": "laravel/cashier",
-            "version": "v13.5.2",
+            "version": "v13.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/cashier-stripe.git",
-                "reference": "4fad43835e8331ab986c66bca99e9f0b1896ccf6"
+                "reference": "3d945a23f6a85bb660f52eb19e97cbc72406c1bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/cashier-stripe/zipball/4fad43835e8331ab986c66bca99e9f0b1896ccf6",
-                "reference": "4fad43835e8331ab986c66bca99e9f0b1896ccf6",
+                "url": "https://api.github.com/repos/laravel/cashier-stripe/zipball/3d945a23f6a85bb660f52eb19e97cbc72406c1bb",
+                "reference": "3d945a23f6a85bb660f52eb19e97cbc72406c1bb",
                 "shasum": ""
             },
             "require": {
@@ -5619,7 +5654,7 @@
                 "issues": "https://github.com/laravel/cashier/issues",
                 "source": "https://github.com/laravel/cashier"
             },
-            "time": "2021-09-28T15:01:23+00:00"
+            "time": "2021-10-05T18:25:37+00:00"
         },
         {
             "name": "laravel/framework",
@@ -6063,16 +6098,16 @@
         },
         {
             "name": "laravel/telescope",
-            "version": "v4.6.4",
+            "version": "v4.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "e39423d3ee18898eeb1e0adf2fbe7b74a4cc4996"
+                "reference": "06ce2890dd9f1f6aab218a922746161e6870a29a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/e39423d3ee18898eeb1e0adf2fbe7b74a4cc4996",
-                "reference": "e39423d3ee18898eeb1e0adf2fbe7b74a4cc4996",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/06ce2890dd9f1f6aab218a922746161e6870a29a",
+                "reference": "06ce2890dd9f1f6aab218a922746161e6870a29a",
                 "shasum": ""
             },
             "require": {
@@ -6121,9 +6156,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/telescope/issues",
-                "source": "https://github.com/laravel/telescope/tree/v4.6.4"
+                "source": "https://github.com/laravel/telescope/tree/v4.6.5"
             },
-            "time": "2021-09-16T17:44:49+00:00"
+            "time": "2021-10-05T19:06:40+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -9134,16 +9169,16 @@
         },
         {
             "name": "sentry/sentry-laravel",
-            "version": "2.8.0",
+            "version": "2.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getsentry/sentry-laravel.git",
-                "reference": "21dd07bdd2956e182ffde32d22872ce1a4b3eca9"
+                "reference": "3acb930f1abeb67046097c3912c7b4b9b4303f08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getsentry/sentry-laravel/zipball/21dd07bdd2956e182ffde32d22872ce1a4b3eca9",
-                "reference": "21dd07bdd2956e182ffde32d22872ce1a4b3eca9",
+                "url": "https://api.github.com/repos/getsentry/sentry-laravel/zipball/3acb930f1abeb67046097c3912c7b4b9b4303f08",
+                "reference": "3acb930f1abeb67046097c3912c7b4b9b4303f08",
                 "shasum": ""
             },
             "require": {
@@ -9209,7 +9244,7 @@
             ],
             "support": {
                 "issues": "https://github.com/getsentry/sentry-laravel/issues",
-                "source": "https://github.com/getsentry/sentry-laravel/tree/2.8.0"
+                "source": "https://github.com/getsentry/sentry-laravel/tree/2.9.0"
             },
             "funding": [
                 {
@@ -9221,7 +9256,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2021-08-08T09:03:08+00:00"
+            "time": "2021-10-06T13:08:08+00:00"
         },
         {
             "name": "spatie/backtrace",
