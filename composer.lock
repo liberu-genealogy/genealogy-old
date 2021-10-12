@@ -1242,21 +1242,21 @@
         },
         {
             "name": "familytree365/laravel-gedcom",
-            "version": "v3.2.8",
+            "version": "v3.2.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/familytree365/laravel-gedcom.git",
-                "reference": "284d4ed08ea810b59996cf13402f2f9d9565c975"
+                "reference": "d3aad601565fc44da9e0dfcc2078f05bf3be3626"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/familytree365/laravel-gedcom/zipball/284d4ed08ea810b59996cf13402f2f9d9565c975",
-                "reference": "284d4ed08ea810b59996cf13402f2f9d9565c975",
+                "url": "https://api.github.com/repos/familytree365/laravel-gedcom/zipball/d3aad601565fc44da9e0dfcc2078f05bf3be3626",
+                "reference": "d3aad601565fc44da9e0dfcc2078f05bf3be3626",
                 "shasum": ""
             },
             "require": {
                 "doctrine/dbal": "^2.8|^3.0",
-                "familytree365/php-gedcom": "^1.0",
+                "familytree365/php-gedcom": "^1.4",
                 "php": ">=8.0"
             },
             "require-dev": {
@@ -1282,7 +1282,7 @@
             "description": "A package that converts gedcom files to Eloquent models",
             "support": {
                 "issues": "https://github.com/familytree365/laravel-gedcom/issues",
-                "source": "https://github.com/familytree365/laravel-gedcom/tree/v3.2.8"
+                "source": "https://github.com/familytree365/laravel-gedcom/tree/v3.2.9"
             },
             "funding": [
                 {
@@ -1290,7 +1290,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-09-29T01:10:08+00:00"
+            "time": "2021-10-11T09:40:15+00:00"
         },
         {
             "name": "familytree365/multitenancy",
