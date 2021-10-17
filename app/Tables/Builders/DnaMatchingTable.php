@@ -13,7 +13,7 @@ class DnaMatchingTable implements Table
     public function query(): Builder
     {
         return DnaMatching::selectRaw('
-            dna_matching.id, dna_matching.file1, dna_matching.file2, dna_matching.image, dna_matching.created_at
+            dna_matchings.id, dna_matchings.file1, dna_matchings.file2, dna_matchings.image, dna_matchings.created_at
         ');
     }
 
