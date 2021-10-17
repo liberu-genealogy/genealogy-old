@@ -12,25 +12,25 @@
         {
             "label": "Name",
             "name": "name",
-            "data": "dna.name",
+            "data": "dnas.name",
             "meta": ["searchable", "sortable"]
         },
         {
             "label": "File Name",
             "name": "file_name",
-            "data": "dna.file_name",
+            "data": "dnas.file_name",
             "meta": ["searchable", "sortable"]
         },
         {
             "label": "Variable Name",
             "name": "variable_name",
-            "data": "dna.variable_name",
+            "data": "dnas.variable_name",
             "meta": ["searchable", "sortable"]
         },
         {
             "label": "Created At",
             "name": "created_at",
-            "data": "dna.created_at",
+            "data": "dnas.created_at",
             "meta": ["date","searchable", "sortable"]
         }
 

@@ -13,7 +13,7 @@ class DnaTable implements Table
     public function query(): Builder
     {
         return Dna::selectRaw('
-            dna.id, dna.name, dna.file_name, dna.variable_name, dna.created_at
+            dnas.id, dnas.name, dnas.file_name, dnas.variable_name, dnas.created_at
         ');
     }
 
