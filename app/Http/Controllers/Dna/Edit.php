@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Addrs;
+namespace App\Http\Controllers\Dna;
 
 use App\Forms\Builders\AddrForm;
 use App\Models\Addr;
