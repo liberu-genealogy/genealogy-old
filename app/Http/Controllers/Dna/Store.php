@@ -7,6 +7,8 @@ use App\Models\Dna;
 use Auth;
 use Illuminate\Http\Request;
 
+class Store extends Controller {
+
 public function store(Request $request)
     {
         if ($request->hasFile('file')) {
