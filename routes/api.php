@@ -530,7 +530,7 @@ Route::middleware(['api', 'auth', 'core'])
                 Route::get('exportExcel', DnaExportExcel::class)->name('exportExcel');
 
                 Route::get('options', DnaOptions::class)->name('options');
-                Route::get('{citation}', DnaShow::class)->name('show');
+                Route::get('{dna}', DnaShow::class)->name('show');
             });
     });
 Route::middleware(['api', 'auth', 'core'])
@@ -540,18 +540,9 @@ Route::middleware(['api', 'auth', 'core'])
             ->as('dnamatching.')
             ->group(function () {
                 Route::get('', DnaMatchingIndex::class)->name('index');
-                Route::get('create', DnaMatchingCreate::class)->name('create');
-                Route::post('', DnaMatchingStore::class)->name('store');
-                Route::get('{dnamatching}/edit', DnaMatchingEdit::class)->name('edit');
-
-                Route::patch('{dnamatching}', DnaMatchingUpdate::class)->name('update');
-
-                Route::delete('{dnamatching}', DnaMatchingDestroy::class)->name('destroy');
-
                 Route::get('initTable', DnaMatchingInitTable::class)->name('initTable');
                 Route::get('tableData', DnaMatchingTableData::class)->name('tableData');
                 Route::get('exportExcel', DnaMatchingExportExcel::class)->name('exportExcel');
-
                 Route::get('options', DnaMatchingOptions::class)->name('options');
                 Route::get('{dnamatching}', DnaMatchingShow::class)->name('show');
             });
