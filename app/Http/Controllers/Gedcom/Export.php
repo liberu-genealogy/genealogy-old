@@ -8,6 +8,7 @@ use App\Jobs\ExportGedCom;
 use FamilyTree365\LaravelGedcom\Utils\GedcomGenerator;
 use FamilyTree365\LaravelGedcom\Utils\GedcomParser;
 use FamilyTree365\LaravelGedcom\Utils\GedcomWriter;
+use Illuminate\Support\Facades\Storage;
 
 class Export extends Controller
 {
@@ -17,7 +18,6 @@ class Export extends Controller
         $file = env('APP_NAME').date('_Ymd_').$ts.'.ged';
         $file = str_replace(' ', '', $file);
         $file = str_replace("'", '', $file);
-        $url = url('/').'/upload/'.$file;
 
         //TODO need data for testing
         $conn = 'tenant';
@@ -27,24 +27,15 @@ class Export extends Controller
         $down_nest = 0;
         $_name = uniqid() . '.ged';
 
-//        $parser = new GedcomWriter();
-        // $parser->parse($request->file('file'), $slug, true);
-        ray("hello world");
-        
         $writer = new GedcomGenerator($p_id, $f_id, $up_nest, $down_nest);
-//        $content = $parser->parse($_name, '', true);
-//        dd($content);
         $content = $writer->getGedcomPerson();
-        ExportGedCom::dispatch($request,$file);
 
-        sleep(5);
-//        $file = uniqid() . '.ged';
-//        $path = public_path($file);
-//        file_put_contents($path, '');
-
-        return response()->json([
-            'file' => url($url)
+        ExportGedCom::dispatch($file);
+        $path = Storage::path($file);
+       
+        return json_encode([
+            'file' => \Storage::disk('public')->get($file),
+            'name' => $file
         ]);
-
     }
 }
