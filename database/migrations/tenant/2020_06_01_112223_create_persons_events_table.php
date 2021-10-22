@@ -15,6 +15,7 @@ class CreatePersonsEventsTable extends Migration
     {
         Schema::create('person_events', function (Blueprint $table) {
             $table->id();
+            $table->string('converted_date')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
