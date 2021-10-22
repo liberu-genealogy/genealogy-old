@@ -20,7 +20,7 @@ class UpdateAddColumnsPeopleTable extends Migration
             $table->string('resn')->nullable();
             $table->string('rfn')->nullable();
             $table->string('afn')->nullable();
-            $table->date('deathday')->nullable()->after('birthday');
+            $table->string('deathday')->nullable()->after('birthday');
         });
     }
 

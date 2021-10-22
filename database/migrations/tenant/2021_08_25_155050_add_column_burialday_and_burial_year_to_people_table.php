@@ -14,7 +14,7 @@ class AddColumnBurialdayAndBurialYearToPeopleTable extends Migration
     public function up()
     {
         Schema::table('people', function (Blueprint $table) {
-            $table->date('burial_day')->nullable()->after('death_year');
+            $table->string('burial_day')->nullable()->after('death_year');
             $table->smallInteger('burial_year')->nullable()->after('burial_day');
         });
     }
