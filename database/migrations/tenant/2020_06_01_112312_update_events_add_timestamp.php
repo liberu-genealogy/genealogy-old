@@ -22,14 +22,12 @@ class UpdateEventsAddTimestamp extends Migration
             $table->string('plac')->nullable();
             $table->integer('addr_id')->nullable();
             $table->string('phon')->nullable();
-            $table->text('caus', 65535)->nullable();
+            $table->text('caus')->nullable();
             $table->string('age')->nullable();
             $table->string('agnc')->nullable();
             $table->string('adop')->nullable();
             $table->string('adop_famc')->nullable();
             $table->string('birt_famc')->nullable();
-            $table->string('converted_date')->nullable();           
-
         });
         Schema::table('family_events', function (Blueprint $table) {
             $table->integer('year')->nullable();
@@ -39,12 +37,11 @@ class UpdateEventsAddTimestamp extends Migration
             $table->string('plac')->nullable();
             $table->integer('addr_id')->nullable();
             $table->string('phon')->nullable();
-            $table->text('caus', 65535)->nullable();
+            $table->text('caus')->nullable();
             $table->string('age')->nullable();
             $table->string('agnc')->nullable();
             $table->integer('husb')->nullable();
             $table->integer('wife')->nullable();
-            $table->string('converted_date')->nullable();           
         });
     }
 

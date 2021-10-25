@@ -15,7 +15,7 @@ class AddColumnTitlAndChrToPeopleTable extends Migration
     {
         Schema::table('people', function (Blueprint $table) {
             $table->string('titl')->nullable();
-            $table->date('chr')->nullable();
+            $table->string('chr')->nullable();
         });
     }
 

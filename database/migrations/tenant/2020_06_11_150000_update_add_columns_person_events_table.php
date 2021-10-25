@@ -15,7 +15,7 @@ class UpdateAddColumnsPersonEventsTable extends Migration
     {
         //
         Schema::table('person_events', function (Blueprint $table) {
-            $table->unsignedBigInteger('person_id');
+            $table->unsignedBigInteger('person_id')->nullable();
             $table->string('title')->nullable();
             $table->string('date')->nullable();
             $table->string('description')->nullable();

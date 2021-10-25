@@ -20,6 +20,7 @@ class CreateFamilyEventsTable extends Migration
             $table->text('date')->nullable();
             $table->string('title')->nullable();
             $table->text('description')->nullable();
+            $table->string('converted_date')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -16,7 +16,7 @@ class UpdatePersonEventsTable extends Migration
         //
         if (Schema::hasColumn('person_events', 'attr')) {
             Schema::table('person_events', function (Blueprint $table) {
-                $table->text('attr', 65535)->nullable()->change();
+                $table->text('attr')->nullable()->change();
             });
         }
     }
@@ -30,7 +30,7 @@ class UpdatePersonEventsTable extends Migration
     {
         //
         Schema::table('person_events', function (Blueprint $table) {
-            $table->dropColumn('attr');
+            $table->text('attr')->nullable(false)->change();
         });
     }
 }
