@@ -43,7 +43,7 @@ class UserTest extends TestCase
         Notification::fake();
 
         $response = $this->post(
-            route('administration.user.store', [], false),
+            route('administration.users.store', [], false),
             $this->testModel->toArray()
         );
 
@@ -53,7 +53,7 @@ class UserTest extends TestCase
         $response->assertStatus(200)
             ->assertJsonStructure(['message'])
             ->assertJsonFragment([
-                'redirect' => 'administration.user.edit',
+                'redirect' => 'administration.users.edit',
                 'param' => ['user' => $user->id],
             ]);
 
@@ -68,7 +68,7 @@ class UserTest extends TestCase
         $this->testModel->is_active = ! $this->testModel->is_active;
 
         $this->patch(
-            route('administration.user.update', $this->testModel->id, false),
+            route('administration.users.update', $this->testModel->id, false),
             $this->testModel->toArray()
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
@@ -82,7 +82,7 @@ class UserTest extends TestCase
         $this->testModel->is_active = true;
         $this->testModel->save();
 
-        $this->get(route('administration.user.options', [
+        $this->get(route('administration.users.options', [
             'query' => $this->testModel->email,
             'limit' => 10,
         ], false))
