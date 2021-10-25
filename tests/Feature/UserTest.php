@@ -16,7 +16,7 @@ class UserRestrictTest extends TestCase
 {
     use Datatable, DestroyForm, EditForm, RefreshDatabase;
 
-    private $permissionGroup = 'administration.userrestrict';
+    private $permissionGroup = 'administration.user';
     private $testModel;
 
     protected function setUp(): void
@@ -43,7 +43,7 @@ class UserRestrictTest extends TestCase
         Notification::fake();
 
         $response = $this->post(
-            route('administration.userrestrict.store', [], false),
+            route('administration.user.store', [], false),
             $this->testModel->toArray()
         );
 
@@ -53,7 +53,7 @@ class UserRestrictTest extends TestCase
         $response->assertStatus(200)
             ->assertJsonStructure(['message'])
             ->assertJsonFragment([
-                'redirect' => 'administration.userrestrict.edit',
+                'redirect' => 'administration.user.edit',
                 'param' => ['user' => $user->id],
             ]);
 
@@ -68,7 +68,7 @@ class UserRestrictTest extends TestCase
         $this->testModel->is_active = ! $this->testModel->is_active;
 
         $this->patch(
-            route('administration.userrestrict.update', $this->testModel->id, false),
+            route('administration.user.update', $this->testModel->id, false),
             $this->testModel->toArray()
         )->assertStatus(200)
             ->assertJsonStructure(['message']);
@@ -82,7 +82,7 @@ class UserRestrictTest extends TestCase
         $this->testModel->is_active = true;
         $this->testModel->save();
 
-        $this->get(route('administration.userrestrict.options', [
+        $this->get(route('administration.user.options', [
             'query' => $this->testModel->email,
             'limit' => 10,
         ], false))
