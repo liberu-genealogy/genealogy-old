@@ -1,0 +1,38 @@
+{
+    "name": "Dna",
+    "routePrefix": "dna",
+    "crtNo": true,
+    "buttons": ["excel", "create", "show", "edit", "destroy"],
+    "columns": [{
+        "label": "Id",
+        "name": "id",
+        "data": "dna.id",
+        "meta": ["searchable", "sortable"]
+    },
+        {
+            "label": "Name",
+            "name": "name",
+            "data": "dnas.name",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "File Name",
+            "name": "file_name",
+            "data": "dnas.file_name",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Variable Name",
+            "name": "variable_name",
+            "data": "dnas.variable_name",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Created At",
+            "name": "created_at",
+            "data": "dnas.created_at",
+            "meta": ["date","searchable", "sortable"]
+        }
+
+    ]
+}

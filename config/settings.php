@@ -76,4 +76,9 @@ return [
      * DropZone CDN
      */
     'dropZoneJsCDN'    => env('DROPZONE_JS_CDN', 'https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/dropzone.js'),
+
+    /*
+     * Client URL
+     */
+    'clientBaseUrl'    => env('CLIENT_BASE_URL', 'http://localhost:3000'),
 ];

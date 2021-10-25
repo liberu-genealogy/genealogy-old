@@ -41,6 +41,23 @@ and consider using [Valet](https://laravel.com/docs/6.x/valet) for a better expe
 
 7. (optional) Setup the configuration files as needed, in `config/enso/*.php`
 
+## Broadcasting Setup
+
+```bash
+# install dependencies
+$ npm install -g laravel-echo-server
+
+$ laravel-echo-server configure
+$ nano .env
+
+  BROADCAST_DRIVER=redis
+  REDIS_PREFIX=
+
+$ laravel-echo-server start
+```
+
+If you want to keep it in background proccess you should install pm2 or supervisor
+
 ### Thanks
 
 Built with Laravel Enso 4.x which is crafted on Laravel 8.

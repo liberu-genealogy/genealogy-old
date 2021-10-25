@@ -20,7 +20,7 @@ class UpdateDescriptionDefaultPlacesTable extends Migration
             });
         }
         Schema::table('places', function (Blueprint $table) {
-            $table->text('description', 65535)->nullable()->after('date');
+            $table->text('description')->nullable()->after('date');
         });
     }
 

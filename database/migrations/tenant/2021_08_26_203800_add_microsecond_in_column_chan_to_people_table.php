@@ -14,7 +14,7 @@ class AddMicrosecondInColumnChanToPeopleTable extends Migration
     public function up()
     {
         Schema::table('people', function (Blueprint $table) {
-            $table->dateTime('chan', 3)->nullable()->after('deleted_at');
+            $table->string('chan')->nullable()->after('deleted_at');
         });
     }
 
