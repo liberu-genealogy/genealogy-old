@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d8d555f9240b66b444c961d8edbb2bba",
+    "content-hash": "d2d1138f400c7c856b39aa7bbbffb99f",
     "packages": [
         {
             "name": "anlutro/curl",
@@ -1289,6 +1289,57 @@
             "time": "2021-10-11T09:40:15+00:00"
         },
         {
+            "name": "familytree365/laravel-gelato",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/familytree365/laravel-gelato.git",
+                "reference": "9e3eece7d6e29fc72585af13012119b87a4765c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/familytree365/laravel-gelato/zipball/9e3eece7d6e29fc72585af13012119b87a4765c5",
+                "reference": "9e3eece7d6e29fc72585af13012119b87a4765c5",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "^8.0",
+                "illuminate/support": "^8.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "iWebTouch\\Gelato\\GelatoServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "iWebTouch\\Gelato\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "IWT",
+                    "email": "admin2@iwebtouch.com"
+                }
+            ],
+            "description": "Laravel Gelato API",
+            "support": {
+                "source": "https://github.com/familytree365/laravel-gelato/tree/v1.0.1"
+            },
+            "time": "2021-10-25T08:12:32+00:00"
+        },
+        {
             "name": "familytree365/multitenancy",
             "version": "2.0.3",
             "source": {
@@ -2058,58 +2109,6 @@
             "time": "2021-10-03T14:17:12+00:00"
         },
         {
-            "name": "iwebtouch/laravel-gelato",
-            "version": "1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/iWebTouch/Gelato.git",
-                "reference": "61e85a17fe3613f0bf86e182066b6934e6df2ba1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/iWebTouch/Gelato/zipball/61e85a17fe3613f0bf86e182066b6934e6df2ba1",
-                "reference": "61e85a17fe3613f0bf86e182066b6934e6df2ba1",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/http": "^8.0",
-                "illuminate/support": "^8.0",
-                "php": "^8.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^9.5.1"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "iWebTouch\\Gelato\\GelatoServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "iWebTouch\\Gelato\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "IWT",
-                    "email": "admin2@iwebtouch.com"
-                }
-            ],
-            "description": "Laravel Gelato API",
-            "support": {
-                "issues": "https://github.com/iWebTouch/Gelato/issues",
-                "source": "https://github.com/iWebTouch/Gelato/tree/1.0"
-            },
-            "time": "2021-10-25T05:37:19+00:00"
-        },
-        {
             "name": "jaybizzle/crawler-detect",
             "version": "v1.2.107",
             "source": {
@@ -2568,8 +2567,6 @@
                 "source": "https://github.com/laravel-enso/api/tree/1.3.0"
             },
             "time": "2021-10-21T11:24:50+00:00"
-                "source": "https://github.com/laravel-enso/api/tree/1.2.5"
-            },
         },
         {
             "name": "laravel-enso/avatars",
@@ -13667,16 +13664,16 @@
         },
         {
             "name": "composer/semver",
-            "version": "3.2.5",
+            "version": "3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/semver.git",
-                "reference": "31f3ea725711245195f62e54ffa402d8ef2fdba9"
+                "reference": "83e511e247de329283478496f7a1e114c9517506"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/31f3ea725711245195f62e54ffa402d8ef2fdba9",
-                "reference": "31f3ea725711245195f62e54ffa402d8ef2fdba9",
+                "url": "https://api.github.com/repos/composer/semver/zipball/83e511e247de329283478496f7a1e114c9517506",
+                "reference": "83e511e247de329283478496f7a1e114c9517506",
                 "shasum": ""
             },
             "require": {
@@ -13728,7 +13725,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/semver/issues",
-                "source": "https://github.com/composer/semver/tree/3.2.5"
+                "source": "https://github.com/composer/semver/tree/3.2.6"
             },
             "funding": [
                 {
@@ -13744,7 +13741,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-05-24T12:41:47+00:00"
+            "time": "2021-10-25T11:34:17+00:00"
         },
         {
             "name": "composer/spdx-licenses",
@@ -15654,7 +15651,8 @@
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
                 "source": "https://github.com/phpstan/phpdoc-parser/tree/1.2.0"
             },
-            "time": "2021-09-16T20:46:02+00:00"        },
+            "time": "2021-09-16T20:46:02+00:00"
+        },
         {
             "name": "phpunit/php-code-coverage",
             "version": "9.2.7",
