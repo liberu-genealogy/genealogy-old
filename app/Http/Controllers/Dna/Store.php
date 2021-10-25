@@ -1,13 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Dna;
 
 use App\Jobs\DnaMatching;
 use App\Models\Dna;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
-public function store(Request $request)
+class Store extends Controller {
+
+public function __invoke(Request $request)
     {
         if ($request->hasFile('file')) {
             if ($request->file('file')->isValid()) {

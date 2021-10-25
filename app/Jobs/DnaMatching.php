@@ -41,7 +41,7 @@ class DnaMatching implements ShouldQueue
         $dnas = Dna::where('variable_name', '!=', $this->var_name)->get();
         foreach ($dnas as $dna) {
 //            system('/usr/bin/python3 /home/genealogia/public_html/dna.py ' . $this->var_name . ' ' . $dna->variable_name . ' ' . '/home/genealogia/public_html/storage/app/dna/'. $this->file_name . ' ' . '/home/genealogia/public_html/storage/app/dna/'. $dna->file_name);
-            chdir('/var/www/api.familytree365.com/app');
+            chdir('/home/familytree365/domains/api.familytree365.com/genealogy/app');
             exec('python3 dna.py '.$this->var_name.' '.$dna->variable_name.' '.$this->file_name.' '.$dna->file_name);
             $dm = new DM();
             $dm->user_id = $user->id;

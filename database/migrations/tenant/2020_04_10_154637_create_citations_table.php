@@ -16,7 +16,7 @@ class CreateCitationsTable extends Migration
         Schema::create('citations', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->text('description', 65535);
+            $table->text('description');
             $table->dateTime('date')->nullable();
             $table->integer('is_active');
             $table->integer('volume');

@@ -52,6 +52,24 @@ use App\Http\Controllers\Citations\TableData as CitationsTableData;
 use App\Http\Controllers\Citations\Update as CitationsUpdate;
 use App\Http\Controllers\Companies\Index as CompanyIndex;
 use App\Http\Controllers\Dashboard\ChartController;
+use App\Http\Controllers\Dna\Create as DnaCreate;
+use App\Http\Controllers\Dna\Destroy as DnaDestroy;
+use App\Http\Controllers\Dna\Edit as DnaEdit;
+use App\Http\Controllers\Dna\ExportExcel as DnaExportExcel;
+use App\Http\Controllers\Dna\Index as DnaIndex;
+use App\Http\Controllers\Dna\InitTable as DnaInitTable;
+use App\Http\Controllers\Dna\Options as DnaOptions;
+use App\Http\Controllers\Dna\Show as DnaShow;
+use App\Http\Controllers\Dna\Store as DnaStore;
+use App\Http\Controllers\Dna\TableData as DnaTableData;
+use App\Http\Controllers\Dna\Update as DnaUpdate;
+use App\Http\Controllers\DnaMatching\ExportExcel as DnaMatchingExportExcel;
+use App\Http\Controllers\DnaMatching\Index as DnaMatchingIndex;
+use App\Http\Controllers\DnaMatching\InitTable as DnaMatchingInitTable;
+use App\Http\Controllers\DnaMatching\Options as DnaMatchingOptions;
+use App\Http\Controllers\DnaMatching\Show as DnaMatchingShow;
+use App\Http\Controllers\DnaMatching\TableData as DnaMatchingTableData;
+use App\Http\Controllers\DnaMatching\Update as DnaMatchingUpdate;
 use App\Http\Controllers\Families\Create as FamiliesCreate;
 use App\Http\Controllers\Families\Destroy as FamiliesDestroy;
 use App\Http\Controllers\Families\Edit as FamiliesEdit;
@@ -301,6 +319,7 @@ use App\Http\Controllers\Subn\Store as SubnStore;
 use App\Http\Controllers\Subn\TableData as SubnTableData;
 use App\Http\Controllers\Subn\Update as SubnUpdate;
 use App\Http\Controllers\Trees\Show as TreesShow;
+use App\Http\Controllers\Trees\Manage as TreesManage;
 use App\Http\Controllers\Types\Create as TypesCreate;
 use App\Http\Controllers\Types\Destroy as TypesDestroy;
 use App\Http\Controllers\Types\Edit as TypesEdit;
@@ -486,6 +505,43 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
                 Route::get('options', CitationsOptions::class)->name('options');
                 Route::get('{citation}', CitationsShow::class)->name('show');
+            });
+    });
+Route::middleware(['api', 'auth', 'core'])
+    ->group(function () {
+        Route::namespace('')
+            ->prefix('dna')
+            ->as('dna.')
+            ->group(function () {
+                Route::get('', DnaIndex::class)->name('index');
+                Route::get('create', DnaCreate::class)->name('create');
+                Route::post('', DnaStore::class)->name('store');
+                Route::get('{dna}/edit', DnaEdit::class)->name('edit');
+
+                Route::patch('{dna}', DnaUpdate::class)->name('update');
+
+                Route::delete('{dna}', DnaDestroy::class)->name('destroy');
+
+                Route::get('initTable', DnaInitTable::class)->name('initTable');
+                Route::get('tableData', DnaTableData::class)->name('tableData');
+                Route::get('exportExcel', DnaExportExcel::class)->name('exportExcel');
+
+                Route::get('options', DnaOptions::class)->name('options');
+                Route::get('{dna}', DnaShow::class)->name('show');
+            });
+    });
+Route::middleware(['api', 'auth', 'core'])
+    ->group(function () {
+        Route::namespace('')
+            ->prefix('dnamatching')
+            ->as('dnamatching.')
+            ->group(function () {
+                Route::get('', DnaMatchingIndex::class)->name('index');
+                Route::get('initTable', DnaMatchingInitTable::class)->name('initTable');
+                Route::get('tableData', DnaMatchingTableData::class)->name('tableData');
+                Route::get('exportExcel', DnaMatchingExportExcel::class)->name('exportExcel');
+                Route::get('options', DnaMatchingOptions::class)->name('options');
+                Route::get('{dnamatching}', DnaMatchingShow::class)->name('show');
             });
     });
 
@@ -700,7 +756,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             });
     });
 
-Route::get('gedcom/progress', '\App\Http\Controllers\Gedcom\Progress@index')->name('progress');
+Route::post('gedcom/progress', '\App\Http\Controllers\Gedcom\Progress@index')->name('progress');
 
 // Wikitree
 Route::get('wikitree/get-authcode', [WikitreeController::class, 'getAuthCode'])->name('wikitree.get-authcode');
@@ -1297,4 +1353,5 @@ Route::middleware(['auth', 'api'])
         Route::get('get_companies', [CompanyIndex::class, 'getCompany']);
         Route::get('get_person', [PersonaliasIndex::class, 'getPerson']);
         Route::post('gedcom-export', GedcomExport::class);
+        Route::get('trees/options', [TreesManage::class, 'getOptions']);
     });
