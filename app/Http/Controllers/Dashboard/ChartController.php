@@ -58,6 +58,7 @@ class ChartController extends Controller
         $companies = $user->person->company();
         $current_db = \Session::get('companyId');
 
+
         // return $current_db;
         // return $sv;
         return (new Pie())
@@ -113,6 +114,7 @@ class ChartController extends Controller
     // change database to use
     public function changedb(Request $request)
     {
+        $prevConn = $this->getConnection();
         $company_id = $request->get('company_id');
         if (! empty($company_id)) {
             $db = Connections::Tenant.$company_id;
@@ -120,9 +122,15 @@ class ChartController extends Controller
         } else {
             $this->setConnection('mysql');
         }
-        $conn = $this->getConnection();
+        $changeConn = $this->getConnection();
 
-        return $conn;
+        $peoplesattached = \DB::connection($changeConn)->table('people')->get()->count();
+        $familiesjoined = \DB::connection($changeConn)->table('families')->get()->count();
+        return json_encode([
+            'changedb' => $prevConn === $changeConn ? true : false,
+            'familiesjoined' => $familiesjoined,
+            'peoplesattached' => $peoplesattached
+        ]);
     }
 
     // get companies of user.

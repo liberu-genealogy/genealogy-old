@@ -2568,6 +2568,9 @@
                 "source": "https://github.com/laravel-enso/api/tree/1.3.0"
             },
             "time": "2021-10-21T11:24:50+00:00"
+                "source": "https://github.com/laravel-enso/api/tree/1.2.5"
+            },
+            "time": "2021-09-20T08:18:57+00:00"
         },
         {
             "name": "laravel-enso/avatars",
@@ -15652,8 +15655,7 @@
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
                 "source": "https://github.com/phpstan/phpdoc-parser/tree/1.2.0"
             },
-            "time": "2021-09-16T20:46:02+00:00"
-        },
+            "time": "2021-09-16T20:46:02+00:00"        },
         {
             "name": "phpunit/php-code-coverage",
             "version": "9.2.7",

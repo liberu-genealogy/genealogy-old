@@ -18,7 +18,7 @@ class CreateRepositoriesTable extends Migration
             $table->string('group')->nullable();
             $table->integer('gid')->nullable();
             $table->string('name')->nullable();
-            $table->text('description', 65535)->nullable();
+            $table->text('description')->nullable();
             $table->dateTime('date')->nullable();
             $table->integer('is_active')->nullable();
             $table->integer('type_id')->nullable();

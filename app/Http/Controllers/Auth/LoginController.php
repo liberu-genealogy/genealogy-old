@@ -186,6 +186,60 @@ class LoginController extends Controller
         return $user;
     }
 
+    private function loggableSocialUser($user)
+    {
+        
+        $company = $user->person->company();
+        $tanent = false;
+        
+        if ($company) {
+            $tanent = true;
+        }
+        // set company id as default
+        $main_company = $user->person->company();
+        if ($main_company !== null && ! ($user->isAdmin())) {
+            $c_id = $main_company->id;
+            $db = Connections::Tenant.$c_id;
+            $this->setConnection(Connections::Tenant, $db);
+        }
+
+        if ($main_company == null && ! $user->isAdmin()) {
+//          if ($main_company == null) {
+            $company_count = Company::count();
+
+            $company = Company::create([
+                'name' => $user->email.($company_count + 1),
+                'email' => $user->email,
+                // 'is_active' => 1,
+                'is_tenant' => 1,
+                'status' => 1,
+            ]);
+            $user->person->companies()->attach($company->id, ['person_id' => $user->person->id, 'is_main' => 1, 'is_mandatary' => 1, 'company_id' => $company->id]);
+
+            /**            Tree::create([
+             * 'name' => 'Default Tree',
+             * 'description' => 'Automatically created tree as only tree remaining was deleted.',
+             * 'user_id' => $user->id,
+             * 'company_id' => $company->id,
+             * ]);.
+             */
+            $company_id = $company->id;
+            $user_id = $user->id;
+            $person_name = $user->person->name;
+            $user_email = $user->email;
+
+            $db = $company_id;
+            $this->setConnection(Connections::Tenant, $db, $user_id);
+            $this->getConnection();
+
+            CreateDB::dispatch($company, $user_id);
+            Migration::dispatch($company_id, $user_id, $person_name, $user_email);
+        }
+    
+
+        return true;
+    }
+
     public function redirectToProvider($provider)
     {        
         $validated = $this->validateProvider($provider);
@@ -275,9 +329,15 @@ class LoginController extends Controller
             return redirect(config('settings.clientBaseUrl') . '/social-callback?token=&status=false&message=Something went wrong!');        
         }
 
-        Auth::guard('web')->login($curUser, true);   
+        if($this->loggableSocialUser($curUser)){
+
+            Auth::guard('web')->login($curUser, true);   
         
-        return redirect(config('settings.clientBaseUrl') . '/social-callback?token=' . csrf_token() . '&status=success&message=success');        
+            return redirect(config('settings.clientBaseUrl') . '/social-callback?token=' . csrf_token() . '&status=success&message=success');        
+        }else{
+            return redirect(config('settings.clientBaseUrl') . '/social-callback?token=&status=false&message=Something went wrong while we processing the login. Please try again!');        
+        }
+
     }
 
     public function needsToCreateSocial(User $user, $service)
