@@ -12,7 +12,7 @@ use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
 use Tests\TestCase;
 
-class UserRestrictTest extends TestCase
+class UserTest extends TestCase
 {
     use Datatable, DestroyForm, EditForm, RefreshDatabase;
 
