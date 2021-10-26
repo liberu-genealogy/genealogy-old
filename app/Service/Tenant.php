@@ -2,9 +2,9 @@
 
 namespace App\Service;
 
-use LaravelEnso\Companies\Models\Company;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use LaravelEnso\Companies\Models\Company;
 use LaravelEnso\Multitenancy\Enums\Connections;
 
 class Tenant
@@ -16,7 +16,7 @@ class Tenant
         $key = 'database.connections.'.Connections::Tenant.'.database';
         $value = self::tenantPrefix().$company->id;
         config([$key => $value]);
-        
+
         DB::purge(Connections::Tenant);
 
         DB::reconnect(Connections::Tenant);

@@ -48,7 +48,7 @@ class RegisterController extends Controller
         try {
             // create person
             $person = new Person();
-            $name = $request['first_name'] . ' ' . $request['last_name'];
+            $name = $request['first_name'].' '.$request['last_name'];
             $person->name = $name;
             $person->email = $request['email'];
             $person->save();
