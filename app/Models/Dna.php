@@ -7,7 +7,7 @@ use LaravelEnso\Tables\Traits\TableCache;
 
 class Dna extends Model
 {
-use TableCache;
+    use TableCache;
 
     protected $fillable = [
         'name',
