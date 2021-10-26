@@ -4,6 +4,7 @@ namespace App\Jobs;
 
 use App\Events\GedComProgressSent;
 use App\Models\ImportJob;
+use App\Service\Tenant;
 use FamilyTree365\LaravelGedcom\Utils\GedcomParser;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -12,10 +13,9 @@ use Illuminate\Http\Request;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\File;
-use App\Service\Tenant;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 use LaravelEnso\Multitenancy\Enums\Connections;
 
 class ImportGedcom implements ShouldQueue
@@ -83,10 +83,10 @@ class ImportGedcom implements ShouldQueue
         return 0;
     }
 
-    public function resetDatabase() {
-       
-        DB::statement("SET foreign_key_checks=0");
-        $databaseName =$this->db;
+    public function resetDatabase()
+    {
+        DB::statement('SET foreign_key_checks=0');
+        $databaseName = $this->db;
         $tables = DB::select("SELECT * FROM information_schema.tables WHERE table_schema = '$databaseName'");
         foreach ($tables as $table) {
             $name = $table->TABLE_NAME;
@@ -95,6 +95,6 @@ class ImportGedcom implements ShouldQueue
             }
             DB::table($name)->truncate();
         }
-        DB::statement("SET foreign_key_checks=1");
+        DB::statement('SET foreign_key_checks=1');
     }
 }

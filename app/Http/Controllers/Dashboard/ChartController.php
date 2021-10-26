@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Person;
 use App\Traits\ConnectionTrait;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -16,7 +17,6 @@ use LaravelEnso\Charts\Factories\Polar;
 use LaravelEnso\Charts\Factories\Radar;
 use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\Multitenancy\Services\Tenant;
-use Carbon\Carbon;
 
 class ChartController extends Controller
 {
@@ -57,7 +57,6 @@ class ChartController extends Controller
         $user = Auth::user();
         $companies = $user->person->company();
         $current_db = \Session::get('companyId');
-
 
         // return $current_db;
         // return $sv;
@@ -126,10 +125,11 @@ class ChartController extends Controller
 
         $peoplesattached = \DB::connection($changeConn)->table('people')->get()->count();
         $familiesjoined = \DB::connection($changeConn)->table('families')->get()->count();
+
         return json_encode([
             'changedb' => $prevConn === $changeConn ? true : false,
             'familiesjoined' => $familiesjoined,
-            'peoplesattached' => $peoplesattached
+            'peoplesattached' => $peoplesattached,
         ]);
     }
 

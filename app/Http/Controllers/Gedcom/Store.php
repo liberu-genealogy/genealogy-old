@@ -40,7 +40,7 @@ class Store extends Controller
                     // $parser = new GedcomParser();
                     // $parser->parse($request->file('file'), $slug, true);
                     $filename = 'app/gedcom/'.$_name;
-                    
+
                     ImportGedcom::dispatch($filename, $slug, $currentUser->id, $conn, $db);
 
                     return ['File uploaded: conn:-'.$conn.'-'];

@@ -9,7 +9,6 @@ class Destroy extends Controller
 {
     public function __invoke(Dna $addr)
     {
-                
         $user = auth()->user();
         $dna = Dna::find($id);
         if ($user->id == $dna->user_id) {

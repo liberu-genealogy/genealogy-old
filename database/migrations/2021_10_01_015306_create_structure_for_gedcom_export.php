@@ -20,4 +20,3 @@ class CreateStructureForGedcomExport extends Migration
 
     protected ?string $parentMenu = 'Gedcom';
 }
-
