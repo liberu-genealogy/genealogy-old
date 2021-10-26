@@ -5,11 +5,11 @@ namespace App\Http\Controllers\Paypal;
 use App\Http\Controllers\Controller;
 use App\Models\PaypalPlan;
 use App\Models\PaypalSubscription as PaypalSub;
-use Illuminate\Http\Request;
 use App\Service\Tenant;
-use LaravelEnso\Multitenancy\Enums\Connections;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use LaravelEnso\Multitenancy\Enums\Connections;
 
 class GetPlans extends Controller
 {
@@ -33,7 +33,7 @@ class GetPlans extends Controller
         $plans = DB::connection(Connections::Tenant)->table('paypal_plans')->get();
 
         foreach ($plans as $plan) {
-            $subscription =DB::connection(Connections::Tenant)->table('paypal_subscriptions')
+            $subscription = DB::connection(Connections::Tenant)->table('paypal_subscriptions')
                 ->where('user_email', $request->email)
                 ->where('paypal_plan_id', $plan->paypal_id)
                 ->first();

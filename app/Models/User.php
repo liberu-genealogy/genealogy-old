@@ -15,7 +15,7 @@ class User extends CoreUser
         'person_id',
         'group_id',
         'role_id',
-        'is_active'
+        'is_active',
     ];
 
     public function social()
