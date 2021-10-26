@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Jobs\Tenant\CreateDB;
 use App\Jobs\Tenant\Migration;
+use App\Models\Person;
+use App\Models\User;
+use App\Models\UserSocial;
 use App\Traits\ConnectionTrait;
 use Exception;
 use Illuminate\Auth\Events\Registered;
@@ -22,11 +25,8 @@ use LaravelEnso\Core\Events\Login;
 use LaravelEnso\Core\Traits\Logout;
 use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\Multitenancy\Services\Tenant;
-use LaravelEnso\UserGroups\Models\UserGroup;
-use App\Models\User;
-use App\Models\Person;
-use App\Models\UserSocial;
 use LaravelEnso\Roles\Models\Role;
+use LaravelEnso\UserGroups\Models\UserGroup;
 
 class LoginController extends Controller
 {
@@ -45,12 +45,11 @@ class LoginController extends Controller
         $this->maxAttempts = config('enso.auth.maxLoginAttempts');
     }
 
-
     public function redirect($service)
     {
         return Socialite::driver($service)->redirect();
     }
-    
+
     protected function attemptLogin(Request $request)
     {
         $this->user = $this->loggableUser($request);
@@ -188,10 +187,9 @@ class LoginController extends Controller
 
     private function loggableSocialUser($user)
     {
-        
         $company = $user->person->company();
         $tanent = false;
-        
+
         if ($company) {
             $tanent = true;
         }
@@ -235,18 +233,17 @@ class LoginController extends Controller
             CreateDB::dispatch($company, $user_id);
             Migration::dispatch($company_id, $user_id, $person_name, $user_email);
         }
-    
 
         return true;
     }
 
     public function redirectToProvider($provider)
-    {        
+    {
         $validated = $this->validateProvider($provider);
         if (! is_null($validated)) {
             return $validated;
-        }        
-        
+        }
+
         return Socialite::driver($provider)->stateless()->redirect();
     }
 
@@ -257,17 +254,17 @@ class LoginController extends Controller
      * @return JsonResponse
      */
     public function handleProviderCallback($provider)
-    {                     
+    {
         try {
-            $user = Socialite::driver($provider)->stateless()->user();            
+            $user = Socialite::driver($provider)->stateless()->user();
         } catch (Exception $exception) {
-            return redirect(config('settings.clientBaseUrl') . '/social-callback?token=&status=false&message=Invalid credentials provided!');                    
-        }         
+            return redirect(config('settings.clientBaseUrl').'/social-callback?token=&status=false&message=Invalid credentials provided!');
+        }
 
         $curUser = User::where('email', $user->getEmail())->first();
-        
-        if (!$curUser) {  
-            try {              
+
+        if (! $curUser) {
+            try {
                 // create person
                 $person = new Person();
                 $name = $user->getName();
@@ -294,14 +291,14 @@ class LoginController extends Controller
                         'group_id' => $user_group->id,
                         'role_id' => $role->id,
                         'email_verified_at' => now(),
-                        'is_active' => 1
+                        'is_active' => 1,
                     ],
-                );             
+                );
 
-                $random = $this->unique_random('companies', 'name', 5);                
+                $random = $this->unique_random('companies', 'name', 5);
                 $company = Company::create([
                     'name' => 'company'.$random,
-                    'email' => $user->getEmail(),                    
+                    'email' => $user->getEmail(),
                     'is_tenant' => 1,
                     'status' => 1,
                 ]);
@@ -310,40 +307,37 @@ class LoginController extends Controller
 
                 // Dispatch Tenancy Jobs
                 CreateDB::dispatch($company);
-                Migration::dispatch($company, $name, $user->getEmail(), "Asdf!234");                                                                          
-
-            } catch (Exception $e) {                
-                return redirect(config('settings.clientBaseUrl') . '/social-callback?token=&status=false&message=Something went wrong!');        
+                Migration::dispatch($company, $name, $user->getEmail(), 'Asdf!234');
+            } catch (Exception $e) {
+                return redirect(config('settings.clientBaseUrl').'/social-callback?token=&status=false&message=Something went wrong!');
             }
         }
 
-        try {  
+        try {
             if ($this->needsToCreateSocial($curUser, $provider)) {
                 UserSocial::create([
                     'user_id' => $curUser->id,
                     'social_id' => $user->getId(),
-                    'service' => $provider
+                    'service' => $provider,
                 ]);
             }
         } catch (Exception $e) {
-            return redirect(config('settings.clientBaseUrl') . '/social-callback?token=&status=false&message=Something went wrong!');        
+            return redirect(config('settings.clientBaseUrl').'/social-callback?token=&status=false&message=Something went wrong!');
         }
 
-        if($this->loggableSocialUser($curUser)){
+        if ($this->loggableSocialUser($curUser)) {
+            Auth::guard('web')->login($curUser, true);
 
-            Auth::guard('web')->login($curUser, true);   
-        
-            return redirect(config('settings.clientBaseUrl') . '/social-callback?token=' . csrf_token() . '&status=success&message=success');        
-        }else{
-            return redirect(config('settings.clientBaseUrl') . '/social-callback?token=&status=false&message=Something went wrong while we processing the login. Please try again!');        
+            return redirect(config('settings.clientBaseUrl').'/social-callback?token='.csrf_token().'&status=success&message=success');
+        } else {
+            return redirect(config('settings.clientBaseUrl').'/social-callback?token=&status=false&message=Something went wrong while we processing the login. Please try again!');
         }
-
     }
 
     public function needsToCreateSocial(User $user, $service)
     {
-        return !$user->hasSocialLinked($service);
-    }    
+        return ! $user->hasSocialLinked($service);
+    }
 
     /**
      * @param $provider
@@ -354,7 +348,7 @@ class LoginController extends Controller
         if (! in_array($provider, ['facebook', 'google', 'github'])) {
             return response()->json(['error' => 'Please login using facebook or google or github'], 422);
         }
-    }   
+    }
 
     public function unique_random($table, $col, $chars = 16)
     {

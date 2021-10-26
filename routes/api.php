@@ -104,8 +104,8 @@ use App\Http\Controllers\Familyslugs\Show as FamilyslugsShow;
 use App\Http\Controllers\Familyslugs\Store as FamilyslugsStore;
 use App\Http\Controllers\Familyslugs\TableData as FamilyslugsTableData;
 use App\Http\Controllers\Familyslugs\Update as FamilyslugsUpdate;
-use App\Http\Controllers\Gedcom\Store as GedcomStore;
 use App\Http\Controllers\Gedcom\Export as GedcomExport;
+use App\Http\Controllers\Gedcom\Store as GedcomStore;
 use App\Http\Controllers\Geneanum\GeneanumController;
 use App\Http\Controllers\MediaObjects\Create as MediaobjectsCreate;
 use App\Http\Controllers\MediaObjects\Destroy as MediaobjectsDestroy;
@@ -318,8 +318,8 @@ use App\Http\Controllers\Subn\Show as SubnShow;
 use App\Http\Controllers\Subn\Store as SubnStore;
 use App\Http\Controllers\Subn\TableData as SubnTableData;
 use App\Http\Controllers\Subn\Update as SubnUpdate;
-use App\Http\Controllers\Trees\Show as TreesShow;
 use App\Http\Controllers\Trees\Manage as TreesManage;
+use App\Http\Controllers\Trees\Show as TreesShow;
 use App\Http\Controllers\Types\Create as TypesCreate;
 use App\Http\Controllers\Types\Destroy as TypesDestroy;
 use App\Http\Controllers\Types\Edit as TypesEdit;
@@ -1350,8 +1350,8 @@ Route::middleware(['web', 'auth'])
 
 Route::middleware(['auth', 'api'])
      ->group(function () {
-        Route::get('get_companies', [CompanyIndex::class, 'getCompany']);
-        Route::get('get_person', [PersonaliasIndex::class, 'getPerson']);
-        Route::post('gedcom-export', GedcomExport::class);
-        Route::get('trees/options', [TreesManage::class, 'getOptions']);
-    });
+         Route::get('get_companies', [CompanyIndex::class, 'getCompany']);
+         Route::get('get_person', [PersonaliasIndex::class, 'getPerson']);
+         Route::post('gedcom-export', GedcomExport::class);
+         Route::get('trees/options', [TreesManage::class, 'getOptions']);
+     });

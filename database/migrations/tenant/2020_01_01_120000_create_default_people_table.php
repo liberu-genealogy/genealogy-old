@@ -8,7 +8,7 @@ class CreateDefaultPeopleTable extends Migration
 {
     public function up()
     {
-        if (!Schema::hasTable('people')) {
+        if (! Schema::hasTable('people')) {
             Schema::create('people', function (Blueprint $table) {
                 $table->increments('id');
 

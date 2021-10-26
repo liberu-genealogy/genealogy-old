@@ -8,9 +8,9 @@ use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-class Store extends Controller {
-
-public function __invoke(Request $request)
+class Store extends Controller
+{
+    public function __invoke(Request $request)
     {
         if ($request->hasFile('file')) {
             if ($request->file('file')->isValid()) {
@@ -46,5 +46,4 @@ public function __invoke(Request $request)
 
         return response()->json(['Not uploaded'], 422);
     }
-
 }
