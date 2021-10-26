@@ -60,10 +60,11 @@ class Migration implements ShouldQueue
             '--force' => true,
         ]);
 
-        Artisan::call('db:seed', [
+       /**  Artisan::call('db:seed', [
             '--database' => Connections::Tenant,
             '--force' => true,
         ]);
+       **/
 
         $person = DB::connection(Connections::Tenant)->table('people')->insertGetId([
             'email'=>$this->email,
@@ -75,7 +76,7 @@ class Migration implements ShouldQueue
         // get role_id
         $role = 1;
 
-        $person = DB::connection(Connections::Tenant)->table('users')->insert([
+   /**     $person = DB::connection(Connections::Tenant)->table('users')->insert([
             'email' => $this->email,
             'password' => Hash::make($this->password),
             'person_id' => $person,
@@ -83,5 +84,6 @@ class Migration implements ShouldQueue
             'role_id' => $role,
             'is_active' => 1,
         ]);
+**/
     }
 }
