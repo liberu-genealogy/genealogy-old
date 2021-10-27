@@ -7,9 +7,12 @@ use App\Models\Dna;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use App\Traits\UniqueStringTrait;
 
 class Store extends Controller
 {
+    use UniqueStringTrait;
+
     public function __invoke(Request $request)
     {
         if ($request->hasFile('file')) {
@@ -19,7 +22,7 @@ class Store extends Controller
                     $file_name = 'dna_'.$request->file('file')->getClientOriginalName().uniqid().'.'.$request->file('file')->extension();
                     $request->file->storeAs('dna', $file_name);
                     define('STDIN', fopen('php://stdin', 'r'));
-                    $random_string = unique_random('dnas', 'variable_name', 5);
+                    $random_string = $this->unique_random('dnas', 'name', 5);
                     $var_name = 'var_'.$random_string;
                     $filename = 'app/dna/'.$file_name;
                     $user_id = $currentUser->id;
