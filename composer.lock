@@ -1238,16 +1238,16 @@
         },
         {
             "name": "familytree365/laravel-gedcom",
-            "version": "v3.2.10",
+            "version": "v3.2.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/familytree365/laravel-gedcom.git",
-                "reference": "5b3269256a5a23261ef526e30dbcc252be4eebf8"
+                "reference": "86e7269b2e00e96b9e8bc3d5d5a8d29f993f3c9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/familytree365/laravel-gedcom/zipball/5b3269256a5a23261ef526e30dbcc252be4eebf8",
-                "reference": "5b3269256a5a23261ef526e30dbcc252be4eebf8",
+                "url": "https://api.github.com/repos/familytree365/laravel-gedcom/zipball/86e7269b2e00e96b9e8bc3d5d5a8d29f993f3c9c",
+                "reference": "86e7269b2e00e96b9e8bc3d5d5a8d29f993f3c9c",
                 "shasum": ""
             },
             "require": {
@@ -1278,7 +1278,7 @@
             "description": "A package that converts gedcom files to Eloquent models",
             "support": {
                 "issues": "https://github.com/familytree365/laravel-gedcom/issues",
-                "source": "https://github.com/familytree365/laravel-gedcom/tree/v3.2.10"
+                "source": "https://github.com/familytree365/laravel-gedcom/tree/v3.2.11"
             },
             "funding": [
                 {
@@ -1286,7 +1286,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-10-26T00:37:15+00:00"
+            "time": "2021-10-28T14:43:48+00:00"
         },
         {
             "name": "familytree365/laravel-gelato",
