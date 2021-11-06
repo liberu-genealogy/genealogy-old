@@ -21,17 +21,16 @@ use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use Laravel\Socialite\Facades\Socialite;
 use LaravelEnso\Companies\Models\Company;
-use LaravelEnso\Core\Events\Login;
+use LaravelEnso\Core\Events\Login as Event;
+use LaravelEnso\Core\Traits\Login as Login;
 use LaravelEnso\Core\Traits\Logout;
-use LaravelEnso\Multitenancy\Enums\Connections;
-use LaravelEnso\Multitenancy\Services\Tenant;
-use LaravelEnso\Roles\Models\Role;
-use LaravelEnso\UserGroups\Models\UserGroup;
+
 
 class LoginController extends Controller
 {
-    use AuthenticatesUsers, ConnectionTrait, Logout {
+    use AuthenticatesUsers, ConnectionTrait, Logout, Login {
         Logout::logout insteadof AuthenticatesUsers;
+        Login::login insteadof AuthenticatesUsers;
     }
 
     // protected $redirectTo = '/';
@@ -62,7 +61,7 @@ class LoginController extends Controller
             Auth::guard('web')->login($this->user, $request->input('remember'));
         }
 
-        Login::dispatch($this->user, $request->ip(), $request->header('User-Agent'));
+        Event::dispatch($this->user, $request->ip(), $request->header('User-Agent'));
 
         return true;
     }
