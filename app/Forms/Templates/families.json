@@ -16,7 +16,8 @@
             "type": "input",
             "content": "text"
           }
-        },{
+        },
+	{
           "label": "Husband",
           "name": "husband_id",
           "value": null,
