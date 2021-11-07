@@ -21,7 +21,7 @@ class ValidateFamilyRequest extends FormRequest
             'husband_id' => 'required|exists:people,id',
             'wife_id' => 'required|exists:people,id',
             'child_id' => 'required|exists:people,id',
-            // 'type_id' => 'required|exists:types,id',
+             'type_id' => 'required|exists:types,id',
         ];
     }
 }
