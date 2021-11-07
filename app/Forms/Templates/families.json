@@ -1,11 +1,12 @@
 {
-  "routePrefix": "families",
+    "title" : "Create Family",
+    "icon": "location-arrow",
+    "routePrefix": "families",
   "tabs": true,
   "sections": [
-
     {
       "tab": "Family",
-      "columns": "3",
+      "columns": 3,
       "fields": [
         {
           "label": "Description",
