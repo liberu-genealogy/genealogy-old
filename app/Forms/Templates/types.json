@@ -1,7 +1,10 @@
 {
     "routePrefix": "types",
+    "title" : "Create Type",
+    "icon": "location-arrow",
+
     "sections": [{
-        "columns": "2",
+        "columns": 2,
         "fields": [{
             "label": "Name",
             "name": "name",
