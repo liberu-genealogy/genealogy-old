@@ -20,8 +20,8 @@ class ValidateFamilyRequest extends FormRequest
             'description' => 'required|max:500',
             'husband_id' => 'required|exists:people,id',
             'wife_id' => 'required|exists:people,id',
-            // 'child_id' => 'required|exists:people,id',
-            'type_id' => 'required|exists:types,id',
+            'child_id' => 'required|exists:people,id',
+            // 'type_id' => 'required|exists:types,id',
         ];
     }
 }
