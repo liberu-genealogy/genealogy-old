@@ -1238,16 +1238,16 @@
         },
         {
             "name": "familytree365/laravel-gedcom",
-            "version": "v3.2.10",
+            "version": "v3.2.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/familytree365/laravel-gedcom.git",
-                "reference": "5b3269256a5a23261ef526e30dbcc252be4eebf8"
+                "reference": "86e7269b2e00e96b9e8bc3d5d5a8d29f993f3c9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/familytree365/laravel-gedcom/zipball/5b3269256a5a23261ef526e30dbcc252be4eebf8",
-                "reference": "5b3269256a5a23261ef526e30dbcc252be4eebf8",
+                "url": "https://api.github.com/repos/familytree365/laravel-gedcom/zipball/86e7269b2e00e96b9e8bc3d5d5a8d29f993f3c9c",
+                "reference": "86e7269b2e00e96b9e8bc3d5d5a8d29f993f3c9c",
                 "shasum": ""
             },
             "require": {
@@ -1278,7 +1278,7 @@
             "description": "A package that converts gedcom files to Eloquent models",
             "support": {
                 "issues": "https://github.com/familytree365/laravel-gedcom/issues",
-                "source": "https://github.com/familytree365/laravel-gedcom/tree/v3.2.10"
+                "source": "https://github.com/familytree365/laravel-gedcom/tree/v3.2.11"
             },
             "funding": [
                 {
@@ -1286,7 +1286,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-10-26T00:37:15+00:00"
+            "time": "2021-10-28T14:43:48+00:00"
         },
         {
             "name": "familytree365/laravel-gelato",
@@ -3948,16 +3948,16 @@
         },
         {
             "name": "laravel-enso/helpers",
-            "version": "2.6.13",
+            "version": "2.6.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/helpers.git",
-                "reference": "09aa861f5667bec8756604872a6de63aa94680da"
+                "reference": "ea3bb1558e13a97480671f850c1ef39d2cfe187a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/helpers/zipball/09aa861f5667bec8756604872a6de63aa94680da",
-                "reference": "09aa861f5667bec8756604872a6de63aa94680da",
+                "url": "https://api.github.com/repos/laravel-enso/helpers/zipball/ea3bb1558e13a97480671f850c1ef39d2cfe187a",
+                "reference": "ea3bb1558e13a97480671f850c1ef39d2cfe187a",
                 "shasum": ""
             },
             "require": {
@@ -3997,9 +3997,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/helpers/issues",
-                "source": "https://github.com/laravel-enso/helpers/tree/2.6.13"
+                "source": "https://github.com/laravel-enso/helpers/tree/2.6.14"
             },
-            "time": "2021-10-21T11:21:59+00:00"
+            "time": "2021-10-27T08:49:05+00:00"
         },
         {
             "name": "laravel-enso/history-tracker",
@@ -5459,16 +5459,16 @@
         },
         {
             "name": "laravel-enso/upgrade",
-            "version": "2.4.0",
+            "version": "2.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/upgrade.git",
-                "reference": "54aa606be8938c316e98d09ccd92e935ecf24e04"
+                "reference": "0802030e0eb033c6f99a8fdf53ad4605f2bfb1c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/upgrade/zipball/54aa606be8938c316e98d09ccd92e935ecf24e04",
-                "reference": "54aa606be8938c316e98d09ccd92e935ecf24e04",
+                "url": "https://api.github.com/repos/laravel-enso/upgrade/zipball/0802030e0eb033c6f99a8fdf53ad4605f2bfb1c5",
+                "reference": "0802030e0eb033c6f99a8fdf53ad4605f2bfb1c5",
                 "shasum": ""
             },
             "require": {
@@ -5512,9 +5512,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/upgrade/issues",
-                "source": "https://github.com/laravel-enso/upgrade/tree/2.4.0"
+                "source": "https://github.com/laravel-enso/upgrade/tree/2.4.1"
             },
-            "time": "2021-09-26T09:19:35+00:00"
+            "time": "2021-10-26T14:46:55+00:00"
         },
         {
             "name": "laravel-enso/user-groups",
@@ -5759,16 +5759,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.68.0",
+            "version": "v8.68.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "08781be9c1e3f83b0c38ce9539e1dc4664e33a14"
+                "reference": "abe985ff1fb82dd04aab03bc1dc56e83fe61a59f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/08781be9c1e3f83b0c38ce9539e1dc4664e33a14",
-                "reference": "08781be9c1e3f83b0c38ce9539e1dc4664e33a14",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/abe985ff1fb82dd04aab03bc1dc56e83fe61a59f",
+                "reference": "abe985ff1fb82dd04aab03bc1dc56e83fe61a59f",
                 "shasum": ""
             },
             "require": {
@@ -5927,7 +5927,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-10-26T12:52:38+00:00"
+            "time": "2021-10-27T12:31:46+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -6008,16 +6008,16 @@
         },
         {
             "name": "laravel/sanctum",
-            "version": "v2.12.0",
+            "version": "v2.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sanctum.git",
-                "reference": "0b8664bb065f080e93c209f1ae1b78b5a9e13f15"
+                "reference": "e610647b04583ace6b30c8eb74cee0a866040420"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sanctum/zipball/0b8664bb065f080e93c209f1ae1b78b5a9e13f15",
-                "reference": "0b8664bb065f080e93c209f1ae1b78b5a9e13f15",
+                "url": "https://api.github.com/repos/laravel/sanctum/zipball/e610647b04583ace6b30c8eb74cee0a866040420",
+                "reference": "e610647b04583ace6b30c8eb74cee0a866040420",
                 "shasum": ""
             },
             "require": {
@@ -6068,7 +6068,7 @@
                 "issues": "https://github.com/laravel/sanctum/issues",
                 "source": "https://github.com/laravel/sanctum"
             },
-            "time": "2021-10-19T15:33:22+00:00"
+            "time": "2021-10-26T18:23:26+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -8311,24 +8311,24 @@
         },
         {
             "name": "pimple/pimple",
-            "version": "v3.4.0",
+            "version": "v3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silexphp/Pimple.git",
-                "reference": "86406047271859ffc13424a048541f4531f53601"
+                "reference": "a94b3a4db7fb774b3d78dad2315ddc07629e1bed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silexphp/Pimple/zipball/86406047271859ffc13424a048541f4531f53601",
-                "reference": "86406047271859ffc13424a048541f4531f53601",
+                "url": "https://api.github.com/repos/silexphp/Pimple/zipball/a94b3a4db7fb774b3d78dad2315ddc07629e1bed",
+                "reference": "a94b3a4db7fb774b3d78dad2315ddc07629e1bed",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2.5",
-                "psr/container": "^1.1"
+                "psr/container": "^1.1 || ^2.0"
             },
             "require-dev": {
-                "symfony/phpunit-bridge": "^5.0"
+                "symfony/phpunit-bridge": "^5.4@dev"
             },
             "type": "library",
             "extra": {
@@ -8358,9 +8358,9 @@
                 "dependency injection"
             ],
             "support": {
-                "source": "https://github.com/silexphp/Pimple/tree/v3.4.0"
+                "source": "https://github.com/silexphp/Pimple/tree/v3.5.0"
             },
-            "time": "2021-03-06T08:28:00+00:00"
+            "time": "2021-10-28T11:13:42+00:00"
         },
         {
             "name": "psr/container",
@@ -13422,16 +13422,16 @@
         },
         {
             "name": "composer/ca-bundle",
-            "version": "1.2.11",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "0b072d51c5a9c6f3412f7ea3ab043d6603cb2582"
+                "reference": "679333688725c7dd043ff35c547100ccf512f051"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/0b072d51c5a9c6f3412f7ea3ab043d6603cb2582",
-                "reference": "0b072d51c5a9c6f3412f7ea3ab043d6603cb2582",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/679333688725c7dd043ff35c547100ccf512f051",
+                "reference": "679333688725c7dd043ff35c547100ccf512f051",
                 "shasum": ""
             },
             "require": {
@@ -13478,7 +13478,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/ca-bundle/issues",
-                "source": "https://github.com/composer/ca-bundle/tree/1.2.11"
+                "source": "https://github.com/composer/ca-bundle/tree/1.3.0"
             },
             "funding": [
                 {
@@ -13494,7 +13494,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-09-25T20:32:43+00:00"
+            "time": "2021-10-27T07:42:23+00:00"
         },
         {
             "name": "composer/composer",
@@ -14165,16 +14165,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "2.15.0",
+            "version": "2.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "3ee6e94815462bcf09bca0efc1c9069685df8da3"
+                "reference": "23400e6cc565c9dcae2c53704b4de1c4870c0697"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/3ee6e94815462bcf09bca0efc1c9069685df8da3",
-                "reference": "3ee6e94815462bcf09bca0efc1c9069685df8da3",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/23400e6cc565c9dcae2c53704b4de1c4870c0697",
+                "reference": "23400e6cc565c9dcae2c53704b4de1c4870c0697",
                 "shasum": ""
             },
             "require": {
@@ -14238,7 +14238,7 @@
                 "issues": "https://github.com/facade/ignition/issues",
                 "source": "https://github.com/facade/ignition"
             },
-            "time": "2021-10-11T15:24:06+00:00"
+            "time": "2021-10-28T11:47:23+00:00"
         },
         {
             "name": "facade/ignition-contracts",
