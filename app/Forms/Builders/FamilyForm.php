@@ -23,7 +23,7 @@ class FamilyForm
         return $this->form
         ->options('husband_id', Person::all())
         ->options('wife_id', Person::all())
-        ->options('type_id', Type::all())
+ //       ->options('type_id', Type::all())
         ->options('child_id', Person::all())
         ->create();
     }
