@@ -4,7 +4,7 @@ namespace App\Forms\Builders;
 
 use App\Models\Family;
 use App\Models\Person;
-// use App\Models\Type;
+use App\Models\Type;
 use LaravelEnso\Forms\Services\Form;
 
 class FamilyForm
@@ -23,7 +23,7 @@ class FamilyForm
         return $this->form
         ->options('husband_id', Person::all())
         ->options('wife_id', Person::all())
- //       ->options('type_id', Type::all())
+        ->options('type_id', Type::all())
         ->options('child_id', Person::all())
         ->create();
     }
