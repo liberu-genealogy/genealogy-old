@@ -17,17 +17,6 @@
             "content": "text"
           }
         },{
-          "label": "Type",
-          "name": "type_id",
-          "value": null,
-          "meta": {
-            "type": "select",
-            "multiple": false,
-            "options": []
-          }
-        },
-
-        {
           "label": "Husband",
           "name": "husband_id",
           "value": null,
