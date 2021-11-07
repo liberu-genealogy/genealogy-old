@@ -29,7 +29,7 @@ use LaravelEnso\Multitenancy\Enums\Connections;
 
 class LoginController extends Controller
 {
-    use AuthenticatesUsers, ConnectionTrait, Logout, login{
+    use AuthenticatesUsers, ConnectionTrait, Logout, Login{
         Logout::logout insteadof AuthenticatesUsers;
         Login::login insteadof AuthenticatesUsers;
     }
