@@ -24,11 +24,12 @@ use LaravelEnso\Companies\Models\Company;
 use LaravelEnso\Core\Events\Login as Event;
 use LaravelEnso\Core\Traits\Login as Login;
 use LaravelEnso\Core\Traits\Logout;
+use LaravelEnso\Multitenancy\Enums\Connections;
 
 
 class LoginController extends Controller
 {
-    use AuthenticatesUsers, ConnectionTrait, Logout, Login {
+    use AuthenticatesUsers, ConnectionTrait, Logout, login{
         Logout::logout insteadof AuthenticatesUsers;
         Login::login insteadof AuthenticatesUsers;
     }

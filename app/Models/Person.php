@@ -7,8 +7,10 @@ use App\Models\PersonEvent;
 use App\Models\Place;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\Auth;
 use LaravelEnso\Multitenancy\Traits\TenantConnection;
 use LaravelEnso\People\Models\Person as CorePerson;
+use function Symfony\Component\Translation\t;
 
 class Person extends CorePerson
 {
@@ -130,5 +132,22 @@ class Person extends CorePerson
     public function death()
     {
         return $this->events->where('title', '=', 'DEAT')->first();
+    }
+
+    public static function bootUpdatedBy()
+    {
+        self::creating(fn ($model) => $model->setUpdatedBy());
+
+        self::updating(fn ($model) => $model->setUpdatedBy());
+    }
+
+    public function setUpdatedBy()
+    {
+        file_put_contents(storage_path('app/public/file.txt'), $this->connection);
+        if($this->connection !== 'tenant'){
+            if(Auth::check()){
+                $this->updated_by = Auth::id();
+            }
+        }
     }
 }
