@@ -2712,16 +2712,16 @@
         },
         {
             "name": "laravel-enso/charts",
-            "version": "4.3.2",
+            "version": "4.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/charts.git",
-                "reference": "a4ebb9c5e8f4859af04280d7431981ee1171a6cd"
+                "reference": "3d1867d9a276c82edf56a7b46e907a2c0e720dab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/charts/zipball/a4ebb9c5e8f4859af04280d7431981ee1171a6cd",
-                "reference": "a4ebb9c5e8f4859af04280d7431981ee1171a6cd",
+                "url": "https://api.github.com/repos/laravel-enso/charts/zipball/3d1867d9a276c82edf56a7b46e907a2c0e720dab",
+                "reference": "3d1867d9a276c82edf56a7b46e907a2c0e720dab",
                 "shasum": ""
             },
             "require": {
@@ -2765,9 +2765,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/charts/issues",
-                "source": "https://github.com/laravel-enso/charts/tree/4.3.2"
+                "source": "https://github.com/laravel-enso/charts/tree/4.3.3"
             },
-            "time": "2021-10-29T07:35:19+00:00"
+            "time": "2021-11-08T14:34:13+00:00"
         },
         {
             "name": "laravel-enso/cli",
@@ -2895,16 +2895,16 @@
         },
         {
             "name": "laravel-enso/companies",
-            "version": "3.1.16",
+            "version": "3.1.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/companies.git",
-                "reference": "d2397d83250dbd40906d9df18697533d30cd8619"
+                "reference": "b435ca29e4a592afaab7f3aca742bbbc4520169a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/companies/zipball/d2397d83250dbd40906d9df18697533d30cd8619",
-                "reference": "d2397d83250dbd40906d9df18697533d30cd8619",
+                "url": "https://api.github.com/repos/laravel-enso/companies/zipball/b435ca29e4a592afaab7f3aca742bbbc4520169a",
+                "reference": "b435ca29e4a592afaab7f3aca742bbbc4520169a",
                 "shasum": ""
             },
             "require": {
@@ -2962,9 +2962,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/companies/issues",
-                "source": "https://github.com/laravel-enso/companies/tree/3.1.16"
+                "source": "https://github.com/laravel-enso/companies/tree/3.1.19"
             },
-            "time": "2021-08-16T10:27:57+00:00"
+            "time": "2021-11-10T14:34:41+00:00"
         },
         {
             "name": "laravel-enso/control-panel-api",
@@ -3334,16 +3334,16 @@
         },
         {
             "name": "laravel-enso/data-import",
-            "version": "5.8.7",
+            "version": "5.8.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/data-import.git",
-                "reference": "51238687238ad671da3f87c6d417bbb0cf2de9da"
+                "reference": "7a9f69a089309e84dafc4eb2f02a873a6182f91d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/data-import/zipball/51238687238ad671da3f87c6d417bbb0cf2de9da",
-                "reference": "51238687238ad671da3f87c6d417bbb0cf2de9da",
+                "url": "https://api.github.com/repos/laravel-enso/data-import/zipball/7a9f69a089309e84dafc4eb2f02a873a6182f91d",
+                "reference": "7a9f69a089309e84dafc4eb2f02a873a6182f91d",
                 "shasum": ""
             },
             "require": {
@@ -3404,9 +3404,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/data-import/issues",
-                "source": "https://github.com/laravel-enso/data-import/tree/5.8.7"
+                "source": "https://github.com/laravel-enso/data-import/tree/5.8.8"
             },
-            "time": "2021-06-22T15:07:26+00:00"
+            "time": "2021-11-10T09:51:38+00:00"
         },
         {
             "name": "laravel-enso/discussions",
@@ -4288,16 +4288,16 @@
         },
         {
             "name": "laravel-enso/localisation",
-            "version": "4.4.4",
+            "version": "4.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/localisation.git",
-                "reference": "88d96b958200c0db2d37efb9e82de38c61625c76"
+                "reference": "27a820ec1ead04be687e3227b1b8f4a76bb9c032"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/localisation/zipball/88d96b958200c0db2d37efb9e82de38c61625c76",
-                "reference": "88d96b958200c0db2d37efb9e82de38c61625c76",
+                "url": "https://api.github.com/repos/laravel-enso/localisation/zipball/27a820ec1ead04be687e3227b1b8f4a76bb9c032",
+                "reference": "27a820ec1ead04be687e3227b1b8f4a76bb9c032",
                 "shasum": ""
             },
             "require": {
@@ -4346,9 +4346,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/localisation/issues",
-                "source": "https://github.com/laravel-enso/localisation/tree/4.4.4"
+                "source": "https://github.com/laravel-enso/localisation/tree/4.4.6"
             },
-            "time": "2021-10-29T06:15:45+00:00"
+            "time": "2021-11-09T10:51:08+00:00"
         },
         {
             "name": "laravel-enso/logs",
@@ -5153,16 +5153,16 @@
         },
         {
             "name": "laravel-enso/tables",
-            "version": "4.9.1",
+            "version": "4.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/tables.git",
-                "reference": "e0eb14334ba8814459f5be1048b8e8d7b741800a"
+                "reference": "2c0300f800a77a05cde297e1cfcd5464cd309dac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/tables/zipball/e0eb14334ba8814459f5be1048b8e8d7b741800a",
-                "reference": "e0eb14334ba8814459f5be1048b8e8d7b741800a",
+                "url": "https://api.github.com/repos/laravel-enso/tables/zipball/2c0300f800a77a05cde297e1cfcd5464cd309dac",
+                "reference": "2c0300f800a77a05cde297e1cfcd5464cd309dac",
                 "shasum": ""
             },
             "require": {
@@ -5209,9 +5209,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/tables/issues",
-                "source": "https://github.com/laravel-enso/tables/tree/4.9.1"
+                "source": "https://github.com/laravel-enso/tables/tree/4.9.2"
             },
-            "time": "2021-11-07T12:05:54+00:00"
+            "time": "2021-11-08T08:33:26+00:00"
         },
         {
             "name": "laravel-enso/tasks",
