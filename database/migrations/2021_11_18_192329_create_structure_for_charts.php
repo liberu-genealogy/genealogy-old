@@ -13,7 +13,9 @@ class CreateStructureForCharts extends Migration
     ];
 
     protected array $menu = [
-        'name' => 'Charts', 'icon' => 'users', 'route' => 'tree.index', 'order_index' => 999, 'has_children' => false,
+        'name' => 'Pidegree-chart', 'icon' => 'users', 'route' => 'tree.show', 'order_index' => 999, 'has_children' => false,
+        'name' => 'Fan-chart', 'icon' => 'users', 'route' => 'tree.show', 'order_index' => 999, 'has_children' => false,
+        'name' => 'Decendent-chart', 'icon' => 'users', 'route' => 'tree.show', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected ?string $parentMenu = 'Trees';
