@@ -82,10 +82,20 @@ jobs:
         run: |
           sudo composer install
           php artisan migrate --force
+  laravel-optimize:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+      - name: 'Optimize laravel'
+        run: |
+          php artisan optimize
   deploy:
     runs-on: ubuntu-20.04
     if: ${{ github.event_name == 'deployment' || github.event_name == 'push' }}
-    needs: [phpunit, phpcpd, migration, security, php-insights]
+    needs: [phpunit, phpcpd, migration, security, php-insights, laravel-optimize]
     steps:
       - uses: actions/checkout@v2
       - name: 'Trig envoyer'
