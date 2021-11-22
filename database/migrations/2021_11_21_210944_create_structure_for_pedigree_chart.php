@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStructureForPidegreeChart extends Migration
+class CreateStructureForPedigreeChart extends Migration
 {
     protected array $permissions = [
         ['name' => 'tree.index', 'description' => 'Show index for tree', 'is_default' => true],
