@@ -7347,16 +7347,16 @@
         },
         {
             "name": "nette/utils",
-            "version": "v3.2.5",
+            "version": "v3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "9cd80396ca58d7969ab44fc7afcf03624dfa526e"
+                "reference": "2f261e55bd6a12057442045bf2c249806abc1d02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/9cd80396ca58d7969ab44fc7afcf03624dfa526e",
-                "reference": "9cd80396ca58d7969ab44fc7afcf03624dfa526e",
+                "url": "https://api.github.com/repos/nette/utils/zipball/2f261e55bd6a12057442045bf2c249806abc1d02",
+                "reference": "2f261e55bd6a12057442045bf2c249806abc1d02",
                 "shasum": ""
             },
             "require": {
@@ -7367,7 +7367,7 @@
             },
             "require-dev": {
                 "nette/tester": "~2.0",
-                "phpstan/phpstan": "^0.12",
+                "phpstan/phpstan": "^1.0",
                 "tracy/tracy": "^2.3"
             },
             "suggest": {
@@ -7426,9 +7426,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/utils/issues",
-                "source": "https://github.com/nette/utils/tree/v3.2.5"
+                "source": "https://github.com/nette/utils/tree/v3.2.6"
             },
-            "time": "2021-09-20T10:50:11+00:00"
+            "time": "2021-11-24T15:47:23+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -9562,16 +9562,16 @@
         },
         {
             "name": "spatie/laravel-ray",
-            "version": "1.26.2",
+            "version": "1.26.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-ray.git",
-                "reference": "11d0042f3d3007d6a54d0fb55e4f0d17b4181000"
+                "reference": "ec971959bc8e513cbfa1163e6af030cdaa5ce7bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-ray/zipball/11d0042f3d3007d6a54d0fb55e4f0d17b4181000",
-                "reference": "11d0042f3d3007d6a54d0fb55e4f0d17b4181000",
+                "url": "https://api.github.com/repos/spatie/laravel-ray/zipball/ec971959bc8e513cbfa1163e6af030cdaa5ce7bf",
+                "reference": "ec971959bc8e513cbfa1163e6af030cdaa5ce7bf",
                 "shasum": ""
             },
             "require": {
@@ -9628,7 +9628,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-ray/issues",
-                "source": "https://github.com/spatie/laravel-ray/tree/1.26.2"
+                "source": "https://github.com/spatie/laravel-ray/tree/1.26.3"
             },
             "funding": [
                 {
@@ -9640,7 +9640,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2021-11-15T08:21:15+00:00"
+            "time": "2021-11-22T15:57:41+00:00"
         },
         {
             "name": "spatie/macroable",
@@ -9694,16 +9694,16 @@
         },
         {
             "name": "spatie/ray",
-            "version": "1.30.4",
+            "version": "1.31.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/ray.git",
-                "reference": "a8745c41bf8457680d7bd58904d16c0ad32a1ac7"
+                "reference": "e5374378f00ee2419dae70f95bb640d1782e3c03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/ray/zipball/a8745c41bf8457680d7bd58904d16c0ad32a1ac7",
-                "reference": "a8745c41bf8457680d7bd58904d16c0ad32a1ac7",
+                "url": "https://api.github.com/repos/spatie/ray/zipball/e5374378f00ee2419dae70f95bb640d1782e3c03",
+                "reference": "e5374378f00ee2419dae70f95bb640d1782e3c03",
                 "shasum": ""
             },
             "require": {
@@ -9753,7 +9753,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/ray/issues",
-                "source": "https://github.com/spatie/ray/tree/1.30.4"
+                "source": "https://github.com/spatie/ray/tree/1.31.0"
             },
             "funding": [
                 {
@@ -9765,7 +9765,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2021-11-11T09:43:41+00:00"
+            "time": "2021-11-17T11:59:32+00:00"
         },
         {
             "name": "stripe/stripe-php",
@@ -10669,16 +10669,16 @@
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v5.3.11",
+            "version": "v5.3.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "cdccfda41510821c08983542e83c4b3d97357c77"
+                "reference": "f53025cd1d91b1af85d6d9e17eefa98e31ee953b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/cdccfda41510821c08983542e83c4b3d97357c77",
-                "reference": "cdccfda41510821c08983542e83c4b3d97357c77",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/f53025cd1d91b1af85d6d9e17eefa98e31ee953b",
+                "reference": "f53025cd1d91b1af85d6d9e17eefa98e31ee953b",
                 "shasum": ""
             },
             "require": {
@@ -10761,7 +10761,7 @@
             "description": "Provides a structured process for converting a Request into a Response",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/http-kernel/tree/v5.3.11"
+                "source": "https://github.com/symfony/http-kernel/tree/v5.3.12"
             },
             "funding": [
                 {
@@ -10777,7 +10777,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-11-22T14:24:23+00:00"
+            "time": "2021-11-24T08:46:46+00:00"
         },
         {
             "name": "symfony/mime",
@@ -11907,16 +11907,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v5.3.11",
+            "version": "v5.3.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "6c99204de85d04ca17f16c466fc61896960b0636"
+                "reference": "e498803a6e95ede78e9d5646ad32a2255c033a6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/6c99204de85d04ca17f16c466fc61896960b0636",
-                "reference": "6c99204de85d04ca17f16c466fc61896960b0636",
+                "url": "https://api.github.com/repos/symfony/process/zipball/e498803a6e95ede78e9d5646ad32a2255c033a6a",
+                "reference": "e498803a6e95ede78e9d5646ad32a2255c033a6a",
                 "shasum": ""
             },
             "require": {
@@ -11949,7 +11949,7 @@
             "description": "Executes commands in sub-processes",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/process/tree/v5.3.11"
+                "source": "https://github.com/symfony/process/tree/v5.3.12"
             },
             "funding": [
                 {
@@ -11965,7 +11965,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-11-17T12:16:12+00:00"
+            "time": "2021-11-22T22:39:13+00:00"
         },
         {
             "name": "symfony/psr-http-message-bridge",
@@ -13154,16 +13154,16 @@
         },
         {
             "name": "zbateson/mb-wrapper",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zbateson/mb-wrapper.git",
-                "reference": "547d73a04912728cf0bb772d43e5a17e63cdf168"
+                "reference": "bfd45fb3e2a8cf4c496b2c3ebd63b5f815721498"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zbateson/mb-wrapper/zipball/547d73a04912728cf0bb772d43e5a17e63cdf168",
-                "reference": "547d73a04912728cf0bb772d43e5a17e63cdf168",
+                "url": "https://api.github.com/repos/zbateson/mb-wrapper/zipball/bfd45fb3e2a8cf4c496b2c3ebd63b5f815721498",
+                "reference": "bfd45fb3e2a8cf4c496b2c3ebd63b5f815721498",
                 "shasum": ""
             },
             "require": {
@@ -13209,7 +13209,7 @@
             ],
             "support": {
                 "issues": "https://github.com/zbateson/mb-wrapper/issues",
-                "source": "https://github.com/zbateson/mb-wrapper/tree/1.1.0"
+                "source": "https://github.com/zbateson/mb-wrapper/tree/1.1.1"
             },
             "funding": [
                 {
@@ -13217,7 +13217,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-11-09T18:05:07+00:00"
+            "time": "2021-11-22T21:59:45+00:00"
         },
         {
             "name": "zbateson/stream-decorators",
