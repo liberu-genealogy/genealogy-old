@@ -14,11 +14,11 @@ class Update extends Controller
     {
         $family = Family::find($family);
 
-        if($family){
+        if ($family) {
             $family->update($request->validated());
             $family->children()->update(['child_in_family_id' => null]);
-            $family->children()->saveMany(Person::whereIn('id',$request->get('child_id', []))->get());
-        }else{
+            $family->children()->saveMany(Person::whereIn('id', $request->get('child_id', []))->get());
+        } else {
             //return with 404
         }
 

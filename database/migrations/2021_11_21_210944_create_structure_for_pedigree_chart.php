@@ -11,7 +11,7 @@ class CreateStructureForPedigreeChart extends Migration
 
         ['name' => 'tree.show', 'description' => 'show tree', 'is_default' => true],
         ['name' => 'tree.store', 'description' => 'Store a new tree', 'is_default' => true],
-     
+
     ];
 
     protected array $menu = [
