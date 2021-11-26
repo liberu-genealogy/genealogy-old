@@ -5,7 +5,7 @@ use LaravelEnso\Migrator\Database\Migration;
 class CreateStructureForCharts extends Migration
 {
     protected array $permissions = [
-     
+
     ];
 
     protected array $menu = [
