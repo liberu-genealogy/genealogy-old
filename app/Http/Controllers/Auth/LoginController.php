@@ -27,7 +27,6 @@ use LaravelEnso\Core\Traits\Logout;
 use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\UserGroups\Models\UserGroup;
 
-
 class LoginController extends Controller
 {
     use AuthenticatesUsers, ConnectionTrait, Logout, Login{
