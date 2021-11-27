@@ -22,7 +22,7 @@ use Illuminate\Validation\ValidationException;
 use Laravel\Socialite\Facades\Socialite;
 use LaravelEnso\Companies\Models\Company;
 use LaravelEnso\Core\Events\Login as Event;
-use LaravelEnso\Core\Traits\Login as Login;
+use App\Traits\Login as Login;
 use LaravelEnso\Core\Traits\Logout;
 use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\UserGroups\Models\UserGroup;
