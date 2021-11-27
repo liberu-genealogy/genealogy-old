@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Dna;
 
 use App\Jobs\DnaMatching;
 use App\Models\Dna;
+use App\Traits\UniqueStringTrait;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use App\Traits\UniqueStringTrait;
 
 class Store extends Controller
 {

@@ -10,6 +10,7 @@ class Show extends Controller
     public function __invoke($family)
     {
         $family = Family::find($family);
+
         return ['family' => $family];
     }
 }

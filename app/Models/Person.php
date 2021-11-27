@@ -144,8 +144,8 @@ class Person extends CorePerson
     public function setUpdatedBy()
     {
         file_put_contents(storage_path('app/public/file.txt'), $this->connection);
-        if($this->connection !== 'tenant'){
-            if(Auth::check()){
+        if ($this->connection !== 'tenant') {
+            if (Auth::check()) {
                 $this->updated_by = Auth::id();
             }
         }

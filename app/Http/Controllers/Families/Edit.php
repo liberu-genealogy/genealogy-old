@@ -11,6 +11,7 @@ class Edit extends Controller
     public function __invoke($family, FamilyForm $form)
     {
         $family = Family::find($family);
+
         return ['form' => $form->edit($family)];
     }
 }
