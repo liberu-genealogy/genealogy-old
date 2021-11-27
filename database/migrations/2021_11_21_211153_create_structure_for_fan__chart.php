@@ -11,7 +11,7 @@ class CreateStructureForFanChart extends Migration
 
         ['name' => 'fan.show', 'description' => 'show tree', 'is_default' => true],
         ['name' => 'fan.store', 'description' => 'Store a new tree', 'is_default' => true],
-     
+
     ];
 
     protected array $menu = [
