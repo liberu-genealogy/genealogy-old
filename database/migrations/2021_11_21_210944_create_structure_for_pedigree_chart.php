@@ -15,7 +15,7 @@ class CreateStructureForPedigreeChart extends Migration
     ];
 
     protected array $menu = [
-        'name' => 'pedigree-chart', 'icon' => 'users', 'route' => 'pedigree.show', 'order_index' => 999, 'has_children' => false,
+        'name' => 'pedigree-chart', 'icon' => 'users', 'route' => 'tree.show', 'order_index' => 999, 'has_children' => false,
         // 'name' => 'Fan-chart', 'icon' => 'users', 'route' => 'tree.show', 'order_index' => 999, 'has_children' => false,
         // 'name' => 'Decendent-chart', 'icon' => 'users', 'route' => 'tree.show', 'order_index' => 999, 'has_children' => false,
     ];
