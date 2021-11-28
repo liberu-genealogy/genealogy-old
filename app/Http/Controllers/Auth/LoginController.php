@@ -22,13 +22,13 @@ use Illuminate\Validation\ValidationException;
 use Laravel\Socialite\Facades\Socialite;
 use LaravelEnso\Companies\Models\Company;
 use LaravelEnso\Core\Events\Login as Event;
-use LaravelEnso\Core\Traits\Login as Login;
+use App\Traits\Login as Login;
 use LaravelEnso\Core\Traits\Logout;
 use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\UserGroups\Models\UserGroup;
 
-class LoginController extends Controller
-{
+
+class LoginController extends Controller {
     use AuthenticatesUsers, ConnectionTrait, Logout, Login{
         Logout::logout insteadof AuthenticatesUsers;
         Login::login insteadof AuthenticatesUsers;
