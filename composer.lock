@@ -6199,16 +6199,16 @@
         },
         {
             "name": "laravel/telescope",
-            "version": "v4.6.7",
+            "version": "v4.6.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "505623831a5b35454491add4a4a2fd0af34d21b9"
+                "reference": "85cf170f90f32656cdde6f4ce1a96514e7edbdbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/505623831a5b35454491add4a4a2fd0af34d21b9",
-                "reference": "505623831a5b35454491add4a4a2fd0af34d21b9",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/85cf170f90f32656cdde6f4ce1a96514e7edbdbe",
+                "reference": "85cf170f90f32656cdde6f4ce1a96514e7edbdbe",
                 "shasum": ""
             },
             "require": {
@@ -6223,6 +6223,9 @@
             },
             "type": "library",
             "extra": {
+                "branch-alias": {
+                    "dev-master": "4.x-dev"
+                },
                 "laravel": {
                     "providers": [
                         "Laravel\\Telescope\\TelescopeServiceProvider"
@@ -6257,9 +6260,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/telescope/issues",
-                "source": "https://github.com/laravel/telescope/tree/v4.6.7"
+                "source": "https://github.com/laravel/telescope/tree/v4.6.8"
             },
-            "time": "2021-11-16T17:04:00+00:00"
+            "time": "2021-11-30T16:09:16+00:00"
         },
         {
             "name": "laravel/tinker",
