@@ -9,6 +9,7 @@ use App\Models\Person;
 use App\Models\User;
 use App\Models\UserSocial;
 use App\Traits\ConnectionTrait;
+use App\Traits\Login as Login;
 use Exception;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -22,9 +23,9 @@ use Illuminate\Validation\ValidationException;
 use Laravel\Socialite\Facades\Socialite;
 use LaravelEnso\Companies\Models\Company;
 use LaravelEnso\Core\Events\Login as Event;
-use App\Traits\Login as Login;
 use LaravelEnso\Core\Traits\Logout;
 use LaravelEnso\Multitenancy\Enums\Connections;
+use LaravelEnso\Roles\Models\Role;
 use LaravelEnso\UserGroups\Models\UserGroup;
 
 
