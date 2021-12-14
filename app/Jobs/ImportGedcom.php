@@ -63,8 +63,12 @@ class ImportGedcom implements ShouldQueue
             $key = 'database.connections.tenant.database';
             $value = $this->db;
             config([$key => $value]);
-            $this->resetDatabase($value);
-        }
+            Tenant::set($this->tenant);
+            $company = Tenant::get();
+            $db = Connections::Tenant.$company->id;
+	    MigrationFresh::dispatch($db);
+
+    }
 
         ImportJob::on($this->conn)->create(compact('user_id', 'slug', 'status'));
 
@@ -102,8 +106,4 @@ class ImportGedcom implements ShouldQueue
     }
     **/
     
-    public function resetDatabase()
-    {
-            MigrationFresh::dispatch($this->value);
-    }
 }
