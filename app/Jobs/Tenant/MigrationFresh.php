@@ -33,9 +33,6 @@ class MigrationFresh implements ShouldQueue
     {
         //
         $this->tenant = $tenant;
-        $this->name = $name;
-        $this->email = $email;
-        $this->password = $password;
         // $this->queue = 'sync';
     }
 
@@ -52,7 +49,7 @@ class MigrationFresh implements ShouldQueue
         $company = Tenant::get();
         $db = Connections::Tenant.$company->id;
         Artisan::call('migrate:fresh', [
-            '--database' => Connections::Tenant,
+            '--database' => $company,
             '--path' => '/database/migrations/tenant',
             '--force' => true,
         ]);
