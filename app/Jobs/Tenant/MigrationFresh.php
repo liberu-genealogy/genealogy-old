@@ -33,9 +33,6 @@ class MigrationFresh implements ShouldQueue
     {
         //
         $this->tenant = $tenant;
-        $this->name = $name;
-        $this->email = $email;
-        $this->password = $password;
         // $this->queue = 'sync';
     }
 
