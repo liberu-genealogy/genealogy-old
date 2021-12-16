@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Events\GedComProgressSent;
+use App\Jobs\Tenant\MigrationFresh;
 use App\Models\ImportJob;
 use App\Service\Tenant;
 use FamilyTree365\LaravelGedcom\Utils\GedcomParser;
@@ -16,6 +17,7 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use LaravelEnso\Companies\Models\Company;
 use LaravelEnso\Multitenancy\Enums\Connections;
 
 class ImportGedcom implements ShouldQueue
@@ -61,8 +63,12 @@ class ImportGedcom implements ShouldQueue
             $key = 'database.connections.tenant.database';
             $value = $this->db;
             config([$key => $value]);
-            $this->resetDatabase();
-        }
+            Tenant::set($this->tenant);
+            $company = Tenant::get();
+            $db = Connections::Tenant.$company->id;
+	   
+
+    }
 
         ImportJob::on($this->conn)->create(compact('user_id', 'slug', 'status'));
 
@@ -83,6 +89,7 @@ class ImportGedcom implements ShouldQueue
         return 0;
     }
 
+    /**
     public function resetDatabase()
     {
         DB::statement('SET foreign_key_checks=0');
@@ -97,4 +104,11 @@ class ImportGedcom implements ShouldQueue
         }
         DB::statement('SET foreign_key_checks=1');
     }
+    **/
+
+    public function resetDatabase()
+    {
+        MigrationFresh::dispatch($this->db);
+    }
+    
 }
