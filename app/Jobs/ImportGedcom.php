@@ -66,7 +66,7 @@ class ImportGedcom implements ShouldQueue
             Tenant::set($this->tenant);
             $company = Tenant::get();
             $db = Connections::Tenant.$company->id;
-	    MigrationFresh::dispatch($db);
+	   
 
     }
 
@@ -105,5 +105,10 @@ class ImportGedcom implements ShouldQueue
         DB::statement('SET foreign_key_checks=1');
     }
     **/
+
+    public function resetDatabase()
+    {
+        MigrationFresh::dispatch($this->db);
+    }
     
 }
