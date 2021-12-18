@@ -66,7 +66,12 @@ class ImportGedcom implements ShouldQueue
             Tenant::set($this->tenant);
             $company = Tenant::get();
             $db = Connections::Tenant.$company->id;
-	   
+
+            Artisan::call('migrate:fresh', [
+                '--database' => $company,
+                '--path' => '/database/migrations/tenant',
+                '--force' => true,
+            ]);
 
     }
 
@@ -108,7 +113,7 @@ class ImportGedcom implements ShouldQueue
 
     public function resetDatabase()
     {
-        MigrationFresh::dispatch($this->db);
+        // MigrationFresh::dispatch($this->db);
     }
     
 }
