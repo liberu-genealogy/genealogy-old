@@ -68,7 +68,7 @@ class ImportGedcom implements ShouldQueue
             $db = Connections::Tenant.$company->id;
 
             Artisan::call('migrate:fresh', [
-                '--database' => $company,
+                '--database' => 'tenant',
                 '--path' => '/database/migrations/tenant',
                 '--force' => true,
             ]);
