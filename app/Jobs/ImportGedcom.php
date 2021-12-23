@@ -72,8 +72,7 @@ class ImportGedcom implements ShouldQueue
                 '--path' => '/database/migrations/tenant',
                 '--force' => true,
             ]);
-
-    }
+        }
 
         ImportJob::on($this->conn)->create(compact('user_id', 'slug', 'status'));
 
@@ -95,25 +94,23 @@ class ImportGedcom implements ShouldQueue
     }
 
     /**
-    public function resetDatabase()
-    {
-        DB::statement('SET foreign_key_checks=0');
-        $databaseName = $this->db;
-        $tables = DB::select("SELECT * FROM information_schema.tables WHERE table_schema = '$databaseName'");
-        foreach ($tables as $table) {
-            $name = $table->TABLE_NAME;
-            if ($name == 'migrations') {
-                continue;
-            }
-            DB::table($name)->truncate();
-        }
-        DB::statement('SET foreign_key_checks=1');
-    }
-    **/
-
+     * public function resetDatabase()
+     * {
+     * DB::statement('SET foreign_key_checks=0');
+     * $databaseName = $this->db;
+     * $tables = DB::select("SELECT * FROM information_schema.tables WHERE table_schema = '$databaseName'");
+     * foreach ($tables as $table) {
+     * $name = $table->TABLE_NAME;
+     * if ($name == 'migrations') {
+     * continue;
+     * }
+     * DB::table($name)->truncate();
+     * }
+     * DB::statement('SET foreign_key_checks=1');
+     * }.
+     **/
     public function resetDatabase()
     {
         // MigrationFresh::dispatch($this->db);
     }
-    
 }
