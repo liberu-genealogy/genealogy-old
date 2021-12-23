@@ -48,6 +48,7 @@ class MigrationFresh implements ShouldQueue
         Tenant::set($this->tenant);
         $company = Tenant::get();
         $db = Connections::Tenant.$company->id;
+
         Artisan::call('migrate:fresh', [
             '--database' => $company,
             '--path' => '/database/migrations/tenant',
