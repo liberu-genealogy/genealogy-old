@@ -433,7 +433,7 @@ use LaravelEnso\People\Http\Controllers\Update as PeopleUpdate;
  * });
  *
  **/
-Route::namespace('Auth')
+Route::namespace ('Auth')
     ->middleware('api')
     ->group(function () {
         Route::middleware('guest')->group(function () {
@@ -486,7 +486,7 @@ Route::middleware(['web', 'auth', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('citations')
             ->as('citations.')
             ->group(function () {
@@ -509,7 +509,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
     });
 Route::middleware(['api', 'auth', 'core'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('dna')
             ->as('dna.')
             ->group(function () {
@@ -532,7 +532,7 @@ Route::middleware(['api', 'auth', 'core'])
     });
 Route::middleware(['api', 'auth', 'core'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('dnamatching')
             ->as('dnamatching.')
             ->group(function () {
@@ -547,7 +547,7 @@ Route::middleware(['api', 'auth', 'core'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('families')
             ->as('families.')
             ->group(function () {
@@ -571,7 +571,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('notes')
             ->as('notes.')
             ->group(function () {
@@ -595,7 +595,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('places')
             ->as('places.')
             ->group(function () {
@@ -619,7 +619,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('repositories')
             ->as('repositories.')
             ->group(function () {
@@ -643,7 +643,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('sources')
             ->as('sources.')
             ->group(function () {
@@ -667,7 +667,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('types')
             ->as('types.')
             ->group(function () {
@@ -691,9 +691,21 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('trees')
             ->as('trees.')
+            ->group(function () {
+                Route::get('show', TreesShow::class)->name('show');
+            });
+        Route::namespace ('')
+            ->prefix('fanchart')
+            ->as('fanchart.')
+            ->group(function () {
+                Route::get('show', TreesShow::class)->name('show');
+            });
+        Route::namespace ('')
+            ->prefix('decendent')
+            ->as('decendent.')
             ->group(function () {
                 Route::get('show', TreesShow::class)->name('show');
             });
@@ -701,7 +713,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('authors')
             ->as('authors.')
             ->group(function () {
@@ -724,7 +736,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
     });
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('publications')
             ->as('publications.')
             ->group(function () {
@@ -748,7 +760,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('gedcom')
             ->as('gedcom.')
             ->group(function () {
@@ -782,7 +794,7 @@ Route::prefix('geneanum')->group(function () {
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('mediaobjects')
             ->as('mediaobjects.')
             ->group(function () {
@@ -806,7 +818,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('addrs')
             ->as('addrs.')
             ->group(function () {
@@ -830,7 +842,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('chan')
             ->as('chan.')
             ->group(function () {
@@ -854,7 +866,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('familyevents')
             ->as('familyevents.')
             ->group(function () {
@@ -878,7 +890,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('familyslugs')
             ->as('familyslugs.')
             ->group(function () {
@@ -902,7 +914,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('personalias')
             ->as('personalias.')
             ->group(function () {
@@ -926,7 +938,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('personanci')
             ->as('personanci.')
             ->group(function () {
@@ -950,7 +962,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('personasso')
             ->as('personasso.')
             ->group(function () {
@@ -974,7 +986,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('personevent')
             ->as('personevent.')
             ->group(function () {
@@ -998,7 +1010,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('personlds')
             ->as('personlds.')
             ->group(function () {
@@ -1022,7 +1034,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('refn')
             ->as('refn.')
             ->group(function () {
@@ -1046,7 +1058,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('sourcedata')
             ->as('sourcedata.')
             ->group(function () {
@@ -1070,7 +1082,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('sourcedataeven')
             ->as('sourcedataeven.')
             ->group(function () {
@@ -1094,7 +1106,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('sourcerefeven')
             ->as('sourcerefeven.')
             ->group(function () {
@@ -1118,7 +1130,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('subm')
             ->as('subm.')
             ->group(function () {
@@ -1142,7 +1154,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('subn')
             ->as('subn.')
             ->group(function () {
@@ -1166,7 +1178,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
-        Route::namespace('')
+        Route::namespace ('')
             ->prefix('personsubm')
             ->as('personsubm.')
             ->group(function () {
@@ -1188,7 +1200,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             });
     });
 
-Route::namespace('')
+Route::namespace ('')
     ->middleware(['api', 'auth', 'core', 'multitenant'])
     ->prefix('administration/people')
     ->as('administration.people.')
@@ -1206,7 +1218,7 @@ Route::namespace('')
         Route::get('options', PeopleOptions::class)->name('options');
     });
 
-Route::namespace('')
+Route::namespace ('')
     ->middleware(['api', 'auth', 'core', 'multitenant'])
     ->prefix('administration/companies')
     ->as('administration.companies.')
@@ -1224,7 +1236,7 @@ Route::namespace('')
         Route::get('options', CompanyOptions::class)->name('options');
     });
 
-Route::namespace('')
+Route::namespace ('')
     ->middleware(['api', 'auth', 'core', 'multitenant'])
     ->prefix('administration/users')
     ->as('administration.users.')
@@ -1242,7 +1254,7 @@ Route::namespace('')
         Route::get('options', UserOptions::class)->name('options');
     });
 
-Route::namespace('')
+Route::namespace ('')
     ->group(function () {
         Route::prefix('people')
             ->as('people.')
@@ -1270,7 +1282,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
         Route::get('options', CalendarOptions::class)->name('options');
     });
 
-Route::namespace('')
+Route::namespace ('')
     ->prefix('events')
     ->as('events.')
     ->group(function () {
@@ -1308,24 +1320,24 @@ Route::name('api.controlPanel.')
     ->prefix('api/controlpanel')->as('controlpanel.')
     ->group(function () {
         Route::middleware(['api', 'auth', 'core'])
-        ->group(function () {
-            Route::get('statistics', ControlPanelStatistics::class)->name('statistics');
-            Route::get('actions', ControlPanelActions::class)->name('actions');
-            Route::any('{action}', ControlPanelAction::class)->name('action');
-        });
+            ->group(function () {
+                Route::get('statistics', ControlPanelStatistics::class)->name('statistics');
+                Route::get('actions', ControlPanelActions::class)->name('actions');
+                Route::any('{action}', ControlPanelAction::class)->name('action');
+            });
 
         Route::middleware(['signed', 'bindings'])
             ->prefix('action')
             ->as('action.')
-            ->group(fn () => Route::get('downloadLog', ControlPanelDownloadLog::class)->name('downloadLog'));
+            ->group(fn() => Route::get('downloadLog', ControlPanelDownloadLog::class)->name('downloadLog'));
     });
 
 Broadcast::routes(['middleware' => ['auth:sanctum']]);
 
 Route::middleware(['web', 'auth'])
-     ->namespace('')
-     ->prefix('stripe')
-     ->as('stripe.')
+    ->namespace('')
+    ->prefix('stripe')
+    ->as('stripe.')
     ->group(function () {
         Route::get('current-subscription', StripeGetCurrentSubscription::class);
         Route::get('intent', StripeGetIntent::class);
@@ -1349,9 +1361,9 @@ Route::middleware(['web', 'auth'])
     });
 
 Route::middleware(['auth', 'api'])
-     ->group(function () {
-         Route::get('get_companies', [CompanyIndex::class, 'getCompany']);
-         Route::get('get_person', [PersonaliasIndex::class, 'getPerson']);
-         Route::post('gedcom-export', GedcomExport::class);
-         Route::get('trees/options', [TreesManage::class, 'getOptions']);
-     });
+    ->group(function () {
+        Route::get('get_companies', [CompanyIndex::class, 'getCompany']);
+        Route::get('get_person', [PersonaliasIndex::class, 'getPerson']);
+        Route::post('gedcom-export', GedcomExport::class);
+        Route::get('trees/options', [TreesManage::class, 'getOptions']);
+    });
