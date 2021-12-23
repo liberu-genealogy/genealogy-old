@@ -54,6 +54,5 @@ class MigrationFresh implements ShouldQueue
             '--path' => '/database/migrations/tenant',
             '--force' => true,
         ]);
-
     }
 }
