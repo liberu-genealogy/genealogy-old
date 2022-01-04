@@ -43,7 +43,7 @@ class Store extends Controller
 
                     ImportGedcom::dispatch($filename, $slug, $currentUser->id, $conn, $db);
 
-                    return ['File uploaded: conn:-'.$conn.'-'.$db];
+                    return ['File uploaded: conn:-'.$conn.'-'];
                 } catch (\Exception $e) {
                     return $e->getMessage();
                 }
