@@ -68,10 +68,12 @@ class ImportGedcom implements ShouldQueue
             $db = Connections::Tenant.$company->id;
 
             Artisan::call('migrate:fresh', [
-                '--database' => $this->db,
+                '--database' => $db,
                 '--path' => '/database/migrations/tenant',
                 '--force' => true,
             ]);
+
+            // $this->resetDatabase();
 
     }
 
@@ -94,7 +96,7 @@ class ImportGedcom implements ShouldQueue
         return 0;
     }
 
-    /**
+
     public function resetDatabase()
     {
         DB::statement('SET foreign_key_checks=0');
@@ -109,11 +111,11 @@ class ImportGedcom implements ShouldQueue
         }
         DB::statement('SET foreign_key_checks=1');
     }
-    **/
 
-    public function resetDatabase()
-    {
-        // MigrationFresh::dispatch($this->db);
-    }
+
+    // public function resetDatabase()
+    // {
+    //     // MigrationFresh::dispatch($this->db);
+    // }
     
 }
