@@ -96,7 +96,6 @@ class ImportGedcom implements ShouldQueue
         return 0;
     }
 
-
     public function resetDatabase()
     {
         DB::statement('SET foreign_key_checks=0');
@@ -117,5 +116,4 @@ class ImportGedcom implements ShouldQueue
     // {
     //     // MigrationFresh::dispatch($this->db);
     // }
-    
 }
