@@ -34,7 +34,8 @@
         "laravel/ui": "^3.0",
         "leifermendez/laravel-paypal-subscription": "^1.0",
         "sentry/sentry-laravel": "^2.0.0",
-        "spatie/laravel-ray": "^1.26"
+        "spatie/laravel-ray": "^1.26",
+        "ext-pdo": "*"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.10",
