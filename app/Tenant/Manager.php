@@ -45,14 +45,14 @@ class Manager
     {
         $this->config->set('database.connections.tenant.database', $this->database);
         $this->manager->purge($this->connection);
+        $this->manager->reconnect($this->connection);
         return $this;
     }
 
     public function disconnect(): self
     {
         $this->config->set('database.connections.tenant.database', $this->connection);
-        $this->config->set('database.default', $this->config->get('database.default_backup'));
-        $this->manager->purge($this->connection);
+        //$this->config->set('database.default', $this->config->get('database.default_backup'));
         return $this;
     }
 
