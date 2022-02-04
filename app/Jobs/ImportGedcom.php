@@ -74,8 +74,7 @@ class ImportGedcom implements ShouldQueue
             ]);
 
             // $this->resetDatabase();
-
-    }
+        }
 
         ImportJob::on($this->conn)->create(compact('user_id', 'slug', 'status'));
 
@@ -110,7 +109,6 @@ class ImportGedcom implements ShouldQueue
         }
         DB::statement('SET foreign_key_checks=1');
     }
-
 
     // public function resetDatabase()
     // {
