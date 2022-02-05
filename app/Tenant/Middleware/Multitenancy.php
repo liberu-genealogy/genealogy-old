@@ -18,9 +18,8 @@ class Multitenancy
             ? Company::find($request->get('_tenantId'))
             : $request->user()->company();
 
-
         if (optional($company)->isTenant()) {
-            Manager::fromModel($company)->connect();
+            Manager::fromModel($company)->connect(true);
         }
 
         if ($request->has('_tenantId')) {

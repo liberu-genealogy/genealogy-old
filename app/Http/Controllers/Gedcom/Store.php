@@ -1,9 +1,11 @@
 <?php namespace App\Http\Controllers\Gedcom;
 
 use App\Jobs\ImportGedcom;
+use App\Tenant\Manager;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 
 class Store extends Controller
 {
@@ -14,7 +16,9 @@ class Store extends Controller
             'file' => 'required|mimes:application/octet-stream'
         ]);
 
-        ImportGedcom::dispatch($request->user(), $file->storeAs('gedcom', uniqid().'.ged'), $slug);
+        $manager = Manager::fromModel($request->user()->company() ?? $request->user());
+
+        ImportGedcom::dispatch($request->user(), $manager->storeUploadedFileAs($file, 'imports'), $slug);
 
         return response([
             'message' => 'Gedcom Import Dispatched'

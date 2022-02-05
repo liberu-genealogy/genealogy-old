@@ -5,6 +5,8 @@
     "type": "project",
     "require": {
         "php": ">=8.0.0",
+        "ext-pdo": "*",
+        "ext-json": "*",
         "doctrine/dbal": "^3.1",
         "familytree365/laravel-gedcom": "^3.1",
         "familytree365/laravel-gelato": "^1.0",
@@ -34,8 +36,7 @@
         "laravel/ui": "^3.0",
         "leifermendez/laravel-paypal-subscription": "^1.0",
         "sentry/sentry-laravel": "^2.0.0",
-        "spatie/laravel-ray": "^1.26",
-        "ext-pdo": "*"
+        "spatie/laravel-ray": "^1.26"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.10",
