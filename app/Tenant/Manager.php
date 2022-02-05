@@ -98,12 +98,6 @@ class Manager
 
     public function migrateDatabase(): self
     {
-        /**
-         * @docs https://stackoverflow.com/questions/49746440/laravel-artisan-use-of-undefined-constant-stdin-assumed-stdin-infinite-loop
-         */
-        // if (!defined('STDIN')) {
-        //     define('STDIN', fopen('php://stdin', 'r'));
-        // }
         Artisan::call('migrate:fresh', [
             '--realpath' => database_path('migrations/tenant'),
             '--database' => $this->connectionName,
