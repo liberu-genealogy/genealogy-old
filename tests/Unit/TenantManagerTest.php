@@ -22,7 +22,7 @@ class TenantManagerTest extends TestCase
         $this->assertTrue($manager->databaseExists(), 'Database Created');
 
         $manager->migrateDatabase();
-        $this->assertTrue($manager->getConnection()->table('migrations')->count() > 0, 'Migrations Ran');
+        $this->assertTrue($manager->database()->table('migrations')->count() > 0, 'Migrations Ran');
 
         $manager->dropDatabase();
         $this->assertFalse($manager->databaseExists(), 'Database destroyed');
@@ -48,7 +48,7 @@ class TenantManagerTest extends TestCase
      */
     public function test_can_manage_storage_partitions()
     {
-        $manager = Manager::tenant('test');
+        $manager = Manager::tenant('test')->connect();
 
         $manager->deleteStoragePartition();
         $this->assertFalse($manager->hasStoragePartition(), 'Storage Partition Directory Does Not Exist');

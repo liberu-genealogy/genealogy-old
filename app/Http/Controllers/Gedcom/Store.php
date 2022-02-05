@@ -18,7 +18,9 @@ class Store extends Controller
 
         $manager = Manager::fromModel($request->user()->company() ?? $request->user());
 
-        ImportGedcom::dispatch($request->user(), $manager->storeUploadedFileAs($file, 'imports'), $slug);
+        $path = $manager->getStorage()->putFileAs("imports", $file, null);
+
+        ImportGedcom::dispatch($request->user(), $manager->storagePath($path), $slug);
 
         return response([
             'message' => 'Gedcom Import Dispatched'

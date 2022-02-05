@@ -3,14 +3,13 @@
 namespace App\Tenant;
 
 use App\Models\User;
-use Illuminate\Support\Str;
 use Illuminate\Config\Repository;
-use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Database\Eloquent\Model;
 use \Illuminate\Database\DatabaseManager;
 use Illuminate\Database\ConnectionInterface;
+use Illuminate\Contracts\Filesystem\Filesystem;
 
 class Manager
 {
@@ -20,7 +19,6 @@ class Manager
 
     protected string|int $tenant_id;
     protected string|null $partition = null;
-    protected string $disk = 'tenant';
     protected string $connectionName = "tenant";
     protected string $defaultDatabase = "tenant";
     protected string $defaultConnection = "mysql";
@@ -51,19 +49,20 @@ class Manager
         ]);
     }
 
-    public function getConnection(): ConnectionInterface
+    public function database(): ConnectionInterface
     {
         return $this->database->connection($this->connectionName);
     }
 
     public function connect(bool $default = false): self
     {
+        $this->config->set('database.connections.tenant.database', $this->partition);
         if ($default) {
             $this->config->set('database.default', $this->connectionName);
         }
-        $this->config->set('database.connections.tenant.database', $this->partition);
         $this->database->reconnect($this->connectionName);
         $this->database->reconnect($this->defaultConnection);
+
         return $this;
     }
 
@@ -76,22 +75,17 @@ class Manager
         return $this;
     }
 
-    public function getConnectionName(): string
+    public function connectionName(): string
     {
         return $this->connectionName;
     }
 
-    public function getPartitionName(): string
+    public function partitionName(): string
     {
         return $this->partition;
     }
 
-    public function getDiskName(): string
-    {
-        return $this->disk;
-    }
-
-    public function getTenantId(): string|int
+    public function tenantId(): string|int
     {
         return $this->tenant_id;
     }
@@ -135,23 +129,40 @@ class Manager
 
     public function hasStoragePartition(): bool
     {
-        return Storage::disk($this->disk)->exists($this->partition);
+        return $this->rootStorage()->exists($this->partition);
     }
 
-    public function makeStoragePartition(): self
+    public function makeStoragePartition(): bool
     {
-        Storage::disk($this->disk)->makeDirectory($this->partition);
-        return $this;
+        return $this->rootStorage()->makeDirectory($this->partition);
     }
 
-    public function deleteStoragePartition(): self
+    public function deleteStoragePartition(): bool
     {
-        Storage::disk($this->disk)->deleteDirectory($this->partition);
-        return $this;
+        return $this->rootStorage()->deleteDirectory($this->partition);
     }
 
-    public function getStorage(): bool
+    public function storage(): Filesystem
     {
-        return Storage::disk($this->disk)->exists($this->partition);
+        if(!$this->hasStoragePartition()){
+            $this->makeStoragePartition();
+        }
+        return Storage::build([
+            'driver' => 'local',
+            'root' => storage_path("tenants/{$this->partition}"),
+        ]);
+    }
+
+    public function rootStorage(): Filesystem
+    {
+        return Storage::build([
+            'driver' => 'local',
+            'root' => storage_path("tenants"),
+        ]);
+    }
+
+    public function storagePath(string $path): string
+    {
+        return storage_path("tenants/{$this->partition}/{$path}");
     }
 }
