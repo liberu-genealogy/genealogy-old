@@ -48,13 +48,13 @@ class ImportGedcom implements ShouldQueue
 
         $slug = $this->slug ?? Str::uuid();
 
-        $job = ImportJob::on($tenant->getConnectionName())->create([
+        $job = ImportJob::on($tenant->connectionName())->create([
             'user_id' => $this->user->getKey(),
             'status'  => 'queue',
             'slug'    => $slug,
         ]);
 
-        with(new GedcomParser())->parse($tenant->getConnectionName(), $this->filePath, $slug, true);
+        with(new GedcomParser())->parse($tenant->connectionName(), $this->filePath, $slug, true);
 
         File::delete($this->filePath);
 
