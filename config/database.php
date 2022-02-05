@@ -16,7 +16,6 @@ return [
     */
 
     'default' => env('DB_CONNECTION', 'mysql'),
-    'default_backup' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
