@@ -49,11 +49,6 @@ class Manager
         ]);
     }
 
-    public function database(): ConnectionInterface
-    {
-        return $this->database->connection($this->connectionName);
-    }
-
     public function connect(bool $default = false): self
     {
         $this->config->set('database.connections.tenant.database', $this->partition);
@@ -75,19 +70,9 @@ class Manager
         return $this;
     }
 
-    public function connectionName(): string
+    public function database(): ConnectionInterface
     {
-        return $this->connectionName;
-    }
-
-    public function partitionName(): string
-    {
-        return $this->partition;
-    }
-
-    public function tenantId(): string|int
-    {
-        return $this->tenant_id;
+        return $this->database->connection($this->connectionName);
     }
 
     public function databaseExists(): bool
@@ -164,5 +149,20 @@ class Manager
     public function storagePath(string $path): string
     {
         return storage_path("tenants/{$this->partition}/{$path}");
+    }
+
+    public function connectionName(): string
+    {
+        return $this->connectionName;
+    }
+
+    public function partitionName(): string
+    {
+        return $this->partition;
+    }
+
+    public function tenantId(): string|int
+    {
+        return $this->tenant_id;
     }
 }
