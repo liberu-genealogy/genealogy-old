@@ -10,7 +10,7 @@ use Illuminate\Foundation\Auth\VerifiesEmails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use LaravelEnso\Core\Http\Controllers\Auth\LoginController;
-use Symfony\Component\HttpFoundation\Response as Response;
+use Symfony\Component\HttpFoundation\Response;
 
 class VerificationController extends Controller
 {
