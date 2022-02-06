@@ -9,7 +9,7 @@ use App\Models\Person;
 use App\Models\User;
 use App\Models\UserSocial;
 use App\Traits\ConnectionTrait;
-use App\Traits\Login as Login;
+use App\Traits\Login;
 use Exception;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
