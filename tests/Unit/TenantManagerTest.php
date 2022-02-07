@@ -1,6 +1,7 @@
 <?php namespace Tests\Unit;
 
 use App\Models\User;
+use Illuminate\Http\UploadedFile;
 use Tests\TestCase;
 use App\Tenant\Manager;
 use Illuminate\Support\Facades\DB;
@@ -9,54 +10,71 @@ class TenantManagerTest extends TestCase
 {
     public function test_can_use_database_connection()
     {
-        $manager = Manager::tenant('test')->connect();
+        $tenant = Manager::tenant('test')->connect();
 
-        $this->assertInstanceOf(Manager::class, $manager, 'Resolved Tenant Manager Class');
+        $this->assertInstanceOf(Manager::class, $tenant, 'Resolved Tenant Manager Class');
 
-        if($manager->databaseExists()){
-            $manager->dropDatabase();
+        if ($tenant->databaseExists()) {
+            $tenant->dropDatabase();
         }
-        $this->assertFalse($manager->databaseExists(), 'Database Does Not Exist');
+        $this->assertFalse($tenant->databaseExists(), 'Database Does Not Exist');
 
-        $manager->createDatabase();
-        $this->assertTrue($manager->databaseExists(), 'Database Created');
+        $tenant->createDatabase();
+        $this->assertTrue($tenant->databaseExists(), 'Database Created');
 
-        $manager->migrateDatabase();
-        $this->assertTrue($manager->database()->table('migrations')->count() > 0, 'Migrations Ran');
+        $tenant->migrateDatabase();
+        $this->assertTrue($tenant->database()->table('migrations')->count() > 0, 'Migrations Ran');
 
-        $manager->dropDatabase();
-        $this->assertFalse($manager->databaseExists(), 'Database destroyed');
-        $manager->disconnect();
+        $tenant->dropDatabase();
+        $this->assertFalse($tenant->databaseExists(), 'Database destroyed');
+        $tenant->disconnect();
     }
 
+    /**
+     * Default database connection is switched to tenant and back to default.
+     */
     public function test_can_swap_default_database_connection()
     {
-        $manager = Manager::tenant('test')->connect(true);
+        $tenant = Manager::tenant('test')->connect(true);
 
         $this->assertSame('tenant', DB::getDefaultConnection());
         $this->assertSame('tenant', User::query()->getConnection()->getName());
 
-        $manager->disconnect();
+        $tenant->disconnect();
 
         $this->assertSame('mysql', DB::getDefaultConnection());
         $this->assertSame('mysql', User::query()->getConnection()->getName());
     }
 
     /**
-     * Expected Result
      * Directory created (storage/tenants/tenant_1)
      */
     public function test_can_manage_storage_partitions()
     {
-        $manager = Manager::tenant('test')->connect();
+        $tenant = Manager::tenant('test')->connect();
 
-        $manager->deleteStoragePartition();
-        $this->assertFalse($manager->hasStoragePartition(), 'Storage Partition Directory Does Not Exist');
+        $tenant->deleteStoragePartition();
+        $this->assertFalse($tenant->hasStoragePartition(), 'Storage Partition Directory Does Not Exist');
 
-        $manager->makeStoragePartition();
-        $this->assertTrue($manager->hasStoragePartition(), 'Storage Partition Directory Created');
+        $tenant->makeStoragePartition();
+        $this->assertTrue($tenant->hasStoragePartition(), 'Storage Partition Directory Created');
 
-        $manager->deleteStoragePartition();
-        $this->assertFalse($manager->hasStoragePartition(), 'Storage Partition Directory Does Not Exist');
+        $tenant->deleteStoragePartition();
+        $this->assertFalse($tenant->hasStoragePartition(), 'Storage Partition Directory Does Not Exist');
+    }
+
+    /**
+     * File created (storage/tenants/tenant_1/test.txt)
+     */
+    public function test_can_provide_scoped_storage_instance()
+    {
+        $user = User::factory()->create();
+        $file = UploadedFile::fake()->create('test.txt');
+        $tenant = Manager::fromModel($user)->connect();
+
+        $path = $tenant->storage()->putFileAs("imports", $file, $file->getFilename());
+
+        $this->assertFileExists($tenant->storagePath($path), 'File Exists in Tenant Storage');
+        $tenant->deleteStoragePartition();
     }
 }
