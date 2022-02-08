@@ -14,4 +14,11 @@ abstract class TestCase extends BaseTestCase
 
         $this->withoutMiddleware(\App\Http\Middleware\Multitenant::class);
     }
+
+    protected function needsMySqlConnection(): void
+    {
+        if (env('DB_CONNECTION') === 'sqlite') {
+            $this->markTestSkipped("ENV must use mysql to perform these tests.");
+        }
+    }
 }

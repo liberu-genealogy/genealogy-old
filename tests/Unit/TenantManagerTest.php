@@ -10,6 +10,8 @@ class TenantManagerTest extends TestCase
 {
     public function test_can_use_database_connection()
     {
+        $this->needsMySqlConnection();
+
         $tenant = Manager::tenant('test')->connect();
 
         $this->assertInstanceOf(Manager::class, $tenant, 'Resolved Tenant Manager Class');
@@ -68,13 +70,12 @@ class TenantManagerTest extends TestCase
      */
     public function test_can_provide_scoped_storage_instance()
     {
-        $user = User::factory()->create();
+        $tenant = Manager::tenant('test')->connect();
         $file = UploadedFile::fake()->create('test.txt');
-        $tenant = Manager::fromModel($user)->connect();
 
         $path = $tenant->storage()->putFileAs("imports", $file, $file->getFilename());
-
         $this->assertFileExists($tenant->storagePath($path), 'File Exists in Tenant Storage');
+
         $tenant->deleteStoragePartition();
     }
 }
