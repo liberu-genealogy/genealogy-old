@@ -1,66 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd"
-  bootstrap="vendor/autoload.php"
-  printerClass="LaravelEnso\PHPUnitPrettyPrint\PrettyPrint"
-  colors="true"
-  cacheResult="true">
-  <coverage processUncoveredFiles="true">
-    <include>
-      <directory suffix=".php">./app</directory>
-    </include>
-  </coverage>
-  <testsuites>
-    <testsuite name="Feature">
-      <directory suffix="Test.php">./tests/Feature</directory>
-    </testsuite>
-    <testsuite name="parallel">
-      <directory suffix="Test.php">./tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/action-logger/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/addresses/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/calendar/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/comments/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/companies/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/core/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/filters/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/forms/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/helpers/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/history-tracker/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/impersonate/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/localisation/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/logs/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/menus/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/notifications/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/people/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/permissions/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/rememberable/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/roles/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/searchable/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/select/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/tables/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/track-who/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/tutorials/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/upgrade/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/users/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/user-groups/tests</directory>
-    </testsuite>
-    <testsuite name="sync">
-      <directory suffix="Test.php">./vendor/laravel-enso/avatars/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/cli/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/data-import/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/documents/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/files/tests</directory>
-    </testsuite>
-  </testsuites>
-  <php>
-    <server name="APP_ENV" value="testing"/>
-    <server name="BCRYPT_ROUNDS" value="4"/>
-    <server name="CACHE_DRIVER" value="array"/>
-    <server name="DB_CONNECTION" value="mysql"/>
-    <server name="DB_DATABASE" value="genealogy"/>
-    <server name="MAIL_MAILER" value="array"/>
-    <server name="QUEUE_CONNECTION" value="sync"/>
-    <server name="SESSION_DRIVER" value="array"/>
-    <ini name="memory_limit" value="-1"/>
-  </php>
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         printerClass="LaravelEnso\PHPUnitPrettyPrint\PrettyPrint"
+         colors="true"
+         cacheResult="true">
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">./app</directory>
+        </include>
+    </coverage>
+    <testsuites>
+        <testsuite name="Feature">
+            <directory suffix="Test.php">./tests/Feature</directory>
+        </testsuite>
+        <testsuite name="parallel">
+            <directory suffix="Test.php">./tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/action-logger/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/addresses/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/calendar/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/comments/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/companies/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/core/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/filters/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/forms/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/helpers/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/history-tracker/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/impersonate/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/localisation/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/logs/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/menus/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/notifications/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/people/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/permissions/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/rememberable/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/roles/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/searchable/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/select/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/tables/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/track-who/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/tutorials/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/upgrade/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/users/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/user-groups/tests</directory>
+        </testsuite>
+        <testsuite name="sync">
+            <directory suffix="Test.php">./vendor/laravel-enso/avatars/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/cli/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/data-import/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/documents/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-enso/files/tests</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <server name="APP_ENV" value="testing"/>
+        <server name="BCRYPT_ROUNDS" value="4"/>
+        <server name="CACHE_DRIVER" value="array"/>
+        <server name="DB_CONNECTION" value="sqlite"/>
+        <server name="DB_DATABASE" value=":memory:"/>
+        <server name="MAIL_MAILER" value="array"/>
+        <server name="QUEUE_CONNECTION" value="sync"/>
+        <server name="SESSION_DRIVER" value="array"/>
+        <ini name="memory_limit" value="-1"/>
+    </php>
 </phpunit>
