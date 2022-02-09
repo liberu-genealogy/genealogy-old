@@ -962,23 +962,23 @@
         },
         {
             "name": "dompdf/dompdf",
-            "version": "v1.1.1",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dompdf/dompdf.git",
-                "reference": "de4aad040737a89fae2129cdeb0f79c45513128d"
+                "reference": "60b704331479a69e9bcdb3496da2315b5c4f94fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/de4aad040737a89fae2129cdeb0f79c45513128d",
-                "reference": "de4aad040737a89fae2129cdeb0f79c45513128d",
+                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/60b704331479a69e9bcdb3496da2315b5c4f94fd",
+                "reference": "60b704331479a69e9bcdb3496da2315b5c4f94fd",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-mbstring": "*",
-                "phenx/php-font-lib": "^0.5.2",
-                "phenx/php-svg-lib": "^0.3.3",
+                "phenx/php-font-lib": "^0.5.4",
+                "phenx/php-svg-lib": "^0.3.3 || ^0.4.0",
                 "php": "^7.1 || ^8.0"
             },
             "require-dev": {
@@ -1023,9 +1023,9 @@
             "homepage": "https://github.com/dompdf/dompdf",
             "support": {
                 "issues": "https://github.com/dompdf/dompdf/issues",
-                "source": "https://github.com/dompdf/dompdf/tree/v1.1.1"
+                "source": "https://github.com/dompdf/dompdf/tree/v1.2.0"
             },
-            "time": "2021-11-24T00:45:04+00:00"
+            "time": "2022-02-07T13:02:10+00:00"
         },
         {
             "name": "dragonmantank/cron-expression",
@@ -5605,16 +5605,16 @@
         },
         {
             "name": "laravel/cashier",
-            "version": "v13.8.1",
+            "version": "v13.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/cashier-stripe.git",
-                "reference": "3ab514b9d6e5726ff24a6d8abe90b17054b21988"
+                "reference": "389c0fe49d285026b2db39643ac1ae924c9139a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/cashier-stripe/zipball/3ab514b9d6e5726ff24a6d8abe90b17054b21988",
-                "reference": "3ab514b9d6e5726ff24a6d8abe90b17054b21988",
+                "url": "https://api.github.com/repos/laravel/cashier-stripe/zipball/389c0fe49d285026b2db39643ac1ae924c9139a0",
+                "reference": "389c0fe49d285026b2db39643ac1ae924c9139a0",
                 "shasum": ""
             },
             "require": {
@@ -5681,7 +5681,7 @@
                 "issues": "https://github.com/laravel/cashier/issues",
                 "source": "https://github.com/laravel/cashier"
             },
-            "time": "2022-02-01T16:13:56+00:00"
+            "time": "2022-02-08T18:55:25+00:00"
         },
         {
             "name": "laravel/framework",
@@ -7741,21 +7741,22 @@
         },
         {
             "name": "phenx/php-svg-lib",
-            "version": "0.3.4",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/PhenX/php-svg-lib.git",
-                "reference": "f627771eb854aa7f45f80add0f23c6c4d67ea0f2"
+                "url": "https://github.com/dompdf/php-svg-lib.git",
+                "reference": "3ffbbb037f0871c3a819e90cff8b36dd7e656189"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PhenX/php-svg-lib/zipball/f627771eb854aa7f45f80add0f23c6c4d67ea0f2",
-                "reference": "f627771eb854aa7f45f80add0f23c6c4d67ea0f2",
+                "url": "https://api.github.com/repos/dompdf/php-svg-lib/zipball/3ffbbb037f0871c3a819e90cff8b36dd7e656189",
+                "reference": "3ffbbb037f0871c3a819e90cff8b36dd7e656189",
                 "shasum": ""
             },
             "require": {
+                "ext-mbstring": "*",
                 "php": "^7.4 || ^8.0",
-                "sabberworm/php-css-parser": "^8.3"
+                "sabberworm/php-css-parser": "^8.4"
             },
             "require-dev": {
                 "phpunit/phpunit": "^9.5"
@@ -7779,10 +7780,10 @@
             "description": "A library to read, parse and export to PDF SVG files.",
             "homepage": "https://github.com/PhenX/php-svg-lib",
             "support": {
-                "issues": "https://github.com/PhenX/php-svg-lib/issues",
-                "source": "https://github.com/PhenX/php-svg-lib/tree/0.3.4"
+                "issues": "https://github.com/dompdf/php-svg-lib/issues",
+                "source": "https://github.com/dompdf/php-svg-lib/tree/0.4.0"
             },
-            "time": "2021-10-18T02:13:32+00:00"
+            "time": "2021-12-17T14:08:35+00:00"
         },
         {
             "name": "php-http/client-common",
