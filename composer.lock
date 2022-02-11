@@ -5605,6 +5605,7 @@
         },
         {
             "name": "laravel/cashier",
+
             "version": "v13.8.2",
             "source": {
                 "type": "git",
@@ -5615,6 +5616,8 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/cashier-stripe/zipball/389c0fe49d285026b2db39643ac1ae924c9139a0",
                 "reference": "389c0fe49d285026b2db39643ac1ae924c9139a0",
+
+          
                 "shasum": ""
             },
             "require": {
@@ -5681,6 +5684,7 @@
                 "issues": "https://github.com/laravel/cashier/issues",
                 "source": "https://github.com/laravel/cashier"
             },
+
             "time": "2022-02-08T18:55:25+00:00"
         },
         {
@@ -5695,6 +5699,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/29bc8779103909ebc428478b339ee6fa8703e193",
                 "reference": "29bc8779103909ebc428478b339ee6fa8703e193",
+
                 "shasum": ""
             },
             "require": {
@@ -5854,6 +5859,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
+
             "time": "2022-02-08T15:44:51+00:00"
         },
         {
@@ -5868,6 +5874,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/horizon/zipball/33316c3008a72dc38842c2105b7e2d8249a177ef",
                 "reference": "33316c3008a72dc38842c2105b7e2d8249a177ef",
+
                 "shasum": ""
             },
             "require": {
@@ -5929,9 +5936,11 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/horizon/issues",
+
                 "source": "https://github.com/laravel/horizon/tree/v5.9.0"
             },
             "time": "2022-02-08T19:20:55+00:00"
+
         },
         {
             "name": "laravel/sanctum",
@@ -6058,6 +6067,7 @@
         },
         {
             "name": "laravel/socialite",
+
             "version": "v5.5.1",
             "source": {
                 "type": "git",
@@ -6068,6 +6078,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/socialite/zipball/9b96dfd69e9c1de69c23205cb390550bc71c357e",
                 "reference": "9b96dfd69e9c1de69c23205cb390550bc71c357e",
+
                 "shasum": ""
             },
             "require": {
@@ -6123,7 +6134,9 @@
                 "issues": "https://github.com/laravel/socialite/issues",
                 "source": "https://github.com/laravel/socialite"
             },
-            "time": "2022-02-07T16:08:19+00:00"
+
+            "time": "2022-02-01T16:31:36+00:00"
+
         },
         {
             "name": "laravel/telescope",
@@ -6262,6 +6275,7 @@
         },
         {
             "name": "laravel/ui",
+
             "version": "v3.4.3",
             "source": {
                 "type": "git",
@@ -6272,6 +6286,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/ui/zipball/64a0f43492c00780b2261c56cd7007a4f370d95b",
                 "reference": "64a0f43492c00780b2261c56cd7007a4f370d95b",
+
                 "shasum": ""
             },
             "require": {
@@ -6317,9 +6332,11 @@
                 "ui"
             ],
             "support": {
+
                 "source": "https://github.com/laravel/ui/tree/v3.4.3"
             },
             "time": "2022-02-08T14:19:32+00:00"
+
         },
         {
             "name": "laravolt/avatar",
@@ -13288,6 +13305,7 @@
     "packages-dev": [
         {
             "name": "barryvdh/laravel-ide-helper",
+
             "version": "v2.12.2",
             "source": {
                 "type": "git",
@@ -13298,11 +13316,13 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/7917cce7c991c7203545ea2e59a1dd366d1b60af",
                 "reference": "7917cce7c991c7203545ea2e59a1dd366d1b60af",
+
                 "shasum": ""
             },
             "require": {
                 "barryvdh/reflection-docblock": "^2.0.6",
-                "composer/pcre": "^1.0",
+
+                "composer/composer": "^1.10.23 || ^2.1.9"
                 "doctrine/dbal": "^2.6 || ^3",
                 "ext-json": "*",
                 "illuminate/console": "^8 || ^9",
@@ -13378,7 +13398,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-02-08T19:30:33+00:00"
+            "time": "2022-01-24T21:36:43+00:00"
         },
         {
             "name": "barryvdh/reflection-docblock",

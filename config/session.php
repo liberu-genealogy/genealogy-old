@@ -18,7 +18,7 @@ return [
     |
     */
 
-    'driver' => env('SESSION_DRIVER', 'cookie'),
+    'driver' => env('SESSION_DRIVER', 'file'),
 
     /*
     |--------------------------------------------------------------------------
@@ -191,11 +191,9 @@ return [
     | This option determines how your cookies behave when cross-site requests
     | take place, and can be used to mitigate CSRF attacks. By default, we
     | will set this value to "lax" since this is a secure default value.
-    |
     | Supported: "lax", "strict", "none", null
     |
     */
 
-    'same_site' => 'lax',
-
+    'same_site' => env('SESSION_SAME_SITE','lax'),
 ];
