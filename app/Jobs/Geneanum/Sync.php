@@ -1,26 +1,21 @@
-<?php
+<?php namespace App\Jobs\Geneanum;
 
-namespace App\Jobs\Geneanum;
-
-use App\Models\Geneanum;
-use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Bus\Queueable;
+use App\Models\Geneanum;
 
-// use Spatie\Multitenancy\Jobs\NotTenantAware;
-
-// abstract class Sync implements ShouldQueue, NotTenantAware
 abstract class Sync implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    protected const MAX_RETRY = 3;
     protected const MODEL = Geneanum::class;
-    protected const AREA = null;
     protected const DATABASE = null;
+    protected const MAX_RETRY = 3;
+    protected const AREA = null;
     protected const URL = null;
 
     public static $is_testing = true; //change true if want test sync
