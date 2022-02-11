@@ -9,13 +9,6 @@ use Stripe;
 
 class Webhook extends Controller
 {
-    protected $plans;
-
-    public function __construct()
-    {
-        Stripe\Stripe::setApiKey(\Config::get('services.stripe.secret'));
-        $this->plans = Stripe\Plan::all();
-    }
 
     /**
      * Handle the incoming request.
@@ -25,11 +18,13 @@ class Webhook extends Controller
      */
     public function __invoke(Request $request)
     {
+        Stripe\Stripe::setApiKey(\Config::get('services.stripe.secret'));
+        $plans = Stripe\Plan::all();
         $data = request()->all();
         $user = User::where('stripe_id', $data['data']['object']['customer'])->first();
         if ($user) {
             $plan_nickname = $data['data']['object']['items']['data'][0]['plan']['nickname'];
-            foreach ($this->plans as $plan) {
+            foreach ($plans as $plan) {
                 if ($plan->nickname == $plan_nickname) {
                     switch ($plan->nickname) {
                         case 'UTY':
