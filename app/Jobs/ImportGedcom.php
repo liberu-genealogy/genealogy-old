@@ -40,6 +40,7 @@ class ImportGedcom implements ShouldQueue
 
         $tenant = Manager::fromModel($this->user->company() ?? $this->user)->connect();
 
+
         if($tenant->databaseExists()){
             $tenant->dropDatabase();
         }
@@ -60,8 +61,10 @@ class ImportGedcom implements ShouldQueue
 
         $job->update(['status' => 'complete']);
 
+
         $tenant->disconnect();
 
         return 0;
     }
+
 }

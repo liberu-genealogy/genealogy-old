@@ -1,4 +1,5 @@
 <?php
+
 use LaravelEnso\Migrator\Database\Migration;
 
 class CreateStructureForFanChart extends Migration
