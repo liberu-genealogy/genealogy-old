@@ -1,12 +1,14 @@
-<?php namespace Tests\Unit;
+<?php
 
+namespace Tests\Unit;
+
+use App\Jobs\ImportGedcom;
+use App\Models\User;
 use App\Tenant\Manager;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Tests\TestCase;
-use App\Models\User;
-use App\Jobs\ImportGedcom;
 use Illuminate\Http\UploadedFile;
+use Tests\TestCase;
 
 class GedcomImportTest extends TestCase
 {
@@ -20,7 +22,7 @@ class GedcomImportTest extends TestCase
 
         $tenant = Manager::fromModel($user)->connect();
 
-        $path = $tenant->storage()->putFileAs("imports", $file, $file->getFilename());
+        $path = $tenant->storage()->putFileAs('imports', $file, $file->getFilename());
 
         ImportGedcom::dispatch($user, $tenant->storagePath($path), 'test');
 

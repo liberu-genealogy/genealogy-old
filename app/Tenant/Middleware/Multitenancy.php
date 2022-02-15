@@ -1,16 +1,18 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace App\Tenant\Middleware;
 
-use Closure;
 use App\Tenant\Manager;
+use Closure;
 use LaravelEnso\Companies\Models\Company;
 
 class Multitenancy
 {
     public function handle($request, Closure $next)
     {
-        if (!$request->user()) {
+        if (! $request->user()) {
             return $next($request);
         }
 
