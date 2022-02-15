@@ -18,7 +18,7 @@ abstract class TestCase extends BaseTestCase
     protected function needsMySqlConnection(): void
     {
         if (env('DB_CONNECTION') === 'sqlite') {
-            $this->markTestSkipped("ENV must use mysql to perform these tests.");
+            $this->markTestSkipped('ENV must use mysql to perform these tests.');
         }
     }
 }

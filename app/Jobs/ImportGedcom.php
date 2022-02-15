@@ -2,17 +2,17 @@
 
 namespace App\Jobs;
 
+use App\Models\ImportJob;
 use App\Models\User;
 use App\Tenant\Manager;
-use App\Models\ImportJob;
+use FamilyTree365\LaravelGedcom\Utils\GedcomParser;
 use Illuminate\Bus\Queueable;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\File;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use FamilyTree365\LaravelGedcom\Utils\GedcomParser;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 class ImportGedcom implements ShouldQueue
@@ -40,8 +40,7 @@ class ImportGedcom implements ShouldQueue
 
         $tenant = Manager::fromModel($this->user->company() ?? $this->user)->connect();
 
-
-        if($tenant->databaseExists()){
+        if ($tenant->databaseExists()) {
             $tenant->dropDatabase();
         }
         $tenant->createDatabase();
@@ -61,10 +60,8 @@ class ImportGedcom implements ShouldQueue
 
         $job->update(['status' => 'complete']);
 
-
         $tenant->disconnect();
 
         return 0;
     }
-
 }

@@ -1,15 +1,17 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace App\Tenant;
 
 use App\Models\User;
 use Illuminate\Config\Repository;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Artisan;
-use Illuminate\Database\Eloquent\Model;
-use \Illuminate\Database\DatabaseManager;
-use Illuminate\Database\ConnectionInterface;
 use Illuminate\Contracts\Filesystem\Filesystem;
+use Illuminate\Database\ConnectionInterface;
+use Illuminate\Database\DatabaseManager;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Storage;
 
 class Manager
 {
@@ -19,16 +21,15 @@ class Manager
 
     protected string|int $tenant_id;
     protected string|null $partition = null;
-    protected string $connectionName = "tenant";
-    protected string $defaultDatabase = "tenant";
-    protected string $defaultConnection = "mysql";
+    protected string $connectionName = 'tenant';
+    protected string $defaultDatabase = 'tenant';
+    protected string $defaultConnection = 'mysql';
 
     public function __construct(
-        string|int      $key,
-        Repository      $config,
+        string|int $key,
+        Repository $config,
         DatabaseManager $database,
-    )
-    {
+    ) {
         $this->tenant_id = $key;
         $this->partition = "tenant_{$key}";
         $this->database = $database;
@@ -38,14 +39,14 @@ class Manager
     public static function fromModel(Model $model): self
     {
         return app(static::class, [
-            'key' => $model->getKey()
+            'key' => $model->getKey(),
         ]);
     }
 
     public static function tenant(string $key): self
     {
         return app(static::class, [
-            'key' => $key
+            'key' => $key,
         ]);
     }
 
@@ -67,6 +68,7 @@ class Manager
         $this->config->set('database.connections.tenant.database', $this->defaultDatabase);
         $this->database->reconnect($this->connectionName);
         $this->database->reconnect($this->defaultConnection);
+
         return $this;
     }
 
@@ -84,15 +86,17 @@ class Manager
 
     public function createDatabase(): self
     {
-        $charset = $this->config->get("database.connections.mysql.charset", 'utf8');
-        $collate = $this->config->get("database.connections.mysql.collation", 'utf8_unicode_ci');
+        $charset = $this->config->get('database.connections.mysql.charset', 'utf8');
+        $collate = $this->config->get('database.connections.mysql.collation', 'utf8_unicode_ci');
         $this->database->statement("CREATE DATABASE {$this->partition} CHARACTER SET {$charset} COLLATE {$collate}");
+
         return $this;
     }
 
     public function dropDatabase(): self
     {
         $this->database->statement("DROP DATABASE {$this->partition}");
+
         return $this;
     }
 
@@ -103,6 +107,7 @@ class Manager
             '--database' => $this->connectionName,
             '--force'    => true,
         ]);
+
         return $this;
     }
 
@@ -123,9 +128,10 @@ class Manager
 
     public function storage(): Filesystem
     {
-        if(!$this->hasStoragePartition()){
+        if (! $this->hasStoragePartition()) {
             $this->makeStoragePartition();
         }
+
         return Storage::build([
             'driver' => 'local',
             'root' => storage_path("tenants/{$this->partition}"),
@@ -136,7 +142,7 @@ class Manager
     {
         return Storage::build([
             'driver' => 'local',
-            'root' => storage_path("tenants"),
+            'root' => storage_path('tenants'),
         ]);
     }
 

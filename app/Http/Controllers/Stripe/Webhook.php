@@ -9,7 +9,6 @@ use Stripe;
 
 class Webhook extends Controller
 {
-
     /**
      * Handle the incoming request.
      *

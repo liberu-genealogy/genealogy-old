@@ -1,10 +1,12 @@
-<?php namespace Tests\Unit;
+<?php
+
+namespace Tests\Unit;
 
 use App\Models\User;
-use Illuminate\Http\UploadedFile;
-use Tests\TestCase;
 use App\Tenant\Manager;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
+use Tests\TestCase;
 
 class TenantManagerTest extends TestCase
 {
@@ -49,7 +51,7 @@ class TenantManagerTest extends TestCase
     }
 
     /**
-     * Directory created (storage/tenants/tenant_1)
+     * Directory created (storage/tenants/tenant_1).
      */
     public function test_can_manage_storage_partitions()
     {
@@ -66,14 +68,14 @@ class TenantManagerTest extends TestCase
     }
 
     /**
-     * File created (storage/tenants/tenant_1/test.txt)
+     * File created (storage/tenants/tenant_1/test.txt).
      */
     public function test_can_provide_scoped_storage_instance()
     {
         $tenant = Manager::tenant('test')->connect();
         $file = UploadedFile::fake()->create('test.txt');
 
-        $path = $tenant->storage()->putFileAs("imports", $file, $file->getFilename());
+        $path = $tenant->storage()->putFileAs('imports', $file, $file->getFilename());
         $this->assertFileExists($tenant->storagePath($path), 'File Exists in Tenant Storage');
 
         $tenant->deleteStoragePartition();
