@@ -16,7 +16,7 @@ class UserTest extends TestCase
 {
     use Datatable, DestroyForm, EditForm, RefreshDatabase;
 
-    private $permissionGroup = 'administration.user';
+    private $permissionGroup = 'administration.users';
     private $testModel;
 
     protected function setUp(): void

@@ -1241,7 +1241,7 @@ Route::namespace('')
     ->prefix('administration/users')
     ->as('administration.users.')
     ->group(function () {
-        Route::get('create', UserCreate::class)->name('create');
+        Route::get('', UserCreate::class)->name('create');
         Route::post('', UserStore::class)->name('store');
         Route::get('{user}/edit', UserEdit::class)->name('edit');
         Route::patch('{user}', UserUpdate::class)->name('update');
