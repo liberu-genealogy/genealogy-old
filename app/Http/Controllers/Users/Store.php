@@ -22,7 +22,7 @@ class Store extends Controller
 
         return [
             'message' => __('The user was successfully created'),
-            'redirect' => 'administration.user.edit',
+            'redirect' => 'administration.users.edit',
             'param' => ['user' => $user->id],
         ];
     }
