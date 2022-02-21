@@ -1,5 +1,5 @@
 {
-	"authHost": "http://genealogy.test",
+	"authHost": "https://www.familytree365.com",
 	"authEndpoint": "/broadcasting/auth",
 	"clients": [],
 	"database": "redis",
@@ -25,7 +25,7 @@
 	},
 	"apiOriginAllow": {
 		"allowCors": true,
-		"allowOrigin": "http://genealogy.test:80",
+		"allowOrigin": "https://www.familytree365.co",
 		"allowMethods": "GET, POST",
 		"allowHeaders": "Origin, Content-Type, X-Auth-Token, X-Requested-With, Accept, Authorization, X-CSRF-TOKEN, X-Socket-Id"
 	}
