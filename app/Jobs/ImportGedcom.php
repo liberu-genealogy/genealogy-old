@@ -44,7 +44,7 @@ class ImportGedcom implements ShouldQueue
             $tenant->dropDatabase();
         }
         $tenant->createDatabase();
-        $tenant->migrateDatabase();
+        $tenant->migrateDatabase(); 
 
         $slug = $this->slug ?? Str::uuid();
 

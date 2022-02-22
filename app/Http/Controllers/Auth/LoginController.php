@@ -77,7 +77,7 @@ class LoginController extends Controller
 
             return [
                 'auth' => Auth::check(),
-                'csrfToken' => csrf_token(),
+                'csrfToken' => csrf_token()
             ];
         }
 
