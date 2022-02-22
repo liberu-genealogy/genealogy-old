@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Tenant;
 
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Config\Repository;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Database\ConnectionInterface;
@@ -79,9 +80,19 @@ class Manager
 
     public function databaseExists(): bool
     {
+    try {
+        if($this->config->get('database.default') == 'sqlite'){
+            $this->connect(true);
+        }
+
         return count($this->database->select(<<<SQL
-        SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '{$this->partition}'
+        SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '{$this->partition}' 
         SQL)) > 0;
+            
+        } catch( \PDOException $e) {
+            return false;
+        }
+       
     }
 
     public function createDatabase(): self
