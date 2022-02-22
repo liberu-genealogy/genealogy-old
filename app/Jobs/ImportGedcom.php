@@ -39,7 +39,7 @@ class ImportGedcom implements ShouldQueue
         throw_unless(File::isFile($this->filePath), \Exception::class, "{$this->filePath} does not exist.");
 
         $tenant = Manager::fromModel($this->user->company() ?? $this->user)->connect();
-
+        
         if ($tenant->databaseExists()) {
             $tenant->dropDatabase();
         }
