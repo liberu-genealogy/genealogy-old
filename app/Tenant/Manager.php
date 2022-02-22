@@ -95,12 +95,13 @@ class Manager
        
     }
 
+
     public function createDatabase(): self
     {
-        $charset = $this->config->get('database.connections.mysql.charset', 'utf8');
-        $collate = $this->config->get('database.connections.mysql.collation', 'utf8_unicode_ci');
-        $this->database->statement("CREATE DATABASE {$this->partition} CHARACTER SET {$charset} COLLATE {$collate}");
-
+   
+        $charset =  $this->config->get('database.connections.mysql.charset', 'utf8');
+        $collate =  $this->config->get('database.connections.mysql.collation', 'utf8_unicode_ci');
+         $this->database->statement("CREATE DATABASE {$this->partition} CHARACTER SET {$charset} COLLATE {$collate};");
         return $this;
     }
 
