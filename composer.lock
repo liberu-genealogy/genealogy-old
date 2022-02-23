@@ -5618,16 +5618,16 @@
         },
         {
             "name": "laravel/cashier",
-            "version": "v13.8.2",
+            "version": "v13.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/cashier-stripe.git",
-                "reference": "389c0fe49d285026b2db39643ac1ae924c9139a0"
+                "reference": "c9cfa54ac67d6c99f19a4ac7faf51bb3d7e27526"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/cashier-stripe/zipball/389c0fe49d285026b2db39643ac1ae924c9139a0",
-                "reference": "389c0fe49d285026b2db39643ac1ae924c9139a0",
+                "url": "https://api.github.com/repos/laravel/cashier-stripe/zipball/c9cfa54ac67d6c99f19a4ac7faf51bb3d7e27526",
+                "reference": "c9cfa54ac67d6c99f19a4ac7faf51bb3d7e27526",
                 "shasum": ""
             },
             "require": {
@@ -5694,20 +5694,20 @@
                 "issues": "https://github.com/laravel/cashier/issues",
                 "source": "https://github.com/laravel/cashier"
             },
-            "time": "2022-02-08T18:55:25+00:00"
+            "time": "2022-02-22T16:00:53+00:00"
         },
         {
             "name": "laravel/framework",
-            "version": "v8.83.1",
+            "version": "v8.83.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "bddba117f8bce2f3c9875ca1ca375a96350d0f4d"
+                "reference": "b91b3b5b39fbbdc763746f5714e08d50a4dd7857"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/bddba117f8bce2f3c9875ca1ca375a96350d0f4d",
-                "reference": "bddba117f8bce2f3c9875ca1ca375a96350d0f4d",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/b91b3b5b39fbbdc763746f5714e08d50a4dd7857",
+                "reference": "b91b3b5b39fbbdc763746f5714e08d50a4dd7857",
                 "shasum": ""
             },
             "require": {
@@ -5867,7 +5867,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-02-15T15:05:20+00:00"
+            "time": "2022-02-22T15:10:17+00:00"
         },
         {
             "name": "laravel/horizon",
