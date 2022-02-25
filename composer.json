@@ -10,7 +10,7 @@
         "familytree365/laravel-gelato": "^1.0",
         "familytree365/multitenancy": "^2.0",
         "fideloper/proxy": "^4.2",
-        "fruitcake/laravel-cors": "^2.0",
+        "fruitcake/laravel-cors": "^3.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel-enso/calendar": "^2.0",
         "laravel-enso/cli": "^4.0",
