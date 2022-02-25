@@ -7,6 +7,7 @@ logger.addHandler(logging.StreamHandler(sys.stdout))
 from lineage import Lineage
 l = Lineage(output_dir='storage/app/dna/output')
 
+
 var1 = sys.argv[1]
 var2 = sys.argv[2]
 
