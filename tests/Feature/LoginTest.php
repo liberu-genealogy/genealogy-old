@@ -2,13 +2,13 @@
 
 namespace Tests\Feature;
 
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Testing\TestResponse;
 use Laravel\Sanctum\PersonalAccessToken;
-use App\Models\User;
 use Tests\TestCase;
 
 class LoginTest extends TestCase
@@ -18,7 +18,6 @@ class LoginTest extends TestCase
     private const Password = 'password';
     private const WrongPassword = 'wrong_password';
     private const SpaUrl = 'spa.test';
-
 
     private $permissionGroup = 'administration.users';
     private $testModel;
@@ -42,7 +41,7 @@ class LoginTest extends TestCase
     {
         $response = $this->loginSpa();
         $response->assertJson(['auth' => true]);
-        $this->assertAuthenticatedAs($this->testModel,  $this->spaGuard);
+        $this->assertAuthenticatedAs($this->testModel, $this->spaGuard);
     }
 
     /** @test */
@@ -160,10 +159,3 @@ class LoginTest extends TestCase
         $this->assertTrue($token->tokenable->is($this->testModel));
     }
 }
-
-
-
-
-
-
-

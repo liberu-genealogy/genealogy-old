@@ -33,6 +33,5 @@ class CreateCompanyPersonPivotTable extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('company_person');
         Schema::enableForeignKeyConstraints();
-
     }
 }
