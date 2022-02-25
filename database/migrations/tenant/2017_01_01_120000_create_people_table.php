@@ -41,9 +41,8 @@ class CreatePeopleTable extends Migration
 
     public function down()
     {
-
         Schema::table('company_person', fn (Blueprint $table) => (
-            $table->dropUnique(['person_id','company_id'])
+            $table->dropUnique(['person_id', 'company_id'])
         ));
         Schema::table('users', fn (Blueprint $table) => (
             $table->dropForeign(['person_id'])
@@ -52,7 +51,5 @@ class CreatePeopleTable extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('people');
         Schema::enableForeignKeyConstraints();
-
-
     }
 }
