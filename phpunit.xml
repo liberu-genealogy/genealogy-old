@@ -21,7 +21,7 @@
             <directory suffix="Test.php">./vendor/laravel-enso/calendar/tests</directory>
             <directory suffix="Test.php">./vendor/laravel-enso/comments/tests</directory>
             <directory suffix="Test.php">./vendor/laravel-enso/companies/tests</directory>
-            <directory suffix="Test.php">./vendor/laravel-enso/core/tests</directory>
+            <!-- <directory suffix="Test.php">./vendor/laravel-enso/core/tests</directory> -->
             <directory suffix="Test.php">./vendor/laravel-enso/filters/tests</directory>
             <directory suffix="Test.php">./vendor/laravel-enso/forms/tests</directory>
             <directory suffix="Test.php">./vendor/laravel-enso/helpers/tests</directory>
