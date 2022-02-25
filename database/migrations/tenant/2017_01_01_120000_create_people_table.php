@@ -41,10 +41,18 @@ class CreatePeopleTable extends Migration
 
     public function down()
     {
+
+        Schema::table('company_person', fn (Blueprint $table) => (
+            $table->dropUnique(['person_id','company_id'])
+        ));
         Schema::table('users', fn (Blueprint $table) => (
             $table->dropForeign(['person_id'])
         ));
 
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('people');
+        Schema::enableForeignKeyConstraints();
+
+
     }
 }

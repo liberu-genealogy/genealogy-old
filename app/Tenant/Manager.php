@@ -82,27 +82,28 @@ class Manager
     {
     try {
         if($this->config->get('database.default') == 'sqlite'){
-            $this->connect(true);
+            // $this->connect(true);
+            $this->config->set('database.default','tenant');
         }
-
         return count($this->database->select(<<<SQL
-        SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '{$this->partition}' 
+        SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '{$this->partition}';
         SQL)) > 0;
-            
+
         } catch( \PDOException $e) {
             return false;
         }
-       
+
     }
 
 
     public function createDatabase(): self
     {
-   
+
         $charset =  $this->config->get('database.connections.mysql.charset', 'utf8');
         $collate =  $this->config->get('database.connections.mysql.collation', 'utf8_unicode_ci');
-         $this->database->statement("CREATE DATABASE {$this->partition} CHARACTER SET {$charset} COLLATE {$collate};");
+        $this->database->statement("CREATE DATABASE {$this->partition} CHARACTER SET {$charset} COLLATE {$collate}");
         return $this;
+
     }
 
     public function dropDatabase(): self
@@ -114,6 +115,8 @@ class Manager
 
     public function migrateDatabase(): self
     {
+
+
         Artisan::call('migrate:fresh', [
             '--realpath' => database_path('migrations/tenant'),
             '--database' => $this->connectionName,
@@ -121,6 +124,7 @@ class Manager
         ]);
 
         return $this;
+
     }
 
     public function hasStoragePartition(): bool
