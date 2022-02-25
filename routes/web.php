@@ -8,5 +8,3 @@ Route::get('/trees/gift/order/{orderId}', [Gift::class, 'getOrder'])->name('gift
 Route::get('/trees/gift/order/{orderId}/shipping', [Gift::class, 'getShippingAddress'])->name('gift.get.shipping');
 
 Route::view('/{any}', 'index')->where('any', '.*');
-
-
