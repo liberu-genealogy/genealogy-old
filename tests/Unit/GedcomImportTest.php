@@ -36,6 +36,4 @@ class GedcomImportTest extends TestCase
             'slug' => 'test',
         ], $tenant->connectionName());
     }
-
-
 }
