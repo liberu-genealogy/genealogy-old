@@ -78,5 +78,11 @@ jobs:
       - run: php artisan migrate
       - run: mkdir -p build/logs
   #   - run: php artisan test
-      - run: php vendor/bin/phpunit
+      - run: mkdir -p ~/phpunit
+      - run: vendor/bin/phpunit --log-junit ~/phpunit/junit.xml tests
+
+store_test_results:
+          path: ~/phpunit
+
+      
 
