@@ -8,14 +8,6 @@ use Stripe;
 
 class GetPlans extends Controller
 {
-    protected $plans;
-
-    public function __construct()
-    {
-        Stripe\Stripe::setApiKey(\Config::get('services.stripe.secret'));
-        $this->plans = Stripe\Plan::all();
-    }
-
     /**
      * Handle the incoming request.
      *
@@ -24,8 +16,11 @@ class GetPlans extends Controller
      */
     public function __invoke(Request $request)
     {
+        Stripe\Stripe::setApiKey(\Config::get('services.stripe.secret'));
+        $plans = Stripe\Plan::all();
+
         $result = [];
-        foreach ($this->plans as $plan) {
+        foreach ($plans as $plan) {
             $row ['id'] = $plan->id;
             $row['amount'] = $plan->amount;
             $row['nickname'] = $plan->nickname;
