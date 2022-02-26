@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "39db56910c8292cf291a25774be3ef44",
+    "content-hash": "2e7545fca3fef46b7cd7ba7c195a76ad",
     "packages": [
         {
             "name": "anlutro/curl",
@@ -2509,16 +2509,16 @@
         },
         {
             "name": "laravel-enso/avatars",
-            "version": "4.0.1",
+            "version": "4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/avatars.git",
-                "reference": "57b0eb83a39e55b939b59cf2bab6fec4d5281b70"
+                "reference": "0145ed3df3f5398cdb08ec479156d4b71ecd999c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/avatars/zipball/57b0eb83a39e55b939b59cf2bab6fec4d5281b70",
-                "reference": "57b0eb83a39e55b939b59cf2bab6fec4d5281b70",
+                "url": "https://api.github.com/repos/laravel-enso/avatars/zipball/0145ed3df3f5398cdb08ec479156d4b71ecd999c",
+                "reference": "0145ed3df3f5398cdb08ec479156d4b71ecd999c",
                 "shasum": ""
             },
             "require": {
@@ -2565,9 +2565,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/avatars/issues",
-                "source": "https://github.com/laravel-enso/avatars/tree/4.0.1"
+                "source": "https://github.com/laravel-enso/avatars/tree/4.0.2"
             },
-            "time": "2022-02-25T13:39:32+00:00"
+            "time": "2022-02-25T16:31:07+00:00"
         },
         {
             "name": "laravel-enso/calendar",
@@ -3761,16 +3761,16 @@
         },
         {
             "name": "laravel-enso/forms",
-            "version": "4.3.10",
+            "version": "4.3.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/forms.git",
-                "reference": "84624b46962054a92a74b0bde0813cf15fcce055"
+                "reference": "03a6b10aa897a56ab66b462aed11cec27e5aad66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/forms/zipball/84624b46962054a92a74b0bde0813cf15fcce055",
-                "reference": "84624b46962054a92a74b0bde0813cf15fcce055",
+                "url": "https://api.github.com/repos/laravel-enso/forms/zipball/03a6b10aa897a56ab66b462aed11cec27e5aad66",
+                "reference": "03a6b10aa897a56ab66b462aed11cec27e5aad66",
                 "shasum": ""
             },
             "require": {
@@ -3815,9 +3815,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/forms/issues",
-                "source": "https://github.com/laravel-enso/forms/tree/4.3.10"
+                "source": "https://github.com/laravel-enso/forms/tree/4.3.11"
             },
-            "time": "2021-07-07T13:35:24+00:00"
+            "time": "2022-02-25T16:29:16+00:00"
         },
         {
             "name": "laravel-enso/google",
@@ -3986,16 +3986,16 @@
         },
         {
             "name": "laravel-enso/how-to",
-            "version": "5.0.0",
+            "version": "5.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/how-to.git",
-                "reference": "65bf89c3a587cfb1a3e4aa712dc2a65ff0dd8fe6"
+                "reference": "dfdb3ac8d2a7d458a89b761517b1af83d46abccf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/how-to/zipball/65bf89c3a587cfb1a3e4aa712dc2a65ff0dd8fe6",
-                "reference": "65bf89c3a587cfb1a3e4aa712dc2a65ff0dd8fe6",
+                "url": "https://api.github.com/repos/laravel-enso/how-to/zipball/dfdb3ac8d2a7d458a89b761517b1af83d46abccf",
+                "reference": "dfdb3ac8d2a7d458a89b761517b1af83d46abccf",
                 "shasum": ""
             },
             "require": {
@@ -4040,9 +4040,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/how-to/issues",
-                "source": "https://github.com/laravel-enso/how-to/tree/5.0.0"
+                "source": "https://github.com/laravel-enso/how-to/tree/5.0.1"
             },
-            "time": "2022-02-25T08:46:01+00:00"
+            "time": "2022-02-25T16:34:59+00:00"
         },
         {
             "name": "laravel-enso/image-transformer",
@@ -13983,20 +13983,20 @@
         },
         {
             "name": "composer/xdebug-handler",
-            "version": "3.0.2",
+            "version": "3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/xdebug-handler.git",
-                "reference": "b11b961ef6b11e380e81a20b27c8cad54eeefe61"
+                "reference": "ced299686f41dce890debac69273b47ffe98a40c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/b11b961ef6b11e380e81a20b27c8cad54eeefe61",
-                "reference": "b11b961ef6b11e380e81a20b27c8cad54eeefe61",
+                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/ced299686f41dce890debac69273b47ffe98a40c",
+                "reference": "ced299686f41dce890debac69273b47ffe98a40c",
                 "shasum": ""
             },
             "require": {
-                "composer/pcre": "^1",
+                "composer/pcre": "^1 || ^2 || ^3",
                 "php": "^7.2.5 || ^8.0",
                 "psr/log": "^1 || ^2 || ^3"
             },
@@ -14029,7 +14029,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/xdebug-handler/issues",
-                "source": "https://github.com/composer/xdebug-handler/tree/3.0.2"
+                "source": "https://github.com/composer/xdebug-handler/tree/3.0.3"
             },
             "funding": [
                 {
@@ -14045,7 +14045,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-02-24T20:53:32+00:00"
+            "time": "2022-02-25T21:32:43+00:00"
         },
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
@@ -14527,6 +14527,58 @@
             "time": "2022-02-02T17:38:57+00:00"
         },
         {
+            "name": "familytree365/phpunit-pretty-print",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/familytree365/phpunit-pretty-print.git",
+                "reference": "b5a2abd74e9be336eaf2791a5acb1fb2ff2173cd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/familytree365/phpunit-pretty-print/zipball/b5a2abd74e9be336eaf2791a5acb1fb2ff2173cd",
+                "reference": "b5a2abd74e9be336eaf2791a5acb1fb2ff2173cd",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^8.0|^9.0",
+                "php": ">=8.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LaravelEnso\\PHPUnitPrettyPrint\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adrian Ocneanu",
+                    "email": "aocneanu@gmail.com",
+                    "homepage": "https://laravel-enso.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHPUnit Pretty Print for Laravel",
+            "homepage": "https://github.com/laravel-enso/PHPUnitPrettyPrint",
+            "keywords": [
+                "laravel",
+                "laravel-enso",
+                "phpunit",
+                "phpunit-pretty-print",
+                "pretty-print",
+                "validator"
+            ],
+            "support": {
+                "source": "https://github.com/familytree365/phpunit-pretty-print/tree/1.0.2"
+            },
+            "time": "2022-02-25T16:19:20+00:00"
+        },
+        {
             "name": "filp/whoops",
             "version": "2.14.5",
             "source": {
@@ -14806,59 +14858,6 @@
                 "source": "https://github.com/justinrainbow/json-schema/tree/5.2.11"
             },
             "time": "2021-07-22T09:24:00+00:00"
-        },
-        {
-            "name": "laravel-enso/phpunit-pretty-print",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel-enso/phpunit-pretty-print.git",
-                "reference": "803e0eea08512b5680ed8610f7383b270e8b700a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/phpunit-pretty-print/zipball/803e0eea08512b5680ed8610f7383b270e8b700a",
-                "reference": "803e0eea08512b5680ed8610f7383b270e8b700a",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "^8.0",
-                "php": ">=8.0",
-                "phpunit/phpunit": "^9.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "LaravelEnso\\PHPUnitPrettyPrint\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Adrian Ocneanu",
-                    "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "PHPUnit Pretty Print for Laravel",
-            "homepage": "https://github.com/laravel-enso/PHPUnitPrettyPrint",
-            "keywords": [
-                "laravel",
-                "laravel-enso",
-                "phpunit",
-                "phpunit-pretty-print",
-                "pretty-print",
-                "validator"
-            ],
-            "support": {
-                "issues": "https://github.com/laravel-enso/phpunit-pretty-print/issues",
-                "source": "https://github.com/laravel-enso/phpunit-pretty-print/tree/1.0.1"
-            },
-            "time": "2021-09-17T08:47:54+00:00"
         },
         {
             "name": "league/container",
