@@ -16,6 +16,8 @@ own family tree by importing your existing data or manual data entry. Storage of
 not leave your environment without your permission. API support for many databases of family tree records. In the future there will be optional
 smart matching with other servers. This is the Laravel 8 backend using the Laravel Enso collection of modules. Please see https://github.com/familytree365/nuxt for the client.
 
+Data tables for comphrensive amount of CRUD information. Forms easy to modify. Gedcom import and export. DNA matching. Subscriptions using Stripe and PayPal. APIs for various online databases of genealogical records.
+
 ## Demo
 
 https://www.familytree365.com - register a free account
