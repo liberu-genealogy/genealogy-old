@@ -13,19 +13,15 @@ class Store extends Controller
 {
     public function __invoke(Request $request): Response
     {
-
-
-         $request->validate([
+        [$slug, $file] = $request->validate([
             'slug' => 'required|string',
-            'file' => 'required|mimes:ged,txt'
+            'file' => 'required|mimes:application/octet-stream',
         ]);
-        $slug = $request->slug;
-        $file = $request->file;
 
         $manager = Manager::fromModel($request->user()->company() ?? $request->user());
 
-        // $path = $manager->getStorage()->putFileAs('imports', $file, null);
-        $path = $manager->storage()->putFileAs('imports',$file, time()."."."ged");
+        $path = $manager->getStorage()->putFileAs('imports', $file, null);
+
         ImportGedcom::dispatch($request->user(), $manager->storagePath($path), $slug);
 
         return response([

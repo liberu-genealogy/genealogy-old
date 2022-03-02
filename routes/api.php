@@ -400,6 +400,7 @@ use LaravelEnso\People\Http\Controllers\Store as PeopleStore;
 use LaravelEnso\People\Http\Controllers\TableData as PeopleTableData;
 use LaravelEnso\People\Http\Controllers\Update as PeopleUpdate;
 
+
 /**
  * Route::middleware(['guest'])
  * ->prefix('api')
@@ -433,6 +434,15 @@ use LaravelEnso\People\Http\Controllers\Update as PeopleUpdate;
  * });
  *
  **/
+use App\Http\Controllers\Families\ExportGramps;
+use App\Http\Controllers\Families\ImportGramps;
+
+// use App\Http\Controllers\Families\ExportGramps as FamiliesExportGramps;
+
+
+Route::get('gramps-export', [ExportGramps::class, 'export']);
+Route::post('gramps-import', [ImportGramps::class, 'import']);
+
 Route::namespace('Auth')
     ->middleware('api')
     ->group(function () {
