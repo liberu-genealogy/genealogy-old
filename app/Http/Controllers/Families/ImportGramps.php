@@ -5,17 +5,17 @@ namespace App\Http\Controllers\Families;
 use App\Models\Family;
 use App\Models\FamilyEvent;
 use App\Models\Person;
+use Flowgistics\XML\Transformers\ArrayTransformer;
+use Flowgistics\XML\XML;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Flowgistics\XML\XML;
-use Flowgistics\XML\Transformers\ArrayTransformer;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class ImportGramps extends Controller
 {
-    
-    public function import(Request $request){
+    public function import(Request $request)
+    {
         $request->validate([
             'file' => ['required', 'file', 'mimes:xml'],
         ]);
@@ -26,19 +26,17 @@ class ImportGramps extends Controller
         $fileName = $res[0];
         $families = $res[1]['family'];
 
-
-        if(array_key_exists('husband', $families) || array_key_exists('wife', $families)){
+        if (array_key_exists('husband', $families) || array_key_exists('wife', $families)) {
             $families = [$families];
         }
-        
 
         $errors = [];
-        foreach($families as $key=>$family){
+        foreach ($families as $key=>$family) {
             // Validate family
             $error = $this->validateFamily($family);
-            
-            if(count($error)>0){
-                $errors['Family-'.$key+1]= $error;
+
+            if (count($error) > 0) {
+                $errors['Family-'.$key + 1] = $error;
                 continue;
             }
 
@@ -46,10 +44,10 @@ class ImportGramps extends Controller
 
             $husband = $this->createPerson($family['husband'], null, 'M');
             $wife = $this->createPerson($family['wife'], null, 'F');
-            
+
             $fam = Family::where('husband_id', $husband->id)->where('wife_id', $wife->id)->first();
 
-            if(!$fam){
+            if (! $fam) {
                 $fam = Family::create([
                     'description'=>$description,
                     'husband_id'=>$husband->id,
@@ -57,7 +55,7 @@ class ImportGramps extends Controller
                 ]);
             }
 
-            foreach($family['child'] as $child){
+            foreach ($family['child'] as $child) {
                 $this->createPerson($child, $fam->id);
             }
         }
@@ -65,30 +63,31 @@ class ImportGramps extends Controller
         // remove temp file after importing
         Storage::delete('files/temp/'.$fileName);
 
-        if(count($errors)>0){
+        if (count($errors) > 0) {
             return ['errors'=>$errors];
         }
 
         return json_encode([
-            'message'=> 'File imported successfully'
+            'message'=> 'File imported successfully',
         ]);
-
     }
 
-    protected function fileToJson($request){
+    protected function fileToJson($request)
+    {
         $fileName = 'temp'.uniqid().'.xml';
 
         $file = $request->file('file')->storeAs('/files/temp', $fileName);
 
         $xmlDataString = file_get_contents(storage_path('app/files/temp/'.$fileName));
         $xmlObject = simplexml_load_string($xmlDataString);
-                   
+
         $json = json_encode($xmlObject);
-        
-        return [$fileName, json_decode($json, true)]; 
+
+        return [$fileName, json_decode($json, true)];
     }
 
-    protected function validateFamily($family){
+    protected function validateFamily($family)
+    {
         return Validator::make($family, [
             'description'=>'sometimes|string',
             'husband.birthday'=>'required|date',
@@ -104,11 +103,12 @@ class ImportGramps extends Controller
         ])->errors();
     }
 
-    protected function createPerson($arr, $parentId=null, $defaultGender = null){
+    protected function createPerson($arr, $parentId = null, $defaultGender = null)
+    {
         $p = Person::where('givn', $arr['name']['first_name'])->where('surn', $arr['name']['last_name'])->where('birthday', $arr['birthday'].' 00:00:00')->first();
 
-        if($p){
-            if($parentId){
+        if ($p) {
+            if ($parentId) {
                 $p->child_in_family_id = $parentId;
                 $p->save();
             }
@@ -119,7 +119,7 @@ class ImportGramps extends Controller
         return Person::create([
             'givn'=>$arr['name']['first_name'],
             'surn'=>$arr['name']['last_name'],
-            'sex'=>$arr['gender']??null?substr($arr['gender'],0,1):$defaultGender,
+            'sex'=>$arr['gender'] ?? null ? substr($arr['gender'], 0, 1) : $defaultGender,
             'birthday'=>$arr['birthday'],
             'child_in_family_id'=>$parentId,
         ]);

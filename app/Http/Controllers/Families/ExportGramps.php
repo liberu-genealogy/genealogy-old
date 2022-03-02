@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Families;
 use App\Models\Family;
 use App\Models\FamilyEvent;
 use App\Models\Person;
+use Flowgistics\XML\Transformers\ArrayTransformer;
+use Flowgistics\XML\XML;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Flowgistics\XML\XML;
-use Flowgistics\XML\Transformers\ArrayTransformer;
 
 class ExportGramps extends Controller
 {
@@ -18,7 +18,7 @@ class ExportGramps extends Controller
 
         $families = Family::all();
 
-        foreach($families as $family){
+        foreach ($families as $family) {
             $familyId = $family->id;
             $description = $family->description;
 
@@ -28,27 +28,28 @@ class ExportGramps extends Controller
             $children = $family->children()->get();
             $childrenArr = [];
 
-            foreach($children as $child){
+            foreach ($children as $child) {
                 $per = $this->getPersonDetail($child);
                 array_push($childrenArr, $per);
             }
 
-            array_push($data,[
+            array_push($data, [
                 'id'=>$familyId,
                 'description'=>$description,
                 'husband'=>$husband,
                 'wife'=>$wife,
-                'child'=>$childrenArr
+                'child'=>$childrenArr,
             ]);
         }
-        
+
         $xml = XML::export(['family'=>$data])->rootTag('database')
             ->toString();
 
         return $xml;
     }
 
-    protected function getPersonDetail($person){
+    protected function getPersonDetail($person)
+    {
         return [
             'name'=>[
                 'first_name'=>$person->givn,
@@ -56,8 +57,7 @@ class ExportGramps extends Controller
             ],
             'gender'=>$person->getSex(),
             'birthday'=>substr($person->birthday, 0, 10),
-            'parent_id'=>$person->child_in_family_id
+            'parent_id'=>$person->child_in_family_id,
         ];
     }
-
 }
