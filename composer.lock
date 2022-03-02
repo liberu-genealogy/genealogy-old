@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b124cc60c2ddbce4f306c4859dc80066",
+    "content-hash": "6d440a86b4f2666720fa6cc9a6f50141",
     "packages": [
         {
             "name": "anlutro/curl",
@@ -2722,21 +2722,21 @@
         },
         {
             "name": "laravel-enso/charts",
-            "version": "4.3.3",
+            "version": "4.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/charts.git",
-                "reference": "3d1867d9a276c82edf56a7b46e907a2c0e720dab"
+                "reference": "ae3e79a4075849a04cc06d2d6ab6256385d45889"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/charts/zipball/3d1867d9a276c82edf56a7b46e907a2c0e720dab",
-                "reference": "3d1867d9a276c82edf56a7b46e907a2c0e720dab",
+                "url": "https://api.github.com/repos/laravel-enso/charts/zipball/ae3e79a4075849a04cc06d2d6ab6256385d45889",
+                "reference": "ae3e79a4075849a04cc06d2d6ab6256385d45889",
                 "shasum": ""
             },
             "require": {
                 "laravel-enso/helpers": "^2.0",
-                "laravel/framework": "^7.0|^8.0",
+                "laravel/framework": "^7.0|^8.0|^9.0",
                 "php": ">=7.4.0"
             },
             "type": "library",
@@ -2775,9 +2775,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/charts/issues",
-                "source": "https://github.com/laravel-enso/charts/tree/4.3.3"
+                "source": "https://github.com/laravel-enso/charts/tree/4.4.0"
             },
-            "time": "2021-11-08T14:34:13+00:00"
+            "time": "2022-03-02T11:15:10+00:00"
         },
         {
             "name": "laravel-enso/cli",
@@ -3594,20 +3594,20 @@
         },
         {
             "name": "laravel-enso/enums",
-            "version": "2.1.6",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/enums.git",
-                "reference": "9780e3d3ec15695614943fd1c068dbc0aa6c7ca9"
+                "reference": "7a5f0a216a4c11b4e721cc7dda30928e80af3598"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/enums/zipball/9780e3d3ec15695614943fd1c068dbc0aa6c7ca9",
-                "reference": "9780e3d3ec15695614943fd1c068dbc0aa6c7ca9",
+                "url": "https://api.github.com/repos/laravel-enso/enums/zipball/7a5f0a216a4c11b4e721cc7dda30928e80af3598",
+                "reference": "7a5f0a216a4c11b4e721cc7dda30928e80af3598",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "^7.0|^8.0",
+                "laravel/framework": "^7.0|^8.0|^9.0",
                 "php": ">=7.4.0"
             },
             "type": "library",
@@ -3653,9 +3653,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/enums/issues",
-                "source": "https://github.com/laravel-enso/enums/tree/2.1.6"
+                "source": "https://github.com/laravel-enso/enums/tree/2.2.0"
             },
-            "time": "2021-06-09T10:14:44+00:00"
+            "time": "2022-03-02T11:55:07+00:00"
         },
         {
             "name": "laravel-enso/excel",
@@ -4013,20 +4013,20 @@
         },
         {
             "name": "laravel-enso/history-tracker",
-            "version": "2.0.2",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/history-tracker.git",
-                "reference": "209345bbe692a533e0771e2064a6ccc7ba93c170"
+                "reference": "e5eaeb2f0024f6a59461d36ac69054076a0ce6dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/history-tracker/zipball/209345bbe692a533e0771e2064a6ccc7ba93c170",
-                "reference": "209345bbe692a533e0771e2064a6ccc7ba93c170",
+                "url": "https://api.github.com/repos/laravel-enso/history-tracker/zipball/e5eaeb2f0024f6a59461d36ac69054076a0ce6dd",
+                "reference": "e5eaeb2f0024f6a59461d36ac69054076a0ce6dd",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "^7.0|^8.0",
+                "laravel/framework": "^7.0|^8.0|^9.0",
                 "php": ">=7.4.0"
             },
             "type": "library",
@@ -4055,22 +4055,22 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/history-tracker/issues",
-                "source": "https://github.com/laravel-enso/history-tracker/tree/2.0.2"
+                "source": "https://github.com/laravel-enso/history-tracker/tree/2.1.0"
             },
-            "time": "2021-06-09T10:21:20+00:00"
+            "time": "2022-03-02T12:07:21+00:00"
         },
         {
             "name": "laravel-enso/how-to",
-            "version": "4.0.7",
+            "version": "4.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/how-to.git",
-                "reference": "24169fd34bb2272a8a4f93ed112bf6df4e24fa11"
+                "reference": "8e00e8bb4c25962735962df2eb0c8f18199a61f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/how-to/zipball/24169fd34bb2272a8a4f93ed112bf6df4e24fa11",
-                "reference": "24169fd34bb2272a8a4f93ed112bf6df4e24fa11",
+                "url": "https://api.github.com/repos/laravel-enso/how-to/zipball/8e00e8bb4c25962735962df2eb0c8f18199a61f6",
+                "reference": "8e00e8bb4c25962735962df2eb0c8f18199a61f6",
                 "shasum": ""
             },
             "require": {
@@ -4115,9 +4115,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/how-to/issues",
-                "source": "https://github.com/laravel-enso/how-to/tree/4.0.7"
+                "source": "https://github.com/laravel-enso/how-to/tree/4.0.8"
             },
-            "time": "2021-06-09T10:21:37+00:00"
+            "time": "2022-02-25T06:08:11+00:00"
         },
         {
             "name": "laravel-enso/image-transformer",
@@ -5356,20 +5356,20 @@
         },
         {
             "name": "laravel-enso/track-who",
-            "version": "2.0.4",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/track-who.git",
-                "reference": "6d95305268a062263383174146287853b6926610"
+                "reference": "f8561aec9b297f4b3318b3ab451922069d565ac0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/track-who/zipball/6d95305268a062263383174146287853b6926610",
-                "reference": "6d95305268a062263383174146287853b6926610",
+                "url": "https://api.github.com/repos/laravel-enso/track-who/zipball/f8561aec9b297f4b3318b3ab451922069d565ac0",
+                "reference": "f8561aec9b297f4b3318b3ab451922069d565ac0",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "^7.0|^8.0",
+                "laravel/framework": "^7.0|^8.0|^9.0",
                 "php": ">=7.4.0"
             },
             "type": "library",
@@ -5398,9 +5398,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/track-who/issues",
-                "source": "https://github.com/laravel-enso/track-who/tree/2.0.4"
+                "source": "https://github.com/laravel-enso/track-who/tree/2.1.0"
             },
-            "time": "2021-06-09T10:37:36+00:00"
+            "time": "2022-03-02T13:00:19+00:00"
         },
         {
             "name": "laravel-enso/tutorials",
@@ -9173,12 +9173,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Ramsey\\Uuid\\": "src/"
-                },
                 "files": [
                     "src/functions.php"
-                ]
+                ],
+                "psr-4": {
+                    "Ramsey\\Uuid\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -15091,28 +15091,29 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.10.2",
+            "version": "1.10.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "776f831124e9c62e1a2c601ecc52e776d8bb7220"
+                "reference": "c6a951b75d684fd43fbbd69617488e1e2e8924ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/776f831124e9c62e1a2c601ecc52e776d8bb7220",
-                "reference": "776f831124e9c62e1a2c601ecc52e776d8bb7220",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/c6a951b75d684fd43fbbd69617488e1e2e8924ba",
+                "reference": "c6a951b75d684fd43fbbd69617488e1e2e8924ba",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1 || ^8.0"
             },
-            "replace": {
-                "myclabs/deep-copy": "self.version"
+            "conflict": {
+                "doctrine/collections": "<1.6.8",
+                "doctrine/common": "<2.13.3 || >=3,<3.2.2"
             },
             "require-dev": {
-                "doctrine/collections": "^1.0",
-                "doctrine/common": "^2.6",
-                "phpunit/phpunit": "^7.1"
+                "doctrine/collections": "^1.6.8",
+                "doctrine/common": "^2.13.3 || ^3.2.2",
+                "phpunit/phpunit": "^7.5.20 || ^8.5.23 || ^9.5.13"
             },
             "type": "library",
             "autoload": {
@@ -15137,7 +15138,7 @@
             ],
             "support": {
                 "issues": "https://github.com/myclabs/DeepCopy/issues",
-                "source": "https://github.com/myclabs/DeepCopy/tree/1.10.2"
+                "source": "https://github.com/myclabs/DeepCopy/tree/1.10.3"
             },
             "funding": [
                 {
@@ -15145,7 +15146,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-13T09:40:50+00:00"
+            "time": "2022-03-02T14:16:47+00:00"
         },
         {
             "name": "nunomaduro/collision",
@@ -15901,16 +15902,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "9.2.13",
+            "version": "9.2.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "deac8540cb7bd40b2b8cfa679b76202834fd04e8"
+                "reference": "9f4d60b6afe5546421462b76cd4e633ebc364ab4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/deac8540cb7bd40b2b8cfa679b76202834fd04e8",
-                "reference": "deac8540cb7bd40b2b8cfa679b76202834fd04e8",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/9f4d60b6afe5546421462b76cd4e633ebc364ab4",
+                "reference": "9f4d60b6afe5546421462b76cd4e633ebc364ab4",
                 "shasum": ""
             },
             "require": {
@@ -15966,7 +15967,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.13"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.14"
             },
             "funding": [
                 {
@@ -15974,7 +15975,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-02-23T17:02:38+00:00"
+            "time": "2022-02-28T12:38:02+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -17955,5 +17956,5 @@
         "php": ">=8.0.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }

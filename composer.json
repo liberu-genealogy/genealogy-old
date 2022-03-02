@@ -22,7 +22,7 @@
         "laravel-enso/discussions": "^3.0",
         "laravel-enso/documents": "^4.0",
         "laravel-enso/excel": "^3.0",
-        "laravel-enso/how-to": "4.0.7",
+        "laravel-enso/how-to": "4.0.8",
         "laravel-enso/pdf": "^2.0",
         "laravel-enso/tasks": "^1.0",
         "laravel-enso/teams": "^3.0",
