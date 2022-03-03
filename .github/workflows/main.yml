@@ -18,7 +18,7 @@ jobs:
   phpunit:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.0'
@@ -30,7 +30,7 @@ jobs:
   phpcpd:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.0'
@@ -43,7 +43,7 @@ jobs:
   php-insights:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.0'
@@ -55,7 +55,7 @@ jobs:
   security:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.0'
@@ -69,7 +69,7 @@ jobs:
   migration:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: mirromutth/mysql-action@v1.1
         with:
           mysql database: ${{env.DB_DATABASE}}
@@ -87,7 +87,7 @@ jobs:
     if: ${{ github.event_name == 'deployment' || github.event_name == 'push' }}
     needs: [phpunit, phpcpd, migration, security, php-insights]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: 'Trig envoyer'
         run: |
           curl ${{ secrets.DEPLOY_WEBHOOK }}

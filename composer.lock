@@ -52,28 +52,31 @@
         },
         {
             "name": "barryvdh/laravel-snappy",
-            "version": "v0.4.8",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-snappy.git",
-                "reference": "1903ab84171072b6bff8d98eb58d38b2c9aaf645"
+                "reference": "2c18a3602981bc6f25b32908cf8aaa05952ab2f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-snappy/zipball/1903ab84171072b6bff8d98eb58d38b2c9aaf645",
-                "reference": "1903ab84171072b6bff8d98eb58d38b2c9aaf645",
+                "url": "https://api.github.com/repos/barryvdh/laravel-snappy/zipball/2c18a3602981bc6f25b32908cf8aaa05952ab2f7",
+                "reference": "2c18a3602981bc6f25b32908cf8aaa05952ab2f7",
                 "shasum": ""
             },
             "require": {
-                "illuminate/filesystem": "^5.5|^6|^7|^8",
-                "illuminate/support": "^5.5|^6|^7|^8",
+                "illuminate/filesystem": "^6|^7|^8|^9",
+                "illuminate/support": "^6|^7|^8|^9",
                 "knplabs/knp-snappy": "^1",
-                "php": ">=7"
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^4|^5|^6|^7"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4-dev"
+                    "dev-master": "1.0-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -111,9 +114,19 @@
             ],
             "support": {
                 "issues": "https://github.com/barryvdh/laravel-snappy/issues",
-                "source": "https://github.com/barryvdh/laravel-snappy/tree/master"
+                "source": "https://github.com/barryvdh/laravel-snappy/tree/v1.0.0"
             },
-            "time": "2020-09-07T12:33:10+00:00"
+            "funding": [
+                {
+                    "url": "https://fruitcake.nl",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/barryvdh",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-01-29T19:36:49+00:00"
         },
         {
             "name": "box/spout",
@@ -2517,22 +2530,22 @@
         },
         {
             "name": "laravel-enso/api",
-            "version": "1.3.10",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/api.git",
-                "reference": "90a45361a28367a6051793efd39a8220f1a251be"
+                "reference": "fd293ca8880d4afbcbc98f72943733b60c84feae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/api/zipball/90a45361a28367a6051793efd39a8220f1a251be",
-                "reference": "90a45361a28367a6051793efd39a8220f1a251be",
+                "url": "https://api.github.com/repos/laravel-enso/api/zipball/fd293ca8880d4afbcbc98f72943733b60c84feae",
+                "reference": "fd293ca8880d4afbcbc98f72943733b60c84feae",
                 "shasum": ""
             },
             "require": {
                 "laravel-enso/enums": "^2.0",
                 "laravel-enso/helpers": "^2.0",
-                "laravel/framework": "^7.0|^8.0",
+                "laravel/framework": "^7.0|^8.0|^9.0",
                 "php": "^8.0"
             },
             "type": "library",
@@ -2574,9 +2587,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/api/issues",
-                "source": "https://github.com/laravel-enso/api/tree/1.3.10"
+                "source": "https://github.com/laravel-enso/api/tree/1.4.0"
             },
-            "time": "2022-02-14T14:58:53+00:00"
+            "time": "2022-03-02T11:07:02+00:00"
         },
         {
             "name": "laravel-enso/avatars",
@@ -2722,21 +2735,21 @@
         },
         {
             "name": "laravel-enso/charts",
-            "version": "4.3.3",
+            "version": "4.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/charts.git",
-                "reference": "3d1867d9a276c82edf56a7b46e907a2c0e720dab"
+                "reference": "ae3e79a4075849a04cc06d2d6ab6256385d45889"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/charts/zipball/3d1867d9a276c82edf56a7b46e907a2c0e720dab",
-                "reference": "3d1867d9a276c82edf56a7b46e907a2c0e720dab",
+                "url": "https://api.github.com/repos/laravel-enso/charts/zipball/ae3e79a4075849a04cc06d2d6ab6256385d45889",
+                "reference": "ae3e79a4075849a04cc06d2d6ab6256385d45889",
                 "shasum": ""
             },
             "require": {
                 "laravel-enso/helpers": "^2.0",
-                "laravel/framework": "^7.0|^8.0",
+                "laravel/framework": "^7.0|^8.0|^9.0",
                 "php": ">=7.4.0"
             },
             "type": "library",
@@ -2775,9 +2788,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/charts/issues",
-                "source": "https://github.com/laravel-enso/charts/tree/4.3.3"
+                "source": "https://github.com/laravel-enso/charts/tree/4.4.0"
             },
-            "time": "2021-11-08T14:34:13+00:00"
+            "time": "2022-03-02T11:15:10+00:00"
         },
         {
             "name": "laravel-enso/cli",
@@ -3594,20 +3607,20 @@
         },
         {
             "name": "laravel-enso/enums",
-            "version": "2.1.6",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/enums.git",
-                "reference": "9780e3d3ec15695614943fd1c068dbc0aa6c7ca9"
+                "reference": "7a5f0a216a4c11b4e721cc7dda30928e80af3598"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/enums/zipball/9780e3d3ec15695614943fd1c068dbc0aa6c7ca9",
-                "reference": "9780e3d3ec15695614943fd1c068dbc0aa6c7ca9",
+                "url": "https://api.github.com/repos/laravel-enso/enums/zipball/7a5f0a216a4c11b4e721cc7dda30928e80af3598",
+                "reference": "7a5f0a216a4c11b4e721cc7dda30928e80af3598",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "^7.0|^8.0",
+                "laravel/framework": "^7.0|^8.0|^9.0",
                 "php": ">=7.4.0"
             },
             "type": "library",
@@ -3653,9 +3666,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/enums/issues",
-                "source": "https://github.com/laravel-enso/enums/tree/2.1.6"
+                "source": "https://github.com/laravel-enso/enums/tree/2.2.0"
             },
-            "time": "2021-06-09T10:14:44+00:00"
+            "time": "2022-03-02T11:55:07+00:00"
         },
         {
             "name": "laravel-enso/excel",
@@ -4013,20 +4026,20 @@
         },
         {
             "name": "laravel-enso/history-tracker",
-            "version": "2.0.2",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/history-tracker.git",
-                "reference": "209345bbe692a533e0771e2064a6ccc7ba93c170"
+                "reference": "e5eaeb2f0024f6a59461d36ac69054076a0ce6dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/history-tracker/zipball/209345bbe692a533e0771e2064a6ccc7ba93c170",
-                "reference": "209345bbe692a533e0771e2064a6ccc7ba93c170",
+                "url": "https://api.github.com/repos/laravel-enso/history-tracker/zipball/e5eaeb2f0024f6a59461d36ac69054076a0ce6dd",
+                "reference": "e5eaeb2f0024f6a59461d36ac69054076a0ce6dd",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "^7.0|^8.0",
+                "laravel/framework": "^7.0|^8.0|^9.0",
                 "php": ">=7.4.0"
             },
             "type": "library",
@@ -4055,9 +4068,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/history-tracker/issues",
-                "source": "https://github.com/laravel-enso/history-tracker/tree/2.0.2"
+                "source": "https://github.com/laravel-enso/history-tracker/tree/2.1.0"
             },
-            "time": "2021-06-09T10:21:20+00:00"
+            "time": "2022-03-02T12:07:21+00:00"
         },
         {
             "name": "laravel-enso/how-to",
@@ -4652,20 +4665,20 @@
         },
         {
             "name": "laravel-enso/pdf",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/pdf.git",
-                "reference": "a403d43e3927378a3b26de9a26a1c871f0e7fdfc"
+                "reference": "aaad8ba82e56e24635fa5c3de9a9c5c98991308d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/pdf/zipball/a403d43e3927378a3b26de9a26a1c871f0e7fdfc",
-                "reference": "a403d43e3927378a3b26de9a26a1c871f0e7fdfc",
+                "url": "https://api.github.com/repos/laravel-enso/pdf/zipball/aaad8ba82e56e24635fa5c3de9a9c5c98991308d",
+                "reference": "aaad8ba82e56e24635fa5c3de9a9c5c98991308d",
                 "shasum": ""
             },
             "require": {
-                "barryvdh/laravel-snappy": "^0.4.4",
+                "barryvdh/laravel-snappy": "^1.0",
                 "php": ">=7.4"
             },
             "type": "library",
@@ -4713,9 +4726,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/pdf/issues",
-                "source": "https://github.com/laravel-enso/pdf/tree/2.0.2"
+                "source": "https://github.com/laravel-enso/pdf/tree/2.0.3"
             },
-            "time": "2021-04-19T15:25:31+00:00"
+            "time": "2022-03-02T13:26:05+00:00"
         },
         {
             "name": "laravel-enso/people",
@@ -5356,20 +5369,20 @@
         },
         {
             "name": "laravel-enso/track-who",
-            "version": "2.0.4",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/track-who.git",
-                "reference": "6d95305268a062263383174146287853b6926610"
+                "reference": "f8561aec9b297f4b3318b3ab451922069d565ac0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/track-who/zipball/6d95305268a062263383174146287853b6926610",
-                "reference": "6d95305268a062263383174146287853b6926610",
+                "url": "https://api.github.com/repos/laravel-enso/track-who/zipball/f8561aec9b297f4b3318b3ab451922069d565ac0",
+                "reference": "f8561aec9b297f4b3318b3ab451922069d565ac0",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "^7.0|^8.0",
+                "laravel/framework": "^7.0|^8.0|^9.0",
                 "php": ">=7.4.0"
             },
             "type": "library",
@@ -5398,9 +5411,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/track-who/issues",
-                "source": "https://github.com/laravel-enso/track-who/tree/2.0.4"
+                "source": "https://github.com/laravel-enso/track-who/tree/2.1.0"
             },
-            "time": "2021-06-09T10:37:36+00:00"
+            "time": "2022-03-02T13:00:19+00:00"
         },
         {
             "name": "laravel-enso/tutorials",
@@ -8854,16 +8867,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.11.1",
+            "version": "v0.11.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "570292577277f06f590635381a7f761a6cf4f026"
+                "reference": "7f7da640d68b9c9fec819caae7c744a213df6514"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/570292577277f06f590635381a7f761a6cf4f026",
-                "reference": "570292577277f06f590635381a7f761a6cf4f026",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/7f7da640d68b9c9fec819caae7c744a213df6514",
+                "reference": "7f7da640d68b9c9fec819caae7c744a213df6514",
                 "shasum": ""
             },
             "require": {
@@ -8873,6 +8886,9 @@
                 "php": "^8.0 || ^7.0.8",
                 "symfony/console": "^6.0 || ^5.0 || ^4.0 || ^3.4",
                 "symfony/var-dumper": "^6.0 || ^5.0 || ^4.0 || ^3.4"
+            },
+            "conflict": {
+                "symfony/console": "4.4.37 || 5.3.14 || 5.3.15 || 5.4.3 || 5.4.4 || 6.0.3 || 6.0.4"
             },
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.2",
@@ -8923,9 +8939,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.11.1"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.11.2"
             },
-            "time": "2022-01-03T13:58:38+00:00"
+            "time": "2022-02-28T15:28:54+00:00"
         },
         {
             "name": "pusher/pusher-php-server",
@@ -9173,12 +9189,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Ramsey\\Uuid\\": "src/"
-                },
                 "files": [
                     "src/functions.php"
-                ]
+                ],
+                "psr-4": {
+                    "Ramsey\\Uuid\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -9907,16 +9923,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v7.114.0",
+            "version": "v7.116.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "63be231686c6874befb5b3a47fb8effb4c30b78b"
+                "reference": "7a39f594f213ed3f443a95adf769d1ecbc8393e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/63be231686c6874befb5b3a47fb8effb4c30b78b",
-                "reference": "63be231686c6874befb5b3a47fb8effb4c30b78b",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/7a39f594f213ed3f443a95adf769d1ecbc8393e7",
+                "reference": "7a39f594f213ed3f443a95adf769d1ecbc8393e7",
                 "shasum": ""
             },
             "require": {
@@ -9961,9 +9977,9 @@
             ],
             "support": {
                 "issues": "https://github.com/stripe/stripe-php/issues",
-                "source": "https://github.com/stripe/stripe-php/tree/v7.114.0"
+                "source": "https://github.com/stripe/stripe-php/tree/v7.116.0"
             },
-            "time": "2022-02-15T22:48:31+00:00"
+            "time": "2022-03-02T15:51:15+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -15091,28 +15107,29 @@
         },
         {
             "name": "myclabs/deep-copy",
-            "version": "1.10.2",
+            "version": "1.10.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "776f831124e9c62e1a2c601ecc52e776d8bb7220"
+                "reference": "c6a951b75d684fd43fbbd69617488e1e2e8924ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/776f831124e9c62e1a2c601ecc52e776d8bb7220",
-                "reference": "776f831124e9c62e1a2c601ecc52e776d8bb7220",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/c6a951b75d684fd43fbbd69617488e1e2e8924ba",
+                "reference": "c6a951b75d684fd43fbbd69617488e1e2e8924ba",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1 || ^8.0"
             },
-            "replace": {
-                "myclabs/deep-copy": "self.version"
+            "conflict": {
+                "doctrine/collections": "<1.6.8",
+                "doctrine/common": "<2.13.3 || >=3,<3.2.2"
             },
             "require-dev": {
-                "doctrine/collections": "^1.0",
-                "doctrine/common": "^2.6",
-                "phpunit/phpunit": "^7.1"
+                "doctrine/collections": "^1.6.8",
+                "doctrine/common": "^2.13.3 || ^3.2.2",
+                "phpunit/phpunit": "^7.5.20 || ^8.5.23 || ^9.5.13"
             },
             "type": "library",
             "autoload": {
@@ -15137,7 +15154,7 @@
             ],
             "support": {
                 "issues": "https://github.com/myclabs/DeepCopy/issues",
-                "source": "https://github.com/myclabs/DeepCopy/tree/1.10.2"
+                "source": "https://github.com/myclabs/DeepCopy/tree/1.10.3"
             },
             "funding": [
                 {
@@ -15145,7 +15162,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-13T09:40:50+00:00"
+            "time": "2022-03-02T14:16:47+00:00"
         },
         {
             "name": "nunomaduro/collision",
@@ -15901,16 +15918,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "9.2.13",
+            "version": "9.2.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "deac8540cb7bd40b2b8cfa679b76202834fd04e8"
+                "reference": "9f4d60b6afe5546421462b76cd4e633ebc364ab4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/deac8540cb7bd40b2b8cfa679b76202834fd04e8",
-                "reference": "deac8540cb7bd40b2b8cfa679b76202834fd04e8",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/9f4d60b6afe5546421462b76cd4e633ebc364ab4",
+                "reference": "9f4d60b6afe5546421462b76cd4e633ebc364ab4",
                 "shasum": ""
             },
             "require": {
@@ -15966,7 +15983,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.13"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.14"
             },
             "funding": [
                 {
@@ -15974,7 +15991,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-02-23T17:02:38+00:00"
+            "time": "2022-02-28T12:38:02+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -17473,32 +17490,32 @@
         },
         {
             "name": "slevomat/coding-standard",
-            "version": "7.0.18",
+            "version": "7.0.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/slevomat/coding-standard.git",
-                "reference": "b81ac84f41a4797dc25c8ede1b0718e2a74be0fc"
+                "reference": "bef66a43815bbf9b5f49775e9ded3f7c6ba0cc37"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/b81ac84f41a4797dc25c8ede1b0718e2a74be0fc",
-                "reference": "b81ac84f41a4797dc25c8ede1b0718e2a74be0fc",
+                "url": "https://api.github.com/repos/slevomat/coding-standard/zipball/bef66a43815bbf9b5f49775e9ded3f7c6ba0cc37",
+                "reference": "bef66a43815bbf9b5f49775e9ded3f7c6ba0cc37",
                 "shasum": ""
             },
             "require": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2 || ^0.7",
                 "php": "^7.1 || ^8.0",
                 "phpstan/phpdoc-parser": "^1.0.0",
-                "squizlabs/php_codesniffer": "^3.6.1"
+                "squizlabs/php_codesniffer": "^3.6.2"
             },
             "require-dev": {
-                "phing/phing": "2.17.0",
-                "php-parallel-lint/php-parallel-lint": "1.3.1",
-                "phpstan/phpstan": "1.2.0",
+                "phing/phing": "2.17.2",
+                "php-parallel-lint/php-parallel-lint": "1.3.2",
+                "phpstan/phpstan": "1.4.6",
                 "phpstan/phpstan-deprecation-rules": "1.0.0",
                 "phpstan/phpstan-phpunit": "1.0.0",
                 "phpstan/phpstan-strict-rules": "1.1.0",
-                "phpunit/phpunit": "7.5.20|8.5.21|9.5.10"
+                "phpunit/phpunit": "7.5.20|8.5.21|9.5.16"
             },
             "type": "phpcodesniffer-standard",
             "extra": {
@@ -17518,7 +17535,7 @@
             "description": "Slevomat Coding Standard for PHP_CodeSniffer complements Consistence Coding Standard by providing sniffs with additional checks.",
             "support": {
                 "issues": "https://github.com/slevomat/coding-standard/issues",
-                "source": "https://github.com/slevomat/coding-standard/tree/7.0.18"
+                "source": "https://github.com/slevomat/coding-standard/tree/7.0.19"
             },
             "funding": [
                 {
@@ -17530,7 +17547,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-12-07T17:19:06+00:00"
+            "time": "2022-03-01T18:01:41+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",
