@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Families;
+namespace App\Http\Controllers\GrampsXml;
 
 use App\Models\Family;
 use App\Models\FamilyEvent;
@@ -10,7 +10,7 @@ use Flowgistics\XML\XML;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-class ExportGramps extends Controller
+class Export extends Controller
 {
     public function export(Request $request)
     {
@@ -28,7 +28,7 @@ class ExportGramps extends Controller
             $children = $family->children()->get();
             $childrenArr = [];
 
-            foreach ($children as $child) {
+            foreach($children as $child){
                 $per = $this->getPersonDetail($child);
                 array_push($childrenArr, $per);
             }
