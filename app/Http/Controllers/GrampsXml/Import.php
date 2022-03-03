@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Families;
+namespace App\Http\Controllers\GrampsXml;
 
 use App\Models\Family;
 use App\Models\FamilyEvent;
@@ -12,8 +12,13 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
-class ImportGramps extends Controller
+class Import extends Controller
 {
+    /**
+     * Import family tree as GRAMPS XML file
+     * - Accepts XML file
+     * - Validates data and shows error if there is any
+     */
     public function import(Request $request)
     {
         $request->validate([
