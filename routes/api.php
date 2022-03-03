@@ -74,6 +74,7 @@ use App\Http\Controllers\Families\Create as FamiliesCreate;
 use App\Http\Controllers\Families\Destroy as FamiliesDestroy;
 use App\Http\Controllers\Families\Edit as FamiliesEdit;
 use App\Http\Controllers\Families\ExportExcel as FamiliesExportExcel;
+
 use App\Http\Controllers\Families\Index as FamiliesIndex;
 use App\Http\Controllers\Families\InitTable as FamiliesInitTable;
 use App\Http\Controllers\Families\Options as FamiliesOptions;
@@ -400,6 +401,9 @@ use LaravelEnso\People\Http\Controllers\Store as PeopleStore;
 use LaravelEnso\People\Http\Controllers\TableData as PeopleTableData;
 use LaravelEnso\People\Http\Controllers\Update as PeopleUpdate;
 
+use App\Http\Controllers\GrampsXml\Export as ExportGramps;
+use App\Http\Controllers\GrampsXml\Import as ImportGramps;
+
 /**
  * Route::middleware(['guest'])
  * ->prefix('api')
@@ -433,6 +437,13 @@ use LaravelEnso\People\Http\Controllers\Update as PeopleUpdate;
  * });
  *
  **/
+
+
+// use App\Http\Controllers\Families\ExportGramps as FamiliesExportGramps;
+
+Route::get('gramps-export', [ExportGramps::class, 'export']);
+Route::post('gramps-import', [ImportGramps::class, 'import']);
+
 Route::namespace('Auth')
     ->middleware('api')
     ->group(function () {

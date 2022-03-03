@@ -16,17 +16,14 @@ class DnaTable implements Table
         $userId = \Auth::user()->id;
 
         if (in_array($role, [1, 2])) {
-        return Dna::selectRaw('
+            return Dna::selectRaw('
             dnas.id, dnas.name, dnas.file_name, dnas.variable_name, dnas.created_at
         ');
-
-	}
-	else {
-        return Dna::selectRaw('
+        } else {
+            return Dna::selectRaw('
             dnas.id, dnas.name, dnas.file_name, dnas.variable_name, dnas.created_at, dnas.user_id
         ')->where('dnas.user_id', $userId);
-
-	}
+        }
     }
 
     public function templatePath(): string

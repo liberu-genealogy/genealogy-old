@@ -16,15 +16,13 @@ class DnaMatchingTable implements Table
         $userId = \Auth::user()->id;
 
         if (in_array($role, [1, 2])) {
-        return DnaMatching::selectRaw('
+            return DnaMatching::selectRaw('
             dna_matchings.id, dna_matchings.file1, dna_matchings.file2, dna_matchings.image, dna_matchings.created_at
         ');
-        }
-        else {
-        return DnaMatching::selectRaw(' dna_matchings.id, dna_matchings.file1, 
+        } else {
+            return DnaMatching::selectRaw(' dna_matchings.id, dna_matchings.file1, 
             dna_matchings.file2, dna_matchings.image, dna_matchings.created_at
         ')->where('dna_matchings.user_id', $userId);
-
         }
     }
 
