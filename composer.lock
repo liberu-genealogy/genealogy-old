@@ -52,28 +52,31 @@
         },
         {
             "name": "barryvdh/laravel-snappy",
-            "version": "v0.4.8",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-snappy.git",
-                "reference": "1903ab84171072b6bff8d98eb58d38b2c9aaf645"
+                "reference": "2c18a3602981bc6f25b32908cf8aaa05952ab2f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-snappy/zipball/1903ab84171072b6bff8d98eb58d38b2c9aaf645",
-                "reference": "1903ab84171072b6bff8d98eb58d38b2c9aaf645",
+                "url": "https://api.github.com/repos/barryvdh/laravel-snappy/zipball/2c18a3602981bc6f25b32908cf8aaa05952ab2f7",
+                "reference": "2c18a3602981bc6f25b32908cf8aaa05952ab2f7",
                 "shasum": ""
             },
             "require": {
-                "illuminate/filesystem": "^5.5|^6|^7|^8",
-                "illuminate/support": "^5.5|^6|^7|^8",
+                "illuminate/filesystem": "^6|^7|^8|^9",
+                "illuminate/support": "^6|^7|^8|^9",
                 "knplabs/knp-snappy": "^1",
-                "php": ">=7"
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^4|^5|^6|^7"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.4-dev"
+                    "dev-master": "1.0-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -111,9 +114,19 @@
             ],
             "support": {
                 "issues": "https://github.com/barryvdh/laravel-snappy/issues",
-                "source": "https://github.com/barryvdh/laravel-snappy/tree/master"
+                "source": "https://github.com/barryvdh/laravel-snappy/tree/v1.0.0"
             },
-            "time": "2020-09-07T12:33:10+00:00"
+            "funding": [
+                {
+                    "url": "https://fruitcake.nl",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/barryvdh",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-01-29T19:36:49+00:00"
         },
         {
             "name": "box/spout",
@@ -4652,20 +4665,20 @@
         },
         {
             "name": "laravel-enso/pdf",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/pdf.git",
-                "reference": "a403d43e3927378a3b26de9a26a1c871f0e7fdfc"
+                "reference": "aaad8ba82e56e24635fa5c3de9a9c5c98991308d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/pdf/zipball/a403d43e3927378a3b26de9a26a1c871f0e7fdfc",
-                "reference": "a403d43e3927378a3b26de9a26a1c871f0e7fdfc",
+                "url": "https://api.github.com/repos/laravel-enso/pdf/zipball/aaad8ba82e56e24635fa5c3de9a9c5c98991308d",
+                "reference": "aaad8ba82e56e24635fa5c3de9a9c5c98991308d",
                 "shasum": ""
             },
             "require": {
-                "barryvdh/laravel-snappy": "^0.4.4",
+                "barryvdh/laravel-snappy": "^1.0",
                 "php": ">=7.4"
             },
             "type": "library",
@@ -4713,9 +4726,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/pdf/issues",
-                "source": "https://github.com/laravel-enso/pdf/tree/2.0.2"
+                "source": "https://github.com/laravel-enso/pdf/tree/2.0.3"
             },
-            "time": "2021-04-19T15:25:31+00:00"
+            "time": "2022-03-02T13:26:05+00:00"
         },
         {
             "name": "laravel-enso/people",
@@ -9173,12 +9186,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Ramsey\\Uuid\\": "src/"
-                },
                 "files": [
                     "src/functions.php"
-                ]
+                ],
+                "psr-4": {
+                    "Ramsey\\Uuid\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -17955,5 +17968,5 @@
         "php": ">=8.0.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }
