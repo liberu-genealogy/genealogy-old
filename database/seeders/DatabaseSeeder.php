@@ -8,6 +8,7 @@ use Database\Seeders\RoleSeeder;
 use Database\Seeders\UserSeeder;
 use Illuminate\Database\Seeder;
 use LaravelEnso\Countries\Database\Seeders\CountrySeeder;
+use LaravelEnso\Files\Database\Seeders\TypeSeeder;
 use LaravelEnso\Localisation\Database\Seeders\LanguageSeeder;
 use LaravelEnso\UserGroups\Database\Seeders\UserGroupSeeder;
 
@@ -18,6 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RoleSeeder::class,
             UserGroupSeeder::class,
+            TypeSeeder::class,
             UserSeeder::class,
             LanguageSeeder::class,
             CountrySeeder::class,
