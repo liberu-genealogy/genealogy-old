@@ -11,6 +11,7 @@ use Illuminate\Database\ConnectionInterface;
 use Illuminate\Database\DatabaseManager;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class Manager
@@ -79,9 +80,18 @@ class Manager
 
     public function databaseExists(): bool
     {
-        return count($this->database->select(<<<SQL
-        SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '{$this->partition}'
+        try {
+            if ($this->config->get('database.default') == 'sqlite') {
+                // $this->connect(true);
+                $this->config->set('database.default', 'tenant');
+            }
+
+            return count($this->database->select(<<<SQL
+        SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '{$this->partition}';
         SQL)) > 0;
+        } catch (\PDOException $e) {
+            return false;
+        }
     }
 
     public function createDatabase(): self

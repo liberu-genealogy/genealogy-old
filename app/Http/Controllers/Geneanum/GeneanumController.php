@@ -7,12 +7,12 @@ use Illuminate\Http\Request;
 
 class GeneanumController extends Controller
 {
-    public function burials(Request $request, $country)
+    public function burials(Request $request)
     {
         $authCode = $request->authcode;
         $client = new \GuzzleHttp\Client();
 
-        $URI = 'https://static.geneanum.com/libs/grid/'.$country.'_sepulture.php';
+        $URI = 'https://static.geneanum.com/libs/grid/malte_sepulture.php';
 
         $response = $client->request('POST', $URI, ['query' => [
             'prenom' => $request->FirstName,
@@ -30,11 +30,11 @@ class GeneanumController extends Controller
         return response()->json($persons);
     }
 
-    public function baptism(Request $request, $nation)
+    public function baptism(Request $request)
     {
         $authCode = $request->authcode;
         $client = new \GuzzleHttp\Client();
-        $URI = 'https://static.geneanum.com/libs/grid/'.$nation.'_bapteme.php';
+        $URI = 'https://static.geneanum.com/libs/grid/malte_bapteme.php';
 
         $response = $client->request('POST', $URI, ['query' => [
             'prenom' => $request->FirstName,
@@ -52,12 +52,12 @@ class GeneanumController extends Controller
         return response()->json($persons);
     }
 
-    public function mariage(Request $request, $nation)
+    public function mariage(Request $request)
     {
         $authCode = $request->authcode;
         $client = new \GuzzleHttp\Client();
 
-        $URI = 'https://static.geneanum.com/libs/grid/'.$country.'_mariage.php';
+        $URI = 'https://static.geneanum.com/libs/grid/malte_mariage.php';
 
         $response = $client->request('POST', $URI, ['query' => [
             'prenom_homme' => $request->FirstNameMale,

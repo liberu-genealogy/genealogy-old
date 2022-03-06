@@ -16,6 +16,8 @@ class GedcomImportTest extends TestCase
 
     public function test_can_execute_job()
     {
+        $this->needsMySqlConnection();
+
         $file = new UploadedFile(base_path('tests/Mocks/Tree.ged'), 'Tree.ged');
 
         $user = User::factory()->create();
