@@ -1,5 +1,867 @@
 # Laravel Enso's Changelog
 
+## 4.9.1
+This minor release aims to update front-end packages to use the latest bulma syntax. It also includes many improvements and bug fixes.
+
+### Front-end
+
+#### auth
+- fixed password confirmation bug
+
+#### data-import
+- added support for template params options in addition to source
+
+#### directives
+- simplified, improved performance & code readability of `v-click-outside`
+
+#### io
+- updated navbar-item use
+
+#### notifications
+- updated `navbar-item` use
+
+#### roles
+- improved `configure.vue` info
+
+#### tables
+- fixed bug affecting preferences saving caused by the vue3 ugrade
+
+#### tasks
+- updated `navbar-item` use
+
+#### themes
+- several deprecated helper classes such as has-margin-small, has-padding-small and their derivates have been removed
+- [v-cloak] & *:focus styling is included within the package
+- since v-tooltip is globally available, its css is loaded within the themes package
+
+#### ui
+- fixed dynamic navbar component registration rendering
+- improved `navbar-item`; added show, hide and touch events
+
+#### users
+- fixed navbar avatar on safari
+
+### back-end
+
+#### core
+8ee62af updated meta: removed csrf token
+
+#### countries
+b4bc27f updates eea for United Kingdom
+
+#### data-import
+- added template params options support
+
+#### permissions
+- added short name in permission resource
+
+#### users
+- fixed user preferences reset
+- changed the User `storePreferences` method visibility to public
+
+### Private packages
+
+#### webshop
+- removed deprecated css classes
+- updated searchable array to use the `visibleOnWebshop` dynamic
+
+#### emag
+- added check for response error
+
+#### commercial
+- added validation on external fulfilment
+- fixed typo
+
+#### wiki
+- removed deprecated css classes
+
+### Upgrade steps
+- if you're still using the deprecated css which have now been removed, you should update:
+    - `has-vertically-centered-content` to `is-flex is-align-items-center`
+    - `has-margin-auto` to `ma`
+    - `has-margin-xxx`, `has-padding-xxx` and their derivates (top, left, etc) to their corresponding bulma counterparts (m-1, m-2, ml-1, etc). See [docs](https://bulma.io/documentation/helpers/spacing-helpers/).
+
+      For example:
+      - `has-margin-large` -> `m-3`
+      - `has-margin-top-large` -> `mt-3`
+      - `has-margin-right-small` -> `mr-1`
+      - `has-margin-bottom-medium` -> `mb-2`
+      - `has-margin-top-small` -> `mt-1`
+      - `has-padding-left-large` -> `pl-3`
+      - `has-padding-large` -> `p-3`
+      - `has-padding-medium` -> `p-2`
+      - `has-margin-top-medium` -> `mt-2`
+
+- remove `[v-cloak]`, `*:focus` &  `@import 'v-tooltip/dist/v-tooltip';` from `client/src/sass/enso.scss`
+
+- update the Enso version to `4.9.1` in `config/enso/config.php`
+
+- run `composer update` in the project's root
+
+- run `yarn`, `yarn upgrade && yarn` in `/client` to ensure you have the latest versions and patches are applied. If necessary, update your patches
+
+- `php artisan enso:upgrade --before-migration`
+
+- `php artisan migrate`
+
+- `php artisan enso:upgrade`
+
+- as per every release, delete any local, deprecated upgrades
+
+## 4.9.0
+This release upgrades the UI to Vue 3 and also includes under the hood refactor
+for a few core components. We've tried to maintain overall component compatibility
+and done our best to document the breaking changes.
+
+Depending on how complex the UI for your project is, the upgrade may take
+anywhere from a 1.5h to many days, so please take your time to go through the Enso changelog,
+especially the upgrade steps AND also the Vue3 upgrade guide linked below.
+
+### Front-end
+All packages have had their dependencies and dev dependencies updated and pruned.
+Many packages have had linter recommended fixes.
+
+#### filters
+- the `DateIntervalFilter` & `EnsoDateIntervalFilter` components have been retired
+
+#### laravel-validation
+- added an `all()` method, that returns all errors
+
+#### pull-to-refresh (new)
+This a new Enso package, forked from [lakb248/vue-pull-refresh](https://github.com/lakb248/vue-pull-refresh)
+and updated to work with Vue3.
+
+#### select
+- fixed element deselection when the select was used in 'object' mode
+
+### Private packages
+
+#### inventory
+- aligned products index page style & updated table filters/state
+
+#### commercial
+- updated the invoice issuing routes
+- improved items display
+
+#### emag
+- fixed auto pricing controls
+- fixed auto pricing conditions
+- updated emag dependent filters to auto clear when deactivating emag
+- fixed can-access usage; improved Emag.vue
+- added new product filters for emag offers; added new visual indicator for "genius"
+
+#### products
+- small fix for products index styling
+
+#### webshop
+- form cleanup
+
+### Back-end
+
+#### categories
+- fixed ordering bug
+
+#### core
+- updated state Meta: removed csrf token
+
+#### localisation
+- removed the expanded sidebar key (cleanup)
+
+#### tables
+- fixed excel export on all scenarios
+- fixed authenticates on export
+- fixed style
+- updated to allow sortable for nested columns (should be used carefully);
+- extracted Computor from Data
+- improved excel export -> fetcher needs to be redesigned
+- improved excel preparing
+
+#### tutorials
+- updated form to use the new `permissions.options` route
+
+### Private packages
+
+#### commercial
+- updated addresses logic for the sale form
+- fixed status filter
+- improved stock values computation
+- removed created/updated_by fields from being exportable
+- bugfix: only perform invoice cancellation if invoice exits
+- implemented the possibility to enable per sale channel opt-in/out for sale notifications
+- fixed acquisition price in stock values Computor
+- removes unneeded relation loads; fixed style
+
+#### commercial
+- removed the back button for the modal form
+
+#### eav
+- fixed group & attribute reordering bug
+- small Attribute factory fix
+
+#### emag
+- fixed missing return
+- refined stock management
+- improved code to keep the local offer in sync with the emag remote offer on each upload
+- improve order flow for edge cases when API is down
+
+#### frisbo
+- added order update webhook endpoint,
+  append product lot to product name and order notes
+- small refactor
+- added logging for api callbacks
+- expiration date flow enhancements
+
+
+### Vue Migration Build
+In order to migrate a project, we will use the [Vue3 Migration Build](https://v3.vuejs.org/guide/migration/introduction.html#migration-build) as an intermediary step, upgrade the code to make it Vue3 compatible, then finally switch to the regular Vue3 build.
+
+Please read the official documentation linked above, so you have a better understanding of the process.
+
+In order to use the migration build, it needs to be imported and configured:
+- in `client\package.json`: `"@vue/compat": "^3.2.20",`
+- in `vue.config.js`, within the `chainWebpack` config:
+    ```
+        config.resolve.alias.set('vue', '@vue/compat');
+        config.module
+            .rule('vue')
+            .use('vue-loader')
+            .tap(options => ({
+                ...options,
+                compilerOptions: {
+                    compatConfig: {
+                        MODE: 2,
+                        COMPILER_V_BIND_OBJECT_ORDER: false,
+                        COMPILER_IS_ON_ELEMENT: false,
+                    },
+                },
+            }));
+    ```
+- in `client\src\js\enso.js`:
+    ```
+    Vue.configureCompat({
+        RENDER_FUNCTION: false,
+        INSTANCE_LISTENERS: false,
+        COMPONENT_V_MODEL: false,
+        ATTR_FALSE_VALUE: false,
+        INSTANCE_ATTRS_CLASS_STYLE: false,
+        TRANSITION_GROUP_ROOT: false,
+    });
+    ```
+
+The package & snippets are already present in the Enso release, but they will be commented out, so in order to enable the migration build, open the relevant files and uncomment the blocks above.
+
+Note that the compiler migration build flags belong to the `vue.config.js` file and require the restart of HMR (if using it) while all other flags belong to the `client\src\js\enso.js` file.
+
+### Vue Dev Tools
+For Vue3, a new browser devtools [plugin](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg?hl=en) is needed and can be installed along side the Vue2 plugin.
+
+### Upgrade Steps
+In addition to upgrading the Enso UI to make it Vue3 compatible, we've also made some other changes to a few Enso components some of which may impact your local code.
+
+- update the following files with the latest versions
+    - `.babel.config.js`
+    - `.eslintrc.js`
+    - `vue.config.js`
+    - `client\src\js\enso.js`
+    - `client\package.json`
+    - `client\src\sass\enso.scss`
+- enable the migration mode, as noted above
+- run `yarn && yarn upgrade` and start HMR
+- you should be able to login into the application and will probably have some (lots of) errors and warnings
+- the deprecated `legacyBuild` flow for building the application state has been removed entirely [store.js](https://github.com/enso-ui/ui/pull/86/files#diff-9a955348077f36a44db6037a09c7bb930a0c657685072b2e9cb4acafd1cf4e52)
+- we have aimed to remove global components and instead import them for each use case
+    - the `fa` component is no longer global and needs to be imported locally, where used
+        ```
+        import { FontAwesomeIcon as Fa } from '@fortawesome/vue-fontawesome';
+        ...
+        components: { ..., Fa, ... },
+        ```
+    - the global `http` axios alias is no longer available,
+      instead it should be injected as required:
+      Update:
+      ```
+      myMethod() {
+          axios.post(...);
+      }
+      ```
+      to
+      ```
+      inject: ['http']
+      ...
+      myMethod() {
+          this.http.post(...);
+      }
+      ```
+- if using any `@hook:...` hooks, replace all usages with `@vnode-...` [docs](https://v3.vuejs.org/guide/migration/vnode-lifecycle-events.html)
+- in all of your renderless components you can set the `inheritAttrs: false,` attribute to eliminate warnings about inherited attributes
+- `$listeners` has been removed / merged into `$attrs`. See [docs](https://v3.vuejs.org/guide/migration/listeners-removed.html)
+
+  You need to remove `v-on="$listeners"` usages.
+  Note that in such cases, you will probably need to cascade events, either directly or via `v-bind="$attrs"` if applicable.
+
+- `$scopedSlots` property is removed and all slots are exposed via `$slots` as functions. See [docs](https://v3.vuejs.org/guide/migration/slots-unification.html#overview).
+
+  You should replace `this.$scopedSlots.xxx` with `this.$slots.xxx` in your render functions
+- update the slot syntax, by replacing `v-slot:xxx`  with `#xxx`
+- if you are still using the deprecated named / scoped slot syntax, update it to the latest syntax first (which is already supported in 2.6)
+  For example, replace
+    ```
+    <template slot-scope="{ count }">
+    ```
+  to
+    ```
+    <template #default="{ count }">
+    ```    
+
+- the `beforeDestroy` hook has been renamed to `beforeUnmount` - you should replace all usages project wide. See [docs](https://v3.vuejs.org/guide/migration/introduction.html#other-minor-changes)
+- when using `$el` within components, ensure that there is a single root within the element (e.g. `<div>`)
+- when emitting events in components (e.g. `$emit('click')`), it is recommended to declare/list the emitted events:
+    ```
+    emits: ['click'],
+    ```
+- for components, the `value` property has become `modelValue` and the `input` event has been replaced with `update:modelValue`. See [docs](https://v3.vuejs.org/guide/migration/v-model.html#overview)
+
+  When listening on 'value' changes on components, you need to replace `@input="xxx"` with `@update:model-value="xxx"`.
+  In Vue3 you can also have multiple v-model bindings on the same component. See [docs](https://v3.vuejs.org/guide/component-custom-events.html#multiple-v-model-bindings)
+- in all of your renderless components you can set the `inheritAttrs: false,` attribute to eliminate warnings about inherited attributes
+- note that in Vue3 you can no longer programmatically destroy components as the `$destroy()` method has been removed. See [docs](https://v3.vuejs.org/guide/migration/introduction.html#removed-apis)
+- HTML bound attributes such as `:disabled` will be rendered as `disabled="false"` for false values, and if you need to not have them rendered, the bound attribute value needs to be evaluated to `null` or `undefinded`. See [docs](https://v3.vuejs.org/guide/migration/attribute-coercion.html#_3-x-syntax)
+- if using watch on arrays, you need to add `deep: true` otherwise the callback may not be triggered. See [docs](https://v3.vuejs.org/guide/migration/watch.html#overview)
+- you no longer need to use `$set` & `$delete` to manage object attributes in order to keep responsiveness, you can use regular JS syntax. See [docs](https://v3.vuejs.org/guide/migration/introduction.html#removed-apis).
+- if asynchronously loading components, the syntax has changed. See [docs](https://v3.vuejs.org/guide/migration/async-components.html#overview).
+- transitions have suffered a few changes. See [docs](https://v3.vuejs.org/guide/migration/introduction.html#other-minor-changes)
+- the render function API has changed. See [docs](https://v3.vuejs.org/guide/migration/render-function-api.html#overview)
+- if using `DateFilter` or `EnsoDateFilter` please note:
+    - the `default` property has been removed
+    - the `disabledOptions` property has been renamed to `excluded`
+    - the `default` property has been removed
+    - value/v-model has become `filter`
+    - using `v-model` for `filter` & `interval` is now required
+
+  For example, replace
+    - `v-model="params.dateInterval"` with `v-model:filter="params.dateInterval"`
+    - `:interval="intervals.products.date"` with `v-model:interval="intervals.products.date"`
+
+  where the attributes look like this
+    ```
+    params: {
+        dateInterval: 'thisMonth',
+    },
+    intervals: {
+        products: {
+            date: {
+                max: null,
+                min: null,
+            },
+        },
+    },
+    ```
+
+- if emitting/listening to global events, you should import and refactor to using the `eventBus` instead. See [docs](https://v3.vuejs.org/guide/migration/events-api.html#_2-x-syntax).
+    ```
+    import eventBus from '@enso-ui/ui/scrc/core/services/eventBus';
+    ...
+    eventBus.$emit('my-event');
+    eventBus.$on('my-event', this.myHandler);
+    ```
+- the `<modal>` component no longer needs a `portal` attribute/property, and you should delete all its usages
+- the `AutosizeTextarea` component has been updated and no longer needs to wrap around a textarea. Update:
+    ```
+    <autosize-textarea>
+        <textarea v-model="..."/>
+    </autosize-textarea>
+    ```
+  to
+    ```
+    <autosize-textarea v-model="...">
+    ```
+- filters are no longer supported, refactor as needed (you may use methods instead). For example, update:
+    ```
+    {{ value | numberFormat(2) }}
+    ```
+  to
+    ```
+    {{ numberFormat(value, 2) }}
+    ```
+
+- if you're using the automatic component registration, the syntax has changed from
+    ```
+    Vue.component('navbar-notification', Notification);
+    App.registerNavbarItem('navbar-notification', 300, 'core.notifications.count');
+    ```
+  to
+    ```
+    App.registerNavbarItem('navbar-notification', Notification, 300, 'core.notifications.count');
+   ```
+- the `v-tooltip` library has been updated:
+  Import has been updated from
+    ```
+    import { VPopover } from 'v-tooltip';
+    ```
+  to
+    ```
+    import { Dropdown } from 'v-tooltip';
+    ```
+  Component has been updated:
+    ```
+    <v-popover trigger="hover"
+    ```
+  to
+    ```
+    <dropdown :triggers="['hover']"
+    ```
+  The slot name has been updated:
+    ```
+    <template v-slot:popover>
+    ```
+  to
+    ```
+    <template #popper>
+    ```
+- we've switched to the standard (non compatibility) syntax for the animate animations. You should prefix animate related classes with `animate__`.
+  For example, update:
+    ```
+    <enso-form class="box animated fadeIn">
+    ```
+  to
+    ```
+    <enso-form class="box animate__animated animate__fadeIn">
+    ```
+
+  Alternatively, refactor using transition components.
+
+### Moving forward from Migration Build
+
+Once you've migrated your local pages/components and packages,
+you may switch from the migration build to the regular Vue3 build.
+
+- remove the customization from `vue.config.js` i.e. the code related to @vue/compat
+    ```
+    config.resolve.alias.set('vue', '@vue/compat');
+    config.module
+        .rule('vue')
+        .use('vue-loader')
+        .tap(options => ({
+            ...options,
+            compilerOptions: {
+                compatConfig: {
+                    MODE: 2,
+                    COMPILER_V_BIND_OBJECT_ORDER: false,
+                    COMPILER_IS_ON_ELEMENT: false,
+                },
+            },
+        }));
+    ```
+- remove the compatibility customization to `client\src\js\enso.js`
+  ```
+  Vue.configureCompat({
+      RENDER_FUNCTION: false,
+      INSTANCE_LISTENERS: false,
+      COMPONENT_V_MODEL: false,
+      ATTR_FALSE_VALUE: false,
+      INSTANCE_ATTRS_CLASS_STYLE: false,
+      TRANSITION_GROUP_ROOT: false,
+  });
+  ```
+- remove the `"@vue/compat": "^3.2.20",` dependency from `client/package.json`
+- run yarn, rebuild etc.
+
+### Known issues
+- in development, you will have warnings about `Unexpected mutation of ... prop vue/no-mutating-props` 
+which can be ignored for now
+- the [vuejs/vuex-router-sync](https://github.com/vuejs/vuex-router-sync)
+  has an unresolved [issue](https://github.com/vuejs/vuex-router-sync/issues/102)
+  that, at the time of writing, requires a patch package to fix
+- the Chrome devtools plugin is at v6.0.0-beta.21 (pre-release) and may throw
+  a lot of errors such as `Timed out getting app record for app` which should not
+  affect application functionality
+
+
+## 4.8.2
+This aims to be the last minor release before upgrading to Vue 3 and includes many improvements, bug fixes and also several new features.
+
+### Front-end
+
+#### addresses
+- implemented google package
+
+#### algolia (new)
+- implemented settings package for Algolia
+
+#### bulma
+- added toggle filters
+- added users as dependency
+
+#### charts
+- updated `Chart.vue`
+- updated dependencies
+- fixed chart instance usage
+- brings back default options
+- added `shortNumber` filter
+
+#### data-import
+- improved UX for disabled exports
+
+#### emails
+- updated syntax and eslint config
+
+#### enums
+- updated dependencies and `.eslintrc.js`
+
+#### files
+- small refactor in index
+- removed redundant chart option
+
+#### filters
+- added toggle filters
+- added dirty to filter-state
+- improved dirty watcher in filter state
+
+#### forms
+- added the ability to reload based on a be flag
+- exposed `undo()`
+
+#### google
+- fixed missing icon import
+
+#### meili-search (new)
+- implemented settings package for MeiliSearch
+
+#### mixins
+- fixed edge case with re-rendering login form after logging in
+
+#### mobile-app
+- added `.eslintrc.js`
+- updated `.gitignore` and dependencies
+
+#### range-slider (new)
+- Vue Range Slider based on `noUiSlider`
+
+#### route-mapper
+- updated dependencies
+- updated `.eslintrc.js`
+- refactored the mapper class; fixed bug related to optional params; improved logic/flow
+
+#### scroll-to-top
+- fixed bottom margin
+
+#### search-mode
+- renamed `algolia` to `searchProvider`
+
+#### select
+- fixed multiple select value mutations when using state options
+
+#### sentry
+- updated dependencies and `.eslintrc.js`
+
+#### strings
+- fixed slug generation issue to handle cases when `regEx` matching had no actual matches
+
+#### tables
+- improved key in table header
+- reflected filtered state
+- added missing `mr-1` in controls
+- added `danger` on filter flag
+- added support for dropdown actions
+- added debounce for filters
+
+#### themes
+- added `has-margin-auto`
+- removed `bulma-checkradio`
+- updated `bulma-extensions` dependency
+- imported minimized css from `bulma-extensions`
+
+#### typesense (new)
+- typesense integration for laravel-enso
+
+#### ui
+- added `integrations.js`
+- improved app update notification
+- updated `AppUpdate.vue`
+- fixed app update `v-if`
+- made app update dropdown always visible
+- improved internal `AppUpdate` flow; fixed issue with showing the modal
+- updated bulma-extensions dependency
+
+#### users
+- fixed user profile level margin
+
+### back-end
+
+#### activity-log
+- updated for php 8
+- updated `.styleci.yml`
+
+#### addresses
+- deprecated google config key, uses settings from google package
+- improved validation for case when postcode exists in the DB, but for a different country
+- improved postcode validation
+- added GBR addresses
+- added `Geocoding` service; updated `Coordinates` to use the new service
+
+#### algolia (new)
+- implemented settings package for Algolia
+
+#### api
+- implemented custom headers
+- added a throttle helper
+- added `toJson` method to the api resource
+- improved adding headers to the request
+- added request duration logging
+- updated api logger
+- decreased duration column size
+- removed nullable from duration
+- added public `apiEnabled: bool` on Action
+- improved exception message
+- updated method visibility
+
+#### avatars
+- made the avatars generators configurable
+
+#### categories
+- added options endpoint
+- removed unneeded attribute
+- added categories import
+- added sync queue for the categories import; if needed, template can be locally customized
+
+#### charts
+- refactored to `chartjs 3`
+- fixes default tooltip config
+- implemented backend `shortNumbers`
+- fixed horizontal chart
+
+#### cnp-validator
+- updated `CnpValidator.php`
+- required php 8
+- updated `strlen` usage to `mb_strlen`
+
+#### companies
+- fixed company fiscal code in factory
+- added queue sync for the companies import; if needed, template can be locally customized
+- updated import, added new attributes
+- added fiscal code to rememberable keys
+
+#### control-panel-api
+- fixed stat class
+
+#### core
+- added structure for integrations
+- improved app update event
+- added a `Login` trait to work with the latest changes in laravel-ui
+- fixed login test for the new guard config attribute in `sanctum.php`
+
+#### countries
+- updated eea for United Kingdom
+
+#### data-import
+- fixed the Template's notifies method
+
+#### documentation
+- added route mapper docs stub & mention about transpiling
+
+#### filters
+- renamed `algolia` to `searchProvider`; improves searchProvider results
+
+#### google (new)
+- implemented settings package for Google
+
+#### helpers
+- updated searchable trait
+- added production check
+- configured styleci for php8
+- updated Searchable trait due to new Algolia package
+- updated price computor constructor and vatPercent use
+- fixed searchable for extended / binded models
+- added support for meilisearch in searchable
+- removed deprecated searchable trait
+- fixed `Obj casts:` set method now performs json encode
+- fixed `Cash` label
+- updated `codesize/phpmd` config rules for constant naming
+- removed `Sleep`
+- added new min max utility methods to Decimals
+
+#### localisation
+- updated texts, added new keys & translations
+- added missing cleanup for the language update test
+- added missing php dependency
+- made seeder reusable in local projects
+
+#### logs
+- improved logs collection to handle archives
+- fixed tests
+
+#### meili-search (new)
+- implemented settings package for MeiliSearch
+
+#### phpunit-pretty-print
+- updated strlen usage to `Str::length`
+
+#### select
+- opened up flexibility on Options Service instantiation from `OptionsBuilder`
+
+#### tables
+- added support for dropdown actions
+- resolved resources from service container
+- updated template
+
+#### tasks
+- fixed export error
+
+#### typesense (new)
+- new typesense integration for Laravel Enso
+
+#### unit-conversion (new)
+- new unit converter utility classes for Laravel Enso.
+
+#### upgrade
+- added `getLength` in `Column`
+- added `exists()` helper for table
+- updated upgrade status to address change in `Symphony` console table
+- ignored upgrades from namespaces that are not within autoload
+
+### Private packages
+
+#### webshop-commercial
+- added webshop searchable array
+- maked default ranking 0 in search provider data
+- replaced the product dynamic method `WebshopSearchableArray` with a simple service
+- updated flow for `webshopDiscount`; now we no longer fall through to general supplier discount but use webshop company if no specific cliend discount exits
+- used float casts for searchable attributes
+- updated webshop order implementation
+- fixed class path and deprecated `Online`
+
+#### webshop
+- moved search provider product index to webshop from algolia
+- hides price and discount when no stock available
+- removed `webshop-shadow` role
+- added `isActive` to the `BaseFilters@facets` array (excluded facets)
+- moved searchable attributes to webshop from webshop commercial
+- updated contract & account order actions
+- updated `BaseFilters.php`
+- added availability filters
+- updated discount observer
+- hides empty filters
+- added price filter
+- added `priceFiltered()` getter
+- added services for search providers
+- removed `PaymentMethods` enum;
+- added payment config
+- added default sorting to newest
+- builded the new price filter
+- implemented most popular sort
+- various fixes, improvements and refactors
+
+#### emag
+- refactored add invoice -> upload invoice
+- refactored product index use
+- removed `ValidateStoreRequest` request, `MissingOffer` notification, deprecated `parents()` setter call, measurment units implementation, checker scopes & methods, recheck & cleanup flows and  `notSyncedYet` scenarios branch
+- offer download throws exception on error; categories sync service deletes any old emag categories
+- updated order flow: now stopping before generating awb if not fully reserved
+- emag categories now have parent id
+- implemented awb schedule
+- added vat id to the offer update resource and conversionable unit Enums
+- updated `CreateCategoryEmagCategoryPivotTable` and `CreateEmagOffersTable` migration
+- now an offer is made inactive when we do not have stock
+- removed deprecated `NullableCategoryId` upgrade
+- added `emagDiscount()` dynamic for services, new headers to all emag requests and check for sync / when not empty
+- log now also sends email notification; added checker jobs failure handling
+- made the buy button rank array key `optional`
+- set number of offers & best offer sale price as nullable
+- renamed `last_checked_at` to `checked_at`
+- added check for the presence of the emag settings table for further scheduling
+- refactors `fetchPicture(s)` to `downloadPictures`
+- added new emag status
+- added upgrade to drop offers `discount_percent`
+- removed `auto_pricing` from the `Offer` table resource and urls from the settings form and migration
+- removed download after each operation; updated offer fill, using DI resource, new genius column
+- added upgrade for removal of old settings url columns
+- added commands for activation/deactivation of the emag api
+- various fixes and improvements
+
+#### commercial
+- enabled cancel
+- removed sort by `created_by/updated_by`
+- removed By columns from being searchable
+- added limit for product labels
+- updated products template
+- refactored `grn` to `goodsReceivedNote`
+- added `bulkStockRemoval`
+- added limit and ordering for bulk stock removal;
+- updated sale cancellation policy to exclude invoiced sales
+- added locks
+- updated limit to cover all cases
+- allowed sale fulfill, on default channel & internal warehouses when missing address
+- renamed `externallyFullfilled`
+- added quick fix for sales payment form
+- added awb schedule validation and internal code to typeahead controller
+- added serializeDate to models and cast to settings
+- reverted schema check
+- made settings `warehouse_id` nullable to avoid seed / provider / schedule issues
+- updated awb generation schedule to 06:00
+- various fixes, refactors and improvements
+
+#### financials
+- date is now required for client payments
+- fixed payment due date logic; updated tests
+- fixed case when no serial is given
+- refactored code 
+- due date fixes
+- added date serialization customization for all relevant models
+- updated client invoice form
+
+
+#### inventory
+- removed manual upgrade from the `INsLot` upgrade
+- fixed reservations count for `Reservations.vue` update
+- added `inventoryIn` locks as required to avoid over-reserving
+- extracted to services
+- added `is_bundle` check
+- removed App make from the Inventory interface
+- fixed update available emitting
+
+#### discounts
+- refactor for import
+- added reset
+- improved client product discount importer
+- fixed missing param
+
+#### frisbo
+- converted eav grams to kg when publishing product
+- updated resource to use the new unit conversion package; added validation
+- updated product bundle resource to correctly use bundled quantity
+
+#### eav
+- added a public `searchableKey` method on the attribute
+- improved `eav` filterable searchable key
+- small `Attribute` factory fix
+
+#### product-eav
+- replaced the `EavSearchableArray` dynamic product method with a simple service class
+- updated searchable array
+- improved facets
+- added search provider integration
+- fixed import
+
+### Upgrade steps
+
+* update the Enso version to `4.8.2` in `config/enso/config.php`
+* run `composer update` in the project's root
+* remove the `bulma-extensions` patch
+* run `yarn`, `yarn upgrade && yarn` in `/client` to ensure you have the latest versions and patches are applied. If necessary, update your patches
+* after `yarn upgrade`, update `vue.config.js` by adding `@enso-ui/route-mapper` package under `transpileDependencies` key
+* `php artisan enso:upgrade --before-migration`
+* `php artisan migrate`
+* `php artisan enso:upgrade`
+* as per every release, delete any local, deprecated upgrades
+* update all models having forms with date fields, by adding the following method:  
+```
+protected function serializeDate(DateTimeInterface $date)
+    {
+        return $date->format('Y-m-d H:i:s');
+    }
+```
+Make sure you have set the `$dates` property.
+
 ## 4.8.1
 ### Front-end
 For most of our frontend packages we've added router error handling.  

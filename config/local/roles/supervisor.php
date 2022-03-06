@@ -2,9 +2,8 @@
 
 return [
     'role' => ['name' => 'supervisor', 'display_name' => 'Supervisor'],
-    'default_menu' => 'howTo.videos.index',
+    'default_menu' => 'dashboard.index',
     'permissions' => [
-        'howTo.videos.index',
         'howTo.videos.show',
         'howTo.tags.index',
         'howTo.posters.show',
