@@ -4542,16 +4542,16 @@
         },
         {
             "name": "laravel-enso/pdf",
-            "version": "2.0.3",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/pdf.git",
-                "reference": "aaad8ba82e56e24635fa5c3de9a9c5c98991308d"
+                "reference": "e3d77d8573e401bef716d487391cc50fbf0a51c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/pdf/zipball/aaad8ba82e56e24635fa5c3de9a9c5c98991308d",
-                "reference": "aaad8ba82e56e24635fa5c3de9a9c5c98991308d",
+                "url": "https://api.github.com/repos/laravel-enso/pdf/zipball/e3d77d8573e401bef716d487391cc50fbf0a51c8",
+                "reference": "e3d77d8573e401bef716d487391cc50fbf0a51c8",
                 "shasum": ""
             },
             "require": {
@@ -4603,9 +4603,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/pdf/issues",
-                "source": "https://github.com/laravel-enso/pdf/tree/2.0.3"
+                "source": "https://github.com/laravel-enso/pdf/tree/2.1.1"
             },
-            "time": "2022-03-02T13:26:05+00:00"
+            "time": "2022-03-07T07:36:50+00:00"
         },
         {
             "name": "laravel-enso/people",
