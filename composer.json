@@ -32,6 +32,8 @@
         "laravel/tinker": "^2.7",
         "laravel/ui": "^3.0",
         "sentry/sentry-laravel": "^2.0.0",
+        "symfony/http-client": "^6.0",
+        "symfony/mailgun-mailer": "^6.0"
         "symfony/mailgun-mailer": "^6.0",
         "leifermendez/laravel-paypal-subscription": "^1.0",
         "predis/predis": "^1.1",
