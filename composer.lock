@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "307a6cd29bf05191b4fd0b5329be1f84",
+    "content-hash": "e9a5600edd0d7b2f0ba06f3b47a5f16e",
     "packages": [
         {
             "name": "anlutro/curl",
@@ -1115,16 +1115,16 @@
         },
         {
             "name": "familytree365/laravel-gedcom",
-            "version": "v3.4.0",
+            "version": "v3.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/familytree365/laravel-gedcom.git",
-                "reference": "8a350ff238da2d73c1e26687458ae82def72fefd"
+                "reference": "d9cd66bbe84b64438e1a5cba49fb1356284d8f47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/familytree365/laravel-gedcom/zipball/8a350ff238da2d73c1e26687458ae82def72fefd",
-                "reference": "8a350ff238da2d73c1e26687458ae82def72fefd",
+                "url": "https://api.github.com/repos/familytree365/laravel-gedcom/zipball/d9cd66bbe84b64438e1a5cba49fb1356284d8f47",
+                "reference": "d9cd66bbe84b64438e1a5cba49fb1356284d8f47",
                 "shasum": ""
             },
             "require": {
@@ -1155,7 +1155,7 @@
             "description": "A package that converts gedcom files to Eloquent models",
             "support": {
                 "issues": "https://github.com/familytree365/laravel-gedcom/issues",
-                "source": "https://github.com/familytree365/laravel-gedcom/tree/v3.4.0"
+                "source": "https://github.com/familytree365/laravel-gedcom/tree/v3.4.1"
             },
             "funding": [
                 {
@@ -1163,7 +1163,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-03-13T15:56:10+00:00"
+            "time": "2022-03-13T16:18:50+00:00"
         },
         {
             "name": "familytree365/laravel-gelato",
