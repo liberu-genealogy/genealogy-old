@@ -29,4 +29,4 @@ return new class extends Migration
             $table->dropColumn('email_verified_at');
         });
     }
-}
+};

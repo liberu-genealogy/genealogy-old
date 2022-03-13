@@ -11,4 +11,4 @@ return new class extends Migration
     protected array $menu = [
         'name' => 'Dashboard', 'icon' => 'tachometer-alt', 'route' => 'dashboard.index', 'order_index' => 100, 'has_children' => false,
     ];
-}
+};

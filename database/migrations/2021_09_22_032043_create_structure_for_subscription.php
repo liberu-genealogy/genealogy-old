@@ -21,4 +21,4 @@ return new class extends Migration
     protected array $menu = [
         'name' => 'Subscription', 'icon' => 'credit-card', 'route' => 'subscription.index', 'order_index' => 801, 'has_children' => false,
     ];
-}
+};

@@ -19,4 +19,4 @@ return new class extends Migration
     ];
 
     protected ?string $parentMenu = 'Gedcom';
-}
+};

@@ -14,4 +14,4 @@ return new class extends Migration
     ];
 
     protected ?string $parentMenu = 'Trees';
-}
+};
