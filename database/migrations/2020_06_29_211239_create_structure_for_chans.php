@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForChans extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'chan.index', 'description' => 'Show index for chans', 'is_default' => true],

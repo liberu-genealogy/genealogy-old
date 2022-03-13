@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForNotes extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'notes.index', 'description' => 'Show index for notes', 'is_default' => true],

@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForFamilySlgs extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'familyslugs.index', 'description' => 'Show index for family slgs', 'is_default' => true],

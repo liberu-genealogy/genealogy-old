@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForPersonAlias extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'personalias.index', 'description' => 'Show index for person alias', 'is_default' => true],

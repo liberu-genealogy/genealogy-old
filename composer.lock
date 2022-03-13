@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "941b6ca25cc83f55946fd8bc60e110d5",
+    "content-hash": "307a6cd29bf05191b4fd0b5329be1f84",
     "packages": [
         {
             "name": "anlutro/curl",
@@ -1115,16 +1115,16 @@
         },
         {
             "name": "familytree365/laravel-gedcom",
-            "version": "v3.3.1",
+            "version": "v3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/familytree365/laravel-gedcom.git",
-                "reference": "5d93259ecb62de76f17004382021da2e23a8b3a4"
+                "reference": "8a350ff238da2d73c1e26687458ae82def72fefd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/familytree365/laravel-gedcom/zipball/5d93259ecb62de76f17004382021da2e23a8b3a4",
-                "reference": "5d93259ecb62de76f17004382021da2e23a8b3a4",
+                "url": "https://api.github.com/repos/familytree365/laravel-gedcom/zipball/8a350ff238da2d73c1e26687458ae82def72fefd",
+                "reference": "8a350ff238da2d73c1e26687458ae82def72fefd",
                 "shasum": ""
             },
             "require": {
@@ -1155,7 +1155,7 @@
             "description": "A package that converts gedcom files to Eloquent models",
             "support": {
                 "issues": "https://github.com/familytree365/laravel-gedcom/issues",
-                "source": "https://github.com/familytree365/laravel-gedcom/tree/v3.3.1"
+                "source": "https://github.com/familytree365/laravel-gedcom/tree/v3.4.0"
             },
             "funding": [
                 {
@@ -1163,7 +1163,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-02-21T15:22:25+00:00"
+            "time": "2022-03-13T15:56:10+00:00"
         },
         {
             "name": "familytree365/laravel-gelato",
@@ -6574,16 +6574,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "3.0.11",
+            "version": "3.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "1ca148713c23cadeb9d7526973f81fb4a04090a3"
+                "reference": "4744d96fb2456d9808be3ad596a2520b902996e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/1ca148713c23cadeb9d7526973f81fb4a04090a3",
-                "reference": "1ca148713c23cadeb9d7526973f81fb4a04090a3",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/4744d96fb2456d9808be3ad596a2520b902996e2",
+                "reference": "4744d96fb2456d9808be3ad596a2520b902996e2",
                 "shasum": ""
             },
             "require": {
@@ -6644,7 +6644,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/flysystem/issues",
-                "source": "https://github.com/thephpleague/flysystem/tree/3.0.11"
+                "source": "https://github.com/thephpleague/flysystem/tree/3.0.12"
             },
             "funding": [
                 {
@@ -6660,7 +6660,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-04T16:40:17+00:00"
+            "time": "2022-03-12T19:32:12+00:00"
         },
         {
             "name": "league/mime-type-detection",

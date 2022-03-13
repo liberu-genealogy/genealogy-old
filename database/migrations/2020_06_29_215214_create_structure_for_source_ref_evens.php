@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForSourceRefEvens extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'sourcerefeven.index', 'description' => 'Show index for source ref evens', 'is_default' => true],

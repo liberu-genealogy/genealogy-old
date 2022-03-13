@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForMediaObjects extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'mediaobjects.index', 'description' => 'Show index for objects', 'is_default' => true],

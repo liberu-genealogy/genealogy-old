@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForDnamatching extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'dnamatching.index', 'description' => 'Show index for dnamatching', 'is_default' => true],

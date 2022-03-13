@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForAuthors extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'authors.index', 'description' => 'Show index for authors', 'is_default' => true],

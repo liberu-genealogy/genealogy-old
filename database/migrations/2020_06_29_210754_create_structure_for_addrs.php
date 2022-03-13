@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForAddrs extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'addrs.index', 'description' => 'Show index for addrs', 'is_default' => true],

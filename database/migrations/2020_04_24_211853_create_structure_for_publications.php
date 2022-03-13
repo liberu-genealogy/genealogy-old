@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForPublications extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'publications.index', 'description' => 'Show index for publications', 'is_default' => true],

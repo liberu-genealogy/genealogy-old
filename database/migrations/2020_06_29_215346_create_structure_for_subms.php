@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForSubms extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'subm.index', 'description' => 'Show index for subms', 'is_default' => true],

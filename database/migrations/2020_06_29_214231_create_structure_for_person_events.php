@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForPersonEvents extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'personevent.index', 'description' => 'Show index for person events', 'is_default' => true],

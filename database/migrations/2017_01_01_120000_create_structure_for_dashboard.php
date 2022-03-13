@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForDashboard extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'dashboard.index', 'description' => 'Dashboard page', 'is_default' => true],

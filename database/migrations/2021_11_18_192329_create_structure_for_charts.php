@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForCharts extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'decendent.show', 'description' => 'show tree', 'is_default' => true],

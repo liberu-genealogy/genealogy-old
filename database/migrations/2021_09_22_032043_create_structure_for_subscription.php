@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForSubscription extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'subscription.index', 'description' => 'Show index for subscriptions', 'is_default' => true],

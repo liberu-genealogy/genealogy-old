@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForPlaces extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'places.index', 'description' => 'Show index for places', 'is_default' => true],

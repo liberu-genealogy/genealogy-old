@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForSubns extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'subn.index', 'description' => 'Show index for subns', 'is_default' => true],

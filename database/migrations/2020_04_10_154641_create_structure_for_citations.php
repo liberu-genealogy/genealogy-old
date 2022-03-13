@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForCitations extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'citations.index', 'description' => 'Show index for citations', 'is_default' => true],

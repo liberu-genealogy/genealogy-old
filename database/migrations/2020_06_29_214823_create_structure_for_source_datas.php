@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForSourceDatas extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'sourcedata.index', 'description' => 'Show index for source datas', 'is_default' => true],

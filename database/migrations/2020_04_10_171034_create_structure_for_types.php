@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForTypes extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'types.index', 'description' => 'Show index for types', 'is_default' => true],

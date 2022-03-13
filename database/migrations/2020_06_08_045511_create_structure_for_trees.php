@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForTrees extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'trees.show', 'description' => 'Show tree', 'is_default' => true],

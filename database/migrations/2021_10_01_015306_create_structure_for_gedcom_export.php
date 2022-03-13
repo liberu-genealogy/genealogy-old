@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForGedcomExport extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'gedcomexport.index', 'description' => 'Show index for gedcom export', 'is_default' => true],

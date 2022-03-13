@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForRepositories extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'repositories.index', 'description' => 'Show index for repositories', 'is_default' => true],

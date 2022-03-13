@@ -2,7 +2,7 @@
 
 use LaravelEnso\Migrator\Database\Migration;
 
-class CreateStructureForRefns extends Migration
+return new class extends Migration
 {
     protected array $permissions = [
         ['name' => 'refn.index', 'description' => 'Show index for refns', 'is_default' => true],
