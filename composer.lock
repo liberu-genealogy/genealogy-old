@@ -919,16 +919,16 @@
         },
         {
             "name": "dompdf/dompdf",
-            "version": "v1.2.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dompdf/dompdf.git",
-                "reference": "60b704331479a69e9bcdb3496da2315b5c4f94fd"
+                "reference": "c6dfd9bb8b0040609f04754f729d4cb3016e0575"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/60b704331479a69e9bcdb3496da2315b5c4f94fd",
-                "reference": "60b704331479a69e9bcdb3496da2315b5c4f94fd",
+                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/c6dfd9bb8b0040609f04754f729d4cb3016e0575",
+                "reference": "c6dfd9bb8b0040609f04754f729d4cb3016e0575",
                 "shasum": ""
             },
             "require": {
@@ -980,9 +980,9 @@
             "homepage": "https://github.com/dompdf/dompdf",
             "support": {
                 "issues": "https://github.com/dompdf/dompdf/issues",
-                "source": "https://github.com/dompdf/dompdf/tree/v1.2.0"
+                "source": "https://github.com/dompdf/dompdf/tree/v1.2.1"
             },
-            "time": "2022-02-07T13:02:10+00:00"
+            "time": "2022-03-24T12:57:42+00:00"
         },
         {
             "name": "dragonmantank/cron-expression",
@@ -5579,30 +5579,30 @@
         },
         {
             "name": "laravel/cashier",
-            "version": "v13.8.3",
+            "version": "v13.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/cashier-stripe.git",
-                "reference": "c9cfa54ac67d6c99f19a4ac7faf51bb3d7e27526"
+                "reference": "880e1ed0872e9c24a8abcf59b45c0d220f719ada"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/cashier-stripe/zipball/c9cfa54ac67d6c99f19a4ac7faf51bb3d7e27526",
-                "reference": "c9cfa54ac67d6c99f19a4ac7faf51bb3d7e27526",
+                "url": "https://api.github.com/repos/laravel/cashier-stripe/zipball/880e1ed0872e9c24a8abcf59b45c0d220f719ada",
+                "reference": "880e1ed0872e9c24a8abcf59b45c0d220f719ada",
                 "shasum": ""
             },
             "require": {
                 "dompdf/dompdf": "^0.8.6|^1.0.1",
                 "ext-json": "*",
-                "illuminate/console": "^8.0|^9.0",
-                "illuminate/contracts": "^8.0|^9.0",
-                "illuminate/database": "^8.0|^9.0",
-                "illuminate/http": "^8.0|^9.0",
-                "illuminate/log": "^8.0|^9.0",
-                "illuminate/notifications": "^8.0|^9.0",
-                "illuminate/routing": "^8.0|^9.0",
-                "illuminate/support": "^8.0|^9.0",
-                "illuminate/view": "^8.0|^9.0",
+                "illuminate/console": "^8.37|^9.0",
+                "illuminate/contracts": "^8.37|^9.0",
+                "illuminate/database": "^8.37|^9.0",
+                "illuminate/http": "^8.37|^9.0",
+                "illuminate/log": "^8.37|^9.0",
+                "illuminate/notifications": "^8.37|^9.0",
+                "illuminate/routing": "^8.37|^9.0",
+                "illuminate/support": "^8.37|^9.0",
+                "illuminate/view": "^8.37|^9.0",
                 "moneyphp/money": "^3.2|^4.0",
                 "nesbot/carbon": "^2.0",
                 "php": "^7.3|^8.0",
@@ -5655,7 +5655,7 @@
                 "issues": "https://github.com/laravel/cashier/issues",
                 "source": "https://github.com/laravel/cashier"
             },
-            "time": "2022-02-22T16:00:53+00:00"
+            "time": "2022-03-15T15:52:51+00:00"
         },
         {
             "name": "laravel/framework",
@@ -8948,16 +8948,16 @@
         },
         {
             "name": "ramsey/uuid",
-            "version": "4.3.0",
+            "version": "4.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "8ced2afadd9ce455e2d5919d27c57e344bae4a09"
+                "reference": "8505afd4fea63b81a85d3b7b53ac3cb8dc347c28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/8ced2afadd9ce455e2d5919d27c57e344bae4a09",
-                "reference": "8ced2afadd9ce455e2d5919d27c57e344bae4a09",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/8505afd4fea63b81a85d3b7b53ac3cb8dc347c28",
+                "reference": "8505afd4fea63b81a85d3b7b53ac3cb8dc347c28",
                 "shasum": ""
             },
             "require": {
@@ -9002,9 +9002,6 @@
             },
             "type": "library",
             "extra": {
-                "branch-alias": {
-                    "dev-main": "4.x-dev"
-                },
                 "captainhook": {
                     "force-install": true
                 }
@@ -9029,7 +9026,7 @@
             ],
             "support": {
                 "issues": "https://github.com/ramsey/uuid/issues",
-                "source": "https://github.com/ramsey/uuid/tree/4.3.0"
+                "source": "https://github.com/ramsey/uuid/tree/4.3.1"
             },
             "funding": [
                 {
@@ -9041,7 +9038,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-26T22:00:50+00:00"
+            "time": "2022-03-27T21:42:02+00:00"
         },
         {
             "name": "sabberworm/php-css-parser",
@@ -9744,16 +9741,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v7.116.0",
+            "version": "v7.119.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "7a39f594f213ed3f443a95adf769d1ecbc8393e7"
+                "reference": "a454dde82f5698cc4bcc5016c5328f533f516690"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/7a39f594f213ed3f443a95adf769d1ecbc8393e7",
-                "reference": "7a39f594f213ed3f443a95adf769d1ecbc8393e7",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/a454dde82f5698cc4bcc5016c5328f533f516690",
+                "reference": "a454dde82f5698cc4bcc5016c5328f533f516690",
                 "shasum": ""
             },
             "require": {
@@ -9798,9 +9795,9 @@
             ],
             "support": {
                 "issues": "https://github.com/stripe/stripe-php/issues",
-                "source": "https://github.com/stripe/stripe-php/tree/v7.116.0"
+                "source": "https://github.com/stripe/stripe-php/tree/v7.119.0"
             },
-            "time": "2022-03-02T15:51:15+00:00"
+            "time": "2022-03-25T20:09:27+00:00"
         },
         {
             "name": "symfony/console",
