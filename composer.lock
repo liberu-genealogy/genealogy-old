@@ -5579,16 +5579,16 @@
         },
         {
             "name": "laravel/cashier",
-            "version": "v13.8.4",
+            "version": "v13.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/cashier-stripe.git",
-                "reference": "880e1ed0872e9c24a8abcf59b45c0d220f719ada"
+                "reference": "13470cdc65f356af41a7e4631332bcec82c1cfe4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/cashier-stripe/zipball/880e1ed0872e9c24a8abcf59b45c0d220f719ada",
-                "reference": "880e1ed0872e9c24a8abcf59b45c0d220f719ada",
+                "url": "https://api.github.com/repos/laravel/cashier-stripe/zipball/13470cdc65f356af41a7e4631332bcec82c1cfe4",
+                "reference": "13470cdc65f356af41a7e4631332bcec82c1cfe4",
                 "shasum": ""
             },
             "require": {
@@ -5655,7 +5655,7 @@
                 "issues": "https://github.com/laravel/cashier/issues",
                 "source": "https://github.com/laravel/cashier"
             },
-            "time": "2022-03-15T15:52:51+00:00"
+            "time": "2022-04-05T15:23:17+00:00"
         },
         {
             "name": "laravel/framework",
@@ -9742,16 +9742,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v7.119.0",
+            "version": "v7.121.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "a454dde82f5698cc4bcc5016c5328f533f516690"
+                "reference": "e36e7afb71ae5511aae23b52dca712a0ef06d981"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/a454dde82f5698cc4bcc5016c5328f533f516690",
-                "reference": "a454dde82f5698cc4bcc5016c5328f533f516690",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/e36e7afb71ae5511aae23b52dca712a0ef06d981",
+                "reference": "e36e7afb71ae5511aae23b52dca712a0ef06d981",
                 "shasum": ""
             },
             "require": {
@@ -9796,9 +9796,9 @@
             ],
             "support": {
                 "issues": "https://github.com/stripe/stripe-php/issues",
-                "source": "https://github.com/stripe/stripe-php/tree/v7.119.0"
+                "source": "https://github.com/stripe/stripe-php/tree/v7.121.0"
             },
-            "time": "2022-03-25T20:09:27+00:00"
+            "time": "2022-03-30T15:51:23+00:00"
         },
         {
             "name": "symfony/console",
