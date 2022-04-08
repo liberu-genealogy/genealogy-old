@@ -3951,16 +3951,16 @@
         },
         {
             "name": "laravel-enso/how-to",
-            "version": "5.0.4",
+            "version": "5.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/how-to.git",
-                "reference": "b1020186c713c9add2130f5153f698cdea4047fa"
+                "reference": "6735e5062af8e455beafe945fa82849fa60d4d36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/how-to/zipball/b1020186c713c9add2130f5153f698cdea4047fa",
-                "reference": "b1020186c713c9add2130f5153f698cdea4047fa",
+                "url": "https://api.github.com/repos/laravel-enso/how-to/zipball/6735e5062af8e455beafe945fa82849fa60d4d36",
+                "reference": "6735e5062af8e455beafe945fa82849fa60d4d36",
                 "shasum": ""
             },
             "require": {
@@ -4005,9 +4005,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/how-to/issues",
-                "source": "https://github.com/laravel-enso/how-to/tree/5.0.4"
+                "source": "https://github.com/laravel-enso/how-to/tree/5.0.5"
             },
-            "time": "2022-03-03T13:45:38+00:00"
+            "time": "2022-04-06T13:06:22+00:00"
         },
         {
             "name": "laravel-enso/image-transformer",
