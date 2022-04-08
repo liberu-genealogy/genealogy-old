@@ -2535,16 +2535,16 @@
         },
         {
             "name": "laravel-enso/avatars",
-            "version": "4.0.7",
+            "version": "4.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/avatars.git",
-                "reference": "0d47bba95c9fa8b51ba392cf5d7513dd1b8695db"
+                "reference": "0e0673171859b69491d775b6fba1033cd74f38fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/avatars/zipball/0d47bba95c9fa8b51ba392cf5d7513dd1b8695db",
-                "reference": "0d47bba95c9fa8b51ba392cf5d7513dd1b8695db",
+                "url": "https://api.github.com/repos/laravel-enso/avatars/zipball/0e0673171859b69491d775b6fba1033cd74f38fc",
+                "reference": "0e0673171859b69491d775b6fba1033cd74f38fc",
                 "shasum": ""
             },
             "require": {
@@ -2591,9 +2591,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/avatars/issues",
-                "source": "https://github.com/laravel-enso/avatars/tree/4.0.7"
+                "source": "https://github.com/laravel-enso/avatars/tree/4.0.8"
             },
-            "time": "2022-03-07T12:34:59+00:00"
+            "time": "2022-04-06T13:07:21+00:00"
         },
         {
             "name": "laravel-enso/calendar",
@@ -3173,16 +3173,16 @@
         },
         {
             "name": "laravel-enso/data-export",
-            "version": "3.1.2",
+            "version": "3.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/data-export.git",
-                "reference": "339ec811c4988c00be000509e19d474aaa40e283"
+                "reference": "5a73230e12f8eea7b938c32ded98a48ef2ce1ff6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/data-export/zipball/339ec811c4988c00be000509e19d474aaa40e283",
-                "reference": "339ec811c4988c00be000509e19d474aaa40e283",
+                "url": "https://api.github.com/repos/laravel-enso/data-export/zipball/5a73230e12f8eea7b938c32ded98a48ef2ce1ff6",
+                "reference": "5a73230e12f8eea7b938c32ded98a48ef2ce1ff6",
                 "shasum": ""
             },
             "require": {
@@ -3231,22 +3231,22 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/data-export/issues",
-                "source": "https://github.com/laravel-enso/data-export/tree/3.1.2"
+                "source": "https://github.com/laravel-enso/data-export/tree/3.1.6"
             },
-            "time": "2022-03-28T07:29:00+00:00"
+            "time": "2022-04-06T13:07:03+00:00"
         },
         {
             "name": "laravel-enso/data-import",
-            "version": "6.1.4",
+            "version": "6.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/data-import.git",
-                "reference": "2a1e4b415d37a97fb3acd3d27f366516ca180a1c"
+                "reference": "6b4f043a66a4a58a80d39422cb9a54e2c1d96577"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/data-import/zipball/2a1e4b415d37a97fb3acd3d27f366516ca180a1c",
-                "reference": "2a1e4b415d37a97fb3acd3d27f366516ca180a1c",
+                "url": "https://api.github.com/repos/laravel-enso/data-import/zipball/6b4f043a66a4a58a80d39422cb9a54e2c1d96577",
+                "reference": "6b4f043a66a4a58a80d39422cb9a54e2c1d96577",
                 "shasum": ""
             },
             "require": {
@@ -3307,9 +3307,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/data-import/issues",
-                "source": "https://github.com/laravel-enso/data-import/tree/6.1.4"
+                "source": "https://github.com/laravel-enso/data-import/tree/6.1.8"
             },
-            "time": "2022-04-01T09:29:58+00:00"
+            "time": "2022-04-06T13:06:53+00:00"
         },
         {
             "name": "laravel-enso/discussions",
@@ -3374,16 +3374,16 @@
         },
         {
             "name": "laravel-enso/documents",
-            "version": "5.0.4",
+            "version": "5.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/documents.git",
-                "reference": "f71506de9a96a4b8a22bbd3f5965f47d4f5583de"
+                "reference": "da437e2e4a8141239317cd351bbb4f34570009e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/documents/zipball/f71506de9a96a4b8a22bbd3f5965f47d4f5583de",
-                "reference": "f71506de9a96a4b8a22bbd3f5965f47d4f5583de",
+                "url": "https://api.github.com/repos/laravel-enso/documents/zipball/da437e2e4a8141239317cd351bbb4f34570009e2",
+                "reference": "da437e2e4a8141239317cd351bbb4f34570009e2",
                 "shasum": ""
             },
             "require": {
@@ -3432,9 +3432,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/documents/issues",
-                "source": "https://github.com/laravel-enso/documents/tree/5.0.4"
+                "source": "https://github.com/laravel-enso/documents/tree/5.0.8"
             },
-            "time": "2022-03-03T13:43:10+00:00"
+            "time": "2022-04-06T12:14:26+00:00"
         },
         {
             "name": "laravel-enso/dynamic-methods",
@@ -3612,16 +3612,16 @@
         },
         {
             "name": "laravel-enso/files",
-            "version": "5.1.7",
+            "version": "5.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/files.git",
-                "reference": "8c42a0593ea6ee6bf0e42bce953e58bc6787127b"
+                "reference": "70dc69f5e21b8ab087f327c83cc626981d3aaf62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/files/zipball/8c42a0593ea6ee6bf0e42bce953e58bc6787127b",
-                "reference": "8c42a0593ea6ee6bf0e42bce953e58bc6787127b",
+                "url": "https://api.github.com/repos/laravel-enso/files/zipball/70dc69f5e21b8ab087f327c83cc626981d3aaf62",
+                "reference": "70dc69f5e21b8ab087f327c83cc626981d3aaf62",
                 "shasum": ""
             },
             "require": {
@@ -3670,9 +3670,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/files/issues",
-                "source": "https://github.com/laravel-enso/files/tree/5.1.7"
+                "source": "https://github.com/laravel-enso/files/tree/5.2.4"
             },
-            "time": "2022-03-17T13:13:45+00:00"
+            "time": "2022-04-06T13:06:40+00:00"
         },
         {
             "name": "laravel-enso/filters",
