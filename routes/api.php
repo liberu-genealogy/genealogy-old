@@ -74,7 +74,6 @@ use App\Http\Controllers\Families\Create as FamiliesCreate;
 use App\Http\Controllers\Families\Destroy as FamiliesDestroy;
 use App\Http\Controllers\Families\Edit as FamiliesEdit;
 use App\Http\Controllers\Families\ExportExcel as FamiliesExportExcel;
-
 use App\Http\Controllers\Families\Index as FamiliesIndex;
 use App\Http\Controllers\Families\InitTable as FamiliesInitTable;
 use App\Http\Controllers\Families\Options as FamiliesOptions;
@@ -108,6 +107,8 @@ use App\Http\Controllers\Familyslugs\Update as FamilyslugsUpdate;
 use App\Http\Controllers\Gedcom\Export as GedcomExport;
 use App\Http\Controllers\Gedcom\Store as GedcomStore;
 use App\Http\Controllers\Geneanum\GeneanumController;
+use App\Http\Controllers\GrampsXml\Export as ExportGramps;
+use App\Http\Controllers\GrampsXml\Import as ImportGramps;
 use App\Http\Controllers\MediaObjects\Create as MediaobjectsCreate;
 use App\Http\Controllers\MediaObjects\Destroy as MediaobjectsDestroy;
 use App\Http\Controllers\MediaObjects\Edit as MediaobjectsEdit;
@@ -398,9 +399,6 @@ use LaravelEnso\People\Http\Controllers\ExportExcel as PeopleExportExcel;
 use LaravelEnso\People\Http\Controllers\InitTable as PeopleInitTable;
 use LaravelEnso\People\Http\Controllers\Options as PeopleOptions;
 use LaravelEnso\People\Http\Controllers\Store as PeopleStore;
-
-use App\Http\Controllers\GrampsXml\Export as ExportGramps;
-use App\Http\Controllers\GrampsXml\Import as ImportGramps;
 /**
  * Route::middleware(['guest'])
  * ->prefix('api')
