@@ -17,7 +17,7 @@ class Import extends Controller
     /**
      * Import family tree as GRAMPS XML file
      * - Accepts XML file
-     * - Validates data and shows error if there is any
+     * - Validates data and shows error if there is any.
      */
     public function import(Request $request)
     {

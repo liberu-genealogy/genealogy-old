@@ -28,7 +28,7 @@ class Export extends Controller
             $children = $family->children()->get();
             $childrenArr = [];
 
-            foreach($children as $child){
+            foreach ($children as $child) {
                 $per = $this->getPersonDetail($child);
                 array_push($childrenArr, $per);
             }
