@@ -1,30 +1,42 @@
 <?php
 
-namespace Database\Factories;
+namespace LaravelEnso\Files\Database\Factories;
 
-use App\Models\Type;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
+use LaravelEnso\Files\Models\Type;
 
 class TypeFactory extends Factory
 {
-    /**
-     * The name of the factory's corresponding model.
-     *
-     * @var string
-     */
     protected $model = Type::class;
 
-    /**
-     * Define the model's default state.
-     *
-     * @return array
-     */
     public function definition()
     {
         return [
-            'name' => $this->faker->word(),
-            'description' => $this->faker->text(50),
-            'is_active' => $this->faker->randomDigit('0', '1'),
+            'name' => null,
+            'folder' => 'null',
+            'model' => null,
+            'icon' => 'folder',
+            'endpoint' => null,
+            'description' => null,
+            'is_browsable' => false,
+            'is_system' => false,
         ];
+    }
+
+    public function model(string $model): self
+    {
+        $name = Str::of($model)->afterLast('\\')
+            ->snake()
+            ->replace('_', ' ')
+            ->title()
+            ->plural();
+
+        return $this->state(fn () => [
+            'name' => $name,
+            'folder' => $name->camel(),
+            'model' => $model,
+            'description' => "Enso {$name}",
+        ]);
     }
 }
