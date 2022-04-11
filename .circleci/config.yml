@@ -77,12 +77,12 @@ jobs:
       - run: php artisan key:generate
       - run: php artisan migrate
       - run: mkdir -p build/logs
-  #   - run: php artisan test
-      - run: mkdir -p ~/phpunit
-      - run: vendor/bin/phpunit --log-junit ~/phpunit/junit.xml tests
+      - run: php artisan test
+  #    - run: mkdir -p ~/phpunit
+  #    - run: vendor/bin/phpunit --log-junit ~/phpunit/junit.xml tests
 
-store_test_results:
-          path: ~/phpunit
+# store_test_results:
+#          path: ~/phpunit
 
       
 
