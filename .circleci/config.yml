@@ -77,7 +77,8 @@ jobs:
       - run: php artisan key:generate
       - run: php artisan migrate --seed
       - run: mkdir -p build/logs
-      - run: php artisan test
+  #   - run: php artisan test
+      - run: vendor/bin/phpunit
   #    - run: mkdir -p ~/phpunit
   #    - run: vendor/bin/phpunit --log-junit ~/phpunit/junit.xml tests
 
