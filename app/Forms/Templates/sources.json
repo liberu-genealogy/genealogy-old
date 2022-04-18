@@ -31,15 +31,6 @@
                 "disabled": false
             }
         }, {
-            "label": "Type",
-            "name": "type_id",
-            "value": null,
-            "meta": {
-                "type": "select",
-                "multiple": false,
-                "options": []
-            }
-        }, {
             "label": "Author",
             "name": "author_id",
             "value": null,
