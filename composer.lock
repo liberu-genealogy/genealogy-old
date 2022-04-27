@@ -3237,16 +3237,16 @@
         },
         {
             "name": "laravel-enso/data-import",
-            "version": "6.1.13",
+            "version": "6.1.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/data-import.git",
-                "reference": "a78e7c77d1b8d06a0fe84fd64be8e6dffb928334"
+                "reference": "56be59f7c02c5f11538a23ba1d03fff0e827f03c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/data-import/zipball/a78e7c77d1b8d06a0fe84fd64be8e6dffb928334",
-                "reference": "a78e7c77d1b8d06a0fe84fd64be8e6dffb928334",
+                "url": "https://api.github.com/repos/laravel-enso/data-import/zipball/56be59f7c02c5f11538a23ba1d03fff0e827f03c",
+                "reference": "56be59f7c02c5f11538a23ba1d03fff0e827f03c",
                 "shasum": ""
             },
             "require": {
@@ -3307,9 +3307,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/data-import/issues",
-                "source": "https://github.com/laravel-enso/data-import/tree/6.1.13"
+                "source": "https://github.com/laravel-enso/data-import/tree/6.1.14"
             },
-            "time": "2022-04-21T09:51:17+00:00"
+            "time": "2022-04-26T11:40:33+00:00"
         },
         {
             "name": "laravel-enso/discussions",
@@ -4801,16 +4801,16 @@
         },
         {
             "name": "laravel-enso/roles",
-            "version": "5.1.0",
+            "version": "5.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/roles.git",
-                "reference": "c936139bcf07d91c2c8d9300ebc9a394193fdee2"
+                "reference": "5ce0c1c18acd6eddafd645de247b8f7ad8d0b21c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/roles/zipball/c936139bcf07d91c2c8d9300ebc9a394193fdee2",
-                "reference": "c936139bcf07d91c2c8d9300ebc9a394193fdee2",
+                "url": "https://api.github.com/repos/laravel-enso/roles/zipball/5ce0c1c18acd6eddafd645de247b8f7ad8d0b21c",
+                "reference": "5ce0c1c18acd6eddafd645de247b8f7ad8d0b21c",
                 "shasum": ""
             },
             "require": {
@@ -4863,9 +4863,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/roles/issues",
-                "source": "https://github.com/laravel-enso/roles/tree/5.1.0"
+                "source": "https://github.com/laravel-enso/roles/tree/5.1.1"
             },
-            "time": "2022-03-26T18:54:09+00:00"
+            "time": "2022-04-26T09:02:16+00:00"
         },
         {
             "name": "laravel-enso/searchable",
@@ -5359,16 +5359,16 @@
         },
         {
             "name": "laravel-enso/upgrade",
-            "version": "2.7.0",
+            "version": "2.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/upgrade.git",
-                "reference": "ab993d12a19b45672af96833dc97a9417c166328"
+                "reference": "6b4acf54b66b2e5d1ff0a300ec636d4a594c1c1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/upgrade/zipball/ab993d12a19b45672af96833dc97a9417c166328",
-                "reference": "ab993d12a19b45672af96833dc97a9417c166328",
+                "url": "https://api.github.com/repos/laravel-enso/upgrade/zipball/6b4acf54b66b2e5d1ff0a300ec636d4a594c1c1a",
+                "reference": "6b4acf54b66b2e5d1ff0a300ec636d4a594c1c1a",
                 "shasum": ""
             },
             "require": {
@@ -5412,9 +5412,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/upgrade/issues",
-                "source": "https://github.com/laravel-enso/upgrade/tree/2.7.0"
+                "source": "https://github.com/laravel-enso/upgrade/tree/2.7.2"
             },
-            "time": "2022-04-21T08:01:34+00:00"
+            "time": "2022-04-26T09:03:23+00:00"
         },
         {
             "name": "laravel-enso/user-groups",
@@ -5496,16 +5496,16 @@
         },
         {
             "name": "laravel-enso/users",
-            "version": "2.2.0",
+            "version": "2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/users.git",
-                "reference": "51af78028ad05d7537290826f25c21017f2081d6"
+                "reference": "5fdebe907acf501b52ebca9ac5f309f5cdc885cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/users/zipball/51af78028ad05d7537290826f25c21017f2081d6",
-                "reference": "51af78028ad05d7537290826f25c21017f2081d6",
+                "url": "https://api.github.com/repos/laravel-enso/users/zipball/5fdebe907acf501b52ebca9ac5f309f5cdc885cf",
+                "reference": "5fdebe907acf501b52ebca9ac5f309f5cdc885cf",
                 "shasum": ""
             },
             "require": {
@@ -5573,9 +5573,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/users/issues",
-                "source": "https://github.com/laravel-enso/users/tree/2.2.0"
+                "source": "https://github.com/laravel-enso/users/tree/2.2.1"
             },
-            "time": "2022-03-26T18:41:40+00:00"
+            "time": "2022-04-26T09:02:45+00:00"
         },
         {
             "name": "laravel/cashier",
@@ -6577,16 +6577,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "3.0.17",
+            "version": "3.0.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "29eb78cac0be0c22237c5e0f6f98234d97037d79"
+                "reference": "c8e137e594948240b03372e012344b07c61b9193"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/29eb78cac0be0c22237c5e0f6f98234d97037d79",
-                "reference": "29eb78cac0be0c22237c5e0f6f98234d97037d79",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/c8e137e594948240b03372e012344b07c61b9193",
+                "reference": "c8e137e594948240b03372e012344b07c61b9193",
                 "shasum": ""
             },
             "require": {
@@ -6647,7 +6647,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/flysystem/issues",
-                "source": "https://github.com/thephpleague/flysystem/tree/3.0.17"
+                "source": "https://github.com/thephpleague/flysystem/tree/3.0.18"
             },
             "funding": [
                 {
@@ -6663,7 +6663,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-04-14T14:57:13+00:00"
+            "time": "2022-04-25T18:55:04+00:00"
         },
         {
             "name": "league/mime-type-detection",
