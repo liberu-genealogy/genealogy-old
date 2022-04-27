@@ -19,7 +19,7 @@ class ValidateNoteRequest extends FormRequest
             'name' => 'required|max:50',
             'description' => 'required|max:50',
             'date' => 'required|max:24',
-            'type_id' => 'required|max:12',
+            // 'type_id' => 'required|max:12',
             'is_active' => 'boolean',
         ];
     }
