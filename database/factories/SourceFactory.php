@@ -48,11 +48,11 @@ namespace Database\Factories;
                     'is_active' => $this->faker->randomDigit('0', '1'),
                     'name' => $this->faker->word(),
                 ])->id,
-  //              'type_id' => Type::create([
-  //                  'name' => $this->faker->name(),
-  //                  'description' => $this->faker->text(50),
-   //                 'is_active' => 1,
-  //              ])->id,
+                //              'type_id' => Type::create([
+                //                  'name' => $this->faker->name(),
+                //                  'description' => $this->faker->text(50),
+                //                 'is_active' => 1,
+                //              ])->id,
                 'is_active' => $this->faker->randomDigit('0', '1'),
                 'group' => $this->faker->word(),
                 'gid' => $this->faker->word(),
