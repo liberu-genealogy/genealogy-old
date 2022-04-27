@@ -42,11 +42,11 @@ class RepositoryFactory extends Factory
             'www' => $this->faker->url(),
             'name' => $this->faker->name(),
             'description' => $this->faker->text(50),
-            'type_id' => Type::create([
-                'name' => $this->faker->word(),
-                'description' => $this->faker->text(50),
-                'is_active' => $this->faker->randomDigit('0', '1'),
-            ])->id,
+          //  'type_id' => Type::create([
+          //     'name' => $this->faker->word(),
+          //      'description' => $this->faker->text(50),
+          //      'is_active' => $this->faker->randomDigit('0', '1'),
+          //   ])->id,
             'is_active' => $this->faker->randomDigit('0', '1'),
         ];
     }
