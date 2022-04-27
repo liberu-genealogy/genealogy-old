@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Addr;
 use App\Models\Repository;
-use App\Models\Type;
+// use App\Models\Type;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class RepositoryFactory extends Factory
