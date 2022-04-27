@@ -11,7 +11,7 @@ jobs:
   build:
     docker:
       # Specify the version you desire here
-      - image: cimg/php:8.1
+      - image: circleci/php:8.1
         environment:
           working_directory: ~/genealogy
           DB_CONNECTION: mysql
@@ -46,7 +46,7 @@ jobs:
       - run: sudo apt-get update
       - run: sudo apt-get install lsb-release
       - run: sudo apt update # PHP CircleCI 2.0 Configuration File# PHP CircleCI 2.0 Configuration File sudo apt install zlib1g-dev libsqlite3-dev
-      - run: sudo apt install -y default-mysql-client libxml2-dev libpng-dev libfreetype6-dev libpng-dev libjpeg-dev libzip-dev
+      - run: sudo apt install -y default-mysql-client libxml2-dev libpng-dev libfreetype6-dev libpng-dev libjpeg-dev libjpeg62-turbo-dev libzip-dev
       #- run: sudo docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-webp-dir=/usr/include/  --with-jpeg-dir=/usr/include/ && \
       - run: sudo docker-php-ext-configure gd --with-freetype --with-jpeg
       - run: sudo docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd
@@ -86,4 +86,3 @@ jobs:
 #          path: ~/phpunit
 
       
-
