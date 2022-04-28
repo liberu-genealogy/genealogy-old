@@ -3237,16 +3237,16 @@
         },
         {
             "name": "laravel-enso/data-import",
-            "version": "6.1.14",
+            "version": "6.1.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/data-import.git",
-                "reference": "56be59f7c02c5f11538a23ba1d03fff0e827f03c"
+                "reference": "b83b69c7fc1844981a4c85a517b4ef3a99c6bb67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/data-import/zipball/56be59f7c02c5f11538a23ba1d03fff0e827f03c",
-                "reference": "56be59f7c02c5f11538a23ba1d03fff0e827f03c",
+                "url": "https://api.github.com/repos/laravel-enso/data-import/zipball/b83b69c7fc1844981a4c85a517b4ef3a99c6bb67",
+                "reference": "b83b69c7fc1844981a4c85a517b4ef3a99c6bb67",
                 "shasum": ""
             },
             "require": {
@@ -3307,9 +3307,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/data-import/issues",
-                "source": "https://github.com/laravel-enso/data-import/tree/6.1.14"
+                "source": "https://github.com/laravel-enso/data-import/tree/6.1.15"
             },
-            "time": "2022-04-26T11:40:33+00:00"
+            "time": "2022-04-27T08:13:21+00:00"
         },
         {
             "name": "laravel-enso/discussions",
