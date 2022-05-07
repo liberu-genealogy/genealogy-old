@@ -142,6 +142,8 @@ class Manager
             $this->makeStoragePartition();
         }
 
+        // var_dump($this->partition);
+
         return Storage::build([
             'driver' => 'local',
             'root' => storage_path("tenants/{$this->partition}"),

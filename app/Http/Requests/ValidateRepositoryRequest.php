@@ -18,7 +18,7 @@ class ValidateRepositoryRequest extends FormRequest
         return [
             'description' => 'required|max:50',
             'name' => 'required|max:50',
-            'type_id' => 'required|max:20',
+            //         'type_id' => 'required|max:20',
             'date' => 'required|max:24',
             'is_active' => 'boolean',
         ];
