@@ -3652,16 +3652,16 @@
         },
         {
             "name": "laravel-enso/excel",
-            "version": "3.1.4",
+            "version": "3.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-enso/excel.git",
-                "reference": "6f2e04973a74e9b2bf7bf331c5aa40ea82fca4f5"
+                "reference": "2f3221979abc06c93b37bf058c6063dd1f66a155"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-enso/excel/zipball/6f2e04973a74e9b2bf7bf331c5aa40ea82fca4f5",
-                "reference": "6f2e04973a74e9b2bf7bf331c5aa40ea82fca4f5",
+                "url": "https://api.github.com/repos/laravel-enso/excel/zipball/2f3221979abc06c93b37bf058c6063dd1f66a155",
+                "reference": "2f3221979abc06c93b37bf058c6063dd1f66a155",
                 "shasum": ""
             },
             "require": {
@@ -3707,9 +3707,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-enso/excel/issues",
-                "source": "https://github.com/laravel-enso/excel/tree/3.1.4"
+                "source": "https://github.com/laravel-enso/excel/tree/3.1.6"
             },
-            "time": "2021-06-09T10:17:33+00:00"
+            "time": "2022-05-16T11:45:36+00:00"
         },
         {
             "name": "laravel-enso/files",
