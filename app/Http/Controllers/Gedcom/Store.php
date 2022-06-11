@@ -13,12 +13,12 @@ class Store extends Controller
 {
     public function __invoke(Request $request): Response
     {
-        if($request->file->getClientOriginalExtension() != 'ged'){
+        if ($request->file->getClientOriginalExtension() != 'ged') {
             return response([
-                'msg'=>"file type invalid"
-            ],422);
+                'msg'=>'file type invalid',
+            ], 422);
         }
-         $request->validate([
+        $request->validate([
             'slug' => 'required|string',
             'file' => 'required',
         ]);
@@ -27,7 +27,7 @@ class Store extends Controller
         $manager = Manager::fromModel($request->user()->company() ?? $request->user());
 
         $path = $manager->storage()->putFileAs('imports', $file, null);
-       
+
         ImportGedcom::dispatch($request->user(), $manager->storagePath($path), $slug);
 
         return response([
