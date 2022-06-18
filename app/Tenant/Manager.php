@@ -32,7 +32,7 @@ class Manager
         DatabaseManager $database,
     ) {
         $this->tenant_id = $key;
-        $this->partition = "tenant_{$key}";
+        $this->partition = "tenant{$key}";
         $this->database = $database;
         $this->config = $config;
     }
@@ -53,6 +53,7 @@ class Manager
 
     public function connect(bool $default = false): self
     {
+
         $this->config->set('database.connections.tenant.database', $this->partition);
         if ($default) {
             $this->config->set('database.default', $this->connectionName);
@@ -67,8 +68,13 @@ class Manager
     {
         $this->config->set('database.default', $this->defaultConnection);
         $this->config->set('database.connections.tenant.database', $this->defaultDatabase);
+
         $this->database->reconnect($this->connectionName);
         $this->database->reconnect($this->defaultConnection);
+        
+        $defaultDatabase = $this->config->get("database.connections.".$this->defaultConnection.".database");
+        
+        $this->database->statement("USE {$defaultDatabase};");
 
         return $this;
     }
@@ -98,20 +104,23 @@ class Manager
     {
         $charset = $this->config->get('database.connections.mysql.charset', 'utf8');
         $collate = $this->config->get('database.connections.mysql.collation', 'utf8_unicode_ci');
-        $this->database->statement("CREATE DATABASE {$this->partition} CHARACTER SET {$charset} COLLATE {$collate}");
+        $this->database->statement("CREATE DATABASE {$this->partition} CHARACTER SET {$charset} COLLATE {$collate};");
 
+        $this->database->statement("USE {$this->partition};");
+        
         return $this;
     }
 
     public function dropDatabase(): self
     {
-        $this->database->statement("DROP DATABASE {$this->partition}");
+        $this->database->statement("DROP DATABASE {$this->partition};");
 
         return $this;
     }
 
     public function migrateDatabase(): self
     {
+
         Artisan::call('migrate:fresh', [
             '--realpath' => database_path('migrations/tenant'),
             '--database' => $this->connectionName,
@@ -141,8 +150,6 @@ class Manager
         if (! $this->hasStoragePartition()) {
             $this->makeStoragePartition();
         }
-
-        // var_dump($this->partition);
 
         return Storage::build([
             'driver' => 'local',
