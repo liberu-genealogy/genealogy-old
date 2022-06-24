@@ -6,14 +6,14 @@ use App\Models\Person;
 use Illuminate\Database\Eloquent\Builder;
 use LaravelEnso\Tables\Contracts\Table;
 
-class PersonTable extends \LaravelEnso\People\Tables\Builders\PersonTable
+class PersonTable implements Table 
 {
     protected const TemplatePath = __DIR__.'/../Templates/people.json';
 
     public function query(): Builder
     {
         return Person::selectRaw('
-            people.id
+            people.id, people.name,
             , people.title, people.givn, people.surn,  people.appellative, people.email, people.phone,
             people.birthday, people.deathday, CASE WHEN users.id is null THEN 0 ELSE 1 END as "user",
             companies.name as company, people.created_at

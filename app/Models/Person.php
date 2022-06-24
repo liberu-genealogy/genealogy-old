@@ -19,6 +19,7 @@ class Person extends CorePerson
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
+        error_log("PersonModel-Connection-".($this->connection));
     }
 
     /**
