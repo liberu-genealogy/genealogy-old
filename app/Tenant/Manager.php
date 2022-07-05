@@ -70,7 +70,7 @@ class Manager
     public function disconnect(): self
     {
         $this->config->set('database.default', $this->defaultConnection);
-        $this->config->set('database.connections.tenant.database', $this->defaultDatabase);
+        // $this->config->set('database.connections.tenant.database', $this->defaultDatabase);
 
         $this->database->reconnect($this->connectionName);
         $this->database->reconnect($this->defaultConnection);
