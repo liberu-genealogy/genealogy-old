@@ -351,6 +351,8 @@ use App\Http\Controllers\Person\ExportExcel as PeopleExportExcel;
 use App\Http\Controllers\Person\InitTable as PeopleInitTable;
 use App\Http\Controllers\Person\Options as PeopleOptions;
 use App\Http\Controllers\Person\Store as PeopleStore;
+use App\Http\Controllers\Person\Update as PeopleUpdate;
+use App\Http\Controllers\Person\TableData as PeopleTableData;
 
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
@@ -437,8 +439,8 @@ use LaravelEnso\ControlPanelApi\Http\Controllers\Statistics as ControlPanelStati
  * });
  *
  **/
-use LaravelEnso\People\Http\Controllers\TableData as PeopleTableData;
-use LaravelEnso\People\Http\Controllers\Update as PeopleUpdate;
+// use LaravelEnso\People\Http\Controllers\TableData as PeopleTableData;
+// use LaravelEnso\People\Http\Controllers\Update as PeopleUpdate;
 
 // use App\Http\Controllers\Families\ExportGramps as FamiliesExportGramps;
 

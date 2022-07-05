@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use LaravelEnso\Multitenancy\Traits\TenantConnection;
 use LaravelEnso\People\Models\Person as CorePerson;
 use function Symfony\Component\Translation\t;
+use App\Traits\ConnectionTrait;
 
 class Person extends CorePerson
 {
@@ -19,7 +20,8 @@ class Person extends CorePerson
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
-        error_log("PersonModel-Connection-".($this->connection));
+        $this->setConnection(\Session::get("conn"));
+        error_log("Person-".($this->connection)."-".\Session::get("conn")."-".\Session::get("db"));
     }
 
     /**

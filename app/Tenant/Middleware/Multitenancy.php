@@ -16,17 +16,17 @@ class Multitenancy
             return $next($request);
         }
 
-        $company = ($request->user()->belongsToAdminGroup() && $request->has('_tenantId'))
+        $company = /*($request->user()->belongsToAdminGroup() && $request->has('_tenantId'))
             ? Company::find($request->get('_tenantId'))
-            : $request->user()->company();
+            : */$request->user()->company();
 
         if (optional($company)->isTenant()) {
-            Manager::fromModel($company)->connect(true);
+            Manager::fromModel($company, $request->user())->connect(true);
         }
-
+/*
         if ($request->has('_tenantId')) {
             $request->request->remove('_tenantId');
-        }
+        }*/
 
         return $next($request);
     }

@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Trees;
 use App\Jobs\ExportGedCom;
 use App\Models\Family;
 use App\Models\Note;
-use App\Models\Person;
+use LaravelEnso\People\Models\Person;
+use App\Models\Company;
 use File;
 use GenealogiaWebsite\LaravelGedcom\Utils\GedcomGenerator;
 use Illuminate\Http\Request;
@@ -122,6 +123,8 @@ class Show extends Controller
         $has = (int) ($nest) * 1;
         if ($threshold >= $has) {
             $person = Person::find($start_id);
+              // $people = Company::find($start_id)->people();
+              // var_dump($people);
             // do not process for null
             if ($person == null) {
                 return;

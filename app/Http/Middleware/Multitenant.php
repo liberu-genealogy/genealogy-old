@@ -1,56 +1,43 @@
 <?php
 
-// use Closure;
-// use LaravelEnso\Companies\Models\Company;
-// use LaravelEnso\Multitenancy\Services\MixedConnection;
-// use LaravelEnso\Multitenancy\Services\Tenant;
-
 namespace App\Http\Middleware;
 
 use App\Service\MixedConnection;
-use App\Service\Tenant;
 use Closure;
 use LaravelEnso\Companies\Models\Company;
 // use App\Models\enso\companies\Company;
-// use LaravelEnso\Multitenancy\Services\Tenant;
-
+use LaravelEnso\Multitenancy\Services\Tenant;
 
 class Multitenant
 {
+    /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
+     */
     public function handle($request, Closure $next)
     {
-        if (! $request->user()) {
-            return $next($request);
-        }
+        $conn = \Session::get('conn');
+        $value = \Session::get('db');
+        if ($conn === 'tenant') {
+            $key = 'database.connections.tenant.database';
+            config([$key => $value]);
+            // config(['database.default'=>'tenant']);
+        }/*else {
+            config(['database.default'=>'mysql']);
+        }*/
 
-        $company = $this->ownerRequestsTenant($request)
-            ? Company::find($request->get('_tenantId'))
-            : $request->user()->company();
-
-        if (optional($company)->isTenant()) {
-            Tenant::set($company);
-        }
-
-        $conn = \Session::get('conn') === "tenant";
-        // $value = \Session::get('db');
-
-        MixedConnection::set(
-            $request->user(),
-            // $request->has('_tenantId')
-            $conn
-        );
-
-        if ($request->has('_tenantId')) {
+        /*if ($request->has('_tenantId')) {
             $request->request->remove('_tenantId');
-        }
-        error_log("Connection-".($conn));
-
+        }*/
         return $next($request);
     }
 
     private function ownerRequestsTenant($request)
     {
-        return $request->user()->belongsToAdminGroup()
-            && $request->has('_tenantId');
+        return $request->user()->isSupervisor();
+        // && $request->has('_tenantId');
     }
 }
