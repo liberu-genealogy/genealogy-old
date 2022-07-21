@@ -27,27 +27,30 @@ class Manager
     protected string $defaultConnection = 'mysql';
 
     public function __construct(
-        string|int $key,
+        string|int $company_id,
+        string|int $user_id,
         Repository $config,
         DatabaseManager $database,
     ) {
-        $this->tenant_id = $key;
-        $this->partition = "tenant{$key}";
+        $this->tenant_id = $company_id;
+        $this->partition = "tenant{$company_id}_{$user_id}";
         $this->database = $database;
         $this->config = $config;
     }
 
-    public static function fromModel(Model $model): self
+    public static function fromModel(Model $model,  User $user): self
     {
         return app(static::class, [
-            'key' => $model->getKey(),
+            'company_id' => $model->getKey(),
+            'user_id' => $user->getKey(),
         ]);
     }
 
-    public static function tenant(string $key): self
+    public static function tenant(string $company_id, string $user_id): self
     {
         return app(static::class, [
-            'key' => $key,
+            'company_id' => $company_id,
+            'user_id' => $user_id
         ]);
     }
 
@@ -55,11 +58,11 @@ class Manager
     {
 
         $this->config->set('database.connections.tenant.database', $this->partition);
+        $this->database->reconnect($this->connectionName);
         if ($default) {
             $this->config->set('database.default', $this->connectionName);
+            $this->database->reconnect($this->defaultConnection);
         }
-        $this->database->reconnect($this->connectionName);
-        $this->database->reconnect($this->defaultConnection);
 
         return $this;
     }
@@ -67,14 +70,14 @@ class Manager
     public function disconnect(): self
     {
         $this->config->set('database.default', $this->defaultConnection);
-        $this->config->set('database.connections.tenant.database', $this->defaultDatabase);
+        // $this->config->set('database.connections.tenant.database', $this->defaultDatabase);
 
         $this->database->reconnect($this->connectionName);
         $this->database->reconnect($this->defaultConnection);
-        
-        $defaultDatabase = $this->config->get("database.connections.".$this->defaultConnection.".database");
-        
-        $this->database->statement("USE {$defaultDatabase};");
+
+        // $defaultDatabase = $this->config->get("database.connections.".$this->defaultConnection.".database");
+
+        // $this->database->statement("USE {$defaultDatabase};");
 
         return $this;
     }
@@ -107,7 +110,7 @@ class Manager
         $this->database->statement("CREATE DATABASE {$this->partition} CHARACTER SET {$charset} COLLATE {$collate};");
 
         $this->database->statement("USE {$this->partition};");
-        
+
         return $this;
     }
 

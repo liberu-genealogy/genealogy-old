@@ -24,15 +24,14 @@ class Multitenant
         if ($conn === 'tenant') {
             $key = 'database.connections.tenant.database';
             config([$key => $value]);
-            config(['database.default'=>'tenant']);
-        } else {
+            // config(['database.default'=>'tenant']);
+        }/*else {
             config(['database.default'=>'mysql']);
-        }
+        }*/
 
-        if ($request->has('_tenantId')) {
+        /*if ($request->has('_tenantId')) {
             $request->request->remove('_tenantId');
-        }
-
+        }*/
         return $next($request);
     }
 

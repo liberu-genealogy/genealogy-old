@@ -343,8 +343,21 @@ use App\Http\Controllers\Users\Store as UserStore;
 use App\Http\Controllers\Users\TableData as UserTableData;
 use App\Http\Controllers\Users\Update as UserUpdate;
 use App\Http\Controllers\Wikitree\WikitreeController;
+
+use App\Http\Controllers\Person\Create as PeopleCreate;
+use App\Http\Controllers\Person\Destroy as PeopleDestroy;
+use App\Http\Controllers\Person\Edit as PeopleEdit;
+use App\Http\Controllers\Person\ExportExcel as PeopleExportExcel;
+use App\Http\Controllers\Person\InitTable as PeopleInitTable;
+use App\Http\Controllers\Person\Options as PeopleOptions;
+use App\Http\Controllers\Person\Store as PeopleStore;
+use App\Http\Controllers\Person\Update as PeopleUpdate;
+use App\Http\Controllers\Person\TableData as PeopleTableData;
+
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
+
+
 use LaravelEnso\Addresses\Http\Controllers\Create as AddressCreate;
 use LaravelEnso\Addresses\Http\Controllers\Destroy as AddressDestroy;
 use LaravelEnso\Addresses\Http\Controllers\Edit as AddressEdit;
@@ -392,13 +405,7 @@ use LaravelEnso\ControlPanelApi\Http\Controllers\Action as ControlPanelAction;
 use LaravelEnso\ControlPanelApi\Http\Controllers\Actions as ControlPanelActions;
 use LaravelEnso\ControlPanelApi\Http\Controllers\DownloadLog as ControlPanelDownloadLog;
 use LaravelEnso\ControlPanelApi\Http\Controllers\Statistics as ControlPanelStatistics;
-use LaravelEnso\People\Http\Controllers\Create as PeopleCreate;
-use LaravelEnso\People\Http\Controllers\Destroy as PeopleDestroy;
-use LaravelEnso\People\Http\Controllers\Edit as PeopleEdit;
-use LaravelEnso\People\Http\Controllers\ExportExcel as PeopleExportExcel;
-use LaravelEnso\People\Http\Controllers\InitTable as PeopleInitTable;
-use LaravelEnso\People\Http\Controllers\Options as PeopleOptions;
-use LaravelEnso\People\Http\Controllers\Store as PeopleStore;
+
 /**
  * Route::middleware(['guest'])
  * ->prefix('api')
@@ -432,8 +439,8 @@ use LaravelEnso\People\Http\Controllers\Store as PeopleStore;
  * });
  *
  **/
-use LaravelEnso\People\Http\Controllers\TableData as PeopleTableData;
-use LaravelEnso\People\Http\Controllers\Update as PeopleUpdate;
+// use LaravelEnso\People\Http\Controllers\TableData as PeopleTableData;
+// use LaravelEnso\People\Http\Controllers\Update as PeopleUpdate;
 
 // use App\Http\Controllers\Families\ExportGramps as FamiliesExportGramps;
 

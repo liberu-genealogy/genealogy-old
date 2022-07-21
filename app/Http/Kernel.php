@@ -48,6 +48,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'multitenant' => \App\Http\Middleware\Multitenant::class,
+        // 'multitenant' => \LaravelEnso\Multitenancy\Http\Middleware\Multitenancy::class,
     ];
 
     protected $middlewarePriority = [

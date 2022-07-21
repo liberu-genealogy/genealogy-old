@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Person;
+use App\Models\Person;
 use App\Traits\ConnectionTrait;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -115,8 +115,9 @@ class ChartController extends Controller
     {
         $prevConn = $this->getConnection();
         $company_id = $request->get('company_id');
+        $tree_id = $request->get('tree_id');
         if (! empty($company_id)) {
-            $db = Connections::Tenant.$company_id;
+            $db = Connections::Tenant.$company_id."_".$tree_id;
             $this->setConnection(Connections::Tenant, $db);
         } else {
             $this->setConnection('mysql');
@@ -127,6 +128,8 @@ class ChartController extends Controller
         $familiesjoined = \DB::connection($changeConn)->table('families')->get()->count();
 
         return json_encode([
+            "db" => config("database.connections.tenant.database"),
+            'connection' => $changeConn,
             'changedb' => $prevConn === $changeConn ? true : false,
             'familiesjoined' => $familiesjoined,
             'peoplesattached' => $peoplesattached,
