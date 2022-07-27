@@ -91,7 +91,7 @@ class RegisterController extends Controller
 
             // Dispatch Tenancy Jobs
 
-            CreateDB::dispatch($company);
+            CreateDB::dispatch($company.$user->id);
             Migration::dispatch($company, $name, $request['email'], $request['password']);
 
             return $user;
