@@ -43,7 +43,7 @@ build.all: build.base build
 
 # Build the base app image
 build.base:
-	docker build --file ${BASE_IMAGE_DOCKERFILE} --tag ${IMAGE_REGISTRY}/api-base:${IMAGE_TAG} .
+	docker build --file ${BASE_IMAGE_DOCKERFILE} --tag ${IMAGE_REGISTRY}/genealogy:${IMAGE_TAG} .
 
 # Show list of running containers
 ps:

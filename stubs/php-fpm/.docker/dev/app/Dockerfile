@@ -3,7 +3,7 @@ ARG IMAGE_REGISTRY=dev
 ARG IMAGE_TAG=latest
 
 # Base image
-FROM ${IMAGE_REGISTRY}/api-base:${IMAGE_TAG} as base
+FROM ${IMAGE_REGISTRY}/genealogy:${IMAGE_TAG} as base
 
 # Serving image
 FROM php:8.1-fpm

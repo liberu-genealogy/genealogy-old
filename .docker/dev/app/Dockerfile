@@ -1,9 +1,9 @@
 # Build arguments
-ARG IMAGE_REGISTRY=dev
+ARG IMAGE_REGISTRY=familytree365
 ARG IMAGE_TAG=latest
 
 # Image
-FROM ${IMAGE_REGISTRY}/api-base:${IMAGE_TAG}
+FROM ${IMAGE_REGISTRY}/genealogy:${IMAGE_TAG}
 
 # Update dependencies
 RUN apt-get update \

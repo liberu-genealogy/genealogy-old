@@ -3,7 +3,7 @@ ARG IMAGE_REGISTRY=dev
 ARG IMAGE_TAG=latest
 
 # Image
-FROM ${IMAGE_REGISTRY}/api-base:${IMAGE_TAG}
+FROM ${IMAGE_REGISTRY}/genealogy:${IMAGE_TAG}
 
 # Set up the working directory
 WORKDIR /var/www/html
