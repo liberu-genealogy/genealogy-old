@@ -137,15 +137,15 @@ class LoginController extends Controller
 
         if (! App::runningUnitTests()) {
             $company = $user->person->company();
-            $tanent = false;
+            $tenant = false;
             if ($company) {
-                $tanent = true;
+                $tenant = true;
             }
             // set company id as default
             $main_company = $user->person->company();
             if ($main_company !== null && ! ($user->isAdmin())) {
                 $c_id = $main_company->id;
-                $db = Connections::Tenant.$c_id;
+                $db = Connections::Tenant.$c_id.$user->id;
                 $this->setConnection(Connections::Tenant, $db);
             }
 
@@ -189,15 +189,15 @@ class LoginController extends Controller
     private function loggableSocialUser($user)
     {
         $company = $user->person->company();
-        $tanent = false;
+        $tenant = false;
 
         if ($company) {
-            $tanent = true;
+            $tenant = true;
         }
         // set company id as default
         $main_company = $user->person->company();
         if ($main_company !== null && ! ($user->isAdmin())) {
-            $c_id = $main_company->id;
+            $c_id = $main_company->id.$user->id;
             $db = Connections::Tenant.$c_id;
             $this->setConnection(Connections::Tenant, $db);
         }
