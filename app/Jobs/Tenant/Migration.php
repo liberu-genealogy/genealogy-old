@@ -53,7 +53,7 @@ class Migration implements ShouldQueue
 
         Tenant::set($this->tenant);
         $company = Tenant::get();
-        $db = Connections::Tenant.$company->id;
+        $db = Connections::Tenant.$company->id.'_1';
         Artisan::call('migrate', [
             '--database' => Connections::Tenant,
             '--path' => '/database/migrations/tenant',

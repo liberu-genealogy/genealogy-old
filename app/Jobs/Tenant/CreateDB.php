@@ -3,6 +3,8 @@
 namespace App\Jobs\Tenant;
 
 use App\Service\Tenant;
+use App\Tree;
+use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;

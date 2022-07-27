@@ -145,7 +145,7 @@ class LoginController extends Controller
             $main_company = $user->person->company();
             if ($main_company !== null && ! ($user->isAdmin())) {
                 $c_id = $main_company->id;
-                $db = Connections::Tenant.$c_id.'_1';
+                $db = Connections::Tenant.$c_id;
                 $this->setConnection(Connections::Tenant, $db);
             }
 
