@@ -7,7 +7,7 @@ use Illuminate\Support\Collection;
 use Illuminate\Validation\Rule;
 use LaravelEnso\People\Http\Requests\ValidatePerson as EnsoPerson;
 
-class ValidatePerson extends EnsoPerson
+class ValidatePersonRequest extends EnsoPerson
 {
     private Collection $companies;
 
