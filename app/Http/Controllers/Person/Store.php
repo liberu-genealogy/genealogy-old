@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Person;
 
-use App\Http\Requests\ValidatePersonRequest;
+use App\Http\Requests\ValidatePerson;
 use App\Models\Person;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Routing\Controller;

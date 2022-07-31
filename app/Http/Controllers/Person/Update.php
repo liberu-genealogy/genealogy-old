@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Person;
 
-use App\Http\Requests\ValidatePersonRequest;
+use App\Http\Requests\ValidatePerson;
 use App\Models\Preson;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
