@@ -6,12 +6,12 @@ use App\Models\Family;
 use App\Models\PersonEvent;
 use App\Models\Place;
 use App\Models\User;
+use App\Traits\ConnectionTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\Auth;
 use LaravelEnso\Multitenancy\Traits\TenantConnection;
 use LaravelEnso\People\Models\Person as CorePerson;
 use function Symfony\Component\Translation\t;
-use App\Traits\ConnectionTrait;
 
 class Person extends CorePerson
 {
@@ -20,8 +20,8 @@ class Person extends CorePerson
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
-        $this->setConnection(\Session::get("conn"));
-        error_log("Person-".($this->connection)."-".\Session::get("conn")."-".\Session::get("db"));
+        $this->setConnection(\Session::get('conn'));
+        error_log('Person-'.($this->connection).'-'.\Session::get('conn').'-'.\Session::get('db'));
     }
 
     /**

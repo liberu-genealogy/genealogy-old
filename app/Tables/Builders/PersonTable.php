@@ -6,7 +6,7 @@ use App\Models\Person;
 use Illuminate\Database\Eloquent\Builder;
 use LaravelEnso\Tables\Contracts\Table;
 
-class PersonTable implements Table 
+class PersonTable implements Table
 {
     protected const TemplatePath = __DIR__.'/../Templates/people.json';
 

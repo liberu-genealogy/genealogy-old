@@ -138,6 +138,15 @@ use App\Http\Controllers\Paypal\GetPlans as PaypalGetPlans;
 use App\Http\Controllers\Paypal\HandlePayment as PaypalHandlePayment;
 use App\Http\Controllers\Paypal\Unsubscribe as PaypalUnsubscribe;
 use App\Http\Controllers\Paypal\Webhook as PaypalWebhook;
+use App\Http\Controllers\Person\Create as PeopleCreate;
+use App\Http\Controllers\Person\Destroy as PeopleDestroy;
+use App\Http\Controllers\Person\Edit as PeopleEdit;
+use App\Http\Controllers\Person\ExportExcel as PeopleExportExcel;
+use App\Http\Controllers\Person\InitTable as PeopleInitTable;
+use App\Http\Controllers\Person\Options as PeopleOptions;
+use App\Http\Controllers\Person\Store as PeopleStore;
+use App\Http\Controllers\Person\TableData as PeopleTableData;
+use App\Http\Controllers\Person\Update as PeopleUpdate;
 use App\Http\Controllers\Personalias\Create as PersonaliasCreate;
 use App\Http\Controllers\Personalias\Destroy as PersonaliasDestroy;
 use App\Http\Controllers\Personalias\Edit as PersonaliasEdit;
@@ -343,21 +352,8 @@ use App\Http\Controllers\Users\Store as UserStore;
 use App\Http\Controllers\Users\TableData as UserTableData;
 use App\Http\Controllers\Users\Update as UserUpdate;
 use App\Http\Controllers\Wikitree\WikitreeController;
-
-use App\Http\Controllers\Person\Create as PeopleCreate;
-use App\Http\Controllers\Person\Destroy as PeopleDestroy;
-use App\Http\Controllers\Person\Edit as PeopleEdit;
-use App\Http\Controllers\Person\ExportExcel as PeopleExportExcel;
-use App\Http\Controllers\Person\InitTable as PeopleInitTable;
-use App\Http\Controllers\Person\Options as PeopleOptions;
-use App\Http\Controllers\Person\Store as PeopleStore;
-use App\Http\Controllers\Person\Update as PeopleUpdate;
-use App\Http\Controllers\Person\TableData as PeopleTableData;
-
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
-
-
 use LaravelEnso\Addresses\Http\Controllers\Create as AddressCreate;
 use LaravelEnso\Addresses\Http\Controllers\Destroy as AddressDestroy;
 use LaravelEnso\Addresses\Http\Controllers\Edit as AddressEdit;
