@@ -16,7 +16,6 @@ class CompanySeeder extends Seeder
         $person = Person::where('id', '1')->first();
         $person->companies()->attach(1, ['person_id' => 1, 'is_main' => 1, 'is_mandatary' => 1, 'company_id' => $admin_company->id]);
 
-
         $supervisor_company = $this->supervisor_company();
         $person = Person::where('id', '2')->first();
         $person->companies()->attach(1, ['person_id' => 2, 'is_main' => 1, 'is_mandatary' => 1, 'company_id' => $supervisor_company->id]);
@@ -24,7 +23,7 @@ class CompanySeeder extends Seeder
 
     private function admin_company()
     {
-      return Company::create([
+        return Company::create([
             'name' => 'Admin Root',
             'is_tenant' => 0,
             'email' => 'admin@familytree365.com',
@@ -32,9 +31,10 @@ class CompanySeeder extends Seeder
             'status' => Statuses::Active,
         ]);
     }
+
     private function supervisor_company()
     {
-      return Company::create([
+        return Company::create([
             'name' => 'Supervisor',
             'is_tenant' => 0,
             'email' => 'supervisor@familytree365.com',

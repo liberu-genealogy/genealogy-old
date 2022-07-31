@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Trees;
 
 use App\Jobs\ExportGedCom;
+use App\Models\Company;
 use App\Models\Family;
 use App\Models\Note;
-use LaravelEnso\People\Models\Person;
-use App\Models\Company;
 use File;
 use GenealogiaWebsite\LaravelGedcom\Utils\GedcomGenerator;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use LaravelEnso\People\Models\Person;
 use Response;
 
 class Show extends Controller
@@ -123,8 +123,8 @@ class Show extends Controller
         $has = (int) ($nest) * 1;
         if ($threshold >= $has) {
             $person = Person::find($start_id);
-              // $people = Company::find($start_id)->people();
-              // var_dump($people);
+            // $people = Company::find($start_id)->people();
+            // var_dump($people);
             // do not process for null
             if ($person == null) {
                 return;

@@ -38,7 +38,7 @@ class Manager
         $this->config = $config;
     }
 
-    public static function fromModel(Model $model,  User $user): self
+    public static function fromModel(Model $model, User $user): self
     {
         return app(static::class, [
             'company_id' => $model->getKey(),
@@ -50,13 +50,12 @@ class Manager
     {
         return app(static::class, [
             'company_id' => $company_id,
-            'user_id' => $user_id
+            'user_id' => $user_id,
         ]);
     }
 
     public function connect(bool $default = false): self
     {
-
         $this->config->set('database.connections.tenant.database', $this->partition);
         $this->database->reconnect($this->connectionName);
         if ($default) {
@@ -123,7 +122,6 @@ class Manager
 
     public function migrateDatabase(): self
     {
-
         Artisan::call('migrate:fresh', [
             '--realpath' => database_path('migrations/tenant'),
             '--database' => $this->connectionName,

@@ -27,6 +27,7 @@ class Multitenancy
         if ($request->has('_tenantId')) {
             $request->request->remove('_tenantId');
         }
+
         return $next($request);
     }
 }
