@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelEnso\Companies\Http\Controllers\Company;
+namespace App\Http\Controllers\Company;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Routing\Controller;
