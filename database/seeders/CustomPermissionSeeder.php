@@ -12,7 +12,7 @@ class CustomPermissionSeeder extends Seeder
      * Run the database seeds.
      *
      * @return void
-     */
+
     private $link = [
         'administration.people.initTable',
         'administration.people.tableData',
@@ -66,4 +66,7 @@ class CustomPermissionSeeder extends Seeder
             }
         }
     }
+
+**/
+
 }
