@@ -2340,16 +2340,16 @@
         },
         {
             "name": "laminas/laminas-diactoros",
-            "version": "2.13.0",
+            "version": "2.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-diactoros.git",
-                "reference": "34ba65010be9aa74e159d168c5ecfa5c01e4d956"
+                "reference": "6cb35f61913f06b2c91075db00f67cfd78869e28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-diactoros/zipball/34ba65010be9aa74e159d168c5ecfa5c01e4d956",
-                "reference": "34ba65010be9aa74e159d168c5ecfa5c01e4d956",
+                "url": "https://api.github.com/repos/laminas/laminas-diactoros/zipball/6cb35f61913f06b2c91075db00f67cfd78869e28",
+                "reference": "6cb35f61913f06b2c91075db00f67cfd78869e28",
                 "shasum": ""
             },
             "require": {
@@ -2435,7 +2435,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2022-07-07T12:31:03+00:00"
+            "time": "2022-07-28T12:23:48+00:00"
         },
         {
             "name": "laravel-enso/action-logger",
@@ -6016,22 +6016,23 @@
         },
         {
             "name": "laravel/octane",
-            "version": "v1.2.16",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/octane.git",
-                "reference": "6f482ebe74c2c59eb54bb512821ae6987df99613"
+                "reference": "93dfdb57e721bceaf495bbe1c87d5d852d10e16b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/octane/zipball/6f482ebe74c2c59eb54bb512821ae6987df99613",
-                "reference": "6f482ebe74c2c59eb54bb512821ae6987df99613",
+                "url": "https://api.github.com/repos/laravel/octane/zipball/93dfdb57e721bceaf495bbe1c87d5d852d10e16b",
+                "reference": "93dfdb57e721bceaf495bbe1c87d5d852d10e16b",
                 "shasum": ""
             },
             "require": {
                 "laminas/laminas-diactoros": "^2.5",
                 "laravel/framework": "^8.81|^9.0",
                 "laravel/serializable-closure": "^1.0",
+                "nesbot/carbon": "^2.60",
                 "php": "^8.0",
                 "symfony/psr-http-message-bridge": "^2.0"
             },
@@ -6087,7 +6088,7 @@
                 "issues": "https://github.com/laravel/octane/issues",
                 "source": "https://github.com/laravel/octane"
             },
-            "time": "2022-07-15T18:11:05+00:00"
+            "time": "2022-08-02T15:44:43+00:00"
         },
         {
             "name": "laravel/sanctum",
