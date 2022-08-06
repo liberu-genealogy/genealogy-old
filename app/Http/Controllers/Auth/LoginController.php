@@ -179,7 +179,7 @@ class LoginController extends Controller
                 $this->getConnection();
 
                 CreateDB::dispatch($company, $user_id);
-                Migration::dispatch($company_id, $user_id, $person_name, $user_email);
+                Migration::dispatch($company, $user_id, $person_name, $user_email);
             }
         }
 
