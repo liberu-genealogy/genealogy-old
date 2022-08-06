@@ -74,9 +74,9 @@ class Manager
         $this->database->reconnect($this->connectionName);
         $this->database->reconnect($this->defaultConnection);
 
-        // $defaultDatabase = $this->config->get("database.connections.".$this->defaultConnection.".database");
+        $defaultDatabase = $this->config->get("database.connections.".$this->defaultConnection.".database");
 
-        // $this->database->statement("USE {$defaultDatabase};");
+        $this->database->statement("USE {$defaultDatabase};");
 
         return $this;
     }
@@ -108,7 +108,7 @@ class Manager
         $collate = $this->config->get('database.connections.mysql.collation', 'utf8_unicode_ci');
         $this->database->statement("CREATE DATABASE {$this->partition} CHARACTER SET {$charset} COLLATE {$collate};");
 
-        $this->database->statement("USE {$this->partition};");
+        // $this->database->statement("USE {$this->partition};");
 
         return $this;
     }

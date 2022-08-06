@@ -382,7 +382,7 @@ use LaravelEnso\Calendar\Http\Controllers\Events\Edit as EventEdit;
 use LaravelEnso\Calendar\Http\Controllers\Events\Index as EventIndex;
 use LaravelEnso\Calendar\Http\Controllers\Events\Store as EventStore;
 use LaravelEnso\Calendar\Http\Controllers\Events\Update as EventUpdate;
-use LaravelEnso\Companies\Http\Controllers\Company\Create as CompanyCreate;
+use App\Http\Controllers\Company\Create as CompanyCreate;
 use App\Http\Controllers\Company\Destroy as CompanyDestroy;
 use App\Http\Controllers\Company\Edit as CompanyEdit;
 use App\Http\Controllers\Company\ExportExcel as CompanyExportExcel;
