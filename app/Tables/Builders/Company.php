@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelEnso\Companies\Tables\Builders;
+namespace App\Tables\Builders;
 
 use Illuminate\Database\Eloquent\Builder;
 use LaravelEnso\Companies\Models\Company as Model;
