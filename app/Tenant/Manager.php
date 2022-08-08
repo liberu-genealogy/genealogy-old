@@ -74,7 +74,7 @@ class Manager
         $this->database->reconnect($this->connectionName);
         $this->database->reconnect($this->defaultConnection);
 
-        $defaultDatabase = $this->config->get("database.connections.".$this->defaultConnection.".database");
+        $defaultDatabase = $this->config->get('database.connections.'.$this->defaultConnection.'.database');
 
         $this->database->statement("USE {$defaultDatabase};");
 
