@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Company;
 
-use Illuminate\Routing\Controller;
 use App\Tables\Builders\Company;
+use Illuminate\Routing\Controller;
 use LaravelEnso\Tables\Traits\Init;
 
 class InitTable extends Controller
