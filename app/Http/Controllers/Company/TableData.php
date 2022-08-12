@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Company;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Companies\Tables\Builders\Company;
+use App\Tables\Builders\CompanyTable;
 use LaravelEnso\Tables\Traits\Data;
 
 class TableData extends Controller
 {
     use Data;
 
-    protected $tableClass = Company::class;
+    protected $tableClass = CompanyTable::class;
 }
