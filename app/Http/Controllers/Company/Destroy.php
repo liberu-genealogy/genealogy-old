@@ -12,8 +12,6 @@ class Destroy extends Controller
 
     public function __invoke(Company $company)
     {
-        public function __invoke(Company $company, Form $form)
-    {
         $role = \Auth::user()->role_id;
         $user_id = \Auth::user()->id;
         if (in_array($role, [1, 2])) {
@@ -36,7 +34,5 @@ class Destroy extends Controller
         }
 
         return ['error' => __('Unauthorized')];
-    }
-
     }
 }
