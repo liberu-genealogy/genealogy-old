@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Company;
 
+use App\Jobs\Tenant\CreateDB;
+use App\Jobs\Tenant\Migration;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Companies\Http\Requests\ValidateCompany;
@@ -14,8 +16,14 @@ class Store extends Controller
     public function __invoke(ValidateCompany $request, Company $company)
     {
         $company->fill($request->validatedExcept('mandatary'));
-
+        $user = \Auth::user();
+        $user->id = $user->id;
+        $person_name = $user->name;
+        $person_email = $user->email;
         $this->authorize('store', $company);
+
+        CreateDB::dispatch($company, $user_id);
+        Migration::dispatch($company, $user_id, $person_name, $user_email);
 
         $company->save();
 
