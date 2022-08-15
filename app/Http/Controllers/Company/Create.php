@@ -25,6 +25,6 @@ class Create extends Controller
             }
 
             return ['error' => __('Unauthorized')];
-        };
+        }
     }
 }

@@ -25,7 +25,7 @@ class Destroy extends Controller
                 'redirect' => 'administration.companies.index',
             ];
         }
-        if ($user_id == $user->id) {
+        if ($user_id == $company->created_by) {
 
             $company->delete();
 
