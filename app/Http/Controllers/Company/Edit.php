@@ -13,8 +13,16 @@ class Edit extends Controller
 
     public function __invoke(Company $company, Form $form)
     {
-        $this->authorize('update', $company);
+        $role = \Auth::user()->role_id;
+        $user_id = \Auth::user()->id;
+        if (in_array($role, [1, 2])) {
+            return ['form' => $form->edit($company)];
+        }
+        if ($user_id == $user->id) {
+            return ['form' => $form->edit($company)];
+        }
 
-        return ['form' => $form->edit($company)];
+        return ['error' => __('Unauthorized')];
     }
+
 }

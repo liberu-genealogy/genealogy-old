@@ -1,12 +1,12 @@
 # Build arguments
-ARG IMAGE_REGISTRY=familytree365
+ARG IMAGE_REGISTRY=prod
 ARG IMAGE_TAG=latest
 
 # Image
-FROM ${IMAGE_REGISTRY}/genealogy:${IMAGE_TAG}
+FROM ${IMAGE_REGISTRY}/api-base:${IMAGE_TAG}
 
 # Update dependencies
-RUN && apt-get update \
+RUN apt-get update \
 # Install Swoole (required by Octane)
     && pecl install swoole \
     && docker-php-ext-enable swoole \

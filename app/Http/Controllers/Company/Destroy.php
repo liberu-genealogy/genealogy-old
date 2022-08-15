@@ -12,13 +12,31 @@ class Destroy extends Controller
 
     public function __invoke(Company $company)
     {
-        $this->authorize('destroy', $company);
+        public function __invoke(Company $company, Form $form)
+    {
+        $role = \Auth::user()->role_id;
+        $user_id = \Auth::user()->id;
+        if (in_array($role, [1, 2])) {
 
-        $company->delete();
+            $company->delete();
 
-        return [
-            'message' => __('The company was successfully deleted'),
-            'redirect' => 'administration.companies.index',
-        ];
+            return [
+                'message' => __('The company was successfully deleted'),
+                'redirect' => 'administration.companies.index',
+            ];
+        }
+        if ($user_id == $user->id) {
+
+            $company->delete();
+
+            return [
+                'message' => __('The company was successfully deleted'),
+                'redirect' => 'administration.companies.index',
+            ];
+        }
+
+        return ['error' => __('Unauthorized')];
+    }
+
     }
 }
