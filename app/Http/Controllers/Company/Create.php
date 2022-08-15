@@ -9,22 +9,19 @@ class Create extends Controller
 {
     public function __invoke(Company $form)
     {
-
-        {
-            $role = \Auth::user()->role_id;
-            $companies = \Auth::user->companies->count();
-            if (in_array($role, [1, 2, 9, 10])) {
-                return ['form' => $form->create()]
-            }
-            if (in_array($role, [4, 5, 6]) && $companies < 1) {
-                return ['form' => $form->create()]
-            }
-
-            if (in_array($role, [7, 8]) && $companies < 10) {
-                return ['form' => $form->create()]
-            }
-
-            return ['error' => __('Unauthorized')];
+        $role = \Auth::user()->role_id;
+        $companies = \Auth::user->companies->count();
+        if (in_array($role, [1, 2, 9, 10])) {
+            return ['form' => $form->create()];
         }
+        if (in_array($role, [4, 5, 6]) && $companies < 1) {
+            return ['form' => $form->create()];
+        }
+
+        if (in_array($role, [7, 8]) && $companies < 10) {
+            return ['form' => $form->create()];
+        }
+
+        return ['error' => __('Unauthorized')];
     }
 }
