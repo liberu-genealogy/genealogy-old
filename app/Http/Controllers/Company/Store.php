@@ -17,9 +17,9 @@ class Store extends Controller
     {
         $company->fill($request->validatedExcept('mandatary'));
         $user = \Auth::user();
-        $user->id = $user->id;
+        $user_id = $user->id;
         $person_name = $user->name;
-        $person_email = $user->email;
+        $user_email = $user->email;
         $this->authorize('store', $company);
 
         CreateDB::dispatch($company, $user_id);
