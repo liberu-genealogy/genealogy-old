@@ -10,7 +10,8 @@ class Create extends Controller
     public function __invoke(Company $form)
     {
         $role = \Auth::user()->role_id;
-        $companies = \Auth::user->companies->count();
+        $companies = \Auth::user()->person->companies()->count();
+        
         if (in_array($role, [1, 2, 9, 10])) {
             return ['form' => $form->create()];
         }

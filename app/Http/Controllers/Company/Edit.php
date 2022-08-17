@@ -18,7 +18,7 @@ class Edit extends Controller
         if (in_array($role, [1, 2])) {
             return ['form' => $form->edit($company)];
         }
-        if ($user_id == $user->id) {
+        if ($user_id == $company->created_by) {
             return ['form' => $form->edit($company)];
         }
 
