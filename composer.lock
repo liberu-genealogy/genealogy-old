@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ad847554d4ced74b1597d2a588ea21d5",
+    "content-hash": "72d14eeb24f74f1758b95811cb26fc8d",
     "packages": [
         {
             "name": "anlutro/curl",
@@ -1314,6 +1314,54 @@
                 }
             ],
             "time": "2021-11-28T12:13:02+00:00"
+        },
+        {
+            "name": "familytree365/recordsapi",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/familytree365/laravel-recordsapi.git",
+                "reference": "226b44767ed8c17117c6fb6a4d6dbf164fc3b854"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/familytree365/laravel-recordsapi/zipball/226b44767ed8c17117c6fb6a4d6dbf164fc3b854",
+                "reference": "226b44767ed8c17117c6fb6a4d6dbf164fc3b854",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Iamdevmaniac\\Recordsapi\\RecordsApiServiceProvider"
+                    ],
+                    "aliases": {
+                        "Recordsapi": "Iamdevmaniac\\Recordsapi\\Facades\\RecordsApiFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Iamdevmaniac\\Recordsapi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Segun Bamidele",
+                    "email": "segunemma2003@gmail.com"
+                }
+            ],
+            "description": "This helps to consume the records api into your application",
+            "support": {
+                "issues": "https://github.com/familytree365/laravel-recordsapi/issues",
+                "source": "https://github.com/familytree365/laravel-recordsapi/tree/master"
+            },
+            "time": "2022-03-03T07:29:20+00:00"
         },
         {
             "name": "flowgistics/laravel-xml",
@@ -17921,7 +17969,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "familytree365/recordsapi": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
