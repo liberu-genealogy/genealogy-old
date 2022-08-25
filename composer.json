@@ -25,7 +25,7 @@
         "laravel-enso/tasks": "^2.0",
         "laravel-enso/teams": "^4.0",
         "laravel-enso/tutorials": "^5.0",
-        "laravel/cashier": "^13.8",
+        "laravel/cashier": "^14.0",
         "laravel/horizon": "^5.0",
         "laravel/octane": "^1.2",
         "laravel/sanctum": "^2.14.1",
