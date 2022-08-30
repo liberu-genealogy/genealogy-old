@@ -11,7 +11,7 @@ class Create extends Controller
     {
         $role = \Auth::user()->role_id;
         $companies = \Auth::user()->person->companies()->count();
-        
+
         if (in_array($role, [1, 2, 9, 10])) {
             return ['form' => $form->create()];
         }

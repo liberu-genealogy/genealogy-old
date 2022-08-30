@@ -8,7 +8,7 @@ use LaravelEnso\Tables\Contracts\Table;
 
 class CompanyTable implements Table
 {
-    private const TemplatePath = __DIR__ . '/../Templates/companies.json';
+    private const TemplatePath = __DIR__.'/../Templates/companies.json';
 
     public function query(): Builder
     {

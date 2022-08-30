@@ -21,7 +21,7 @@ class Store extends Controller
         $person_name = $user->name;
         $user_email = $user->email;
         $this->authorize('store', $company);
-        
+
         $company->save();
         CreateDB::dispatch($company, $user_id);
         Migration::dispatch($company, $user_id, $person_name, $user_email);
