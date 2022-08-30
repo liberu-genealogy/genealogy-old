@@ -24,5 +24,4 @@ class Edit extends Controller
 
         return ['error' => __('Unauthorized')];
     }
-
 }

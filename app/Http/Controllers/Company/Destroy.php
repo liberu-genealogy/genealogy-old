@@ -15,7 +15,6 @@ class Destroy extends Controller
         $role = \Auth::user()->role_id;
         $user_id = \Auth::user()->id;
         if (in_array($role, [1, 2])) {
-
             $company->delete();
 
             return [
@@ -24,7 +23,6 @@ class Destroy extends Controller
             ];
         }
         if ($user_id == $company->created_by) {
-
             $company->delete();
 
             return [
