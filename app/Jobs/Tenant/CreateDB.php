@@ -2,7 +2,8 @@
 
 namespace App\Jobs\Tenant;
 
-use App\Service\Tenant;
+use App\Service\Tenant as TT;
+use App\Models\Tenant;
 use App\Tree;
 use App\User;
 use Illuminate\Bus\Queueable;
@@ -37,8 +38,12 @@ class CreateDB implements ShouldQueue
      */
     public function handle()
     {
+
+        $tenant = Tenant::create([
+            'id' => $this->tenant->id,
+        ]);
         //
-        Tenant::set($this->tenant);
-        DB::statement('CREATE DATABASE '.$this->tenantDatabase());
+        // Tenant::set($this->tenant);
+        // DB::statement('CREATE DATABASE '.$this->tenantDatabase());
     }
 }

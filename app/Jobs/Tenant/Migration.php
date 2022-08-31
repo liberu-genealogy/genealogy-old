@@ -3,8 +3,9 @@
 namespace App\Jobs\Tenant;
 
 use App\Models\User;
-use App\Person;
-use App\Service\Tenant;
+use App\Model\Person;
+use App\Service\Tenant as TT;
+use App\Models\Tenant;
 use DB;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -51,25 +52,35 @@ class Migration implements ShouldQueue
     {
         //
 
-        Tenant::set($this->tenant);
-        $company = Tenant::get();
-        $db = Connections::Tenant.$company->id.'_1';
-        Artisan::call('migrate', [
-            '--database' => Connections::Tenant,
-            '--path' => '/database/migrations/tenant',
-            '--force' => true,
-        ]);
+        // Tenant::set($this->tenant);
+        // $company = Tenant::get();
+        // $db = Connections::Tenant.$company->id.'_1';
+        // Artisan::call('migrate', [
+        //     '--database' => Connections::Tenant,
+        //     '--path' => '/database/migrations/tenant',
+        //     '--force' => true,
+        // ]);
 
         /**  Artisan::call('db:seed', [
          * '--database' => Connections::Tenant,
          * '--force' => true,
          * ]);.
          **/
-        $person = DB::connection(Connections::Tenant)->table('people')->insertGetId([
-            'email'=>$this->email,
-            'name' => $this->name,
-        ]);
-        // get user_group_id
+        // $person = DB::connection(Connections::Tenant)->table('people')->insertGetId([
+        //     'email'=>$this->email,
+        //     'name' => $this->name,
+        // ]);
+        // // g$tenant = Tenant::find('->initialize($tenant);et user_group_id
+        $tenants = Tenant::find($this->tenant->id);
+
+        $tenant = tenancy()->initialize($tenants);
+        $person = $tenant->run(function () {
+            Person::create([
+                'email'=>$this->email,
+                'name' => $this->name,
+
+            ]);
+        });
         $user_group = 1;
 
         // get role_id
