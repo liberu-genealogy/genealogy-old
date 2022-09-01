@@ -19,6 +19,7 @@ return [
     'central_domains' => [
         '127.0.0.1',
         'localhost',
+        env('CENTRAL_URL')
     ],
 
     /**
@@ -39,7 +40,7 @@ return [
      * Database tenancy config. Used by DatabaseTenancyBootstrapper.
      */
     'database' => [
-        'central_connection' => env('DB_CONNECTION', 'central'),
+        'central_connection' => env('DB_CONNECTION', 'mysql'),
 
         /**
          * Connection used as a "template" for the dynamically created tenant database connection.
