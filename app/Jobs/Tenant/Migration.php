@@ -73,7 +73,7 @@ class Migration implements ShouldQueue
         // // g$tenant = Tenant::find('->initialize($tenant);et user_group_id
         $tenants = Tenant::find($this->tenant->id);
 
-        // $tenant = tenancy()->initialize($tenants);
+        $tenant = tenancy()->initialize($tenants);
         $person = $tenants->run(function () {
             Person::create([
                 'email'=>$this->email,
