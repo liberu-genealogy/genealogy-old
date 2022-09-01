@@ -20,7 +20,7 @@ class Person extends CorePerson
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
-        $this->setConnection(\Session::get('conn'));
+        // $this->setConnection(\Session::get('conn'));
         error_log('Person-'.($this->connection).'-'.\Session::get('conn').'-'.\Session::get('db'));
     }
 

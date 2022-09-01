@@ -62,7 +62,7 @@ class RegisterController extends Controller
             // get role_id
             $role = Role::where('name', 'free')->first();
             if ($role == null) {
-                $role = Role::create(['menu_id'=>1, 'name'=>'supervisor', 'display_name'=>'Supervisor', 'description'=>'Supervisor role.']);
+                $role = Role::create(['menu_id'=>1, 'name'=>'free', 'display_name'=>'Supervisor', 'description'=>'Supervisor role.']);
             }
             $user = User::create([
                 'email' => $request['email'],
@@ -90,9 +90,37 @@ class RegisterController extends Controller
             $person->companies()->attach($company->id, ['person_id' => $person->id, 'is_main' => 1, 'is_mandatary' => 1, 'company_id' => $company->id]);
 
             // Dispatch Tenancy Jobs
+            $tenant = \App\Models\Tenant::create([
+                'id' => $company->id,
+            ]);
 
-            CreateDB::dispatch($company);
-            Migration::dispatch($company, $name, $request['email'], $request['password']);
+            $tenants = \App\Models\Tenant::find($tenant->id);
+
+        tenancy()->initialize($tenants);
+        $persons = $tenants->run(function () {
+            Person::create([
+                'email'=>$this->email,
+                'name' => $this->name,
+
+            ]);
+        });
+        $user_group = 1;
+
+        // get role_id
+        $role = 1;
+        $tenants->run(function () use($persons,$user_group,$role) {
+            User::create([
+                'email' => $this->email,
+          'password' => Hash::make($this->password),
+          'person_id' => $persons,
+          'group_id' => $user_group,
+          'role_id' => $role,
+          'is_active' => 1,
+
+            ]);
+        });
+            // CreateDB::dispatch($company);
+            // Migration::dispatch($company, $name, $request['email'], $request['password']);
 
             return $user;
         } catch (\Exception $e) {
