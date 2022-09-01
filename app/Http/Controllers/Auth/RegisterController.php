@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Jobs\Tenant\CreateDB;
-use App\Jobs\Tenant\Migration;
+use App\Jobs\Tenant\CreateDBs;
+use App\Jobs\Tenant\Migrations;
 use App\Models\Person;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
@@ -90,37 +90,37 @@ class RegisterController extends Controller
             $person->companies()->attach($company->id, ['person_id' => $person->id, 'is_main' => 1, 'is_mandatary' => 1, 'company_id' => $company->id]);
 
             // Dispatch Tenancy Jobs
-            $tenant = \App\Models\Tenant::create([
-                'id' => $company->id,
-            ]);
+        //     $tenant = \App\Models\Tenant::create([
+        //         'id' => $company->id,
+        //     ]);
 
-            $tenants = \App\Models\Tenant::find($tenant->id);
+        //     $tenants = \App\Models\Tenant::find($tenant->id);
 
-        tenancy()->initialize($tenants);
-        $persons = $tenants->run(function () {
-            Person::create([
-                'email'=>$this->email,
-                'name' => $this->name,
+        // tenancy()->initialize($tenants);
+        // $persons = $tenants->run(function () use($request, $name) {
+        //     Person::create([
+        //         'email'=>$request['email'],
+        //         'name' =>  $name,
 
-            ]);
-        });
-        $user_group = 1;
+        //     ]);
+        // });
+        // $user_group = 1;
 
-        // get role_id
-        $role = 1;
-        $tenants->run(function () use($persons,$user_group,$role) {
-            User::create([
-                'email' => $this->email,
-          'password' => Hash::make($this->password),
-          'person_id' => $persons,
-          'group_id' => $user_group,
-          'role_id' => $role,
-          'is_active' => 1,
+        // // get role_id
+        // $role = 1;
+        // $tenants->run(function () use($persons,$user_group,$role,$request) {
+        //     User::create([
+        //         'email' => $request['email'],
+        //         'password' => bcrypt($request['password']),
+        //   'person_id' => $persons,
+        //   'group_id' => $user_group,
+        //   'role_id' => $role,
+        //   'is_active' => 1,
 
-            ]);
-        });
-            // CreateDB::dispatch($company);
-            // Migration::dispatch($company, $name, $request['email'], $request['password']);
+        //     ]);
+        // });
+            CreateDBs::dispatch($company);
+            Migrations::dispatch($company, $name, $request['email'], $request['password']);
 
             return $user;
         } catch (\Exception $e) {
