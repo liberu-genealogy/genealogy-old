@@ -3,6 +3,7 @@
 use App\Http\Controllers\Addrs\Create as AddrsCreate;
 use App\Http\Controllers\Addrs\Destroy as AddrsDestroy;
 use App\Http\Controllers\Addrs\Edit as AddrsEdit;
+
 // use App\Http\Controllers\About\Index as AboutIndex;
 // use App\Http\Controllers\Privacy\Index as PrivacyIndex;
 // use App\Http\Controllers\Termsandconditions\Index as TermsandconditionsIndex;
@@ -28,6 +29,31 @@ use App\Http\Controllers\Authors\Show as AuthorsShow;
 use App\Http\Controllers\Authors\Store as AuthorsStore;
 use App\Http\Controllers\Authors\TableData as AuthorsTableData;
 use App\Http\Controllers\Authors\Update as AuthorsUpdate;
+use App\Http\Controllers\Category\Create as CategoryCreate;
+use App\Http\Controllers\Category\Destroy as CategoryDestroy;
+use App\Http\Controllers\Category\Edit as CategoryEdit;
+use App\Http\Controllers\Category\Index as CategoryIndex;
+use App\Http\Controllers\Category\InitTable as CategoryInitTable;
+use App\Http\Controllers\Category\TableData as CategoryTableData;
+use App\Http\Controllers\Category\ExportExcel as CategoryExportExcel;
+use App\Http\Controllers\Category\Store as CategoryStore;
+use App\Http\Controllers\Category\Update as CategoryUpdate;
+use App\Http\Controllers\Category\Options as CategoryOptions;
+use App\Http\Controllers\Topic\Create as TopicCreate;
+use App\Http\Controllers\Topic\Destroy as TopicDestroy;
+use App\Http\Controllers\Topic\Edit as TopicEdit;
+use App\Http\Controllers\Topic\Index as TopicIndex;
+use App\Http\Controllers\Topic\InitTable as TopicInitTable;
+use App\Http\Controllers\Topic\TableData as TopicTableData;
+use App\Http\Controllers\Topic\ExportExcel as TopicExportExcel;
+use App\Http\Controllers\Topic\Store as TopicStore;
+use App\Http\Controllers\Topic\Update as TopicUpdate;
+use App\Http\Controllers\Post\Create as PostCreate;
+use App\Http\Controllers\Post\Destroy as PostDestroy;
+use App\Http\Controllers\Post\Edit as PostEdit;
+use App\Http\Controllers\Post\Index as PostIndex;
+use App\Http\Controllers\Post\Store as PostStore;
+use App\Http\Controllers\Post\Update as PostUpdate;
 use App\Http\Controllers\Chan\Create as ChanCreate;
 use App\Http\Controllers\Chan\Destroy as ChanDestroy;
 use App\Http\Controllers\Chan\Edit as ChanEdit;
@@ -1278,6 +1304,59 @@ Route::namespace('')
             });
     });
 
+Route::namespace('')
+    ->group(function () {
+        Route::prefix('social/categories')
+            ->as('social.categories.')
+            ->group(function () {
+                Route::get('', CategoryIndex::class)->name('index');
+                Route::get('create', CategoryCreate::class)->name('create');
+                Route::post('', CategoryStore::class)->name('store');
+                Route::get('{category}/edit', CategoryEdit::class)->name('edit');
+                Route::patch('{category}', CategoryUpdate::class)->name('update');
+                Route::delete('{category}', CategoryDestroy::class)->name('destroy');
+
+                Route::get('initTable', CategoryInitTable::class)->name('initTable');
+                Route::get('tableData', CategoryTableData::class)->name('tableData');
+                Route::get('exportExcel', CategoryExportExcel::class)->name('exportExcel');
+
+                Route::get('options', CategoryOptions::class)->name('options');
+            });
+    });
+
+Route::namespace('')
+    ->group(function () {
+        Route::prefix('social/topics')
+            ->as('social.topics.')
+            ->group(function () {
+                Route::get('', TopicIndex::class)->name('index');
+                Route::get('create', TopicCreate::class)->name('create');
+                Route::post('', TopicStore::class)->name('store');
+                Route::get('{topic}/edit', TopicEdit::class)->name('edit');
+                Route::patch('{topic}', TopicUpdate::class)->name('update');
+                Route::delete('{topic}', TopicDestroy::class)->name('destroy');
+
+                Route::get('initTable', TopicInitTable::class)->name('initTable');
+                Route::get('tableData', TopicTableData::class)->name('tableData');
+                Route::get('exportExcel', TopicExportExcel::class)->name('exportExcel');
+
+            });
+    });
+
+Route::namespace('')
+    ->group(function () {
+        Route::prefix('social/topics/{topic}/posts')
+            ->as('social.posts.')
+            ->group(function () {
+                Route::get('', PostIndex::class)->name('index');
+                Route::get('create', PostCreate::class)->name('create');
+                Route::post('', PostStore::class)->name('store');
+                Route::get('{posts}/edit', PostEdit::class)->name('edit');
+                Route::patch('{posts}', PostUpdate::class)->name('update');
+                Route::delete('{posts}', PostDestroy::class)->name('destroy');
+            });
+    });
+
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->namespace('')
     ->prefix('api/core/calendar')
@@ -1339,7 +1418,7 @@ Route::name('api.controlPanel.')
         Route::middleware(['signed', 'bindings'])
             ->prefix('action')
             ->as('action.')
-            ->group(fn () => Route::get('downloadLog', ControlPanelDownloadLog::class)->name('downloadLog'));
+            ->group(fn() => Route::get('downloadLog', ControlPanelDownloadLog::class)->name('downloadLog'));
     });
 
 Broadcast::routes(['middleware' => ['auth:sanctum']]);
