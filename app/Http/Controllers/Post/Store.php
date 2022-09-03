@@ -9,17 +9,17 @@ use LaravelEnso\Discussions\Models\Discussion;
 
 class Store extends Controller
 {
-    public function __invoke(ValidatePostRequest $request, Topic $topic, Discussion $discussion)
+    public function __invoke(ValidatePostRequest $request, Topic $topic, Discussion $post)
     {
-        $discussion->fill($request->validated());
-        $discussion->discussable_id = $topic->id;
-        $discussion->discussable_type = Topic::class;
-        $discussion->save();
+        $post->fill($request->validated());
+        $post->discussable_id = $topic->id;
+        $post->discussable_type = Topic::class;
+        $post->save();
 
         return [
             'message' => __('The post was successfully created'),
             'redirect' => 'social.posts.edit',
-            'param' => ['category' => $discussion->id],
+            'param' => ['topic' => $topic->id, 'post' => $post->id],
         ];
     }
 }
