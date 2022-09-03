@@ -51,7 +51,7 @@ jobs:
       - run: sudo docker-php-ext-install zip pdo_mysql bcmath pcntl soap gd
 
       #- run: pecl install xdebug && docker-php-ext-enable xdebug
-      - run: docker-php-ext-enable xdebug
+     #  - run: docker-php-ext-enable xdebug
 
       # Download and cache dependencies
       - restore_cache:
