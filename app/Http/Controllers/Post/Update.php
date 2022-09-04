@@ -9,9 +9,9 @@ use LaravelEnso\Discussions\Models\Discussion;
 
 class Update extends Controller
 {
-    public function __invoke(ValidatePostRequest $request, Topic $topic, Discussion $discussion)
+    public function __invoke(ValidatePostRequest $request, Topic $topic, Discussion $post)
     {
-        $discussion->update($request->validated());
+        $post->update($request->validated());
 
         return ['message' => __('The post was successfully updated')];
     }

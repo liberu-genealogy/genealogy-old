@@ -9,8 +9,8 @@ use LaravelEnso\Discussions\Models\Discussion;
 
 class Edit extends Controller
 {
-    public function __invoke(Topic $topic, Discussion $discussion, PostForm $form)
+    public function __invoke(Topic $topic, Discussion $post, PostForm $form)
     {
-        return ['form' => $form->edit($discussion)];
+        return ['form' => $form->edit($post)];
     }
 }

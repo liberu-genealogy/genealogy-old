@@ -1351,9 +1351,9 @@ Route::namespace('')
                 Route::get('', PostIndex::class)->name('index');
                 Route::get('create', PostCreate::class)->name('create');
                 Route::post('', PostStore::class)->name('store');
-                Route::get('{posts}/edit', PostEdit::class)->name('edit');
-                Route::patch('{posts}', PostUpdate::class)->name('update');
-                Route::delete('{posts}', PostDestroy::class)->name('destroy');
+                Route::get('{post}/edit', PostEdit::class)->name('edit');
+                Route::patch('{post}', PostUpdate::class)->name('update');
+                Route::delete('{post}', PostDestroy::class)->name('destroy');
             });
     });
 
