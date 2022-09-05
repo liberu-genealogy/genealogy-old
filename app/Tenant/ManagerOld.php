@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace App\Tenant;
 
 use App\Models\User;
-use App\Models\Tenant;
 use Illuminate\Config\Repository;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Database\ConnectionInterface;
@@ -34,7 +33,7 @@ class Manager
         DatabaseManager $database,
     ) {
         $this->tenant_id = $company_id;
-        $this->partition = "tenant{$company_id}";
+        $this->partition = "tenant{$company_id}_{$user_id}";
         $this->database = $database;
         $this->config = $config;
     }
@@ -57,17 +56,12 @@ class Manager
 
     public function connect(bool $default = false): self
     {
-        // $this->config->set('database.connections.tenant.database', $this->partition);
-        // $this->database->reconnect($this->connectionName);
+        $this->config->set('database.connections.tenant.database', $this->partition);
+        $this->database->reconnect($this->connectionName);
         if ($default) {
             $this->config->set('database.default', $this->connectionName);
             $this->database->reconnect($this->defaultConnection);
-        }else{
-            $tenants = Tenant::find($this->tenant_id);
-
-            tenancy()->initialize($tenants);
         }
-
 
         return $this;
     }

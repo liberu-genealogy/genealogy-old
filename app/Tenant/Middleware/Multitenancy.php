@@ -6,7 +6,7 @@ namespace App\Tenant\Middleware;
 
 use App\Tenant\Manager;
 use Closure;
-use LaravelEnso\Companies\Models\Company;
+use App\Models\Company;
 
 class Multitenancy
 {
