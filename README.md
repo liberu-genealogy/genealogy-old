@@ -5,7 +5,7 @@
 [![StyleCI](https://github.styleci.io/repos/135390590/shield?branch=master)](https://github.styleci.io/repos/135390590)
 [![CodeFactor](https://www.codefactor.io/repository/github/familytree365/genealogy/badge/master)](https://www.codefactor.io/repository/github/familytree365/genealogy/overview/master)
 [![codebeat badge](https://codebeat.co/badges/911f9e33-212a-4dfa-a860-751cdbbacff7)](https://codebeat.co/projects/github-com-modulargenealogy-genealogy-master)
-[![CircleCI](https://circleci.com/gh/delicata/genealogy.svg?style=svg)](https://circleci.com/gh/delicata/genealogy)
+[![CircleCI](https://circleci.com/gh/cgdprojects/genealogy.svg?style=svg)](https://circleci.com/gh/cgdprojects/genealogy)
 
 
 ## Description
@@ -13,7 +13,7 @@
 Browser based Genealogy software for interacting and processing data efficiently. Easily create your
 own family tree by importing your existing data or manual data entry. Storage of all data is securely on your own server and does
 not leave your environment without your permission. API support for many databases of family tree records. In the future there will be optional
-smart matching with other servers. This is the Laravel 9 backend using the Laravel Enso collection of modules. Please see https://github.com/delicata-ui/genealogy for the client.
+smart matching with other servers. This is the Laravel 9 backend using the Laravel Enso collection of modules. Please see https://github.com/cgd-ui/genealogy for the client.
 
 Data tables for comprehrensive amount of CRUD information. Forms easy to modify. Gedcom import and export. DNA matching. Subscriptions using Stripe and PayPal. APIs for various online databases of genealogical records.
 
