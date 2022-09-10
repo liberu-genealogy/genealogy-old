@@ -7,7 +7,6 @@
         "doctrine/dbal": "^3.1",
         "familytree365/laravel-gedcom": "^3.1",
         "familytree365/laravel-gelato": "^1.0",
-        "familytree365/multitenancy": "^2.0",
         "familytree365/recordsapi": "dev-master",
         "flowgistics/laravel-xml": "^1.1",
         "fruitcake/laravel-cors": "^3.0",

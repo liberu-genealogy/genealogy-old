@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6f6e4bfbd15fb2ffb8e94c45eb851a16",
+    "content-hash": "ff68386885ce4eb296f0c9c83d012b45",
     "packages": [
         {
             "name": "anlutro/curl",
@@ -1190,64 +1190,6 @@
                 "source": "https://github.com/familytree365/laravel-gelato/tree/v1.0.3"
             },
             "time": "2022-03-06T07:12:45+00:00"
-        },
-        {
-            "name": "familytree365/multitenancy",
-            "version": "2.0.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/familytree365/multitenancy.git",
-                "reference": "affb89b1856898028ba582c1d7cff987e0e3a25b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/familytree365/multitenancy/zipball/affb89b1856898028ba582c1d7cff987e0e3a25b",
-                "reference": "affb89b1856898028ba582c1d7cff987e0e3a25b",
-                "shasum": ""
-            },
-            "require": {
-                "laravel-enso/companies": "^3.0|^4.0",
-                "laravel-enso/core": "^7.0|^8.0",
-                "laravel-enso/enums": "^2.0|^2.1"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "LaravelEnso\\Multitenancy\\AppServiceProvider"
-                    ],
-                    "aliases": []
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "LaravelEnso\\Multitenancy\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Adrian Ocneanu",
-                    "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-enso.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "User actions logger dependency for Laravel Enso",
-            "homepage": "https://github.com/laravel-enso/multitenancy",
-            "keywords": [
-                "laravel",
-                "laravel-enso",
-                "middleware",
-                "multitenancy"
-            ],
-            "support": {
-                "source": "https://github.com/familytree365/multitenancy/tree/2.0.6"
-            },
-            "time": "2022-02-26T19:34:33+00:00"
         },
         {
             "name": "familytree365/php-gedcom",
@@ -17989,5 +17931,5 @@
         "php": ">=8.0.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }
