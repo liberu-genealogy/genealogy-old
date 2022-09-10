@@ -143,8 +143,6 @@ class LoginController extends Controller
             $main_company = $user->person->company();
             if ($main_company !== null && ! ($user->isAdmin())) {
                 $c_id = $main_company->id;
-                $db = Connections::Tenant.$c_id;
-                $this->setConnection(Connections::Tenant, $db);
             }
 
             if ($main_company == null && ! $user->isAdmin()) {
@@ -173,8 +171,6 @@ class LoginController extends Controller
                 $user_email = $user->email;
 
                 $db = $company_id;
-                $this->setConnection(Connections::Tenant, $db, $user_id);
-                $this->getConnection();
 
             CreateDBs::dispatch($company);
             Migrations::dispatch($company, $user->name, $user->email, $user->password);
@@ -196,8 +192,6 @@ class LoginController extends Controller
         $main_company = $user->person->company();
         if ($main_company !== null && ! ($user->isAdmin())) {
             $c_id = $main_company->id.$user->id;
-            $db = Connections::Tenant.$c_id;
-            $this->setConnection(Connections::Tenant, $db);
         }
 
         if ($main_company == null && ! $user->isAdmin()) {
