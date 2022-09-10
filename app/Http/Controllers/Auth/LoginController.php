@@ -8,7 +8,6 @@ use App\Jobs\Tenant\Migration;
 use App\Models\Person;
 use App\Models\User;
 use App\Models\UserSocial;
-use App\Traits\ConnectionTrait;
 use App\Traits\Login;
 use Exception;
 use Illuminate\Auth\Events\Registered;
@@ -24,13 +23,12 @@ use Laravel\Socialite\Facades\Socialite;
 use LaravelEnso\Companies\Models\Company;
 use LaravelEnso\Core\Events\Login as Event;
 use LaravelEnso\Core\Traits\Logout;
-use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\Roles\Models\Role;
 use LaravelEnso\UserGroups\Models\UserGroup;
 
 class LoginController extends Controller
 {
-    use AuthenticatesUsers, ConnectionTrait, Logout, Login{
+    use AuthenticatesUsers, Logout, Login{
         Logout::logout insteadof AuthenticatesUsers;
         Login::login insteadof AuthenticatesUsers;
     }
