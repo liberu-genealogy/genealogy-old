@@ -16,7 +16,7 @@ use App\Models\Company;
 class CreateDBs implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-    private $tenant
+    private $tenant;
     /**
      * Create a new job instance.
      *
