@@ -3,12 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Jobs\Tenant\CreateDB;
-use App\Jobs\Tenant\Migration;
+use App\Jobs\Tenant\CreateDBs;
+use App\Jobs\Tenant\Migrations;
 use App\Models\Person;
 use App\Models\User;
 use App\Models\UserSocial;
-use App\Traits\ConnectionTrait;
 use App\Traits\Login;
 use Exception;
 use Illuminate\Auth\Events\Registered;
@@ -24,13 +23,12 @@ use Laravel\Socialite\Facades\Socialite;
 use LaravelEnso\Companies\Models\Company;
 use LaravelEnso\Core\Events\Login as Event;
 use LaravelEnso\Core\Traits\Logout;
-use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\Roles\Models\Role;
 use LaravelEnso\UserGroups\Models\UserGroup;
 
 class LoginController extends Controller
 {
-    use AuthenticatesUsers, ConnectionTrait, Logout, Login{
+    use AuthenticatesUsers, Logout, Login{
         Logout::logout insteadof AuthenticatesUsers;
         Login::login insteadof AuthenticatesUsers;
     }
@@ -145,8 +143,6 @@ class LoginController extends Controller
             $main_company = $user->person->company();
             if ($main_company !== null && ! ($user->isAdmin())) {
                 $c_id = $main_company->id;
-                $db = Connections::Tenant.$c_id;
-                $this->setConnection(Connections::Tenant, $db);
             }
 
             if ($main_company == null && ! $user->isAdmin()) {
@@ -175,11 +171,9 @@ class LoginController extends Controller
                 $user_email = $user->email;
 
                 $db = $company_id;
-                $this->setConnection(Connections::Tenant, $db, $user_id);
-                $this->getConnection();
 
-                CreateDB::dispatch($company, $user_id);
-                Migration::dispatch($company, $user_id, $person_name, $user_email);
+            CreateDBs::dispatch($company);
+            Migrations::dispatch($company, $user->name, $user->email, $user->password);
             }
         }
 
@@ -198,8 +192,6 @@ class LoginController extends Controller
         $main_company = $user->person->company();
         if ($main_company !== null && ! ($user->isAdmin())) {
             $c_id = $main_company->id.$user->id;
-            $db = Connections::Tenant.$c_id;
-            $this->setConnection(Connections::Tenant, $db);
         }
 
         if ($main_company == null && ! $user->isAdmin()) {
@@ -228,11 +220,10 @@ class LoginController extends Controller
             $user_email = $user->email;
 
             $db = $company_id;
-            $this->setConnection(Connections::Tenant, $db, $user_id);
-            $this->getConnection();
 
-            CreateDB::dispatch($company, $user_id);
-            Migration::dispatch($company_id, $user_id, $person_name, $user_email);
+            CreateDBs::dispatch($company);
+            Migrations::dispatch($company, $user->name, $user->email, $user->password);
+
         }
 
         return true;
@@ -307,8 +298,8 @@ class LoginController extends Controller
                 $person->companies()->attach($company->id, ['person_id' => $person->id, 'is_main' => 1, 'is_mandatary' => 1, 'company_id' => $company->id]);
 
                 // Dispatch Tenancy Jobs
-                CreateDB::dispatch($company);
-                Migration::dispatch($company, $name, $user->getEmail(), 'Asdf!234');
+            CreateDBs::dispatch($company);
+            Migrations::dispatch($company, $user->name, $user->email, $user->password);
             } catch (Exception $e) {
                 return redirect(config('settings.clientBaseUrl').'/social-callback?token=&status=false&message=Something went wrong!');
             }

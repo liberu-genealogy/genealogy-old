@@ -9,10 +9,11 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use App\Models\User;
-use App\Model\Person;
+use App\Models\Person;
 use App\Service\Tenant as TT;
 use App\Models\Tenant;
 use App\Models\Company;
+use Hash;
 
 class Migrations implements ShouldQueue
 {
@@ -66,11 +67,13 @@ class Migrations implements ShouldQueue
         // // g$tenant = Tenant::find('->initialize($tenant);et user_group_id
         $tenants = Tenant::find($this->tenant->id);
 
-        $tenant = tenancy()->initialize($tenants);
-        $person = $tenants->run(function () use($this) {
+        tenancy()->initialize($tenants);
+        $em = $this->email;
+        $na = $this->name;
+        $person = $tenants->run(function () use($em,$na)  {
             Person::create([
-                'email'=>$this->email,
-                'name' => $this->name,
+                'email'=>$em,
+                'name' => $na,
 
             ]);
         });
@@ -78,10 +81,11 @@ class Migrations implements ShouldQueue
 
         // get role_id
         $role = 1;
-        $tenants->run(function () use ($this, $person, $user_group,$role){
+        $pa =$this->password;
+        $tenants->run(function () use ($em,$pa, $person, $user_group,$role){
             User::create([
-                'email' => $this->email,
-          'password' => Hash::make($this->password),
+                'email' => $em,
+          'password' => Hash::make($pa),
           'person_id' => $person,
           'group_id' => $user_group,
           'role_id' => $role,

@@ -71,31 +71,31 @@ class Migration implements ShouldQueue
         //     'name' => $this->name,
         // ]);
         // // g$tenant = Tenant::find('->initialize($tenant);et user_group_id
-        $tenants = Tenant::find($this->tenant->id);
+        // $tenants = Tenant::find($this->tenant->id);
 
-        $tenant = tenancy()->initialize($tenants);
-        $person = $tenants->run(function () {
-            Person::create([
-                'email'=>$this->email,
-                'name' => $this->name,
+        // $tenant = tenancy()->initialize($tenants);
+        // $person = $tenants->run(function () {
+        //     Person::create([
+        //         'email'=>$this->email,
+        //         'name' => $this->name,
 
-            ]);
-        });
-        $user_group = 1;
+        //     ]);
+        // });
+        // $user_group = 1;
 
         // get role_id
-        $role = 1;
-        $tenants->run(function () {
-            User::create([
-                'email' => $this->email,
-          'password' => Hash::make($this->password),
-          'person_id' => $person,
-          'group_id' => $user_group,
-          'role_id' => $role,
-          'is_active' => 1,
+        // $role = 1;
+        // $tenants->run(function () {
+        //     User::create([
+        //         'email' => $this->email,
+        //   'password' => Hash::make($this->password),
+        //   'person_id' => $person,
+        //   'group_id' => $user_group,
+        //   'role_id' => $role,
+        //   'is_active' => 1,
 
-            ]);
-        });
+        //     ]);
+        // });
 
         /**     $person = DB::connection(Connections::Tenant)->table('users')->insert([
          * 'email' => $this->email,

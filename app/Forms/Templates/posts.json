@@ -1,0 +1,23 @@
+{
+    "routePrefix": "social.posts",
+    "sections": [{
+        "columns": "2",
+        "fields": [{
+            "label": "Title",
+            "name": "title",
+            "value": null,
+            "meta": {
+                "type": "input",
+                "content": "text"
+            }
+        }, {
+            "label": "Description",
+            "name": "body",
+            "value": null,
+            "meta": {
+                "type": "input",
+                "content": "text"
+            }
+        }]
+    }]
+}

@@ -1,0 +1,15 @@
+{
+    "name": "Topics",
+    "routePrefix": "social.topics",
+    "crtNo": true,
+    "buttons": ["excel", "create", "edit", "destroy"],
+    "columns": [
+        {
+            "label": "Title",
+            "name": "title",
+            "data": "topics.title",
+            "meta": ["searchable", "sortable"]
+        }
+    ]
+}
+

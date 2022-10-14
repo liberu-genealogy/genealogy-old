@@ -1,0 +1,33 @@
+{
+    "routePrefix": "social.topics",
+    "title": "Create Topic",
+    "icon": "location-arrow",
+    "sections": [
+        {
+            "columns": 2,
+            "fields": [
+                {
+                    "label": "Title",
+                    "name": "title",
+                    "value": null,
+                    "meta": {
+                        "type": "input",
+                        "content": "text"
+                    }
+                },
+                {
+                    "label": "Category",
+                    "name": "category_id",
+                    "value": null,
+                    "column": 3,
+                    "meta": {
+                        "custom": true,
+                        "type": "select",
+                        "options": [],
+                        "source": "social.categories.options"
+                    }
+                }
+            ]
+        }
+    ]
+}

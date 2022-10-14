@@ -1,0 +1,33 @@
+{
+    "name": "Categories",
+    "routePrefix": "social.categories",
+    "crtNo": true,
+    "buttons": ["excel", "create", "edit", "destroy"],
+    "columns": [
+        {
+            "label": "Name",
+            "name": "name",
+            "data": "categories.name",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Description",
+            "name": "description",
+            "data": "categories.description",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Slug",
+            "name": "slug",
+            "data": "categories.slug",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Order",
+            "name": "order",
+            "data": "categories.order",
+            "meta": ["searchable", "sortable"]
+        }
+    ]
+}
+

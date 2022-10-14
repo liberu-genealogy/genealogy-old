@@ -1,0 +1,42 @@
+{
+    "routePrefix": "social.categories",
+    "title" : "Create Category",
+    "icon": "location-arrow",
+
+    "sections": [{
+        "columns": 4,
+        "fields": [{
+            "label": "Name",
+            "name": "name",
+            "value": null,
+            "meta": {
+                "type": "input",
+                "content": "text"
+            }
+        }, {
+            "label": "Description",
+            "name": "description",
+            "value": null,
+            "meta": {
+                "type": "textarea",
+                "content": "text"
+            }
+        }, {
+            "label": "slug",
+            "name": "slug",
+            "value": null,
+            "meta": {
+                "type": "input",
+                "content": "text"
+            }
+        }, {
+            "label": "Order",
+            "name": "order",
+            "value": null,
+            "meta": {
+                "type": "input",
+                "content": "number"
+            }
+        }]
+    }]
+}
