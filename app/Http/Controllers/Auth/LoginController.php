@@ -172,8 +172,8 @@ class LoginController extends Controller
 
                 $db = $company_id;
 
-            CreateDBs::dispatch($company);
-            Migrations::dispatch($company, $user->name, $user->email, $user->password);
+                CreateDBs::dispatch($company);
+                Migrations::dispatch($company, $user->name, $user->email, $user->password);
             }
         }
 
@@ -223,7 +223,6 @@ class LoginController extends Controller
 
             CreateDBs::dispatch($company);
             Migrations::dispatch($company, $user->name, $user->email, $user->password);
-
         }
 
         return true;
@@ -298,8 +297,8 @@ class LoginController extends Controller
                 $person->companies()->attach($company->id, ['person_id' => $person->id, 'is_main' => 1, 'is_mandatary' => 1, 'company_id' => $company->id]);
 
                 // Dispatch Tenancy Jobs
-            CreateDBs::dispatch($company);
-            Migrations::dispatch($company, $user->name, $user->email, $user->password);
+                CreateDBs::dispatch($company);
+                Migrations::dispatch($company, $user->name, $user->email, $user->password);
             } catch (Exception $e) {
                 return redirect(config('settings.clientBaseUrl').'/social-callback?token=&status=false&message=Something went wrong!');
             }

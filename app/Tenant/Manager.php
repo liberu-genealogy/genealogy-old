@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Tenant;
 
-use App\Models\User;
 use App\Models\Tenant;
+use App\Models\User;
 use Illuminate\Config\Repository;
 use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Database\ConnectionInterface;
@@ -62,12 +62,11 @@ class Manager
         if ($default) {
             $this->config->set('database.default', $this->connectionName);
             $this->database->reconnect($this->defaultConnection);
-        }else{
+        } else {
             $tenants = Tenant::find($this->tenant_id);
 
             tenancy()->initialize($tenants);
         }
-
 
         return $this;
     }

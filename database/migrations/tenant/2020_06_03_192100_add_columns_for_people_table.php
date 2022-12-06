@@ -26,7 +26,7 @@ class AddColumnsForPeopleTable extends Migration
             $table->softDeletes();
             //    $table->dropColumn('bank');
             //    $table->dropColumn('bank_account');
-	    //    $table->dropUnique(['uid']);
+        //    $table->dropUnique(['uid']);
         });
     }
 

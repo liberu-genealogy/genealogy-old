@@ -7,7 +7,7 @@ use LaravelEnso\Forms\Services\Form;
 
 class CategoryForm
 {
-    protected const TemplatePath = __DIR__ . '/../Templates//categories.json';
+    protected const TemplatePath = __DIR__.'/../Templates//categories.json';
 
     protected Form $form;
 

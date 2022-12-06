@@ -7,7 +7,7 @@ use LaravelEnso\Forms\Services\Form;
 
 class PostForm
 {
-    protected const TemplatePath = __DIR__ . '/../Templates//posts.json';
+    protected const TemplatePath = __DIR__.'/../Templates//posts.json';
 
     protected Form $form;
 
