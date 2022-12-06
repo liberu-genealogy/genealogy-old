@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Tenant\Middleware;
 
+use App\Models\Company;
 use App\Tenant\Manager;
 use Closure;
-use App\Models\Company;
 
 class Multitenancy
 {

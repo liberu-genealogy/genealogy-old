@@ -2,18 +2,18 @@
 
 namespace App\Jobs\Tenant;
 
+use App\Models\Company;
+use App\Models\Person;
+use App\Models\Tenant;
+use App\Models\User;
+use App\Service\Tenant as TT;
+use Hash;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use App\Models\User;
-use App\Models\Person;
-use App\Service\Tenant as TT;
-use App\Models\Tenant;
-use App\Models\Company;
-use Hash;
 
 class Migrations implements ShouldQueue
 {
@@ -22,6 +22,7 @@ class Migrations implements ShouldQueue
     private $name;
     private $email;
     private $password;
+
     /**
      * Create a new job instance.
      *
@@ -70,7 +71,7 @@ class Migrations implements ShouldQueue
         tenancy()->initialize($tenants);
         $em = $this->email;
         $na = $this->name;
-        $person = $tenants->run(function () use($em,$na)  {
+        $person = $tenants->run(function () use ($em, $na) {
             Person::create([
                 'email'=>$em,
                 'name' => $na,
@@ -81,15 +82,15 @@ class Migrations implements ShouldQueue
 
         // get role_id
         $role = 1;
-        $pa =$this->password;
-        $tenants->run(function () use ($em,$pa, $person, $user_group,$role){
+        $pa = $this->password;
+        $tenants->run(function () use ($em, $pa, $person, $user_group, $role) {
             User::create([
                 'email' => $em,
-          'password' => Hash::make($pa),
-          'person_id' => $person,
-          'group_id' => $user_group,
-          'role_id' => $role,
-          'is_active' => 1,
+                'password' => Hash::make($pa),
+                'person_id' => $person,
+                'group_id' => $user_group,
+                'role_id' => $role,
+                'is_active' => 1,
 
             ]);
         });

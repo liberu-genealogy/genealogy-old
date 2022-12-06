@@ -7,7 +7,7 @@ use LaravelEnso\Forms\Services\Form;
 
 class TopicForm
 {
-    protected const TemplatePath = __DIR__ . '/../Templates//topics.json';
+    protected const TemplatePath = __DIR__.'/../Templates//topics.json';
 
     protected Form $form;
 

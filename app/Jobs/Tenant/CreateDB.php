@@ -2,8 +2,8 @@
 
 namespace App\Jobs\Tenant;
 
-use App\Service\Tenant as TT;
 use App\Models\Tenant as Tenants;
+use App\Service\Tenant as TT;
 use App\Tree;
 use App\User;
 use Illuminate\Bus\Queueable;
@@ -13,6 +13,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\DB;
 use LaravelEnso\Companies\Models\Company;
+
 // use LaravelEnso\Multitenancy\Traits\TenantResolver;
 
 class CreateDB implements ShouldQueue
@@ -41,7 +42,7 @@ class CreateDB implements ShouldQueue
         $tenant = Tenants::create([
             'id' => $this->tenant->id,
         ]);
-        
+
         //
         // Tenant::set($this->tenant);
         // DB::statement('CREATE DATABASE '.$this->tenantDatabase());

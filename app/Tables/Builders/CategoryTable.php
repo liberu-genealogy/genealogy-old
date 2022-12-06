@@ -8,7 +8,7 @@ use LaravelEnso\Tables\Contracts\Table;
 
 class CategoryTable implements Table
 {
-    protected const TemplatePath = __DIR__ . '/../Templates/categories.json';
+    protected const TemplatePath = __DIR__.'/../Templates/categories.json';
 
     public function query(): Builder
     {

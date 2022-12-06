@@ -8,7 +8,7 @@ use LaravelEnso\Tables\Contracts\Table;
 
 class TopicTable implements Table
 {
-    protected const TemplatePath = __DIR__ . '/../Templates/topics.json';
+    protected const TemplatePath = __DIR__.'/../Templates/topics.json';
 
     public function query(): Builder
     {
