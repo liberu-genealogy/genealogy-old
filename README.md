@@ -1,4 +1,4 @@
-## Family Tree 365 - Open Source Family Tree Software - Laravel 9 backend
+## Genealogy - Open Source Family Tree Software - Laravel 9 backend
  ![Latest Stable Version](https://img.shields.io/github/release/familytree365/genealogy.svg) 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/familytree365/genealogy/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/familytree365/genealogy/?branch=master)
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/familytree365/genealogy/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
