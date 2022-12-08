@@ -2,10 +2,10 @@
 
 namespace App\Jobs\Tenant;
 
-use App\Models\User;
 use App\Model\Person;
-use App\Service\Tenant as TT;
 use App\Models\Tenant;
+use App\Models\User;
+use App\Service\Tenant as TT;
 use DB;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;

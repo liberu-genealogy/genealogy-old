@@ -1,4 +1,4 @@
-## Family Tree 365 - Open Source Family Tree Software - Laravel 9 backend
+## Genealogy - Open Source Family Tree Software - Laravel 9 backend
  ![Latest Stable Version](https://img.shields.io/github/release/familytree365/genealogy.svg) 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/familytree365/genealogy/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/familytree365/genealogy/?branch=master)
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/familytree365/genealogy/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
@@ -31,16 +31,23 @@ Note that most sections have short demo clips.
 
 ### Installation Steps
 
-1. Download the project with `composer create-project familytree365/genealogy`
+1. Download the project with `git clone https://github.com/cgdprojects/genealogy.git`
 
-2. In order to serve the back-end API, take a look at the Local Development Server section of the [Laravel installation documentation](https://laravel.com/docs/6.x/#installation)
+2. Copy .env.example to .env and edit details
+
+3. `composer install` or on Windows you need to use `composer install --ignore-platform-reqs ext-pcntl ext-posix`
+
+4. `php artisan key:generate`
+
+5. `php artisan serve` 
+In order to serve the back-end API, take a look at the Local Development Server section of the [Laravel installation documentation](https://laravel.com/docs/6.x/#installation)
 and consider using [Valet](https://laravel.com/docs/6.x/valet) for a better experience
 
-3. Run `php artisan migrate --seed`
+6. Run `php artisan migrate --seed`
 
-4. Launch the site and log into the project with user: `admin@familytree365.com`, password: `password`
+7. Follow installation steps for client side (https://github.com/cgd-ui/genealogy) and launch the site and log into the project with user: `admin@familytree365.com`, password: `password`
 
-7. (optional) Setup the configuration files as needed, in `config/enso/*.php`
+8. (optional) Setup the configuration files as needed, in `config/enso/*.php`
 
 ## Broadcasting Setup
 

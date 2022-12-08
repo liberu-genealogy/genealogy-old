@@ -3,7 +3,6 @@
 use App\Http\Controllers\Addrs\Create as AddrsCreate;
 use App\Http\Controllers\Addrs\Destroy as AddrsDestroy;
 use App\Http\Controllers\Addrs\Edit as AddrsEdit;
-
 // use App\Http\Controllers\About\Index as AboutIndex;
 // use App\Http\Controllers\Privacy\Index as PrivacyIndex;
 // use App\Http\Controllers\Termsandconditions\Index as TermsandconditionsIndex;
@@ -32,28 +31,13 @@ use App\Http\Controllers\Authors\Update as AuthorsUpdate;
 use App\Http\Controllers\Category\Create as CategoryCreate;
 use App\Http\Controllers\Category\Destroy as CategoryDestroy;
 use App\Http\Controllers\Category\Edit as CategoryEdit;
+use App\Http\Controllers\Category\ExportExcel as CategoryExportExcel;
 use App\Http\Controllers\Category\Index as CategoryIndex;
 use App\Http\Controllers\Category\InitTable as CategoryInitTable;
-use App\Http\Controllers\Category\TableData as CategoryTableData;
-use App\Http\Controllers\Category\ExportExcel as CategoryExportExcel;
-use App\Http\Controllers\Category\Store as CategoryStore;
-use App\Http\Controllers\Category\Update as CategoryUpdate;
 use App\Http\Controllers\Category\Options as CategoryOptions;
-use App\Http\Controllers\Topic\Create as TopicCreate;
-use App\Http\Controllers\Topic\Destroy as TopicDestroy;
-use App\Http\Controllers\Topic\Edit as TopicEdit;
-use App\Http\Controllers\Topic\Index as TopicIndex;
-use App\Http\Controllers\Topic\InitTable as TopicInitTable;
-use App\Http\Controllers\Topic\TableData as TopicTableData;
-use App\Http\Controllers\Topic\ExportExcel as TopicExportExcel;
-use App\Http\Controllers\Topic\Store as TopicStore;
-use App\Http\Controllers\Topic\Update as TopicUpdate;
-use App\Http\Controllers\Post\Create as PostCreate;
-use App\Http\Controllers\Post\Destroy as PostDestroy;
-use App\Http\Controllers\Post\Edit as PostEdit;
-use App\Http\Controllers\Post\Index as PostIndex;
-use App\Http\Controllers\Post\Store as PostStore;
-use App\Http\Controllers\Post\Update as PostUpdate;
+use App\Http\Controllers\Category\Store as CategoryStore;
+use App\Http\Controllers\Category\TableData as CategoryTableData;
+use App\Http\Controllers\Category\Update as CategoryUpdate;
 use App\Http\Controllers\Chan\Create as ChanCreate;
 use App\Http\Controllers\Chan\Destroy as ChanDestroy;
 use App\Http\Controllers\Chan\Edit as ChanEdit;
@@ -259,6 +243,12 @@ use App\Http\Controllers\Places\Show as PlacesShow;
 use App\Http\Controllers\Places\Store as PlacesStore;
 use App\Http\Controllers\Places\TableData as PlacesTableData;
 use App\Http\Controllers\Places\Update as PlacesUpdate;
+use App\Http\Controllers\Post\Create as PostCreate;
+use App\Http\Controllers\Post\Destroy as PostDestroy;
+use App\Http\Controllers\Post\Edit as PostEdit;
+use App\Http\Controllers\Post\Index as PostIndex;
+use App\Http\Controllers\Post\Store as PostStore;
+use App\Http\Controllers\Post\Update as PostUpdate;
 use App\Http\Controllers\Publications\Create as PublicationsCreate;
 use App\Http\Controllers\Publications\Destroy as PublicationsDestroy;
 use App\Http\Controllers\Publications\Edit as PublicationsEdit;
@@ -364,6 +354,15 @@ use App\Http\Controllers\Subn\Show as SubnShow;
 use App\Http\Controllers\Subn\Store as SubnStore;
 use App\Http\Controllers\Subn\TableData as SubnTableData;
 use App\Http\Controllers\Subn\Update as SubnUpdate;
+use App\Http\Controllers\Topic\Create as TopicCreate;
+use App\Http\Controllers\Topic\Destroy as TopicDestroy;
+use App\Http\Controllers\Topic\Edit as TopicEdit;
+use App\Http\Controllers\Topic\ExportExcel as TopicExportExcel;
+use App\Http\Controllers\Topic\Index as TopicIndex;
+use App\Http\Controllers\Topic\InitTable as TopicInitTable;
+use App\Http\Controllers\Topic\Store as TopicStore;
+use App\Http\Controllers\Topic\TableData as TopicTableData;
+use App\Http\Controllers\Topic\Update as TopicUpdate;
 use App\Http\Controllers\Trees\Manage as TreesManage;
 use App\Http\Controllers\Trees\Show as TreesShow;
 use App\Http\Controllers\Types\Create as TypesCreate;
@@ -1339,7 +1338,6 @@ Route::namespace('')
                 Route::get('initTable', TopicInitTable::class)->name('initTable');
                 Route::get('tableData', TopicTableData::class)->name('tableData');
                 Route::get('exportExcel', TopicExportExcel::class)->name('exportExcel');
-
             });
     });
 
@@ -1418,7 +1416,7 @@ Route::name('api.controlPanel.')
         Route::middleware(['signed', 'bindings'])
             ->prefix('action')
             ->as('action.')
-            ->group(fn() => Route::get('downloadLog', ControlPanelDownloadLog::class)->name('downloadLog'));
+            ->group(fn () => Route::get('downloadLog', ControlPanelDownloadLog::class)->name('downloadLog'));
     });
 
 Broadcast::routes(['middleware' => ['auth:sanctum']]);
