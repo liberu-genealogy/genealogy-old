@@ -1,5 +1,5 @@
 {
-    "name": "familytree365/genealogy",
+    "name": "cgdprojects/genealogy",
     "description": "Genealogy can be a solid start for any family tree builder application based on Laravel 8.x, Vue and Bulma",
     "license": "MIT",
     "require": {
