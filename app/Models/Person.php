@@ -15,6 +15,7 @@ use function Symfony\Component\Translation\t;
 class Person extends CorePerson
 {
     use HasFactory;
+//    use TenantConnectionResolver;
 
     public function __construct(array $attributes = [])
     {

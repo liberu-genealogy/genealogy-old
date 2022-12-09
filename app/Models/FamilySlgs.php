@@ -7,5 +7,6 @@ use LaravelEnso\Tables\Traits\TableCache;
 
 class FamilySlgs extends \FamilyTree365\LaravelGedcom\Models\FamilySlgs
 {
+//    use TenantConnectionResolver;
     use TableCache, HasFactory;
 }
