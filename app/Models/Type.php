@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use App\Traits\TenantConnectionResolver;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use LaravelEnso\Tables\Traits\TableCache;
 
 class Type extends Model
 {
-    use TableCache, HasFactory;
+    use TableCache, HasFactory, TenantConnectionResolver;
 
     protected $fillable = ['name', 'description', 'is_active'];
 
