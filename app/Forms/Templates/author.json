@@ -1,7 +1,12 @@
 {
+    "title" : "Create Author",
+    "icon": "location-arrow",
     "routePrefix": "authors",
-    "sections": [{
-        "columns": "2",
+  "tabs": true,
+  "sections": [
+    {
+      "tab": "Author",
+      "columns": 3,
         "fields": [{
             "label": "Name",
             "name": "name",

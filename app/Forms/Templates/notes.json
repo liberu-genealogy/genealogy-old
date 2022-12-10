@@ -1,7 +1,10 @@
 {
   "routePrefix": "notes",
-  "sections": [{
-    "columns": "2",
+  "tabs": true,
+  "sections": [
+    {
+      "tab": "Notes",
+      "columns": 3,
     "fields": [
       {
         "label": "Name",

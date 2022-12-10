@@ -1,7 +1,10 @@
 {
   "routePrefix": "citations",
-  "sections": [{
-      "columns": "custom",
+  "tabs": true,
+  "sections": [
+    {
+      "tab": "Citations",
+      "columns": 3,
       "fields": [
         {
           "label": "Date",

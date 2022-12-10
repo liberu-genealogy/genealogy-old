@@ -1,7 +1,10 @@
 {
     "routePrefix": "sourcerefevents",
-    "sections": [{
-        "columns": "2",
+  "tabs": true,
+  "sections": [
+    {
+      "tab": "Source Ref Events",
+      "columns": 3,
         "fields": [{
             "label": "Group",
             "name": "group",
