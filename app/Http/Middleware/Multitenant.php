@@ -31,10 +31,10 @@ class Multitenant
         Log::debug($value);
         session()->put('db', $value);
         //if ($conn === 'tenant') {
-            $key = 'database.connections.tenantdb.database';
-           $x= config([$key => $value]);
-           //Family::setConnection();
-           // config(['database.default'=>'tenant']);
+        $key = 'database.connections.tenantdb.database';
+        $x = config([$key => $value]);
+        //Family::setConnection();
+        // config(['database.default'=>'tenant']);
         /*}/*else {
             config(['database.default'=>'mysql']);
         }*/
