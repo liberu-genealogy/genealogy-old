@@ -69,7 +69,7 @@ If you want to keep it in background proccess you should install pm2 or supervis
 ### Support services (new)
 While developing genealogy, we constantly received private inquiries from devs and teams asking us about paid support. Some of these requests even lead to fruitful collaborations, so we finally decided to launch such an option.
 
-If you're looking for premium support when building applications with Enso we can help you with that. Our support packages start at £250 / month with 8 hours included. With premium support you will get:
+If you're looking for premium support when building applications with genealogy we can help you with that. Our support packages start at £250 / month with 8 hours included. With premium support you will get:
 
 a private repo on our self hosted gitlab instance where you can host your project
 
