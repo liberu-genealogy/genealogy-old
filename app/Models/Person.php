@@ -32,6 +32,17 @@ class Person extends CorePerson
 
     protected $guarded = ['id'];
 
+//    protected $fillable = [
+//        'gid',
+//        'givn',
+//        'surn',
+//        'sex',
+//        'child_in_family_id',
+//        'description',
+//        'title', 'name', 'appellative', 'uid', 'email', 'phone', 'birthday',
+//        'deathday', 'burial_day', 'bank', 'bank_account',
+//        'uid', 'chan', 'rin', 'resn', 'rfn', 'afn',
+//    ];
     protected $fillable = [
         'gid',
         'givn',
@@ -39,11 +50,9 @@ class Person extends CorePerson
         'sex',
         'child_in_family_id',
         'description',
-        'title', 'name', 'appellative', 'uid', 'email', 'phone', 'birthday',
-        'deathday', 'burial_day', 'bank', 'bank_account',
-        'uid', 'chan', 'rin', 'resn', 'rfn', 'afn',
+        'titl', 'name', 'appellative', 'email', 'phone', 'birthday',
+        'deathday', 'burial_day', 'bank', 'bank_account', 'chan', 'rin', 'resn', 'rfn', 'afn',
     ];
-
     public function events()
     {
         return $this->hasMany(PersonEvent::class);
