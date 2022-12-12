@@ -1,92 +1,79 @@
-version: '3.8'
-
+version: '3'
 services:
+
+  #PHP Service
   app:
     build:
-      context: ./
-      dockerfile: ./.docker/prod/app/Dockerfile
-      args:
-        IMAGE_REGISTRY: ${IMAGE_REGISTRY}
-        IMAGE_TAG: ${IMAGE_TAG}
-        IMAGE_NAME: genealogy
-    volumes:
-      - ./storage:/var/www/html/storage
-    links:
-      - postgres
-      - redis
-    hostname: api
-    networks:
-      - api
-      - gateway
+      context: .
+      dockerfile: Dockerfile
+    user: "www-data:www-data"
+    container_name: app
     restart: unless-stopped
-
-  queue:
-    build:
-      context: ./
-      dockerfile: ./.docker/prod/queue/Dockerfile
-      args:
-        IMAGE_REGISTRY: ${IMAGE_REGISTRY}
-        IMAGE_TAG: ${IMAGE_TAG}
-    volumes:
-      - ./storage:/var/www/html/storage
-    links:
-      - postgres
-      - redis
-    networks:
-      - api
-    restart: unless-stopped
-
-  schedule:
-    build:
-      context: ./
-      dockerfile: ./.docker/prod/schedule/Dockerfile
-      args:
-        IMAGE_REGISTRY: ${IMAGE_REGISTRY}
-        IMAGE_TAG: ${IMAGE_TAG}
-    volumes:
-      - ./storage:/var/www/html/storage
-    links:
-      - postgres
-      - redis
-    networks:
-      - api
-    restart: unless-stopped
-
-  postgres:
-    build:
-      context: ./
-      dockerfile: ./.docker/prod/postgres/Dockerfile
+    tty: true
     environment:
-      POSTGRES_DB: ${DB_DATABASE}
-      POSTGRES_USER: ${DB_USERNAME}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    working_dir: /var/www
     volumes:
-      - postgres:/var/lib/postgresql/data
+      - ./:/var/www
+      - ./.docker/prod/base/php.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
-      - api
-    restart: unless-stopped
+      - app-network
 
-  redis:
-    build:
-      context: ./
-      dockerfile: ./.docker/prod/redis/Dockerfile
+  #Nginx Service
+  webserver:
+    image: nginx:alpine
+    container_name: webserver
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
     volumes:
-      - redis:/data
+      - ./:/var/www
+      - ./nginx/:/etc/nginx/conf.d/
     networks:
-      - api
+      - app-network
+    #command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+  #MySQL Service
+  db:
+    image: mysql:8.0
+    container_name: db
     restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - dbdata:/var/lib/mysql/
+      #- ./mysql/my.cnf:/etc/mysql/my.cnf
+    networks:
+      - app-network
+    command:
+      - --sort_buffer_size=1073741824
+  myadmin:
+    image: 'phpmyadmin:latest'
+    ports:
+      - 8080:80
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      PMA_HOST: mysql
+    links:
+      - "db:mysql"
+    depends_on:
+      - db
+    networks:
+      - app-network
 
-volumes:
-  postgres:
-    driver: local
-
-  redis:
-    driver: local
-
+#Docker Networks
 networks:
-  api:
-    name: api
-
-  gateway:
-    name: gateway
-    external: true
+  app-network:
+    driver: bridge
+#Volumes
+volumes:
+  dbdata:
+    driver: local
