@@ -1,7 +1,10 @@
 {
     "routePrefix": "publications",
-    "sections": [{
-        "columns": "2",
+  "tabs": true,
+  "sections": [
+    {
+      "tab": "Publication",
+      "columns": 3,
         "fields": [{
             "label": "Name",
             "name": "name",

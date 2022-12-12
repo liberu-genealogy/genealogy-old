@@ -3,8 +3,11 @@
     "title" : "Create Type",
     "icon": "location-arrow",
 
-    "sections": [{
-        "columns": 2,
+  "tabs": true,
+  "sections": [
+    {
+      "tab": "Types",
+      "columns": 3,
         "fields": [{
             "label": "Name",
             "name": "name",

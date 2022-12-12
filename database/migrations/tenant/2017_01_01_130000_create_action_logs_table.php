@@ -18,7 +18,7 @@ class CreateActionLogsTable extends Migration
             $table->string('url');
             $table->string('route')->index();
             $table->string('method');
-
+	    $table->unsignedDecimal('duration', 6, 3)->nullable()->index();
             $table->timestamps();
 
             $table->index('created_at');

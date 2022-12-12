@@ -1,7 +1,10 @@
 {
     "routePrefix": "subm",
-    "sections": [{
-        "columns": "2",
+  "tabs": true,
+  "sections": [
+    {
+      "tab": "Subm",
+      "columns": 3,
         "fields": [{
             "label": "Group",
             "name": "group",

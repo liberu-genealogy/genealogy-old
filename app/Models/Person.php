@@ -7,6 +7,7 @@ use App\Models\PersonEvent;
 use App\Models\Place;
 use App\Models\User;
 use App\Traits\ConnectionTrait;
+use App\Traits\TenantConnectionResolver;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\Auth;
 use LaravelEnso\People\Models\Person as CorePerson;
@@ -15,12 +16,13 @@ use function Symfony\Component\Translation\t;
 class Person extends CorePerson
 {
     use HasFactory;
+    use TenantConnectionResolver;
 
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
         // $this->setConnection(\Session::get('conn'));
-        error_log('Person-'.($this->connection).'-'.\Session::get('conn').'-'.\Session::get('db'));
+   //     error_log('Person-'.($this->connection).'-'.\Session::get('conn').'-'.\Session::get('db'));
     }
 
     /**

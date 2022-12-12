@@ -1,7 +1,12 @@
 {
+    "title" : "Create Chan",
+    "icon": "location-arrow",
     "routePrefix": "chans",
-    "sections": [{
-        "columns": "2",
+  "tabs": true,
+  "sections": [
+    {
+      "tab": "Chan",
+      "columns": 3,
         "fields": [{
             "label": "Group",
             "name": "group",

@@ -1,7 +1,10 @@
 {
     "routePrefix": "personanci",
-    "sections": [{
-        "columns": "2",
+  "tabs": true,
+  "sections": [
+    {
+      "tab": "Person Anci",
+      "columns": 3,
         "fields": [{
             "label": "Group",
             "name": "group",

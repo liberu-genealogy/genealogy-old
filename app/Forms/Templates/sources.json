@@ -1,7 +1,10 @@
 {
     "routePrefix": "sources",
-    "sections": [{
-        "columns": "2",
+  "tabs": true,
+  "sections": [
+    {
+      "tab": "Sources",
+      "columns": 3,
         "fields": [{
             "label": "Name",
             "name": "name",

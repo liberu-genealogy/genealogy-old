@@ -1,7 +1,10 @@
 {
     "routePrefix": "personalias",
-    "sections": [{
-        "columns": "2",
+  "tabs": true,
+  "sections": [
+    {
+      "tab": "Person Alias",
+      "columns": 3,
         "fields": [{
             "label": "Group",
             "name": "group",

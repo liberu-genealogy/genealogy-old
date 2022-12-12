@@ -1,7 +1,12 @@
 {
+    "title" : "Create Address",
+    "icon": "location-arrow",
     "routePrefix": "addresses",
-    "sections": [{
-        "columns": "2",
+  "tabs": true,
+  "sections": [
+    {
+      "tab": "Addr",
+      "columns": 3,
         "fields": [{
             "label": "Address 1",
             "name": "adr1",

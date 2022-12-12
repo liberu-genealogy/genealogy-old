@@ -2,15 +2,16 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Family;
+use App\Models\User;
 use App\Service\MixedConnection;
 use Closure;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use LaravelEnso\Companies\Models\Company;
 // use App\Models\enso\companies\Company;
-use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\Multitenancy\Services\Tenant;
 
-
-use App\Traits\ConnectionTrait;
 class Multitenant
 {
     /**
@@ -20,41 +21,23 @@ class Multitenant
      * @param  \Closure  $next
      * @return mixed
      */
-    use ConnectionTrait;
     public function handle($request, Closure $next)
     {
-
-        $userId = \Auth::user();
-        $company_id = $userId->id;
+//        $tenatDB=\App\Models\Tenant::where('id',Auth::id())->get();
+//        Log::debug();
         $conn = \Session::get('conn');
-        $value = \Session::get('db');
-        if ($conn === 'tenant') {
-            $key = 'database.connections.tenant.database';
-            config([$key => $value]);
-            // config(['database.default'=>'tenant']);
-        }
-        /*else {
+        //$value = \Session::get('db');
+        $value = 'tenants_'.Auth::id();
+        Log::debug($value);
+        session()->put('db', $value);
+        //if ($conn === 'tenant') {
+        $key = 'database.connections.tenantdb.database';
+        $x = config([$key => $value]);
+        //Family::setConnection();
+        // config(['database.default'=>'tenant']);
+        /*}/*else {
             config(['database.default'=>'mysql']);
         }*/
-        $tree_id = $request->get('tree_id');
-        if (! empty($company_id)) {
-            $db = 'tenants_'.$company_id;
-            $key = 'database.connections.tenant.database';
-//            config([$key => $db]);
-           \Config::set($key, $db);
-            \Session::put('conn', $key);
-            \Session::put('db', $db);
-//            Tenant::set($this->tenant);
-            \DB::purge('tenantdb');
-            \DB::reconnect('tenantdb');
-
-//            $db = Connections::Tenant.$company_id.'_'.$tree_id;
-//            $this->setConnection(Connections::Tenant, $db);
-        } else {
-            $this->setConnection('mysql');
-        }
-//        $changeConn = $this->getConnection();
-//      echo $databaseName = \DB::connection()->getDatabaseName();
 
         /*if ($request->has('_tenantId')) {
             $request->request->remove('_tenantId');

@@ -1,7 +1,10 @@
 {
     "routePrefix": "familyevents",
-    "sections": [{
-        "columns": "2",
+  "tabs": true,
+  "sections": [
+    {
+      "tab": "Family Events",
+      "columns": 3,
         "fields": [{
             "label": "Date",
             "name": "date",

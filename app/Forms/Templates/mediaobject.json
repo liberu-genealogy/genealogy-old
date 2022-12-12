@@ -1,7 +1,10 @@
 {
   "routePrefix": "mediaobject",
-  "sections": [{
-    "columns": "2",
+  "tabs": true,
+  "sections": [
+    {
+      "tab": "Media Object",
+      "columns": 3,
     "fields": [
       {
         "label": "Gid",

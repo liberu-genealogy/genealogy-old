@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use App\Traits\TenantConnectionResolver;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use LaravelEnso\Tables\Traits\TableCache;
 
 class FamilySlgs extends \FamilyTree365\LaravelGedcom\Models\FamilySlgs
 {
-    use TableCache, HasFactory;
+//    use TenantConnectionResolver;
+    use TableCache, HasFactory, TenantConnectionResolver;
 }

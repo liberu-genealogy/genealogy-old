@@ -1,7 +1,10 @@
 {
     "routePrefix": "familyslugs",
-    "sections": [{
-        "columns": "2",
+  "tabs": true,
+  "sections": [
+    {
+      "tab": "Family Slugs",
+      "columns": 3,
         "fields": [{
             "label": "Family Id",
             "name": "family_id",

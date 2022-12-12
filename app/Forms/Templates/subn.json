@@ -1,7 +1,10 @@
 {
     "routePrefix": "subn",
-    "sections": [{
-        "columns": "2",
+  "tabs": true,
+  "sections": [
+    {
+      "tab": "Subn",
+      "columns": 3,
         "fields": [
             {
                 "label": "Subm",

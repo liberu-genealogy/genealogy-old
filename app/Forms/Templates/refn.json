@@ -1,7 +1,10 @@
 {
     "routePrefix": "refn",
-    "sections": [{
-        "columns": "2",
+  "tabs": true,
+  "sections": [
+    {
+      "tab": "Refn",
+      "columns": 3,
         "fields": [{
             "label": "Group",
             "name": "group",

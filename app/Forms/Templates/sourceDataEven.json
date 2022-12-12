@@ -1,7 +1,10 @@
 {
     "routePrefix": "SourceDataEven",
-    "sections": [{
-        "columns": "2",
+  "tabs": true,
+  "sections": [
+    {
+      "tab": "Source Data Event",
+      "columns": 3,
         "fields": [{
             "label": "Group",
             "name": "group",
