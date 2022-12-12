@@ -7,5 +7,5 @@ use LaravelEnso\Calendar\Models\Event as CoreEvent;
 
 class Event extends CoreEvent
 {
-use TenantConnectionResolver;
+    use TenantConnectionResolver;
 }
