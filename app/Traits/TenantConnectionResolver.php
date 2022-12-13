@@ -2,6 +2,8 @@
 
 namespace App\Traits;
 
+use Illuminate\Support\Facades\App;
+
 trait TenantConnectionResolver
 {
     public function getConnectionName()
