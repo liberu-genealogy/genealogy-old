@@ -14,6 +14,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use LaravelEnso\Api\Models\Log;
 
 class ImportGedcom implements ShouldQueue
 {
@@ -52,7 +53,6 @@ class ImportGedcom implements ShouldQueue
             'status'  => 'queue',
             'slug'    => $slug,
         ]);
-
         $parser = new GedcomParser();
         $parser->parse($tenant->connectionName(), $this->filePath, $slug, true);
         // with(new GedcomParser())->parse($tenant->connectionName(), $this->filePath, $slug, true);

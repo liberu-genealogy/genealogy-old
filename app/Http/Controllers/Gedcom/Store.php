@@ -13,11 +13,13 @@ class Store extends Controller
 {
     public function __invoke(Request $request): Response
     {
+
         if ($request->file->getClientOriginalExtension() != 'ged') {
             return response([
                 'msg'=>'file type invalid',
             ], 422);
         }
+
         $request->validate([
             'slug' => 'required|string',
             'file' => 'required',
