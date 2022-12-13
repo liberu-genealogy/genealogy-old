@@ -30,7 +30,6 @@ class ImportGedcom implements ShouldQueue
     public function __construct(User $user, string $filePath, ?string $slug = null)
     {
         $this->filePath = $filePath;
-        $this->queue = 'high';
         $this->user = $user;
         $this->slug = $slug;
     }

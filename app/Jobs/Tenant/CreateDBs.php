@@ -26,7 +26,6 @@ class CreateDBs implements ShouldQueue
     public function __construct(Company $tenant)
     {
         $this->tenant = $tenant;
-	$this->queue = 'high';
     }
 
     /**
