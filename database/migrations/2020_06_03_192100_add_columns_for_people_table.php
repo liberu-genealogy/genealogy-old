@@ -13,7 +13,7 @@ return new class extends Migration
             $table->string('givn')->nullable();
             $table->string('surn', 255)->nullable();
             $table->string('name', 255)->nullable()->change();
-
+            $table->string('uid')->nullable()->unique();
             $table->string('type')->nullable();
             $table->string('npfx')->nullable();
             $table->string('nick')->nullable();
