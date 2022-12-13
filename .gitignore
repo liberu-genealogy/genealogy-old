@@ -37,3 +37,5 @@ yarn-error.log
 *.sln
 *.sw*
 storage
+/.docker/prod/db/dbdata/
+/.docker/dev/db/dbdata/
