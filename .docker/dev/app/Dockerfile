@@ -1,40 +1,44 @@
-# Build arguments
-ARG IMAGE_REGISTRY=prod
-ARG IMAGE_TAG=latest
+FROM php:8.1-fpm-bullseye
 
-# Image
-FROM ${IMAGE_REGISTRY}/api-base:${IMAGE_TAG}
+# Set working directory
+WORKDIR /var/www
 
-# Update dependencies
+# Install dependencies
+#install all the system dependencies and enable PHP modules
 RUN apt-get update \
-# Install Swoole (required by Octane)
-    && pecl install swoole \
-    && docker-php-ext-enable swoole \
-# Install Node (v16 LTS) (required by Octane)
-    && curl -sL https://deb.nodesource.com/setup_16.x | bash - \
-    && apt-get install -y nodejs \
-# Install NPM (required by Octane)
-    && npm install -g npm \
-# Install Chokidar (required by Octane)
-    && npm install --g chokidar \
-# Clean up the apt cache
-    && rm -rf /var/lib/apt/lists/*
+  && apt-get -y install --no-install-recommends \
+    locales \
+    git \
+    unzip \
+    libzip-dev \
+    libicu-dev \
+    libonig-dev \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/* \
+  && locale-gen en_US.UTF-8 \
+  && localedef -f UTF-8 -i en_US en_US.UTF-8 \
+  && docker-php-ext-install \
+    intl \
+    pdo_mysql \
+    zip \
+    bcmath
 
-# Specify the node path (allow including Chokidar lib globally)
-ENV NODE_PATH /usr/lib/node_modules
+# Install composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Install Composer
-COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+#change uid and gid of apache to docker user uid/gid
+RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 
-# Set up the working directory
-WORKDIR /var/www/html
+# Copy existing application directory contents
+#COPY . /var/www
 
-# Export Octane port
-EXPOSE 8000
+# Copy existing application directory permissions
+RUN chown -R www-data:www-data /var/www
 
-# Run the Octane service
-CMD ["php", "artisan", "octane:start", "--server=swoole", "--host=0.0.0.0", "--port=8000", "--max-requests=1000", "--watch"]
+# Change current user to www-data
+USER www-data
 
-# The health check configuration
-HEALTHCHECK --start-period=5s --interval=5s --timeout=5s --retries=3 \
-    CMD php artisan octane:status || exit 1
+
+# Expose port 9000 and start php-fpm server
+EXPOSE 9000
+CMD ["php-fpm"]
