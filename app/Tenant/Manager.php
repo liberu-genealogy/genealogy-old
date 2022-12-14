@@ -23,7 +23,7 @@ class Manager
 
     protected string|int $tenant_id;
     protected string|null $partition = null;
-    protected string $connectionName = 'tenant';
+    protected string $connectionName = 'tenantdb';
     protected string $defaultDatabase = 'tenant';
     protected string $defaultConnection = 'mysql';
 
