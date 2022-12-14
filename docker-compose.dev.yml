@@ -1,119 +1,79 @@
-version: '3.8'
-
+version: '3'
 services:
+
+  #PHP Service
   app:
     build:
-      context: ./
+      context: .
       dockerfile: ./.docker/dev/app/Dockerfile
-      args:
-        IMAGE_REGISTRY: ${IMAGE_REGISTRY}
-        IMAGE_TAG: ${IMAGE_TAG}
-    volumes:
-      - ./:/var/www/html
-    links:
-      - postgres
-      - postgres-testing
-      - redis
-      - mailhog
-    hostname: api
-    ports:
-      - "8000:8000"
-    networks:
-      - api
-      - gateway
+    user: "www-data:www-data"
+    container_name: app
     restart: unless-stopped
-
-  queue:
-    build:
-      context: ./
-      dockerfile: ./.docker/dev/queue/Dockerfile
-      args:
-        IMAGE_REGISTRY: ${IMAGE_REGISTRY}
-        IMAGE_TAG: ${IMAGE_TAG}
-    volumes:
-      - ./:/var/www/html
-    links:
-      - postgres
-      - redis
-      - mailhog
-    networks:
-      - api
-
-  schedule:
-    build:
-      context: ./
-      dockerfile: ./.docker/dev/schedule/Dockerfile
-      args:
-        IMAGE_REGISTRY: ${IMAGE_REGISTRY}
-        IMAGE_TAG: ${IMAGE_TAG}
-    volumes:
-      - ./:/var/www/html
-    links:
-      - postgres
-      - redis
-      - mailhog
-    networks:
-      - api
-
-  postgres:
-    build:
-      context: ./
-      dockerfile: ./.docker/dev/postgres/Dockerfile
+    tty: true
     environment:
-      POSTGRES_DB: ${DB_DATABASE}
-      POSTGRES_USER: ${DB_USERNAME}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    working_dir: /var/www
     volumes:
-      - postgres:/var/lib/postgresql/data
-      - ./.docker/dev/postgres/dumps/:/tmp
-    ports:
-      - "5432:5432"
+      - ./:/var/www
+      - ./.docker/dev/app/php.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
-      - api
+      - app-network
 
-  postgres-testing:
-    build:
-      context: ./
-      dockerfile: ./.docker/dev/postgres/Dockerfile
+  #Nginx Service
+  webserver:
+    image: nginx:alpine
+    container_name: webserver
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./:/var/www
+      - ./.docker/dev/webserver/nginx:/etc/nginx/conf.d/
+    networks:
+      - app-network
+    #command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+  #MySQL Service
+  db:
+    image: mysql:8.0
+    container_name: db
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
     environment:
-      POSTGRES_DB: ${DB_DATABASE}
-      POSTGRES_USER: ${DB_USERNAME}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-    networks:
-      - api
-
-  redis:
-    build:
-      context: ./
-      dockerfile: ./.docker/dev/redis/Dockerfile
-    # TODO: Add one more volume for configuration (disable background saves)
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
     volumes:
-      - redis:/data
-    ports:
-      - "6379:6379"
+      - ./.docker/dev/db/dbdata:/var/lib/mysql/
+      - ./.docker/dev/db/mysql/my.cnf:/etc/mysql/my.cnf
     networks:
-      - api
-
-  mailhog:
-    build:
-      context: ./
-      dockerfile: ./.docker/dev/mailhog/Dockerfile
+      - app-network
+    command:
+      - --sort_buffer_size=1073741824
+  myadmin:
+    image: 'phpmyadmin:latest'
     ports:
-      - "8025:8025"
+      - 8080:80
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      PMA_HOST: mysql
+    links:
+      - "db:mysql"
+    depends_on:
+      - db
     networks:
-      - api
+      - app-network
 
-volumes:
-  postgres:
-    driver: local
-
-  redis:
-    driver: local
-
+#Docker Networks
 networks:
-  api:
-    name: api
-
-  gateway:
-    name: gateway
-    external: true
+  app-network:
+    driver: bridge
+#Volumes
+volumes:
+  dbdata:
+    driver: local
