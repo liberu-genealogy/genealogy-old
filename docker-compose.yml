@@ -5,7 +5,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: ./.docker/prod/app/Dockerfile
     user: "www-data:www-data"
     container_name: app
     restart: unless-stopped
@@ -16,7 +16,7 @@ services:
     working_dir: /var/www
     volumes:
       - ./:/var/www
-      - ./.docker/prod/base/php.ini:/usr/local/etc/php/conf.d/local.ini
+      - ./.docker/prod/app/php.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
       - app-network
 
@@ -31,7 +31,7 @@ services:
       - "443:443"
     volumes:
       - ./:/var/www
-      - ./nginx/:/etc/nginx/conf.d/
+      - ./.docker/prod/webserver/nginx:/etc/nginx/conf.d/
     networks:
       - app-network
     #command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
@@ -49,8 +49,8 @@ services:
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
-      - dbdata:/var/lib/mysql/
-      #- ./mysql/my.cnf:/etc/mysql/my.cnf
+      - ./.docker/prod/db/dbdata:/var/lib/mysql/
+      - ./.docker/prod/db/mysql/my.cnf:/etc/mysql/my.cnf
     networks:
       - app-network
     command:
