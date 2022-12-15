@@ -25,14 +25,21 @@ class Multitenant
     {
 //        $tenatDB=\App\Models\Tenant::where('id',Auth::id())->get();
 //        Log::debug();
-        $conn = \Session::get('conn');
-        //$value = \Session::get('db');
-        $value = 'tenants_'.Auth::id();
-        Log::debug($value);
-        session()->put('db', $value);
-        //if ($conn === 'tenant') {
-        $key = 'database.connections.tenantdb.database';
-        $x = config([$key => $value]);
+        $role = \Auth::user()->role_id;
+        Log::debug($role.'-roleId');
+            $conn = \Session::get('conn');
+            //$value = \Session::get('db');
+
+//            $value = ($role == 1)?'enso ':'tenants_37';
+            $value = ($role == 1)?env('DB_DATABASE', 'enso'):'tenants_'.Auth::id();
+            Log::debug($value);
+//            Log::debug($role);
+            session()->put('db', $value);
+            //if ($conn === 'tenant') {
+            $key = 'database.connections.tenantdb.database';
+            $x = config([$key => $value]);
+
+
         //Family::setConnection();
         // config(['database.default'=>'tenant']);
         /*}/*else {

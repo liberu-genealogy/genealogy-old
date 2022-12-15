@@ -14,6 +14,8 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use LaravelEnso\Roles\Models\Role;
+use LaravelEnso\UserGroups\Models\UserGroup;
 
 class Migrations implements ShouldQueue
 {
@@ -72,24 +74,40 @@ class Migrations implements ShouldQueue
         $em = $this->email;
         $na = $this->name;
         $person = $tenants->run(function () use ($em, $na) {
-            Person::create([
+           return Person::create([
                 'email'=>$em,
                 'name' => $na,
 
             ]);
         });
+        \Log::debug($person);
+        \Log::debug('person created');
         $user_group = 1;
+        $user_group = $tenants->run(function () use ($em, $na) {
+            return UserGroup::create([
+                'name'=>'Administrators',
+                'description' => 'Administrator users group',
 
+            ]);
+        });
         // get role_id
-        $role = 1;
+//        $role = 1;
+        $role = $tenants->run(function () use ($em, $na) {
+            return Role::create([
+                'name'=>'Admin',
+                'menu_id '=>null,
+                'display_name' => 'Administrator',
+                'description' => 'Administrator Role. Full Featured.',
+            ]);
+        });
         $pa = $this->password;
         $tenants->run(function () use ($em, $pa, $person, $user_group, $role) {
             User::create([
                 'email' => $em,
                 'password' => Hash::make($pa),
-                'person_id' => $person,
-                'group_id' => $user_group,
-                'role_id' => $role,
+                'person_id' => $person->id,
+                'group_id' => $user_group->id,
+                'role_id' => $role->id,
                 'is_active' => 1,
 
             ]);

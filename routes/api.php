@@ -1454,3 +1454,9 @@ Route::middleware(['auth', 'api'])
         Route::post('gedcom-export', GedcomExport::class);
         Route::get('trees/options', [TreesManage::class, 'getOptions']);
     });
+
+
+//Route::get('test/{cid}', function($cid){
+//    session('current_company_id', $cid);
+//    retrun success;
+//});
