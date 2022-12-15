@@ -27,4 +27,10 @@ class User extends CoreUser
     {
         return (bool) $this->social->where('service', $service)->count();
     }
+
+    public function avatar()
+    {
+        return $this->hasOne(\Avatar::class);
+    }
+
 }
