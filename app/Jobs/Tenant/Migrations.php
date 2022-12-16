@@ -37,7 +37,6 @@ class Migrations implements ShouldQueue
         $this->name = $name;
         $this->email = $email;
         $this->password = $password;
-        // $this->queue = 'sync';
     }
 
     /**

@@ -26,10 +26,10 @@ class CreatePeopleTable extends Migration
             $table->text('obs')->nullable();
 
             $table->integer('created_by')->unsigned()->index()->nullable();
-            $table->foreign('created_by')->references('id')->on('users');
+//            $table->foreign('created_by')->references('id')->on('users');
 
             $table->integer('updated_by')->unsigned()->index()->nullable();
-            $table->foreign('updated_by')->references('id')->on('users');
+//            $table->foreign('updated_by')->references('id')->on('users');
 
             $table->timestamps();
         });
