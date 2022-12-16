@@ -7,6 +7,7 @@ use App\Jobs\Tenant\Migration;
 use App\Jobs\Tenant\Migrations;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 use LaravelEnso\Api\Models\Log;
 use LaravelEnso\Companies\Http\Requests\ValidateCompany;
 use LaravelEnso\Companies\Models\Company;
@@ -26,14 +27,19 @@ class Store extends Controller
         $person_name = $user->name;
         $user_email = $user->email;
         $this->authorize('store', $company);
-
         $company->save();
-//        if ($user->role_id!=1){
-//            $c = new Company1();
-//            $c->fill($clone);
-//            $c->save();
-////            Company1::create($clone);
-//        }
+        if ($user->role_id!=1){
+
+            $c = new Company1();
+
+            $c->fill($clone);
+            $c->created_by=1;
+            $c->updated_by=null;
+            $c->setAttribute('created_by',1);
+            $c->setAttribute('updated_by',null);
+            $c->save();
+
+        }
         CreateDB::dispatch($company, $user_id);
         Migration::dispatch($company, $user_id, $person_name, $user_email);
 

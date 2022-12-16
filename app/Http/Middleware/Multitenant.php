@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Log;
 use LaravelEnso\Companies\Models\Company;
 // use App\Models\enso\companies\Company;
 use LaravelEnso\Multitenancy\Services\Tenant;
-
+use App\Models\Tenant as T1;
 class Multitenant
 {
     /**
@@ -25,18 +25,31 @@ class Multitenant
     {
 //        $tenatDB=\App\Models\Tenant::where('id',Auth::id())->get();
 //        Log::debug();
-        $role = \Auth::user()->role_id;
-        Log::debug($role.'-roleId');
+
+
+
+        $user = \Auth::user();
+        Log::debug($user->role_id.'-roleId');
             $conn = \Session::get('conn');
             //$value = \Session::get('db');
+            if ($user->isAdmin()){
+                $key = 'database.connections.mysql.database';
+                $value =env('DB_DATABASE', 'enso');
+            }else{
+                $key = 'database.connections.tenantdb.database';
+                if (session()->get('db')) {
+                    $value = session()->get('db');
+                }else{
+                    $company = $user->person->company();
+                    $value = $company->tenancy_db_name;
+                }
 
-//            $value = ($role == 1)?'enso ':'tenants_37';
-            $value = ($role == 1)?env('DB_DATABASE', 'enso'):'tenants_'.Auth::id();
+            }
             Log::debug($value);
-//            Log::debug($role);
+//            Log::debug($company);
             session()->put('db', $value);
             //if ($conn === 'tenant') {
-            $key = 'database.connections.tenantdb.database';
+
             $x = config([$key => $value]);
 
 
