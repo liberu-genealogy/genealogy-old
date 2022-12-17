@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\Auth;
 use Laravel\Cashier\Billable;
+use Laravel\Telescope\Avatar;
 use LaravelEnso\Users\Models\User as CoreUser;
 
 class User extends CoreUser
@@ -22,9 +24,17 @@ class User extends CoreUser
     {
         return $this->hasMany(UserSocial::class, 'user_id', 'id');
     }
+//    public function avatar()
+//    {
+//        return $this->hasOne(Avatar::class, 'user_id', 'id');
+//    }
 
     public function hasSocialLinked($service)
     {
         return (bool) $this->social->where('service', $service)->count();
     }
+//    private function getIdAttribute($value='')
+//    {
+//       $this->id=1;
+//    }
 }

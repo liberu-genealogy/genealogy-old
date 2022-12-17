@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Jobs\Tenant\CreateDBs;
 use App\Jobs\Tenant\Migrations;
 use App\Models\Person;
+use App\Models\Tenant;
 use App\Models\User;
 use App\Models\UserSocial;
 use App\Traits\Login;
@@ -135,6 +136,7 @@ class LoginController extends Controller
 
         if (! App::runningUnitTests()) {
             $company = $user->person->company();
+            \Log::debug('Login----------------------'.$company);
             $tenant = false;
             if ($company) {
                 $tenant = true;
@@ -144,8 +146,9 @@ class LoginController extends Controller
             if ($main_company !== null && ! ($user->isAdmin())) {
                 $c_id = $main_company->id;
             }
-
-            if ($main_company == null && ! $user->isAdmin()) {
+            $tenants = Tenant::find($main_company->id);
+            if ($main_company == null&& ! $user->isAdmin()) {
+//            if (($main_company == null||$tenants=='') && ! $user->isAdmin()) {
 //          if ($main_company == null) {
                 $company_count = Company::count();
 
@@ -171,9 +174,33 @@ class LoginController extends Controller
                 $user_email = $user->email;
 
                 $db = $company_id;
-
+                \Log::debug('CreateDBs----------------------'.$company);
                 CreateDBs::dispatch($company);
+                \Log::debug('Migration----------------------'.$company);
                 Migrations::dispatch($company, $user->name, $user->email, $user->password);
+
+            }else{
+
+
+                if($tenants){
+//                    $c = DB::connection('tenantdb',$tenants->tenancy_db_name)->table('users')->count();
+                    $company=\App\Models\Company::find($main_company->id);
+                    tenancy()->initialize($tenants);
+                    $tenants->run(function () use ($company, $user){
+
+
+//                        $company->save();
+                        $c= User::count();
+                        if($c==0){
+                            \Log::debug('Migration----------------------');
+                           return Migrations::dispatch($company, $user->name, $user->email, $user->password);
+
+                        }
+//                        \Log::debug($company->id.-'users----------------------'.$c);
+                    });
+                    return $user;
+                }
+
             }
         }
 

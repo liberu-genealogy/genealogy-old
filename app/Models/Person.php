@@ -147,6 +147,13 @@ class Person extends CorePerson
 
     public function setUpdatedBy()
     {
+        if (!is_dir(storage_path('app/public'))) {
+            // dir doesn't exist, make it
+            \File::makeDirectory(storage_path().'/'.'app/public',0777,true);
+
+//            mkdir(storage_path('app/public/'), 0700);
+        }
+
         file_put_contents(storage_path('app/public/file.txt'), $this->connection);
         if ($this->connection !== 'tenant') {
             if (Auth::check()) {
