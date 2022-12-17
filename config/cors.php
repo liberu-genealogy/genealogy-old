@@ -24,15 +24,14 @@ return [
     'allowed_methods' => ['*'],
 
     'allowed_origins' => [
-        'http://pusher.com',
+	'http://pusher.com',
         'https://pusher.com',
         'http://localhost:8080',
         'http://localhost:3000',
         'http://localhost:8000',
         'https://familytree365.com',
         'https://api.familytree365.com',
-        'https://www.familytree365.com',
-    ],
+        'https://www.familytree365.com',],
 
     'allowed_origins_patterns' => [],
 

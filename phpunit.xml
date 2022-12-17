@@ -39,7 +39,6 @@
     </testsuite>
     <testsuite name="sync">
       <directory suffix="Test.php">./vendor/laravel-enso/cli/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/data-import/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-enso/documents/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-enso/files/tests</directory>
     </testsuite>
