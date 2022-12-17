@@ -22,7 +22,6 @@ trait TenantConnectionResolver
             }
         }
 
-
         return $this->connection;
     }
 }

@@ -1455,7 +1455,6 @@ Route::middleware(['auth', 'api'])
         Route::get('trees/options', [TreesManage::class, 'getOptions']);
     });
 
-
 //Route::get('test/{cid}', function($cid){
 //    session('current_company_id', $cid);
 //    retrun success;

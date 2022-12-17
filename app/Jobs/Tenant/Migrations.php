@@ -73,7 +73,7 @@ class Migrations implements ShouldQueue
         $em = $this->email;
         $na = $this->name;
         $person = $tenants->run(function () use ($em, $na) {
-           return Person::create([
+            return Person::create([
                 'email'=>$em,
                 'name' => $na,
 
@@ -82,7 +82,7 @@ class Migrations implements ShouldQueue
         \Log::debug($person);
         \Log::debug('person created');
         $user_group = 1;
-        $user_group = $tenants->run(function () use ($em, $na) {
+        $user_group = $tenants->run(function () {
             return UserGroup::create([
                 'name'=>'Administrators',
                 'description' => 'Administrator users group',
@@ -91,7 +91,7 @@ class Migrations implements ShouldQueue
         });
         // get role_id
 //        $role = 1;
-        $role = $tenants->run(function () use ($em, $na) {
+        $role = $tenants->run(function () {
             return Role::create([
                 'name'=>'Admin',
                 'menu_id '=>null,

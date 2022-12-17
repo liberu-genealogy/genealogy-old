@@ -21,17 +21,17 @@ trait CreatedBy
         return $this->belongsTo($userModel, 'created_by');
     }
 
-    private function setCreatedBy($value=1)
+    private function setCreatedBy($value = 1)
     {
 //        if($value==''){
 //            if (Auth::check()) {
 //                $this->created_by = Auth::id();
 //            }
 //        }else{
-            $this->created_by = $value;
+        $this->created_by = $value;
 //        }
-
     }
+
     public static function bootUpdatedBy()
     {
         self::creating(fn ($model) => $model->setUpdatedBy());
@@ -44,15 +44,14 @@ trait CreatedBy
         return $this->belongsTo($userModel, 'updated_by');
     }
 
-    private function setUpdatedBy($value=1)
+    private function setUpdatedBy($value = 1)
     {
 //        if($value==''){
 //            if (Auth::check()) {
 //                $this->updated_by = Auth::id();
 //            }
 //        }else{
-            $this->updated_by = $value;
+        $this->updated_by = $value;
 //        }
-
     }
 }
