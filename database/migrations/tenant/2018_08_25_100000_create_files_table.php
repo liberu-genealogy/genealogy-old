@@ -16,7 +16,7 @@ class CreateFilesTable extends Migration
             $table->integer('type_id')->default(0);
             $table->string('original_name')->index();
             $table->string('saved_name')->index();
-           // $table->string('path');
+            // $table->string('path');
 
             $table->integer('size');
             $table->string('mime_type')->nullable();
