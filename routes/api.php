@@ -385,7 +385,7 @@ use App\Http\Controllers\Users\Options as UserOptions;
 use App\Http\Controllers\Users\Store as UserStore;
 use App\Http\Controllers\Users\TableData as UserTableData;
 use App\Http\Controllers\Users\Update as UserUpdate;
-use App\Http\Controllers\Wikitree\WikitreeController;
+use App\Http\Controllers\WikiTree\WikitreeController;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
 use LaravelEnso\Addresses\Http\Controllers\Create as AddressCreate;

@@ -6,8 +6,9 @@ use App\Models\Family;
 use App\Models\PersonEvent;
 use App\Models\Place;
 use App\Models\User;
-use App\Traits\ConnectionTrait;
+//use App\Traits\ConnectionTrait;
 use App\Traits\TenantConnectionResolver;
+use LaravelEnso\Tables\Traits\TableCache;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\Auth;
 use LaravelEnso\People\Models\Person as CorePerson;
@@ -15,7 +16,7 @@ use function Symfony\Component\Translation\t;
 
 class Person extends CorePerson
 {
-    use HasFactory;
+    use HasFactory,TableCache;
     use TenantConnectionResolver;
 
     public function __construct(array $attributes = [])
