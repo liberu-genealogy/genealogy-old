@@ -147,9 +147,9 @@ class Person extends CorePerson
 
     public function setUpdatedBy()
     {
-        if (!is_dir(storage_path('app/public'))) {
+        if (! is_dir(storage_path('app/public'))) {
             // dir doesn't exist, make it
-            \File::makeDirectory(storage_path().'/'.'app/public',0777,true);
+            \File::makeDirectory(storage_path().'/'.'app/public', 0777, true);
 
 //            mkdir(storage_path('app/public/'), 0700);
         }
