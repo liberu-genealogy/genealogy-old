@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Company;
 
-use App\Jobs\Tenant\CreateDB;
-use App\Jobs\Tenant\Migration;
+use App\Jobs\Tenant\CreateDBs;
+use App\Jobs\Tenant\Migrations;
 use App\Jobs\Tenant\Migrations;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Routing\Controller;
@@ -43,9 +43,9 @@ class Store extends Controller
                 $c->save();
 
             }
-            CreateDB::dispatch($company, $user_id);
+            CreateDBs::dispatch($company, $user_id);
 //            $company = Company::find($company->id);
-            Migration::dispatch($company, $user_id, $person_name, $user_email);
+            Migrations::dispatch($company, $user_id, $person_name, $user_email);
             return [
                 'message' => __('The company was successfully created'),
                 'redirect' => 'administration.companies.edit',
