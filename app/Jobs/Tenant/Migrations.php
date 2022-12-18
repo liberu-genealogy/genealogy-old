@@ -111,7 +111,7 @@ class Migrations implements ShouldQueue
 
             ]);
         });
-
+        tenancy()->end();
         /**     $person = DB::connection(Connections::Tenant)->table('users')->insert([
          * 'email' => $this->email,
          * 'password' => Hash::make($this->password),

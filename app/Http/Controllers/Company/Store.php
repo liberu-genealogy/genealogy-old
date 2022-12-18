@@ -19,34 +19,41 @@ class Store extends Controller
     use TenantConnectionResolver;
     public function __invoke(ValidateCompany $request, Company $company)
     {
+        $role = \Auth::user()->role_id;
+        $companies = \Auth::user()->person->companies()->count();
+        if (in_array($role, [4, 5, 6]) && $companies <= 1) {
 
-        $company->fill($request->validatedExcept('mandatary'));
-        $clone = $request->post();
-        $user = \Auth::user();
-        $user_id = $user->id;
-        $person_name = $user->name;
-        $user_email = $user->email;
-        $this->authorize('store', $company);
-        $company->save();
-        if ($user->role_id!=1){
+            $company->fill($request->validatedExcept('mandatary'));
+            $clone = $request->post();
+            $user = \Auth::user();
+            $user_id = $user->id;
+            $person_name = $user->name;
+            $user_email = $user->email;
+            $this->authorize('store', $company);
 
-            $c = new Company1();
+            $company->save();
+            if ($user->role_id != 1) {
 
-            $c->fill($clone);
-            $c->created_by=1;
-            $c->updated_by=null;
-            $c->setAttribute('created_by',1);
-            $c->setAttribute('updated_by',null);
-            $c->save();
+                $c = new Company1();
 
+                $c->fill($clone);
+
+                $c->setAttribute('created_by', 1);
+                $c->setAttribute('updated_by', 1);
+                $c->save();
+
+            }
+            CreateDB::dispatch($company, $user_id);
+//            $company = Company::find($company->id);
+            Migration::dispatch($company, $user_id, $person_name, $user_email);
+            return [
+                'message' => __('The company was successfully created'),
+                'redirect' => 'administration.companies.edit',
+                'param' => ['company' => $company->id],
+            ];
+        }else{
+            return ['error' => __('Unauthorized')];
         }
-        CreateDB::dispatch($company, $user_id);
-        Migration::dispatch($company, $user_id, $person_name, $user_email);
 
-        return [
-            'message' => __('The company was successfully created'),
-            'redirect' => 'administration.companies.edit',
-            'param' => ['company' => $company->id],
-        ];
     }
 }

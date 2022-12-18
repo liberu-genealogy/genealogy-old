@@ -9,11 +9,11 @@ trait TenantConnectionResolver
 {
     public function getConnectionName()
     {
-        \Log::debug($this->connection.'admin-connected');
+        \Log::debug($this->connection.'-connected');
         if (Auth::check()) {
             $user = \Auth::user();
             $role_id = $user->role_id;
-            if ($role_id == 1) {
+            if ($user->isAdmin()){
                 return $this->connection;
             } else {
                 if (session()->get('db')) {

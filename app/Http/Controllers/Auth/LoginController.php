@@ -182,9 +182,11 @@ class LoginController extends Controller
             }else{
 
 
-                if($tenants){
+                if($tenants && !$user->isAdmin()){
 //                    $c = DB::connection('tenantdb',$tenants->tenancy_db_name)->table('users')->count();
                     $company=\App\Models\Company::find($main_company->id);
+                    \Log::debug('Database----------------------'.$main_company->id);
+
                     tenancy()->initialize($tenants);
                     $tenants->run(function () use ($company, $user){
 
@@ -192,12 +194,14 @@ class LoginController extends Controller
 //                        $company->save();
                         $c= User::count();
                         if($c==0){
-                            \Log::debug('Migration----------------------');
+
+                            \Log::debug('Run Migration----------------------');
                            return Migrations::dispatch($company, $user->name, $user->email, $user->password);
 
                         }
 //                        \Log::debug($company->id.-'users----------------------'.$c);
                     });
+                    tenancy()->end();
                     return $user;
                 }
 
