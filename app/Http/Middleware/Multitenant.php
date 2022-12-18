@@ -41,11 +41,13 @@ class Multitenant
                     $value = session()->get('db');
                 }else{
                     $company = $user->person->company();
-                    $value = $company->tenancy_db_name;
+                    $tenants = \App\Models\Tenant::find($company->id);
+                    $value = $tenants->tenancy_db_name;
                 }
 
             }
             Log::debug($value);
+            Log::debug('Avatar-'.$user->avatar);
 //            Log::debug($company);
             session()->put('db', $value);
             //if ($conn === 'tenant') {
