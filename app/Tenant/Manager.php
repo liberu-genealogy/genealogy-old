@@ -127,6 +127,7 @@ class Manager
 
     public function migrateDatabase(): self
     {
+        \Log::debug('GEDCOM Database----------------------'. $this->connectionName);
         Artisan::call('migrate:fresh', [
             '--realpath' => database_path('migrations/tenant'),
             '--database' => $this->connectionName,
