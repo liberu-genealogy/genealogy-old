@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Company;
 
 use App\Jobs\Tenant\CreateDBs;
 use App\Jobs\Tenant\Migrations;
-use App\Jobs\Tenant\Migrations;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;

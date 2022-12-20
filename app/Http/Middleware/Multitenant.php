@@ -50,9 +50,11 @@ class Multitenant
             Log::debug('Avatar-'.$user->avatar);
 //            Log::debug($company);
             session()->put('db', $value);
+        $x = config([$key => $value]);
             //if ($conn === 'tenant') {
+        $databaseName = \DB::connection('tenantdb')->getDatabaseName();
+        Log::debug('DB-'.$databaseName);
 
-            $x = config([$key => $value]);
 
 
         //Family::setConnection();
