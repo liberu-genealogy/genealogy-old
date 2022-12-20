@@ -517,6 +517,8 @@ Route::middleware(['web', 'auth', 'multitenant'])
             ->name('getdb');
         Route::get('trial', [ChartController::class, 'trial'])
             ->name('trial');
+//        Route::post('changeCompany', [ChartController::class, 'changeCompany'])
+//            ->name('changeCompany');
     });
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
