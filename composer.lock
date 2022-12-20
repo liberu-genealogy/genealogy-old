@@ -261,21 +261,21 @@
         },
         {
             "name": "cgdprojects/laravel-gedcom",
-            "version": "v3.4.1",
+            "version": "v3.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cgdprojects/laravel-gedcom.git",
-                "reference": "d9cd66bbe84b64438e1a5cba49fb1356284d8f47"
+                "reference": "fae80561e86f0c117e55e58c57a88d5b593fc925"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cgdprojects/laravel-gedcom/zipball/d9cd66bbe84b64438e1a5cba49fb1356284d8f47",
-                "reference": "d9cd66bbe84b64438e1a5cba49fb1356284d8f47",
+                "url": "https://api.github.com/repos/cgdprojects/laravel-gedcom/zipball/fae80561e86f0c117e55e58c57a88d5b593fc925",
+                "reference": "fae80561e86f0c117e55e58c57a88d5b593fc925",
                 "shasum": ""
             },
             "require": {
+                "cgdprojects/php-gedcom": "^1.4",
                 "doctrine/dbal": "^2.8|^3.0",
-                "familytree365/php-gedcom": "^1.4",
                 "php": ">=8.0"
             },
             "require-dev": {
@@ -301,7 +301,7 @@
             "description": "A package that converts gedcom files to Eloquent models",
             "support": {
                 "issues": "https://github.com/cgdprojects/laravel-gedcom/issues",
-                "source": "https://github.com/cgdprojects/laravel-gedcom/tree/v3.4.1"
+                "source": "https://github.com/cgdprojects/laravel-gedcom/tree/v3.4.2"
             },
             "funding": [
                 {
@@ -309,7 +309,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-03-13T16:18:50+00:00"
+            "time": "2022-12-08T11:40:53+00:00"
         },
         {
             "name": "cgdprojects/laravel-gelato",
@@ -362,6 +362,56 @@
                 "source": "https://github.com/cgdprojects/laravel-gelato/tree/v1.0.3"
             },
             "time": "2022-03-06T07:12:45+00:00"
+        },
+        {
+            "name": "cgdprojects/php-gedcom",
+            "version": "v1.4.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cgdprojects/php-gedcom.git",
+                "reference": "0ead94390d79f332aba222014f6651bfb01aadbc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cgdprojects/php-gedcom/zipball/0ead94390d79f332aba222014f6651bfb01aadbc",
+                "reference": "0ead94390d79f332aba222014f6651bfb01aadbc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "9.*",
+                "rector/rector": "^0.11.49",
+                "squizlabs/php_codesniffer": "3.6.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Gedcom\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A GEDCOM file parser (read + write) for PHP 8.0+",
+            "homepage": "http://github.com/familytree365/php-gedcom",
+            "keywords": [
+                "gedcom",
+                "parser"
+            ],
+            "support": {
+                "issues": "https://github.com/cgdprojects/php-gedcom/issues",
+                "source": "https://github.com/cgdprojects/php-gedcom/tree/v1.4.10"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/familytree365",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-11-28T12:13:02+00:00"
         },
         {
             "name": "clue/stream-filter",
@@ -1190,56 +1240,6 @@
                 "source": "https://github.com/facade/ignition-contracts/tree/1.0.2"
             },
             "time": "2020-10-16T08:27:54+00:00"
-        },
-        {
-            "name": "familytree365/php-gedcom",
-            "version": "v1.4.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/familytree365/php-gedcom.git",
-                "reference": "0ead94390d79f332aba222014f6651bfb01aadbc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/familytree365/php-gedcom/zipball/0ead94390d79f332aba222014f6651bfb01aadbc",
-                "reference": "0ead94390d79f332aba222014f6651bfb01aadbc",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=8.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "9.*",
-                "rector/rector": "^0.11.49",
-                "squizlabs/php_codesniffer": "3.6.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Gedcom\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A GEDCOM file parser (read + write) for PHP 8.0+",
-            "homepage": "http://github.com/familytree365/php-gedcom",
-            "keywords": [
-                "gedcom",
-                "parser"
-            ],
-            "support": {
-                "issues": "https://github.com/familytree365/php-gedcom/issues",
-                "source": "https://github.com/familytree365/php-gedcom/tree/v1.4.10"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/genealogiawebsite",
-                    "type": "github"
-                }
-            ],
-            "time": "2021-11-28T12:13:02+00:00"
         },
         {
             "name": "familytree365/recordsapi",
@@ -17965,5 +17965,5 @@
         "php": ">=8.1.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
