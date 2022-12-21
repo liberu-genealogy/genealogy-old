@@ -28,7 +28,7 @@ trait CreatedBy
 //                $this->created_by = Auth::id();
 //            }
 //        }else{
-            $this->created_by = 1;
+            $this->created_by = null;
 //        }
 
     }
@@ -44,14 +44,14 @@ trait CreatedBy
         return $this->belongsTo($userModel, 'updated_by');
     }
 
-    private function setUpdatedBy($value=null)
+    private function setUpdatedBy($value=1)
     {
 //        if($value==''){
 //            if (Auth::check()) {
 //                $this->updated_by = Auth::id();
 //            }
 //        }else{
-            $this->updated_by = $value;
+            $this->updated_by = null;
 //        }
 
     }

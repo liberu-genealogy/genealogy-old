@@ -45,7 +45,7 @@ class Store extends Controller
             }
             CreateDB::dispatch($company, $user_id);
 //            $company = Company::find($company->id);
-            Migration::dispatch($company, $user_id, $person_name, $user_email);
+            Migration::dispatch($company,$person_name, $user_email,$user->password);
             return [
                 'message' => __('The company was successfully created'),
                 'redirect' => 'administration.companies.edit',

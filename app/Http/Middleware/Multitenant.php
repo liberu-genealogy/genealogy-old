@@ -29,7 +29,7 @@ class Multitenant
 
 
         $user = \Auth::user();
-        Log::debug($user->role_id.'-roleId');
+//        Log::debug($user->role_id.'-roleId');
             $conn = \Session::get('conn');
             //$value = \Session::get('db');
             if ($user->isAdmin()){
@@ -46,8 +46,8 @@ class Multitenant
                 }
 
             }
-            Log::debug($value);
-            Log::debug('Avatar-'.$user->avatar);
+//            Log::debug($value);
+//            Log::debug('Avatar-'.$user->avatar);
 //            Log::debug($company);
             session()->put('db', $value);
             //if ($conn === 'tenant') {
