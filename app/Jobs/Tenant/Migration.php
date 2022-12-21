@@ -2,11 +2,12 @@
 
 namespace App\Jobs\Tenant;
 
-use App\Model\Person;
+
 use App\Models\Tenant;
-use App\Models\User;
+use LaravelEnso\Users\Models\User;
 use App\Service\Tenant as TT;
 use DB;
+use LaravelEnso\People\Models\Person;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -51,7 +52,51 @@ class Migration implements ShouldQueue
     public function handle()
     {
         //
+        $tenants = Tenant::find($this->tenant->id);
 
+        tenancy()->initialize($tenants);
+        $em = $this->email;
+        $na = $this->name;
+        $person = $tenants->run(function () use ($em, $na) {
+            return Person::create([
+                'email'=>$em,
+                'name' => $na,
+
+            ]);
+        });
+
+
+        $user_group = 1;
+        $user_group = $tenants->run(function () use ($em, $na) {
+            return UserGroup::create([
+                'name'=>'Administrators',
+                'description' => 'Administrator users group',
+
+            ]);
+        });
+        // get role_id
+//        $role = 1;
+        $role = $tenants->run(function () use ($em, $na) {
+            return Role::create([
+                'name'=>'free',
+                'menu_id '=>null,
+                'display_name' => 'Free',
+                'description' => 'Free Role.',
+            ]);
+        });
+        $pa = $this->password;
+        $tenants->run(function () use ($em, $pa, $person, $user_group, $role) {
+           return User::create([
+                'email' => $em,
+                'password' => Hash::make($pa),
+                'person_id' => $person->id,
+                'group_id' => $user_group->id,
+                'role_id' => $role->id,
+                'is_active' => 1,
+
+            ]);
+        });
+        tenancy()->end();
         // Tenant::set($this->tenant);
         // $company = Tenant::get();
         // $db = Connections::Tenant.$company->id.'_1';

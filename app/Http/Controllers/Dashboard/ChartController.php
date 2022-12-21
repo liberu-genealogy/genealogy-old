@@ -115,9 +115,9 @@ class ChartController extends Controller
     {
         $prevConn = $this->getConnection();
         $company_id = $request->get('company_id');
-        $tree_id = $request->get('tree_id');
+//        $tree_id = $request->get('tree_id');
         if (! empty($company_id)) {
-            $tenants = \App\Models\Tenant::find($tree_id);
+            $tenants = \App\Models\Tenant::find($company_id);
             if($tenants) {
                 $db = $tenants->tenancy_db_name;
                 $key = 'database.connections.tenant.database';

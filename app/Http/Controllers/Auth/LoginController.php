@@ -136,7 +136,7 @@ class LoginController extends Controller
 
         if (! App::runningUnitTests()) {
             $company = $user->person->company();
-            \Log::debug('Login----------------------'.$company);
+//            \Log::debug('Login----------------------'.$company);
             $tenant = false;
             if ($company) {
                 $tenant = true;
@@ -174,9 +174,9 @@ class LoginController extends Controller
                 $user_email = $user->email;
 
                 $db = $company_id;
-                \Log::debug('CreateDBs----------------------'.$company);
+//                \Log::debug('CreateDBs----------------------'.$company);
                 CreateDBs::dispatch($company);
-                \Log::debug('Migration----------------------'.$company);
+//                \Log::debug('Migration----------------------'.$company);
                 Migrations::dispatch($company, $user->name, $user->email, $user->password);
 
             }else{
@@ -185,7 +185,7 @@ class LoginController extends Controller
                 if($tenants && !$user->isAdmin()){
 //                    $c = DB::connection('tenantdb',$tenants->tenancy_db_name)->table('users')->count();
                     $company=\App\Models\Company::find($main_company->id);
-                    \Log::debug('Database----------------------'.$main_company->id);
+//                    \Log::debug('Database----------------------'.$main_company->id);
 
                     tenancy()->initialize($tenants);
                     $tenants->run(function () use ($company, $user){
@@ -195,7 +195,7 @@ class LoginController extends Controller
                         $c= User::count();
                         if($c==0){
 
-                            \Log::debug('Run Migration----------------------');
+//                            \Log::debug('Run Migration----------------------');
                            return Migrations::dispatch($company, $user->name, $user->email, $user->password);
 
                         }

@@ -79,8 +79,8 @@ class Migrations implements ShouldQueue
 
             ]);
         });
-        \Log::debug($person);
-        \Log::debug('person created');
+//        \Log::debug($person);
+//        \Log::debug('person created');
         $user_group = 1;
         $user_group = $tenants->run(function () {
             return UserGroup::create([
@@ -93,10 +93,10 @@ class Migrations implements ShouldQueue
 //        $role = 1;
         $role = $tenants->run(function () {
             return Role::create([
-                'name'=>'Admin',
+                'name'=>'free',
                 'menu_id '=>null,
-                'display_name' => 'Administrator',
-                'description' => 'Administrator Role. Full Featured.',
+                'display_name' => 'Free',
+                'description' => 'Free Role.',
             ]);
         });
         $pa = $this->password;
