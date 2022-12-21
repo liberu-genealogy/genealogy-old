@@ -84,9 +84,9 @@ class RegisterController extends Controller
                 'status' => 1,
             ]);
             //for creating default avatar
-            $avtar = Avatar::create([
-                'user_id' => $user->id
-            ]);
+            //$avtar = Avatar::create([
+            //    'user_id' => $user->id
+            //]);
 
 //          $company->attachPerson($person->id, 'Owner');
             // DB::commit();
