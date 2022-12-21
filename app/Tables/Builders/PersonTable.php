@@ -38,14 +38,14 @@ class PersonTable implements Table
             $join->on('people.id', '=', 'users.person_id')
                 ->where('users.id', $userId);
         })
-                ->Join(
+                ->leftJoin(
                     'company_person',
                     function ($join) use ($userId) { $join
                         ->on('people.id', '=', 'company_person.person_id')
                         ->where('company_person.company_id', $userId)
                         ->where('company_person.is_main', true);
                     }
-                )->Join('companies',function ($join) use ($userId) {
+                )->leftJoin('companies',function ($join) use ($userId) {
                     $join->on('company_person.company_id','=','companies.id')
                         ->where('companies.id', $userId);
                 });
