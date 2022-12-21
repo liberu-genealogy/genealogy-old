@@ -10,7 +10,8 @@ class CreateAvatarsTable extends Migration
     {
         Schema::create('avatars', function (Blueprint $table) {
             $table->increments('id');
-
+            $table->string('url')->nullable();
+            $table->integer('file_id')->nullable();
             $table->integer('user_id')->unsigned()->unique()->index();
             $table->foreign('user_id')->references('id')->on('users')
                 ->onUpdate('cascade')->onDelete('cascade');

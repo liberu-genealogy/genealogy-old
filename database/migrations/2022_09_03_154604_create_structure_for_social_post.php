@@ -15,7 +15,7 @@ return new class extends Migration
     ];
 
     protected array $menu = [
-        'name' => 'Families', 'icon' => 'users', 'route' => 'social.posts.index', 'order_index' => 1003, 'has_children' => false,
+        'name' => 'Posts', 'icon' => 'users', 'route' => 'social.posts.index', 'order_index' => 1003, 'has_children' => false,
     ];
 
     protected ?string $parentMenu = 'Social';

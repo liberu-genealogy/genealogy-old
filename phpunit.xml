@@ -31,7 +31,6 @@
       <directory suffix="Test.php">./vendor/laravel-enso/rememberable/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-enso/roles/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-enso/searchable/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/select/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-enso/tables/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-enso/track-who/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-enso/tutorials/tests</directory>
@@ -39,9 +38,7 @@
       <directory suffix="Test.php">./vendor/laravel-enso/user-groups/tests</directory>
     </testsuite>
     <testsuite name="sync">
-      <directory suffix="Test.php">./vendor/laravel-enso/avatars/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-enso/cli/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/data-import/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-enso/documents/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-enso/files/tests</directory>
     </testsuite>

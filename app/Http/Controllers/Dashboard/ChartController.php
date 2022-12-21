@@ -15,7 +15,7 @@ use LaravelEnso\Charts\Factories\Line;
 use LaravelEnso\Charts\Factories\Pie;
 use LaravelEnso\Charts\Factories\Polar;
 use LaravelEnso\Charts\Factories\Radar;
-use LaravelEnso\Multitenancy\Enums\Connections;
+//use LaravelEnso\Multitenancy\Enums\Connections;
 use LaravelEnso\Multitenancy\Services\Tenant;
 
 class ChartController extends Controller
@@ -117,10 +117,21 @@ class ChartController extends Controller
         $company_id = $request->get('company_id');
         $tree_id = $request->get('tree_id');
         if (! empty($company_id)) {
-            $db = Connections::Tenant.$company_id.'_'.$tree_id;
-            $this->setConnection(Connections::Tenant, $db);
+            $tenants = \App\Models\Tenant::find($tree_id);
+            if($tenants) {
+                $db = $tenants->tenancy_db_name;
+                $key = 'database.connections.tenant.database';
+                config([$key => $db]);
+                \DB::reconnect('tenantdb');
+//                \Session::put('conn', $conn);php
+                \Session::put('db', $db);
+//            $db = Connections::Tenant.$company_id.'_'.$tree_id;
+//                $this->setConnection($key, $db);
+            }
         } else {
-            $this->setConnection('mysql');
+//            $db = 'enso';
+//            $key = 'database.default';
+//            $this->setConnection('mysql');
         }
         $changeConn = $this->getConnection();
 
@@ -167,5 +178,29 @@ class ChartController extends Controller
         }
 
         return ['days' => $days];
+    }
+    public function changeCompany(Request $request)
+    {
+        $prevConn = $this->getConnection();
+        $company_id = $request->get('company_id');
+        $tree_id = $request->get('tree_id');
+        if (! empty($company_id)) {
+            $db = Connections::Tenant.$company_id.'_'.$tree_id;
+            $this->setConnection(Connections::Tenant, $db);
+        } else {
+            $this->setConnection('mysql');
+        }
+        $changeConn = $this->getConnection();
+
+        $peoplesattached = \DB::connection($changeConn)->table('people')->get()->count();
+        $familiesjoined = \DB::connection($changeConn)->table('families')->get()->count();
+
+        return json_encode([
+            'db' => config('database.connections.tenant.database'),
+            'connection' => $changeConn,
+            'changedb' => $prevConn === $changeConn ? true : false,
+            'familiesjoined' => $familiesjoined,
+            'peoplesattached' => $peoplesattached,
+        ]);
     }
 }

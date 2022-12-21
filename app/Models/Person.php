@@ -6,8 +6,9 @@ use App\Models\Family;
 use App\Models\PersonEvent;
 use App\Models\Place;
 use App\Models\User;
-use App\Traits\ConnectionTrait;
+//use App\Traits\ConnectionTrait;
 use App\Traits\TenantConnectionResolver;
+use LaravelEnso\Tables\Traits\TableCache;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\Auth;
 use LaravelEnso\People\Models\Person as CorePerson;
@@ -156,6 +157,13 @@ class Person extends CorePerson
 
     public function setUpdatedBy()
     {
+        if (! is_dir(storage_path('app/public'))) {
+            // dir doesn't exist, make it
+            \File::makeDirectory(storage_path().'/'.'app/public', 0777, true);
+
+//            mkdir(storage_path('app/public/'), 0700);
+        }
+
         file_put_contents(storage_path('app/public/file.txt'), $this->connection);
         if ($this->connection !== 'tenant') {
             if (Auth::check()) {
