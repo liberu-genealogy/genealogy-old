@@ -24,10 +24,10 @@ class User extends CoreUser
     {
         return $this->hasMany(UserSocial::class, 'user_id', 'id');
     }
-//    public function avatar()
-//    {
-//       return $this->hasOne(Avatar::class, 'user_id', 'id');
-//    }
+    public function avatar()
+    {
+       return $this->hasOne(Avatar::class, 'user_id', 'id');
+    }
 
     public function hasSocialLinked($service)
     {
@@ -35,10 +35,10 @@ class User extends CoreUser
     }
 
 
-    public function avatar()
-    {
-        return $this->hasOne(\Avatar::class);
-    }
+//    public function avatar()
+//    {
+//        return $this->hasOne(\Avatar::class);
+//    }
 
 //    private function getIdAttribute($value='')
 //    {
