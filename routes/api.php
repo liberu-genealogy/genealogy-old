@@ -385,7 +385,7 @@ use App\Http\Controllers\Users\Options as UserOptions;
 use App\Http\Controllers\Users\Store as UserStore;
 use App\Http\Controllers\Users\TableData as UserTableData;
 use App\Http\Controllers\Users\Update as UserUpdate;
-use App\Http\Controllers\Wikitree\WikitreeController;
+use App\Http\Controllers\WikiTree\WikitreeController;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
 use LaravelEnso\Addresses\Http\Controllers\Create as AddressCreate;
@@ -1239,7 +1239,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 
 Route::namespace('')
     ->middleware(['api', 'auth', 'core', 'multitenant'])
-    ->prefix('administration/people')
+    ->prefix('api/administration/people')
     ->as('administration.people.')
     ->group(function () {
         Route::get('create', PeopleCreate::class)->name('create');
@@ -1257,7 +1257,7 @@ Route::namespace('')
 
 Route::namespace('')
     ->middleware(['api', 'auth', 'core', 'multitenant'])
-    ->prefix('administration/companies')
+    ->prefix('api/administration/companies')
     ->as('administration.companies.')
     ->group(function () {
         Route::get('create', CompanyCreate::class)->name('create');
@@ -1456,7 +1456,6 @@ Route::middleware(['auth', 'api'])
         Route::post('gedcom-export', GedcomExport::class);
         Route::get('trees/options', [TreesManage::class, 'getOptions']);
     });
-
 
 //Route::get('test/{cid}', function($cid){
 //    session('current_company_id', $cid);

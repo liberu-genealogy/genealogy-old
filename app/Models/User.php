@@ -26,13 +26,20 @@ class User extends CoreUser
     }
     public function avatar()
     {
-        return $this->hasOne(Avatar::class, 'user_id', 'id');
+       return $this->hasOne(Avatar::class, 'user_id', 'id');
     }
 
     public function hasSocialLinked($service)
     {
         return (bool) $this->social->where('service', $service)->count();
     }
+
+
+//    public function avatar()
+//    {
+//        return $this->hasOne(\Avatar::class);
+//    }
+
 //    private function getIdAttribute($value='')
 //    {
 //       $this->id=1;

@@ -15,11 +15,7 @@ return [
     |
     */
 
-    'paths' => [
-        'api/*',
-        'broadcasting/*',
-        'sanctum/csrf-cookie',
-    ],
+    'paths' => ['*'],
 
     'allowed_methods' => ['*'],
 
@@ -31,8 +27,7 @@ return [
         'http://localhost:8000',
         'https://familytree365.com',
         'https://api.familytree365.com',
-        'https://www.familytree365.com',
-    ],
+        'https://www.familytree365.com', ],
 
     'allowed_origins_patterns' => [],
 

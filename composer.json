@@ -4,9 +4,9 @@
     "license": "MIT",
     "require": {
         "php": ">=8.1.0",
-        "doctrine/dbal": "^3.1",
-        "cgdprojects/laravel-gedcom": "^3.1",
+        "cgdprojects/laravel-gedcom": "^3.4",
         "cgdprojects/laravel-gelato": "^1.0",
+        "doctrine/dbal": "^3.1",
         "familytree365/recordsapi": "dev-master",
         "flowgistics/laravel-xml": "^1.1",
         "fruitcake/laravel-cors": "^3.0",

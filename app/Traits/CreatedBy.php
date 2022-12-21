@@ -28,7 +28,7 @@ trait CreatedBy
 //                $this->created_by = Auth::id();
 //            }
 //        }else{
-            $this->created_by = null;
+            $this->created_by = 1;
 //        }
 
     }

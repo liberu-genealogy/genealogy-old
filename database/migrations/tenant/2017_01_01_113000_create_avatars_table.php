@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Schema;
 class CreateAvatarsTable extends Migration
 {
     public function up()
-
     {
         Schema::create('avatars', function (Blueprint $table) {
             $table->increments('id');
