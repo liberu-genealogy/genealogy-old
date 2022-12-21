@@ -154,7 +154,7 @@ class Manager
 
         return Storage::build([
             'driver' => 'local',
-            'root' => storage_path("tenants/{$this->partition}"),
+            'root' => storage_path("tenantconnects/{$this->partition}"),
         ]);
     }
 

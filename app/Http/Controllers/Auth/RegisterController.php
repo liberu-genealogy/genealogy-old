@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Jobs\Tenant\CreateDBs;
 use App\Jobs\Tenant\Migrations;
+use App\Models\Avatar;
 use App\Models\Company;
 use App\Models\Person;
 use App\Models\User;
@@ -81,6 +82,10 @@ class RegisterController extends Controller
                 // 'is_active' => 1,
                 'is_tenant' => 1,
                 'status' => 1,
+            ]);
+            //for creating default avatar
+            $avtar = Avatar::create([
+                'user_id' => $user->id
             ]);
 
 //          $company->attachPerson($person->id, 'Owner');
