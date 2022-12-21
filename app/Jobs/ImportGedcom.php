@@ -37,7 +37,7 @@ class ImportGedcom implements ShouldQueue
     public function handle(): int
     {
         throw_unless(File::isFile($this->filePath), \Exception::class, "{$this->filePath} does not exist.");
-        Log::debug('Import Gedcom------'.$this->filePath);
+
         $tenant = Manager::fromModel($this->user->company(), $this->user)->connect();
         if ($tenant->databaseExists()) {
             $tenant->dropDatabase();
@@ -53,9 +53,7 @@ class ImportGedcom implements ShouldQueue
             'slug'    => $slug,
         ]);
         $parser = new GedcomParser();
-        Log::error('PATH------'.$this->filePath);
-        Log::error('user------'.$tenant->connectionName());
-        Log::error('slug------'.$slug);
+  
         $parser->parse($tenant->connectionName(), $this->filePath, $slug, true);
         // with(new GedcomParser())->parse($tenant->connectionName(), $this->filePath, $slug, true);
 

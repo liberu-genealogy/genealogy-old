@@ -10,8 +10,8 @@ trait TenantConnectionResolver
     public function getConnectionName()
     {
         $databaseName = \DB::connection('tenantdb')->getDatabaseName();
-        \Log::debug('DB-'.$databaseName);
-        \Log::debug($this->connection.'-connected');
+//        \Log::debug('DB-'.$databaseName);
+//        \Log::debug($this->connection.'-connected');
         if (Auth::check()) {
             $user = \Auth::user();
             $role_id = $user->role_id;
