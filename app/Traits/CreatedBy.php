@@ -28,7 +28,7 @@ trait CreatedBy
 //                $this->created_by = Auth::id();
 //            }
 //        }else{
-            $this->created_by = 1;
+            $this->created_by = NULL;
 //        }
 
     }
@@ -51,7 +51,7 @@ trait CreatedBy
 //                $this->updated_by = Auth::id();
 //            }
 //        }else{
-            $this->updated_by = null;
+            $this->updated_by = NULL;
 //        }
 
     }
