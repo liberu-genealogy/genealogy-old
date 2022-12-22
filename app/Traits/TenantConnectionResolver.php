@@ -4,6 +4,7 @@ namespace App\Traits;
 
 use Illuminate\Support\Facades\Auth;
 use LaravelEnso\Api\Models\Log;
+use Illuminate\Support\Facades\App;
 
 trait TenantConnectionResolver
 {
