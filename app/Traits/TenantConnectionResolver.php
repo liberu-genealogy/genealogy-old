@@ -9,7 +9,7 @@ trait TenantConnectionResolver
 {
     public function getConnectionName()
     {
-
+        if (! App::runningUnitTests()) {
         if (Auth::check()) {
             $user = \Auth::user();
             $role_id = $user->role_id;
@@ -21,6 +21,7 @@ trait TenantConnectionResolver
                 }
             }
         }
+}
 
 
         return $this->connection;
