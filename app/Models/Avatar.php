@@ -6,7 +6,6 @@ use App\Traits\TenantConnectionResolver;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
 class Avatar extends \LaravelEnso\Avatars\Models\Avatar
 {
     use HasFactory;

@@ -16,8 +16,7 @@ class Index extends Controller
         $company = $user->company();
 //        $companies[] = $company;
 
-        $companies = \LaravelEnso\Companies\Models\Company::where('created_by', $user->id)->orWhere('id', '=',$company->id)->get();
-
+        $companies = \LaravelEnso\Companies\Models\Company::where('created_by', $user->id)->orWhere('id', '=', $company->id)->get();
 
 //        $new_collection = $companies->merge($companies);
 //        \Log::debug(array_push($companies,$companies));

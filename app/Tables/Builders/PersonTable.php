@@ -34,23 +34,23 @@ class PersonTable implements Table
             people.titl AS title, people.givn, people.surn,  people.appellative, people.email, people.phone,
             people.birthday, people.deathday, CASE WHEN users.id is null THEN 0 ELSE 1 END as "user",
             companies.name as company, people.created_at
-        ')->leftJoin('users',function ($join) use ($userId) {
-            $join->on('people.id', '=', 'users.person_id')
+        ')->leftJoin('users', function ($join) use ($userId) {
+                $join->on('people.id', '=', 'users.person_id')
                 ->where('users.id', $userId);
-        })
+            })
                 ->leftJoin(
                     'company_person',
-                    function ($join) use ($userId) { $join
+                    function ($join) use ($userId) {
+                        $join
                         ->on('people.id', '=', 'company_person.person_id')
                         ->where('company_person.company_id', $userId)
                         ->where('company_person.is_main', true);
                     }
-                )->leftJoin('companies',function ($join) use ($userId) {
-                    $join->on('company_person.company_id','=','companies.id')
+                )->leftJoin('companies', function ($join) use ($userId) {
+                    $join->on('company_person.company_id', '=', 'companies.id')
                         ->where('companies.id', $userId);
                 });
         }
-
     }
 
     public function templatePath(): string

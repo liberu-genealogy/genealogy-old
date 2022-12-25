@@ -118,7 +118,7 @@ class ChartController extends Controller
 //        $tree_id = $request->get('tree_id');
         if (! empty($company_id)) {
             $tenants = \App\Models\Tenant::find($company_id);
-            if($tenants) {
+            if ($tenants) {
                 $db = $tenants->tenancy_db_name;
                 $key = 'database.connections.tenant.database';
                 config([$key => $db]);
@@ -179,6 +179,7 @@ class ChartController extends Controller
 
         return ['days' => $days];
     }
+
     public function changeCompany(Request $request)
     {
         $prevConn = $this->getConnection();

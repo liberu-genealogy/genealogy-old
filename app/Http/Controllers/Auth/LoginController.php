@@ -147,7 +147,7 @@ class LoginController extends Controller
                 $c_id = $main_company->id;
             }
             $tenants = Tenant::find($main_company->id);
-            if ($main_company == null&& ! $user->isAdmin()) {
+            if ($main_company == null && ! $user->isAdmin()) {
 //            if (($main_company == null||$tenants=='') && ! $user->isAdmin()) {
 //          if ($main_company == null) {
                 $company_count = Company::count();
@@ -178,33 +178,28 @@ class LoginController extends Controller
                 CreateDBs::dispatch($company);
 //                \Log::debug('Migration----------------------'.$company);
                 Migrations::dispatch($company, $user->name, $user->email, $user->password);
-
-            }else{
-
-
-                if($tenants && !$user->isAdmin()){
+            } else {
+                if ($tenants && ! $user->isAdmin()) {
 //                    $c = DB::connection('tenantdb',$tenants->tenancy_db_name)->table('users')->count();
-                    $company=\App\Models\Company::find($main_company->id);
+                    $company = \App\Models\Company::find($main_company->id);
 //                    \Log::debug('Database----------------------'.$main_company->id);
 
                     tenancy()->initialize($tenants);
-                    $tenants->run(function () use ($company, $user){
-
+                    $tenants->run(function () use ($company, $user) {
 
 //                        $company->save();
-                        $c= User::count();
-                        if($c==0){
+                        $c = User::count();
+                        if ($c == 0) {
 
 //                            \Log::debug('Run Migration----------------------');
-                           return Migrations::dispatch($company, $user->name, $user->email, $user->password);
-
+                            return Migrations::dispatch($company, $user->name, $user->email, $user->password);
                         }
 //                        \Log::debug($company->id.-'users----------------------'.$c);
                     });
                     tenancy()->end();
+
                     return $user;
                 }
-
             }
         }
 

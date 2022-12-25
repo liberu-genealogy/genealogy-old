@@ -16,7 +16,7 @@ class Create extends Controller
             return ['form' => $form->create()];
         }
         if (in_array($role, [4, 5, 6]) && $companies <= 1) {
-            return ['form' => $form->create(),'c'=>$companies];
+            return ['form' => $form->create(), 'c'=>$companies];
         }
 //        && $companies < 1
 
