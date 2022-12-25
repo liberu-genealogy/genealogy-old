@@ -14,7 +14,7 @@ class CompanyTable implements Table
     {
         $role = \Auth::user()->role_id;
         $user_id = \Auth::user()->id;
-        $user= \Auth::user();
+        $user = \Auth::user();
         if (in_array($role, [1, 2])) {
             return Model::selectRaw('
                 companies.id, companies.name,  companies.fiscal_code,  people.name as mandatary,

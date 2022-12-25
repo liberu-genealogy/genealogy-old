@@ -60,9 +60,9 @@ class RegisterController extends Controller
             }
 
             // get role_id
-            if($request->role_id==''){
+            if ($request->role_id == '') {
                 $role = Role::where('name', 'free')->first();
-            }else{
+            } else {
                 $role = Role::find($request->role_id);
             }
 
@@ -137,8 +137,11 @@ class RegisterController extends Controller
             throw $e;
         }
     }
-    protected function getSubscriptionPlan(Request $request){
-        $role = Role::select('id','display_name','name')->whereNotIn('name', ['admin','supervisor','moderator'])->get();
+
+    protected function getSubscriptionPlan(Request $request)
+    {
+        $role = Role::select('id', 'display_name', 'name')->whereNotIn('name', ['admin', 'supervisor', 'moderator'])->get();
+
         return $role;
     }
 }

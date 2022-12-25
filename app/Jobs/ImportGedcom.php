@@ -53,7 +53,7 @@ class ImportGedcom implements ShouldQueue
             'slug'    => $slug,
         ]);
         $parser = new GedcomParser();
-  
+
         $parser->parse($tenant->connectionName(), $this->filePath, $slug, true);
         // with(new GedcomParser())->parse($tenant->connectionName(), $this->filePath, $slug, true);
 

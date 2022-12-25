@@ -127,7 +127,6 @@ class Manager
 
     public function migrateDatabase(): self
     {
-
         Artisan::call('migrate:fresh', [
             '--realpath' => database_path('migrations/tenant'),
             '--database' => $this->connectionName,

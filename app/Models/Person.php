@@ -8,10 +8,10 @@ use App\Models\Place;
 use App\Models\User;
 //use App\Traits\ConnectionTrait;
 use App\Traits\TenantConnectionResolver;
-use LaravelEnso\Tables\Traits\TableCache;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\Auth;
 use LaravelEnso\People\Models\Person as CorePerson;
+use LaravelEnso\Tables\Traits\TableCache;
 use function Symfony\Component\Translation\t;
 
 class Person extends CorePerson
@@ -56,6 +56,7 @@ class Person extends CorePerson
         'titl', 'name', 'appellative', 'email', 'phone', 'birthday',
         'deathday', 'burial_day', 'bank', 'bank_account', 'chan', 'rin', 'resn', 'rfn', 'afn',
     ];
+
     public function events()
     {
         return $this->hasMany(PersonEvent::class);

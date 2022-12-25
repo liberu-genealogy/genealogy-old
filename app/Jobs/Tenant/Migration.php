@@ -2,12 +2,9 @@
 
 namespace App\Jobs\Tenant;
 
-
 use App\Models\Tenant;
-use LaravelEnso\Users\Models\User;
 use App\Service\Tenant as TT;
 use DB;
-use LaravelEnso\People\Models\Person;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -17,8 +14,10 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Hash;
 use LaravelEnso\Companies\Models\Company;
 use LaravelEnso\Multitenancy\Enums\Connections;
+use LaravelEnso\People\Models\Person;
 use LaravelEnso\Roles\Models\Role;
 use LaravelEnso\UserGroups\Models\UserGroup;
+use LaravelEnso\Users\Models\User;
 use Str;
 
 class Migration implements ShouldQueue
@@ -65,9 +64,8 @@ class Migration implements ShouldQueue
             ]);
         });
 
-
         $user_group = 1;
-        $user_group = $tenants->run(function () use ($em, $na) {
+        $user_group = $tenants->run(function () {
             return UserGroup::create([
                 'name'=>'Administrators',
                 'description' => 'Administrator users group',
@@ -76,7 +74,7 @@ class Migration implements ShouldQueue
         });
         // get role_id
 //        $role = 1;
-        $role = $tenants->run(function () use ($em, $na) {
+        $role = $tenants->run(function () {
             return Role::create([
                 'name'=>'free',
                 'menu_id '=>null,
@@ -86,7 +84,7 @@ class Migration implements ShouldQueue
         });
         $pa = $this->password;
         $tenants->run(function () use ($em, $pa, $person, $user_group, $role) {
-           return User::create([
+            return User::create([
                 'email' => $em,
                 'password' => Hash::make($pa),
                 'person_id' => $person->id,
