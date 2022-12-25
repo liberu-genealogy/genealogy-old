@@ -483,6 +483,7 @@ Route::namespace('Auth')
         });
 
         Route::post('register', [RegisterController::class, 'create']);
+        Route::get('get-subscription-plan', [RegisterController::class, 'getSubscriptionPlan']);
         Route::post('verify', [RegisterController::class, 'verify_user']);
     });
 
