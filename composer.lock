@@ -2315,16 +2315,16 @@
         },
         {
             "name": "laminas/laminas-diactoros",
-            "version": "2.23.0",
+            "version": "2.24.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-diactoros.git",
-                "reference": "a738cecb420e3bcff34c33177f1ce9f68902695c"
+                "reference": "6028af6c3b5ced4d063a680d2483cce67578b902"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-diactoros/zipball/a738cecb420e3bcff34c33177f1ce9f68902695c",
-                "reference": "a738cecb420e3bcff34c33177f1ce9f68902695c",
+                "url": "https://api.github.com/repos/laminas/laminas-diactoros/zipball/6028af6c3b5ced4d063a680d2483cce67578b902",
+                "reference": "6028af6c3b5ced4d063a680d2483cce67578b902",
                 "shasum": ""
             },
             "require": {
@@ -2347,9 +2347,9 @@
                 "http-interop/http-factory-tests": "^0.9.0",
                 "laminas/laminas-coding-standard": "^2.4.0",
                 "php-http/psr7-integration-tests": "^1.2",
-                "phpunit/phpunit": "^9.5.26",
-                "psalm/plugin-phpunit": "^0.18.0",
-                "vimeo/psalm": "^5.0.0"
+                "phpunit/phpunit": "^9.5.27",
+                "psalm/plugin-phpunit": "^0.18.4",
+                "vimeo/psalm": "^5.4"
             },
             "type": "library",
             "extra": {
@@ -2408,7 +2408,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2022-12-14T22:31:50+00:00"
+            "time": "2022-12-20T12:22:40+00:00"
         },
         {
             "name": "laravel-enso/action-logger",
@@ -5733,16 +5733,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v9.45.0",
+            "version": "v9.45.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "f2c51fdfcb0c50c19cdc49c2e82690ad1a21eafe"
+                "reference": "faeb20d3fc61b69790068161ab42bcf2d5faccbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/f2c51fdfcb0c50c19cdc49c2e82690ad1a21eafe",
-                "reference": "f2c51fdfcb0c50c19cdc49c2e82690ad1a21eafe",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/faeb20d3fc61b69790068161ab42bcf2d5faccbc",
+                "reference": "faeb20d3fc61b69790068161ab42bcf2d5faccbc",
                 "shasum": ""
             },
             "require": {
@@ -5915,7 +5915,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-12-20T14:16:06+00:00"
+            "time": "2022-12-21T19:37:46+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -5996,16 +5996,16 @@
         },
         {
             "name": "laravel/octane",
-            "version": "v1.3.9",
+            "version": "v1.3.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/octane.git",
-                "reference": "3e8961616b33401c7e80d62be3b38affe348c001"
+                "reference": "35243aaff9278be37503e1475a303312616c9df5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/octane/zipball/3e8961616b33401c7e80d62be3b38affe348c001",
-                "reference": "3e8961616b33401c7e80d62be3b38affe348c001",
+                "url": "https://api.github.com/repos/laravel/octane/zipball/35243aaff9278be37503e1475a303312616c9df5",
+                "reference": "35243aaff9278be37503e1475a303312616c9df5",
                 "shasum": ""
             },
             "require": {
@@ -6068,7 +6068,7 @@
                 "issues": "https://github.com/laravel/octane/issues",
                 "source": "https://github.com/laravel/octane"
             },
-            "time": "2022-11-19T18:40:21+00:00"
+            "time": "2022-12-23T10:37:10+00:00"
         },
         {
             "name": "laravel/sanctum",
