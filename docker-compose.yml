@@ -78,6 +78,27 @@ services:
      - ./:/var/www
     networks:
       - api
+      
+laravel-echo-server:
+    image: oanhnn/laravel-echo-server:latest
+    # environment:
+    #   LARAVEL_ECHO_SERVER_AUTH_HOST: http://example.com
+    #   LARAVEL_ECHO_SERVER_DEBUG:     'true'
+    #   LARAVEL_ECHO_SERVER_DATABASE:  sqlite
+    ports:
+      - 6001:6001
+    restart: unless-stopped
+    volumes:
+      - sqlite-vol:/database
+      - .docker/prod/echo/laravel-echo-server.json:/app/laravel-echo-server.json:ro
+    healthcheck:
+      # test: node /usr/local/src/healthcheck.js
+      test: /usr/local/bin/health-check
+      start_period: 5s
+      interval: 3s
+      timeout: 3s
+      retries: 10
+
 
 #Docker Networks
 networks:
