@@ -98,6 +98,8 @@ laravel-echo-server:
       interval: 3s
       timeout: 3s
       retries: 10
+    networks:
+      - api
 
 
 #Docker Networks
