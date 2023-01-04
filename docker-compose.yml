@@ -18,7 +18,7 @@ services:
       - ./:/var/www
       - ./.docker/prod/app/php.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
-      - app-network
+      - api
 
   #Nginx Service
   webserver:
@@ -33,7 +33,7 @@ services:
       - ./:/var/www
       - ./.docker/prod/webserver/nginx:/etc/nginx/conf.d/
     networks:
-      - app-network
+      - api
     #command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
   #MySQL Service
   db:
@@ -52,7 +52,7 @@ services:
       - ./.docker/prod/db/dbdata:/var/lib/mysql/
       - ./.docker/prod/db/mysql/my.cnf:/etc/mysql/my.cnf
     networks:
-      - app-network
+      - api
     command:
       - --sort_buffer_size=1073741824
   myadmin:
@@ -67,11 +67,21 @@ services:
     depends_on:
       - db
     networks:
-      - app-network
+      - api
+     
+ supervisor:
+    build:
+      context: .
+      dockerfile: ./.docker/prod/supervisor/Dockerfile
+    container_name: supervisor
+    volumes:
+     - ./:/var/www
+    networks:
+      - api
 
 #Docker Networks
 networks:
-  app-network:
+  api:
     driver: bridge
 #Volumes
 volumes:
