@@ -67,8 +67,7 @@ services:
     depends_on:
       - db
     networks:
-      - api
-     
+      - api 
  supervisor:
     build:
       context: .
@@ -78,7 +77,6 @@ services:
      - ./:/var/www
     networks:
       - api
-      
 laravel-echo-server:
     image: oanhnn/laravel-echo-server:latest
     # environment:
