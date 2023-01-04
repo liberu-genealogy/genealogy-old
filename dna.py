@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3.8
+#!/usr/bin/python3.10
 import sys
 import logging, sys
 logger = logging.getLogger()
