@@ -131,11 +131,12 @@ class RegisterController extends Controller
             // });
             CreateDBs::dispatch($company);
             Migrations::dispatch($company, $name, $request['email'], $request['password']);
-            if ($request->selected_plan==''||$request->selected_plan==$user->role_id){
-                $user->plan_id='';
-            }else{
-                $user->plan_id=$request->selected_plan;
+            if ($request->selected_plan == '' || $request->selected_plan == $user->role_id) {
+                $user->plan_id = '';
+            } else {
+                $user->plan_id = $request->selected_plan;
             }
+
             return $user;
         } catch (\Exception $e) {
             // DB::rollBack();
@@ -154,7 +155,6 @@ class RegisterController extends Controller
 
         $result = [];
         foreach ($plans as $k=>$plan) {
-
             $row ['id'] = $plan->id;
             $row['amount'] = $plan->amount;
             $row['nickname'] = $plan->nickname;
@@ -177,10 +177,10 @@ class RegisterController extends Controller
                 case 'OTM':
                     $row['title'] = 'One tree monthly.';
                     break;
-                default:$row['title']='';
+                default:$row['title'] = '';
             }
             $row['subscribed'] = false;
-            if($k==0){
+            if ($k == 0) {
                 $row1['id'] = $role->id;
                 $row1['amount'] = 0;
                 $row1['nickname'] = $role->name;
@@ -190,7 +190,7 @@ class RegisterController extends Controller
             }
             $result[] = $row;
         }
+
         return $result;
     }
 }
-
