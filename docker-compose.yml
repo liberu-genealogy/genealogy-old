@@ -90,7 +90,7 @@ laravel-echo-server:
     restart: unless-stopped
     volumes:
       - sqlite-vol:/database
-      - .docker/prod/echo/laravel-echo-server.json:/app/laravel-echo-server.json:ro
+      - ./laravel-echo-server.json:/app/laravel-echo-server.json:ro
     healthcheck:
       # test: node /usr/local/src/healthcheck.js
       test: /usr/local/bin/health-check
