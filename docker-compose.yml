@@ -67,7 +67,7 @@ services:
     depends_on:
       - db
     networks:
-      - api 
+      - api
   supervisor:
     build:
       context: .
@@ -76,8 +76,8 @@ services:
     volumes:
      - ./:/var/www
     networks:
-      - api
- laravel-echo-server:
+     - api
+  laravel-echo-server:
     image: oanhnn/laravel-echo-server:latest
     # environment:
     #   LARAVEL_ECHO_SERVER_AUTH_HOST: http://example.com
@@ -87,7 +87,7 @@ services:
       - 6001:6001
     restart: unless-stopped
     volumes:
-      - sqlite-vol:/database
+      - ./sqlite:/database
       - ./laravel-echo-server.json:/app/laravel-echo-server.json:ro
     healthcheck:
       # test: node /usr/local/src/healthcheck.js
@@ -98,8 +98,6 @@ services:
       retries: 10
     networks:
       - api
-
-
 #Docker Networks
 networks:
   api:
