@@ -75,7 +75,7 @@ services:
     container_name: supervisor
     volumes:
      - ./:/var/www
-     - ./.docker/prod/supervisor/supervisord.conf /usr/local/etc/php/conf.d/local.ini
+     - ./.docker/prod/supervisor/supervisord.conf:/etc/supervisor/supervisord.conf
     networks:
      - api
   laravel-echo-server:
