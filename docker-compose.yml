@@ -88,7 +88,6 @@ services:
       - 6001:6001
     restart: unless-stopped
     volumes:
-      - ./sqlite:/database
       - ./laravel-echo-server.json:/app/laravel-echo-server.json:ro
     healthcheck:
       # test: node /usr/local/src/healthcheck.js
@@ -97,6 +96,12 @@ services:
       interval: 3s
       timeout: 3s
       retries: 10
+    networks:
+      - api
+  redis:
+    image: 'bitnami/redis:latest'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
     networks:
       - api
 #Docker Networks
