@@ -19,8 +19,6 @@ services:
       - ./.docker/prod/app/php.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
       - api
-      - gateway
-
   #Nginx Service
   webserver:
     image: nginx:alpine
@@ -110,9 +108,6 @@ services:
 networks:
   api:
     driver: bridge
-  gateway:
-    name: gateway
-    external: true
 #Volumes
 volumes:
   dbdata:
