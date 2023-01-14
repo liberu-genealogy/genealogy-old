@@ -19,6 +19,7 @@ services:
       - ./.docker/prod/app/php.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
       - api
+      - gateway
 
   #Nginx Service
   webserver:
@@ -46,6 +47,7 @@ services:
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
@@ -108,6 +110,9 @@ services:
 networks:
   api:
     driver: bridge
+  gateway:
+    name: gateway
+    external: true
 #Volumes
 volumes:
   dbdata:
