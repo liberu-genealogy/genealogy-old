@@ -21,7 +21,7 @@ class DnaMatchingTable implements Table
         ');
         } else {
             return DnaMatching::selectRaw(' dna_matchings.id, dna_matchings.file1, 
-            dna_matchings.file2, dna_matchings.image, dna_matchings.created_at
+            dna_matchings.file2, dna_matchings.image, dna_matchings.created_at, dna_matchings.largest_cm_segment, dna_matchings.total_shared_cm
         ')->where('dna_matchings.user_id', $userId);
         }
     }

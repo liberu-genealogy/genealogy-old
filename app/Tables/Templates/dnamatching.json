@@ -28,6 +28,18 @@
             "meta": ["searchable", "sortable"]
         },
         {
+            "label": "Total Shared cM",
+            "name": "total_shared_cm",
+            "data": "dna_matchings.total_shared_cm",
+            "meta": ["searchable", "sortable"]
+        },
+        {
+            "label": "Largest cM segment",
+            "name": "largest_cm_segment",
+            "data": "dna_matchings.largest_cm_segment",
+            "meta": ["searchable", "sortable"]
+        },
+        {
             "label": "Created At",
             "name": "created_at",
             "data": "dna_matchings.created_at",
