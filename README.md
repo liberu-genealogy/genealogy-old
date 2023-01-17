@@ -1,11 +1,11 @@
 ## Genealogy - Open Source Family Tree Software - Laravel 9 backend
- ![Latest Stable Version](https://img.shields.io/github/release/familytree365/genealogy.svg) 
+ ![Latest Stable Version](https://img.shields.io/github/release/cgdsoftware/genealogy.svg) 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/familytree365/genealogy/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/familytree365/genealogy/?branch=master)
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/familytree365/genealogy/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 [![StyleCI](https://github.styleci.io/repos/135390590/shield?branch=master)](https://github.styleci.io/repos/135390590)
 [![CodeFactor](https://www.codefactor.io/repository/github/familytree365/genealogy/badge/master)](https://www.codefactor.io/repository/github/familytree365/genealogy/overview/master)
 [![codebeat badge](https://codebeat.co/badges/911f9e33-212a-4dfa-a860-751cdbbacff7)](https://codebeat.co/projects/github-com-modulargenealogy-genealogy-master)
-[![CircleCI](https://circleci.com/gh/cgdprojects/genealogy.svg?style=svg)](https://circleci.com/gh/cgdprojects/genealogy)
+[![CircleCI](https://circleci.com/gh/cgdsoftware/genealogy.svg?style=svg)](https://circleci.com/gh/cgdsoftware/genealogy)
 
 
 ## Description
@@ -31,7 +31,7 @@ Note that most sections have short demo clips.
 
 ### Installation Steps
 
-1. Download the project with `git clone https://github.com/cgdprojects/genealogy.git`
+1. Download the project with `git clone https://github.com/cgdsoftware/genealogy.git`
 
 2. Copy .env.example to .env and edit details
 
