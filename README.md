@@ -31,7 +31,7 @@ Note that most sections have short demo clips.
 
 ### Installation Steps
 
-1. Download the project with `git clone https://github.com/cgdprojects/genealogy.git`
+1. Download the project with `git clone https://github.com/cgdsoftware/genealogy.git`
 
 2. Copy .env.example to .env and edit details
 
