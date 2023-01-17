@@ -3,12 +3,7 @@
     "routePrefix": "dnamatching",
     "crtNo": true,
     "buttons": ["excel", "show"],
-    "columns": [{
-        "label": "Id",
-        "name": "id",
-        "data": "dna_matchings.id",
-        "meta": ["searchable", "sortable"]
-    },
+    "columns": [
         {
             "label": "File 1",
             "name": "file1",
