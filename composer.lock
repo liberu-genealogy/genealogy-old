@@ -5923,16 +5923,16 @@
         },
         {
             "name": "laravel/horizon",
-            "version": "v5.12.0",
+            "version": "v5.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "7dcddbfa4ccb988dd1307d1da7f8ccb042c522b8"
+                "reference": "7cfef61b82457359a4cafbcb1840cdaf9ed5ed84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/7dcddbfa4ccb988dd1307d1da7f8ccb042c522b8",
-                "reference": "7dcddbfa4ccb988dd1307d1da7f8ccb042c522b8",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/7cfef61b82457359a4cafbcb1840cdaf9ed5ed84",
+                "reference": "7cfef61b82457359a4cafbcb1840cdaf9ed5ed84",
                 "shasum": ""
             },
             "require": {
@@ -5994,9 +5994,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/horizon/issues",
-                "source": "https://github.com/laravel/horizon/tree/v5.12.0"
+                "source": "https://github.com/laravel/horizon/tree/v5.13.0"
             },
-            "time": "2023-01-09T10:28:53+00:00"
+            "time": "2023-01-17T14:59:22+00:00"
         },
         {
             "name": "laravel/octane",
@@ -7424,16 +7424,16 @@
         },
         {
             "name": "nette/utils",
-            "version": "v3.2.8",
+            "version": "v3.2.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "02a54c4c872b99e4ec05c4aec54b5a06eb0f6368"
+                "reference": "c91bac3470c34b2ecd5400f6e6fdf0b64a836a5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/02a54c4c872b99e4ec05c4aec54b5a06eb0f6368",
-                "reference": "02a54c4c872b99e4ec05c4aec54b5a06eb0f6368",
+                "url": "https://api.github.com/repos/nette/utils/zipball/c91bac3470c34b2ecd5400f6e6fdf0b64a836a5c",
+                "reference": "c91bac3470c34b2ecd5400f6e6fdf0b64a836a5c",
                 "shasum": ""
             },
             "require": {
@@ -7443,6 +7443,7 @@
                 "nette/di": "<3.0.6"
             },
             "require-dev": {
+                "jetbrains/phpstorm-attributes": "dev-master",
                 "nette/tester": "~2.0",
                 "phpstan/phpstan": "^1.0",
                 "tracy/tracy": "^2.3"
@@ -7503,9 +7504,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/utils/issues",
-                "source": "https://github.com/nette/utils/tree/v3.2.8"
+                "source": "https://github.com/nette/utils/tree/v3.2.9"
             },
-            "time": "2022-09-12T23:36:20+00:00"
+            "time": "2023-01-18T03:26:20+00:00"
         },
         {
             "name": "nikic/php-parser",
