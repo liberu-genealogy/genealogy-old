@@ -13,7 +13,7 @@ class NoteTable implements Table
     public function query(): Builder
     {
         return Note::select(\DB::raw('
-            id as "dtRowId", name, description, is_active, date, created_at
+            id, name, description, is_active, date, created_at
         '));
     }
 
