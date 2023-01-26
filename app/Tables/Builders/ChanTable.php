@@ -12,7 +12,7 @@ class ChanTable implements Table
 
     public function query(): Builder
     {
-        return Chan::selectRaw('
+        return Chan::select(\DB::raw('
             chans.id, chans.group, chans.gid, chans.date, chans.time, chans.created_at
         ');
     }
