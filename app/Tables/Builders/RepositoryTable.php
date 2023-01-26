@@ -13,7 +13,7 @@ class RepositoryTable implements Table
     public function query(): Builder
     {
         return Repository::select(\DB::raw('
-            id as "dtRowId", name, description, is_active, date, created_at
+            id, name, description, is_active, date, created_at
         '));
     }
 

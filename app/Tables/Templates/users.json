@@ -3,7 +3,10 @@
     "crtNo": true,
     "buttons": [
         "excel",
-        "show"
+        "show",
+        "create",
+        "edit",
+        "destroy"
     ],
     "filters": [
         {
