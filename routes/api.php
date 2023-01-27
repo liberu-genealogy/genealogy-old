@@ -387,6 +387,7 @@ use App\Http\Controllers\Users\Store as UserStore;
 use App\Http\Controllers\Users\TableData as UserTableData;
 use App\Http\Controllers\Users\Update as UserUpdate;
 use App\Http\Controllers\WikiTree\WikitreeController;
+use App\Http\Controllers\Person\PeopleController;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
 use LaravelEnso\Addresses\Http\Controllers\Create as AddressCreate;
@@ -817,6 +818,11 @@ Route::get('wikitree/search-person', [WikitreeController::class, 'searchPerson']
 // OpenArch
 Route::prefix('open-arch')->group(function () {
     Route::get('search-person', [OpenArchController::class, 'searchPerson'])->name('search-person');
+});
+
+// Member Tree
+Route::prefix('member-tree')->group(function () {
+    Route::get('search-person', [PeopleController::class, 'searchPerson'])->name('search-person');
 });
 
 // OpenArch
