@@ -161,6 +161,7 @@ use App\Http\Controllers\Person\Create as PeopleCreate;
 use App\Http\Controllers\Person\Destroy as PeopleDestroy;
 use App\Http\Controllers\Person\Edit as PeopleEdit;
 use App\Http\Controllers\Person\ExportExcel as PeopleExportExcel;
+use App\Http\Controllers\Person\GetPersons;
 use App\Http\Controllers\Person\InitTable as PeopleInitTable;
 use App\Http\Controllers\Person\Options as PeopleOptions;
 use App\Http\Controllers\Person\Store as PeopleStore;
@@ -1456,6 +1457,11 @@ Route::middleware(['auth', 'api'])
         Route::get('get_person', [PersonaliasIndex::class, 'getPerson']);
         Route::post('gedcom-export', GedcomExport::class);
         Route::get('trees/options', [TreesManage::class, 'getOptions']);
+    });
+
+Route::middleware(['auth', 'api','multitenant'])
+    ->group(function () {
+        Route::get('persons', GetPersons::class);
     });
 
 //Route::get('test/{cid}', function($cid){

@@ -10,7 +10,7 @@ use File;
 use GenealogiaWebsite\LaravelGedcom\Utils\GedcomGenerator;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use LaravelEnso\People\Models\Person;
+use App\Models\Person;
 use Response;
 
 class Show extends Controller
@@ -23,6 +23,16 @@ class Show extends Controller
     public function __invoke(Request $request)
     {
         $start_id = $request->get('start_id');
+//        return Family::leftJoin('people as husband', function ($join) {
+//            $join->on('husband.id', '=', 'families.husband_id');
+//        })
+//            ->leftJoin('people as wife', function ($join) {
+//                $join->on('wife.id', '=', 'families.wife_id');
+//            })->where('husband_id', $start_id)->orwhere('wife_id', $start_id)
+//            ->select(\DB::raw('
+//            families.id, families.id as "dtRowId", families.description as description, husband.name as husband,
+// wife.name as wife, families.is_active
+//            '))->with('children')->get();
         $nest = $request->get('nest');
         $ret = [];
         $ret['start'] = (int) $start_id;
@@ -247,7 +257,7 @@ class Show extends Controller
                 $children_ids = [];
                 foreach ($children as $child) {
                     $child_id = $child->id;
-                    $children_ids[] = $child_id;
+                    $children_ids[] = $child;
                 }
 
                 // compose union item and add to unions
