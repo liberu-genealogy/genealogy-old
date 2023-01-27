@@ -78,6 +78,12 @@ $ laravel-echo-server start
 
 If you want to keep it in background proccess you should install pm2 or supervisor
 
+## Sphinx Search Engine Setup
+
+In this project, sphinx search engine is used to improve search result. If you want to see how to setup sphinx engine, how to use in your Laravel app, please follow this medium blog.
+
+https://medium.com/@devknight216/how-to-setup-sphinx-search-engine-with-your-laravel-app-7ace9189762b
+
 ### Support services (new)
 While developing genealogy, we constantly received private inquiries from devs and teams asking us about paid support. Some of these requests even lead to fruitful collaborations, so we finally decided to launch such an option.
 
