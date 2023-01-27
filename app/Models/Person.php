@@ -13,11 +13,13 @@ use Illuminate\Support\Facades\Auth;
 use LaravelEnso\People\Models\Person as CorePerson;
 use LaravelEnso\Tables\Traits\TableCache;
 use function Symfony\Component\Translation\t;
+use Laravel\Scout\Searchable;
 
 class Person extends CorePerson
 {
     use HasFactory;
     use TenantConnectionResolver;
+    use Searchable;
 
     public function __construct(array $attributes = [])
     {
@@ -25,6 +27,11 @@ class Person extends CorePerson
         // $this->setConnection(\Session::get('conn'));
    //     error_log('Person-'.($this->connection).'-'.\Session::get('conn').'-'.\Session::get('db'));
     }
+
+    // public function searchableAs()
+    // {
+    //     return 'name';
+    // }
 
     /**
      * The attributes that should be mutated to dates.
