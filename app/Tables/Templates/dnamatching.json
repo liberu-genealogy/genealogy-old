@@ -20,7 +20,10 @@
             "label": "Image",
             "name": "image",
             "data": "dna_matchings.image",
-            "meta": ["searchable", "sortable"]
+            "meta": [
+                "slot",
+                "notExportable"
+            ]
         },
         {
             "label": "Total Shared cM",
