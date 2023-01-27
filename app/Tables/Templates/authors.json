@@ -7,19 +7,19 @@
     {
       "label": "Name",
       "name": "name",
-      "data": "citations.name",
+      "data": "authors.name",
       "meta": ["searchable", "sortable"]
     },
     {
       "label": "Description",
       "name": "description",
-      "data": "citations.description",
+      "data": "authors.description",
       "meta": ["searchable", "sortable"]
     },
     {
       "label": "Active",
       "name": "is_active",
-      "data": "citations.is_active",
+      "data": "authors.is_active",
       "meta": ["boolean"]
     }
   ]

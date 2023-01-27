@@ -1,5 +1,5 @@
 {
-	"authHost": "http://localhost:8000/",
+	"authHost": "http://localhost",
 	"authEndpoint": "/broadcasting/auth",
 	"clients": [],
 	"database": "redis",
@@ -9,7 +9,7 @@
 			"databasePath": "/database/laravel-echo-server.sqlite"
 		}
 	},
-	"devMode": false,
+	"devMode": true,
 	"host": null,
 	"port": "6001",
 	"protocol": "http",

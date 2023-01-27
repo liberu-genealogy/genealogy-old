@@ -532,7 +532,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
                 Route::get('', CitationsIndex::class)->name('index');
                 Route::get('create', CitationsCreate::class)->name('create');
                 Route::post('', CitationsStore::class)->name('store');
-                Route::get('{citation}/edit', CitationsEdit::class)->name('edit');
+                Route::get('edit{citation}', CitationsEdit::class)->name('edit');
 
                 Route::patch('{citation}', CitationsUpdate::class)->name('update');
 
@@ -593,7 +593,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
                 Route::get('', FamiliesIndex::class)->name('index');
                 Route::get('create', FamiliesCreate::class)->name('create');
                 Route::post('', FamiliesStore::class)->name('store');
-                Route::get('{family}/edit', FamiliesEdit::class)->name('edit');
+                Route::get('edit/{family}', FamiliesEdit::class)->name('edit');
 
                 Route::patch('{family}', FamiliesUpdate::class)->name('update');
 
@@ -617,7 +617,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
                 Route::get('', NotesIndex::class)->name('index');
                 Route::get('create', NotesCreate::class)->name('create');
                 Route::post('', NotesStore::class)->name('store');
-                Route::get('{note}/edit', NotesEdit::class)->name('edit');
+                Route::get('edit/{note}', NotesEdit::class)->name('edit');
 
                 Route::patch('{note}', NotesUpdate::class)->name('update');
 
@@ -641,7 +641,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
                 Route::get('', PlacesIndex::class)->name('index');
                 Route::get('create', PlacesCreate::class)->name('create');
                 Route::post('', PlacesStore::class)->name('store');
-                Route::get('{place}/edit', PlacesEdit::class)->name('edit');
+                Route::get('edit/{place}', PlacesEdit::class)->name('edit');
 
                 Route::patch('{place}', PlacesUpdate::class)->name('update');
 
@@ -665,7 +665,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
                 Route::get('', RepositoriesIndex::class)->name('index');
                 Route::get('create', RepositoriesCreate::class)->name('create');
                 Route::post('', RepositoriesStore::class)->name('store');
-                Route::get('{repository}/edit', RepositoriesEdit::class)->name('edit');
+                Route::get('edit/{repository}', RepositoriesEdit::class)->name('edit');
 
                 Route::patch('{repository}', RepositoriesUpdate::class)->name('update');
 
@@ -713,7 +713,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
                 Route::get('', TypesIndex::class)->name('index');
                 Route::get('create', TypesCreate::class)->name('create');
                 Route::post('', TypesStore::class)->name('store');
-                Route::get('{type}/edit', TypesEdit::class)->name('edit');
+                Route::get('edit/{type}', TypesEdit::class)->name('edit');
 
                 Route::patch('{type}', TypesUpdate::class)->name('update');
 
@@ -759,7 +759,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
                 Route::get('', AuthorsIndex::class)->name('index');
                 Route::get('create', AuthorsCreate::class)->name('create');
                 Route::post('', AuthorsStore::class)->name('store');
-                Route::get('{author}/edit', AuthorsEdit::class)->name('edit');
+                Route::get('edit/{author}', AuthorsEdit::class)->name('edit');
 
                 Route::patch('{author}', AuthorsUpdate::class)->name('update');
 
@@ -782,7 +782,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
                 Route::get('', PublicationsIndex::class)->name('index');
                 Route::get('create', PublicationsCreate::class)->name('create');
                 Route::post('', PublicationsStore::class)->name('store');
-                Route::get('{publication}/edit', PublicationsEdit::class)->name('edit');
+                Route::get('edit/{publication}', PublicationsEdit::class)->name('edit');
 
                 Route::patch('{publication}', PublicationsUpdate::class)->name('update');
 
@@ -840,7 +840,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
                 Route::get('', MediaObjectsIndex::class)->name('index');
                 Route::get('create', MediaObjectsCreate::class)->name('create');
                 Route::post('', MediaObjectsStore::class)->name('store');
-                Route::get('{media_object}/edit', MediaObjectsEdit::class)->name('edit');
+                Route::get('edit/{media_object}', MediaObjectsEdit::class)->name('edit');
 
                 Route::patch('{media_object}', MediaObjectsUpdate::class)->name('update');
 
@@ -864,7 +864,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
                 Route::get('', AddrsIndex::class)->name('index');
                 Route::get('create', AddrsCreate::class)->name('create');
                 Route::post('', AddrsStore::class)->name('store');
-                Route::get('{addr}/edit', AddrsEdit::class)->name('edit');
+                Route::get('edit/{addr}', AddrsEdit::class)->name('edit');
 
                 Route::patch('{addr}', AddrsUpdate::class)->name('update');
 
@@ -888,7 +888,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
                 Route::get('', ChanIndex::class)->name('index');
                 Route::get('create', ChanCreate::class)->name('create');
                 Route::post('', ChanStore::class)->name('store');
-                Route::get('{chan}/edit', ChanEdit::class)->name('edit');
+                Route::get('edit/{chan}', ChanEdit::class)->name('edit');
 
                 Route::patch('{chan}', ChanUpdate::class)->name('update');
 
@@ -960,7 +960,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
                 Route::get('', PersonaliasIndex::class)->name('index');
                 Route::get('create', PersonaliasCreate::class)->name('create');
                 Route::post('', PersonaliasStore::class)->name('store');
-                Route::get('{personAlia}/edit', PersonaliasEdit::class)->name('edit');
+                Route::get('edit{personAlia}', PersonaliasEdit::class)->name('edit');
 
                 Route::patch('{personAlia}', PersonaliasUpdate::class)->name('update');
 
@@ -984,7 +984,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
                 Route::get('', PersonanciIndex::class)->name('index');
                 Route::get('create', PersonanciCreate::class)->name('create');
                 Route::post('', PersonanciStore::class)->name('store');
-                Route::get('{personAnci}/edit', PersonanciEdit::class)->name('edit');
+                Route::get('edit/{personAnci}', PersonanciEdit::class)->name('edit');
 
                 Route::patch('{personAnci}', PersonanciUpdate::class)->name('update');
 
@@ -1008,7 +1008,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
                 Route::get('', PersonassoIndex::class)->name('index');
                 Route::get('create', PersonassoCreate::class)->name('create');
                 Route::post('', PersonassoStore::class)->name('store');
-                Route::get('{personAsso}/edit', PersonassoEdit::class)->name('edit');
+                Route::get('edit{personAsso}', PersonassoEdit::class)->name('edit');
 
                 Route::patch('{personAsso}', PersonassoUpdate::class)->name('update');
 
@@ -1032,7 +1032,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
                 Route::get('', PersoneventIndex::class)->name('index');
                 Route::get('create', PersoneventCreate::class)->name('create');
                 Route::post('', PersoneventStore::class)->name('store');
-                Route::get('{personEvent}/edit', PersoneventEdit::class)->name('edit');
+                Route::get('edit/{personEvent}', PersoneventEdit::class)->name('edit');
 
                 Route::patch('{personEvent}', PersoneventUpdate::class)->name('update');
 
@@ -1056,7 +1056,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
                 Route::get('', PersonldsIndex::class)->name('index');
                 Route::get('create', PersonldsCreate::class)->name('create');
                 Route::post('', PersonldsStore::class)->name('store');
-                Route::get('{personLds}/edit', PersonldsEdit::class)->name('edit');
+                Route::get('edit/{personLds}', PersonldsEdit::class)->name('edit');
 
                 Route::patch('{personLds}', PersonldsUpdate::class)->name('update');
 
@@ -1080,7 +1080,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
                 Route::get('', RefnIndex::class)->name('index');
                 Route::get('create', RefnCreate::class)->name('create');
                 Route::post('', RefnStore::class)->name('store');
-                Route::get('{refn}/edit', RefnEdit::class)->name('edit');
+                Route::get('edit/{refn}', RefnEdit::class)->name('edit');
 
                 Route::patch('{refn}', RefnUpdate::class)->name('update');
 
@@ -1224,7 +1224,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
                 Route::get('', PersonSubmIndex::class)->name('index');
                 Route::get('create', PersonSubmCreate::class)->name('create');
                 Route::post('', PersonSubmStore::class)->name('store');
-                Route::get('{personSubm}/edit', PersonSubmEdit::class)->name('edit');
+                Route::get('edit/{personSubm}', PersonSubmEdit::class)->name('edit');
 
                 Route::patch('{personSubm}', PersonSubmUpdate::class)->name('update');
 
@@ -1264,7 +1264,7 @@ Route::namespace('')
     ->group(function () {
         Route::get('create', CompanyCreate::class)->name('create');
         Route::post('', CompanyStore::class)->name('store');
-        Route::get('{company}/edit', CompanyEdit::class)->name('edit');
+        Route::get('edit/{company}', CompanyEdit::class)->name('edit');
         Route::patch('{company}', CompanyUpdate::class)->name('update');
         Route::delete('{company}', CompanyDestroy::class)->name('destroy');
 
@@ -1282,7 +1282,7 @@ Route::namespace('')
     ->group(function () {
         Route::get('', UserCreate::class)->name('create');
         Route::post('', UserStore::class)->name('store');
-        Route::get('{user}/edit', UserEdit::class)->name('edit');
+        Route::get('edit/{user}', UserEdit::class)->name('edit');
         Route::patch('{user}', UserUpdate::class)->name('update');
         Route::delete('{user}', UserDestroy::class)->name('destroy');
 
@@ -1300,7 +1300,7 @@ Route::namespace('')
             ->group(function () {
                 Route::get('{company}', PeopleCompany::class)->name('index');
                 Route::get('{company}/create', PeopleCompanyCreate::class)->name('create');
-                Route::get('{company}/{person}/edit', PeopleCompanyEdit::class)->name('edit');
+                Route::get('edit/{company}/{person}', PeopleCompanyEdit::class)->name('edit');
                 Route::patch('{person}', PeopleCompanyUpdate::class)->name('update');
                 Route::post('', PeopleCompanyStore::class)->name('store');
                 Route::delete('{company}/{person}', PeopleCompanyDestroy::class)->name('destroy');

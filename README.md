@@ -49,6 +49,18 @@ and consider using [Valet](https://laravel.com/docs/6.x/valet) for a better expe
 
 8. (optional) Setup the configuration files as needed, in `config/enso/*.php`
 
+
+## Import test data
+
+1. Make sure php artisan queue:work is running
+
+2. Make sure root database user is being used.
+
+3. Register a new user and login.
+
+4. Go to gedcom / import and upload https://github.com/cgdsoftware/public-gedcoms/blob/master/files/royal92.ged
+
+
 ## Broadcasting Setup
 
 ```bash
