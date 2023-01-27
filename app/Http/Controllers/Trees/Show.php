@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers\Trees;
 
-use App\Jobs\ExportGedCom;
-use App\Models\Company;
 use App\Models\Family;
-use App\Models\Note;
 use File;
 use GenealogiaWebsite\LaravelGedcom\Utils\GedcomGenerator;
 use Illuminate\Http\Request;
@@ -23,25 +20,14 @@ class Show extends Controller
     public function __invoke(Request $request)
     {
         $start_id = $request->get('start_id');
-//        return Family::leftJoin('people as husband', function ($join) {
-//            $join->on('husband.id', '=', 'families.husband_id');
-//        })
-//            ->leftJoin('people as wife', function ($join) {
-//                $join->on('wife.id', '=', 'families.wife_id');
-//            })->where('husband_id', $start_id)->orwhere('wife_id', $start_id)
-//            ->select(\DB::raw('
-//            families.id, families.id as "dtRowId", families.description as description, husband.name as husband,
-// wife.name as wife, families.is_active
-//            '))->with('children')->get();
-        $nest = $request->get('nest');
+        $nest = $request->get('generation');
         $ret = [];
         $ret['start'] = (int) $start_id;
         $this->persons = [];
         $this->unions = [];
         $this->links = [];
         $this->nest = $nest;
-        // $this->getGraphData((int)$start_id);
-        $this->getGraphDataUpward((int) $start_id);
+        $this->getGraphData((int) $start_id);
         $ret['persons'] = $this->persons;
         $ret['unions'] = $this->unions;
         $ret['links'] = $this->links;
@@ -56,7 +42,7 @@ class Show extends Controller
     private function getGraphData($start_id, $nest = 1)
     {
         if ($this->nest >= $nest) {
-            $nest++;
+
 
             // add family
             $families = Family::where('husband_id', $start_id)->orwhere('wife_id', $start_id)->get();
@@ -84,7 +70,7 @@ class Show extends Controller
                     $_families = Family::where('husband_id', $mother->id)->orwhere('wife_id', $mother->id)->select('id')->get();
                     $_union_ids = [];
                     foreach ($_families as $item) {
-                        $_union_ids[] = $item->id;
+                        $_union_ids[] = 'u'.$item->id;
                     }
                     $mother->setAttribute('own_unions', $_union_ids);
                     $this->persons[$mother->id] = $mother;
@@ -94,6 +80,7 @@ class Show extends Controller
                 // find children
                 $children = Person::where('child_in_family_id', $family_id)->get();
                 $children_ids = [];
+                $nest++;
                 foreach ($children as $child) {
                     $child_id = $child->id;
                     // add child to person
@@ -102,9 +89,10 @@ class Show extends Controller
                     $_families = Family::where('husband_id', $child_id)->orwhere('wife_id', $child_id)->select('id')->get();
                     $_union_ids = [];
                     foreach ($_families as $item) {
-                        $_union_ids[] = $item->id;
+                        $_union_ids[] = 'u'.$item->id;
                     }
                     $child_data->setAttribute('own_unions', $_union_ids);
+                    $child_data['generation'] = $nest;
                     $this->persons[$child_id] = $child_data;
 
                     // add union-child link
