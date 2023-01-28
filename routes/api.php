@@ -481,6 +481,7 @@ Route::namespace('Auth')
         Route::middleware('auth')->group(function () {
             Route::post('logout', [LoginController::class, 'logout'])->name('logout');
         });
+        Route::post('confirm_checkout', [LoginController::class, 'confirmSubscription']);
 
         Route::post('register', [RegisterController::class, 'create']);
         Route::get('get-subscription-plan', [RegisterController::class, 'getSubscriptionPlan']);
