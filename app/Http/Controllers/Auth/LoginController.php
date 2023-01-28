@@ -412,4 +412,10 @@ class LoginController extends Controller
 
         return response()->json($data);
     }
+
+    public function confirmSubscription(Request $request) {;
+        $params = $request->all();
+        $user = $this->loggableUser($request);
+        return response()->json($user);
+    }
 }

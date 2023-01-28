@@ -46,7 +46,7 @@ class RegisterController extends Controller
 
     protected function create(Request $request)
     {
-        try {
+        // try {
             // create person
             $person = new Person();
             $name = $request['first_name'].' '.$request['last_name'];
@@ -138,10 +138,10 @@ class RegisterController extends Controller
             }
 
             return $user;
-        } catch (\Exception $e) {
-            // DB::rollBack();
-            throw $e;
-        }
+        // } catch (\Exception $e) {
+        //     // DB::rollBack();
+        //     throw $e;
+        // }
     }
 
     protected function getSubscriptionPlan(Request $request)
@@ -153,11 +153,24 @@ class RegisterController extends Controller
         Stripe\Stripe::setApiKey(\Config::get('services.stripe.secret'));
         $plans = Stripe\Plan::all();
 
+        // echo($plans);
         $result = [];
         foreach ($plans as $k=>$plan) {
+            if ($k == 0) {
+                $row1['id'] = $role->id;
+                $row1['amount'] = 0;
+                $row1['nickname'] = $role->name;
+                $row1['title'] = $role->display_name;
+                $row1['subscribed'] = false;
+                $result[] = $row1;
+            }
+            
+            if(empty($plan->nickname)) continue;
+
             $row ['id'] = $plan->id;
             $row['amount'] = $plan->amount;
             $row['nickname'] = $plan->nickname;
+
             switch ($plan->nickname) {
                 case 'UTY':
                     $row['title'] = 'Unlimited trees yearly.';
@@ -180,14 +193,6 @@ class RegisterController extends Controller
                 default:$row['title'] = '';
             }
             $row['subscribed'] = false;
-            if ($k == 0) {
-                $row1['id'] = $role->id;
-                $row1['amount'] = 0;
-                $row1['nickname'] = $role->name;
-                $row1['title'] = $role->display_name;
-                $row1['subscribed'] = false;
-                $result[] = $row1;
-            }
             $result[] = $row;
         }
 
