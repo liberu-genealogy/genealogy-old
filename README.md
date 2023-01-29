@@ -49,6 +49,8 @@ and consider using [Valet](https://laravel.com/docs/6.x/valet) for a better expe
 
 8. (optional) Setup the configuration files as needed, in `config/enso/*.php`
 
+9. (maybe required) Setup sanctum stateful domains in `.env` and add your domains to `config/cors.php`
+
 
 ## Import test data
 
