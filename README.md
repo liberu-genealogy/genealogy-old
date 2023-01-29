@@ -84,6 +84,10 @@ In this project, sphinx search engine is used to improve search result. If you w
 
 https://medium.com/@devknight216/how-to-setup-sphinx-search-engine-with-your-laravel-app-7ace9189762b
 
+## DNA Matching setup
+
+We currently use Lineage, install Python 3 and Pip and run `pip3 install lineage`
+
 ### Support services (new)
 While developing genealogy, we constantly received private inquiries from devs and teams asking us about paid support. Some of these requests even lead to fruitful collaborations, so we finally decided to launch such an option.
 
