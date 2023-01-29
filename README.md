@@ -35,7 +35,7 @@ Note that most sections have short demo clips.
 
 2. Copy .env.example to .env and edit details
 
-3. `composer install` or on Windows you need to use `composer install --ignore-platform-reqs ext-pcntl ext-posix`
+3. `composer install` or on Windows you need to use `composer install --ignore-platform-reqs`
 
 4. `php artisan key:generate`
 
