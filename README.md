@@ -35,7 +35,7 @@ Note that most sections have short demo clips.
 
 2. Copy .env.example to .env and edit details
 
-3. `composer install` or on Windows you need to use `composer install --ignore-platform-reqs ext-pcntl ext-posix`
+3. `composer install` or on Windows you need to use `composer install --ignore-platform-reqs`
 
 4. `php artisan key:generate`
 
@@ -48,6 +48,8 @@ and consider using [Valet](https://laravel.com/docs/6.x/valet) for a better expe
 7. Follow installation steps for client side (https://github.com/cgd-ui/genealogy) and launch the site and log into the project with user: `admin@familytree365.com`, password: `password`
 
 8. (optional) Setup the configuration files as needed, in `config/enso/*.php`
+
+9. (maybe required) Setup sanctum stateful domains in `.env` and add your domains to `config/cors.php`
 
 
 ## Import test data
