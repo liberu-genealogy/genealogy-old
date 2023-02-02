@@ -42,7 +42,6 @@ class DnaMatching implements ShouldQueue
         $user = $this->current_user;
         $dnas = Dna::where('variable_name', '!=', $this->var_name)->get();
         $mpath = app_path();
-        $dna_output = null;
         
         foreach ($dnas as $dna) {
 //            system('/usr/bin/python3 /home/genealogia/public_html/dna.py ' . $this->var_name . ' ' . $dna->variable_name . ' ' . '/home/genealogia/public_html/storage/app/dna/'. $this->file_name . ' ' . '/home/genealogia/public_html/storage/app/dna/'. $dna->file_name);
