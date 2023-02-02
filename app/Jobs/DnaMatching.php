@@ -56,7 +56,7 @@ class DnaMatching implements ShouldQueue
             $dm->user_id = $user->id;
             // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'.png';
             // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
-            $dm->image = Config::get(App_URL). '/storage/dna/output/shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
+$dm->image = env('APP_URL') . '/storage/dna/output/shared_dna_'.$this->var_name.'_'.$dna->variable_name.'.png';
             // $dm->file1 = 'discordant_snps_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
             $dm->file1 = 'discordant_snps_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
             // $dm->file2 = 'shared_dna_one_chrom_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';

@@ -8,7 +8,7 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 logger.addHandler(logging.StreamHandler(sys.stdout))
 
-l = Lineage(output_dir= os.path.join(dirname, '../storage/app/dna/output'))
+l = Lineage(output_dir= os.path.join(dirname, '../storage/app/public/dna/output'))
 
 var1 = sys.argv[1]
 var2 = sys.argv[2]
