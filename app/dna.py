@@ -31,4 +31,4 @@ for x in df.index:
     if df.loc[x, 'cMs'] > largest_cm:
         largest_cm = df.loc[x, 'cMs']
 
-print(json.dumps({'total_cm': total_cms, 'largest_cm': largest_cm}))
+print(json.dumps({'total_cms': total_cms, 'largest_cm': largest_cm}))
