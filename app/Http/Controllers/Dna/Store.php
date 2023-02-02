@@ -16,8 +16,6 @@ class Store extends Controller
     public function __invoke(Request $request)
     {
 
-        error_log('message here.in Store.php in Dna controller');
-        error_log(" --------here is Store.php in Dna controller------------->", 3, base_path().'/log/log.log');
         if ($request->hasFile('file')) {
             if ($request->file('file')->isValid()) {
                 try {

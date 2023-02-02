@@ -8,7 +8,7 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 logger.addHandler(logging.StreamHandler(sys.stdout))
 
-l = Lineage(output_dir= os.path.join(dirname, '../storage/app/dna/output'))
+l = Lineage(output_dir= os.path.join(dirname, '../storage/app/public/dna/output'))
 
 var1 = sys.argv[1]
 var2 = sys.argv[2]
@@ -31,4 +31,4 @@ for x in df.index:
     if df.loc[x, 'cMs'] > largest_cm:
         largest_cm = df.loc[x, 'cMs']
 
-print(json.dumps({'total_cm': total_cms, 'largest_cm': largest_cm}))
+print(json.dumps({'total_cms': total_cms, 'largest_cm': largest_cm}))
