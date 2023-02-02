@@ -28,6 +28,7 @@ class DnaMatching implements ShouldQueue
         $this->current_user = $current_user;
         $this->var_name = $var_name;
         $this->file_name = $file_name;
+        
     }
 
     /**
@@ -37,45 +38,59 @@ class DnaMatching implements ShouldQueue
      */
     public function handle()
     {
+
         $user = $this->current_user;
         $dnas = Dna::where('variable_name', '!=', $this->var_name)->get();
         $mpath = app_path();
+        $dna_output = null;
+        
         foreach ($dnas as $dna) {
 //            system('/usr/bin/python3 /home/genealogia/public_html/dna.py ' . $this->var_name . ' ' . $dna->variable_name . ' ' . '/home/genealogia/public_html/storage/app/dna/'. $this->file_name . ' ' . '/home/genealogia/public_html/storage/app/dna/'. $dna->file_name);
             // chdir('/home/familytree365/domains/api.familytree365.com/genealogy/app');
             chdir($mpath);
-            exec('python3 dna.py '.$this->var_name.' '.$dna->variable_name.' '.$this->file_name.' '.$dna->file_name);
+            // exec('python dna.py '.$this->var_name.' '.$dna->variable_name.' '.$this->file_name.' '.$dna->file_name, $dna_output);
+            $result = exec('python dna.py '.$this->var_name.' '.$dna->variable_name.' '.$this->file_name.' '.$dna->file_name);
+            $resultData = json_decode($result, true);
+            
             $dm = new DM();
             $dm->user_id = $user->id;
-            $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'.png';
+            // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'.png';
+            // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
+            $dm->image = Config::get(App_URL). '/storage/dna/output/shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
+            // $dm->file1 = 'discordant_snps_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
             $dm->file1 = 'discordant_snps_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
-            $dm->file2 = 'shared_dna_one_chrom_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
+            // $dm->file2 = 'shared_dna_one_chrom_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
+            $dm->file2 = 'shared_dna_one_chrom_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.csv';
+
+            $dm->total_shared_cm = round($resultData['total_cms'], 2);
+            $dm->largest_cm_segment = round($resultData['largest_cm'], 2);
+
             $dm->save();
 
-            $data = readCSV(storage_path('app'.DIRECTORY_SEPARATOR.'dna'.DIRECTORY_SEPARATOR.'output'.DIRECTORY_SEPARATOR.$dm->file1), ',');
-            array_shift($data);
-            $data = writeCSV(storage_path('app'.DIRECTORY_SEPARATOR.'dna'.DIRECTORY_SEPARATOR.'output'.DIRECTORY_SEPARATOR.$dm->file1), $data);
+            // $data = readCSV(storage_path('app'.DIRECTORY_SEPARATOR.'dna'.DIRECTORY_SEPARATOR.'output'.DIRECTORY_SEPARATOR.$dm->file1), ',');
+            // array_shift($data);
+            // $data = writeCSV(storage_path('app'.DIRECTORY_SEPARATOR.'dna'.DIRECTORY_SEPARATOR.'output'.DIRECTORY_SEPARATOR.$dm->file1), $data);
 
-            $data = readCSV(storage_path('app'.DIRECTORY_SEPARATOR.'dna'.DIRECTORY_SEPARATOR.'output'.DIRECTORY_SEPARATOR.$dm->file2), ',');
-            array_shift($data);
+            // $data = readCSV(storage_path('app'.DIRECTORY_SEPARATOR.'dna'.DIRECTORY_SEPARATOR.'output'.DIRECTORY_SEPARATOR.$dm->file2), ',');
+            // array_shift($data);
 
-            $temp_data = $data;
-            array_shift($temp_data);
-            array_shift($temp_data);
-            $total_cms = 0;
-            $largest_cm = 0;
-            foreach ($temp_data as $line) {
-                if ($line[4] >= $largest_cm) {
-                    $largest_cm = $line[4];
-                }
-                $total_cms = $total_cms + $line[4];
-            }
-            $dm->user_id = $user->id;
-            $dm->total_shared_cm = $total_cms;
-            $dm->largest_cm_segment = round($largest_cm, 2);
-            $dm->save();
+            // $temp_data = $data;
+            // array_shift($temp_data);
+            // array_shift($temp_data);
+            // $total_cms = 0;
+            // $largest_cm = 0;
+            // foreach ($temp_data as $line) {
+            //     if ($line[4] >= $largest_cm) {
+            //         $largest_cm = $line[4];
+            //     }
+            //     $total_cms = $total_cms + $line[4];
+            // }
+            // $dm->user_id = $user->id;
+            // $dm->total_shared_cm = $total_cms;
+            // $dm->largest_cm_segment = round($largest_cm, 2);
+            // $dm->save();
 
-            $data = writeCSV(storage_path('app'.DIRECTORY_SEPARATOR.'dna'.DIRECTORY_SEPARATOR.'output'.DIRECTORY_SEPARATOR.$dm->file2), $data);
+            // $data = writeCSV(storage_path('app'.DIRECTORY_SEPARATOR.'dna'.DIRECTORY_SEPARATOR.'output'.DIRECTORY_SEPARATOR.$dm->file2), $data);
         }
     }
 }

@@ -1,0 +1,259 @@
+ --------444444444444444444444  in DnaMatching.php in Jobs------------->{"total_cma": 3541.784612334744, "largest_cm": 284.26627663142216}Array
+(
+    [total_cma] => 3541.7846123347
+    [largest_cm] => 284.26627663142
+)
+ --------here is Store.php in Dna controller-------------> --------1111111111111111  in DnaMatching.php in Jobs------------->Illuminate\Database\Eloquent\Collection Object
+(
+    [items:protected] => Array
+        (
+        )
+
+    [escapeWhenCastingToString:protected] => 
+)
+ --------222222222222222222  in DnaMatching.php in Jobs------------->F:\job_temp_17\cgdsoftware-genealogy\app --------here is Store.php in Dna controller-------------> --------1111111111111111  in DnaMatching.php in Jobs------------->Illuminate\Database\Eloquent\Collection Object
+(
+    [items:protected] => Array
+        (
+            [0] => App\Models\Dna Object
+                (
+                    [connection:protected] => mysql
+                    [table:protected] => dnas
+                    [primaryKey:protected] => id
+                    [keyType:protected] => int
+                    [incrementing] => 1
+                    [with:protected] => Array
+                        (
+                        )
+
+                    [withCount:protected] => Array
+                        (
+                        )
+
+                    [preventsLazyLoading] => 
+                    [perPage:protected] => 15
+                    [exists] => 1
+                    [wasRecentlyCreated] => 
+                    [escapeWhenCastingToString:protected] => 
+                    [attributes:protected] => Array
+                        (
+                            [id] => 35
+                            [name] => DNA Kit for user 1
+                            [user_id] => 1
+                            [variable_name] => var_vyJWy
+                            [file_name] => dna_252317-autosomal-o-results.csv63daae86101bc.csv
+                            [created_at] => 2023-02-01 20:25:10
+                            [updated_at] => 2023-02-01 20:25:10
+                        )
+
+                    [original:protected] => Array
+                        (
+                            [id] => 35
+                            [name] => DNA Kit for user 1
+                            [user_id] => 1
+                            [variable_name] => var_vyJWy
+                            [file_name] => dna_252317-autosomal-o-results.csv63daae86101bc.csv
+                            [created_at] => 2023-02-01 20:25:10
+                            [updated_at] => 2023-02-01 20:25:10
+                        )
+
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [casts:protected] => Array
+                        (
+                        )
+
+                    [classCastCache:protected] => Array
+                        (
+                        )
+
+                    [attributeCastCache:protected] => Array
+                        (
+                        )
+
+                    [dates:protected] => Array
+                        (
+                        )
+
+                    [dateFormat:protected] => 
+                    [appends:protected] => Array
+                        (
+                        )
+
+                    [dispatchesEvents:protected] => Array
+                        (
+                        )
+
+                    [observables:protected] => Array
+                        (
+                        )
+
+                    [relations:protected] => Array
+                        (
+                        )
+
+                    [touches:protected] => Array
+                        (
+                        )
+
+                    [timestamps] => 1
+                    [hidden:protected] => Array
+                        (
+                        )
+
+                    [visible:protected] => Array
+                        (
+                        )
+
+                    [fillable:protected] => Array
+                        (
+                            [0] => name
+                            [1] => file_name
+                            [2] => variable_name
+                        )
+
+                    [guarded:protected] => Array
+                        (
+                            [0] => *
+                        )
+
+                )
+
+        )
+
+    [escapeWhenCastingToString:protected] => 
+)
+ --------222222222222222222  in DnaMatching.php in Jobs------------->F:\job_temp_17\cgdsoftware-genealogy\app --------33333333333333333333333333333  in DnaMatching.php in Jobs------------->var_70fvgvar_vyJWydna_252317-autosomal-o-results.csv63daae9d72ba9.csvdna_252317-autosomal-o-results.csv63daae86101bc.csv --------444444444444444444444  in DnaMatching.php in Jobs------------->{"total_cma": 3541.784612334744, "largest_cm": 284.26627663142216}Array
+(
+    [total_cma] => 3541.7846123347
+    [largest_cm] => 284.26627663142
+)
+ --------here is Store.php in Dna controller-------------> --------1111111111111111  in DnaMatching.php in Jobs------------->Illuminate\Database\Eloquent\Collection Object
+(
+    [items:protected] => Array
+        (
+        )
+
+    [escapeWhenCastingToString:protected] => 
+)
+ --------222222222222222222  in DnaMatching.php in Jobs------------->F:\job_temp_17\cgdsoftware-genealogy\app --------here is Store.php in Dna controller-------------> --------1111111111111111  in DnaMatching.php in Jobs------------->Illuminate\Database\Eloquent\Collection Object
+(
+    [items:protected] => Array
+        (
+            [0] => App\Models\Dna Object
+                (
+                    [connection:protected] => mysql
+                    [table:protected] => dnas
+                    [primaryKey:protected] => id
+                    [keyType:protected] => int
+                    [incrementing] => 1
+                    [with:protected] => Array
+                        (
+                        )
+
+                    [withCount:protected] => Array
+                        (
+                        )
+
+                    [preventsLazyLoading] => 
+                    [perPage:protected] => 15
+                    [exists] => 1
+                    [wasRecentlyCreated] => 
+                    [escapeWhenCastingToString:protected] => 
+                    [attributes:protected] => Array
+                        (
+                            [id] => 37
+                            [name] => DNA Kit for user 1
+                            [user_id] => 1
+                            [variable_name] => var_8S3Ly
+                            [file_name] => dna_252317-autosomal-o-results.csv63dab08257ed2.csv
+                            [created_at] => 2023-02-01 20:33:38
+                            [updated_at] => 2023-02-01 20:33:38
+                        )
+
+                    [original:protected] => Array
+                        (
+                            [id] => 37
+                            [name] => DNA Kit for user 1
+                            [user_id] => 1
+                            [variable_name] => var_8S3Ly
+                            [file_name] => dna_252317-autosomal-o-results.csv63dab08257ed2.csv
+                            [created_at] => 2023-02-01 20:33:38
+                            [updated_at] => 2023-02-01 20:33:38
+                        )
+
+                    [changes:protected] => Array
+                        (
+                        )
+
+                    [casts:protected] => Array
+                        (
+                        )
+
+                    [classCastCache:protected] => Array
+                        (
+                        )
+
+                    [attributeCastCache:protected] => Array
+                        (
+                        )
+
+                    [dates:protected] => Array
+                        (
+                        )
+
+                    [dateFormat:protected] => 
+                    [appends:protected] => Array
+                        (
+                        )
+
+                    [dispatchesEvents:protected] => Array
+                        (
+                        )
+
+                    [observables:protected] => Array
+                        (
+                        )
+
+                    [relations:protected] => Array
+                        (
+                        )
+
+                    [touches:protected] => Array
+                        (
+                        )
+
+                    [timestamps] => 1
+                    [hidden:protected] => Array
+                        (
+                        )
+
+                    [visible:protected] => Array
+                        (
+                        )
+
+                    [fillable:protected] => Array
+                        (
+                            [0] => name
+                            [1] => file_name
+                            [2] => variable_name
+                        )
+
+                    [guarded:protected] => Array
+                        (
+                            [0] => *
+                        )
+
+                )
+
+        )
+
+    [escapeWhenCastingToString:protected] => 
+)
+ --------222222222222222222  in DnaMatching.php in Jobs------------->F:\job_temp_17\cgdsoftware-genealogy\app --------33333333333333333333333333333  in DnaMatching.php in Jobs------------->var_cCpvtvar_8S3Lydna_252317-autosomal-o-results.csv63dab0a40023f.csvdna_252317-autosomal-o-results.csv63dab08257ed2.csv --------444444444444444444444  in DnaMatching.php in Jobs------------->{"total_cms": 3541.784612334744, "largest_cm": 284.26627663142216}Array
+(
+    [total_cms] => 3541.7846123347
+    [largest_cm] => 284.26627663142
+)
