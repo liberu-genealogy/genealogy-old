@@ -1,4 +1,4 @@
-#!/usr/bin/python3.10
+#!/usr/bin/python3
 import logging, sys
 import os, pandas as pd, json
 from lineage import Lineage
