@@ -44,12 +44,17 @@ class DnaMatching implements ShouldQueue
         $mpath = app_path();
         $dna_output = null;
         
+        $output=null;
+$retval=null;
+        
         foreach ($dnas as $dna) {
 //            system('/usr/bin/python3 /home/genealogia/public_html/dna.py ' . $this->var_name . ' ' . $dna->variable_name . ' ' . '/home/genealogia/public_html/storage/app/dna/'. $this->file_name . ' ' . '/home/genealogia/public_html/storage/app/dna/'. $dna->file_name);
             // chdir('/home/familytree365/domains/api.familytree365.com/genealogy/app');
             chdir($mpath);
             // exec('python dna.py '.$this->var_name.' '.$dna->variable_name.' '.$this->file_name.' '.$dna->file_name, $dna_output);
-            $result = exec('python dna.py '.$this->var_name.' '.$dna->variable_name.' '.$this->file_name.' '.$dna->file_name);
+            $result = exec('python dna.py '.$this->var_name.' '.$dna->variable_name.' '.$this->file_name.' '.$dna->file_name, $output, $retval);
+            error_log("Returned with exec status:" . $retval);
+
             $resultData = json_decode($result, true);
             
             $dm = new DM();
