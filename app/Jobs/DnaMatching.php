@@ -70,6 +70,22 @@ $retval=null;
 
             $dm->save();
 
+            $dm2 = new DM();
+            $dm2->user_id = $dna->user_id;
+	    $dm2->match_id = $user->id;
+            // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'.png';
+            // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
+            $dm2->image = env('APP_URL') . '/storage/dna/output/shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
+            // $dm->file1 = 'discordant_snps_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
+            $dm2->file1 = 'discordant_snps_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
+            // $dm->file2 = 'shared_dna_one_chrom_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
+            $dm2->file2 = 'shared_dna_one_chrom_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.csv';
+
+            $dm2->total_shared_cm = round($resultData['total_cms'], 2);
+            $dm2->largest_cm_segment = round($resultData['largest_cm'], 2);
+
+            $dm2->save();
+
             // $data = readCSV(storage_path('app'.DIRECTORY_SEPARATOR.'dna'.DIRECTORY_SEPARATOR.'output'.DIRECTORY_SEPARATOR.$dm->file1), ',');
             // array_shift($data);
             // $data = writeCSV(storage_path('app'.DIRECTORY_SEPARATOR.'dna'.DIRECTORY_SEPARATOR.'output'.DIRECTORY_SEPARATOR.$dm->file1), $data);
