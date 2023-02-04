@@ -15,5 +15,6 @@ class DnaMatching extends Model
         'image',
 	'total_shared_cm',
 	'largest_cm_segment',
+	'match_id'
     ];
 }

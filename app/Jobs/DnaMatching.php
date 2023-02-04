@@ -56,6 +56,7 @@ $retval=null;
             
             $dm = new DM();
             $dm->user_id = $user->id;
+	    $dm->match_id = $dna->user_id;
             // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'.png';
             // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
             $dm->image = env('APP_URL') . '/storage/dna/output/shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
