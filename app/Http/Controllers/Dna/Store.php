@@ -15,7 +15,23 @@ class Store extends Controller
 
     public function __invoke(Request $request)
     {
+        $role = \Auth::user()->role_id;
+	$user_id = \Auth::user()->id;
+        $dna = Dna::where('user_id', '=', $user_id)->count();
 
+        if (in_array($role, [1, 2, 9, 10])) {
+            $allowed =  TRUE;
+        }
+        if (in_array($role, [4, 5, 6]) && $dna < 1) {
+	    $allowed  = TRUE;
+        }
+
+        if (in_array($role, [7, 8]) && $dna < 5) {
+            $allowed = TRUE;
+        }
+
+	if ($allowed == TRUE) {
+	
         if ($request->hasFile('file')) {
             if ($request->file('file')->isValid()) {
                 try {
@@ -40,6 +56,7 @@ class Store extends Controller
                         'redirect' => 'dna.edit',
                         'param' => ['dna' => $dna->id],
                     ];
+
                 } catch (\Exception $e) {
                     return $e->getMessage();
                 }
@@ -50,4 +67,6 @@ class Store extends Controller
 
         return response()->json(['Not uploaded'], 422);
     }
+
+}
 }
