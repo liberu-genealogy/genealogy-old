@@ -26,6 +26,12 @@
             ]
         },
         {
+            "label": "Match ID",
+            "name": "match_id",
+            "data": "dna_matchings.match_id",
+            "meta": ["searchable", "sortable"]
+        },
+        {
             "label": "Total Shared cM",
             "name": "total_shared_cm",
             "data": "dna_matchings.total_shared_cm",
