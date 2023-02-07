@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use Laravel\Socialite\Facades\Socialite;
-use LaravelEnso\Companies\Models\Company;
+use App\Models\Company;
 use LaravelEnso\Core\Events\Login as Event;
 use LaravelEnso\Core\Traits\Logout;
 use LaravelEnso\Roles\Models\Role;
