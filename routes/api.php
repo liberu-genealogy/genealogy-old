@@ -366,6 +366,7 @@ use App\Http\Controllers\Topic\TableData as TopicTableData;
 use App\Http\Controllers\Topic\Update as TopicUpdate;
 use App\Http\Controllers\Trees\Manage as TreesManage;
 use App\Http\Controllers\Trees\Show as TreesShow;
+use App\Http\Controllers\Trees\Ancestors as TreesAncestor;
 use App\Http\Controllers\Types\Create as TypesCreate;
 use App\Http\Controllers\Types\Destroy as TypesDestroy;
 use App\Http\Controllers\Types\Edit as TypesEdit;
@@ -742,7 +743,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('fanchart')
             ->as('fanchart.')
             ->group(function () {
-                Route::get('show', TreesShow::class)->name('show');
+                Route::get('show', TreesAncestor::class)->name('ancestors');
             });
         Route::namespace('')
             ->prefix('decendent')
