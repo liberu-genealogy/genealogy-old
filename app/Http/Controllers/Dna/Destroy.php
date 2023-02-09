@@ -7,7 +7,7 @@ use Illuminate\Routing\Controller;
 
 class Destroy extends Controller
 {
-    public function __invoke(Dna $addr)
+    public function __invoke($id)
     {
         $user = auth()->user();
         $dna = Dna::find($id);

@@ -13,5 +13,6 @@ class Dna extends Model
         'name',
         'file_name',
         'variable_name',
+        'user_id',
     ];
 }
