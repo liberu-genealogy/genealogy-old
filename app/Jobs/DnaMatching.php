@@ -4,6 +4,7 @@ namespace App\Jobs;
 
 use App\Models\Dna;
 use App\Models\DnaMatching as DM;
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -13,6 +14,9 @@ use Illuminate\Queue\SerializesModels;
 class DnaMatching implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
+    public int $timeout = 0;
+    public int $tries = 1;
 
     protected $current_user;
     protected $var_name;
@@ -44,7 +48,7 @@ class DnaMatching implements ShouldQueue
         $mpath = app_path();
 
         $output=null;
-        $retval=null;
+$retval=null;
 
         foreach ($dnas as $dna) {
 //            system('/usr/bin/python3 /home/genealogia/public_html/dna.py ' . $this->var_name . ' ' . $dna->variable_name . ' ' . '/home/genealogia/public_html/storage/app/dna/'. $this->file_name . ' ' . '/home/genealogia/public_html/storage/app/dna/'. $dna->file_name);
@@ -57,6 +61,9 @@ class DnaMatching implements ShouldQueue
             $dm = new DM();
             $dm->user_id = $user->id;
 	    $dm->match_id = $dna->user_id;
+	    $match_name_user = User::find($dna->user_id);
+	    $match_name = $match_name_user->person->name;
+	    $dm->match_name = $match_name;
             // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'.png';
             // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
             $dm->image = env('APP_URL') . '/storage/dna/output/shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
@@ -69,10 +76,11 @@ class DnaMatching implements ShouldQueue
             $dm->largest_cm_segment = round($resultData['largest_cm'], 2);
 
             $dm->save();
-
+if ($dna->user_id != $user->id){
             $dm2 = new DM();
             $dm2->user_id = $dna->user_id;
-	        $dm2->match_id = $user->id;
+	    $dm2->match_id = $user->id;
+	    $dm2->match_name = $user->person->name;
             // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'.png';
             // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
             $dm2->image = env('APP_URL') . '/storage/dna/output/shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
@@ -85,7 +93,7 @@ class DnaMatching implements ShouldQueue
             $dm2->largest_cm_segment = round($resultData['largest_cm'], 2);
 
             $dm2->save();
-
+}
             // $data = readCSV(storage_path('app'.DIRECTORY_SEPARATOR.'dna'.DIRECTORY_SEPARATOR.'output'.DIRECTORY_SEPARATOR.$dm->file1), ',');
             // array_shift($data);
             // $data = writeCSV(storage_path('app'.DIRECTORY_SEPARATOR.'dna'.DIRECTORY_SEPARATOR.'output'.DIRECTORY_SEPARATOR.$dm->file1), $data);
