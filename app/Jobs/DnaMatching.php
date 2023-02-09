@@ -4,6 +4,7 @@ namespace App\Jobs;
 
 use App\Models\Dna;
 use App\Models\DnaMatching as DM;
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -60,6 +61,8 @@ $retval=null;
             $dm = new DM();
             $dm->user_id = $user->id;
 	    $dm->match_id = $dna->user_id;
+	    $match_name = User::where('id', $dna->user_id)->first(['name'])->name;
+	    $dm->match_name = $dna->user_id;
             // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'.png';
             // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
             $dm->image = env('APP_URL') . '/storage/dna/output/shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
@@ -76,6 +79,7 @@ if ($dna->user_id != $user->id){
             $dm2 = new DM();
             $dm2->user_id = $dna->user_id;
 	    $dm2->match_id = $user->id;
+	    $dm2->match_name = $user->name;
             // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'.png';
             // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
             $dm2->image = env('APP_URL') . '/storage/dna/output/shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
