@@ -37,7 +37,7 @@ class User extends CoreUser
 
     public function message()
     {
-        return $this->belongsTo(Message::class);
+        return $this->hasOne(Message::class, 'user_id');
     }
 //    public function avatar()
 //    {
