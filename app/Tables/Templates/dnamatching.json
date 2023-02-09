@@ -26,9 +26,9 @@
             ]
         },
         {
-            "label": "Match ID",
-            "name": "match_id",
-            "data": "dna_matchings.match_id",
+            "label": "Match",
+            "name": "match_name",
+            "data": "dna_matchings.match_name",
             "meta": ["searchable", "sortable"]
         },
         {
