@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Company;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Companies\Forms\Builders\Company;
+use App\Forms\Builders\Company;
 
 class Create extends Controller
 {

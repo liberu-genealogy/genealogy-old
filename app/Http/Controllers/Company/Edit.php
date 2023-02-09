@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Company;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Companies\Forms\Builders\Company as Form;
-use LaravelEnso\Companies\Models\Company;
+use App\Forms\Builders\Company as Form;
+use App\Models\Company;
 
 class Edit extends Controller
 {

@@ -1,0 +1,92 @@
+{
+    "routePrefix": "administration.companies",
+    "sections": [
+        {
+            "columns": 2,
+            "fields": [
+                {
+                    "label": "Name",
+                    "name": "name",
+                    "value": "",
+                    "meta": {
+                        "type": "input",
+                        "content": "text"
+                    }
+                },
+                {
+                    "label": "Mandatary",
+                    "name": "mandatary",
+                    "value": null,
+                    "meta": {
+                        "custom": true,
+                        "type": "select",
+                        "source": "administration.people.options"
+                    }
+                },
+                {
+                    "label": "Email",
+                    "name": "email",
+                    "value": "",
+                    "meta": {
+                        "type": "input",
+                        "content": "email"
+                    }
+                }
+            ]
+        },
+        {
+            "columns": 3,
+            "fields": [
+                {
+                    "label": "Status",
+                    "name": "status",
+                    "value": null,
+                    "meta": {
+                        "type": "select",
+                        "options": "LaravelEnso\\Companies\\Enums\\Statuses"
+                    }
+                },
+                {
+                    "label": "Privacy",
+                    "name": "privacy",
+                    "value": null,
+                    "meta": {
+                        "type": "select",
+                        "options": "App\\Enums\\Privacy"
+                    }}
+            ]
+        },
+        {
+            "columns": 1,
+            "fields": [
+                {
+                    "label": "Notes",
+                    "name": "notes",
+                    "value": "",
+                    "meta": {
+                        "type": "textarea",
+                        "rows": 3
+                    }
+                },
+                {
+                    "label": "Pays VAT",
+                    "name": "pays_vat",
+                    "value": false,
+                    "meta": {
+                        "type": "input",
+                        "content": "checkbox"
+                    }
+                },
+                {
+                    "label": "Is Tenant",
+                    "name": "is_tenant",
+                    "value": false,
+                    "meta": {
+                        "type": "input",
+                        "content": "checkbox"
+                    }
+                }
+            ]
+        }
+    ]
+}
