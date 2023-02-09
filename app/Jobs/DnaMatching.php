@@ -14,6 +14,9 @@ class DnaMatching implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+    public int $timeout = 0;
+    public int $tries = 1;
+
     protected $current_user;
     protected $var_name;
     protected $file_name;
