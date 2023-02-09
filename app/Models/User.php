@@ -35,6 +35,10 @@ class User extends CoreUser
         return (bool) $this->social->where('service', $service)->count();
     }
 
+    public function message()
+    {
+        return $this->hasOne(Message::class, 'user_id');
+    }
 //    public function avatar()
 //    {
 //        return $this->hasOne(\Avatar::class);
