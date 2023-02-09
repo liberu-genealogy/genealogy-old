@@ -13,8 +13,8 @@ class DnaMatching extends Model
         'file1',
         'file2',
         'image',
-	'total_shared_cm',
-	'largest_cm_segment',
-	'match_id'
+        'total_shared_cm',
+        'largest_cm_segment',
+        'match_id'
     ];
 }
