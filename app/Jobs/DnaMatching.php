@@ -32,7 +32,6 @@ class DnaMatching implements ShouldQueue
         $this->current_user = $current_user;
         $this->var_name = $var_name;
         $this->file_name = $file_name;
-        
     }
 
     /**
@@ -46,53 +45,54 @@ class DnaMatching implements ShouldQueue
         $user = $this->current_user;
         $dnas = Dna::where('variable_name', '!=', $this->var_name)->get();
         $mpath = app_path();
-        
-        $output=null;
-$retval=null;
-        
+
+        $output = null;
+        $retval = null;
+
         foreach ($dnas as $dna) {
-//            system('/usr/bin/python3 /home/genealogia/public_html/dna.py ' . $this->var_name . ' ' . $dna->variable_name . ' ' . '/home/genealogia/public_html/storage/app/dna/'. $this->file_name . ' ' . '/home/genealogia/public_html/storage/app/dna/'. $dna->file_name);
+            var_dump($dna);
+            //            system('/usr/bin/python3 /home/genealogia/public_html/dna.py ' . $this->var_name . ' ' . $dna->variable_name . ' ' . '/home/genealogia/public_html/storage/app/dna/'. $this->file_name . ' ' . '/home/genealogia/public_html/storage/app/dna/'. $dna->file_name);
             // chdir('/home/familytree365/domains/api.familytree365.com/genealogy/app');
             chdir($mpath);
             // exec('python dna.py '.$this->var_name.' '.$dna->variable_name.' '.$this->file_name.' '.$dna->file_name, $dna_output);
-            $result = exec('python3 dna.py ' . $this->var_name.' '.$dna->variable_name.' '.$this->file_name.' '.$dna->file_name);
+            $result = exec('python dna.py ' . $this->var_name . ' ' . $dna->variable_name . ' ' . $this->file_name . ' ' . $dna->file_name);
             $resultData = json_decode($result, true);
-            
+
             $dm = new DM();
             $dm->user_id = $user->id;
-	    $dm->match_id = $dna->user_id;
-	    $match_name = User::where('id', $dna->user_id)->first(['id'])->person->name;
-	    $dm->match_name = $dna->user_id;
+            $dm->match_id = $dna->user_id;
+            // $match_name = User::where('id', $dna->user_id)->first(['id'])->person->name;
+            $dm->match_name = $dna->user_id;
             // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'.png';
             // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
-            $dm->image = env('APP_URL') . '/storage/dna/output/shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
+            $dm->image = env('APP_URL') . '/storage/dna/output/shared_dna_' . $this->var_name . '_' . $dna->variable_name . '_0p75cM_1100snps_GRCh37_HapMap2.png';
             // $dm->file1 = 'discordant_snps_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
-            $dm->file1 = 'discordant_snps_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
+            $dm->file1 = 'discordant_snps_' . $this->var_name . '_' . $dna->variable_name . '_GRCh37.csv';
             // $dm->file2 = 'shared_dna_one_chrom_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
-            $dm->file2 = 'shared_dna_one_chrom_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.csv';
+            $dm->file2 = 'shared_dna_one_chrom_' . $this->var_name . '_' . $dna->variable_name . '_0p75cM_1100snps_GRCh37_HapMap2.csv';
 
             $dm->total_shared_cm = round($resultData['total_cms'], 2);
             $dm->largest_cm_segment = round($resultData['largest_cm'], 2);
 
             $dm->save();
-if ($dna->user_id != $user->id){
-            $dm2 = new DM();
-            $dm2->user_id = $dna->user_id;
-	    $dm2->match_id = $user->id;
-	    $dm2->match_name = $user->person->name;
-            // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'.png';
-            // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
-            $dm2->image = env('APP_URL') . '/storage/dna/output/shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
-            // $dm->file1 = 'discordant_snps_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
-            $dm2->file1 = 'discordant_snps_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
-            // $dm->file2 = 'shared_dna_one_chrom_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
-            $dm2->file2 = 'shared_dna_one_chrom_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.csv';
+            if ($dna->user_id != $user->id) {
+                $dm2 = new DM();
+                $dm2->user_id = $dna->user_id;
+                $dm2->match_id = $user->id;
+                $dm2->match_name = $user->person->name;
+                // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'.png';
+                // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
+                $dm2->image = env('APP_URL') . '/storage/dna/output/shared_dna_' . $this->var_name . '_' . $dna->variable_name . '_0p75cM_1100snps_GRCh37_HapMap2.png';
+                // $dm->file1 = 'discordant_snps_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
+                $dm2->file1 = 'discordant_snps_' . $this->var_name . '_' . $dna->variable_name . '_GRCh37.csv';
+                // $dm->file2 = 'shared_dna_one_chrom_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
+                $dm2->file2 = 'shared_dna_one_chrom_' . $this->var_name . '_' . $dna->variable_name . '_0p75cM_1100snps_GRCh37_HapMap2.csv';
 
-            $dm2->total_shared_cm = round($resultData['total_cms'], 2);
-            $dm2->largest_cm_segment = round($resultData['largest_cm'], 2);
+                $dm2->total_shared_cm = round($resultData['total_cms'], 2);
+                $dm2->largest_cm_segment = round($resultData['largest_cm'], 2);
 
-            $dm2->save();
-}
+                $dm2->save();
+            }
             // $data = readCSV(storage_path('app'.DIRECTORY_SEPARATOR.'dna'.DIRECTORY_SEPARATOR.'output'.DIRECTORY_SEPARATOR.$dm->file1), ',');
             // array_shift($data);
             // $data = writeCSV(storage_path('app'.DIRECTORY_SEPARATOR.'dna'.DIRECTORY_SEPARATOR.'output'.DIRECTORY_SEPARATOR.$dm->file1), $data);
