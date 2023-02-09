@@ -2,7 +2,7 @@
     "name": "Dna Matching",
     "routePrefix": "dnamatching",
     "crtNo": true,
-    "buttons": ["excel", "show"],
+    "buttons": ["excel"],
     "columns": [
         {
             "label": "File 1",
