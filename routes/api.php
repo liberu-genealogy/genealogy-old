@@ -737,13 +737,13 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->prefix('trees')
             ->as('trees.')
             ->group(function () {
-                Route::get('show', TreesShow::class)->name('show');
+                Route::get('show', TreesAncestor::class)->name('show');
             });
         Route::namespace('')
             ->prefix('fanchart')
             ->as('fanchart.')
             ->group(function () {
-                Route::get('show', TreesAncestor::class)->name('ancestors');
+                Route::get('show', TreesAncestor::class)->name('show');
             });
         Route::namespace('')
             ->prefix('decendent')
@@ -1470,6 +1470,7 @@ Route::middleware(['auth', 'api'])
 Route::middleware(['auth', 'api','multitenant'])
     ->group(function () {
         Route::get('persons', GetPersons::class);
+        Route::get('getPersons', [ GetPersons::class, 'getPersons']);
     });
 
 //Route::get('test/{cid}', function($cid){
