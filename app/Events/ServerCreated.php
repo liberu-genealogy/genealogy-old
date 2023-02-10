@@ -41,7 +41,7 @@ class ServerCreated implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('user-'.$this->user->id);
+        return new PrivateChannel('chat-'.$this->user->id);
     }
     /**
      * The event's broadcast name

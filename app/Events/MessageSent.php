@@ -11,9 +11,9 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 use App\Models\User;
 use App\Models\Message;
-use App\Models\Conversation;
+// use App\Models\Conversation;
 
-class MessagePosted implements ShouldBroadcastNow
+class MessageSent implements ShouldBroadcastNow
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -25,11 +25,11 @@ class MessagePosted implements ShouldBroadcastNow
      *
      * @return void
      */
-    public function __construct(Message $message, User $user, Conversation $conversation)
+    public function __construct(Message $message, User $user, $id)
     {
         $this->message = $message;
         $this->user = $user;
-        $this->conversation = $conversation;
+        $this->conversation = $id;
     }
     /**
      * Determine if this event should broadcast
@@ -38,7 +38,8 @@ class MessagePosted implements ShouldBroadcastNow
      */
     public function broadcastWhen()
     {
-        return $this->conversation->status == 1;
+        // return $this->conversation->status == 1;
+        return true;
     }
     /**
      * Get the data to broadcast
@@ -60,6 +61,6 @@ class MessagePosted implements ShouldBroadcastNow
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('channel-'.$this->conversation->id);
+        return new PrivateChannel('chat');
     }
 }
