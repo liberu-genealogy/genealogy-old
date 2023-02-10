@@ -23,20 +23,26 @@ class Store extends Controller
     {
         $role = \Auth::user()->role_id;
         $companies = \Auth::user()->person->companies()->count();
-        if (in_array($role, [4, 5, 6]) && $companies <= 1) {
+        if (in_array($role, [1, 4, 5, 6]) && $companies <= 1) {
             $company->fill($request->validatedExcept('mandatary'));
+
+            // 1 = public
+            // 2 = private
             $clone = $request->post();
+            // dd($clone);
             $user = \Auth::user();
             $user_id = $user->id;
             $person_name = $user->name;
             $user_email = $user->email;
             $this->authorize('store', $company);
 
+            $company->privacy = $request->privacy;
             $company->save();
             if ($user->role_id != 1) {
                 $c = new Company1();
 
                 $c->fill($clone);
+                $c->privacy = $request->privacy;
 
                 $c->setAttribute('created_by', 1);
                 $c->setAttribute('updated_by', 1);
