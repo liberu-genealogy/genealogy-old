@@ -43,10 +43,23 @@ class Show extends Controller
     {
         if ($this->nest >= $nest) {
 
-
             // add family
             $families = Family::where('husband_id', $start_id)->orwhere('wife_id', $start_id)->get();
-            $own_unions = [];
+
+            if (!count($families)) {
+                $person = Person::find($start_id);
+
+                // do not process for null
+                if ($person == null) {
+                    return;
+                }
+
+                $person->setAttribute('own_unions', []);
+                $person['generation'] = $nest;
+                $this->persons[$start_id] = $person;
+            
+                return true;
+            }
 
             // add children
             foreach ($families as $family) {
