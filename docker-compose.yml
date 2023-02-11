@@ -106,14 +106,16 @@ services:
       - ALLOW_EMPTY_PASSWORD=yes
     networks:
       - api
-  sphinx:
-    image: macbre/sphinxsearch:3.4.1
-    ports:
-    - "127.0.0.1:36307:36307" # bind to local interface only!
-    volumes:
-    - ./.docker/prod/sphinx/data:/opt/sphinx/index  # directory where sphinx will store index data
-    - ./.docker/prod/sphinx/sphinx.conf:/opt/sphinx/conf/sphinx.conf  # SphinxSE configuration file
-    mem_limit: 512m # match indexer.value from sphinx.conf
+#  sphinx:
+#    image: macbre/sphinxsearch:3.4.1
+#    ports:
+#    - "127.0.0.1:36307:36307" # bind to local interface only!
+#    volumes:
+#    - ./.docker/prod/sphinx/data:/opt/sphinx/index  # directory where sphinx will store index data
+#    - ./.docker/prod/sphinx/sphinx.conf:/opt/sphinx/conf/sphinx.conf  # SphinxSE configuration file
+#    mem_limit: 512m # match indexer.value from sphinx.conf
+#    networks:
+#      - api
 #Docker Networks
 networks:
   api:
