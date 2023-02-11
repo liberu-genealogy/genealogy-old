@@ -355,6 +355,7 @@ use App\Http\Controllers\Subn\Show as SubnShow;
 use App\Http\Controllers\Subn\Store as SubnStore;
 use App\Http\Controllers\Subn\TableData as SubnTableData;
 use App\Http\Controllers\Subn\Update as SubnUpdate;
+use App\Http\Controllers\Subscription\PlanController;
 use App\Http\Controllers\Topic\Create as TopicCreate;
 use App\Http\Controllers\Topic\Destroy as TopicDestroy;
 use App\Http\Controllers\Topic\Edit as TopicEdit;
@@ -1457,6 +1458,14 @@ Route::middleware(['web', 'auth'])
         Route::post('subscribe', PaypalHandlePayment::class);
         Route::post('unsubscribe', PaypalUnsubscribe::class);
         Route::post('webhook', PaypalWebhook::class);
+    });
+
+Route::middleware(['web', 'auth'])
+    ->namespace('')
+    ->prefix('subscription')
+    ->as('subscription.')
+    ->group(function () {
+        Route::get('plans', [PlanController::class, 'getPlans']);
     });
 
 Route::middleware(['auth', 'api'])
