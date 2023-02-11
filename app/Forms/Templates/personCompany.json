@@ -1,0 +1,38 @@
+{
+    "routePrefix": "administration.companies.people",
+    "sections": [
+        {
+            "columns": 2,
+            "fields": [
+                {
+                    "label": "Person",
+                    "name": "id",
+                    "value": null,
+                    "meta": {
+                        "type": "select",
+                        "source": "administration.user.options"
+                    }
+                },
+                {
+                    "label": "Company",
+                    "name": "company_id",
+                    "value": null,
+                    "meta": {
+                        "type": "input",
+                        "content": "number",
+                        "hidden": true
+                    }
+                },
+                {
+                    "label": "Position",
+                    "name": "position",
+                    "value": "",
+                    "meta": {
+                        "type": "input",
+                        "content": "text"
+                    }
+                }
+            ]
+        }
+    ]
+}

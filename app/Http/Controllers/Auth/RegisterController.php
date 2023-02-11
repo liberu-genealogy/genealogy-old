@@ -164,7 +164,7 @@ class RegisterController extends Controller
                 $row1['subscribed'] = false;
                 $result[] = $row1;
             }
-            
+
             if(empty($plan->nickname)) continue;
 
             $row ['id'] = $plan->id;

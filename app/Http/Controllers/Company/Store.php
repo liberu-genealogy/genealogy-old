@@ -29,7 +29,6 @@ class Store extends Controller
             // 1 = public
             // 2 = private
             $clone = $request->post();
-            // dd($clone);
             $user = \Auth::user();
             $user_id = $user->id;
             $person_name = $user->name;

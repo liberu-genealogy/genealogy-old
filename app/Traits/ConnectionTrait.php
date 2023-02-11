@@ -7,7 +7,7 @@ use LaravelEnso\Multitenancy\Enums\Connections;
 
 trait ConnectionTrait
 {
-    public function setConnection($conn = 'mysql', $db = 'enso')
+    public function setConnection($conn = 'mysql', $db = 'genealogy')//'enso')
     {
         if ($conn == Connections::Tenant) {
             $key = 'database.connections.tenant.database';
