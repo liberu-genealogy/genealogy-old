@@ -13,6 +13,18 @@ RUN apt-get update \
     libzip-dev \
     libicu-dev \
     libonig-dev \
+                curl \
+            libmemcached-dev \
+            libz-dev \
+            libpq-dev \
+            libjpeg-dev \
+            libpng-dev \
+            libfreetype6-dev \
+            libssl-dev \
+            libwebp-dev \
+            libxpm-dev \
+            libmcrypt-dev \
+            libonig-dev \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && locale-gen en_US.UTF-8 \
@@ -22,9 +34,16 @@ RUN apt-get update \
     pdo_mysql \
     zip \
     bcmath \
-    pcntl
-
+    pcntl \
+  && docker-php-ext-configure gd \
+            --prefix=/usr \
+            --with-jpeg \
+            --with-webp \
+            --with-xpm \
+            --with-freetype \
+  && docker-php-ext-install gd \
 # Install composer
+
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 #change uid and gid of apache to docker user uid/gid
