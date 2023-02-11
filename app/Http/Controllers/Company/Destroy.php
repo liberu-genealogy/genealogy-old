@@ -14,23 +14,24 @@ class Destroy extends Controller
     {
         $role = \Auth::user()->role_id;
         $user_id = \Auth::user()->id;
-        if (in_array($role, [1, 2])) {
-            $company->delete();
+        if($company->email == \Auth::user()->email) {
+            if (in_array($role, [1, 2])) {
+                $company->delete();
 
-            return [
-                'message' => __('The company was successfully deleted'),
-                'redirect' => 'administration.companies.index',
-            ];
+                return [
+                    'message' => __('The company was successfully deleted'),
+                    'redirect' => 'administration.companies.index',
+                ];
+            }
+            if ($user_id == $company->created_by) {
+                $company->delete();
+
+                return [
+                    'message' => __('The company was successfully deleted'),
+                    'redirect' => 'administration.companies.index',
+                ];
+            }
         }
-        if ($user_id == $company->created_by) {
-            $company->delete();
-
-            return [
-                'message' => __('The company was successfully deleted'),
-                'redirect' => 'administration.companies.index',
-            ];
-        }
-
         return ['error' => __('Unauthorized')];
     }
 }

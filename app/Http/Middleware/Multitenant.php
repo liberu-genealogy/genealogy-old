@@ -40,7 +40,9 @@ class Multitenant
                 $value = session()->get('db');
             } else {
                 $company = $user->person->company();
+                // dd($company);
                 $tenants = \App\Models\Tenant::find($company->id);
+                // dd($tenants);
                 $value = $tenants->tenancy_db_name;
             }
         }
