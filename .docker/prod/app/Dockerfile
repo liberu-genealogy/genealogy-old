@@ -24,7 +24,6 @@ RUN apt-get update \
             libwebp-dev \
             libxpm-dev \
             libmcrypt-dev \
-            libonig-dev \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && locale-gen en_US.UTF-8 \
