@@ -36,6 +36,11 @@ Route::get('/trees/gift/order/{orderId}/shipping', [Gift::class, 'getShippingAdd
 //         return ['message' => $message->load('user')];
 //     }
 // })->middleware('auth');
+Route::get('/socketTest', function () {
+    if (broadcast(new App\Events\ServerCreated('hello'))) {
+        return 'ok';
+    }
+});
 Route::middleware('auth')
     ->group(function () {
         Route::get('connects', 'ChatsController@fetchConnects');

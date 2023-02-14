@@ -7,11 +7,11 @@ use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class ServerCreated implements ShouldBroadcast
+class ServerCreated implements ShouldBroadcastNow
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -20,18 +20,17 @@ class ServerCreated implements ShouldBroadcast
      * 
      * @var \App\Models\User
      */
-    public $user;
+    public $message;
 
-    public $afterCommit = true;
     /**
      * Create a new event instance.
      *
      * @param \App\Models\User user
      * @return void
      */
-    public function __construct(User $user)
+    public function __construct($message)
     {
-        $this->user = $user;
+        $this->message = $message;
     }
 
     /**
@@ -41,7 +40,7 @@ class ServerCreated implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('chat-'.$this->user->id);
+        return new Channel('chat');
     }
     /**
      * The event's broadcast name
@@ -50,15 +49,6 @@ class ServerCreated implements ShouldBroadcast
      */
     public function broadcastAs()
     {
-        return 'server.created';
-    }
-    /**
-     * Get the data to broadcast
-     * 
-     * @return array
-     */
-    public function broadcastWith()
-    {
-        return ['id' => $this->user->id];
+        return 'TestEvent';
     }
 }

@@ -63,4 +63,7 @@ class MessageSent implements ShouldBroadcastNow
     {
         return new PrivateChannel('chat');
     }
+    public function broadcastAs(){
+        return 'MessageSent';
+    }
 }
