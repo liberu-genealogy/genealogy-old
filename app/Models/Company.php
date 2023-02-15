@@ -12,6 +12,10 @@ class Company extends CoreCompany
     use CreatedBy;
 
     protected $fillable = [
-        'privacy'
+        'privacy',
+        'name',
+        'email',
+        'is_tenant',
+        'status'
     ];
 }
