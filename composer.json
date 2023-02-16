@@ -34,7 +34,7 @@
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.0",
         "leifermendez/laravel-paypal-subscription": "^1.0",
-        "predis/predis": "^2.0",
+        "predis/predis": "^2.1",
         "sentry/sentry-laravel": "^2.0.0",
         "spatie/laravel-ray": "^1.26",
         "srmklive/paypal": "^3.0",
