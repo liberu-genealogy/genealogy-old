@@ -30,11 +30,12 @@ class Manager
     public function __construct(
         string|int $company_id,
         string|int $user_id,
+        string|int|null $database_name,
         Repository $config,
         DatabaseManager $database,
     ) {
         $this->tenant_id = $company_id;
-        $this->partition = "tenant{$company_id}";
+        $this->partition = $database_name ?? "tenant{$company_id}";
         $this->database = $database;
         $this->config = $config;
     }
@@ -44,6 +45,7 @@ class Manager
         return app(static::class, [
             'company_id' => $model->getKey(),
             'user_id' => $user->getKey(),
+            'database_name' => tenancy()->find($model->getKey())->tenancy_db_name ?? null,
         ]);
     }
 
@@ -64,7 +66,8 @@ class Manager
             $this->database->reconnect($this->defaultConnection);
         } else {
             $tenants = Tenant::find($this->tenant_id);
-
+            $this->config->set('database.connections.tenantdb.database', $tenants->tenancy_db_name);
+            $this->database->reconnect($this->connectionName);
             tenancy()->initialize($tenants);
         }
 
