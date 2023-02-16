@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2929b303dc8dd857a788e6e8238bc895",
+    "content-hash": "dd54840cd3adc573a67b8b9ea4ed38a4",
     "packages": [
         {
             "name": "anlutro/curl",
@@ -1536,16 +1536,16 @@
         },
         {
             "name": "cgdsoftware/excel",
-            "version": "v3.1.7",
+            "version": "v9.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cgdsoftware/excel.git",
-                "reference": "2693e1a164d5091a4d000fa97e92d998ea7eedc6"
+                "reference": "2f3221979abc06c93b37bf058c6063dd1f66a155"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cgdsoftware/excel/zipball/2693e1a164d5091a4d000fa97e92d998ea7eedc6",
-                "reference": "2693e1a164d5091a4d000fa97e92d998ea7eedc6",
+                "url": "https://api.github.com/repos/cgdsoftware/excel/zipball/2f3221979abc06c93b37bf058c6063dd1f66a155",
+                "reference": "2f3221979abc06c93b37bf058c6063dd1f66a155",
                 "shasum": ""
             },
             "require": {
@@ -1566,33 +1566,33 @@
                 {
                     "name": "Ionut Pirvulescu",
                     "email": "ionut.pirvulescu@earthlink.ro",
-                    "homepage": "https://cgdsoftware.com",
+                    "homepage": "https://laravel-enso.com",
                     "role": "Developer"
                 },
                 {
                     "name": "Mihai Ocneanu",
                     "email": "mihai.ocneanu@gmail.com",
-                    "homepage": "https://cgdsoftware.com",
+                    "homepage": "https://laravel-enso.com",
                     "role": "Developer"
                 },
                 {
                     "name": "Adrian Ocneanu",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://cgdsoftware.com",
+                    "homepage": "https://laravel-enso.com",
                     "role": "Developer"
                 }
             ],
             "description": "Excel for Laravel Enso",
-            "homepage": "https://github.com/cgdsoftware/excel",
+            "homepage": "https://github.com/laravel-enso/excel",
             "keywords": [
-                "cgdsoftware",
                 "excel",
-                "laravel"
+                "laravel",
+                "laravel-enso"
             ],
             "support": {
-                "source": "https://github.com/cgdsoftware/excel/tree/v3.1.7"
+                "source": "https://github.com/cgdsoftware/excel/tree/v9.0.2"
             },
-            "time": "2023-01-27T23:03:17+00:00"
+            "time": "2022-05-16T11:45:36+00:00"
         },
         {
             "name": "cgdsoftware/files",
@@ -20456,5 +20456,5 @@
         "php": ">=8.1.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }

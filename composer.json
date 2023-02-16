@@ -13,7 +13,7 @@
         "cgdsoftware/data-import": "^6.0",
         "cgdsoftware/discussions": "^4.0",
         "cgdsoftware/documents": "^5.0",
-        "cgdsoftware/excel": "^3.0",
+        "cgdsoftware/excel": "^9.0",
         "cgdsoftware/how-to": "^5.0",
         "cgdsoftware/pdf": "^2.0",
         "cgdsoftware/tasks": "^2.0",
