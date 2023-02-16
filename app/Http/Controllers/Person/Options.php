@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Persons;
+namespace App\Http\Controllers\Person;
 
 use App\Models\Person;
 use Illuminate\Http\Request;

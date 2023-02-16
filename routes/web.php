@@ -41,11 +41,13 @@ Route::get('/socketTest', function () {
         return 'ok';
     }
 });
+
+/**
 Route::middleware('auth')
     ->group(function () {
         Route::get('connects', 'ChatsController@fetchConnects');
         Route::get('messages/{id}', 'ChatsController@fetchMessages');
         Route::post('messages/{id}', 'ChatsController@sendMessage');
     });
-
+**/
 Route::view('/{any}', 'index')->where('any', '.*');
