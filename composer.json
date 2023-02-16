@@ -10,7 +10,7 @@
         "cgdsoftware/comments": "^4.0",
         "cgdsoftware/control-panel-api": "^3.0",
         "cgdsoftware/core": "^8.0",
-        "cgdsoftware/data-import": "^6.0",
+        "cgdsoftware/data-import": "^9.0",
         "cgdsoftware/discussions": "^4.0",
         "cgdsoftware/documents": "^5.0",
         "cgdsoftware/excel": "^3.0",
