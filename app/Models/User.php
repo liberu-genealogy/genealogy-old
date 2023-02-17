@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Cashier\Billable;
 use LaravelEnso\Avatars\Models\Avatar;
@@ -9,7 +10,7 @@ use LaravelEnso\Users\Models\User as CoreUser;
 
 class User extends CoreUser
 {
-    use Billable;
+    use Billable, CanResetPassword;
     protected $fillable = [
         'name',
         'email',
