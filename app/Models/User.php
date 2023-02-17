@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Notifications\ResetPassword;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Cashier\Billable;
@@ -51,6 +52,11 @@ class User extends CoreUser
     public function conversations()
     {
         return $this->convOne->merage($this->convTwo);
+    }
+                    
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify((new ResetPassword($token)));
     }
 //    public function avatar()
 //    {
