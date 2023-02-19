@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Notifications\ResetPassword;
+use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Cashier\Billable;
 use LaravelEnso\Avatars\Models\Avatar;
@@ -9,7 +11,7 @@ use LaravelEnso\Users\Models\User as CoreUser;
 
 class User extends CoreUser
 {
-    use Billable;
+    use Billable, CanResetPassword;
     protected $fillable = [
         'name',
         'email',
@@ -50,6 +52,11 @@ class User extends CoreUser
     public function conversations()
     {
         return $this->convOne->merage($this->convTwo);
+    }
+                    
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify((new ResetPassword($token)));
     }
 //    public function avatar()
 //    {
