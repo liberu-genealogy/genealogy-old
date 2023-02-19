@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7bf2593a792b7f4577cb56597fc24aff",
+    "content-hash": "2929b303dc8dd857a788e6e8238bc895",
     "packages": [
         {
             "name": "anlutro/curl",
@@ -20456,5 +20456,5 @@
         "php": ">=8.1.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }

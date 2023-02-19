@@ -2,22 +2,25 @@
 
 namespace App\Http\Controllers\Person;
 
-use App\Models\User;
+use App\Models\Person;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-// use LaravelEnso\People\Models\Person;
+// use App\Http\Resources\Person as Resource;
 use LaravelEnso\Select\Traits\OptionsBuilder;
 
 class Options extends Controller
 {
-    public function __invoke(User $user)
-    {
-        $users = User::with(['person'])->get();
-        $people = [];
-        foreach($users as $user) {
-            $people[] = ['name' => $user->person->name];
-        }
+    use OptionsBuilder;
 
-        return $people;
-    }
+    protected string $model = Person::class;
+
+    protected $queryAttributes = ['name','email'];
+
+    // protected $resource = Resource::class;
+
+    // public function query()
+    // {
+    //     return User::active()
+    //         ->with(['person:id,appellative,name', 'avatar:id,user_id']);
+    // }
 }
