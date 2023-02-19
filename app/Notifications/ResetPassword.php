@@ -27,7 +27,7 @@ class ResetPassword extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         $appName = Config::get('app.name');
-        $baseUrl = env('APP_URL');
+        $baseUrl = env('CLIENT_BASE_URL');
         $url = $baseUrl.'/password/reset/'.$this->token.'?email='.$notifiable->email;
 
         return (new MailMessage())
