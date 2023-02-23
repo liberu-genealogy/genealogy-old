@@ -18,11 +18,12 @@ class Index extends Controller
 //        $companies[] = $company;
 
         $my_companies = \LaravelEnso\Companies\Models\Company::where('created_by', $user->id)->orWhere('id', '=', $company->id)->get();
-        $invited_companies = DB::table('company_person')
-        ->orWhere('company_id', '!=', $company->id)
-        ->where('person_id', $user->id)
-        ->join('companies', 'companies.id', 'company_person.company_id')
-        ->select('companies.*')->get();
+        $invited_companies = [];
+//DB::table('company_person')
+//        ->orWhere('company_id', '!=', $company->id)
+//        ->where('person_id', $user->id)
+//        ->join('companies', 'companies.id', 'company_person.company_id')
+//        ->select('companies.*')->get();
 
 //        $new_collection = $companies->merge($companies);
 //        \Log::debug(array_push($companies,$companies));
