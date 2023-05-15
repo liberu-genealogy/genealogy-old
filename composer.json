@@ -16,7 +16,7 @@
         "cgdsoftware/excel": "^3.0",
         "cgdsoftware/how-to": "^5.0",
         "cgdsoftware/pdf": "^2.0",
-        "cgdsoftware/tasks": "^2.0",
+        "cgdsoftware/tasks": "^9.0",
         "cgdsoftware/teams": "^4.0",
         "cgdsoftware/tutorials": "^5.0",
         "constantable/laravel-scout-sphinx": "^2.7",
