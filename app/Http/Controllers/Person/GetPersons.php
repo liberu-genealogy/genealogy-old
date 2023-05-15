@@ -12,6 +12,6 @@ class GetPersons extends Controller
    }
 
    public function getPersons() {
-       return Person::skip(1)->limit(10)->get();
+       return Person::get();
    }
 }
