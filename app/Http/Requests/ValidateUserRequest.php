@@ -40,7 +40,7 @@ class ValidateUserRequest extends FormRequest
 
     private function password(): array
     {
-        $rules = ['nullable', 'confirmed', Password::defaults()];
+        $rules = ['nullable', 'confirmed', Password::defaults(), 'exclude'];
 
         if ($this->route('user')) {
             $rules[] = new DistinctPassword($this->route('user'));
