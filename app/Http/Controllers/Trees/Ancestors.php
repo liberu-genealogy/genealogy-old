@@ -38,7 +38,7 @@ class Ancestors extends Controller
     private function getGraphData($start_id, $nest = 1)
     {
         if ($this->nest >= $nest) {
-            
+
             $person = Person::find($start_id);
 
             // do not process for null
@@ -52,41 +52,38 @@ class Ancestors extends Controller
                 $person->setAttribute('own_unions', []);
                 $person['generation'] = $nest;
                 $this->persons[$start_id] = $person;
-            
+
                 return true;
             }
-            
-            foreach($families as $family) {
-                $_union_ids = [];
 
-                foreach ($families as $item) {
-                    $_union_ids[] = 'u'.$item->id;
-                }
+            foreach ($families as $family) {
+
+                $_union_ids[] = 'u' . $person->child_in_family_id;
 
                 $person->setAttribute('own_unions', $_union_ids);
                 $this->persons[$start_id] = $person;
-                $this->links[] = [$start_id, 'u'.$family->id];
+                $this->links[] = [$start_id, 'u' . $person->child_in_family_id];
 
                 // get self's parents data
                 $p_family_id = $person->child_in_family_id;
                 $p_family_ids = [];
 
                 if (!empty($p_family_id)) {
-                    
+
                     $p_family = Family::find($p_family_id);
 
                     $parent = Person::where('id', $p_family->husband_id)->orwhere('id', $p_family->wife_id)->get();
 
-                    foreach($parent as $p_person) {
+                    foreach ($parent as $p_person) {
                         $p_data = Person::find($p_person->id);
                         $p_union_ids = [];
-                        $p_union_ids[] = 'u'.$p_family->id;
+                        $p_union_ids[] = 'u' . $p_person->child_in_family_id;
                         $p_data->setAttribute('own_unions', $p_union_ids);
                         $p_data['generation'] = $nest + 1;
                         $this->persons[$p_person->id] = $p_data;
 
                         // add union-parent link
-                        $this->links[] = ['u'.$family->id, $p_person->id];
+                        $this->links[] = ['u' . $family->id, $p_person->id];
                         $p_family_ids[] = $p_person->id;
                         $this->getGraphData($p_person->id, $nest + 1);
                     }
@@ -122,14 +119,14 @@ class Ancestors extends Controller
                     //         }
                     //     }
                     // }
-                }
 
-                // compose union item and add to unions
-                $union = [];
-                $union['id'] = 'u'.$family->id;
-                $union['partner'] = [isset($family->husband_id) ? $family->husband_id : null, isset($family->wife_id) ? $family->wife_id : null];
-                $union['children'] = $p_family_ids;
-                $this->unions['u'.$family->id] = $union;
+                    // compose union item and add to unions
+                    $union = [];
+                    $union['id'] = 'u' . $family->id;
+                    $union['partner'] = [isset($family->husband_id) ? $family->husband_id : null, isset($family->wife_id) ? $family->wife_id : null];
+                    $union['children'] = $p_family_ids;
+                    $this->unions['u' . $p_family_id] = $union;
+                }
             }
         }
 
