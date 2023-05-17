@@ -153,7 +153,7 @@ class RegisterController extends Controller
         Stripe\Stripe::setApiKey(\Config::get('services.stripe.secret'));
         $plans = Stripe\Plan::all();
 
-        // echo($plans);
+//        return $plans;
         $result = [];
         foreach ($plans as $k=>$plan) {
             if ($k == 0) {
