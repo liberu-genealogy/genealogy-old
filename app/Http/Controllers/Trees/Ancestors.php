@@ -53,6 +53,13 @@ class Ancestors extends Controller
         if ($person == null) return;
             
         $families = Family::where('husband_id', $start_id)->orwhere('wife_id', $start_id)->get();
+        if (!count($families)) {
+            $person->setAttribute('own_unions', []);
+            $person['generation'] = $nest;
+            $this->persons[$start_id] = $person;
+
+            return true;
+        }
         $own_unions = $families->pluck('id')->map(function ($id) {
             return 'u' . $id;
         })->toArray();
