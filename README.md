@@ -13,7 +13,7 @@
 Browser based Genealogy software for interacting and processing data efficiently. Easily create your
 own family tree by importing your existing data or manual data entry. Storage of all data is securely on your own server and does
 not leave your environment without your permission. API support for many databases of family tree records. In the future there will be optional
-smart matching with other servers. This is the Laravel 9 backend using the Laravel Enso collection of modules. Please see https://github.com/cgd-ui/genealogy for the client.
+smart matching with other servers. This is the Laravel 9 backend using the Laravel Liberu collection of modules. Please see https://github.com/cgd-ui/genealogy for the client.
 
 Data tables for comprehrensive amount of CRUD information. Forms easy to modify. Gedcom import and export. DNA matching. Subscriptions using Stripe and PayPal. APIs for various online databases of genealogical records.
 
@@ -22,7 +22,7 @@ Data tables for comprehrensive amount of CRUD information. Forms easy to modify.
 https://www.familytree365.com - register a free account
 
 <!--h-->
-### Official Laravel Enso Documentation
+### Official Laravel Liberu Documentation
 
 The documentation is available [here](https://docs.laravel-enso.com) split into backend and frontend.
 Note that most sections have short demo clips.
@@ -101,7 +101,7 @@ priority in addressing your issues
 
 help with understanding the environment
 
-getting you to be proficient when developing on Enso
+getting you to be proficient when developing on Liberu
 
 mentoring
 
@@ -119,9 +119,9 @@ The support services are provided by a team of 4 members.
 
 ### Thanks
 
-Built with Laravel Enso 5.x which is crafted on Laravel 9.2.
+Built with Laravel Liberu 5.x which is crafted on Laravel 9.2.
 
-Special thanks to [Taylor Otwell](https://laravel.com/), [Jeffrey Way](https://laracasts.com), [Evan You](https://vuejs.org/) and [Jeremy Thomas](https://bulma.io). [Laravel Enso](https://github.com/laravel-enso)
+Special thanks to [Taylor Otwell](https://laravel.com/), [Jeffrey Way](https://laracasts.com), [Evan You](https://vuejs.org/) and [Jeremy Thomas](https://bulma.io). [Laravel Liberu](https://github.com/laravel-enso)
 
 <!--h-->
 ### Contributions
