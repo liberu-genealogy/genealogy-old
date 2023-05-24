@@ -15,8 +15,8 @@
       <directory suffix="Test.php">./tests</directory>
       <directory suffix="Test.php">./vendor/laravel-enso/action-logger/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-enso/addresses/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/calendar/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/comments/tests</directory>
+      <directory suffix="Test.php">./vendor/laravel-liberu/calendar/tests</directory>
+      <directory suffix="Test.php">./vendor/laravel-liberu/comments/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-enso/filters/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-enso/forms/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-enso/helpers/tests</directory>
@@ -33,13 +33,13 @@
       <directory suffix="Test.php">./vendor/laravel-enso/searchable/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-enso/tables/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-enso/track-who/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/tutorials/tests</directory>
+      <directory suffix="Test.php">./vendor/laravel-liberu/tutorials/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-enso/upgrade/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-enso/user-groups/tests</directory>
     </testsuite>
     <testsuite name="sync">
-      <directory suffix="Test.php">./vendor/laravel-enso/cli/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/documents/tests</directory>
+      <directory suffix="Test.php">./vendor/laravel-liberu/cli/tests</directory>
+      <directory suffix="Test.php">./vendor/laravel-liberu/documents/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-enso/files/tests</directory>
     </testsuite>
   </testsuites>
