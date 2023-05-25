@@ -8245,16 +8245,16 @@
         },
         {
             "name": "laravel/horizon",
-            "version": "v5.15.1",
+            "version": "v5.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "952c2a0caa79b3fdc513e8db668029004f3a0f35"
+                "reference": "4f762b1bd47b51f0557da84873a208410de9eece"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/952c2a0caa79b3fdc513e8db668029004f3a0f35",
-                "reference": "952c2a0caa79b3fdc513e8db668029004f3a0f35",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/4f762b1bd47b51f0557da84873a208410de9eece",
+                "reference": "4f762b1bd47b51f0557da84873a208410de9eece",
                 "shasum": ""
             },
             "require": {
@@ -8317,9 +8317,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/horizon/issues",
-                "source": "https://github.com/laravel/horizon/tree/v5.15.1"
+                "source": "https://github.com/laravel/horizon/tree/v5.16.0"
             },
-            "time": "2023-04-26T16:00:44+00:00"
+            "time": "2023-05-18T14:11:32+00:00"
         },
         {
             "name": "laravel/octane",
