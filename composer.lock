@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "159e22fa6366910a6b97b73f114899ee",
+    "content-hash": "f7081bb030325435491aa857fbeefc94",
     "packages": [
         {
             "name": "anlutro/curl",
@@ -3013,16 +3013,16 @@
         },
         {
             "name": "laravel-liberu/core",
-            "version": "v8.0.10",
+            "version": "v8.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/core.git",
-                "reference": "5be364cb2786fea6c97776b3d4b7422ea4d8f2a9"
+                "reference": "c15de643a64aa8171f00b41081a398c792ac0969"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/core/zipball/5be364cb2786fea6c97776b3d4b7422ea4d8f2a9",
-                "reference": "5be364cb2786fea6c97776b3d4b7422ea4d8f2a9",
+                "url": "https://api.github.com/repos/laravel-liberu/core/zipball/c15de643a64aa8171f00b41081a398c792ac0969",
+                "reference": "c15de643a64aa8171f00b41081a398c792ac0969",
                 "shasum": ""
             },
             "require": {
@@ -3048,7 +3048,7 @@
                 "laravel-liberu/people": "^4.0",
                 "laravel-liberu/permissions": "^5.0",
                 "laravel-liberu/rememberable": "^3.0",
-                "laravel-liberu/roles": "^5.1.8",
+                "laravel-liberu/roles": "^5.1",
                 "laravel-liberu/searchable": "^2.2",
                 "laravel-liberu/select": "^4.0",
                 "laravel-liberu/sentry": "^1.0",
@@ -3117,9 +3117,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/core/issues",
-                "source": "https://github.com/laravel-liberu/core/tree/v8.0.10"
+                "source": "https://github.com/laravel-liberu/core/tree/v8.0.11"
             },
-            "time": "2023-05-25T13:44:30+00:00"
+            "time": "2023-05-26T07:48:55+00:00"
         },
         {
             "name": "laravel-liberu/countries",
@@ -10354,16 +10354,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v10.13.0",
+            "version": "v10.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "4ad20dd0a95b2761aecea3d2b2354cc3a99abf9b"
+                "reference": "c88a80fa7f361c2d30d6c81fb71f2bb30be1001f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/4ad20dd0a95b2761aecea3d2b2354cc3a99abf9b",
-                "reference": "4ad20dd0a95b2761aecea3d2b2354cc3a99abf9b",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/c88a80fa7f361c2d30d6c81fb71f2bb30be1001f",
+                "reference": "c88a80fa7f361c2d30d6c81fb71f2bb30be1001f",
                 "shasum": ""
             },
             "require": {
@@ -10409,9 +10409,9 @@
             ],
             "support": {
                 "issues": "https://github.com/stripe/stripe-php/issues",
-                "source": "https://github.com/stripe/stripe-php/tree/v10.13.0"
+                "source": "https://github.com/stripe/stripe-php/tree/v10.14.0"
             },
-            "time": "2023-05-11T19:07:49+00:00"
+            "time": "2023-05-25T18:09:32+00:00"
         },
         {
             "name": "symfony/console",

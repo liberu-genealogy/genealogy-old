@@ -38,7 +38,13 @@ class Person extends CorePerson
      *
      * @var array
      */
-    protected $dates = ['deleted_at', 'birthday', 'deathday', 'burial_day', 'chan'];
+    protected $casts = [
+        'deleted_at' => 'datetime', 
+        'birthday' => 'datetime',
+        'deathday' => 'datetime',
+        'burial_day' => 'datetime',
+        'chan' => 'datetime',
+    ];
 
     protected $guarded = ['id'];
 

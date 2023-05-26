@@ -7,7 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class TenantPerson extends Model
 {
-    protected $dates = ['deleted_at', 'birthday', 'deathday', 'burial_day', 'updated_at'];
+    protected $casts = [
+        'deleted_at' => 'datetime', 
+        'birthday' => 'datetime', 
+        'deathday' => 'datetime', 
+        'burial_day' => 'datetime', 
+        'updated_at' => 'datetime',    
+    ];
 
     protected $connection = 'mysql';
 
