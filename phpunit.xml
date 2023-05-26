@@ -13,34 +13,34 @@
   <testsuites>
     <testsuite name="parallel">
       <directory suffix="Test.php">./tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/action-logger/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/addresses/tests</directory>
+      <!-- <directory suffix="Test.php">./vendor/laravel-liberu/action-logger/tests</directory> -->
+      <directory suffix="Test.php">./vendor/laravel-liberu/addresses/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-liberu/calendar/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-liberu/comments/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/filters/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/forms/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/helpers/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/history-tracker/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/impersonate/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/localisation/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/logs/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/menus/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/notifications/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/people/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/permissions/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/rememberable/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/roles/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/searchable/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/tables/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/track-who/tests</directory>
+      <directory suffix="Test.php">./vendor/laravel-liberu/filters/tests</directory>
+      <directory suffix="Test.php">./vendor/laravel-liberu/forms/tests</directory>
+      <directory suffix="Test.php">./vendor/laravel-liberu/helpers/tests</directory>
+      <directory suffix="Test.php">./vendor/laravel-liberu/history-tracker/tests</directory>
+      <directory suffix="Test.php">./vendor/laravel-liberu/impersonate/tests</directory>
+      <directory suffix="Test.php">./vendor/laravel-liberu/localisation/tests</directory>
+      <directory suffix="Test.php">./vendor/laravel-liberu/logs/tests</directory>
+      <directory suffix="Test.php">./vendor/laravel-liberu/menus/tests</directory>
+      <directory suffix="Test.php">./vendor/laravel-liberu/notifications/tests</directory>
+      <directory suffix="Test.php">./vendor/laravel-liberu/people/tests</directory>
+      <directory suffix="Test.php">./vendor/laravel-liberu/permissions/tests</directory>
+      <directory suffix="Test.php">./vendor/laravel-liberu/rememberable/tests</directory>
+      <directory suffix="Test.php">./vendor/laravel-liberu/roles/tests</directory>
+      <directory suffix="Test.php">./vendor/laravel-liberu/searchable/tests</directory>
+      <directory suffix="Test.php">./vendor/laravel-liberu/tables/tests</directory>
+      <directory suffix="Test.php">./vendor/laravel-liberu/track-who/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-liberu/tutorials/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/upgrade/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/user-groups/tests</directory>
+      <directory suffix="Test.php">./vendor/laravel-liberu/upgrade/tests</directory>
+      <directory suffix="Test.php">./vendor/laravel-liberu/user-groups/tests</directory>
     </testsuite>
     <testsuite name="sync">
       <directory suffix="Test.php">./vendor/laravel-liberu/cli/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-liberu/documents/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-enso/files/tests</directory>
+      <directory suffix="Test.php">./vendor/laravel-liberu/files/tests</directory>
     </testsuite>
   </testsuites>
   <php>
