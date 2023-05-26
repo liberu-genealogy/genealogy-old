@@ -2558,16 +2558,16 @@
         },
         {
             "name": "laravel-liberu/calendar",
-            "version": "v3.0.3",
+            "version": "v3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/calendar.git",
-                "reference": "719e7cb78dae86c18ec4c015704e4a32e4f3c74c"
+                "reference": "7db5fcfc7bf11e2d660129ab4e20676c0c595d1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/calendar/zipball/719e7cb78dae86c18ec4c015704e4a32e4f3c74c",
-                "reference": "719e7cb78dae86c18ec4c015704e4a32e4f3c74c",
+                "url": "https://api.github.com/repos/laravel-liberu/calendar/zipball/7db5fcfc7bf11e2d660129ab4e20676c0c595d1f",
+                "reference": "7db5fcfc7bf11e2d660129ab4e20676c0c595d1f",
                 "shasum": ""
             },
             "require": {
@@ -2632,9 +2632,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/calendar/issues",
-                "source": "https://github.com/laravel-liberu/calendar/tree/v3.0.3"
+                "source": "https://github.com/laravel-liberu/calendar/tree/v3.0.4"
             },
-            "time": "2023-05-15T20:56:27+00:00"
+            "time": "2023-05-26T14:24:52+00:00"
         },
         {
             "name": "laravel-liberu/charts",
@@ -3063,16 +3063,16 @@
         },
         {
             "name": "laravel-liberu/countries",
-            "version": "v2.3.3",
+            "version": "v2.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/countries.git",
-                "reference": "181cdeeeef6ee648a812c59c9d0a2f8b702db852"
+                "reference": "4a79061e8eb001e6b50086df959862e5849e65fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/countries/zipball/181cdeeeef6ee648a812c59c9d0a2f8b702db852",
-                "reference": "181cdeeeef6ee648a812c59c9d0a2f8b702db852",
+                "url": "https://api.github.com/repos/laravel-liberu/countries/zipball/4a79061e8eb001e6b50086df959862e5849e65fb",
+                "reference": "4a79061e8eb001e6b50086df959862e5849e65fb",
                 "shasum": ""
             },
             "require": {
@@ -3126,9 +3126,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/countries/issues",
-                "source": "https://github.com/laravel-liberu/countries/tree/v2.3.3"
+                "source": "https://github.com/laravel-liberu/countries/tree/v2.3.4"
             },
-            "time": "2023-05-15T20:56:20+00:00"
+            "time": "2023-05-26T11:56:31+00:00"
         },
         {
             "name": "laravel-liberu/data-export",
