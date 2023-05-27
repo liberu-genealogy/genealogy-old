@@ -61,7 +61,7 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
       - run: composer clearcache
-      - run: composer selfupdate
+      - run: sudo composer selfupdate
       - run: composer install -n --prefer-dist
       - save_cache:
           key: v1-dependencies-{{ checksum "composer.json" }}
