@@ -54,19 +54,17 @@ jobs:
      #  - run: docker-php-ext-enable xdebug
 
       # Download and cache dependencies
-
-
-
-
-
-            
-
+      - restore_cache:
+          keys:
+            # "composer.lock" can be used if it is committed to the repo
+            - v1-dependencies-{{ checksum "composer.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
       - run: composer install -n --prefer-dist
-
-
-
-
-
+      - save_cache:
+          key: v1-dependencies-{{ checksum "composer.json" }}
+          paths:
+            - ./vendor
       - run:
           name: Mysql database
           command: mysql  -h 127.0.0.1 -u root -e "create database enso;"
