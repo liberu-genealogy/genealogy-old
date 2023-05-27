@@ -47,6 +47,7 @@
         "barryvdh/laravel-ide-helper": "^2.10",
         "fakerphp/faker": "^1.15",
         "filp/whoops": "^2.1",
+        "laravel/pint": "^1.0",
         "laravel-liberu/cli": "^5.0",
         "laravel-liberu/phpunit-pretty-print": "^1.0",
         "mockery/mockery": "^1.4.4",

@@ -7,6 +7,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Notification;
 use App\Notifications\ResetPassword;
+use Illuminate\Support\Facades\Hash;
 use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
@@ -75,6 +76,52 @@ class UserTest extends TestCase
 
         $this->assertEquals($this->testModel->is_active, $this->testModel->fresh()->is_active);
     }
+
+    /** @test */
+    public function can_update_user_without_password_change()
+    {
+        $originalPassword = Hash::make('test');
+        $this->testModel->password = $originalPassword;
+        $this->testModel->save();
+
+        $this->testModel->is_active = !$this->testModel->is_active;
+        $updatePayload = array_merge($this->testModel->toArray(), [
+            // 'password' => '',
+            // 'password_confirmation' => '',
+        ]);
+        $response = $this->patch(
+            route('administration.users.update', $this->testModel->id, false),
+            $updatePayload
+        );
+
+        $response->assertStatus(200)->assertJsonStructure(['message']);
+
+        $updatedModel = $this->testModel->fresh();
+        $this->assertEquals($this->testModel->is_active, $updatedModel->is_active);
+        $this->assertEquals($originalPassword, $updatedModel->password);
+    }
+
+    /** @test */
+    public function can_update_user_password()
+    {
+        $originalPassword = Hash::make('test');
+        $newPassword = 'new-password';
+        $this->testModel->password = $originalPassword;
+        $this->testModel->save();
+
+        $updatePayload = array_merge($this->testModel->toArray(), [
+            'password' => $newPassword,
+            'password_confirmation' => $newPassword,
+        ]);
+
+        $this->patch(
+            route('administration.users.update', $this->testModel->id, false),
+            $updatePayload
+        )->assertStatus(200)->assertJsonStructure(['message']);
+        
+        $this->assertTrue(Hash::check($newPassword, $this->testModel->fresh()->password));
+    }
+
 
     /** @test */
     public function get_option_list()
