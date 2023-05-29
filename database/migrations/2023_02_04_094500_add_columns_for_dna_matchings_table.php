@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
 	    Schema::table('dna_matchings', function (Blueprint $table) {
-            $table->unsignedInteger('match_id');
+            $table->unsignedInteger('match_id')->nullable();
         });
     }
 
