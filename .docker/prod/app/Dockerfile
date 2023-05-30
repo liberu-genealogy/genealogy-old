@@ -22,7 +22,7 @@ FROM php:8.2-fpm-bullseye
 
 # Set working directory
 COPY . /var/www/
-COPY /var/www/.env.example /var/www/.env
+COPY ./.env.example /var/www/.env
 COPY --from=vendor /app/vendor/ /var/www/vendor/
 
 WORKDIR /var/www
