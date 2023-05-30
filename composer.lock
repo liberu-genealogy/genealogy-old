@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca0b601e4f966ff1bb54abe2f8ad776f",
+    "content-hash": "656e0800429ed8e6a1bf384d981cf57a",
     "packages": [
         {
             "name": "anlutro/curl",
@@ -257,6 +257,56 @@
                 }
             ],
             "time": "2023-01-15T23:15:59+00:00"
+        },
+        {
+            "name": "cgdprojects/php-gedcom",
+            "version": "v1.4.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cgdprojects/php-gedcom.git",
+                "reference": "0ead94390d79f332aba222014f6651bfb01aadbc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cgdprojects/php-gedcom/zipball/0ead94390d79f332aba222014f6651bfb01aadbc",
+                "reference": "0ead94390d79f332aba222014f6651bfb01aadbc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "9.*",
+                "rector/rector": "^0.11.49",
+                "squizlabs/php_codesniffer": "3.6.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Gedcom\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A GEDCOM file parser (read + write) for PHP 8.0+",
+            "homepage": "http://github.com/familytree365/php-gedcom",
+            "keywords": [
+                "gedcom",
+                "parser"
+            ],
+            "support": {
+                "issues": "https://github.com/cgdprojects/php-gedcom/issues",
+                "source": "https://github.com/cgdprojects/php-gedcom/tree/v1.4.10"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/familytree365",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-11-28T12:13:02+00:00"
         },
         {
             "name": "clue/stream-filter",
@@ -654,16 +704,16 @@
         },
         {
             "name": "doctrine/deprecations",
-            "version": "v1.0.0",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/deprecations.git",
-                "reference": "0e2a4f1f8cdfc7a92ec3b01c9334898c806b30de"
+                "reference": "8cffffb2218e01f3b370bf763e00e81697725259"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/0e2a4f1f8cdfc7a92ec3b01c9334898c806b30de",
-                "reference": "0e2a4f1f8cdfc7a92ec3b01c9334898c806b30de",
+                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/8cffffb2218e01f3b370bf763e00e81697725259",
+                "reference": "8cffffb2218e01f3b370bf763e00e81697725259",
                 "shasum": ""
             },
             "require": {
@@ -691,9 +741,9 @@
             "homepage": "https://www.doctrine-project.org/",
             "support": {
                 "issues": "https://github.com/doctrine/deprecations/issues",
-                "source": "https://github.com/doctrine/deprecations/tree/v1.0.0"
+                "source": "https://github.com/doctrine/deprecations/tree/v1.1.0"
             },
-            "time": "2022-05-02T15:47:09+00:00"
+            "time": "2023-05-29T18:55:17+00:00"
         },
         {
             "name": "doctrine/event-manager",
@@ -4135,21 +4185,21 @@
         },
         {
             "name": "laravel-liberu/laravel-gedcom",
-            "version": "v3.4.6",
+            "version": "v9.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/laravel-gedcom.git",
-                "reference": "6b5eae5efac5ea60bece5318446257dbdbde4a9a"
+                "reference": "2b839a2a44e8349eb37e78d1649362aa01a21f64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/laravel-gedcom/zipball/6b5eae5efac5ea60bece5318446257dbdbde4a9a",
-                "reference": "6b5eae5efac5ea60bece5318446257dbdbde4a9a",
+                "url": "https://api.github.com/repos/laravel-liberu/laravel-gedcom/zipball/2b839a2a44e8349eb37e78d1649362aa01a21f64",
+                "reference": "2b839a2a44e8349eb37e78d1649362aa01a21f64",
                 "shasum": ""
             },
             "require": {
+                "cgdprojects/php-gedcom": "^1.4",
                 "doctrine/dbal": "^2.8|^3.0",
-                "laravel-liberu/php-gedcom": "^1.4",
                 "php": ">=8.0"
             },
             "require-dev": {
@@ -4175,7 +4225,7 @@
             "description": "A package that converts gedcom files to Eloquent models",
             "support": {
                 "issues": "https://github.com/laravel-liberu/laravel-gedcom/issues",
-                "source": "https://github.com/laravel-liberu/laravel-gedcom/tree/v3.4.6"
+                "source": "https://github.com/laravel-liberu/laravel-gedcom/tree/v9.0.3"
             },
             "funding": [
                 {
@@ -4183,7 +4233,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-05-24T11:09:43+00:00"
+            "time": "2023-01-03T12:00:24+00:00"
         },
         {
             "name": "laravel-liberu/laravel-gelato",
@@ -4790,56 +4840,6 @@
                 "source": "https://github.com/laravel-liberu/permissions/tree/v5.0.8"
             },
             "time": "2023-05-25T10:25:56+00:00"
-        },
-        {
-            "name": "laravel-liberu/php-gedcom",
-            "version": "v1.4.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel-liberu/php-gedcom.git",
-                "reference": "0ead94390d79f332aba222014f6651bfb01aadbc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/php-gedcom/zipball/0ead94390d79f332aba222014f6651bfb01aadbc",
-                "reference": "0ead94390d79f332aba222014f6651bfb01aadbc",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=8.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "9.*",
-                "rector/rector": "^0.11.49",
-                "squizlabs/php_codesniffer": "3.6.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Gedcom\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A GEDCOM file parser (read + write) for PHP 8.0+",
-            "homepage": "http://github.com/familytree365/php-gedcom",
-            "keywords": [
-                "gedcom",
-                "parser"
-            ],
-            "support": {
-                "issues": "https://github.com/laravel-liberu/php-gedcom/issues",
-                "source": "https://github.com/laravel-liberu/php-gedcom/tree/v1.4.10"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/familytree365",
-                    "type": "github"
-                }
-            ],
-            "time": "2021-11-28T12:13:02+00:00"
         },
         {
             "name": "laravel-liberu/rememberable",
@@ -18322,5 +18322,5 @@
         "php": ">=8.1.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
