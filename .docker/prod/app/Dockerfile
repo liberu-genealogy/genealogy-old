@@ -1,6 +1,29 @@
-FROM php:8.1-fpm-bullseye
+#
+# PHP Dependencies
+#
+FROM composer:latest as vendor
+ 
+COPY database/ database/
+ 
+COPY composer.json composer.json
+COPY composer.lock composer.lock
+ 
+RUN composer install \
+    --ignore-platform-reqs \
+    --no-interaction \
+    --no-plugins \
+    --no-scripts \
+    --prefer-dist
+ #
+# Application
+#
+
+FROM php:8.2-fpm-bullseye
 
 # Set working directory
+COPY . /var/www/
+COPY --from=vendor /app/vendor/ /var/www/vendor/
+
 WORKDIR /var/www
 
 # Install dependencies
@@ -41,22 +64,15 @@ RUN apt-get update \
             --with-xpm \
             --with-freetype \
   && docker-php-ext-install gd \
-# Install composer
-
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 #change uid and gid of apache to docker user uid/gid
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
-
-# Copy existing application directory contents
-#COPY . /var/www
 
 # Copy existing application directory permissions
 RUN chown -R www-data:www-data /var/www
 
 # Change current user to www-data
 USER www-data
-
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
