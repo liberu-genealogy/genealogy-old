@@ -15,7 +15,7 @@
         "laravel-liberu/core": "^8.0",
         "laravel-liberu/data-import": "^6.0",
         "laravel-liberu/discussions": "^4.0",
-        "laravel-liberu/documents": "^5.0",
+        "laravel-liberu/documents": "^9.0",
         "laravel-liberu/excel": "^3.0",
         "laravel-liberu/how-to": "^5.0",
         "laravel-liberu/laravel-gedcom": "^3.4",
