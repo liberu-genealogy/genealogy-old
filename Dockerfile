@@ -29,30 +29,7 @@ WORKDIR /var/www
 
 # Install dependencies
 #install all the system dependencies and enable PHP modules
-RUN sudo apt-get update \
-  && sudo apt-get -y install --no-install-recommends \
-    locales \
-    git \
-    unzip \
-    libzip-dev \
-    libicu-dev \
-    libonig-dev \
-                curl \
-            libmemcached-dev \
-            libz-dev \
-            libpq-dev \
-            libjpeg-dev \
-            libpng-dev \
-            libfreetype6-dev \
-            libssl-dev \
-            libwebp-dev \
-            libxpm-dev \
-            libmcrypt-dev \
-  && sudo apt-get clean \
-  && sudo rm -rf /var/lib/apt/lists/* \
-  && sudo locale-gen en_US.UTF-8 \
-  && sudo localedef -f UTF-8 -i en_US en_US.UTF-8 \
-  && docker-php-ext-install \
+RUN docker-php-ext-install \
     intl \
     pdo_mysql \
     zip \
