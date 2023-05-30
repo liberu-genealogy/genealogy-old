@@ -3,8 +3,7 @@
 #
 FROM composer:latest as vendor
  
-COPY ./composer.json composer.json
-COPY ./composer.lock composer.lock
+COPY composer.json composer.json
  
 RUN composer install \
     --ignore-platform-reqs \
