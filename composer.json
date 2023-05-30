@@ -26,7 +26,7 @@
         "laravel-liberu/tutorials": "^5.0",
         "laravel/cashier": "^14.12",
         "laravel/horizon": "^5.0",
-        "laravel/octane": "^1.2",
+        "laravel/octane": "^2.0",
         "laravel/sanctum": "^3.2",
         "laravel/socialite": "^5.5",
         "laravel/telescope": "^4.0",
