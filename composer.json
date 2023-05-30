@@ -19,7 +19,7 @@
         "laravel-liberu/excel": "^3.0",
         "laravel-liberu/how-to": "^5.0",
         "laravel-liberu/laravel-gedcom": "^3.4",
-        "laravel-liberu/laravel-gelato": "^1.0",
+        "laravel-liberu/laravel-gelato": "^9.0",
         "laravel-liberu/pdf": "^2.0",
         "laravel-liberu/tasks": "^2.0",
         "laravel-liberu/teams": "^4.0",
