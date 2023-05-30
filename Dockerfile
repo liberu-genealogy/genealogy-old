@@ -3,7 +3,7 @@
 #
 FROM composer:latest as vendor
 
-WORKDIR /
+WORKDIR /app
 COPY composer.json composer.json
 
 COPY composer.lock composer.lock
