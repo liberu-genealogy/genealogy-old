@@ -53,7 +53,7 @@ class Multitenant
         $x = config([$key => $value]);
         //if ($conn === 'tenant') {
         $databaseName = \DB::connection('tenantdb')->getDatabaseName();
-        Log::debug('DB-'.$databaseName);
+        // Log::debug('DB-'.$databaseName);
 
         //Family::setConnection();
         // config(['database.default'=>'tenant']);
