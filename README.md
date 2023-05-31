@@ -119,7 +119,7 @@ The support services are provided by a team of 4 members.
 
 ### Thanks
 
-Built with Laravel Liberu 5.x which is crafted on Laravel 9.2.
+Built with Laravel Liberu 5.x which is crafted on Laravel 10.
 
 Special thanks to [Taylor Otwell](https://laravel.com/), [Jeffrey Way](https://laracasts.com), [Evan You](https://vuejs.org/) and [Jeremy Thomas](https://bulma.io). [Laravel Liberu](https://github.com/laravel-enso)
 
@@ -128,24 +128,6 @@ Special thanks to [Taylor Otwell](https://laravel.com/), [Jeffrey Way](https://l
 
 are welcome. Pull requests are great, but issues are good too.
 
-## Contributors
-
-This project exists thanks to all the people who contribute. 
-<a href="graphs/contributors"><img src="https://opencollective.com/genealogy/contributors.svg?width=890&button=false" /></a>
-
-
-## Backers
-
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/genealogy#backer)]
-
-<a href="https://opencollective.com/genealogy#backers" target="_blank"><img src="https://opencollective.com/genealogy/backers.svg?width=890"></a>
-
-
-## Sponsors
-
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/genealogy#sponsor)]
-
-<a href="https://opencollective.com/genealogy#sponsors" target="_blank"><img src="https://opencollective.com/genealogy/sponsors.svg?width=890"></a>
 ### License
 
 This package is released under the MIT license.
