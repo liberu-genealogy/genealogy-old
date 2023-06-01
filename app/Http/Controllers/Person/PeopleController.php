@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Person;
 
 use App\Forms\Builders\PersonForm;
-use App\Models\Person;
 use App\Http\Controllers\Controller;
+use App\Models\Person;
 use Illuminate\Http\Request;
 
 class PeopleController extends Controller

@@ -41,22 +41,25 @@ class User extends CoreUser
     {
         return $this->hasMany(Message::class);
     }
+
     public function convOne()
     {
         return $this->belongsTo(Conversation::class, 'user_one');
     }
+
     public function convTwo()
     {
         return $this->belongsTo(Conversation::class, 'user_two');
     }
+
     public function conversations()
     {
         return $this->convOne->merage($this->convTwo);
     }
-                    
+
     public function sendPasswordResetNotification($token)
     {
-        $this->notify((new ResetPassword($token)));
+        $this->notify(new ResetPassword($token));
     }
 //    public function avatar()
 //    {

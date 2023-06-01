@@ -2,17 +2,17 @@
 
 namespace App\Models;
 
-#use LaravelEnso\People\Models\Person as CorePerson;
+//use LaravelEnso\People\Models\Person as CorePerson;
 use Illuminate\Database\Eloquent\Model;
 
 class TenantPerson extends Model
 {
     protected $casts = [
-        'deleted_at' => 'datetime', 
-        'birthday' => 'datetime', 
-        'deathday' => 'datetime', 
-        'burial_day' => 'datetime', 
-        'updated_at' => 'datetime',    
+        'deleted_at' => 'datetime',
+        'birthday' => 'datetime',
+        'deathday' => 'datetime',
+        'burial_day' => 'datetime',
+        'updated_at' => 'datetime',
     ];
 
     protected $connection = 'mysql';

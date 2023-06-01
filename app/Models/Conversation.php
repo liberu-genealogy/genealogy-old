@@ -19,14 +19,17 @@ class Conversation extends Model
     {
         return $this->hasMany(Message::class, 'conversation_id');
     }
+
     public function userOne()
     {
         return $this->hasOne(User::class);
     }
+
     public function userTwo()
     {
         return $this->hasOne(User::class);
     }
+
     public function users()
     {
         return $this->userOne->merge($this->userTwo());

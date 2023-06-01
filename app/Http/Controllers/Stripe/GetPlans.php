@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Stripe;
 
 use App\Http\Controllers\Controller;
-use LaravelEnso\Roles\Models\Role;
 use Illuminate\Http\Request;
+use LaravelEnso\Roles\Models\Role;
 use Stripe;
 
 class GetPlans extends Controller
@@ -27,16 +27,18 @@ class GetPlans extends Controller
 
         $result = [];
         foreach ($plans as $k=>$plan) {
-               if ($k == 0) {
-                     $row1['id'] = $role->id;
-                     $row1['amount'] = 0;
-                     $row1['nickname'] = $role->name;
-                     $row1['title'] = $role->display_name;
-                     $row1['subscribed'] = false;
-                     $result[] = $row1;
-                 }
+            if ($k == 0) {
+                $row1['id'] = $role->id;
+                $row1['amount'] = 0;
+                $row1['nickname'] = $role->name;
+                $row1['title'] = $role->display_name;
+                $row1['subscribed'] = false;
+                $result[] = $row1;
+            }
 
-            if(empty($plan->nickname)) continue;
+            if (empty($plan->nickname)) {
+                continue;
+            }
 //            if(empty($plan->nickname) || empty($plan->metadata->paypal_id)) continue;
 
             $row ['id'] = $plan->id;
@@ -69,6 +71,5 @@ class GetPlans extends Controller
         }
 
         return $result;
-
-}
+    }
 }

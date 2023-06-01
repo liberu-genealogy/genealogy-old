@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-Schema::table('companies', function(Blueprint $table)
-{
-    $table->dropUnique(['name']);
-});    }
+        Schema::table('companies', function (Blueprint $table) {
+            $table->dropUnique(['name']);
+        });
+    }
 
     /**
      * Reverse the migrations.
@@ -26,6 +26,6 @@ Schema::table('companies', function(Blueprint $table)
     public function down()
     {
         Schema::table('companies', function ($table) {
-	});
+        });
     }
 };

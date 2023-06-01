@@ -50,7 +50,7 @@ class PersonTable implements Table
                     $join->on('company_person.company_id', '=', 'companies.id')
                         ->where('companies.id', $userId);
                 });
-}
+        }
     }
 
     public function templatePath(): string

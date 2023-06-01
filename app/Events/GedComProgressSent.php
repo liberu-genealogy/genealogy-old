@@ -3,14 +3,16 @@
 namespace App\Events;
 
 use App\Jobs\ImportGedcom;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Broadcasting\Channel;
+use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class GedComProgressSent extends ShouldBroadcast{
+class GedComProgressSent extends ShouldBroadcast
+{
     public function __construct()
     {
         //
     }
+
     /**
      * Get the channels the event should broadcast on.
      *
@@ -24,7 +26,7 @@ class GedComProgressSent extends ShouldBroadcast{
     public function broadcastWith()
     {
         return [
-            'data' => 'key'
+            'data' => 'key',
         ];
     }
 }

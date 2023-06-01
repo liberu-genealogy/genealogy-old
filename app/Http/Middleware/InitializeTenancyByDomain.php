@@ -16,8 +16,10 @@ class InitializeTenancyByDomain
      */
     public function handle(Request $request, Closure $next)
     {
-        if(in_array($request->getHost(), config('tenancy.central_domains'), true)){
-return $next($request);}
-return $this->initalizeTenancy($request, $next, $request->getHost());
+        if (in_array($request->getHost(), config('tenancy.central_domains'), true)) {
+            return $next($request);
+        }
+
+        return $this->initalizeTenancy($request, $next, $request->getHost());
     }
 }

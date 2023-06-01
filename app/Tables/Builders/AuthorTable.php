@@ -15,6 +15,7 @@ class AuthorTable implements Table
         $authors = Author::selectRaw('
             authors.id, authors.name, authors.description, authors.is_active
         ');
+
         return $authors;
     }
 

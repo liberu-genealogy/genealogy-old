@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Private;
 
 use App\Http\Controllers\Controller;
+use App\Models\Conversation;
+use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Message;
-use App\Models\Conversation;
 
 class ChatsController extends Controller
 {
@@ -18,6 +18,7 @@ class ChatsController extends Controller
     public function index()
     {
         $user = Auth::user();
+
         return Conversation::with('users')
             ->where('user_one', $user->id)
             ->orWhere('user_two', $user->id)
@@ -37,7 +38,7 @@ class ChatsController extends Controller
         if ($conversation->status) {
             $message = $user->messages()->create([
                 'message' => $request->input('message'),
-                'conversation_id' => $request->input('conversation_id')
+                'conversation_id' => $request->input('conversation_id'),
             ]);
             // $message = new Message();
             // $message->message = $request->get('message');
@@ -45,6 +46,7 @@ class ChatsController extends Controller
             // $message->conversation_id = $request->get('conversation_id');
             // $message->save();
             broadcast(new \App\Events\MessageSent($message, $user, $conversation))->toOthers();
+
             return ['message' => 'Message Sent!'];
         }
     }
@@ -77,6 +79,7 @@ class ChatsController extends Controller
             $message = Message::find($id);
             $message->udpate($request->all());
             broadcast(new \App\Events\MessageSent($message, $user, $conversation))->toOthers();
+
             return ['message' => $message->load('user')];
         }
     }
@@ -94,8 +97,8 @@ class ChatsController extends Controller
         // broadcast(new \App\Events\MessageSent($message, $user, $conversation))->toOthers();
         // return ['message' => $message];
     }
+
     public function ping(Request $request)
     {
-        
     }
 }

@@ -2,8 +2,8 @@
 
 namespace App\Broadcasting;
 
-use App\Models\User;
 use App\Models\ImportJob;
+use App\Models\User;
 
 class Notification
 {
@@ -27,14 +27,14 @@ class Notification
     {
         //
     }
+
     /**
-     * The user imports Gedcom progress
-     * 
+     * The user imports Gedcom progress.
+     *
      * @param \App\Models\ImportJob
      * @return array|bool
      */
     public function import(ImportJob $job)
     {
-        
     }
 }

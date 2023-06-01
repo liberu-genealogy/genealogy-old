@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Trees\Gift;
 use Illuminate\Support\Facades\Route;
+
 // use App\Http\Controllers\Private\ChatsController;
 
 Route::get('/trees/gift/create', [Gift::class, 'createOrder'])->name('gift.create.order');
@@ -43,11 +44,11 @@ Route::get('/socketTest', function () {
 });
 
 /**
-Route::middleware('auth')
-    ->group(function () {
-        Route::get('connects', 'ChatsController@fetchConnects');
-        Route::get('messages/{id}', 'ChatsController@fetchMessages');
-        Route::post('messages/{id}', 'ChatsController@sendMessage');
-    });
-**/
+ * Route::middleware('auth')
+ * ->group(function () {
+ * Route::get('connects', 'ChatsController@fetchConnects');
+ * Route::get('messages/{id}', 'ChatsController@fetchMessages');
+ * Route::post('messages/{id}', 'ChatsController@sendMessage');
+ * });.
+ **/
 Route::view('/{any}', 'index')->where('any', '.*');

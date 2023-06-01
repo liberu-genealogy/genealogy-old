@@ -10,10 +10,11 @@ use App\Models\User;
 use App\Traits\TenantConnectionResolver;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\Auth;
+use Laravel\Scout\Searchable;
 use LaravelEnso\People\Models\Person as CorePerson;
 use LaravelEnso\Tables\Traits\TableCache;
+
 use function Symfony\Component\Translation\t;
-use Laravel\Scout\Searchable;
 
 class Person extends CorePerson
 {
@@ -39,7 +40,7 @@ class Person extends CorePerson
      * @var array
      */
     protected $casts = [
-        'deleted_at' => 'datetime', 
+        'deleted_at' => 'datetime',
         'birthday' => 'datetime',
         'deathday' => 'datetime',
         'burial_day' => 'datetime',

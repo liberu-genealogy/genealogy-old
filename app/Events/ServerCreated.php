@@ -16,8 +16,8 @@ class ServerCreated implements ShouldBroadcastNow
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     /**
-     * The user that created the server
-     * 
+     * The user that created the server.
+     *
      * @var \App\Models\User
      */
     public $message;
@@ -42,9 +42,10 @@ class ServerCreated implements ShouldBroadcastNow
     {
         return new Channel('chat');
     }
+
     /**
-     * The event's broadcast name
-     * 
+     * The event's broadcast name.
+     *
      * @return string
      */
     public function broadcastAs()

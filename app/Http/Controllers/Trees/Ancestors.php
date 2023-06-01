@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Trees;
 
 use App\Models\Family;
+use App\Models\Person;
 use File;
 use GenealogiaWebsite\LaravelGedcom\Utils\GedcomGenerator;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use App\Models\Person;
 use Response;
 
 class Ancestors extends Controller
@@ -39,21 +39,28 @@ class Ancestors extends Controller
     {
         $p_family_id = $person->child_in_family_id;
         $p_family = Family::find($p_family_id);
-        if ($p_family == null) return [];
+        if ($p_family == null) {
+            return [];
+        }
         $parents = Person::where('id', $p_family->husband_id)->orwhere('id', $p_family->wife_id)->get();
+
         return $parents;
     }
 
     private function getGraphData($start_id, $nest = 1)
     {
-        if ($this->nest < $nest) return;
+        if ($this->nest < $nest) {
+            return;
+        }
 
         $person = Person::find($start_id);
         // do not process for null
-        if ($person == null) return;
-            
+        if ($person == null) {
+            return;
+        }
+
         $families = Family::where('husband_id', $start_id)->orwhere('wife_id', $start_id)->get();
-        if (!count($families)) {
+        if (! count($families)) {
             $person->setAttribute('own_unions', []);
             $person['generation'] = $nest;
             $this->persons[$start_id] = $person;
@@ -61,14 +68,14 @@ class Ancestors extends Controller
             return true;
         }
         $own_unions = $families->pluck('id')->map(function ($id) {
-            return 'u' . $id;
+            return 'u'.$id;
         })->toArray();
         $person->setAttribute('own_unions', $own_unions);
         $person['generation'] = $nest;
         $this->persons[$start_id] = $person;
 
         foreach ($families as $family) {
-            $union_id = 'u' . $family->id;
+            $union_id = 'u'.$family->id;
             $own_unions[] = $union_id;
             $this->links[] = [$start_id, $union_id];
             $this->unions[$union_id] = [
@@ -79,7 +86,7 @@ class Ancestors extends Controller
 
             $parents = $this->getParents($person);
             foreach ($parents as $parent) {
-                $this->links[] = ['u' . $family->id, $parent->id];
+                $this->links[] = ['u'.$family->id, $parent->id];
                 $this->persons[$parent->id] = $parent;
                 $this->getGraphData($parent->id, $nest + 1);
             }
@@ -145,7 +152,7 @@ class Ancestors extends Controller
     //                 //     $parentFamilyIds = Person::where('id', $p_family->husband_id)->orwhere('id', $p_family->wife_id)->select('child_in_family_id')->get();
     //                 //     foreach($parentFamilyIds as $parentFamilyId) {
     //                 //         if (!empty($parentFamilyId)) {
-    //                 //             array_unshift($this->links, ['u'.$parentFamilyId->child_in_family_id,  $start_id]);      
+    //                 //             array_unshift($this->links, ['u'.$parentFamilyId->child_in_family_id,  $start_id]);
 
     //                 //             $parentFamily = Family::find($parentFamilyId->child_in_family_id);
 
