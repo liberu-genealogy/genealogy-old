@@ -14,7 +14,7 @@ class Destroy extends Controller
     {
         $role = \Auth::user()->role_id;
         $user_id = \Auth::user()->id;
-        if($company->email == \Auth::user()->email) {
+        if ($company->email == \Auth::user()->email) {
             if (in_array($role, [1, 2])) {
                 $company->delete();
 
@@ -32,6 +32,7 @@ class Destroy extends Controller
                 ];
             }
         }
+
         return ['error' => __('Unauthorized')];
     }
 }

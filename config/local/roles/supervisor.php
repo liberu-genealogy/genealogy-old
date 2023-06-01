@@ -429,5 +429,5 @@ return [
         'social.posts.update',
         'social.posts.destroy',
         'core.addresses.coordinates',
-    ]
+    ],
 ];

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Company;
 
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\Company as Form;
 use App\Models\Company;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Routing\Controller;
 
 class Edit extends Controller
 {
@@ -15,7 +15,7 @@ class Edit extends Controller
     {
         $role = \Auth::user()->role_id;
         $user_id = \Auth::user()->id;
-        if($company->email == \Auth::user()->email) {
+        if ($company->email == \Auth::user()->email) {
             if (in_array($role, [1, 2])) {
                 return ['form' => $form->edit($company)];
             }
