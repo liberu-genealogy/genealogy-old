@@ -60,7 +60,7 @@ jobs:
       - name: 'PhpUnit'
         run: |
           sudo composer install
-          sudo php artisan test
+          sudo php artisan test -p
 
   phpcpd:
     runs-on: ubuntu-20.04
@@ -127,6 +127,7 @@ jobs:
         run: |
           curl ${{ secrets.DEPLOY_WEBHOOK }}
   docker:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       -
