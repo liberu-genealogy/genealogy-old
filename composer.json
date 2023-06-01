@@ -53,7 +53,7 @@
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^7.1",
         "nunomaduro/phpinsights": "^2.0",
-        "phpunit/phpunit": "^9.5.10",
+        "phpunit/phpunit": "^10.1",
         "spatie/laravel-ignition": "^2.1"
     },
     "config": {
