@@ -24,10 +24,10 @@ jobs:
       SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
     steps:
       - uses: actions/checkout@v3
-      - uses: borales/actions-yarn@v4       
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
+      - uses: borales/actions-yarn@v4       
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.1'
