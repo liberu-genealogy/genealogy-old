@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cd1f94271bbe28f40ad502b3077d10ce",
+    "content-hash": "721dc0f7c29e854cd3ac983c54844515",
     "packages": [
         {
             "name": "anlutro/curl",
@@ -4593,16 +4593,16 @@
         },
         {
             "name": "laravel-liberu/pdf",
-            "version": "v2.1.3",
+            "version": "v9.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/pdf.git",
-                "reference": "12c788b9ae3a6e0f2e8412cbf6e19ba955e1dddc"
+                "reference": "e3d77d8573e401bef716d487391cc50fbf0a51c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/pdf/zipball/12c788b9ae3a6e0f2e8412cbf6e19ba955e1dddc",
-                "reference": "12c788b9ae3a6e0f2e8412cbf6e19ba955e1dddc",
+                "url": "https://api.github.com/repos/laravel-liberu/pdf/zipball/e3d77d8573e401bef716d487391cc50fbf0a51c8",
+                "reference": "e3d77d8573e401bef716d487391cc50fbf0a51c8",
                 "shasum": ""
             },
             "require": {
@@ -4629,34 +4629,34 @@
                 {
                     "name": "Ionut Pirvulescu",
                     "email": "ionut.pirvulescu@earthlink.ro",
-                    "homepage": "https://laravel-liberu.com",
+                    "homepage": "https://laravel-enso.com",
                     "role": "Developer"
                 },
                 {
                     "name": "Mihai Ocneanu",
                     "email": "mihai.ocneanu@gmail.com",
-                    "homepage": "https://laravel-liberu.com",
+                    "homepage": "https://laravel-enso.com",
                     "role": "Developer"
                 },
                 {
                     "name": "Adrian Ocneanu",
                     "email": "aocneanu@gmail.com",
-                    "homepage": "https://laravel-liberu.com",
+                    "homepage": "https://laravel-enso.com",
                     "role": "Developer"
                 }
             ],
             "description": "PDF for Laravel Enso",
-            "homepage": "https://github.com/laravel-liberu/pdf",
+            "homepage": "https://github.com/laravel-enso/pdf",
             "keywords": [
                 "laravel",
-                "laravel-liberu",
+                "laravel-enso",
                 "pdf"
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/pdf/issues",
-                "source": "https://github.com/laravel-liberu/pdf/tree/v2.1.3"
+                "source": "https://github.com/laravel-liberu/pdf/tree/v9.0.2"
             },
-            "time": "2023-05-15T20:51:23+00:00"
+            "time": "2022-03-07T07:36:50+00:00"
         },
         {
             "name": "laravel-liberu/people",
