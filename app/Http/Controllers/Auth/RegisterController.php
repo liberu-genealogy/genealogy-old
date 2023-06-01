@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Stripe\GetPlans;
 use App\Jobs\Tenant\CreateDBs;
-use App\Jobs\Tenant\Migrations;
+use App\Jobs\Tenant\Migration;
 use App\Models\Avatar;
 use App\Models\Company;
 use App\Models\Person;
@@ -146,56 +147,6 @@ class RegisterController extends Controller
 
     protected function getSubscriptionPlan(Request $request)
     {
-//        $role = Role::select('id', 'display_name', 'name')->whereNotIn('name', ['admin', 'supervisor', 'moderator'])->get();
-//
-//        return $role;
-        $role = Role::where('name', 'free')->first();
-        Stripe\Stripe::setApiKey(\Config::get('services.stripe.secret'));
-        $plans = Stripe\Plan::all();
-
-//        return $plans;
-        $result = [];
-        foreach ($plans as $k=>$plan) {
-            if ($k == 0) {
-                $row1['id'] = $role->id;
-                $row1['amount'] = 0;
-                $row1['nickname'] = $role->name;
-                $row1['title'] = $role->display_name;
-                $row1['subscribed'] = false;
-                $result[] = $row1;
-            }
-
-            if(empty($plan->nickname)) continue;
-
-            $row ['id'] = $plan->id;
-            $row['amount'] = $plan->amount;
-            $row['nickname'] = $plan->nickname;
-
-            switch ($plan->nickname) {
-                case 'UTY':
-                    $row['title'] = 'Unlimited trees yearly.';
-                    break;
-                case 'UTM':
-                    $row['title'] = 'Unlimited trees monthly.';
-                    break;
-                case 'TTY':
-                    $row['title'] = 'Ten trees yearly.';
-                    break;
-                case 'TTM':
-                    $row['title'] = 'Ten trees monthly.';
-                    break;
-                case 'OTY':
-                    $row['title'] = 'One tree yearly.';
-                    break;
-                case 'OTM':
-                    $row['title'] = 'One tree monthly.';
-                    break;
-                default:$row['title'] = '';
-            }
-            $row['subscribed'] = false;
-            $result[] = $row;
-        }
-
-        return $result;
+        return (new GetPlans())($request);
     }
 }

@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Company;
 
 use App\Jobs\Tenant\CreateDB;
 use App\Jobs\Tenant\Migration;
-use App\Jobs\Tenant\Migrations;
 use App\Models\Company as Company1;
 use App\Traits\TenantConnectionResolver;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
