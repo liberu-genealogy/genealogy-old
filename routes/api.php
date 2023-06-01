@@ -1485,8 +1485,8 @@ Route::middleware(['auth', 'api', 'multitenant'])
 
 Route::middleware(['auth', 'api'])
     ->namespace('')
-    ->prefix('messages')
-    ->as('messages.')
+    ->prefix('chats')
+    ->as('chats.')
     ->group(function () {
         Route::get('/', [ChatsController::class, 'fetchConnects']);
         Route::get('/{id}', [ChatsController::class, 'fetchMessages']);

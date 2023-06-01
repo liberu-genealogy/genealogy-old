@@ -58,7 +58,7 @@ class ChatsController extends Controller
             $message->user_id = $user->id;
             $message->conversation_id = $id;
             $message->save();
-            broadcast(new \App\Events\MessageSent($message, $user))->toOthers();
+            broadcast(new \App\Events\MessageSent($message, $user, $id))->toOthers();
 
             return ['message' => 'Message Sent!'];
         }
