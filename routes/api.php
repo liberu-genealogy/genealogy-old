@@ -257,6 +257,7 @@ use App\Http\Controllers\Post\Edit as PostEdit;
 use App\Http\Controllers\Post\Index as PostIndex;
 use App\Http\Controllers\Post\Store as PostStore;
 use App\Http\Controllers\Post\Update as PostUpdate;
+use App\Http\Controllers\Private\ChatsController as ChatsController;
 use App\Http\Controllers\Publications\Create as PublicationsCreate;
 use App\Http\Controllers\Publications\Destroy as PublicationsDestroy;
 use App\Http\Controllers\Publications\Edit as PublicationsEdit;
@@ -523,8 +524,8 @@ Route::middleware(['web', 'auth', 'multitenant'])
             ->name('getdb');
         Route::get('trial', [ChartController::class, 'trial'])
             ->name('trial');
-//        Route::post('changeCompany', [ChartController::class, 'changeCompany'])
-//            ->name('changeCompany');
+        //        Route::post('changeCompany', [ChartController::class, 'changeCompany'])
+        //            ->name('changeCompany');
     });
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
@@ -1480,6 +1481,16 @@ Route::middleware(['auth', 'api', 'multitenant'])
     ->group(function () {
         Route::get('persons', GetPersons::class);
         Route::get('getPersons', [GetPersons::class, 'getPersons']);
+    });
+
+Route::middleware(['auth', 'api'])
+    ->namespace('')
+    ->prefix('messages')
+    ->as('messages.')
+    ->group(function () {
+        Route::get('/', [ChatsController::class, 'fetchConnects']);
+        Route::get('/{id}', [ChatsController::class, 'fetchMessages']);
+        Route::post('/', [ChatsController::class, 'sendMessage']);
     });
 
 //Route::get('test/{cid}', function($cid){
