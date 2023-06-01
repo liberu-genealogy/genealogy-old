@@ -26,7 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('dna_matchings', function ($table) {
-            $table->dropColumn('match_name');
+            $table->dropColumn('match_name')->nullable();
 	});
     }
 };
