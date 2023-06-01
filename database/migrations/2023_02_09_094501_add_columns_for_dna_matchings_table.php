@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-	    Schema::table('dna_matchings', function (Blueprint $table) {
-            $table->string('match_name');
+        Schema::table('dna_matchings', function (Blueprint $table) {
+            $table->string('match_name')->nullable();
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
     {
         Schema::table('dna_matchings', function ($table) {
             $table->dropColumn('match_name');
-	});
+        });
     }
 };

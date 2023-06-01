@@ -24,10 +24,12 @@ jobs:
       SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
     steps:
       - uses: actions/checkout@v3
-      - uses: borales/actions-yarn@v4.2.0
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
+      - uses: borales/actions-yarn@v4
+        with:
+          cmd: install     
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.1'
@@ -37,11 +39,7 @@ jobs:
         run: |
           sudo composer install
           sed -i 's/GOOGLE_ANALITICS_TOKEN/${{ secrets.GOOGLE_ANALITICS_TOKEN }}/g' resources/views/stubs/production-index.blade.stub
-          sudo cp -f resources/views/stubs/production-index.blade.stub vendor/laravel-enso/core/stubs
-          cd client
-          cp .env.example .env
-          yarn install
-          yarn build
+          sudo cp -f resources/views/stubs/production-index.blade.stub vendor/laravel-liberu/core/stubs
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
@@ -62,7 +60,7 @@ jobs:
       - name: 'PhpUnit'
         run: |
           sudo composer install
-          sudo php artisan test
+          sudo php artisan test -p
 
   phpcpd:
     runs-on: ubuntu-20.04
@@ -129,6 +127,7 @@ jobs:
         run: |
           curl ${{ secrets.DEPLOY_WEBHOOK }}
   docker:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       -

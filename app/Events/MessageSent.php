@@ -2,6 +2,8 @@
 
 namespace App\Events;
 
+use App\Models\Message;
+use App\Models\User;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
@@ -9,8 +11,7 @@ use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
-use App\Models\User;
-use App\Models\Message;
+
 // use App\Models\Conversation;
 
 class MessageSent implements ShouldBroadcastNow
@@ -20,6 +21,7 @@ class MessageSent implements ShouldBroadcastNow
     public $message;
     public $user;
     public $conversation;
+
     /**
      * Create a new event instance.
      *
@@ -31,9 +33,10 @@ class MessageSent implements ShouldBroadcastNow
         $this->user = $user;
         $this->conversation = $id;
     }
+
     /**
-     * Determine if this event should broadcast
-     * 
+     * Determine if this event should broadcast.
+     *
      * @return bool
      */
     public function broadcastWhen()
@@ -41,9 +44,10 @@ class MessageSent implements ShouldBroadcastNow
         // return $this->conversation->status == 1;
         return true;
     }
+
     /**
-     * Get the data to broadcast
-     * 
+     * Get the data to broadcast.
+     *
      * @return array
      */
     public function broadcastWith()
@@ -51,9 +55,10 @@ class MessageSent implements ShouldBroadcastNow
         return [
             'user' => $this->user,
             'message' => $this->message,
-            'conversation' => $this->conversation
+            'conversation' => $this->conversation,
         ];
     }
+
     /**
      * Get the channels the event should broadcast on.
      *
@@ -63,7 +68,9 @@ class MessageSent implements ShouldBroadcastNow
     {
         return new PrivateChannel('chat');
     }
-    public function broadcastAs(){
+
+    public function broadcastAs()
+    {
         return 'MessageSent';
     }
 }

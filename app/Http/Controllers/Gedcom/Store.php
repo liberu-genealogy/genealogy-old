@@ -14,7 +14,7 @@ class Store extends Controller
 {
     public function __invoke(Request $request): Response
     {
-        if ($request->file->getClientOriginalExtension() != 'ged') {
+        if ($request->file('file')->getClientOriginalExtension() != 'ged') {
             return response([
                 'msg'=>'file type invalid',
             ], 422);
@@ -25,9 +25,9 @@ class Store extends Controller
             'file' => 'required',
         ]);
         $slug = $request->slug;
-        $file = $request->file;
+        $file = $request->file('file');
         $manager = Manager::fromModel($request->user()->company(), $request->user());
-        $path = $manager->storage()->putFileAs('imports', $file, null);
+        $path = $manager->storage()->putFile('imports', $file);
 
         ImportGedcom::dispatch($request->user(), $manager->storagePath($path), $slug);
 

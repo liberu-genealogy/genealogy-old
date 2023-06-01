@@ -16,6 +16,6 @@ class Company extends CoreCompany
         'name',
         'email',
         'is_tenant',
-        'status'
+        'status',
     ];
 }

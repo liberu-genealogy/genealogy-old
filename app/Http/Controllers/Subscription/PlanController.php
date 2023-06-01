@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Subscription;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Subscription\Paypal;
 use App\Http\Controllers\Subscription\Stripe;
+use Illuminate\Http\Request;
 
 class PlanController extends Controller
 {
@@ -19,6 +19,7 @@ class PlanController extends Controller
     {
         $paypalPlans = $this->getPaypalPlans($request);
         $stripePlans = $this->getStripePlans($request);
+
         return [
             'paypal_plans' => $paypalPlans,
             'stripe_plans' => $stripePlans,

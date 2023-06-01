@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers\Person;
 
-use Illuminate\Routing\Controller;
 use App\Models\Person;
+use Illuminate\Routing\Controller;
 
 class GetPersons extends Controller
 {
-   public function __invoke() {
-       return Person::get();
-   }
+    public function __invoke()
+    {
+        return Person::get();
+    }
 
-   public function getPersons() {
-       return Person::get();
-   }
+    public function getPersons()
+    {
+        return Person::get();
+    }
 }

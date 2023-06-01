@@ -2,10 +2,10 @@
 
 namespace App\Console\Commands\Synchronize;
 
-use Illuminate\Console\Command;
-use App\Models\TenantPerson;
-use App\Models\Tenant;
 use App\Models\Person;
+use App\Models\Tenant;
+use App\Models\TenantPerson;
+use Illuminate\Console\Command;
 
 class CopyPeopleFromTenancyToGenealogy extends Command
 {
@@ -31,9 +31,9 @@ class CopyPeopleFromTenancyToGenealogy extends Command
     public function handle()
     {
         $recordsSince = TenantPerson::orderBy('updated_at', 'desc')->first()?->updated_at;
-        $this->info("Tenant people records syncronization since: " . ($recordsSince ?: 'start'));
+        $this->info('Tenant people records syncronization since: '.($recordsSince ?: 'start'));
 
-        tenancy()->query()->cursor()->each(function (Tenant $tenant) use ($recordsSince){
+        tenancy()->query()->cursor()->each(function (Tenant $tenant) use ($recordsSince) {
             tenancy()->initialize($tenant);
 
             $tenantPersonQuery = Person::query();
@@ -42,8 +42,8 @@ class CopyPeopleFromTenancyToGenealogy extends Command
                 $tenantPersonQuery->where('updated_at', '>=', $recordsSince);
             }
 
-            $this->info("Processing tenant #" . $tenant->id . " records: " . (clone $tenantPersonQuery)->count());
-            $tenantPersonQuery->chunk(100, function($people) use ($tenant) {
+            $this->info('Processing tenant #'.$tenant->id.' records: '.(clone $tenantPersonQuery)->count());
+            $tenantPersonQuery->chunk(100, function ($people) use ($tenant) {
                 // clear old records and push updated ones
                 TenantPerson::where('tenant_id', $tenant->id)
                     ->whereIn('tenant_person_id', $people->pluck('id'))

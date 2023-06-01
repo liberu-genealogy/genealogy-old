@@ -3,29 +3,31 @@
 namespace App\Http\Controllers\Private;
 
 use App\Http\Controllers\Controller;
+use App\Models\Conversation;
+use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Message;
-use App\Models\Conversation;
 
 class ChatsController extends Controller
 {
     /**
-     * Fetch all of Connects
-     * 
+     * Fetch all of Connects.
+     *
      * @return Connects
      */
     public function fetchConnects()
     {
         $user = Auth::user();
+
         return Conversation::with('users')
             ->where('user_one', $user->id)
             ->orWhere('user_two', $user->id)
             ->get();
     }
+
     /**
-     * Fetch all of messages
-     * 
+     * Fetch all of messages.
+     *
      * @param id
      * @return Message
      */
@@ -35,10 +37,11 @@ class ChatsController extends Controller
             ->find($id)
             ->get();
     }
+
     /**
-     * Persist message to database
-     * 
-     * @param Request $request, $id
+     * Persist message to database.
+     *
+     * @param  Request  $request,  $id
      * @return Response
      */
     public function sendMessage(Request $request, $id)
@@ -56,6 +59,7 @@ class ChatsController extends Controller
             $message->conversation_id = $id;
             $message->save();
             broadcast(new \App\Events\MessageSent($message, $user))->toOthers();
+
             return ['message' => 'Message Sent!'];
         }
     }

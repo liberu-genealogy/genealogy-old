@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Trees;
 
 use App\Models\Family;
+use App\Models\Person;
 use File;
 use GenealogiaWebsite\LaravelGedcom\Utils\GedcomGenerator;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use App\Models\Person;
 use Response;
 
 class Show extends Controller
@@ -41,14 +41,18 @@ class Show extends Controller
 
     private function getGraphData($start_id, $nest = 1)
     {
-        if ($this->nest < $nest) return;
+        if ($this->nest < $nest) {
+            return;
+        }
 
         $person = Person::find($start_id);
         // do not process for null
-        if ($person == null) return;
+        if ($person == null) {
+            return;
+        }
 
         $families = Family::where('husband_id', $start_id)->orwhere('wife_id', $start_id)->get();
-        if (!count($families)) {
+        if (! count($families)) {
             $person = Person::find($start_id);
 
             // do not process for null
@@ -59,11 +63,11 @@ class Show extends Controller
             $person->setAttribute('own_unions', []);
             $person['generation'] = $nest;
             $this->persons[$start_id] = $person;
-        
+
             return true;
         }
         $own_unions = $families->pluck('id')->map(function ($id) {
-            return 'u' . $id;
+            return 'u'.$id;
         })->toArray();
         $person->setAttribute('own_unions', $own_unions);
         $person->setAttribute('generation', $nest);
@@ -72,15 +76,15 @@ class Show extends Controller
 
         // add children
         foreach ($families as $family) {
-            $union_id = 'u' . $family->id;
+            $union_id = 'u'.$family->id;
             $this->links[] = [$start_id, $union_id];
             $this->unions[$union_id] = [
                 'id' => $union_id,
                 'partner' => [isset($family->husband_id) ? $family->husband_id : null, isset($family->wife_id) ? $family->wife_id : null],
                 'children' => $family->children->pluck('id')->toArray(),
-            ];            
+            ];
             foreach ($family->children as $child) {
-                $this->links[] = ['u' . $family->id, $child->id];
+                $this->links[] = ['u'.$family->id, $child->id];
                 $child->setAttribute('generation', $nest + 1);
                 $this->persons[$child->id] = $child;
                 $this->getGraphData($child->id, $nest + 1);
@@ -106,7 +110,7 @@ class Show extends Controller
     //             $person->setAttribute('own_unions', []);
     //             $person['generation'] = $nest;
     //             $this->persons[$start_id] = $person;
-            
+
     //             return true;
     //         }
 

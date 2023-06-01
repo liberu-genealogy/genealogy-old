@@ -43,7 +43,7 @@
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",
-        "brianium/paratest": "^6.3",
+        "brianium/paratest": "^7.1",
         "barryvdh/laravel-ide-helper": "^2.10",
         "fakerphp/faker": "^1.15",
         "filp/whoops": "^2.1",
@@ -53,7 +53,7 @@
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^7.1",
         "nunomaduro/phpinsights": "^2.0",
-        "phpunit/phpunit": "^9.5.10",
+        "phpunit/phpunit": "^10.1",
         "spatie/laravel-ignition": "^2.1"
     },
     "config": {

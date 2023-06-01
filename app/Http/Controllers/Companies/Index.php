@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Companies;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Traits\TenantConnectionResolver;
-use Illuminate\Http\Request;
 use DB;
+use Illuminate\Http\Request;
 
 class Index extends Controller
 {
@@ -19,7 +19,7 @@ class Index extends Controller
 
         $my_companies = \LaravelEnso\Companies\Models\Company::where('created_by', $user->id)->orWhere('id', '=', $company->id)->get();
         $invited_companies = [];
-//DB::table('company_person')
+        //DB::table('company_person')
 //        ->orWhere('company_id', '!=', $company->id)
 //        ->where('person_id', $user->id)
 //        ->join('companies', 'companies.id', 'company_person.company_id')

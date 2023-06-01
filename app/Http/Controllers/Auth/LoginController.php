@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Jobs\Tenant\CreateDBs;
-use App\Jobs\Tenant\Migrations;
+use App\Jobs\Tenant\Migration;
+use App\Models\Company;
 use App\Models\Person;
 use App\Models\Tenant;
 use App\Models\User;
@@ -21,7 +22,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use Laravel\Socialite\Facades\Socialite;
-use App\Models\Company;
 use LaravelEnso\Core\Events\Login as Event;
 use LaravelEnso\Core\Traits\Logout;
 use LaravelEnso\Roles\Models\Role;
@@ -29,7 +29,7 @@ use LaravelEnso\UserGroups\Models\UserGroup;
 
 class LoginController extends Controller
 {
-    use AuthenticatesUsers, Logout, Login{
+    use AuthenticatesUsers, Logout, Login {
         Logout::logout insteadof AuthenticatesUsers;
         Login::login insteadof AuthenticatesUsers;
     }
@@ -109,6 +109,39 @@ class LoginController extends Controller
         $request->validate($attributes);
     }
 
+    private function create_company($user)
+    {
+        $company_count = Company::count();
+
+        $company = Company::create([
+            'name' => $user->email.($company_count + 1),
+            'email' => $user->email,
+            // 'is_active' => 1,
+            'is_tenant' => 1,
+            'status' => 1,
+        ]);
+
+        $user->person->companies()->attach($company->id, ['person_id' => $user->person->id, 'is_main' => 1, 'is_mandatary' => 1, 'company_id' => $company->id]);
+
+        /**            Tree::create([
+         * 'name' => 'Default Tree',
+         * 'description' => 'Automatically created tree as only tree remaining was deleted.',
+         * 'user_id' => $user->id,
+         * 'company_id' => $company->id,
+         * ]);.
+         */
+        $company_id = $company->id;
+        $user_id = $user->id;
+        $person_name = $user->person->name;
+        $user_email = $user->email;
+
+        $db = $company_id;
+        //                \Log::debug('CreateDBs----------------------'.$company);
+        CreateDBs::dispatch($company);
+        //                \Log::debug('Migration----------------------'.$company);
+        Migrations::dispatch($company, $user->name, $user->email, $user->password);
+    }
+
     private function loggableUser(Request $request)
     {
         $user = User::whereEmail($request->input('email'))->first();
@@ -136,65 +169,36 @@ class LoginController extends Controller
 
         if (! App::runningUnitTests()) {
             $company = $user->person->company();
-//            \Log::debug('Login----------------------'.$company);
+            //            \Log::debug('Login----------------------'.$company);
             $tenant = false;
             if ($company) {
                 $tenant = true;
             }
             // set company id as default
             $main_company = $user->person->company();
-            if ($main_company !== null && ! ($user->isAdmin())) {
+            if ($main_company !== null && ! $user->isAdmin()) {
                 $c_id = $main_company->id;
             }
             $tenants = Tenant::find($main_company->id);
             if ($main_company == null && ! $user->isAdmin()) {
-//            if (($main_company == null||$tenants=='') && ! $user->isAdmin()) {
-//          if ($main_company == null) {
-                $company_count = Company::count();
-
-                $company = Company::create([
-                    'name' => $user->email.($company_count + 1),
-                    'email' => $user->email,
-                    // 'is_active' => 1,
-                    'is_tenant' => 1,
-                    'status' => 1,
-                ]);
-                $user->person->companies()->attach($company->id, ['person_id' => $user->person->id, 'is_main' => 1, 'is_mandatary' => 1, 'company_id' => $company->id]);
-
-                /**            Tree::create([
-                 * 'name' => 'Default Tree',
-                 * 'description' => 'Automatically created tree as only tree remaining was deleted.',
-                 * 'user_id' => $user->id,
-                 * 'company_id' => $company->id,
-                 * ]);.
-                 */
-                $company_id = $company->id;
-                $user_id = $user->id;
-                $person_name = $user->person->name;
-                $user_email = $user->email;
-
-                $db = $company_id;
-//                \Log::debug('CreateDBs----------------------'.$company);
-                CreateDBs::dispatch($company);
-//                \Log::debug('Migration----------------------'.$company);
-                Migrations::dispatch($company, $user->name, $user->email, $user->password);
+                //   if (($main_company == null||$tenants=='') && ! $user->isAdmin()) {
+                //   if ($main_company == null) {
+                $this->create_company($user);
             } else {
                 if ($tenants && ! $user->isAdmin()) {
-//                    $c = DB::connection('tenantdb',$tenants->tenancy_db_name)->table('users')->count();
+                    //                    $c = DB::connection('tenantdb',$tenants->tenancy_db_name)->table('users')->count();
                     $company = \App\Models\Company::find($main_company->id);
-//                    \Log::debug('Database----------------------'.$main_company->id);
+                    //                    \Log::debug('Database----------------------'.$main_company->id);
 
                     tenancy()->initialize($tenants);
                     $tenants->run(function () use ($company, $user) {
-
-//                        $company->save();
+                        //  $company->save();
                         $c = User::count();
                         if ($c == 0) {
-
-//                            \Log::debug('Run Migration----------------------');
+                            //  \Log::debug('Run Migration----------------------');
                             return Migrations::dispatch($company, $user->name, $user->email, $user->password);
                         }
-//                        \Log::debug($company->id.-'users----------------------'.$c);
+                        // \Log::debug($company->id.-'users----------------------'.$c);
                     });
                     tenancy()->end();
 
@@ -216,39 +220,13 @@ class LoginController extends Controller
         }
         // set company id as default
         $main_company = $user->person->company();
-        if ($main_company !== null && ! ($user->isAdmin())) {
+        if ($main_company !== null && ! $user->isAdmin()) {
             $c_id = $main_company->id.$user->id;
         }
 
         if ($main_company == null && ! $user->isAdmin()) {
-//          if ($main_company == null) {
-            $company_count = Company::count();
-
-            $company = Company::create([
-                'name' => $user->email.($company_count + 1),
-                'email' => $user->email,
-                // 'is_active' => 1,
-                'is_tenant' => 1,
-                'status' => 1,
-            ]);
-            $user->person->companies()->attach($company->id, ['person_id' => $user->person->id, 'is_main' => 1, 'is_mandatary' => 1, 'company_id' => $company->id]);
-
-            /**            Tree::create([
-             * 'name' => 'Default Tree',
-             * 'description' => 'Automatically created tree as only tree remaining was deleted.',
-             * 'user_id' => $user->id,
-             * 'company_id' => $company->id,
-             * ]);.
-             */
-            $company_id = $company->id;
-            $user_id = $user->id;
-            $person_name = $user->person->name;
-            $user_email = $user->email;
-
-            $db = $company_id;
-
-            CreateDBs::dispatch($company);
-            Migrations::dispatch($company, $user->name, $user->email, $user->password);
+            //          if ($main_company == null) {
+            $this->create_company($user);
         }
 
         return true;
@@ -292,13 +270,13 @@ class LoginController extends Controller
                 $user_group = UserGroup::where('name', 'Administrators')->first();
                 if ($user_group == null) {
                     // create user_group
-                    $user_group = UserGroup::create(['name'=>'Administrators', 'description'=>'Administrator users group']);
+                    $user_group = UserGroup::create(['name' => 'Administrators', 'description' => 'Administrator users group']);
                 }
 
                 // get role_id
                 $role = Role::where('name', 'free')->first();
                 if ($role == null) {
-                    $role = Role::create(['menu_id'=>1, 'name'=>'supervisor', 'display_name'=>'Supervisor', 'description'=>'Supervisor role.']);
+                    $role = Role::create(['menu_id' => 1, 'name' => 'supervisor', 'display_name' => 'Supervisor', 'description' => 'Supervisor role.']);
                 }
 
                 $curUser = User::create(
@@ -375,7 +353,6 @@ class LoginController extends Controller
         $tested = [];
 
         do {
-
             // Generate random string of characters
             $random = Str::random($chars);
 
@@ -413,9 +390,11 @@ class LoginController extends Controller
         return response()->json($data);
     }
 
-    public function confirmSubscription(Request $request) {;
+    public function confirmSubscription(Request $request)
+    {
         $params = $request->all();
         $user = $this->loggableUser($request);
+
         return response()->json($user);
     }
 }
