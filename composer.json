@@ -43,7 +43,7 @@
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",
-        "brianium/paratest": "^6.3",
+        "brianium/paratest": "^7.1",
         "barryvdh/laravel-ide-helper": "^2.10",
         "fakerphp/faker": "^1.15",
         "filp/whoops": "^2.1",
