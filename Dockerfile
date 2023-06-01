@@ -325,8 +325,6 @@ RUN if [ -f "rr" ]; then \
   fi
 RUN cat deployment/octane/utilities.sh >> ~/.bashrc
 
-RUN php artisan route:clear
-
 EXPOSE 9000
 EXPOSE 6001
 
