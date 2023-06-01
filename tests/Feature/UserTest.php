@@ -3,11 +3,11 @@
 namespace Tests\Feature;
 
 use App\Models\User;
+use App\Notifications\ResetPassword;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Notification;
-use App\Notifications\ResetPassword;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Notification;
 use LaravelEnso\Forms\TestTraits\DestroyForm;
 use LaravelEnso\Forms\TestTraits\EditForm;
 use LaravelEnso\Tables\Traits\Tests\Datatable;
@@ -84,7 +84,7 @@ class UserTest extends TestCase
         $this->testModel->password = $originalPassword;
         $this->testModel->save();
 
-        $this->testModel->is_active = !$this->testModel->is_active;
+        $this->testModel->is_active = ! $this->testModel->is_active;
         $updatePayload = array_merge($this->testModel->toArray(), [
             // 'password' => '',
             // 'password_confirmation' => '',
@@ -118,10 +118,9 @@ class UserTest extends TestCase
             route('administration.users.update', $this->testModel->id, false),
             $updatePayload
         )->assertStatus(200)->assertJsonStructure(['message']);
-        
+
         $this->assertTrue(Hash::check($newPassword, $this->testModel->fresh()->password));
     }
-
 
     /** @test */
     public function get_option_list()

@@ -67,6 +67,12 @@ use App\Http\Controllers\Company\Edit as CompanyEdit;
 use App\Http\Controllers\Company\ExportExcel as CompanyExportExcel;
 use App\Http\Controllers\Company\InitTable as CompanyInitTable;
 use App\Http\Controllers\Company\Options as CompanyOptions;
+use App\Http\Controllers\Company\Person\Create as PeopleCompanyCreate;
+use App\Http\Controllers\Company\Person\Destroy as PeopleCompanyDestroy;
+use App\Http\Controllers\Company\Person\Edit as PeopleCompanyEdit;
+use App\Http\Controllers\Company\Person\Index as PeopleCompany;
+use App\Http\Controllers\Company\Person\Store as PeopleCompanyStore;
+use App\Http\Controllers\Company\Person\Update as PeopleCompanyUpdate;
 use App\Http\Controllers\Company\Store as CompanyStore;
 use App\Http\Controllers\Company\TableData as CompanyTableData;
 use App\Http\Controllers\Company\Update as CompanyUpdate;
@@ -164,6 +170,7 @@ use App\Http\Controllers\Person\ExportExcel as PeopleExportExcel;
 use App\Http\Controllers\Person\GetPersons;
 use App\Http\Controllers\Person\InitTable as PeopleInitTable;
 use App\Http\Controllers\Person\Options as PeopleOptions;
+use App\Http\Controllers\Person\PeopleController;
 use App\Http\Controllers\Person\Store as PeopleStore;
 use App\Http\Controllers\Person\TableData as PeopleTableData;
 use App\Http\Controllers\Person\Update as PeopleUpdate;
@@ -365,9 +372,9 @@ use App\Http\Controllers\Topic\InitTable as TopicInitTable;
 use App\Http\Controllers\Topic\Store as TopicStore;
 use App\Http\Controllers\Topic\TableData as TopicTableData;
 use App\Http\Controllers\Topic\Update as TopicUpdate;
+use App\Http\Controllers\Trees\Ancestors as TreesAncestor;
 use App\Http\Controllers\Trees\Manage as TreesManage;
 use App\Http\Controllers\Trees\Show as TreesShow;
-use App\Http\Controllers\Trees\Ancestors as TreesAncestor;
 use App\Http\Controllers\Types\Create as TypesCreate;
 use App\Http\Controllers\Types\Destroy as TypesDestroy;
 use App\Http\Controllers\Types\Edit as TypesEdit;
@@ -389,7 +396,6 @@ use App\Http\Controllers\Users\Store as UserStore;
 use App\Http\Controllers\Users\TableData as UserTableData;
 use App\Http\Controllers\Users\Update as UserUpdate;
 use App\Http\Controllers\WikiTree\WikitreeController;
-use App\Http\Controllers\Person\PeopleController;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
 use LaravelEnso\Addresses\Http\Controllers\Create as AddressCreate;
@@ -420,12 +426,6 @@ use LaravelEnso\Calendar\Http\Controllers\Events\Edit as EventEdit;
 use LaravelEnso\Calendar\Http\Controllers\Events\Index as EventIndex;
 use LaravelEnso\Calendar\Http\Controllers\Events\Store as EventStore;
 use LaravelEnso\Calendar\Http\Controllers\Events\Update as EventUpdate;
-use App\Http\Controllers\Company\Person\Create as PeopleCompanyCreate;
-use App\Http\Controllers\Company\Person\Destroy as PeopleCompanyDestroy;
-use App\Http\Controllers\Company\Person\Edit as PeopleCompanyEdit;
-use App\Http\Controllers\Company\Person\Index as PeopleCompany;
-use App\Http\Controllers\Company\Person\Store as PeopleCompanyStore;
-use App\Http\Controllers\Company\Person\Update as PeopleCompanyUpdate;
 use LaravelEnso\ControlPanelApi\Http\Controllers\Action as ControlPanelAction;
 use LaravelEnso\ControlPanelApi\Http\Controllers\Actions as ControlPanelActions;
 use LaravelEnso\ControlPanelApi\Http\Controllers\DownloadLog as ControlPanelDownloadLog;
@@ -1476,10 +1476,10 @@ Route::middleware(['auth', 'api'])
         Route::get('trees/options', [TreesManage::class, 'getOptions']);
     });
 
-Route::middleware(['auth', 'api','multitenant'])
+Route::middleware(['auth', 'api', 'multitenant'])
     ->group(function () {
         Route::get('persons', GetPersons::class);
-        Route::get('getPersons', [ GetPersons::class, 'getPersons']);
+        Route::get('getPersons', [GetPersons::class, 'getPersons']);
     });
 
 //Route::get('test/{cid}', function($cid){

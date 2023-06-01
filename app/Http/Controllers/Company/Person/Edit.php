@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Company\Person;
 
-use Illuminate\Routing\Controller;
 use App\Forms\Builders\CompaniesPerson as Form;
+use Illuminate\Routing\Controller;
 use LaravelEnso\Companies\Models\Company;
 use LaravelEnso\People\Models\Person;
 

@@ -34,19 +34,19 @@ class CreatePeopleTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('users', fn (Blueprint $table) => (
+        Schema::table('users', fn (Blueprint $table) =>
             $table->foreign('person_id')->references('id')->on('people')
-        ));
+        );
     }
 
     public function down()
     {
-        Schema::table('company_person', fn (Blueprint $table) => (
+        Schema::table('company_person', fn (Blueprint $table) =>
             $table->dropUnique(['person_id', 'company_id'])
-        ));
-        Schema::table('users', fn (Blueprint $table) => (
+        );
+        Schema::table('users', fn (Blueprint $table) =>
             $table->dropForeign(['person_id'])
-        ));
+        );
 
         Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('people');

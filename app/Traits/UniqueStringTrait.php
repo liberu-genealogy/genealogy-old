@@ -15,7 +15,6 @@ trait UniqueStringTrait
         $tested = [];
 
         do {
-
             // Generate random string of characters
             $random = Str::random($chars);
 

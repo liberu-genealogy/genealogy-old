@@ -14,7 +14,7 @@ class Options extends Controller
     {
         $users = User::with(['person'])->get();
         $people = [];
-        foreach($users as $user) {
+        foreach ($users as $user) {
             $people[] = ['name' => $user->person->name];
         }
 

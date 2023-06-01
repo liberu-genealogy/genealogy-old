@@ -41,7 +41,6 @@ class DnaMatching implements ShouldQueue
      */
     public function handle()
     {
-
         $user = $this->current_user;
         $dnas = Dna::where('variable_name', '!=', $this->var_name)->get();
         $mpath = app_path();
@@ -55,40 +54,40 @@ class DnaMatching implements ShouldQueue
             // chdir('/home/familytree365/domains/api.familytree365.com/genealogy/app');
             chdir($mpath);
             // exec('python dna.py '.$this->var_name.' '.$dna->variable_name.' '.$this->file_name.' '.$dna->file_name, $dna_output);
-            $result = exec('python dna.py ' . $this->var_name . ' ' . $dna->variable_name . ' ' . $this->file_name . ' ' . $dna->file_name);
+            $result = exec('python dna.py '.$this->var_name.' '.$dna->variable_name.' '.$this->file_name.' '.$dna->file_name);
             $resultData = json_decode($result, true);
 
             $dm = new DM();
             $dm->user_id = $user->id;
-	    $dm->match_id = $dna->user_id;
-	    $match_name_user = User::with('person')->find($dna->user_id);
-	    $match_name = $match_name_user->person->name;
-	    $dm->match_name = $match_name;
+            $dm->match_id = $dna->user_id;
+            $match_name_user = User::with('person')->find($dna->user_id);
+            $match_name = $match_name_user->person->name;
+            $dm->match_name = $match_name;
             // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'.png';
             // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
-            $dm->image = env('APP_URL') . '/storage/dna/output/shared_dna_' . $this->var_name . '_' . $dna->variable_name . '_0p75cM_1100snps_GRCh37_HapMap2.png';
+            $dm->image = env('APP_URL').'/storage/dna/output/shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
             // $dm->file1 = 'discordant_snps_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
-            $dm->file1 = 'discordant_snps_' . $this->var_name . '_' . $dna->variable_name . '_GRCh37.csv';
+            $dm->file1 = 'discordant_snps_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
             // $dm->file2 = 'shared_dna_one_chrom_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
-            $dm->file2 = 'shared_dna_one_chrom_' . $this->var_name . '_' . $dna->variable_name . '_0p75cM_1100snps_GRCh37_HapMap2.csv';
+            $dm->file2 = 'shared_dna_one_chrom_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.csv';
 
             $dm->total_shared_cm = round($resultData['total_cms'], 2);
             $dm->largest_cm_segment = round($resultData['largest_cm'], 2);
 
             $dm->save();
-if ($dna->user_id != $user->id){
-            $dm2 = new DM();
-            $dm2->user_id = $dna->user_id;
-	    $dm2->match_id = $user->id;
-        $match_name_user = User::with('person')->find($dna->user_id);
-	    $dm2->match_name = $match_name_user->person->name;
-            // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'.png';
-            // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
-            $dm2->image = env('APP_URL') . '/storage/dna/output/shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
-            // $dm->file1 = 'discordant_snps_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
-            $dm2->file1 = 'discordant_snps_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
-            // $dm->file2 = 'shared_dna_one_chrom_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
-            $dm2->file2 = 'shared_dna_one_chrom_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.csv';
+            if ($dna->user_id != $user->id) {
+                $dm2 = new DM();
+                $dm2->user_id = $dna->user_id;
+                $dm2->match_id = $user->id;
+                $match_name_user = User::with('person')->find($dna->user_id);
+                $dm2->match_name = $match_name_user->person->name;
+                // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'.png';
+                // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
+                $dm2->image = env('APP_URL').'/storage/dna/output/shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
+                // $dm->file1 = 'discordant_snps_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
+                $dm2->file1 = 'discordant_snps_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
+                // $dm->file2 = 'shared_dna_one_chrom_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
+                $dm2->file2 = 'shared_dna_one_chrom_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.csv';
 
                 $dm2->total_shared_cm = round($resultData['total_cms'], 2);
                 $dm2->largest_cm_segment = round($resultData['largest_cm'], 2);
