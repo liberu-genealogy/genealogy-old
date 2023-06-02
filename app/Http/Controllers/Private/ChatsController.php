@@ -19,9 +19,11 @@ class ChatsController extends Controller
     {
         $user = Auth::user();
 
-        return Conversation::with('users')
-            ->where('user_one', $user->id)
-            ->orWhere('user_two', $user->id)
+        return Conversation::where(function ($query) use ($user) {
+            $query->where('user_one', $user->id)
+                ->orWhere('user_two', $user->id);
+        })
+            ->with(['userOne', 'userTwo', 'message'])
             ->get();
     }
 
@@ -36,6 +38,31 @@ class ChatsController extends Controller
         return Conversation::with('message', 'users')
             ->find($id)
             ->get();
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $user = Auth::user();
+
+        $conversations = Conversation::where('user_one', $user->id)
+            ->orWhere('user_two', $user->id)
+            ->get();
+
+        var_dump($conversations->length);
+
+        if (!$conversations->length) {
+            $conversation = new Conversation($request->input());
+            $conversation->user_one = $user->id;
+            $conversation->save();
+        }
+
+        return json_encode($conversation);
     }
 
     /**

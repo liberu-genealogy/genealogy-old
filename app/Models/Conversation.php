@@ -22,12 +22,12 @@ class Conversation extends Model
 
     public function userOne()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class, 'user_one');
     }
-
+    
     public function userTwo()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class, 'user_two');
     }
 
     public function users()
