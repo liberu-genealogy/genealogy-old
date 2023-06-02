@@ -32,19 +32,19 @@ class SyncBurials extends Sync
         ] = $row['cell'];
 
         return [
-            'photos'            => $photos,
-            'death_date'        => $death_date,
-            'town'              => $town,
-            'burial_date'       => $burial_date,
-            'parish'            => $parish,
-            'name'              => $name,
-            'first_name'        => $first_name,
+            'photos' => $photos,
+            'death_date' => $death_date,
+            'town' => $town,
+            'burial_date' => $burial_date,
+            'parish' => $parish,
+            'name' => $name,
+            'first_name' => $first_name,
             'father_first_name' => $father_first_name,
-            'mother_name'       => $mother_name,
+            'mother_name' => $mother_name,
             'mother_first_name' => $mother_first_name,
-            'spouse_name'       => $spouse_name,
-            'index'             => $index,
-            'observation'       => $observation,
+            'spouse_name' => $spouse_name,
+            'index' => $index,
+            'observation' => $observation,
         ];
     }
 }

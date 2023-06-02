@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Jobs\Tenant\CreateDBs;
-use App\Jobs\Tenant\Migration;
 use App\Models\Company;
 use App\Models\Person;
 use App\Models\Tenant;
@@ -12,13 +11,10 @@ use App\Models\User;
 use App\Models\UserSocial;
 use App\Traits\Login;
 use Exception;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use Laravel\Socialite\Facades\Socialite;
@@ -48,6 +44,161 @@ class LoginController extends Controller
     public function redirect($service)
     {
         return Socialite::driver($service)->redirect();
+    }
+
+    public function redirectToProvider($provider)
+    {
+        $validated = $this->validateProvider($provider);
+        if (! is_null($validated)) {
+            return $validated;
+        }
+
+        return Socialite::driver($provider)->stateless()->redirect();
+    }
+
+    /**
+     * Obtain the user information from Provider.
+     *
+     * @param $provider
+     *
+     * @return JsonResponse
+     */
+    public function handleProviderCallback($provider)
+    {
+        try {
+            $user = Socialite::driver($provider)->stateless()->user();
+        } catch (Exception $exception) {
+            return redirect(config('settings.clientBaseUrl').'/social-callback?token=&status=false&message=Invalid credentials provided!');
+        }
+
+        $curUser = User::where('email', $user->getEmail())->first();
+
+        if (! $curUser) {
+            try {
+                // create person
+                $person = new Person();
+                $name = $user->getName();
+                $person->name = $name;
+                $person->email = $user->getEmail();
+                $person->save();
+                // get user_group_id
+                $user_group = UserGroup::where('name', 'Administrators')->first();
+                if ($user_group === null) {
+                    // create user_group
+                    $user_group = UserGroup::create(['name' => 'Administrators', 'description' => 'Administrator users group']);
+                }
+
+                // get role_id
+                $role = Role::where('name', 'free')->first();
+                if ($role === null) {
+                    $role = Role::create(['menu_id' => 1, 'name' => 'supervisor', 'display_name' => 'Supervisor', 'description' => 'Supervisor role.']);
+                }
+
+                $curUser = User::create(
+                    [
+                        'email' => $user->getEmail(),
+                        'person_id' => $person->id,
+                        'group_id' => $user_group->id,
+                        'role_id' => $role->id,
+                        'email_verified_at' => now(),
+                        'is_active' => 1,
+                    ],
+                );
+
+                $random = $this->unique_random('companies', 'name', 5);
+                $company = Company::create([
+                    'name' => 'company'.$random,
+                    'email' => $user->getEmail(),
+                    'is_tenant' => 1,
+                    'status' => 1,
+                ]);
+
+                $person->companies()->attach($company->id, ['person_id' => $person->id, 'is_main' => 1, 'is_mandatary' => 1, 'company_id' => $company->id]);
+
+                // Dispatch Tenancy Jobs
+                CreateDBs::dispatch($company);
+                Migrations::dispatch($company, $user->name, $user->email, $user->password);
+            } catch (Exception $e) {
+                return redirect(config('settings.clientBaseUrl').'/social-callback?token=&status=false&message=Something went wrong!');
+            }
+        }
+
+        try {
+            if ($this->needsToCreateSocial($curUser, $provider)) {
+                UserSocial::create([
+                    'user_id' => $curUser->id,
+                    'social_id' => $user->getId(),
+                    'service' => $provider,
+                ]);
+            }
+        } catch (Exception $e) {
+            return redirect(config('settings.clientBaseUrl').'/social-callback?token=&status=false&message=Something went wrong!');
+        }
+
+        if ($this->loggableSocialUser($curUser)) {
+            Auth::guard('web')->login($curUser, true);
+
+            return redirect(config('settings.clientBaseUrl').'/social-callback?token='.csrf_token().'&status=success&message=success');
+        }
+            return redirect(config('settings.clientBaseUrl').'/social-callback?token=&status=false&message=Something went wrong while we processing the login. Please try again!');
+    }
+
+    public function needsToCreateSocial(User $user, $service)
+    {
+        return ! $user->hasSocialLinked($service);
+    }
+
+    public function unique_random($table, $col, $chars = 16)
+    {
+        $unique = false;
+
+        // Store tested results in array to not test them again
+        $tested = [];
+
+        do {
+            // Generate random string of characters
+            $random = Str::random($chars);
+
+            // Check if it's already testing
+            // If so, don't query the database again
+            if (in_array($random, $tested)) {
+                continue;
+            }
+
+            // Check if it is unique in the database
+            $count = Company::where($col, '=', $random)->count();
+
+            // Store the random character in the tested array
+            // To keep track which ones are already tested
+            $tested[] = $random;
+
+            // String appears to be unique
+            if ($count === 0) {
+                // Set unique to true to break the loop
+                $unique = true;
+            }
+
+            // If unique is still false at this point
+            // it will just repeat all the steps until
+            // it has generated a random string of characters
+        } while (! $unique);
+
+        return $random;
+    }
+
+    public function providerLogin(Request $request, $provider)
+    {
+        $data = $request->all();
+
+        return response()->json($data);
+    }
+
+    public function confirmSubscription(Request $request)
+    {
+        $params = $request->all();
+        $user = $this->loggableUser($request);
+
+        return response()->json($user);
     }
 
     protected function attemptLogin(Request $request)
@@ -107,6 +258,18 @@ class LoginController extends Controller
         }
 
         $request->validate($attributes);
+    }
+
+    /**
+     * @param $provider
+     *
+     * @return JsonResponse
+     */
+    protected function validateProvider($provider)
+    {
+        if (! in_array($provider, ['facebook', 'google', 'github'])) {
+            return response()->json(['error' => 'Please login using facebook or google or github'], 422);
+        }
     }
 
     private function create_company($user)
@@ -180,7 +343,7 @@ class LoginController extends Controller
                 $c_id = $main_company->id;
             }
             $tenants = Tenant::find($main_company->id);
-            if ($main_company == null && ! $user->isAdmin()) {
+            if ($main_company === null && ! $user->isAdmin()) {
                 //   if (($main_company == null||$tenants=='') && ! $user->isAdmin()) {
                 //   if ($main_company == null) {
                 $this->create_company($user);
@@ -194,7 +357,7 @@ class LoginController extends Controller
                     $tenants->run(function () use ($company, $user) {
                         //  $company->save();
                         $c = User::count();
-                        if ($c == 0) {
+                        if ($c === 0) {
                             //  \Log::debug('Run Migration----------------------');
                             return Migrations::dispatch($company, $user->name, $user->email, $user->password);
                         }
@@ -224,177 +387,11 @@ class LoginController extends Controller
             $c_id = $main_company->id.$user->id;
         }
 
-        if ($main_company == null && ! $user->isAdmin()) {
+        if ($main_company === null && ! $user->isAdmin()) {
             //          if ($main_company == null) {
             $this->create_company($user);
         }
 
         return true;
-    }
-
-    public function redirectToProvider($provider)
-    {
-        $validated = $this->validateProvider($provider);
-        if (! is_null($validated)) {
-            return $validated;
-        }
-
-        return Socialite::driver($provider)->stateless()->redirect();
-    }
-
-    /**
-     * Obtain the user information from Provider.
-     *
-     * @param $provider
-     * @return JsonResponse
-     */
-    public function handleProviderCallback($provider)
-    {
-        try {
-            $user = Socialite::driver($provider)->stateless()->user();
-        } catch (Exception $exception) {
-            return redirect(config('settings.clientBaseUrl').'/social-callback?token=&status=false&message=Invalid credentials provided!');
-        }
-
-        $curUser = User::where('email', $user->getEmail())->first();
-
-        if (! $curUser) {
-            try {
-                // create person
-                $person = new Person();
-                $name = $user->getName();
-                $person->name = $name;
-                $person->email = $user->getEmail();
-                $person->save();
-                // get user_group_id
-                $user_group = UserGroup::where('name', 'Administrators')->first();
-                if ($user_group == null) {
-                    // create user_group
-                    $user_group = UserGroup::create(['name' => 'Administrators', 'description' => 'Administrator users group']);
-                }
-
-                // get role_id
-                $role = Role::where('name', 'free')->first();
-                if ($role == null) {
-                    $role = Role::create(['menu_id' => 1, 'name' => 'supervisor', 'display_name' => 'Supervisor', 'description' => 'Supervisor role.']);
-                }
-
-                $curUser = User::create(
-                    [
-                        'email' => $user->getEmail(),
-                        'person_id' => $person->id,
-                        'group_id' => $user_group->id,
-                        'role_id' => $role->id,
-                        'email_verified_at' => now(),
-                        'is_active' => 1,
-                    ],
-                );
-
-                $random = $this->unique_random('companies', 'name', 5);
-                $company = Company::create([
-                    'name' => 'company'.$random,
-                    'email' => $user->getEmail(),
-                    'is_tenant' => 1,
-                    'status' => 1,
-                ]);
-
-                $person->companies()->attach($company->id, ['person_id' => $person->id, 'is_main' => 1, 'is_mandatary' => 1, 'company_id' => $company->id]);
-
-                // Dispatch Tenancy Jobs
-                CreateDBs::dispatch($company);
-                Migrations::dispatch($company, $user->name, $user->email, $user->password);
-            } catch (Exception $e) {
-                return redirect(config('settings.clientBaseUrl').'/social-callback?token=&status=false&message=Something went wrong!');
-            }
-        }
-
-        try {
-            if ($this->needsToCreateSocial($curUser, $provider)) {
-                UserSocial::create([
-                    'user_id' => $curUser->id,
-                    'social_id' => $user->getId(),
-                    'service' => $provider,
-                ]);
-            }
-        } catch (Exception $e) {
-            return redirect(config('settings.clientBaseUrl').'/social-callback?token=&status=false&message=Something went wrong!');
-        }
-
-        if ($this->loggableSocialUser($curUser)) {
-            Auth::guard('web')->login($curUser, true);
-
-            return redirect(config('settings.clientBaseUrl').'/social-callback?token='.csrf_token().'&status=success&message=success');
-        } else {
-            return redirect(config('settings.clientBaseUrl').'/social-callback?token=&status=false&message=Something went wrong while we processing the login. Please try again!');
-        }
-    }
-
-    public function needsToCreateSocial(User $user, $service)
-    {
-        return ! $user->hasSocialLinked($service);
-    }
-
-    /**
-     * @param $provider
-     * @return JsonResponse
-     */
-    protected function validateProvider($provider)
-    {
-        if (! in_array($provider, ['facebook', 'google', 'github'])) {
-            return response()->json(['error' => 'Please login using facebook or google or github'], 422);
-        }
-    }
-
-    public function unique_random($table, $col, $chars = 16)
-    {
-        $unique = false;
-
-        // Store tested results in array to not test them again
-        $tested = [];
-
-        do {
-            // Generate random string of characters
-            $random = Str::random($chars);
-
-            // Check if it's already testing
-            // If so, don't query the database again
-            if (in_array($random, $tested)) {
-                continue;
-            }
-
-            // Check if it is unique in the database
-            $count = Company::where($col, '=', $random)->count();
-
-            // Store the random character in the tested array
-            // To keep track which ones are already tested
-            $tested[] = $random;
-
-            // String appears to be unique
-            if ($count == 0) {
-                // Set unique to true to break the loop
-                $unique = true;
-            }
-
-            // If unique is still false at this point
-            // it will just repeat all the steps until
-            // it has generated a random string of characters
-        } while (! $unique);
-
-        return $random;
-    }
-
-    public function providerLogin(Request $request, $provider)
-    {
-        $data = $request->all();
-
-        return response()->json($data);
-    }
-
-    public function confirmSubscription(Request $request)
-    {
-        $params = $request->all();
-        $user = $this->loggableUser($request);
-
-        return response()->json($user);
     }
 }

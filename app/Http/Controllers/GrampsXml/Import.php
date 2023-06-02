@@ -3,10 +3,7 @@
 namespace App\Http\Controllers\GrampsXml;
 
 use App\Models\Family;
-use App\Models\FamilyEvent;
 use App\Models\Person;
-use Flowgistics\XML\Transformers\ArrayTransformer;
-use Flowgistics\XML\XML;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Storage;
@@ -36,7 +33,7 @@ class Import extends Controller
         }
 
         $errors = [];
-        foreach ($families as $key=>$family) {
+        foreach ($families as $key => $family) {
             // Validate family
             $error = $this->validateFamily($family);
 
@@ -54,9 +51,9 @@ class Import extends Controller
 
             if (! $fam) {
                 $fam = Family::create([
-                    'description'=>$description,
-                    'husband_id'=>$husband->id,
-                    'wife_id'=>$wife->id,
+                    'description' => $description,
+                    'husband_id' => $husband->id,
+                    'wife_id' => $wife->id,
                 ]);
             }
 
@@ -69,11 +66,11 @@ class Import extends Controller
         Storage::delete('files/temp/'.$fileName);
 
         if (count($errors) > 0) {
-            return ['errors'=>$errors];
+            return ['errors' => $errors];
         }
 
         return json_encode([
-            'message'=> 'File imported successfully',
+            'message' => 'File imported successfully',
         ]);
     }
 
@@ -94,17 +91,17 @@ class Import extends Controller
     protected function validateFamily($family)
     {
         return Validator::make($family, [
-            'description'=>'sometimes|string',
-            'husband.birthday'=>'required|date',
-            'husband.name.first_name'=>'required|string',
-            'husband.name.last_name'=>'required|string',
-            'wife.birthday'=>'required|date',
-            'wife.name.first_name'=>'required|string',
-            'wife.name.last_name'=>'required|string',
-            'child.*.birthday'=>'required|date',
-            'child.*.name.first_name'=>'required|string',
-            'child.*.name.last_name'=>'required|string',
-            'child.*.gender'=>'required|string',
+            'description' => 'sometimes|string',
+            'husband.birthday' => 'required|date',
+            'husband.name.first_name' => 'required|string',
+            'husband.name.last_name' => 'required|string',
+            'wife.birthday' => 'required|date',
+            'wife.name.first_name' => 'required|string',
+            'wife.name.last_name' => 'required|string',
+            'child.*.birthday' => 'required|date',
+            'child.*.name.first_name' => 'required|string',
+            'child.*.name.last_name' => 'required|string',
+            'child.*.gender' => 'required|string',
         ])->errors();
     }
 
@@ -122,11 +119,11 @@ class Import extends Controller
         }
 
         return Person::create([
-            'givn'=>$arr['name']['first_name'],
-            'surn'=>$arr['name']['last_name'],
-            'sex'=>$arr['gender'] ?? null ? substr($arr['gender'], 0, 1) : $defaultGender,
-            'birthday'=>$arr['birthday'],
-            'child_in_family_id'=>$parentId,
+            'givn' => $arr['name']['first_name'],
+            'surn' => $arr['name']['last_name'],
+            'sex' => $arr['gender'] ?? null ? substr($arr['gender'], 0, 1) : $defaultGender,
+            'birthday' => $arr['birthday'],
+            'child_in_family_id' => $parentId,
         ]);
     }
 }

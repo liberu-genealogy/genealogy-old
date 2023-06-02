@@ -36,23 +36,23 @@ class SyncBaptisms extends Sync
         ] = $row['cell'];
 
         return [
-            'date'              => $date,
-            'name'              => $name,
-            'first_name'        => $first_name,
-            'sex'               => $sex,
+            'date' => $date,
+            'name' => $name,
+            'first_name' => $first_name,
+            'sex' => $sex,
             'father_first_name' => $father_first_name,
-            'father_is_dead'    => $father_is_dead,
-            'mother_name'       => $mother_name,
+            'father_is_dead' => $father_is_dead,
+            'mother_name' => $mother_name,
             'mother_first_name' => $mother_first_name,
-            'mother_is_dead'    => $mother_is_dead,
-            'observation1'      => $observation1,
-            'observation2'      => $observation2,
-            'observation3'      => $observation3,
-            'observation4'      => $observation4,
-            'officer'           => $officer,
-            'parish'            => $parish,
-            'source'            => $source,
-            'update'            => $update,
+            'mother_is_dead' => $mother_is_dead,
+            'observation1' => $observation1,
+            'observation2' => $observation2,
+            'observation3' => $observation3,
+            'observation4' => $observation4,
+            'officer' => $officer,
+            'parish' => $parish,
+            'source' => $source,
+            'update' => $update,
         ];
     }
 }

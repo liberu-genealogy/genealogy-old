@@ -2,32 +2,18 @@
 
 namespace App\Models;
 
-use App\Models\Family;
-use App\Models\PersonEvent;
-use App\Models\Place;
-use App\Models\User;
 //use App\Traits\ConnectionTrait;
 use App\Traits\TenantConnectionResolver;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Scout\Searchable;
 use LaravelEnso\People\Models\Person as CorePerson;
-use LaravelEnso\Tables\Traits\TableCache;
-
-use function Symfony\Component\Translation\t;
 
 class Person extends CorePerson
 {
     use HasFactory;
     use TenantConnectionResolver;
     use Searchable;
-
-    public function __construct(array $attributes = [])
-    {
-        parent::__construct($attributes);
-        // $this->setConnection(\Session::get('conn'));
-   //     error_log('Person-'.($this->connection).'-'.\Session::get('conn').'-'.\Session::get('db'));
-    }
 
     // public function searchableAs()
     // {
@@ -71,6 +57,13 @@ class Person extends CorePerson
         'deathday', 'burial_day', 'bank', 'bank_account', 'chan', 'rin', 'resn', 'rfn', 'afn',
     ];
 
+//     public function __construct(array $attributes = [])
+//     {
+//         parent::__construct($attributes);
+//         // $this->setConnection(\Session::get('conn'));
+//    //     error_log('Person-'.($this->connection).'-'.\Session::get('conn').'-'.\Session::get('db'));
+//     }
+
     public function events()
     {
         return $this->hasMany(PersonEvent::class);
@@ -98,7 +91,7 @@ class Person extends CorePerson
 
     public function getSex()
     {
-        if ($this->sex == 'F') {
+        if ($this->sex === 'F') {
             return 'Female';
         }
 
@@ -128,7 +121,8 @@ class Person extends CorePerson
                 'person_id' => $this->id,
                 'title' => $title,
                 'description' => $description,
-            ]);
+            ]
+        );
 
         if ($date) {
             $event->date = $date;
@@ -141,11 +135,11 @@ class Person extends CorePerson
         }
 
         // add birthyear to person table ( for form builder )
-        if ($title == 'BIRT' && ! empty($date)) {
+        if ($title === 'BIRT' && ! empty($date)) {
             $this->birthday = date('Y-m-d', strtotime($date));
         }
         // add deathyear to person table ( for form builder )
-        if ($title == 'DEAT' && ! empty($date)) {
+        if ($title === 'DEAT' && ! empty($date)) {
             $this->deathday = date('Y-m-d', strtotime($date));
         }
         $this->save();
@@ -174,7 +168,7 @@ class Person extends CorePerson
     {
         if (! is_dir(storage_path('app/public'))) {
             // dir doesn't exist, make it
-            \File::makeDirectory(storage_path().'/'.'app/public', 0777, true);
+            \File::makeDirectory(storage_path().'/app/public', 0777, true);
 
 //            mkdir(storage_path('app/public/'), 0700);
         }

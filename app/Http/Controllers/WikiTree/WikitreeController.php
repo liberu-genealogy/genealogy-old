@@ -54,7 +54,8 @@ class WikitreeController extends Controller
             'limit' => $request->per_page, // 100
             'start' => ($request->per_page * $request->page) - $request->per_page, // 2,
             'fields' => 'Id, Name, FirstName, MiddleName',
-        ]]);
+        ],
+        ]);
 
         $statusCode = $response->getStatusCode();
         $content = $response->getBody();
@@ -67,7 +68,8 @@ class WikitreeController extends Controller
                 'action' => 'getAncestors',
                 'format' => 'json',
                 'key' => $person['Id'],
-            ]]);
+            ],
+            ]);
 
             $statusCode = $response->getStatusCode();
             $content = $response->getBody();

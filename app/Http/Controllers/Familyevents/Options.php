@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Familyevents;
 
 use App\Models\FamilyEvent;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Select\Traits\OptionsBuilder;
 

@@ -9,13 +9,12 @@ use Illuminate\Http\Request;
 
 class Progress extends Controller
 {
-    //
     public function index(Request $request)
     {
         $user_id = Auth::user()->id;
         $runningjob = ImportJob::orderby('id', 'DESC')->first();
         $slug = null;
-        if ($runningjob != null) {
+        if ($runningjob !== null) {
             $slug = $runningjob->slug;
         }
         $ret = [];

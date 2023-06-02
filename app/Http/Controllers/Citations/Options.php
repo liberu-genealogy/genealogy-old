@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Citations;
 
 use App\Models\Citation;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Select\Traits\OptionsBuilder;
 

@@ -5,23 +5,16 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Stripe\GetPlans;
 use App\Jobs\Tenant\CreateDBs;
-use App\Jobs\Tenant\Migration;
-use App\Models\Avatar;
 use App\Models\Company;
 use App\Models\Person;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use App\Traits\ActivationTrait;
-use App\Traits\ConnectionTrait;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use LaravelEnso\Roles\Models\Role;
 use LaravelEnso\UserGroups\Models\UserGroup;
-use Str;
-use Stripe;
 
 class RegisterController extends Controller
 {
@@ -56,9 +49,9 @@ class RegisterController extends Controller
         $person->save();
         // get user_group_id
         $user_group = UserGroup::where('name', 'Administrators')->first();
-        if ($user_group == null) {
+        if ($user_group === null) {
             // create user_group
-            $user_group = UserGroup::create(['name'=>'Administrators', 'description'=>'Administrator users group']);
+            $user_group = UserGroup::create(['name' => 'Administrators', 'description' => 'Administrator users group']);
         }
 
         // get role_id
@@ -68,8 +61,8 @@ class RegisterController extends Controller
 //                $role = Role::find($request->role_id);
 //            }
         $role = Role::where('name', 'free')->first();
-        if ($role == null) {
-            $role = Role::create(['menu_id'=>1, 'name'=>'free', 'display_name'=>'Supervisor', 'description'=>'Supervisor role.']);
+        if ($role === null) {
+            $role = Role::create(['menu_id' => 1, 'name' => 'free', 'display_name' => 'Supervisor', 'description' => 'Supervisor role.']);
         }
         $user = User::create([
             'email' => $request['email'],
@@ -132,7 +125,7 @@ class RegisterController extends Controller
         // });
         CreateDBs::dispatch($company);
         Migrations::dispatch($company, $name, $request['email'], $request['password']);
-        if ($request->selected_plan == '' || $request->selected_plan == $user->role_id) {
+        if ($request->selected_plan === '' || $request->selected_plan === $user->role_id) {
             $user->plan_id = '';
         } else {
             $user->plan_id = $request->selected_plan;

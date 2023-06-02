@@ -19,11 +19,10 @@ class DnaTable implements Table
             return Dna::selectRaw('
             dnas.id, dnas.name, dnas.file_name, dnas.variable_name, dnas.created_at
         ');
-        } else {
-            return Dna::selectRaw('
+        }
+        return Dna::selectRaw('
             dnas.id, dnas.name, dnas.file_name, dnas.variable_name, dnas.created_at, dnas.user_id
         ')->where('dnas.user_id', $userId);
-        }
     }
 
     public function templatePath(): string

@@ -7,16 +7,14 @@ use App\Jobs\ImportGedcom;
 use App\Tenant\Manager;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Support\Str;
-use LaravelEnso\Api\Models\Log;
 
 class Store extends Controller
 {
     public function __invoke(Request $request): Response
     {
-        if ($request->file('file')->getClientOriginalExtension() != 'ged') {
+        if ($request->file('file')->getClientOriginalExtension() !== 'ged') {
             return response([
-                'msg'=>'file type invalid',
+                'msg' => 'file type invalid',
             ], 422);
         }
 

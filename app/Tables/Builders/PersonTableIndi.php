@@ -5,7 +5,6 @@ namespace App\Tables\Builders;
 use App\Models\Person;
 use Auth;
 use Illuminate\Database\Eloquent\Builder;
-use LaravelEnso\Tables\Contracts\Table;
 
 class PersonTableIndi extends \LaravelEnso\People\Tables\Builders\PersonTable
 {

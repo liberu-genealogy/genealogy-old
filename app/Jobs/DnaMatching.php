@@ -75,7 +75,7 @@ class DnaMatching implements ShouldQueue
             $dm->largest_cm_segment = round($resultData['largest_cm'], 2);
 
             $dm->save();
-            if ($dna->user_id != $user->id) {
+            if ($dna->user_id !== $user->id) {
                 $dm2 = new DM();
                 $dm2->user_id = $dna->user_id;
                 $dm2->match_id = $user->id;

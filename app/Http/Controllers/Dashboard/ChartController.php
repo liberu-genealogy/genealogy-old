@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Models\Person;
 use App\Traits\ConnectionTrait;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -16,7 +15,6 @@ use LaravelEnso\Charts\Factories\Pie;
 use LaravelEnso\Charts\Factories\Polar;
 use LaravelEnso\Charts\Factories\Radar;
 //use LaravelEnso\Multitenancy\Enums\Connections;
-use LaravelEnso\Multitenancy\Services\Tenant;
 
 class ChartController extends Controller
 {
@@ -128,11 +126,11 @@ class ChartController extends Controller
 //            $db = Connections::Tenant.$company_id.'_'.$tree_id;
 //                $this->setConnection($key, $db);
             }
-        } else {
-//            $db = 'enso';
+        }
+        //            $db = 'enso';
 //            $key = 'database.default';
 //            $this->setConnection('mysql');
-        }
+
         $changeConn = $this->getConnection();
 
         $peoplesattached = \DB::connection($changeConn)->table('people')->get()->count();
@@ -162,6 +160,7 @@ class ChartController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

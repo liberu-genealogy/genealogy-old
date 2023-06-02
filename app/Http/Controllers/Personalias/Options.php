@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Personalias;
 
 use App\Models\PersonAlia;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Select\Traits\OptionsBuilder;
 

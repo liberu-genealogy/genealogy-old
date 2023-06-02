@@ -13,6 +13,7 @@ class GetPlans extends Controller
      * Handle the incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function __invoke(Request $request)
@@ -26,8 +27,9 @@ class GetPlans extends Controller
         $plans = Stripe\Plan::all();
 
         $result = [];
-        foreach ($plans as $k=>$plan) {
-            if ($k == 0) {
+        foreach ($plans as $k => $plan) {
+            if ($k === 0) {
+                $row1 = [];
                 $row1['id'] = $role->id;
                 $row1['amount'] = 0;
                 $row1['nickname'] = $role->name;
@@ -40,8 +42,8 @@ class GetPlans extends Controller
                 continue;
             }
 //            if(empty($plan->nickname) || empty($plan->metadata->paypal_id)) continue;
-
-            $row ['id'] = $plan->id;
+            $row = [];
+            $row['id'] = $plan->id;
             $row['amount'] = $plan->amount;
             $row['nickname'] = $plan->nickname;
             $row['paypal_id'] = $plan->metadata->paypal_id;
@@ -64,7 +66,8 @@ class GetPlans extends Controller
                 case 'OTM':
                     $row['title'] = 'One tree monthly.';
                     break;
-                default:$row['title'] = '';
+                default:
+                    $row['title'] = '';
             }
             $row['subscribed'] = false;
             $result[] = $row;

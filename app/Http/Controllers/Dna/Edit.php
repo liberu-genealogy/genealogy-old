@@ -12,7 +12,7 @@ class Edit extends Controller
     {
         $role = \Auth::user()->role_id;
         $user_id = \Auth::user()->id;
-        if (in_array($role, [1, 2]) || $user_id == $dna->user_id) {
+        if (in_array($role, [1, 2]) || $user_id === $dna->user_id) {
             return ['form' => $form->edit($dna)];
         }
     }

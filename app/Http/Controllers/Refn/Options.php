@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Refn;
 
 use App\Models\Refn;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Select\Traits\OptionsBuilder;
 

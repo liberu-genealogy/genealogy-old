@@ -12,9 +12,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
-use LaravelEnso\Api\Models\Log;
 
 class ImportGedcom implements ShouldQueue
 {
@@ -50,8 +48,8 @@ class ImportGedcom implements ShouldQueue
 
         $job = ImportJob::on($tenant->connectionName())->create([
             'user_id' => $this->user->getKey(),
-            'status'  => 'queue',
-            'slug'    => $slug,
+            'status' => 'queue',
+            'slug' => $slug,
         ]);
         $parser = new GedcomParser();
 

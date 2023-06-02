@@ -15,11 +15,11 @@ class Edit extends Controller
     {
         $role = \Auth::user()->role_id;
         $user_id = \Auth::user()->id;
-        if ($company->email == \Auth::user()->email) {
+        if ($company->email === \Auth::user()->email) {
             if (in_array($role, [1, 2])) {
                 return ['form' => $form->edit($company)];
             }
-            if ($user_id == $company->created_by) {
+            if ($user_id === $company->created_by) {
                 return ['form' => $form->edit($company)];
             }
         }

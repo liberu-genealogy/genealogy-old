@@ -29,6 +29,7 @@ class ChatsController extends Controller
      * Fetch all of messages.
      *
      * @param id
+     *
      * @return Message
      */
     public function fetchMessages($id)
@@ -42,6 +43,7 @@ class ChatsController extends Controller
      * Persist message to database.
      *
      * @param  Request  $request,  $id
+     *
      * @return Response
      */
     public function sendMessage(Request $request, $id)

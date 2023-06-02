@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class TenantPerson extends Model
 {
+    public $timestamps = false;
     protected $casts = [
         'deleted_at' => 'datetime',
         'birthday' => 'datetime',
@@ -17,8 +18,6 @@ class TenantPerson extends Model
 
     protected $connection = 'mysql';
 
-    public $timestamps = false;
-
     protected $guarded = ['id'];
 
     protected $fillable = ['tenant_person_id', 'tenant_id', 'name', 'appellative', 'nin', 'email',
@@ -27,5 +26,6 @@ class TenantPerson extends Model
         'surn', 'uid', 'type', 'npfx', 'nick', 'spfx', 'nsfx', 'sex', 'description',
         'child_in_family_id', 'deleted_at', 'chan', 'rin', 'resn', 'rfn', 'afn', 'birthday_dati',
         'birthday_plac', 'deathday_dati', 'deathday_plac', 'deathday_caus', 'burial_day_dati',
-        'burial_day_plac', 'famc', 'fams', 'titl', 'chr', 'created_at', 'updated_at'];
+        'burial_day_plac', 'famc', 'fams', 'titl', 'chr', 'created_at', 'updated_at',
+    ];
 }

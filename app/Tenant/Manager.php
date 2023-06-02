@@ -12,7 +12,6 @@ use Illuminate\Database\ConnectionInterface;
 use Illuminate\Database\DatabaseManager;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class Manager
@@ -97,7 +96,7 @@ class Manager
     public function databaseExists(): bool
     {
         try {
-            if ($this->config->get('database.default') == 'sqlite') {
+            if ($this->config->get('database.default') === 'sqlite') {
                 // $this->connect(true);
                 $this->config->set('database.default', 'tenant');
             }
@@ -133,7 +132,7 @@ class Manager
         Artisan::call('migrate:fresh', [
             '--realpath' => database_path('migrations/tenant'),
             '--database' => $this->connectionName,
-            '--force'    => true,
+            '--force' => true,
         ]);
 
         return $this;

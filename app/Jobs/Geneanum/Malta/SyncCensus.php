@@ -31,18 +31,18 @@ class SyncCensus extends Sync
         ] = $row['cell'];
 
         return [
-            'order_no'       => $order_no,
-            'parish'         => $parish,
-            'year'           => $year,
-            'family_no'      => $family_no,
-            'first_name'     => $first_name,
-            'last_name'      => $last_name,
-            'age'            => $age,
-            'observation1'   => $observation1,
+            'order_no' => $order_no,
+            'parish' => $parish,
+            'year' => $year,
+            'family_no' => $family_no,
+            'first_name' => $first_name,
+            'last_name' => $last_name,
+            'age' => $age,
+            'observation1' => $observation1,
             'inferred_birth' => $inferred_birth,
-            'observation2'   => $observation2,
-            'observation3'   => $observation3,
-            'source'         => $source,
+            'observation2' => $observation2,
+            'observation3' => $observation3,
+            'source' => $source,
         ];
     }
 }

@@ -13,6 +13,7 @@ class Webhook extends Controller
      * Handle the incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function __invoke(Request $request)
@@ -24,7 +25,7 @@ class Webhook extends Controller
         if ($user) {
             $plan_nickname = $data['data']['object']['items']['data'][0]['plan']['nickname'];
             foreach ($plans as $plan) {
-                if ($plan->nickname == $plan_nickname) {
+                if ($plan->nickname === $plan_nickname) {
                     switch ($plan->nickname) {
                         case 'UTY':
                             $user->syncRoles('UTY');

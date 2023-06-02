@@ -4,11 +4,8 @@ namespace App\Http\Controllers\Trees;
 
 use App\Models\Family;
 use App\Models\Person;
-use File;
-use GenealogiaWebsite\LaravelGedcom\Utils\GedcomGenerator;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Response;
 
 class Show extends Controller
 {
@@ -47,7 +44,7 @@ class Show extends Controller
 
         $person = Person::find($start_id);
         // do not process for null
-        if ($person == null) {
+        if ($person === null) {
             return;
         }
 
@@ -56,7 +53,7 @@ class Show extends Controller
             $person = Person::find($start_id);
 
             // do not process for null
-            if ($person == null) {
+            if ($person === null) {
                 return;
             }
 
@@ -80,7 +77,7 @@ class Show extends Controller
             $this->links[] = [$start_id, $union_id];
             $this->unions[$union_id] = [
                 'id' => $union_id,
-                'partner' => [isset($family->husband_id) ? $family->husband_id : null, isset($family->wife_id) ? $family->wife_id : null],
+                'partner' => [$family->husband_id ?? null, $family->wife_id ?? null],
                 'children' => $family->children->pluck('id')->toArray(),
             ];
             foreach ($family->children as $child) {

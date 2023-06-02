@@ -36,7 +36,6 @@ class DropDB implements ShouldQueue
      */
     public function handle()
     {
-        //
         Tenant::set($this->tenant);
 
         DB::statement('DROP DATABASE '.$this->tenantDatabase());

@@ -12,11 +12,9 @@ class AuthorTable implements Table
 
     public function query(): Builder
     {
-        $authors = Author::selectRaw('
+        return Author::selectRaw('
             authors.id, authors.name, authors.description, authors.is_active
         ');
-
-        return $authors;
     }
 
     public function templatePath(): string

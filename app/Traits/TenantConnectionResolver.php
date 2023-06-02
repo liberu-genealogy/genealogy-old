@@ -4,7 +4,6 @@ namespace App\Traits;
 
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
-use LaravelEnso\Api\Models\Log;
 
 trait TenantConnectionResolver
 {
@@ -16,10 +15,9 @@ trait TenantConnectionResolver
                 $role_id = $user->role_id;
                 if ($user->isAdmin()) {
                     return env('DB_DATABASE', 'genealogy'); //'enso');
-                } else {
-                    if (session()->get('db')) {
-                        return 'tenantdb';
-                    }
+                }
+                if (session()->get('db')) {
+                    return 'tenantdb';
                 }
             }
         }

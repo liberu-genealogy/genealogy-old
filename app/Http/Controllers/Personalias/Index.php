@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Personalias;
 
-use App\Models\Person;
 use App\Service\Tenant;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -14,7 +13,6 @@ class Index extends Controller
 {
     public function __invoke(Request $request)
     {
-        //
     }
 
     public function getPerson()
@@ -23,8 +21,6 @@ class Index extends Controller
         Tenant::set($tenant);
         $company = Tenant::get();
         $db = Connections::Tenant.$company->id;
-        $person = DB::connection(Connections::Tenant)->table('people')->get();
-
-        return $person;
+        return DB::connection(Connections::Tenant)->table('people')->get();
     }
 }

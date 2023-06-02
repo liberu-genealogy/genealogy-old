@@ -24,7 +24,6 @@ class DropTb implements ShouldQueue
      */
     public function __construct(Company $tenant)
     {
-        //
         $this->tenant = $tenant;
 
         // $this->queue = 'light';
@@ -37,7 +36,6 @@ class DropTb implements ShouldQueue
      */
     public function handle()
     {
-        //
         Tenant::set($this->tenant);
 
         DB::connection(Connections::Tenant)

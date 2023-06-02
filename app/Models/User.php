@@ -4,7 +4,6 @@ namespace App\Models;
 
 use App\Notifications\ResetPassword;
 use Illuminate\Auth\Passwords\CanResetPassword;
-use Illuminate\Support\Facades\Auth;
 use Laravel\Cashier\Billable;
 use LaravelEnso\Avatars\Models\Avatar;
 use LaravelEnso\Users\Models\User as CoreUser;

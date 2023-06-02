@@ -4,10 +4,8 @@ namespace App\Http\Controllers\Paypal;
 
 use App\Http\Controllers\Controller;
 use App\Models\PaypalSubscription as PaypalSub;
-use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use leifermendez\paypal\PaypalSubscription;
 
 class HandlePayment extends Controller
@@ -16,6 +14,7 @@ class HandlePayment extends Controller
      * Handle the incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function __invoke(Request $request)

@@ -2,7 +2,6 @@
 
 namespace App\Events;
 
-use App\Jobs\ImportGedcom;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
@@ -10,7 +9,6 @@ class GedComProgressSent extends ShouldBroadcast
 {
     public function __construct()
     {
-        //
     }
 
     /**

@@ -30,7 +30,7 @@ class Store extends Controller
             $allowed = true;
         }
 
-        if ($allowed == true) {
+        if ($allowed === true) {
             if ($request->hasFile('file')) {
                 if ($request->file('file')->isValid()) {
                     try {

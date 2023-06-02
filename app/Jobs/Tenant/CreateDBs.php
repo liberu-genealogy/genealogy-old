@@ -4,10 +4,7 @@ namespace App\Jobs\Tenant;
 
 use App\Models\Company;
 use App\Models\Tenant as Tenants;
-use App\Tree;
-use App\User;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
@@ -35,7 +32,6 @@ class CreateDBs implements ShouldQueue
      */
     public function handle()
     {
-        //
         $tenant = Tenants::create([
             'id' => $this->tenant->id,
         ]);

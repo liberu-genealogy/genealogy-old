@@ -21,7 +21,8 @@ class GeneanumController extends Controller
             'row' => $request->row, // 100
             'sidx' => $request->sidx, // 100
             'start' => ($request->per_page * $request->page) - $request->per_page, // 2,
-        ]]);
+        ],
+        ]);
 
         $statusCode = $response->getStatusCode();
         $content = $response->getBody();
@@ -43,7 +44,8 @@ class GeneanumController extends Controller
             'row' => $request->row, // 100
             'sidx' => $request->sidx, // 100
             'start' => ($request->per_page * $request->page) - $request->per_page, // 2,
-        ]]);
+        ],
+        ]);
 
         $statusCode = $response->getStatusCode();
         $content = $response->getBody();
@@ -68,7 +70,8 @@ class GeneanumController extends Controller
             'row' => $request->row, // 100
             'sidx' => $request->sidx, // 100
             'start' => ($request->per_page * $request->page) - $request->per_page, // 2,
-        ]]);
+        ],
+        ]);
 
         $statusCode = $response->getStatusCode();
         $content = $response->getBody();

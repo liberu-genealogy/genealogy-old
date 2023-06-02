@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Company\Person;
 
-use App\Forms\Builders\CompaniesPerson;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Companies\Models\Company;
 

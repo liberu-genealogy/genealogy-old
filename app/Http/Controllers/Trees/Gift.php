@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Trees;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use iWebTouch\Gelato\Gelato;
 
 class Gift extends Controller

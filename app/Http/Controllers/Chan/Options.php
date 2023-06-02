@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Chan;
 
 use App\Models\Chan;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Select\Traits\OptionsBuilder;
 

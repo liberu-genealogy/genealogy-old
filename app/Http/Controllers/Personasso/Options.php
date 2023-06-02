@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Personasso;
 
 use App\Models\PersonAsso;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Select\Traits\OptionsBuilder;
 

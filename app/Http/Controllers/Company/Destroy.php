@@ -14,7 +14,7 @@ class Destroy extends Controller
     {
         $role = \Auth::user()->role_id;
         $user_id = \Auth::user()->id;
-        if ($company->email == \Auth::user()->email) {
+        if ($company->email === \Auth::user()->email) {
             if (in_array($role, [1, 2])) {
                 $company->delete();
 
@@ -23,7 +23,7 @@ class Destroy extends Controller
                     'redirect' => 'administration.companies.index',
                 ];
             }
-            if ($user_id == $company->created_by) {
+            if ($user_id === $company->created_by) {
                 $company->delete();
 
                 return [

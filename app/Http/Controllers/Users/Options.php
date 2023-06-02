@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Users;
 
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 // use App\Http\Resources\User as Resource;
 use LaravelEnso\Select\Traits\OptionsBuilder;

@@ -2,14 +2,13 @@
 
 namespace App\Traits;
 
-use Illuminate\Support\Facades\Validator;
 use LaravelEnso\Multitenancy\Enums\Connections;
 
 trait ConnectionTrait
 {
     public function setConnection($conn = 'mysql', $db = 'genealogy')//'enso')
     {
-        if ($conn == Connections::Tenant) {
+        if ($conn === Connections::Tenant) {
             $key = 'database.connections.tenant.database';
             config([$key => $db]);
         }
@@ -21,7 +20,7 @@ trait ConnectionTrait
     {
         $conn = \Session::get('conn');
         $db = \Session::get('db');
-        if ($conn == 'tenant') {
+        if ($conn === 'tenant') {
             $key = 'database.connections.tenant.database';
             $value = $db;
             config([$key => $value]);
@@ -32,8 +31,6 @@ trait ConnectionTrait
 
     public function getDB()
     {
-        $db = \Session::get('db');
-
-        return $db;
+        return \Session::get('db');
     }
 }

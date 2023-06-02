@@ -8,8 +8,6 @@ use App\Models\Company as Company1;
 use App\Traits\TenantConnectionResolver;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Auth;
-use LaravelEnso\Api\Models\Log;
 use LaravelEnso\Companies\Http\Requests\ValidateCompany;
 use LaravelEnso\Companies\Models\Company;
 
@@ -36,7 +34,7 @@ class Store extends Controller
 
             $company->privacy = $request->privacy;
             $company->save();
-            if ($user->role_id != 1) {
+            if ($user->role_id !== 1) {
                 $c = new Company1();
 
                 $c->fill($clone);
@@ -55,8 +53,7 @@ class Store extends Controller
                 'redirect' => 'administration.companies.edit',
                 'param' => ['company' => $company->id],
             ];
-        } else {
-            return ['error' => __('Unauthorized')];
         }
+        return ['error' => __('Unauthorized')];
     }
 }

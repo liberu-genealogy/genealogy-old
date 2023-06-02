@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Dna;
 
 use App\Models\Dna;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Select\Traits\OptionsBuilder;
 

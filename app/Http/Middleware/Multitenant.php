@@ -2,16 +2,8 @@
 
 namespace App\Http\Middleware;
 
-use App\Models\Family;
-use App\Models\Tenant as T1;
-use App\Models\User;
-use App\Service\MixedConnection;
 use Closure;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 // use App\Models\enso\companies\Company;
-use LaravelEnso\Companies\Models\Company;
-use LaravelEnso\Multitenancy\Services\Tenant;
 
 class Multitenant
 {
@@ -20,6 +12,7 @@ class Multitenant
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
+     *
      * @return mixed
      */
     public function handle($request, Closure $next)

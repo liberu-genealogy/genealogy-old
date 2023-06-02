@@ -94,7 +94,6 @@ use App\Http\Controllers\DnaMatching\InitTable as DnaMatchingInitTable;
 use App\Http\Controllers\DnaMatching\Options as DnaMatchingOptions;
 use App\Http\Controllers\DnaMatching\Show as DnaMatchingShow;
 use App\Http\Controllers\DnaMatching\TableData as DnaMatchingTableData;
-use App\Http\Controllers\DnaMatching\Update as DnaMatchingUpdate;
 use App\Http\Controllers\Families\Create as FamiliesCreate;
 use App\Http\Controllers\Families\Destroy as FamiliesDestroy;
 use App\Http\Controllers\Families\Edit as FamiliesEdit;
@@ -462,8 +461,7 @@ use LaravelEnso\ControlPanelApi\Http\Controllers\Statistics as ControlPanelStati
  * Route::get('contact', ContactIndex::class)->name('index');
  * });
  * });
- *
- **/
+ */
 // use LaravelEnso\People\Http\Controllers\TableData as PeopleTableData;
 // use LaravelEnso\People\Http\Controllers\Update as PeopleUpdate;
 

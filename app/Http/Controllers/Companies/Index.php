@@ -3,10 +3,6 @@
 namespace App\Http\Controllers\Companies;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
-use App\Traits\TenantConnectionResolver;
-use DB;
-use Illuminate\Http\Request;
 
 class Index extends Controller
 {

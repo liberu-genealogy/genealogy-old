@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Subn;
 
 use App\Models\Subn;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Select\Traits\OptionsBuilder;
 

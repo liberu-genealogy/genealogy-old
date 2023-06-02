@@ -16,7 +16,7 @@ class Multitenancy
             return $next($request);
         }
 
-        $company = ($request->user()->belongsToAdminGroup() && $request->has('_tenantId'))
+        $company = $request->user()->belongsToAdminGroup() && $request->has('_tenantId')
             ? Company::find($request->get('_tenantId'))
             : $request->user()->company();
 

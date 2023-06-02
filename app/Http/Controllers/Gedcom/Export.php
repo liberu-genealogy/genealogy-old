@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Gedcom;
 use App\Http\Controllers\Controller;
 use App\Jobs\ExportGedCom;
 use FamilyTree365\LaravelGedcom\Utils\GedcomGenerator;
-use FamilyTree365\LaravelGedcom\Utils\GedcomParser;
-use FamilyTree365\LaravelGedcom\Utils\GedcomWriter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 

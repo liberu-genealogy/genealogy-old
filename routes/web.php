@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/trees/gift/create', [Gift::class, 'createOrder'])->name('gift.create.order');
 Route::get('/trees/gift/order/{orderId}', [Gift::class, 'getOrder'])->name('gift.get.order');
-Route::get('/trees/gift/order/{orderId}/shipping', [Gift::class, 'getShippingAddress'])->name('gift.get.shipping');
+Route::get('/trees/gift/order/{orderId}/shipping', [Gift::class, 'getShippingAddress'])
+    ->name('gift.get.shipping');
 // Route::get('gedcom-progress', function(){
 //     broadcast(new \App\Events\GedComProgressSent);
 // });
@@ -26,7 +27,8 @@ Route::get('/trees/gift/order/{orderId}/shipping', [Gift::class, 'getShippingAdd
 // })->middleware('auth');
 // Route::post('/messages', function(){
 //     $user = auth()->user();
-//     $conversation = App\Models\Conversation::find(request()->get('conversation_id', null))->get();
+//     $conversation = App\Models\Conversation::find(request()
+//          ->get('conversation_id', null))->get();
 //     if($conversation->status){
 //         $message = new App\Models\Message();
 //         $message->message = request()->get('message', '');
@@ -50,5 +52,5 @@ Route::get('/socketTest', function () {
  * Route::get('messages/{id}', 'ChatsController@fetchMessages');
  * Route::post('messages/{id}', 'ChatsController@sendMessage');
  * });.
- **/
+ */
 Route::view('/{any}', 'index')->where('any', '.*');

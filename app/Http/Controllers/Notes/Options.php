@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Notes;
 
 use App\Models\Note;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Select\Traits\OptionsBuilder;
 

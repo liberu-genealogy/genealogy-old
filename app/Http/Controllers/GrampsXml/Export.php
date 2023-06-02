@@ -3,9 +3,6 @@
 namespace App\Http\Controllers\GrampsXml;
 
 use App\Models\Family;
-use App\Models\FamilyEvent;
-use App\Models\Person;
-use Flowgistics\XML\Transformers\ArrayTransformer;
 use Flowgistics\XML\XML;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -34,30 +31,28 @@ class Export extends Controller
             }
 
             array_push($data, [
-                'id'=>$familyId,
-                'description'=>$description,
-                'husband'=>$husband,
-                'wife'=>$wife,
-                'child'=>$childrenArr,
+                'id' => $familyId,
+                'description' => $description,
+                'husband' => $husband,
+                'wife' => $wife,
+                'child' => $childrenArr,
             ]);
         }
 
-        $xml = XML::export(['family'=>$data])->rootTag('database')
+        return XML::export(['family' => $data])->rootTag('database')
             ->toString();
-
-        return $xml;
     }
 
     protected function getPersonDetail($person)
     {
         return [
-            'name'=>[
-                'first_name'=>$person->givn,
-                'last_name'=>$person->surn,
+            'name' => [
+                'first_name' => $person->givn,
+                'last_name' => $person->surn,
             ],
-            'gender'=>$person->getSex(),
-            'birthday'=>substr($person->birthday, 0, 10),
-            'parent_id'=>$person->child_in_family_id,
+            'gender' => $person->getSex(),
+            'birthday' => substr($person->birthday, 0, 10),
+            'parent_id' => $person->child_in_family_id,
         ];
     }
 }

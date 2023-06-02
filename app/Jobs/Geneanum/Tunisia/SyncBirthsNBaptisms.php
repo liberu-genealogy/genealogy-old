@@ -31,18 +31,18 @@ class SyncBirthsNBaptisms extends Sync
         ] = $row['cell'];
 
         return [
-            'pictures'          => $pictures,
-            'date_of_birth'     => $date_of_birth,
-            'town_hall'         => $town_hall,
-            'baptism_date'      => $baptism_date,
-            'parish'            => $parish,
-            'last_name'         => $last_name,
-            'first_name'        => $first_name,
+            'pictures' => $pictures,
+            'date_of_birth' => $date_of_birth,
+            'town_hall' => $town_hall,
+            'baptism_date' => $baptism_date,
+            'parish' => $parish,
+            'last_name' => $last_name,
+            'first_name' => $first_name,
             'father_first_name' => $father_first_name,
-            'mother_name'       => $mother_name,
+            'mother_name' => $mother_name,
             'mother_first_name' => $mother_first_name,
-            'directory'         => $directory,
-            'observation'       => $observation,
+            'directory' => $directory,
+            'observation' => $observation,
         ];
     }
 }

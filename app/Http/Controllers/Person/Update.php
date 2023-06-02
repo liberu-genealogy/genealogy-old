@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Person;
 
 use App\Http\Requests\ValidatePersonRequest;
 use App\Models\Person;
-use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Routing\Controller;
 

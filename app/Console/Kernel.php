@@ -24,7 +24,6 @@ class Kernel extends ConsoleKernel
             ->horizonSnapshot();
 
         if (App::isProduction()) {
-            //
         }
     }
 

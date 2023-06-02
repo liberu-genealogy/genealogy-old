@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\DnaMatching;
 
 use App\Models\DnaMatching;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Select\Traits\OptionsBuilder;
 

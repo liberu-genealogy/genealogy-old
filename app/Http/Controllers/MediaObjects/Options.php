@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\MediaObjects;
 
 use App\Models\MediaObject;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use LaravelEnso\Select\Traits\OptionsBuilder;
 

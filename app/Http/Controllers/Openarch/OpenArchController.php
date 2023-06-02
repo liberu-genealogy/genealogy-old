@@ -23,7 +23,8 @@ class OpenArchController extends Controller
             'name' => $request->name,
             'number_show' => $request->per_page, // 100
             'start' => ($request->per_page * $request->page) - $request->per_page, // 2,
-        ]]);
+        ],
+        ]);
 
         $statusCode = $response->getStatusCode();
         $content = $response->getBody();

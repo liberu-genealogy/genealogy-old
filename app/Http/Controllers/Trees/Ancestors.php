@@ -4,11 +4,8 @@ namespace App\Http\Controllers\Trees;
 
 use App\Models\Family;
 use App\Models\Person;
-use File;
-use GenealogiaWebsite\LaravelGedcom\Utils\GedcomGenerator;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Response;
 
 class Ancestors extends Controller
 {
@@ -39,12 +36,10 @@ class Ancestors extends Controller
     {
         $p_family_id = $person->child_in_family_id;
         $p_family = Family::find($p_family_id);
-        if ($p_family == null) {
+        if ($p_family === null) {
             return [];
         }
-        $parents = Person::where('id', $p_family->husband_id)->orwhere('id', $p_family->wife_id)->get();
-
-        return $parents;
+        return Person::where('id', $p_family->husband_id)->orwhere('id', $p_family->wife_id)->get();
     }
 
     private function getGraphData($start_id, $nest = 1)
@@ -55,7 +50,7 @@ class Ancestors extends Controller
 
         $person = Person::find($start_id);
         // do not process for null
-        if ($person == null) {
+        if ($person === null) {
             return;
         }
 
@@ -80,7 +75,7 @@ class Ancestors extends Controller
             $this->links[] = [$start_id, $union_id];
             $this->unions[$union_id] = [
                 'id' => $union_id,
-                'partner' => [isset($family->husband_id) ? $family->husband_id : null, isset($family->wife_id) ? $family->wife_id : null],
+                'partner' => [$family->husband_id ?? null, $family->wife_id ?? null],
                 'children' => $family->children->pluck('id')->toArray(),
             ];
 

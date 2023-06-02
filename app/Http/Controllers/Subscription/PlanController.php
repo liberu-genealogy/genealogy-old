@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Subscription;
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Subscription\Paypal;
-use App\Http\Controllers\Subscription\Stripe;
 use Illuminate\Http\Request;
 
 class PlanController extends Controller
@@ -13,6 +11,7 @@ class PlanController extends Controller
      * Handle the incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function getPlans(Request $request)

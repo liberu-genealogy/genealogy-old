@@ -32,7 +32,7 @@ trait UniqueStringTrait
             $tested[] = $random;
 
             // String appears to be unique
-            if ($count == 0) {
+            if ($count === 0) {
                 // Set unique to true to break the loop
                 $unique = true;
             }

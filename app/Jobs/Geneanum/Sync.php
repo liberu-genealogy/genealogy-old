@@ -53,8 +53,8 @@ abstract class Sync implements ShouldQueue
             if (self::$is_testing) {
                 $response->throw();
             }
-
-            if (++$this->retry > static::MAX_RETRY) {
+            $this->retry++;
+            if ($this->retry > static::MAX_RETRY) {
                 return;
             }
 
@@ -67,7 +67,8 @@ abstract class Sync implements ShouldQueue
         if (! self::$is_testing) {
             $has_more_result = $result['total'] > $result['page'];
             if ($has_more_result) {
-                dispatch(new static(++$this->current_page))
+                $this->current_page++;
+                dispatch(new static($this->current_page))
                     ->delay(now()->addSeconds(random_int(10, 60)));
             }
         }
@@ -77,11 +78,11 @@ abstract class Sync implements ShouldQueue
         foreach ($rows as $row) {
             $remote_id = $row['id'];
 
-            (static::MODEL)::updateOrCreate(
+            static::MODEL::updateOrCreate(
                 [
                     'remote_id' => $remote_id,
-                    'area'      => static::AREA,
-                    'db_name'   => static::DATABASE,
+                    'area' => static::AREA,
+                    'db_name' => static::DATABASE,
                 ],
                 [
                     'data' => $this->getFields($row),
