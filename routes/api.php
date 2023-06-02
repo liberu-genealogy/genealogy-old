@@ -1490,7 +1490,7 @@ Route::middleware(['auth', 'api'])
     ->group(function () {
         Route::get('/', [ChatsController::class, 'fetchConnects']);
         Route::post('/', [ChatsController::class, 'store']);
-        Route::get('/{id}', [ChatsController::class, 'fetchMessages']);
+        // Route::get('/{id}', [ChatsController::class, 'fetchMessages']);
         Route::post('/{id}', [ChatsController::class, 'sendMessage']);
     });
 

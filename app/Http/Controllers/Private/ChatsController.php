@@ -50,19 +50,22 @@ class ChatsController extends Controller
     {
         $user = Auth::user();
 
-        $conversations = Conversation::where('user_one', $user->id)
-            ->orWhere('user_two', $user->id)
-            ->get();
+        // Check if a chat already exists between the logged-in user and the receiver
+        $conversation = Conversation::where(function ($query) use ($user, $request) {
+            $query->where('user_one', $user->id)
+                ->where('user_two', $request->user_two);
+        })->orWhere(function ($query) use ($user, $request) {
+            $query->where('user_one', $request->user_two)
+                ->where('user_two', $user->id);
+        })->first();
 
-        var_dump($conversations->length);
-
-        if (!$conversations->length) {
+        if (!$conversation) {
             $conversation = new Conversation($request->input());
             $conversation->user_one = $user->id;
             $conversation->save();
         }
 
-        return json_encode($conversation);
+        return $conversation;
     }
 
     /**
