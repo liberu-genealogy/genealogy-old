@@ -45,7 +45,7 @@ and consider using [Valet](https://laravel.com/docs/6.x/valet) for a better expe
 
 6. Run `php artisan migrate --seed`
 
-7. Follow installation steps for client side (https://github.com/cgd-ui/genealogy) and launch the site and log into the project with user: `admin@familytree365.com`, password: `password`
+7. Follow installation steps for client side (https://github.com/liberu-ui/genealogy) and launch the site and log into the project with user: `admin@familytree365.com`, password: `password`
 
 8. (optional) Setup the configuration files as needed, in `config/enso/*.php`
 
