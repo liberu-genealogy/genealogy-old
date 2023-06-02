@@ -63,9 +63,9 @@ class ChatsController extends Controller
             $conversation = new Conversation($request->input());
             $conversation->user_one = $user->id;
             $conversation->save();
+            return $conversation;
         }
-
-        return $conversation;
+        return [];
     }
 
     /**
@@ -77,7 +77,7 @@ class ChatsController extends Controller
     public function sendMessage(Request $request, $id)
     {
         $user = Auth::user();
-        $conversation = Conversation::with('users')->find($id)->get();
+        $conversation = Conversation::find($id);
         if ($conversation->status) {
             // $message = $user->messages()->create([
             //     'message' => $request->input('message'),
@@ -88,9 +88,9 @@ class ChatsController extends Controller
             $message->user_id = $user->id;
             $message->conversation_id = $id;
             $message->save();
-            broadcast(new \App\Events\MessageSent($message, $user, $id))->toOthers();
+            // broadcast(new \App\Events\MessageSent($message, $user, $id))->toOthers();
 
-            return ['message' => 'Message Sent!'];
+            return $message;
         }
     }
 }
