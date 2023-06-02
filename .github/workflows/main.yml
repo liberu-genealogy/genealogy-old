@@ -60,7 +60,7 @@ jobs:
       - name: 'PhpUnit'
         run: |
           sudo composer install
-          sudo php artisan test -p
+          sudo php artisan test
 
   phpcpd:
     runs-on: ubuntu-20.04
