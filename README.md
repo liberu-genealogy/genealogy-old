@@ -79,49 +79,11 @@ $ laravel-echo-server start
 ```
 
 If you want to keep it in background proccess you should install pm2 or supervisor
-
-## Sphinx Search Engine Setup
-
-In this project, sphinx search engine is used to improve search result. If you want to see how to setup sphinx engine, how to use in your Laravel app, please follow this medium blog.
-
-https://medium.com/@devknight216/how-to-setup-sphinx-search-engine-with-your-laravel-app-7ace9189762b
-
+<!--h-->
 ## DNA Matching setup
 
 We currently use Lineage, install Python 3 and Pip and run `pip3 install lineage`
 
-### Support services (new)
-While developing genealogy, we constantly received private inquiries from devs and teams asking us about paid support. Some of these requests even lead to fruitful collaborations, so we finally decided to launch such an option.
-
-If you're looking for premium support when building applications with genealogy we can help you with that. Our support packages start at £250 / month with 8 hours included. With premium support you will get:
-
-a private repo on our self hosted gitlab instance where you can host your project
-
-priority in addressing your issues
-
-help with understanding the environment
-
-getting you to be proficient when developing on Liberu
-
-mentoring
-
-code reviews
-
-general advice & support on Laravel & Vue
-
-assistance on version upgrades
-
-up to 4 hours / month of remote desktop sessions and call conferences with your team
-
-direct communication via Slack during our office hours
-
-The support services are provided by a team of 4 members.
-
-### Thanks
-
-Built with Laravel Liberu 5.x which is crafted on Laravel 10.
-
-Special thanks to [Taylor Otwell](https://laravel.com/), [Jeffrey Way](https://laracasts.com), [Evan You](https://vuejs.org/) and [Jeremy Thomas](https://bulma.io). [Laravel Liberu](https://github.com/laravel-enso)
 
 <!--h-->
 ### Contributions
