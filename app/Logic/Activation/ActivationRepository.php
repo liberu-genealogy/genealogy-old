@@ -16,7 +16,6 @@ class ActivationRepository
      * Creates a token and send email.
      *
      * @param  \App\Models\User  $user
-     *
      * @return bool or void
      */
     public function createTokenAndSendEmail(User $user)
@@ -47,7 +46,6 @@ class ActivationRepository
      * Creates a new activation token.
      *
      * @param  \App\Models\User  $user
-     *
      * @return \App\Models\Activation $activation
      */
     public function createNewActivationToken(User $user)
@@ -77,7 +75,6 @@ class ActivationRepository
      * Creates a token and send email.- api.
      *
      * @param  \App\Models\User  $user
-     *
      * @return bool or void
      */
     public function createTokenAndSendEmailApi(User $user)
@@ -108,7 +105,6 @@ class ActivationRepository
      * Creates a new activation token.
      *
      * @param  \App\Models\User  $user
-     *
      * @return \App\Models\Activation $activation
      */
     public function createNewActivationTokenApi(User $user)

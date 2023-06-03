@@ -29,7 +29,6 @@ class ChatsController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -56,7 +55,6 @@ class ChatsController extends Controller
      * Fetch all messages.
      *
      * @param  int  $id
-     *
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -71,7 +69,6 @@ class ChatsController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -91,7 +88,6 @@ class ChatsController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

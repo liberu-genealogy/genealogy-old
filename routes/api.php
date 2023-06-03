@@ -256,7 +256,7 @@ use App\Http\Controllers\Post\Edit as PostEdit;
 use App\Http\Controllers\Post\Index as PostIndex;
 use App\Http\Controllers\Post\Store as PostStore;
 use App\Http\Controllers\Post\Update as PostUpdate;
-use App\Http\Controllers\Private\ChatsController as ChatsController;
+use App\Http\Controllers\Private\ChatsController;
 use App\Http\Controllers\Publications\Create as PublicationsCreate;
 use App\Http\Controllers\Publications\Destroy as PublicationsDestroy;
 use App\Http\Controllers\Publications\Edit as PublicationsEdit;

@@ -60,7 +60,6 @@ class LoginController extends Controller
      * Obtain the user information from Provider.
      *
      * @param $provider
-     *
      * @return JsonResponse
      */
     public function handleProviderCallback($provider)
@@ -140,6 +139,7 @@ class LoginController extends Controller
 
             return redirect(config('settings.clientBaseUrl').'/social-callback?token='.csrf_token().'&status=success&message=success');
         }
+
             return redirect(config('settings.clientBaseUrl').'/social-callback?token=&status=false&message=Something went wrong while we processing the login. Please try again!');
     }
 
@@ -262,7 +262,6 @@ class LoginController extends Controller
 
     /**
      * @param $provider
-     *
      * @return JsonResponse
      */
     protected function validateProvider($provider)

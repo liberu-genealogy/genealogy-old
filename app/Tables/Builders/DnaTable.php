@@ -20,6 +20,7 @@ class DnaTable implements Table
             dnas.id, dnas.name, dnas.file_name, dnas.variable_name, dnas.created_at
         ');
         }
+
         return Dna::selectRaw('
             dnas.id, dnas.name, dnas.file_name, dnas.variable_name, dnas.created_at, dnas.user_id
         ')->where('dnas.user_id', $userId);

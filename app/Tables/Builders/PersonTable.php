@@ -29,6 +29,7 @@ class PersonTable implements Table
                         ->where('company_person.is_main', true)
                 )->leftJoin('companies', 'company_person.company_id', 'companies.id');
         }
+
         return Person::selectRaw('
             people.id, people.name,
             people.titl AS title, people.givn, people.surn,  people.appellative, people.email, people.phone,

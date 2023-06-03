@@ -25,6 +25,7 @@ class CompanyTable implements Table
                 ->where('company_person.is_mandatary', true))
                 ->leftJoin('people', 'company_person.person_id', '=', 'people.id');
         }
+
         return Model::selectRaw('
                 companies.id, companies.name,  companies.fiscal_code,  people.name as mandatary,
                 companies.email, companies.website, companies.bank,  companies.pays_vat,

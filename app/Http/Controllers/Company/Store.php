@@ -54,6 +54,7 @@ class Store extends Controller
                 'param' => ['company' => $company->id],
             ];
         }
+
         return ['error' => __('Unauthorized')];
     }
 }

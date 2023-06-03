@@ -24,7 +24,7 @@ class Conversation extends Model
     {
         return $this->belongsTo(User::class, 'user_one');
     }
-    
+
     public function userTwo()
     {
         return $this->belongsTo(User::class, 'user_two');

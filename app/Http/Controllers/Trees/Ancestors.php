@@ -39,6 +39,7 @@ class Ancestors extends Controller
         if ($p_family === null) {
             return [];
         }
+
         return Person::where('id', $p_family->husband_id)->orwhere('id', $p_family->wife_id)->get();
     }
 
