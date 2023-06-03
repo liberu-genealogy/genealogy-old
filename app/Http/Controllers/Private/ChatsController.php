@@ -31,7 +31,6 @@ class ChatsController extends Controller
      * Fetch all of messages.
      *
      * @param id
-     *
      * @return Message
      */
     public function fetchMessages($id)
@@ -60,12 +59,14 @@ class ChatsController extends Controller
                 ->where('user_two', $user->id);
         })->first();
 
-        if (!$conversation) {
+        if (! $conversation) {
             $conversation = new Conversation($request->input());
             $conversation->user_one = $user->id;
             $conversation->save();
+
             return $conversation;
         }
+
         return [];
     }
 
@@ -73,7 +74,6 @@ class ChatsController extends Controller
      * Persist message to database.
      *
      * @param  Request  $request,  $id
-     *
      * @return Response
      */
     public function sendMessage(Request $request, $id)
