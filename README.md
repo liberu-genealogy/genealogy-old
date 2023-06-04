@@ -21,10 +21,6 @@
 ## Demo
 https://www.familytree365.com - register a free account, and try the demo with no charge or obligation. 
 <!--/h-->
-## Official Laravel Liberu Documentation
-Both frontend and backend documentation are available here. Most sections include short demo clips.
-
-<!--/h-->
 
 ### Installation Steps
 
@@ -37,16 +33,15 @@ Both frontend and backend documentation are available here. Most sections includ
 4. `php artisan key:generate`
 
 5. `php artisan serve` 
-In order to serve the back-end API, take a look at the Local Development Server section of the [Laravel installation documentation](https://laravel.com/docs/6.x/#installation)
-and consider using [Valet](https://laravel.com/docs/6.x/valet) for a better experience
 
 6. Run `php artisan migrate --seed`
 
-7. Follow installation steps for client side (https://github.com/liberu-ui/genealogy) and launch the site and log into the project with user: `admin@familytree365.com`, password: `password`
+7. (optional) Setup the configuration files as needed, in `config/enso/*.php`
 
-8. (optional) Setup the configuration files as needed, in `config/enso/*.php`
+8. (maybe required) Setup sanctum stateful domains in `.env` and add your domains to `config/cors.php`
 
-9. (maybe required) Setup sanctum stateful domains in `.env` and add your domains to `config/cors.php`
+9. Follow installation steps for client side (https://github.com/liberu-ui/genealogy) and launch the site and log into the project with user: `admin@familytree365.com`, password: `password`
+
 
 <!--/h-->
 ## Import test data
