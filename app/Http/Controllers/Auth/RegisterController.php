@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Stripe\GetPlans;
-use App\Jobs\Tenant\CreateDBs;
+use App\Jobs\Tenant\CreateDB;
+use App\Jobs\Tenant\Migration;
 use App\Models\Company;
 use App\Models\Person;
 use App\Models\User;
@@ -123,8 +124,8 @@ class RegisterController extends Controller
 
             //     ]);
         // });
-        CreateDBs::dispatch($company);
-        Migrations::dispatch($company, $name, $request['email'], $request['password']);
+        CreateDB::dispatch($company);
+        Migration::dispatch($company, $name, $request['email'], $request['password']);
         if ($request->selected_plan === '' || $request->selected_plan === $user->role_id) {
             $user->plan_id = '';
         } else {
