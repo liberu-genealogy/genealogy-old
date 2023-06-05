@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Jobs\Tenant\CreateDBs;
+use App\Jobs\Tenant\Migration;
 use App\Models\Company;
 use App\Models\Person;
 use App\Models\Tenant;
@@ -116,7 +117,7 @@ class LoginController extends Controller
 
                 // Dispatch Tenancy Jobs
                 CreateDBs::dispatch($company);
-                Migrations::dispatch($company, $user->name, $user->email, $user->password);
+                Migration::dispatch($company, $user->name, $user->email, $user->password);
             } catch (Exception $e) {
                 return redirect(config('settings.clientBaseUrl').'/social-callback?token=&status=false&message=Something went wrong!');
             }
@@ -301,7 +302,7 @@ class LoginController extends Controller
         //                \Log::debug('CreateDBs----------------------'.$company);
         CreateDBs::dispatch($company);
         //                \Log::debug('Migration----------------------'.$company);
-        Migrations::dispatch($company, $user->name, $user->email, $user->password);
+        Migration::dispatch($company, $user->name, $user->email, $user->password);
     }
 
     private function loggableUser(Request $request)
@@ -358,7 +359,7 @@ class LoginController extends Controller
                         $c = User::count();
                         if ($c === 0) {
                             //  \Log::debug('Run Migration----------------------');
-                            return Migrations::dispatch($company, $user->name, $user->email, $user->password);
+                            return Migration::dispatch($company, $user->name, $user->email, $user->password);
                         }
                         // \Log::debug($company->id.-'users----------------------'.$c);
                     });
