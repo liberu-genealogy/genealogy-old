@@ -7,7 +7,7 @@ use Illuminate\Routing\Controller;
 
 // use LaravelEnso\People\Models\Person;
 
-class Options extends Controller
+class Invites extends Controller
 {
     public function __invoke(User $user)
     {
