@@ -832,6 +832,16 @@ Route::prefix('family-search')->group(function () {
     Route::get('search', [FamilySearchController::class, 'searchPerson'])->name('search-person');
 });
 
+// UK national Arc
+Route::prefix('uk-national-arc')->group(function () {
+    Route::get('search-person', [OpenArchController::class, 'searchPerson'])->name('search-person');
+});
+
+// Genealogy Cloud
+Route::prefix('family-search')->group(function () {
+    Route::get('search-person', [OpenArchController::class, 'searchPerson'])->name('search-person');
+});
+
 // Geneanum
 Route::prefix('geneanum')->group(function () {
     Route::get('search-person/{nation}/burials', [GeneanumController::class, 'burials']);
