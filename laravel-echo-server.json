@@ -1,5 +1,5 @@
 {
-	"authHost": "https://api.familytree365.com",
+	"authHost": "http://localhost",
 	"authEndpoint": "/broadcasting/auth",
 	"clients": [],
 	"database": "redis",
