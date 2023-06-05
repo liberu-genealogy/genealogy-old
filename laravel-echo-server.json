@@ -1,27 +1,26 @@
-{
+	{
 	"authHost": "https://api.familytree365.com",
 	"authEndpoint": "/broadcasting/auth",
 	"clients": [],
-	"database": "redis",
+	"database": "sqlite",
 	"databaseConfig": {
-		"redis": {},
-		"sqlite": {
-			"databasePath": "/database/laravel-echo-server.sqlite"
-		}
+        "sqlite": {
+            "databasePath": "/home/genealogia/domains/api.genealogia.co.uk/genealogy//database/laravel-echo-server.sqlite"
+        }
 	},
 	"devMode": false,
-	"host": null,
+	"host": "familytree365.com",
 	"port": "6001",
-	"protocol": "http",
+	"protocol": "https",
 	"socketio": {},
 	"secureOptions": 67108864,
-	"sslCertPath": "",
-	"sslKeyPath": "",
+	"sslCertPath": "/home/genealogia/ssl/ssl.cert",
+	"sslKeyPath": "/home/genealogia/ssl/ssl.key",
 	"sslCertChainPath": "",
 	"sslPassphrase": "",
 	"subscribers": {
 		"http": true,
-		"redis": true
+		"redis": false
 	},
 	"apiOriginAllow": {
 		"allowCors": false,
