@@ -61,7 +61,7 @@ class CopyPeopleFromTenancyToGenealogy extends Command
                 });
 
                 tenancy()->end();
-            } catch (\Exceptrion $e) {
+            } catch (\Exception $e) {
             }
         });
 
