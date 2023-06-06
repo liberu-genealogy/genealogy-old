@@ -1481,7 +1481,7 @@ Route::middleware(['auth', 'api', 'multitenant'])
         Route::get('getPersons', [GetPersons::class, 'getPersons']);
     });
 
-    Route::namespace('')
+    Route::middleware(['auth', 'web'])
     ->group(function () {
         Route::prefix('social/chats')
             ->as('social.chats.')
