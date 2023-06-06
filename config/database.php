@@ -57,6 +57,7 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
             'strict' => false,
+            'sslmode' => env('DB_SSLMODE', 'prefer'),
             'engine' => 'InnoDB ROW_FORMAT=DYNAMIC',
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
@@ -159,7 +160,7 @@ return [
 
     'redis' => [
 
-        'client' => env('REDIS_CLIENT', 'predis'),
+        'client' => env('REDIS_CLIENT', 'phpredis'),
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
@@ -170,6 +171,7 @@ return [
             'host' => env('REDIS_HOST', '127.0.0.1'),
             'password' => env('REDIS_PASSWORD', ''), //if password otherwise set null
             'port' => env('REDIS_PORT', 6379),
+            'scheme' => 'tls',
             'database' => 0,
         ],
         'cache' => [

@@ -19,9 +19,11 @@ class ChatsController extends Controller
     {
         $user = Auth::user();
 
-        return Conversation::with('users')
-            ->where('user_one', $user->id)
-            ->orWhere('user_two', $user->id)
+        return Conversation::where(function ($query) use ($user) {
+            $query->where('user_one', $user->id)
+                ->orWhere('user_two', $user->id);
+        })
+            ->with(['userOne', 'userTwo', 'message'])
             ->get();
     }
 
@@ -29,7 +31,6 @@ class ChatsController extends Controller
      * Fetch all of messages.
      *
      * @param id
-     *
      * @return Message
      */
     public function fetchMessages($id)
@@ -40,16 +41,45 @@ class ChatsController extends Controller
     }
 
     /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $user = Auth::user();
+
+        // Check if a chat already exists between the logged-in user and the receiver
+        $conversation = Conversation::where(function ($query) use ($user, $request) {
+            $query->where('user_one', $user->id)
+                ->where('user_two', $request->user_two);
+        })->orWhere(function ($query) use ($user, $request) {
+            $query->where('user_one', $request->user_two)
+                ->where('user_two', $user->id);
+        })->first();
+
+        if (! $conversation) {
+            $conversation = new Conversation($request->input());
+            $conversation->user_one = $user->id;
+            $conversation->save();
+
+            return $conversation;
+        }
+
+        return [];
+    }
+
+    /**
      * Persist message to database.
      *
      * @param  Request  $request,  $id
-     *
      * @return Response
      */
     public function sendMessage(Request $request, $id)
     {
         $user = Auth::user();
-        $conversation = Conversation::with('users')->find($id)->get();
+        $conversation = Conversation::find($id);
         if ($conversation->status) {
             // $message = $user->messages()->create([
             //     'message' => $request->input('message'),
@@ -60,9 +90,9 @@ class ChatsController extends Controller
             $message->user_id = $user->id;
             $message->conversation_id = $id;
             $message->save();
-            broadcast(new \App\Events\MessageSent($message, $user))->toOthers();
+            // broadcast(new \App\Events\MessageSent($message, $user, $id))->toOthers();
 
-            return ['message' => 'Message Sent!'];
+            return $message;
         }
     }
 }

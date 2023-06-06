@@ -33,7 +33,6 @@ trait CreatedBy
 
     private function setCreatedBy($value = 1)
     {
-        $value;
 //        if($value==''){
 //            if (Auth::check()) {
 //                $this->created_by = Auth::id();
@@ -45,7 +44,6 @@ trait CreatedBy
 
     private function setUpdatedBy($value = 1)
     {
-        $value;
 //        if($value==''){
 //            if (Auth::check()) {
 //                $this->updated_by = Auth::id();

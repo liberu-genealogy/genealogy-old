@@ -21,6 +21,7 @@ class Index extends Controller
         Tenant::set($tenant);
         $company = Tenant::get();
         $db = Connections::Tenant.$company->id;
+
         return DB::connection(Connections::Tenant)->table('people')->get();
     }
 }

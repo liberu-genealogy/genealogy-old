@@ -19,6 +19,7 @@ class Destroy extends Controller
                 'redirect' => 'dna.index',
             ];
         }
+
         return [
             'message' => __('The dna could not be deleted'),
             'redirect' => 'dna.index',

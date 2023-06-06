@@ -12,13 +12,13 @@ class GetPlans extends Controller
      * Handle the incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
-     *
      * @return array
      */
     public function __invoke(Request $request)
     {
         $provider = new PayPalClient();
         $provider->getAccessToken();
+
         return $provider->listPlans();
     }
 }

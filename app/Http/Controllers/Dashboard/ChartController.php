@@ -14,6 +14,7 @@ use LaravelEnso\Charts\Factories\Line;
 use LaravelEnso\Charts\Factories\Pie;
 use LaravelEnso\Charts\Factories\Polar;
 use LaravelEnso\Charts\Factories\Radar;
+
 //use LaravelEnso\Multitenancy\Enums\Connections;
 
 class ChartController extends Controller
@@ -160,7 +161,6 @@ class ChartController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

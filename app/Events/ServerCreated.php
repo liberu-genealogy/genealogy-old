@@ -23,7 +23,6 @@ class ServerCreated implements ShouldBroadcastNow
      * Create a new event instance.
      *
      * @param \App\Models\User user
-     *
      * @return void
      */
     public function __construct($message)
