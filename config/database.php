@@ -171,7 +171,7 @@ return [
             'host' => env('REDIS_HOST', '127.0.0.1'),
             'password' => env('REDIS_PASSWORD', ''), //if password otherwise set null
             'port' => env('REDIS_PORT', 6379),
-	    'scheme' => 'tls',
+            'scheme' => 'tls',
             'database' => 0,
         ],
         'cache' => [
