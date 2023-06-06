@@ -17,7 +17,7 @@ class PeopleController extends Controller
 
         // Don't show born under 100 years ago
         // and filter living individuals out
-        $peopleQuery = TenantPerson::where("birthday", ">", Carbon::now()->subYears(100))
+        $peopleQuery = TenantPerson::where("birthday", "<", Carbon::now()->subYears(100))
             ->whereNull("deathday")
             ->with([ "systemPerson" => function ($query) {
                 $query->select('id', 'name');
