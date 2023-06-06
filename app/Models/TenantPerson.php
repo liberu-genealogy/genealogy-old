@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-//use LaravelEnso\People\Models\Person as CorePerson;
 use Illuminate\Database\Eloquent\Model;
 
 class TenantPerson extends Model
@@ -37,9 +36,9 @@ class TenantPerson extends Model
         return $this->belongsTo(User::class, 'tenant_id', 'id');
     }
 
-    public function person()
+    public function systemPerson()
     {
-        return $this->belongsTo(Person::class, 'tenant_id', 'id');
+        return $this->belongsTo(SystemPerson::class, 'tenant_id', 'id');
     }
 }
 
