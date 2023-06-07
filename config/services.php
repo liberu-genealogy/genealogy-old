@@ -54,6 +54,18 @@ return [
         ],
     ],
 
+    'nationalarch' => [
+        'api' => [
+            'records' => "https://discovery.nationalarchives.gov.uk/API/search/records",
+        ],
+    ],
+
+    'genealogycloud' => [
+        'api' => [
+            'records' => "http://wsdev.onegreatfamily.com/v11.02/Search.svc/Search",
+        ],
+    ],
+
     'familysearch' => [
         'api' => [
             'records' => 'https://api.familysearch.org/platform/tree',
