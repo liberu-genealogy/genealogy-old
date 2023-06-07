@@ -16,20 +16,13 @@ class Export extends Controller
         $file = env('APP_NAME').date('_Ymd_').$ts.'.ged';
         $file = str_replace(' ', '', $file);
         $file = str_replace("'", '', $file);
-
-        //TODO need data for testing
-        $conn = 'tenant';
-        $p_id = 1; // Person Id
-        $f_id = 1; // fammily Id
-        $up_nest = 0; 
-        $down_nest = 0; 
         $_name = uniqid().'.ged';
 
         $writer = new GedcomGenerator($p_id, $f_id, $up_nest, $down_nest);
-        
+
         $content = $writer->getGedcomPerson();
 
-        ExportGedCom::dispatch($file);
+        ExportGedCom::dispatch($file, $request->user());
         $path = Storage::path($file);
 
         return json_encode([
