@@ -19,13 +19,14 @@ class Export extends Controller
 
         //TODO need data for testing
         $conn = 'tenant';
-        $p_id = 1;
-        $f_id = 1;
-        $up_nest = 0;
-        $down_nest = 0;
+        $p_id = 1; // Person Id
+        $f_id = 1; // fammily Id
+        $up_nest = 0; 
+        $down_nest = 0; 
         $_name = uniqid().'.ged';
 
         $writer = new GedcomGenerator($p_id, $f_id, $up_nest, $down_nest);
+        
         $content = $writer->getGedcomPerson();
 
         ExportGedCom::dispatch($file);
