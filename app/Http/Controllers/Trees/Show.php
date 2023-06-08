@@ -75,11 +75,17 @@ class Show extends Controller
         foreach ($families as $family) {
             $union_id = 'u'.$family->id;
             $this->links[] = [$start_id, $union_id];
+            $partners = [$family->husband_id ?? null, $family->wife_id ?? null];
             $this->unions[$union_id] = [
                 'id' => $union_id,
-                'partner' => [$family->husband_id ?? null, $family->wife_id ?? null],
+                'partner' => $partners,
                 'children' => $family->children->pluck('id')->toArray(),
             ];
+            foreach ($partners as $partner) {
+                $p = Person::find($partner);
+                if (isset($p) && !isset($this->persons[$partner]))
+                    $this->persons[$partner] = $p;
+            }
             foreach ($family->children as $child) {
                 $this->links[] = ['u'.$family->id, $child->id];
                 $child->setAttribute('generation', $nest + 1);

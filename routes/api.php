@@ -755,7 +755,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             });
     });
 
-    Route::middleware(['api', 'auth', 'core', 'multitenant'])
+Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('')
             ->prefix('reports')
@@ -763,8 +763,6 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->group(function () {
                 Route::get('descendant', TreesShow::class)->name('descendant');
             });
-        
-       
     });
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
