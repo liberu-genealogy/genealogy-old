@@ -9,7 +9,7 @@ return new class extends Migration
     ];
 
     protected array $menu = [
-        'name' => 'Descendants', 'icon' => 'eye', 'route' => 'reports.descendant', 'order_index' => 999, 'has_children' => false,
+        'name' => 'd\'Aboville', 'icon' => 'eye', 'route' => 'reports.descendant', 'order_index' => 999, 'has_children' => false,
     ];
 
     protected ?string $parentMenu = 'Reports';
