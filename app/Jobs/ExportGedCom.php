@@ -62,12 +62,15 @@ class ExportGedCom implements ShouldQueue
         }
 
         Log::info("Family Id => $f_id \n Person Id => $p_id");
+      
         $up_nest = 3; 
         $down_nest = 3;
 
         $writer = new GedcomGenerator($p_id, $f_id, $up_nest, $down_nest);
         $content = $writer->getGedcomPerson();
+
         Log::info("content from getGedcomPerson function => \n $content");
+
         \Storage::disk('public')->put($this->file, $content);
     }
 }
