@@ -7,6 +7,7 @@ use App\Jobs\ExportGedCom;
 use FamilyTree365\LaravelGedcom\Utils\GedcomGenerator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Person;
 
 class Export extends Controller
 {
@@ -18,12 +19,12 @@ class Export extends Controller
         $file = str_replace("'", '', $file);
         $_name = uniqid().'.ged';
 
-        $writer = new GedcomGenerator($p_id, $f_id, $up_nest, $down_nest);
-
-        $content = $writer->getGedcomPerson();
-
         ExportGedCom::dispatch($file, $request->user());
         $path = Storage::path($file);
+
+        $destinationPath = storage_path('public/upload/');
+
+        \Storage::disk('public')->put($this->file, $content);
 
         return json_encode([
             'file' => \Storage::disk('public')->get($file),
