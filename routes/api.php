@@ -131,6 +131,7 @@ use App\Http\Controllers\Familyslugs\Update as FamilyslugsUpdate;
 use App\Http\Controllers\Gedcom\Export as GedcomExport;
 use App\Http\Controllers\Gedcom\Store as GedcomStore;
 use App\Http\Controllers\Geneanum\GeneanumController;
+use App\Http\Controllers\GenealogyCloud\GenealogyCloudController;
 use App\Http\Controllers\GrampsXml\Export as ExportGramps;
 use App\Http\Controllers\GrampsXml\Import as ImportGramps;
 use App\Http\Controllers\MediaObjects\Create as MediaobjectsCreate;
@@ -144,6 +145,7 @@ use App\Http\Controllers\MediaObjects\Show as MediaobjectsShow;
 use App\Http\Controllers\MediaObjects\Store as MediaobjectsStore;
 use App\Http\Controllers\MediaObjects\TableData as MediaobjectsTableData;
 use App\Http\Controllers\MediaObjects\Update as MediaobjectsUpdate;
+use App\Http\Controllers\NationalArch\NationalArchController;
 use App\Http\Controllers\Notes\Create as NotesCreate;
 use App\Http\Controllers\Notes\Destroy as NotesDestroy;
 use App\Http\Controllers\Notes\Edit as NotesEdit;
@@ -840,6 +842,16 @@ Route::prefix('member-tree')->group(function () {
 // OpenArch
 Route::prefix('family-search')->group(function () {
     Route::get('search', [FamilySearchController::class, 'searchPerson'])->name('search-person');
+});
+
+// UK national Arc
+Route::prefix('uk-national-arch')->group(function () {
+    Route::get('search-person', [NationalArchController::class, 'searchPerson'])->name('search-person');
+});
+
+// Genealogy Cloud
+Route::prefix('genealogy-cloud')->group(function () {
+    Route::get('search-person', [GenealogyCloudController::class, 'searchPerson'])->name('search-person');
 });
 
 // Geneanum
