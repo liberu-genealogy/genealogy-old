@@ -12,7 +12,7 @@ use App\Models\User;
 use App\Models\Family;
 use App\Tenant\Manager;
 use App\Models\Person;
-
+use Illuminate\Support\Facades\Log;
 
 class ExportGedCom implements ShouldQueue
 {
@@ -61,11 +61,15 @@ class ExportGedCom implements ShouldQueue
             $f_id = $family->id;
         }
 
+        Log::info("Family Id => $f_id \n Person Id => $p_id");
+      
         $up_nest = 3; 
         $down_nest = 3;
 
         $writer = new GedcomGenerator($p_id, $f_id, $up_nest, $down_nest);
         $content = $writer->getGedcomPerson();
+
+        Log::info("content from getGedcomPerson function => \n $content");
 
         \Storage::disk('public')->put($this->file, $content);
     }
