@@ -7,6 +7,7 @@ use App\Jobs\ExportGedCom;
 use FamilyTree365\LaravelGedcom\Utils\GedcomGenerator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Person;
 
 class Export extends Controller
 {
@@ -16,19 +17,9 @@ class Export extends Controller
         $file = env('APP_NAME').date('_Ymd_').$ts.'.ged';
         $file = str_replace(' ', '', $file);
         $file = str_replace("'", '', $file);
-
-        //TODO need data for testing
-        $conn = 'tenant';
-        $p_id = 1;
-        $f_id = 1;
-        $up_nest = 0;
-        $down_nest = 0;
         $_name = uniqid().'.ged';
 
-        $writer = new GedcomGenerator($p_id, $f_id, $up_nest, $down_nest);
-        $content = $writer->getGedcomPerson();
-
-        ExportGedCom::dispatch($file);
+        ExportGedCom::dispatch($file, $request->user());
         $path = Storage::path($file);
 
         return json_encode([
