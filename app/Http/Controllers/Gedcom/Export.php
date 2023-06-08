@@ -22,10 +22,6 @@ class Export extends Controller
         ExportGedCom::dispatch($file, $request->user());
         $path = Storage::path($file);
 
-        $destinationPath = storage_path('public/upload/');
-
-        \Storage::disk('public')->put($this->file, $content);
-
         return json_encode([
             'file' => \Storage::disk('public')->get($file),
             'name' => $file,
