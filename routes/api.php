@@ -171,6 +171,7 @@ use App\Http\Controllers\Person\ExportExcel as PeopleExportExcel;
 use App\Http\Controllers\Person\GetPersons;
 use App\Http\Controllers\Person\InitTable as PeopleInitTable;
 use App\Http\Controllers\Person\Options as PeopleOptions;
+use App\Http\Controllers\Person\SystemOptions as PeopleSystemOptions;
 use App\Http\Controllers\Person\PeopleController;
 use App\Http\Controllers\Person\Store as PeopleStore;
 use App\Http\Controllers\Person\TableData as PeopleTableData;
@@ -1511,7 +1512,7 @@ Route::namespace('')
                 Route::get('/', [ChatsController::class, 'fetchConnects']);
                 Route::post('/', [ChatsController::class, 'store']);
                 Route::post('/{id}', [ChatsController::class, 'sendMessage']);
-                Route::get('/options', PeopleOptions::class)->name('options');
+                Route::get('/options', PeopleSystemOptions::class)->name('options');
             });
     });
 
