@@ -17,7 +17,14 @@ class Subscribe extends Controller
     public function __invoke(Request $request)
     {
         $user = auth()->user();
-        $plan_id = $request->plan_id;
+
+        try {
+           $user->createAsStripeCustomer();
+        } catch(\Exception $e) {
+        }
+
+        $plan_id = $request->input('plan_id');
+
         if ($request->has('payment_method')) {
             $paymentMethod = $request->payment_method;
             $user->newSubscription('default', $plan_id)->create($paymentMethod);
