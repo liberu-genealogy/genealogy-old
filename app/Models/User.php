@@ -31,6 +31,11 @@ class User extends CoreUser
         return $this->hasOne(Avatar::class, 'user_id', 'id');
     }
 
+    public function getNameAttribute()
+    {
+        return $this->person?->name;
+    }
+
     public function hasSocialLinked($service)
     {
         return (bool) $this->social->where('service', $service)->count();
