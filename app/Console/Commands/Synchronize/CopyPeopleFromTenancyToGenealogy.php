@@ -34,32 +34,35 @@ class CopyPeopleFromTenancyToGenealogy extends Command
         $this->info('Tenant people records syncronization since: '.($recordsSince ? $recordsSince : 'start'));
 
         tenancy()->query()->cursor()->each(function (Tenant $tenant) use ($recordsSince) {
-            tenancy()->initialize($tenant);
+            try {
+                tenancy()->initialize($tenant);
 
-            $tenantPersonQuery = Person::query();
+                $tenantPersonQuery = Person::query();
 
-            if ($recordsSince) {
-                $tenantPersonQuery->where('updated_at', '>=', $recordsSince);
-            }
-
-            $this->info('Processing tenant #'.$tenant->id.' records: '.(clone $tenantPersonQuery)->count());
-            $tenantPersonQuery->chunk(100, function ($people) use ($tenant) {
-                // clear old records and push updated ones
-                TenantPerson::where('tenant_id', $tenant->id)
-                    ->whereIn('tenant_person_id', $people->pluck('id'))
-                    ->delete();
-
-                foreach ($people as $person) {
-                    $personData = $person->toArray();
-                    unset($personData['id']);
-                    $personData['tenant_id'] = $tenant->id;
-                    $personData['tenant_person_id'] = $person->id;
-
-                    (new TenantPerson($personData))->save();
+                if ($recordsSince) {
+                    $tenantPersonQuery->where('updated_at', '>=', $recordsSince);
                 }
-            });
 
-            tenancy()->end();
+                $this->info('Processing tenant #'.$tenant->id.' records: '.(clone $tenantPersonQuery)->count());
+                $tenantPersonQuery->chunk(100, function ($people) use ($tenant) {
+                    // clear old records and push updated ones
+                    TenantPerson::where('tenant_id', $tenant->id)
+                        ->whereIn('tenant_person_id', $people->pluck('id'))
+                        ->delete();
+
+                    foreach ($people as $person) {
+                        $personData = $person->toArray();
+                        unset($personData['id']);
+                        $personData['tenant_id'] = $tenant->id;
+                        $personData['tenant_person_id'] = $person->id;
+
+                        (new TenantPerson($personData))->save();
+                    }
+                });
+
+                tenancy()->end();
+            } catch (\Exception $e) {
+            }
         });
 
         return Command::SUCCESS;

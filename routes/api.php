@@ -758,6 +758,16 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('')
+            ->prefix('reports')
+            ->as('reports.')
+            ->group(function () {
+                Route::get('descendant', TreesShow::class)->name('descendant');
+            });
+    });
+
+Route::middleware(['api', 'auth', 'core', 'multitenant'])
+    ->group(function () {
+        Route::namespace('')
             ->prefix('authors')
             ->as('authors.')
             ->group(function () {
@@ -1483,7 +1493,7 @@ Route::middleware(['auth', 'api'])
     ->group(function () {
         Route::get('get_companies', [CompanyIndex::class, 'getCompany']);
         Route::get('get_person', [PersonaliasIndex::class, 'getPerson']);
-        Route::post('gedcom-export', GedcomExport::class);
+        Route::get('gedcom-export', GedcomExport::class);
         Route::get('trees/options', [TreesManage::class, 'getOptions']);
     });
 

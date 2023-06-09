@@ -27,6 +27,13 @@ class GetPlans extends Controller
 
         $result = [];
         foreach ($plans as $k => $plan) {
+
+            if (!$plan->active) continue;
+
+            /*
+             * FREE PLAN
+             */
+            /*
             if ($k === 0) {
                 $row1 = [];
                 $row1['id'] = $role->id;
@@ -36,6 +43,7 @@ class GetPlans extends Controller
                 $row1['subscribed'] = false;
                 $result[] = $row1;
             }
+            */
 
             if (empty($plan->nickname)) {
                 continue;
