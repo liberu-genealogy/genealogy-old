@@ -22,6 +22,7 @@ class NationalArchController extends Controller
             'query' => [
                 'sps.firstName' => $request->firstName,
                 'sps.lastName' => $request->lastName,
+                'sps.dateOfBirthFrom' => $request->date,
                 'sps.searchQuery' => "and"
             ]
         ]);

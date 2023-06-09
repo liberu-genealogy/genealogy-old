@@ -59,7 +59,7 @@ class ChatsController extends Controller
                 ->where('user_two', $user->id);
         })->first();
 
-        if (! $conversation) {
+        if (!$conversation) {
             $conversation = new Conversation($request->input());
             $conversation->user_one = $user->id;
             $conversation->save();
@@ -91,7 +91,6 @@ class ChatsController extends Controller
             $message->conversation_id = $id;
             $message->save();
             // broadcast(new \App\Events\MessageSent($message, $user, $id))->toOthers();
-
             return $message;
         }
     }
