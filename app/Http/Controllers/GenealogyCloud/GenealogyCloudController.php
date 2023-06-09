@@ -18,11 +18,14 @@ class GenealogyCloudController extends Controller
     {
         $client = new \GuzzleHttp\Client();
 
-        $response = $client->request('GET', $this->genealogyCloudRecordsApi, ['query' => [
-            'name' => $request->name,
-            'number_show' => $request->per_page, // 100
-            'start' => ($request->per_page * $request->page) - $request->per_page, // 2,
-        ],
+        $response = $client->request('GET', $this->genealogyCloudRecordsApi, [
+            'query' => [
+                'Sessionid' => 'f11kgk5olvzoupjjkxex3xed',
+                'Surname' => $request->Surname ?: '',
+                'GivenNames' => $request->GivenNames,
+                'MaxRows' => 100,
+
+            ],
         ]);
 
         $statusCode = $response->getStatusCode();

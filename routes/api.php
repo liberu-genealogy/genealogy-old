@@ -1504,17 +1504,16 @@ Route::middleware(['auth', 'api', 'multitenant'])
     });
 
 Route::namespace('')
-->group(function () {
-    Route::prefix('social/chats')
-        ->as('social.chats.')
-        ->group(function () {
-            Route::get('/', [ChatsController::class, 'fetchConnects']);
-            Route::post('/', [ChatsController::class, 'store']);
-            // Route::get('/{id}', [ChatsController::class, 'fetchMessages']);
-            Route::post('/{id}', [ChatsController::class, 'sendMessage']);
-            Route::get('options', PeopleOptions::class)->name('options');
-        });
-});
+    ->group(function () {
+        Route::prefix('social/chats')
+            ->as('social.chats.')
+            ->group(function () {
+                Route::get('/', [ChatsController::class, 'fetchConnects']);
+                Route::post('/', [ChatsController::class, 'store']);
+                Route::post('/{id}', [ChatsController::class, 'sendMessage']);
+                Route::get('/options', PeopleOptions::class)->name('options');
+            });
+    });
 
 //Route::get('test/{cid}', function($cid){
 //    session('current_company_id', $cid);
