@@ -4139,16 +4139,16 @@
         },
         {
             "name": "laravel-liberu/laravel-gedcom",
-            "version": "v3.4.6",
+            "version": "v3.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/laravel-gedcom.git",
-                "reference": "6b5eae5efac5ea60bece5318446257dbdbde4a9a"
+                "reference": "81ab6f6210336def20e20ecea138768f93703cbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/laravel-gedcom/zipball/6b5eae5efac5ea60bece5318446257dbdbde4a9a",
-                "reference": "6b5eae5efac5ea60bece5318446257dbdbde4a9a",
+                "url": "https://api.github.com/repos/laravel-liberu/laravel-gedcom/zipball/81ab6f6210336def20e20ecea138768f93703cbe",
+                "reference": "81ab6f6210336def20e20ecea138768f93703cbe",
                 "shasum": ""
             },
             "require": {
@@ -4179,7 +4179,7 @@
             "description": "A package that converts gedcom files to Eloquent models",
             "support": {
                 "issues": "https://github.com/laravel-liberu/laravel-gedcom/issues",
-                "source": "https://github.com/laravel-liberu/laravel-gedcom/tree/v3.4.6"
+                "source": "https://github.com/laravel-liberu/laravel-gedcom/tree/v3.4.7"
             },
             "funding": [
                 {
@@ -4187,7 +4187,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-05-24T11:09:43+00:00"
+            "time": "2023-06-08T10:02:29+00:00"
         },
         {
             "name": "laravel-liberu/laravel-gelato",
