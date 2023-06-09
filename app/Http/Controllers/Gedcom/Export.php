@@ -8,6 +8,7 @@ use FamilyTree365\LaravelGedcom\Utils\GedcomGenerator;
 use Illuminate\Http\Request;
 use App\Models\Person;
 use Illuminate\Support\Facades\Log;
+use App\Models\Family;
 
 class Export extends Controller
 {
@@ -22,7 +23,7 @@ class Export extends Controller
         ExportGedCom::dispatch($file, $request->user());
 
         Log::info("Read gedfile from ". \Storage::disk("public")->path($file));
-        var_dump(\Storage::disk("public")->path($file), "controller");
+        // var_dump(\Storage::disk("public")->path($file), "controller");
         return json_encode([
             'file' => \Storage::disk('public')->get($file),
             'name' => $file,

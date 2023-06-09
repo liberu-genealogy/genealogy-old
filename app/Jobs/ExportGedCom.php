@@ -41,8 +41,8 @@ class ExportGedCom implements ShouldQueue
         $p_id = $this->user->person_id; // person_id
         $f_id = 0;                      // family_id
 
-        $tenant = Manager::fromModel($this->user->company(), $this->user);
-        $tenant->connect();
+        // $tenant = Manager::fromModel($this->user->company(), $this->user);
+        // $tenant->connect();
 
         $family = Family::where("husband_id", $this->user->id)
                 ->orWhere("wife_id", $this->user->id)
@@ -70,7 +70,7 @@ class ExportGedCom implements ShouldQueue
         $content = $writer->getGedcomPerson();
 
         Log::info("content from getGedcomPerson function => \n $content");
-        var_dump(\Storage::disk('public')->path($this->file), "job");
+        // var_dump(\Storage::disk('public')->path($this->file), "job");
         \Storage::disk('public')->put($this->file, $content);
     }
 }
