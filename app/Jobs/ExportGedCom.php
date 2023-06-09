@@ -71,6 +71,6 @@ class ExportGedCom implements ShouldQueue
 
         Log::info("content from getGedcomPerson function => \n $content");
 
-        \Storage::disk('public')->put($this->file, $content);
+        \Storage::disk('local')->put($this->file, $content);
     }
 }
