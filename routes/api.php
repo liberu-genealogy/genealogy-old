@@ -1490,7 +1490,7 @@ Route::middleware(['web', 'auth'])
         Route::get('plans', [PlanController::class, 'getPlans']);
     });
 
-Route::middleware(['auth', 'api', 'multitenant'])
+Route::middleware(['auth', 'api'])
     ->group(function () {
         Route::get('get_companies', [CompanyIndex::class, 'getCompany']);
         Route::get('get_person', [PersonaliasIndex::class, 'getPerson']);
