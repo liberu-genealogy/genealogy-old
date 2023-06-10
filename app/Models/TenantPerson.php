@@ -41,4 +41,3 @@ class TenantPerson extends Model
         return $this->belongsTo(SystemPerson::class, 'tenant_id', 'id');
     }
 }
-

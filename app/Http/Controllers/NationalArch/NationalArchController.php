@@ -23,8 +23,8 @@ class NationalArchController extends Controller
                 'sps.firstName' => $request->firstName,
                 'sps.lastName' => $request->lastName,
                 'sps.dateOfBirthFrom' => $request->date,
-                'sps.searchQuery' => "and"
-            ]
+                'sps.searchQuery' => 'and',
+            ],
         ]);
 
         $statusCode = $response->getStatusCode();
