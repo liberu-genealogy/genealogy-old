@@ -27,8 +27,9 @@ class GetPlans extends Controller
 
         $result = [];
         foreach ($plans as $k => $plan) {
-
-            if (!$plan->active) continue;
+            if (! $plan->active) {
+                continue;
+            }
 
             /*
              * FREE PLAN

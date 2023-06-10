@@ -56,13 +56,13 @@ return [
 
     'nationalarch' => [
         'api' => [
-            'records' => "https://discovery.nationalarchives.gov.uk/API/search/records",
+            'records' => 'https://discovery.nationalarchives.gov.uk/API/search/records',
         ],
     ],
 
     'genealogycloud' => [
         'api' => [
-            'records' => "http://wsdev.onegreatfamily.com/v11.02/Search.svc/Search",
+            'records' => 'http://wsdev.onegreatfamily.com/v11.02/Search.svc/Search',
         ],
     ],
 
