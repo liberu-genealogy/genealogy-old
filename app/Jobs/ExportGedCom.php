@@ -51,7 +51,7 @@ class ExportGedCom implements ShouldQueue
         if ($family == null) {
             $person = Person::where("child_in_family_id", $this->user->id)->first();
 
-            if ($persons != null) {
+            if ($person != null) {
                 $f_id=$person->child_in_family_id;
             } else {
                 $f_id = 0;
