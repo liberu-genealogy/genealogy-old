@@ -2,16 +2,16 @@
 
 namespace App\Jobs;
 
+use App\Models\Family;
+use App\Models\Person;
+use App\Models\User;
+use App\Tenant\Manager;
 use FamilyTree365\LaravelGedcom\Utils\GedcomGenerator;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use App\Models\User;
-use App\Models\Family;
-use App\Tenant\Manager;
-use App\Models\Person;
 use Illuminate\Support\Facades\Log;
 
 class ExportGedCom implements ShouldQueue
@@ -20,6 +20,7 @@ class ExportGedCom implements ShouldQueue
 
     protected $file;
     protected User $user;
+
     /**
      * Create a new job instance.
      *
@@ -44,26 +45,25 @@ class ExportGedCom implements ShouldQueue
         // $tenant = Manager::fromModel($this->user->company(), $this->user);
         // $tenant->connect();
 
-        $family = Family::where("husband_id", $this->user->id)
-                ->orWhere("wife_id", $this->user->id)
+        $family = Family::where('husband_id', $this->user->id)
+                ->orWhere('wife_id', $this->user->id)
                 ->first();
 
         if ($family == null) {
-            $person = Person::where("child_in_family_id", $this->user->id)->first();
+            $person = Person::where('child_in_family_id', $this->user->id)->first();
 
             if ($persons != null) {
-                $f_id=$person->child_in_family_id;
+                $f_id = $person->child_in_family_id;
             } else {
                 $f_id = 0;
             }
-
         } else {
             $f_id = $family->id;
         }
 
         Log::info("Family Id => $f_id \n Person Id => $p_id");
-      
-        $up_nest = 3; 
+
+        $up_nest = 3;
         $down_nest = 3;
 
         $writer = new GedcomGenerator($p_id, $f_id, $up_nest, $down_nest);

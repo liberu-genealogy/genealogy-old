@@ -19,7 +19,7 @@ class Subscribe extends Controller
         $user = auth()->user();
 
         try {
-           $user->createAsStripeCustomer();
+            $user->createAsStripeCustomer();
         } catch(\Exception $e) {
         }
 
