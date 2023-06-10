@@ -19,15 +19,14 @@ class Export extends Controller
         $file = env('APP_NAME').date('_Ymd_').$ts.'.ged';
         $file = str_replace(' ', '', $file);
         $file = str_replace("'", '', $file);
-        $_name = uniqid().'.ged';
 
         ExportGedCom::dispatch($file, $request->user());
 
         Log::info('Read gedfile from '.\Storage::disk('public')->path($file));
         // var_dump(\Storage::disk("public")->path($file), "controller");
         return json_encode([
-            'file' => file_get_contents('/home/genealogia/domains/api.genealogia.co.uk/genealogy/storage/tenant_'
-		     . tenant('id') . '/app/' . $file),
+//	    'file' => \Storage::disk('public')->get($file),
+	    'file' => file_get_contents('/home/genealogia/domains/api.genealogia.co.uk/genealogy/storage/app/gedcom/' . $file),
             'name' => $file,
         ]);
     }
