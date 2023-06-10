@@ -14,6 +14,7 @@ class Export extends Controller
 {
     public function __invoke(Request $request)
     {
+
         $ts = microtime(true);
         $file = env('APP_NAME').date('_Ymd_').$ts.'.ged';
         $file = str_replace(' ', '', $file);
@@ -25,7 +26,8 @@ class Export extends Controller
         Log::info('Read gedfile from '.\Storage::disk('public')->path($file));
         // var_dump(\Storage::disk("public")->path($file), "controller");
         return json_encode([
-            'file' => \Storage::disk('public')->get($file),
+            'file' => file_get_contents('/home/genealogia/domains/api.genealogia.co.uk/genealogy/storage/tenant_'
+		     . tenant('id') . '/app/' . $file),
             'name' => $file,
         ]);
     }

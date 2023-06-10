@@ -820,6 +820,9 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             ->as('gedcom.')
             ->group(function () {
                 Route::post('store', GedcomStore::class)->name('store');
+		Route::get('export', GedcomExport::class)->name('export');
+
+
             });
     });
 
@@ -1494,7 +1497,6 @@ Route::middleware(['auth', 'api'])
     ->group(function () {
         Route::get('get_companies', [CompanyIndex::class, 'getCompany']);
         Route::get('get_person', [PersonaliasIndex::class, 'getPerson']);
-        Route::get('gedcom-export', GedcomExport::class);
         Route::get('trees/options', [TreesManage::class, 'getOptions']);
     });
 
