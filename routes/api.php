@@ -823,7 +823,7 @@ Route::middleware(['api', 'auth','core','multitenant'])
             });
     });
 
-Route::middleware(['api', 'auth'])
+Route::middleware(['api', 'auth','multitenant'])
     ->group(function () {
         Route::namespace('')
             ->prefix('gedcom')
