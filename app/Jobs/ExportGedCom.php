@@ -13,6 +13,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\File;
 
 class ExportGedCom implements ShouldQueue
 {
@@ -48,7 +49,7 @@ class ExportGedCom implements ShouldQueue
         $family = Family::where('husband_id', $this->user->id)
                 ->orWhere('wife_id', $this->user->id)
                 ->first();
-
+        $manager = Manager::fromModel($this->user->company(), $this->user);
         if ($family == null) {
             $person = Person::where('child_in_family_id', $this->user->id)->first();
 
@@ -68,11 +69,6 @@ class ExportGedCom implements ShouldQueue
 
         $writer = new GedcomGenerator($p_id, $f_id, $up_nest, $down_nest);
         $content = $writer->getGedcomPerson();
-
-//        Log::info("content from getGedcomPerson function => \n $content");
-        // var_dump(\Storage::disk('public')->path($this->file), "job");
-//        \Storage::disk('public')->put($this->file, $content);
-
-	file_put_contents('/home/genealogia/domains/api.genealogia.co.uk/genealogy/storage/app/gedcom/'. $this->file, $content);
-    }
+        $manager->storage()->put($this->file, $content);
+       
 }
