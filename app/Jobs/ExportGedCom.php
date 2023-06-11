@@ -13,6 +13,7 @@ use App\Models\Family;
 use App\Tenant\Manager;
 use App\Models\Person;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\File;
 
 class ExportGedCom implements ShouldQueue
 {
@@ -47,11 +48,11 @@ class ExportGedCom implements ShouldQueue
         $family = Family::where("husband_id", $this->user->id)
                 ->orWhere("wife_id", $this->user->id)
                 ->first();
-
+        $manager = Manager::fromModel($this->user->company(), $this->user);
         if ($family == null) {
             $person = Person::where("child_in_family_id", $this->user->id)->first();
 
-            if ($persons != null) {
+            if ($person != null) {
                 $f_id=$person->child_in_family_id;
             } else {
                 $f_id = 0;
@@ -71,6 +72,7 @@ class ExportGedCom implements ShouldQueue
 
         Log::info("content from getGedcomPerson function => \n $content");
         // var_dump(\Storage::disk('public')->path($this->file), "job");
-        \Storage::disk('public')->put($this->file, $content);
+        $manager->storage()->put($this->file, $content);
+        // var_dump($path,'path');
     }
 }

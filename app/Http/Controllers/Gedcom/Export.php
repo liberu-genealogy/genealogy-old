@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 use App\Models\Person;
 use Illuminate\Support\Facades\Log;
 use App\Models\Family;
-
+use App\Tenant\Manager;
+use Illuminate\Support\Facades\File;
 class Export extends Controller
 {
     public function __invoke(Request $request)
@@ -18,14 +19,14 @@ class Export extends Controller
         $file = env('APP_NAME').date('_Ymd_').$ts.'.ged';
         $file = str_replace(' ', '', $file);
         $file = str_replace("'", '', $file);
-        $_name = uniqid().'.ged';
+        $filePath = "public/$file";
+        $manager = Manager::fromModel($request->user()->company(), $request->user());
+        ExportGedCom::dispatch($filePath, $request->user());
 
-        ExportGedCom::dispatch($file, $request->user());
-
-        Log::info("Read gedfile from ". \Storage::disk("public")->path($file));
-        // var_dump(\Storage::disk("public")->path($file), "controller");
+        Log::info("Read gedfile from ". \Storage::disk("public")->path($filePath));
+        // var_dump($filePath);
         return json_encode([
-            'file' => \Storage::disk('public')->get($file),
+            'file' => $manager->storage()->get($filePath),
             'name' => $file,
         ]);
     }
