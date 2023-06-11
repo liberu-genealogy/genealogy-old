@@ -9,12 +9,11 @@ use App\Models\Person;
 use FamilyTree365\LaravelGedcom\Utils\GedcomGenerator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-use App\Traits\TenantConnectionResolver;
+use App\Tenant\Manager;
+use Illuminate\Support\Facades\File;
 
 class Export extends Controller
 {
-    use TenantConnectionResolver;
-
     public function __invoke(Request $request)
     {
 
@@ -22,15 +21,15 @@ class Export extends Controller
         $file = env('APP_NAME').date('_Ymd_').$ts.'.ged';
         $file = str_replace(' ', '', $file);
         $file = str_replace("'", '', $file);
+        $filePath = "public/$file";
+        $manager = Manager::fromModel($request->user()->company(), $request->user());
+        ExportGedCom::dispatch($filePath, $request->user());
 
-        ExportGedCom::dispatch($file, $request->user());
-
-        Log::info('Read gedfile from '.\Storage::disk('public')->path($file));
-        // var_dump(\Storage::disk("public")->path($file), "controller");
         return json_encode([
-	    'file' => \Storage::disk('public')->get($file),
+//	    'file' => \Storage::disk('public')->get($file),
 //	    'file' => file_get_contents('/home/genealogia/domains/api.genealogia.co.uk/genealogy/storage/app/gedcom/' . $file, true),
 //	    'file' => file_get_contents('/storage/app/gedcom/' . $file, true),
+            'file' => $manager->storage()->get($filePath),
             'name' => $file,
         ]);
     }
