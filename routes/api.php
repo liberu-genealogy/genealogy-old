@@ -130,8 +130,8 @@ use App\Http\Controllers\Familyslugs\TableData as FamilyslugsTableData;
 use App\Http\Controllers\Familyslugs\Update as FamilyslugsUpdate;
 use App\Http\Controllers\Gedcom\Export as GedcomExport;
 use App\Http\Controllers\Gedcom\Store as GedcomStore;
-use App\Http\Controllers\Geneanum\GeneanumController;
 use App\Http\Controllers\GenealogyCloud\GenealogyCloudController;
+use App\Http\Controllers\Geneanum\GeneanumController;
 use App\Http\Controllers\GrampsXml\Export as ExportGramps;
 use App\Http\Controllers\GrampsXml\Import as ImportGramps;
 use App\Http\Controllers\MediaObjects\Create as MediaobjectsCreate;
@@ -173,6 +173,7 @@ use App\Http\Controllers\Person\InitTable as PeopleInitTable;
 use App\Http\Controllers\Person\Options as PeopleOptions;
 use App\Http\Controllers\Person\PeopleController;
 use App\Http\Controllers\Person\Store as PeopleStore;
+use App\Http\Controllers\Person\SystemOptions as PeopleSystemOptions;
 use App\Http\Controllers\Person\TableData as PeopleTableData;
 use App\Http\Controllers\Person\Update as PeopleUpdate;
 use App\Http\Controllers\Personalias\Create as PersonaliasCreate;
@@ -812,13 +813,16 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             });
     });
 
-Route::middleware(['api', 'auth', 'core', 'multitenant'])
+Route::middleware(['api', 'auth','multitenant'])
     ->group(function () {
         Route::namespace('')
             ->prefix('gedcom')
             ->as('gedcom.')
             ->group(function () {
                 Route::post('store', GedcomStore::class)->name('store');
+		Route::get('export', GedcomExport::class)->name('export');
+
+
             });
     });
 
@@ -1489,11 +1493,10 @@ Route::middleware(['web', 'auth'])
         Route::get('plans', [PlanController::class, 'getPlans']);
     });
 
-Route::middleware(['auth', 'api', 'multitenant'])
+Route::middleware(['auth', 'api'])
     ->group(function () {
         Route::get('get_companies', [CompanyIndex::class, 'getCompany']);
         Route::get('get_person', [PersonaliasIndex::class, 'getPerson']);
-        Route::get('gedcom-export', GedcomExport::class);
         Route::get('trees/options', [TreesManage::class, 'getOptions']);
     });
 
@@ -1504,17 +1507,16 @@ Route::middleware(['auth', 'api', 'multitenant'])
     });
 
 Route::namespace('')
-->group(function () {
-    Route::prefix('social/chats')
-        ->as('social.chats.')
-        ->group(function () {
-            Route::get('/', [ChatsController::class, 'fetchConnects']);
-            Route::post('/', [ChatsController::class, 'store']);
-            // Route::get('/{id}', [ChatsController::class, 'fetchMessages']);
-            Route::post('/{id}', [ChatsController::class, 'sendMessage']);
-            Route::get('options', PeopleOptions::class)->name('options');
-        });
-});
+    ->group(function () {
+        Route::prefix('social/chats')
+            ->as('social.chats.')
+            ->group(function () {
+                Route::get('/', [ChatsController::class, 'fetchConnects']);
+                Route::post('/', [ChatsController::class, 'store']);
+                Route::post('/{id}', [ChatsController::class, 'sendMessage']);
+                Route::get('/options', PeopleSystemOptions::class)->name('options');
+            });
+    });
 
 //Route::get('test/{cid}', function($cid){
 //    session('current_company_id', $cid);

@@ -17,9 +17,11 @@ class Unsubscribe extends Controller
     public function __invoke(Request $request)
     {
         $user = auth()->user();
-        $user->subscription('default')->cancel();
+
+        $user->subscription('default')->cancelNow();
+
         // $user->role_id = 3; //expired role
-        $user->save();
+        //$user->save();
         $user->notify(new UnsubscribeSuccessfully($user->subscription()->stripe_price));
 
         return ['success' => true];

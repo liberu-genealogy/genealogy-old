@@ -83,8 +83,9 @@ class Show extends Controller
             ];
             foreach ($partners as $partner) {
                 $p = Person::find($partner);
-                if (isset($p) && !isset($this->persons[$partner]))
+                if (isset($p) && ! isset($this->persons[$partner])) {
                     $this->persons[$partner] = $p;
+                }
             }
             foreach ($family->children as $child) {
                 $this->links[] = ['u'.$family->id, $child->id];
