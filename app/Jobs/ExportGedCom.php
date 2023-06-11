@@ -72,7 +72,8 @@ class ExportGedCom implements ShouldQueue
 //        Log::info("content from getGedcomPerson function => \n $content");
         // var_dump(\Storage::disk('public')->path($this->file), "job");
 //        \Storage::disk('public')->put($this->file, $content);
-
-	file_put_contents('/home/genealogia/domains/api.genealogia.co.uk/genealogy/storage/app/gedcom/'. $this->file, $content);
+	$file = '/home/genealogia/domains/api.genealogia.co.uk/genealogy/storage/app/gedcom/'. $this->file;
+	file_put_contents($file, $content);
+	chmod($file, 0755);
     }
 }

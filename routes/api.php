@@ -813,16 +813,23 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             });
     });
 
-Route::middleware(['api', 'auth','multitenant'])
+Route::middleware(['api', 'auth','core','multitenant'])
     ->group(function () {
         Route::namespace('')
             ->prefix('gedcom')
             ->as('gedcom.')
             ->group(function () {
                 Route::post('store', GedcomStore::class)->name('store');
+            });
+    });
+
+Route::middleware(['api', 'auth'])
+    ->group(function () {
+        Route::namespace('')
+            ->prefix('gedcom')
+            ->as('gedcom.')
+            ->group(function () {
 		Route::get('export', GedcomExport::class)->name('export');
-
-
             });
     });
 
