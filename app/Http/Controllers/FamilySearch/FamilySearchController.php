@@ -44,12 +44,12 @@ class FamilySearchController extends Controller
 
             $statusCode = $response->getStatusCode();
             $content = $response->getBody();
-            $result = json_decode($response->getBody(), true);
+            $result = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
 
             return response()->json($result);
         } catch (\GuzzleHttp\Exception\ClientException $e) {
             $response = $e->getResponse();
-            $result = json_decode($response->getBody(), true);
+            $result = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
 
             return response()->json($result);
         }

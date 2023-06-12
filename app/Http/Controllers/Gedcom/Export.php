@@ -28,6 +28,6 @@ class Export extends Controller
         return json_encode([
             'file' => $manager->storage()->get($filePath),
             'name' => $file,
-        ]);
+        ], JSON_THROW_ON_ERROR);
     }
 }

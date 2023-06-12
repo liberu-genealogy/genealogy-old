@@ -13,16 +13,14 @@ use Illuminate\Queue\SerializesModels;
 class CreateDBs implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-    private $tenant;
 
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct(Company $tenant)
+    public function __construct(private readonly Company $tenant)
     {
-        $this->tenant = $tenant;
     }
 
     /**

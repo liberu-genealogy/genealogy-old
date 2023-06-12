@@ -18,18 +18,13 @@ use Illuminate\Support\Facades\File;
 class ExportGedCom implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-
-    protected $file;
-    protected User $user;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($file, User $user)
+    public function __construct(protected $file, protected User $user)
     {
-        $this->file = $file;
-        $this->user = $user;
     }
 
     /**
@@ -63,7 +58,7 @@ class ExportGedCom implements ShouldQueue
         }
 
         Log::info("Family Id => $f_id \n Person Id => $p_id");
-      
+
         $up_nest = 3; 
         $down_nest = 3;
 

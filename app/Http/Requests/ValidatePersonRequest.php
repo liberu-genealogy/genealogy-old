@@ -8,7 +8,7 @@ use LaravelEnso\People\Http\Requests\ValidatePerson as EnsoPerson;
 
 class ValidatePersonRequest extends EnsoPerson
 {
-    private Collection $companies;
+    private readonly Collection $companies;
 
     public function authorize()
     {

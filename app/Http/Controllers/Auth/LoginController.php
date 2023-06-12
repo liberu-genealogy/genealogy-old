@@ -33,7 +33,7 @@ class LoginController extends Controller
 
     // protected $redirectTo = '/';
 
-    private ?User $user;
+    private ?User $user = null;
 
     public function __construct()
     {
@@ -67,7 +67,7 @@ class LoginController extends Controller
     {
         try {
             $user = Socialite::driver($provider)->stateless()->user();
-        } catch (Exception $exception) {
+        } catch (Exception) {
             return redirect(config('settings.clientBaseUrl').'/social-callback?token=&status=false&message=Invalid credentials provided!');
         }
 
@@ -118,7 +118,7 @@ class LoginController extends Controller
                 // Dispatch Tenancy Jobs
                 CreateDBs::dispatch($company);
                 Migration::dispatch($company, $user->name, $user->email, $user->password);
-            } catch (Exception $e) {
+            } catch (Exception) {
                 return redirect(config('settings.clientBaseUrl').'/social-callback?token=&status=false&message=Something went wrong!');
             }
         }
@@ -131,7 +131,7 @@ class LoginController extends Controller
                     'service' => $provider,
                 ]);
             }
-        } catch (Exception $e) {
+        } catch (Exception) {
             return redirect(config('settings.clientBaseUrl').'/social-callback?token=&status=false&message=Something went wrong!');
         }
 

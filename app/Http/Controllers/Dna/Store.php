@@ -15,6 +15,7 @@ class Store extends Controller
 
     public function __invoke(Request $request)
     {
+        $allowed = null;
         $role = \Auth::user()->role_id;
         $user_id = \Auth::user()->id;
         $dna = Dna::where('user_id', '=', $user_id)->count();
