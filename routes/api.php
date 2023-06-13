@@ -769,6 +769,16 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('')
+            ->prefix('reports')
+            ->as('reports.')
+            ->group(function () {
+                Route::get('ahnentafel', TreesAncestor::class)->name('ahnentafel');
+            });
+    });
+
+Route::middleware(['api', 'auth', 'core', 'multitenant'])
+    ->group(function () {
+        Route::namespace('')
             ->prefix('authors')
             ->as('authors.')
             ->group(function () {
