@@ -17,6 +17,7 @@ class Subscribe extends Controller
     public function __invoke(Request $request)
     {
         $user = auth()->user();
+        \Stripe\Stripe::setApiKey(config('cashier.secret'));
 
         try {
            $user->createAsStripeCustomer();
@@ -27,7 +28,15 @@ class Subscribe extends Controller
 
         if ($request->has('payment_method')) {
             $paymentMethod = $request->payment_method;
-            $user->newSubscription('default', $plan_id)->create($paymentMethod);
+
+            $subscription = $user->newSubscription('default', $plan_id)
+                                 ->trialDays(14);
+
+            if ($couponId = $request->input('coupon_id')) {
+                $subscription->withCoupon($couponId);
+            }
+
+            $subscription->create($paymentMethod);
 
             $user->notify(new SubscribeSuccessfully($plan_id));
         } else {

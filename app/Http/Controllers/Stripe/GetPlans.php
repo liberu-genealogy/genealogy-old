@@ -50,32 +50,33 @@ class GetPlans extends Controller
             }
 //            if(empty($plan->nickname) || empty($plan->metadata->paypal_id)) continue;
             $row = [];
+
             $row['id'] = $plan->id;
             $row['amount'] = $plan->amount;
-            $row['nickname'] = $plan->nickname;
-            $row['paypal_id'] = $plan->metadata->paypal_id;
-            switch ($plan->nickname) {
-                case 'UTY':
-                    $row['title'] = 'Unlimited trees yearly.';
-                    break;
-                case 'UTM':
-                    $row['title'] = 'Unlimited trees monthly.';
-                    break;
-                case 'TTY':
-                    $row['title'] = 'Ten trees yearly.';
-                    break;
-                case 'TTM':
-                    $row['title'] = 'Ten trees monthly.';
-                    break;
-                case 'OTY':
-                    $row['title'] = 'One tree yearly.';
-                    break;
-                case 'OTM':
-                    $row['title'] = 'One tree monthly.';
-                    break;
-                default:
-                    $row['title'] = '';
+            $row['title'] = $plan->nickname;
+            $row['nickname'] = $plan->title;
+            $row['interval'] = $plan->interval;
+            $row['trial_end'] = null;
+
+			$row['features'] = [];
+			$row['features_missing'] = [];
+			$row['metadata'] = [
+				'featured' => false,
+				'description' => "Missing description!!!"
+            ];
+
+            foreach($plan->metadata->toArray() as $key => $value) {
+                if (preg_match('/^feature-missing[0-9]*$/', $key)) {
+                   $row['features_missing'][] = $value;
+                }
+                if (preg_match('/^feature[0-9]*$/', $key)) {
+                   $row['features'][] = $value;
+                }
+                if ($key == 'featured' && ($value == 1 || $value == 'true')) {
+                    $row['metadata']['featured'] = true;
+                }
             }
+
             $row['subscribed'] = false;
             $result[] = $row;
         }
