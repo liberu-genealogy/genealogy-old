@@ -229,6 +229,7 @@ class LoginController extends Controller
             return [
                 'auth' => Auth::check(),
                 'csrfToken' => csrf_token(),
+                'role_id' => Auth::user()->role_id,
             ];
         }
 
@@ -244,6 +245,7 @@ class LoginController extends Controller
         return response()->json([
             'auth' => Auth::check(),
             'csrfToken' => csrf_token(),
+            'role_id' => $user->role_id,
         ]);
     }
 
