@@ -16,17 +16,14 @@ class GetPlans extends Controller
      */
     public function __invoke(Request $request)
     {
-        // $role = Role::select('id', 'display_name', 'name')->whereNotIn('name', ['admin', 'supervisor', 'moderator'])->get();
-
-        // return $role;
-        $role = Role::where('name', 'free')->first();
-        Stripe\Stripe::setApiKey(\Config::get('services.stripe.secret'));
+        $role = Role::where("name", "free")->first();
+        Stripe\Stripe::setApiKey(\Config::get("services.stripe.secret"));
 
         $plans = Stripe\Plan::all();
 
         $result = [];
         foreach ($plans as $k => $plan) {
-            if (! $plan->active) {
+            if (!$plan->active) {
                 continue;
             }
 
@@ -35,33 +32,45 @@ class GetPlans extends Controller
              */
             if ($k === 0) {
                 $row1 = [];
-                $row1['id'] = $role->id;
-                $row1['amount'] = 0;
-                $row1['nickname'] = $role->name;
-                $row1['title'] = $role->display_name;
-                $row1['subscribed'] = false;
+                $row1["id"] = $role->id;
+                $row1["amount"] = 0;
+                $row1["nickname"] = $role->name;
+                $row1["title"] = $role->display_name;
+                $row1["subscribed"] = false;
                 $result[] = $row1;
             }
 
             if (empty($plan->nickname)) {
                 continue;
             }
-//            if(empty($plan->nickname) || empty($plan->metadata->paypal_id)) continue;
             $row = [];
-            $row['id'] = $plan->id;
-            $row['amount'] = $plan->amount;
-            $row['nickname'] = $plan->nickname;
-            $row['paypal_id'] = $plan->metadata->paypal_id;
-            $row['title'] = match ($plan->nickname) {
-                'UTY' => 'Unlimited trees yearly.',
-                'UTM' => 'Unlimited trees monthly.',
-                'TTY' => 'Ten trees yearly.',
-                'TTM' => 'Ten trees monthly.',
-                'OTY' => 'One tree yearly.',
-                'OTM' => 'One tree monthly.',
-                default => '',
-            };
-            $row['subscribed'] = false;
+
+            $row["id"] = $plan->id;
+            $row["amount"] = $plan->amount;
+            $row["title"] = $plan->nickname;
+            $row["nickname"] = $plan->title;
+            $row["interval"] = $plan->interval;
+            $row["trial_end"] = null;
+
+            $row["features"] = [];
+            $row["features_missing"] = [];
+            $row["metadata"] = [
+                "featured" => false,
+                "description" => "Missing description!!!",
+            ];
+
+            foreach ($plan->metadata->toArray() as $key => $value) {
+                if (preg_match('/^feature-missing[0-9]*$/', $key)) {
+                    $row["features_missing"][] = $value;
+                }
+                if (preg_match('/^feature[0-9]*$/', $key)) {
+                    $row["features"][] = $value;
+                }
+                if ($key == "featured" && ($value == 1 || $value == "true")) {
+                    $row["metadata"]["featured"] = true;
+                }
+            }
+            $row["subscribed"] = false;
             $result[] = $row;
         }
 
