@@ -31,7 +31,7 @@ class CopyPeopleFromTenancyToGenealogy extends Command
     public function handle()
     {
         $recordsSince = TenantPerson::orderBy('updated_at', 'desc')->first()?->updated_at;
-        $this->info('Tenant people records syncronization since: '.($recordsSince ? $recordsSince : 'start'));
+        $this->info('Tenant people records syncronization since: '.($recordsSince ?: 'start'));
 
         tenancy()->query()->cursor()->each(function (Tenant $tenant) use ($recordsSince) {
             try {
@@ -61,7 +61,7 @@ class CopyPeopleFromTenancyToGenealogy extends Command
                 });
 
                 tenancy()->end();
-            } catch (\Exception $e) {
+            } catch (\Exception) {
             }
         });
 

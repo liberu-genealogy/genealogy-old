@@ -3,7 +3,7 @@
     "description": "Genealogy can be a solid start for any family tree builder application based on Laravel 8.x, Vue and Bulma",
     "license": "MIT",
     "require": {
-        "php": ">=8.1.0",
+        "php": ">=8.2.0",
         "constantable/laravel-scout-sphinx": "^2.7",
         "doctrine/dbal": "^3.1",
         "familytree365/recordsapi": "dev-master",
@@ -43,17 +43,18 @@
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",
-        "brianium/paratest": "^7.1",
         "barryvdh/laravel-ide-helper": "^2.10",
+        "brianium/paratest": "^7.1",
         "fakerphp/faker": "^1.15",
         "filp/whoops": "^2.1",
-        "laravel/pint": "^1.0",
         "laravel-liberu/cli": "^5.0",
         "laravel-liberu/phpunit-pretty-print": "^1.0",
+        "laravel/pint": "^1.0",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^7.1",
         "nunomaduro/phpinsights": "^2.0",
         "phpunit/phpunit": "^10.1",
+        "rector/rector": "^0.17.0",
         "spatie/laravel-ignition": "^2.1"
     },
     "config": {

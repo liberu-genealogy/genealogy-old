@@ -37,7 +37,7 @@ class Import extends Controller
             // Validate family
             $error = $this->validateFamily($family);
 
-            if (count($error) > 0) {
+            if ((is_countable($error) ? count($error) : 0) > 0) {
                 $errors['Family-'.$key + 1] = $error;
                 continue;
             }
@@ -83,9 +83,9 @@ class Import extends Controller
         $xmlDataString = file_get_contents(storage_path('app/files/temp/'.$fileName));
         $xmlObject = simplexml_load_string($xmlDataString);
 
-        $json = json_encode($xmlObject);
+        $json = json_encode($xmlObject, JSON_THROW_ON_ERROR);
 
-        return [$fileName, json_decode($json, true)];
+        return [$fileName, json_decode($json, true, 512, JSON_THROW_ON_ERROR)];
     }
 
     protected function validateFamily($family)
@@ -121,7 +121,7 @@ class Import extends Controller
         return Person::create([
             'givn' => $arr['name']['first_name'],
             'surn' => $arr['name']['last_name'],
-            'sex' => $arr['gender'] ?? null ? substr($arr['gender'], 0, 1) : $defaultGender,
+            'sex' => $arr['gender'] ?? null ? substr((string) $arr['gender'], 0, 1) : $defaultGender,
             'birthday' => $arr['birthday'],
             'child_in_family_id' => $parentId,
         ]);

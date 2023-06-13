@@ -13,21 +13,18 @@ class ServerCreated implements ShouldBroadcastNow
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     /**
-     * The user that created the server.
-     *
-     * @var \App\Models\User
-     */
-    public $message;
-
-    /**
      * Create a new event instance.
      *
      * @param \App\Models\User user
      * @return void
      */
-    public function __construct($message)
+    public function __construct(
+        /**
+         * The user that created the server.
+         */
+        public $message
+    )
     {
-        $this->message = $message;
     }
 
     /**

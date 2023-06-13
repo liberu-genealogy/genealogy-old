@@ -51,7 +51,7 @@ class Export extends Controller
                 'last_name' => $person->surn,
             ],
             'gender' => $person->getSex(),
-            'birthday' => substr($person->birthday, 0, 10),
+            'birthday' => substr((string) $person->birthday, 0, 10),
             'parent_id' => $person->child_in_family_id,
         ];
     }

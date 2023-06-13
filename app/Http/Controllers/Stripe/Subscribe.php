@@ -11,23 +11,31 @@ class Subscribe extends Controller
     /**
      * Handle the incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function __invoke(Request $request)
     {
         $user = auth()->user();
+        \Stripe\Stripe::setApiKey(config('cashier.secret'));
 
         try {
             $user->createAsStripeCustomer();
-        } catch(\Exception $e) {
+        } catch(\Exception) {
         }
 
         $plan_id = $request->input('plan_id');
 
         if ($request->has('payment_method')) {
             $paymentMethod = $request->payment_method;
-            $user->newSubscription('default', $plan_id)->create($paymentMethod);
+
+            $subscription = $user->newSubscription('default', $plan_id)
+                                 ->trialDays(14);
+
+            if ($couponId = $request->input('coupon_id')) {
+                $subscription->withCoupon($couponId);
+            }
+
+            $subscription->create($paymentMethod);
 
             $user->notify(new SubscribeSuccessfully($plan_id));
         } else {

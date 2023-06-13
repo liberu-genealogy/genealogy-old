@@ -18,20 +18,13 @@ class DnaMatching implements ShouldQueue
     public int $timeout = 0;
     public int $tries = 1;
 
-    protected $current_user;
-    protected $var_name;
-    protected $file_name;
-
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($current_user, $var_name, $file_name)
+    public function __construct(protected $current_user, protected $var_name, protected $file_name)
     {
-        $this->current_user = $current_user;
-        $this->var_name = $var_name;
-        $this->file_name = $file_name;
     }
 
     /**
@@ -55,7 +48,7 @@ class DnaMatching implements ShouldQueue
             chdir($mpath);
             // exec('python dna.py '.$this->var_name.' '.$dna->variable_name.' '.$this->file_name.' '.$dna->file_name, $dna_output);
             $result = exec('python3 dna.py '.$this->var_name.' '.$dna->variable_name.' '.$this->file_name.' '.$dna->file_name);
-            $resultData = json_decode($result, true);
+            $resultData = json_decode($result, true, 512, JSON_THROW_ON_ERROR);
 	    chmod('/home/genealogia/domains/api.genealogia.co.uk/genealogia/storage/app/public/dna/output/shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png', 0777);
 
             $dm = new DM();

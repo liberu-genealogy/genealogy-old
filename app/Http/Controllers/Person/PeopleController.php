@@ -23,7 +23,7 @@ class PeopleController extends Controller
                 $query->select('id', 'name');
             }]);
 
-        $words = explode(' ', $request->input('name'));
+        $words = explode(' ', (string) $request->input('name'));
 
         $peopleQuery->where(function ($query) use ($words) {
             foreach ($words as $text) {
@@ -43,13 +43,11 @@ class PeopleController extends Controller
 
         return response()->json([
             'response' => [
-                'docs' => $people->map(function ($person) {
-                    return [
-                        'id' => $person->id,
-                        'name' => $person->name,
-                        'user_name' => $person->systemPerson?->name,
-                    ];
-                }),
+                'docs' => $people->map(fn($person) => [
+                    'id' => $person->id,
+                    'name' => $person->name,
+                    'user_name' => $person->systemPerson?->name,
+                ]),
                 'number_found' => $totalCount,
             ],
         ]);

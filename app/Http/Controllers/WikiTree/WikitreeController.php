@@ -59,7 +59,7 @@ class WikitreeController extends Controller
 
         $statusCode = $response->getStatusCode();
         $content = $response->getBody();
-        $persons = json_decode($response->getBody(), true);
+        $persons = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
 
         $newPersons = [];
         foreach ($persons[0]['matches'] as $person) {
@@ -73,7 +73,7 @@ class WikitreeController extends Controller
 
             $statusCode = $response->getStatusCode();
             $content = $response->getBody();
-            $ancestors = json_decode($response->getBody(), true);
+            $ancestors = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
 
             $person['ancestors'] = $ancestors;
             array_push($newPersons, $person);

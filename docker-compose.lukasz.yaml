@@ -1,0 +1,141 @@
+version: '3'
+services:
+
+  #PHP Service
+  app:
+    build:
+      context: .
+      dockerfile: ./.docker/prod/app/Dockerfile.lukasz
+    user: "www-data:www-data"
+    container_name: app
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+      - ./.docker/prod/app/php.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - api
+  #Nginx Service
+  webserver:
+    image: nginx:alpine
+    container_name: webserver
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "1280:80"
+      - "12443:443"
+    volumes:
+      - ./:/var/www
+      - ./.docker/prod/webserver/nginx:/etc/nginx/conf.d/
+    networks:
+      - api
+    labels:
+      - "traefik.http.routers.treeAPI.rule=Host(`tree.localhost`) && PathPrefix(`/api`)"
+    #command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+  #MySQL Service
+  db:
+    image: mysql:8.0
+    container_name: db
+    restart: unless-stopped
+    tty: true
+    #ports:
+    #  - "3306:3306"
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - ./.docker/prod/db/dbdata:/var/lib/mysql/
+      - ./.docker/prod/db/mysql/my.cnf:/etc/mysql/my.cnf
+    networks:
+      - api
+    command:
+      - --sort_buffer_size=1073741824
+  myadmin:
+    image: 'phpmyadmin:latest'
+    ports:
+      - 12808:80
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      PMA_HOST: mysql
+    links:
+      - "db:mysql"
+    depends_on:
+      - db
+    networks:
+      - api
+    labels:
+      - "traefik.http.routers.treepma.rule=Host(`pma.tree.localhost`)"
+  supervisor:
+    build:
+      context: .
+      dockerfile: ./.docker/prod/supervisor/Dockerfile
+    container_name: supervisor
+    volumes:
+     - ./:/var/www
+     - ./.docker/prod/supervisor/supervisord.conf:/etc/supervisor/supervisord.conf
+    networks:
+     - api
+# laravel-echo-server:
+#   image: oanhnn/laravel-echo-server:latest
+#   # environment:
+#   #   LARAVEL_ECHO_SERVER_AUTH_HOST: http://example.com
+#   #   LARAVEL_ECHO_SERVER_DEBUG:     'true'
+#   #   LARAVEL_ECHO_SERVER_DATABASE:  sqlite
+#   ports:
+#     - 6001:6001
+#   restart: unless-stopped
+#   volumes:
+#     - ./laravel-echo-server.json:/app/laravel-echo-server.json:ro
+#   healthcheck:
+#     # test: node /usr/local/src/healthcheck.js
+#     test: /usr/local/bin/health-check
+#     start_period: 5s
+#     interval: 3s
+#     timeout: 3s
+#     retries: 10
+#   networks:
+#     - api
+  redis:
+    image: 'bitnami/redis:latest'
+    ports:
+      - 6379:6379
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    networks:
+      - api
+
+  mailcatcher:
+    image: schickling/mailcatcher
+    ports:
+      - "${MAILCATCHER_WEB_PORT-1290}:1080"
+      - "${MAILCATCHER_SMTP_PORT-1289}:1025"
+    labels:
+      - "traefik.http.routers.mctreeAPI.rule=Host(`mailcatcher.tree.localhost`)"
+      - "traefik.http.services.mctreeAPI.loadbalancer.server.port=1080"
+    networks:
+      - api
+#  sphinx:
+#    image: macbre/sphinxsearch:3.4.1
+#    ports:
+#    - "127.0.0.1:36307:36307" # bind to local interface only!
+#    volumes:
+#    - ./.docker/prod/sphinx/data:/opt/sphinx/index  # directory where sphinx will store index data
+#    - ./.docker/prod/sphinx/sphinx.conf:/opt/sphinx/conf/sphinx.conf  # SphinxSE configuration file
+#    mem_limit: 512m # match indexer.value from sphinx.conf
+#    networks:
+#      - api
+#Docker Networks
+networks:
+  api:
+    driver: bridge
+#Volumes
+volumes:
+  dbdata:
+    driver: local

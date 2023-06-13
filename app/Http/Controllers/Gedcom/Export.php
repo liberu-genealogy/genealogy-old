@@ -30,6 +30,6 @@ class Export extends Controller
 //            'file' => $manager->storage()->path($filePath)	,
             'file' => file_get_contents($filePath, true),
             'name' => $file,
-        ]);
+        ], JSON_THROW_ON_ERROR);
     }
 }

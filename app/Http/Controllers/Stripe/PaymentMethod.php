@@ -10,8 +10,6 @@ class PaymentMethod extends Controller
 {
     /**
      * Handle the incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
      */
     public function updateDefaultPaymentMethod(Request $request)
     {

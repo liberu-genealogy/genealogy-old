@@ -143,7 +143,7 @@ class ChartController extends Controller
             'changedb' => $prevConn === $changeConn ? true : false,
             'familiesjoined' => $familiesjoined,
             'peoplesattached' => $peoplesattached,
-        ]);
+        ], JSON_THROW_ON_ERROR);
     }
 
     // get companies of user.
@@ -201,6 +201,6 @@ class ChartController extends Controller
             'changedb' => $prevConn === $changeConn ? true : false,
             'familiesjoined' => $familiesjoined,
             'peoplesattached' => $peoplesattached,
-        ]);
+        ], JSON_THROW_ON_ERROR);
     }
 }

@@ -21,15 +21,8 @@ class ImportGedcom implements ShouldQueue
     public int $timeout = 0;
     public int $tries = 1;
 
-    protected string $filePath;
-    protected ?string $slug;
-    protected User $user;
-
-    public function __construct(User $user, string $filePath, ?string $slug = null)
+    public function __construct(protected User $user, protected string $filePath, protected ?string $slug = null)
     {
-        $this->filePath = $filePath;
-        $this->user = $user;
-        $this->slug = $slug;
     }
 
     public function handle(): int
