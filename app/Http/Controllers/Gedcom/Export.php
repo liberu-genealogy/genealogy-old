@@ -23,10 +23,12 @@ class Export extends Controller
         $manager = Manager::fromModel($request->user()->company(), $request->user());
         ExportGedCom::dispatch($filePath, $request->user());
 
-        Log::info("Read gedfile from ". \Storage::disk("public")->path($filePath));
+	$filePath = $manager->storage()->path($filePath);
+        Log::info("Read gedfile from ". $manager->storage()->path($filePath));
         // var_dump($filePath);
         return json_encode([
-            'file' => $manager->storage()->get($filePath),
+//            'file' => $manager->storage()->path($filePath)	,
+            'file' => file_get_contents($filePath, true),
             'name' => $file,
         ]);
     }

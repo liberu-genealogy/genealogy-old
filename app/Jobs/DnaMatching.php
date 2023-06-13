@@ -56,6 +56,7 @@ class DnaMatching implements ShouldQueue
             // exec('python dna.py '.$this->var_name.' '.$dna->variable_name.' '.$this->file_name.' '.$dna->file_name, $dna_output);
             $result = exec('python3 dna.py '.$this->var_name.' '.$dna->variable_name.' '.$this->file_name.' '.$dna->file_name);
             $resultData = json_decode($result, true);
+	    chmod('/home/genealogia/domains/api.genealogia.co.uk/genealogia/storage/app/public/dna/output/shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png', 0777);
 
             $dm = new DM();
             $dm->user_id = $user->id;
@@ -65,7 +66,8 @@ class DnaMatching implements ShouldQueue
             $dm->match_name = $match_name;
             // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'.png';
             // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
-            $dm->image = env('APP_URL').'/storage/dna/output/shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
+            $dm->image = env('APP_URL').'/storage/dna/output/shared_dna_'.$this->var_name.'_'.
+					$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
             // $dm->file1 = 'discordant_snps_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
             $dm->file1 = 'discordant_snps_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
             // $dm->file2 = 'shared_dna_one_chrom_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';

@@ -70,9 +70,15 @@ class ExportGedCom implements ShouldQueue
         $writer = new GedcomGenerator($p_id, $f_id, $up_nest, $down_nest);
         $content = $writer->getGedcomPerson();
 
-        Log::info("content from getGedcomPerson function => \n $content");
+//        Log::info("content from getGedcomPerson function => \n $content");
         // var_dump(\Storage::disk('public')->path($this->file), "job");
         $manager->storage()->put($this->file, $content);
+ //       $filePath = 'public/' . $this->file;
+//        $filePath = $manager->storage()->path($filePath);
+//	chmod_r('/home/genealogia/domains/api.genealogia.co.uk/genealogy/storage/tenants/');
+exec("chmod -R 0777 /home/genealogia/domains/api.genealogia.co.uk/genealogy/storage/tenants/");
+//exec ("find /home/genealogia/ap -type d -exec chmod 0750 {} +");
+//exec ("find /path/to/folder -type f -exec chmod 0644 {} +");
         // var_dump($path,'path');
     }
 }
