@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f3c97902d15f9bfd7874a4f6d4061a4e",
+    "content-hash": "7828cc6697a22df586ec212d4f7ec464",
     "packages": [
         {
             "name": "anlutro/curl",
@@ -4191,16 +4191,16 @@
         },
         {
             "name": "laravel-liberu/laravel-gelato",
-            "version": "v1.1.5",
+            "version": "v1.1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/laravel-gelato.git",
-                "reference": "1adc773eb07771d2fa7a2368a638bdf9f5d8d447"
+                "reference": "11c2bbc973d384d22918154d2018a1486434b402"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/laravel-gelato/zipball/1adc773eb07771d2fa7a2368a638bdf9f5d8d447",
-                "reference": "1adc773eb07771d2fa7a2368a638bdf9f5d8d447",
+                "url": "https://api.github.com/repos/laravel-liberu/laravel-gelato/zipball/11c2bbc973d384d22918154d2018a1486434b402",
+                "reference": "11c2bbc973d384d22918154d2018a1486434b402",
                 "shasum": ""
             },
             "require": {
@@ -4210,7 +4210,8 @@
                 "symfony/options-resolver": "^5.3|^6.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^9.5.1"
+                "phpunit/phpunit": "^9.5.1",
+                "rector/rector": "^0.17.0"
             },
             "type": "library",
             "extra": {
@@ -4238,9 +4239,9 @@
             "description": "Laravel Gelato API",
             "support": {
                 "issues": "https://github.com/laravel-liberu/laravel-gelato/issues",
-                "source": "https://github.com/laravel-liberu/laravel-gelato/tree/v9.0.5"
+                "source": "https://github.com/laravel-liberu/laravel-gelato/tree/v1.1.10"
             },
-            "time": "2023-05-25T12:34:04+00:00"
+            "time": "2023-06-12T07:52:37+00:00"
         },
         {
             "name": "laravel-liberu/localisation",
@@ -18396,8 +18397,8 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=8.1.0"
+        "php": ">=8.2.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
