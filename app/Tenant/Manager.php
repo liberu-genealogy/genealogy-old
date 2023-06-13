@@ -17,26 +17,19 @@ use Illuminate\Support\Facades\Storage;
 class Manager
 {
     protected User $user;
-    protected Repository $config;
-    protected DatabaseManager $database;
-
-    protected string|int $tenant_id;
     protected string|null $partition = null;
     protected string $connectionName = 'tenantdb';
     protected string $defaultDatabase = 'tenant';
     protected string $defaultConnection = 'mysql';
 
     public function __construct(
-        string|int $company_id,
+        protected string|int $tenant_id,
         string|int $user_id,
         string|int|null $database_name,
-        Repository $config,
-        DatabaseManager $database,
+        protected Repository $config,
+        protected DatabaseManager $database,
     ) {
-        $this->tenant_id = $company_id;
-        $this->partition = $database_name ?? "tenant{$company_id}";
-        $this->database = $database;
-        $this->config = $config;
+        $this->partition = $database_name ?? "tenant{$tenant_id}";
     }
 
     public static function fromModel(Model $model, User $user): self
@@ -104,7 +97,7 @@ class Manager
             return count($this->database->select(<<<SQL
         SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '{$this->partition}';
         SQL)) > 0;
-        } catch (\PDOException $e) {
+        } catch (\PDOException) {
             return false;
         }
     }

@@ -9,9 +9,9 @@ use Illuminate\Routing\Controller;
 
 class Show extends Controller
 {
-    private $persons;
-    private $unions;
-    private $links;
+    private ?array $persons = null;
+    private ?array $unions = null;
+    private ?array $links = null;
     private $nest;
 
     public function __invoke(Request $request)
@@ -49,7 +49,7 @@ class Show extends Controller
         }
 
         $families = Family::where('husband_id', $start_id)->orwhere('wife_id', $start_id)->get();
-        if (! count($families)) {
+        if (! (is_countable($families) ? count($families) : 0)) {
             $person = Person::find($start_id);
 
             // do not process for null
@@ -63,9 +63,7 @@ class Show extends Controller
 
             return true;
         }
-        $own_unions = $families->pluck('id')->map(function ($id) {
-            return 'u'.$id;
-        })->toArray();
+        $own_unions = $families->pluck('id')->map(fn($id) => 'u'.$id)->toArray();
         $person->setAttribute('own_unions', $own_unions);
         $person->setAttribute('generation', $nest);
 
@@ -75,11 +73,18 @@ class Show extends Controller
         foreach ($families as $family) {
             $union_id = 'u'.$family->id;
             $this->links[] = [$start_id, $union_id];
+            $partners = [$family->husband_id ?? null, $family->wife_id ?? null];
             $this->unions[$union_id] = [
                 'id' => $union_id,
-                'partner' => [$family->husband_id ?? null, $family->wife_id ?? null],
+                'partner' => $partners,
                 'children' => $family->children->pluck('id')->toArray(),
             ];
+            foreach ($partners as $partner) {
+                $p = Person::find($partner);
+                if (isset($p) && ! isset($this->persons[$partner])) {
+                    $this->persons[$partner] = $p;
+                }
+            }
             foreach ($family->children as $child) {
                 $this->links[] = ['u'.$family->id, $child->id];
                 $child->setAttribute('generation', $nest + 1);

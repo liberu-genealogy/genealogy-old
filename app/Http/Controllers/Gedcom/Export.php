@@ -6,8 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Jobs\ExportGedCom;
 use FamilyTree365\LaravelGedcom\Utils\GedcomGenerator;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-
+use App\Models\Person;
+use Illuminate\Support\Facades\Log;
+use App\Models\Family;
+use App\Tenant\Manager;
+use Illuminate\Support\Facades\File;
 class Export extends Controller
 {
     public function __invoke(Request $request)
@@ -16,24 +19,15 @@ class Export extends Controller
         $file = env('APP_NAME').date('_Ymd_').$ts.'.ged';
         $file = str_replace(' ', '', $file);
         $file = str_replace("'", '', $file);
+        $filePath = 'public/' . $file;
+        $manager = Manager::fromModel($request->user()->company(), $request->user());
+        ExportGedCom::dispatch($filePath, $request->user());
 
-        //TODO need data for testing
-        $conn = 'tenant';
-        $p_id = 1;
-        $f_id = 1;
-        $up_nest = 0;
-        $down_nest = 0;
-        $_name = uniqid().'.ged';
-
-        $writer = new GedcomGenerator($p_id, $f_id, $up_nest, $down_nest);
-        $content = $writer->getGedcomPerson();
-
-        ExportGedCom::dispatch($file);
-        $path = Storage::path($file);
-
+        Log::info("Read gedfile from ". \Storage::disk("public")->path($filePath));
+        // var_dump($filePath);
         return json_encode([
-            'file' => \Storage::disk('public')->get($file),
+            'file' => $manager->storage()->get($filePath),
             'name' => $file,
-        ]);
+        ], JSON_THROW_ON_ERROR);
     }
 }

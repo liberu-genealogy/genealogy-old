@@ -38,7 +38,7 @@ https://www.familytree365.com - register a free account, and try the demo with n
 
 7. (optional) Setup the configuration files as needed, in `config/enso/*.php`
 
-8. (maybe required) Setup sanctum stateful domains in `.env` and add your domains to `config/cors.php`
+8. (maybe required) Setup sanctum stateful domains and session domain in `.env` and add your domains to `config/cors.php`
 
 9. Follow installation steps for client side (https://github.com/liberu-ui/genealogy) and launch the site and log into the project with user: `admin@familytree365.com`, password: `password`
 

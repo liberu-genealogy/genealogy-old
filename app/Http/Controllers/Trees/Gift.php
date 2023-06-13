@@ -7,11 +7,8 @@ use iWebTouch\Gelato\Gelato;
 
 class Gift extends Controller
 {
-    private $shop;
-
-    public function __construct(Gelato $shop)
+    public function __construct(private readonly Gelato $shop)
     {
-        $this->shop = $shop;
     }
 
     public function createOrder()

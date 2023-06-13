@@ -43,7 +43,6 @@ class ChatsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -91,7 +90,6 @@ class ChatsController extends Controller
             $message->conversation_id = $id;
             $message->save();
             // broadcast(new \App\Events\MessageSent($message, $user, $id))->toOthers();
-
             return $message;
         }
     }

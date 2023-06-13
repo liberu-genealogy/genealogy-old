@@ -9,9 +9,9 @@ use Illuminate\Routing\Controller;
 
 class Ancestors extends Controller
 {
-    private $persons;
-    private $unions;
-    private $links;
+    private ?array $persons = null;
+    private ?array $unions = null;
+    private ?array $links = null;
     private $nest;
 
     public function __invoke(Request $request)
@@ -56,16 +56,14 @@ class Ancestors extends Controller
         }
 
         $families = Family::where('husband_id', $start_id)->orwhere('wife_id', $start_id)->get();
-        if (! count($families)) {
+        if (! (is_countable($families) ? count($families) : 0)) {
             $person->setAttribute('own_unions', []);
             $person['generation'] = $nest;
             $this->persons[$start_id] = $person;
 
             return true;
         }
-        $own_unions = $families->pluck('id')->map(function ($id) {
-            return 'u'.$id;
-        })->toArray();
+        $own_unions = $families->pluck('id')->map(fn($id) => 'u'.$id)->toArray();
         $person->setAttribute('own_unions', $own_unions);
         $person['generation'] = $nest;
         $this->persons[$start_id] = $person;

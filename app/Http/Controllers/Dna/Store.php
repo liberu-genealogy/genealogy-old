@@ -15,22 +15,21 @@ class Store extends Controller
 
     public function __invoke(Request $request)
     {
+        $allowed = null;
         $role = \Auth::user()->role_id;
         $user_id = \Auth::user()->id;
         $dna = Dna::where('user_id', '=', $user_id)->count();
-
         if (in_array($role, [1, 2, 9, 10])) {
-            $allowed = true;
+            $allowed = TRUE;
         }
         if (in_array($role, [4, 5, 6]) && $dna < 1) {
-            $allowed = true;
+            $allowed = TRUE;
         }
 
         if (in_array($role, [7, 8]) && $dna < 5) {
-            $allowed = true;
+            $allowed = TRUE;
         }
-
-        if ($allowed === true) {
+        if ($allowed === TRUE) {
             if ($request->hasFile('file')) {
                 if ($request->file('file')->isValid()) {
                     try {

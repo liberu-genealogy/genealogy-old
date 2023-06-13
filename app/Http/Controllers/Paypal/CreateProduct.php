@@ -18,6 +18,7 @@ class CreateProduct extends Controller
      */
     public function __invoke()
     {
+        $request = null;
         $product = [
             'name' => $request->name ?? 'Family365',
             'description' => $request->description ?? 'Family trees',

@@ -11,7 +11,6 @@ class Subscribe extends Controller
     /**
      * Handle the incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function __invoke(Request $request)
@@ -20,8 +19,8 @@ class Subscribe extends Controller
         \Stripe\Stripe::setApiKey(config('cashier.secret'));
 
         try {
-           $user->createAsStripeCustomer();
-        } catch(\Exception $e) {
+            $user->createAsStripeCustomer();
+        } catch(\Exception) {
         }
 
         $plan_id = $request->input('plan_id');

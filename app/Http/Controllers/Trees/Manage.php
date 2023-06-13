@@ -12,6 +12,6 @@ class Manage extends Controller
     {
         $users = User::all();
 
-        return json_encode($users);
+        return json_encode($users, JSON_THROW_ON_ERROR);
     }
 }

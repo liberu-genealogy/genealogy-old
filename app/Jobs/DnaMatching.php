@@ -18,20 +18,13 @@ class DnaMatching implements ShouldQueue
     public int $timeout = 0;
     public int $tries = 1;
 
-    protected $current_user;
-    protected $var_name;
-    protected $file_name;
-
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct($current_user, $var_name, $file_name)
+    public function __construct(protected $current_user, protected $var_name, protected $file_name)
     {
-        $this->current_user = $current_user;
-        $this->var_name = $var_name;
-        $this->file_name = $file_name;
     }
 
     /**
@@ -54,8 +47,8 @@ class DnaMatching implements ShouldQueue
             // chdir('/home/familytree365/domains/api.familytree365.com/genealogy/app');
             chdir($mpath);
             // exec('python dna.py '.$this->var_name.' '.$dna->variable_name.' '.$this->file_name.' '.$dna->file_name, $dna_output);
-            $result = exec('python dna.py '.$this->var_name.' '.$dna->variable_name.' '.$this->file_name.' '.$dna->file_name);
-            $resultData = json_decode($result, true);
+            $result = exec('python3 dna.py '.$this->var_name.' '.$dna->variable_name.' '.$this->file_name.' '.$dna->file_name);
+            $resultData = json_decode($result, true, 512, JSON_THROW_ON_ERROR);
 
             $dm = new DM();
             $dm->user_id = $user->id;
