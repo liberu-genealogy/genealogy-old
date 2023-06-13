@@ -16,7 +16,7 @@ class GetPlans extends Controller
      */
     public function __invoke(Request $request)
     {
-        $role = Role::where("name", "free")->first();
+//        $role = Role::where("name", "free")->first();
         Stripe\Stripe::setApiKey(\Config::get("services.stripe.secret"));
 
         $plans = Stripe\Plan::all();
@@ -31,6 +31,7 @@ class GetPlans extends Controller
              * FREE PLAN
              */
 
+/**
             if ($k === 0) {
                 $row1 = [];
                 $row1["id"] = $role->id;
@@ -40,7 +41,7 @@ class GetPlans extends Controller
                 $row1["subscribed"] = false;
                 $result[] = $row1;
             }
-
+**/
             if (empty($plan->nickname)) {
                 continue;
             }
