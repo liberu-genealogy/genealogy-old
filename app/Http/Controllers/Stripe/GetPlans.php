@@ -23,7 +23,7 @@ class GetPlans extends Controller
 
         $result = [];
         foreach ($plans as $k => $plan) {
-            if (!$plan->active) {
+            if (!$plan->active || $plan->amount == 0) {
                 continue;
             }
 
