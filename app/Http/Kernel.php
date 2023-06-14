@@ -49,6 +49,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'multitenant' => \App\Http\Middleware\Multitenant::class,
+        'verifyStripeWebhook' => \App\Http\Middleware\verifyStripeWebhook::class,
         // 'multitenant' => \LaravelEnso\Multitenancy\Http\Middleware\Multitenancy::class,
     ];
 
