@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Stripe;
-
+use App\Models\Role;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -24,25 +24,10 @@ class Webhook extends Controller
             $plan_nickname = $data['data']['object']['items']['data'][0]['plan']['nickname'];
             foreach ($plans as $plan) {
                 if ($plan->nickname === $plan_nickname) {
-                    switch ($plan->nickname) {
-                        case 'UTY':
-                            $user->syncRoles('UTY');
-                            break;
-                        case 'UTM':
-                            $user->syncRoles('UTM');
-                            break;
-                        case 'TTY':
-                            $user->syncRoles('TTY');
-                            break;
-                        case 'TTM':
-                            $user->syncRoles('TTM');
-                            break;
-                        case 'OTY':
-                            $user->syncRoles('OTY');
-                            break;
-                        case 'OTM':
-                            $user->syncRoles('OTM');
-                            break;
+                    $roles= Role::where('name', strtolower($plan->nickname))->first();
+                    if ($roles) {
+                        $user->role_id = $roles->id;
+                        $user->save();
                     }
                 }
             }
