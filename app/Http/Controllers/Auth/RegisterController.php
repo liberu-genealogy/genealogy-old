@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Stripe\GetPlans;
+//use App\Http\Controllers\Stripe\GetPlans;
 use App\Jobs\Tenant\CreateDB;
 use App\Jobs\Tenant\Migration;
 use App\Models\Company;
@@ -139,8 +139,9 @@ class RegisterController extends Controller
         // }
     }
 
-    protected function getSubscriptionPlan(Request $request)
+/**    protected function getSubscriptionPlan(Request $request)
     {
         return (new GetPlans())($request);
     }
+**/
 }

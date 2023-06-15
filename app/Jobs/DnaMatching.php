@@ -42,14 +42,15 @@ class DnaMatching implements ShouldQueue
         $retval = null;
 
         foreach ($dnas as $dna) {
-            var_dump($dna);
+            //var_dump($dna);
             //            system('/usr/bin/python3 /home/genealogia/public_html/dna.py ' . $this->var_name . ' ' . $dna->variable_name . ' ' . '/home/genealogia/public_html/storage/app/dna/'. $this->file_name . ' ' . '/home/genealogia/public_html/storage/app/dna/'. $dna->file_name);
             // chdir('/home/familytree365/domains/api.familytree365.com/genealogy/app');
             chdir($mpath);
             // exec('python dna.py '.$this->var_name.' '.$dna->variable_name.' '.$this->file_name.' '.$dna->file_name, $dna_output);
             $result = exec('python3 dna.py '.$this->var_name.' '.$dna->variable_name.' '.$this->file_name.' '.$dna->file_name);
-            $resultData = json_decode($result, true, 512, JSON_THROW_ON_ERROR);
-	    chmod('/home/genealogia/domains/api.genealogia.co.uk/genealogia/storage/app/public/dna/output/shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png', 0777);
+//            $resultData = json_decode($result, true, 512, JSON_THROW_ON_ERROR);
+            $resultData = json_decode($result, true);
+	    chmod('/home/genealogia/domains/api.genealogia.co.uk/genealogy/storage/app/public/dna/output/shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png', 0777);
 
             $dm = new DM();
             $dm->user_id = $user->id;

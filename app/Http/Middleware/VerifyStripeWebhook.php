@@ -24,7 +24,7 @@ class VerifyStripeWebhook
             WebhookSignature::verifyHeader(
                 $request->getContent(),
                 $request->header('Stripe-Signature'),
-                \Config::get('services.stripe.secret'),
+                \Config::get('services.stripe.webhook'),
                 null
             );
         } catch (SignatureVerificationException $exception) {
