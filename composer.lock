@@ -15276,7 +15276,7 @@
         },
         {
             "name": "laravel-liberu/cli",
-            "version": "v5.0.5",
+            "version": "v5.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/cli.git",
@@ -15334,7 +15334,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/cli/issues",
-                "source": "https://github.com/laravel-liberu/cli/tree/v5.0.5"
+                "source": "https://github.com/laravel-liberu/cli/tree/v5.0.6"
             },
             "time": "2023-06-12T08:17:46+00:00"
         },
