@@ -4446,7 +4446,7 @@
         },
         {
             "name": "laravel-liberu/menus",
-            "version": "v5.0.5",
+            "version": "v5.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/menus.git",
@@ -4507,7 +4507,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/menus/issues",
-                "source": "https://github.com/laravel-liberu/menus/tree/v5.0.5"
+                "source": "https://github.com/laravel-liberu/menus/tree/v5.0.6"
             },
             "time": "2023-06-12T08:14:22+00:00"
         },
