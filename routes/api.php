@@ -1492,7 +1492,7 @@ Route::middleware(['web', 'auth'])
         Route::post('unsubscribe', StripeUnsubscribe::class);
     });
 
-Route::middleware(['verifyStripeWebhook'])
+Route::middleware(['verifyStripeWebhook', 'api'])
     ->prefix('stripe')
     ->as('stripe.')
     ->group(function() {
