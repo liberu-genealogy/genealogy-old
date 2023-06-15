@@ -27,7 +27,8 @@ class Webhook extends Controller
                     $user->role_id = 4;
                     $user->save();
                     break;
-                case "invoice.payment_succeeded" :
+                case "invoice.payment_succeeded":
+                case "invoice.created":
                     $subscription = $data['object']['subscription'];
                     $plan = $subscription['plan'];
                     if ($plan) {
