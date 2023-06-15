@@ -57,5 +57,7 @@ class Webhook extends Controller
         } else {
             echo 'User not found!';
         }
+
+        return true;
     }
 }
