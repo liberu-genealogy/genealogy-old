@@ -1490,7 +1490,13 @@ Route::middleware(['web', 'auth'])
         Route::post('subscribe', StripeSubscribe::class);
         Route::post('verify-coupon', StripeVerifyCoupon::class);
         Route::post('unsubscribe', StripeUnsubscribe::class);
-        Route::post('webhook', StripeWebhook::class)->middleware('verifyStripeWebhook');
+    });
+
+Route::middleware(['verifyStripeWebhook'])
+    ->prefix('stripe')
+    ->as('stripe.')
+    ->group(function() {
+        Route::post('webhook', StripeWebhook::class);
     });
 
 Route::middleware(['web', 'auth'])
