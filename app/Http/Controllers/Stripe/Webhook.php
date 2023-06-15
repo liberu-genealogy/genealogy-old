@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Stripe;
-use App\Models\Role;
+use LaravelEnso\Roles\Models\Role;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -21,15 +21,32 @@ class Webhook extends Controller
         $data = request()->all();
         $user = User::where('stripe_id', $data['data']['object']['customer'])->first();
         if ($user) {
-            $plan_nickname = $data['data']['object']['items']['data'][0]['plan']['nickname'];
-            foreach ($plans as $plan) {
-                if ($plan->nickname === $plan_nickname) {
-                    $roles= Role::where('name', strtolower($plan->nickname))->first();
+            if ($data['type'] === 'customer.subscription.deleted' || customer.subscription.deleted)
+            switch ($data['type']) {
+                case "customer.subscription.deleted": 
+                    $user->role_id = 4;
+                    $user->save();
+                    break;
+                case "invoice.payment_succeeded" :
+                    $subscription = $data['object']['subscription'];
+                    $plan = $subscription['plan'];
+                    if ($plan) {
+                        $plan_nickname = $plan[['nickName']];
+                        $roles= Role::where('name', strtolower($plan->nickname))->first();
+                        if ($roles) {
+                            $user->role_id = $roles->id;
+                            $user->save();
+                        }
+                        break;
+                            
+                    }
+                case "invoice.payment_failed" : 
+                    $roles= Role::where('name', strtolower("free"))->first();
                     if ($roles) {
                         $user->role_id = $roles->id;
                         $user->save();
                     }
-                }
+                    break;
             }
         } else {
             echo 'User not found!';
