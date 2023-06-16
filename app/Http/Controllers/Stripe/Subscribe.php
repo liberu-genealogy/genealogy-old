@@ -39,7 +39,17 @@ class Subscribe extends Controller
 
             $user->notify(new SubscribeSuccessfully($plan_id));
         } else {
-            $user->subscription('default')->swap($plan_id);
+            if ($user->subscribed('default')) {
+                $subscription = $user->subscription();
+                if ($subscription->stripe_status == 'canceled') {
+                    $user->newSubscription('default', $plan_id)->create();
+                    $user->notify(new SubscribeSuccessfully($plan_id));
+                } else {
+                    $user->subscription('default')->swap($plan_id);
+                }
+            } else {
+                $user->subscription('default')->swap($plan_id);
+            }
         }
 
         return ['success' => true];
