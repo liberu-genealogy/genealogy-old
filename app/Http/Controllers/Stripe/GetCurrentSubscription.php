@@ -18,9 +18,11 @@ class GetCurrentSubscription extends Controller
         $data = [];
         $data['has_payment_method'] = $user->hasDefaultPaymentMethod();
         if ($user->subscribed('default')) {
-            $data['subscribed'] = true;
+            $subscription = $user->subscription();
+            
+            $data['subscribed'] = $subscription->stripe_status != 'canceled' ? true : false;
 
-            $data['plan_id'] = ($subscription = $user->subscription())->stripe_price;
+            $data['plan_id'] = $subscription->stripe_price;
             $data['trial_end'] = null;
 
             try {
