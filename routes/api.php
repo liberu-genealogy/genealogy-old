@@ -847,6 +847,9 @@ Route::middleware(['api', 'auth','multitenant'])
 
 Route::post('gedcom/progress', '\App\Http\Controllers\Gedcom\Progress@index')->name('progress');
 
+// Records API
+Route::get('records-api/search-person', [RecordsAPIController::class, 'searchPerson'])->name('records-api.search-person');
+
 // Wikitree
 Route::get('wikitree/get-authcode', [WikitreeController::class, 'getAuthCode'])->name('wikitree.get-authcode');
 Route::get('wikitree/clientLoginResponse', [WikitreeController::class, 'getAuthCodeCallBack'])->name('wikitree.clientLoginResponse');
