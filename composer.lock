@@ -3805,16 +3805,16 @@
         },
         {
             "name": "laravel-liberu/helpers",
-            "version": "v2.9.4",
+            "version": "2.9.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/helpers.git",
-                "reference": "c0a7361e2642cff6a9eda6becde79aad02ffab72"
+                "reference": "2d3c3fb0218b1530145c86325184c66d4a8ae621"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/helpers/zipball/c0a7361e2642cff6a9eda6becde79aad02ffab72",
-                "reference": "c0a7361e2642cff6a9eda6becde79aad02ffab72",
+                "url": "https://api.github.com/repos/laravel-liberu/helpers/zipball/2d3c3fb0218b1530145c86325184c66d4a8ae621",
+                "reference": "2d3c3fb0218b1530145c86325184c66d4a8ae621",
                 "shasum": ""
             },
             "require": {
@@ -3857,9 +3857,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/helpers/issues",
-                "source": "https://github.com/laravel-liberu/helpers/tree/v2.9.4"
+                "source": "https://github.com/laravel-liberu/helpers/tree/2.9.5"
             },
-            "time": "2023-06-13T09:42:11+00:00"
+            "time": "2023-06-21T10:01:28+00:00"
         },
         {
             "name": "laravel-liberu/history-tracker",
@@ -5142,16 +5142,16 @@
         },
         {
             "name": "laravel-liberu/select",
-            "version": "v4.2.4",
+            "version": "v4.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/select.git",
-                "reference": "35c7fadeec37973c601a13f5e429c5f6d302d198"
+                "reference": "2b1778b3d7f5bc3ed2f6c08111e4cb7ba2265e8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/select/zipball/35c7fadeec37973c601a13f5e429c5f6d302d198",
-                "reference": "35c7fadeec37973c601a13f5e429c5f6d302d198",
+                "url": "https://api.github.com/repos/laravel-liberu/select/zipball/2b1778b3d7f5bc3ed2f6c08111e4cb7ba2265e8a",
+                "reference": "2b1778b3d7f5bc3ed2f6c08111e4cb7ba2265e8a",
                 "shasum": ""
             },
             "require": {
@@ -5199,9 +5199,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/select/issues",
-                "source": "https://github.com/laravel-liberu/select/tree/v4.2.4"
+                "source": "https://github.com/laravel-liberu/select/tree/v4.2.5"
             },
-            "time": "2023-06-12T07:57:23+00:00"
+            "time": "2023-06-21T07:26:43+00:00"
         },
         {
             "name": "laravel-liberu/sentry",
@@ -7488,16 +7488,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "3.3.1",
+            "version": "3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "9b5daeaffce5b926cac47923798bba91059e60e2"
+                "reference": "e2392369686d420ca32df3803de28b5d6f76867d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/9b5daeaffce5b926cac47923798bba91059e60e2",
-                "reference": "9b5daeaffce5b926cac47923798bba91059e60e2",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/e2392369686d420ca32df3803de28b5d6f76867d",
+                "reference": "e2392369686d420ca32df3803de28b5d6f76867d",
                 "shasum": ""
             },
             "require": {
@@ -7512,7 +7512,7 @@
                 "doctrine/couchdb": "~1.0@dev",
                 "elasticsearch/elasticsearch": "^7 || ^8",
                 "ext-json": "*",
-                "graylog2/gelf-php": "^1.4.2 || ^2@dev",
+                "graylog2/gelf-php": "^1.4.2 || ^2.0",
                 "guzzlehttp/guzzle": "^7.4.5",
                 "guzzlehttp/psr7": "^2.2",
                 "mongodb/mongodb": "^1.8",
@@ -7520,7 +7520,7 @@
                 "phpstan/phpstan": "^1.9",
                 "phpstan/phpstan-deprecation-rules": "^1.0",
                 "phpstan/phpstan-strict-rules": "^1.4",
-                "phpunit/phpunit": "^9.5.26",
+                "phpunit/phpunit": "^10.1",
                 "predis/predis": "^1.1 || ^2",
                 "ruflin/elastica": "^7",
                 "symfony/mailer": "^5.4 || ^6",
@@ -7573,7 +7573,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/3.3.1"
+                "source": "https://github.com/Seldaek/monolog/tree/3.4.0"
             },
             "funding": [
                 {
@@ -7585,7 +7585,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-06T13:46:10+00:00"
+            "time": "2023-06-21T08:46:11+00:00"
         },
         {
             "name": "nesbot/carbon",
