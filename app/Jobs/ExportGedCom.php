@@ -37,8 +37,8 @@ class ExportGedCom implements ShouldQueue
         $p_id = $this->user->person_id; // person_id
         $f_id = 0;                      // family_id
 
-        // $tenant = Manager::fromModel($this->user->company(), $this->user);
-        // $tenant->connect();
+        $tenant = Manager::fromModel($this->user->company(), $this->user);
+        $tenant->connect();
 
         $family = Family::where("husband_id", $this->user->id)
                 ->orWhere("wife_id", $this->user->id)
