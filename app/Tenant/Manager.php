@@ -35,7 +35,7 @@ class Manager
     public static function fromModel(Model $model, User $user): self
     {
         return app(static::class, [
-            'company_id' => $model->getKey(),
+            'tenant_id' => $model->getKey(),
             'user_id' => $user->getKey(),
             'database_name' => tenancy()->find($model->getKey())->tenancy_db_name ?? null,
         ]);
@@ -44,7 +44,7 @@ class Manager
     public static function tenant(string $company_id, string $user_id): self
     {
         return app(static::class, [
-            'company_id' => $company_id,
+            'tenant_id' => $company_id,
             'user_id' => $user_id,
         ]);
     }

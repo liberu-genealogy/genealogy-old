@@ -21,9 +21,9 @@ class Export extends Controller
         $file = str_replace("'", '', $file);
         $filePath = 'public/' . $file;
         $manager = Manager::fromModel($request->user()->company(), $request->user());
-        ExportGedCom::dispatch($filePath, $request->user());
+        ExportGedCom::dispatchSync($filePath, $request->user());
 
-	$filePath = $manager->storage()->path($filePath);
+	    $filePath = $manager->storage()->path($filePath);
         Log::info("Read gedfile from ". $manager->storage()->path($filePath));
         // var_dump($filePath);
         return json_encode([

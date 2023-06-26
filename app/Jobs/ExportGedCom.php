@@ -71,7 +71,7 @@ class ExportGedCom implements ShouldQueue
  //       $filePath = 'public/' . $this->file;
 //        $filePath = $manager->storage()->path($filePath);
 //	chmod_r('/home/genealogia/domains/api.genealogia.co.uk/genealogy/storage/tenants/');
-exec("chmod -R 0777 /home/genealogia/domains/api.genealogia.co.uk/genealogy/storage/tenants/");
+exec("chmod -R 0777 ". storage_path('/tenants/'));
 //exec ("find /home/genealogia/ap -type d -exec chmod 0750 {} +");
 //exec ("find /path/to/folder -type f -exec chmod 0644 {} +");
         // var_dump($path,'path');
