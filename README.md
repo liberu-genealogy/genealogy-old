@@ -9,7 +9,15 @@
 
 <!--/h-->
 ### Description
-* Genealogy is a browser-based application which makes it easier than ever for you to collect and process genealogical data. It uses a Laravel 10 backend with PHP 8.2 and the Laravel Liberu module collection. 
+* Genealogy is an innovative open source project built using Laravel 10 and PHP 8.2, aimed at revolutionizing the field of genealogy and family history research. Our project combines the power of Laravel's robust framework with the latest features and advancements offered by PHP 8.2 to create a cutting-edge platform for exploring and preserving ancestral heritage.
+
+At the core of our project is a sophisticated genealogy website built on Laravel 10, providing users with a seamless and intuitive experience as they delve into their family lineage. Leveraging Laravel's elegant syntax and comprehensive set of tools, we have developed a feature-rich application that enables users to create, manage, and explore their family trees with ease.
+
+Moreover, the open source nature of our project encourages collaboration and innovation within the genealogy community. Developers can leverage Laravel 10 and PHP 8.2 to extend the functionality of Genealogy, contribute enhancements, and customize the platform to suit their specific requirements. We actively support a thriving community of developers who utilize our open source code to create complementary tools and applications, fostering an ecosystem of continuous improvement and expansion.
+
+Licensed under MIT, use for any personal or commercial project.
+
+
 * You can create a family tree of your own either by importing data in any of several standard formats, or by manually entering the data yourself. 
 * We offer full API support for many family tree database and records forms. You can, for example, import and export Gedcom data and DNA matching results. 
 * Smart Matching is coming soon – allowing you to connect easily to resources on other servers. 
