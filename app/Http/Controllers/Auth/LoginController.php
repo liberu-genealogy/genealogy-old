@@ -60,7 +60,7 @@ class LoginController extends Controller
     /**
      * Obtain the user information from Provider.
      *
-     * @param $provider
+     * @param  $provider
      * @return JsonResponse
      */
     public function handleProviderCallback($provider)
@@ -264,7 +264,7 @@ class LoginController extends Controller
     }
 
     /**
-     * @param $provider
+     * @param  $provider
      * @return JsonResponse
      */
     protected function validateProvider($provider)
@@ -344,17 +344,16 @@ class LoginController extends Controller
             if ($main_company !== null && ! $user->isAdmin()) {
                 $c_id = $main_company->id;
             }
-        if(! $user->isAdmin()){
-
-	    $tenants = Tenant::find($main_company->id);
-}
-if ($user->isAdmin()) {
-$tenants = null;
-}
+            if (! $user->isAdmin()) {
+                $tenants = Tenant::find($main_company->id);
+            }
+            if ($user->isAdmin()) {
+                $tenants = null;
+            }
             if ($main_company === null && ! $user->isAdmin()) {
                 //   if (($main_company == null||$tenants=='') && ! $user->isAdmin()) {
                 //   if ($main_company == null) {
- 		   $this->create_company($user);
+                $this->create_company($user);
             } else {
                 if ($tenants && ! $user->isAdmin()) {
                     //                    $c = DB::connection('tenantdb',$tenants->tenancy_db_name)->table('users')->count();

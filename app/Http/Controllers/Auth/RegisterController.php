@@ -140,8 +140,8 @@ class RegisterController extends Controller
     }
 
 /**    protected function getSubscriptionPlan(Request $request)
-    {
-        return (new GetPlans())($request);
-    }
-**/
+ * {
+ * return (new GetPlans())($request);
+ * }.
+ **/
 }

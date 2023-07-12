@@ -17,13 +17,13 @@ class GetPlans extends Controller
     public function __invoke(Request $request)
     {
 //        $role = Role::where("name", "free")->first();
-        Stripe\Stripe::setApiKey(\Config::get("services.stripe.secret"));
+        Stripe\Stripe::setApiKey(\Config::get('services.stripe.secret'));
 
         $plans = Stripe\Plan::all();
 
         $result = [];
         foreach ($plans as $k => $plan) {
-            if (!$plan->active || $plan->amount == 0) {
+            if (! $plan->active || $plan->amount == 0) {
                 continue;
             }
 
@@ -31,52 +31,51 @@ class GetPlans extends Controller
              * FREE PLAN
              */
 
-/**
-            if ($k === 0) {
-                $row1 = [];
-                $row1["id"] = $role->id;
-                $row1["amount"] = 0;
-                $row1["nickname"] = $role->name;
-                $row1["title"] = $role->display_name;
-                $row1["subscribed"] = false;
-                $result[] = $row1;
-            }
-**/
+            /**
+             * if ($k === 0) {
+             * $row1 = [];
+             * $row1["id"] = $role->id;
+             * $row1["amount"] = 0;
+             * $row1["nickname"] = $role->name;
+             * $row1["title"] = $role->display_name;
+             * $row1["subscribed"] = false;
+             * $result[] = $row1;
+             * }.
+             **/
             if (empty($plan->nickname)) {
                 continue;
             }
             $row = [];
 
-            $row["id"] = $plan->id;
-            $row["amount"] = $plan->amount;
-            $row["title"] = $plan->nickname;
-            $row["nickname"] = $plan->title;
-            $row["interval"] = $plan->interval;
-            $row["trial_end"] = null;
+            $row['id'] = $plan->id;
+            $row['amount'] = $plan->amount;
+            $row['title'] = $plan->nickname;
+            $row['nickname'] = $plan->title;
+            $row['interval'] = $plan->interval;
+            $row['trial_end'] = null;
 
-            $row["features"] = [];
-            $row["features_missing"] = [];
-            $row["metadata"] = [
-                "featured" => false,
-                "description" => "Missing description!!!",
+            $row['features'] = [];
+            $row['features_missing'] = [];
+            $row['metadata'] = [
+                'featured' => false,
+                'description' => 'Missing description!!!',
             ];
 
             foreach ($plan->metadata->toArray() as $key => $value) {
                 if (preg_match('/^feature-missing[0-9]*$/', $key)) {
-                    $row["features_missing"][] = $value;
+                    $row['features_missing'][] = $value;
                 }
                 if (preg_match('/^feature[0-9]*$/', $key)) {
-                    $row["features"][] = $value;
+                    $row['features'][] = $value;
                 }
-                if ($key == "featured" && ($value == 1 || $value == "true")) {
-                    $row["metadata"]["featured"] = true;
+                if ($key == 'featured' && ($value == 1 || $value == 'true')) {
+                    $row['metadata']['featured'] = true;
                 }
             }
-            $row["subscribed"] = false;
+            $row['subscribed'] = false;
             $result[] = $row;
         }
 
         return $result;
     }
 }
-

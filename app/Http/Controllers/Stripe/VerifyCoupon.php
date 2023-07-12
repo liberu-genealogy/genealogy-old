@@ -19,7 +19,7 @@ class VerifyCoupon extends Controller
         $user = auth()->user();
 
         try {
-           $user->createAsStripeCustomer();
+            $user->createAsStripeCustomer();
         } catch(\Exception $e) {
         }
 
@@ -32,14 +32,14 @@ class VerifyCoupon extends Controller
                 if (strtolower($coupon->name) == strtolower($couponCode) && $coupon->valid) {
                     return [
                         'success' => true,
-                        'coupon' => $coupon
+                        'coupon' => $coupon,
                     ];
                 }
-            };
-
+            }
         } catch (\Stripe\Exception\InvalidRequestException $e) {
             return ['success' => false, 'message' => 'There was an error when checking your coupon.'];
         }
+
         return ['success' => false, 'message' => 'Coupon code is not valid'];
     }
 }

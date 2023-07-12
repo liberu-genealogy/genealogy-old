@@ -338,12 +338,12 @@ use App\Http\Controllers\Sources\Store as SourcesStore;
 use App\Http\Controllers\Sources\TableData as SourcesTableData;
 use App\Http\Controllers\Sources\Update as SourcesUpdate;
 use App\Http\Controllers\Stripe\GetCurrentSubscription as StripeGetCurrentSubscription;
-use App\Http\Controllers\Stripe\PaymentMethod as StripePaymentMethod;
 use App\Http\Controllers\Stripe\GetIntent as StripeGetIntent;
 use App\Http\Controllers\Stripe\GetPlans as StripeGetPlans;
+use App\Http\Controllers\Stripe\PaymentMethod as StripePaymentMethod;
 use App\Http\Controllers\Stripe\Subscribe as StripeSubscribe;
-use App\Http\Controllers\Stripe\VerifyCoupon as StripeVerifyCoupon;
 use App\Http\Controllers\Stripe\Unsubscribe as StripeUnsubscribe;
+use App\Http\Controllers\Stripe\VerifyCoupon as StripeVerifyCoupon;
 use App\Http\Controllers\Stripe\Webhook as StripeWebhook;
 use App\Http\Controllers\Subm\Create as SubmCreate;
 use App\Http\Controllers\Subm\Destroy as SubmDestroy;
@@ -825,7 +825,7 @@ Route::middleware(['api', 'auth', 'core', 'multitenant'])
             });
     });
 
-Route::middleware(['api', 'auth','core','multitenant'])
+Route::middleware(['api', 'auth', 'core', 'multitenant'])
     ->group(function () {
         Route::namespace('')
             ->prefix('gedcom')
@@ -835,13 +835,13 @@ Route::middleware(['api', 'auth','core','multitenant'])
             });
     });
 
-Route::middleware(['api', 'auth','multitenant'])
+Route::middleware(['api', 'auth', 'multitenant'])
     ->group(function () {
         Route::namespace('')
             ->prefix('gedcom')
             ->as('gedcom.')
             ->group(function () {
-		Route::get('export', GedcomExport::class)->name('export');
+                Route::get('export', GedcomExport::class)->name('export');
             });
     });
 
@@ -1498,7 +1498,7 @@ Route::middleware(['web', 'auth'])
 Route::middleware(['verifystripewebhook', 'api'])
     ->prefix('stripe')
     ->as('stripe.')
-    ->group(function() {
+    ->group(function () {
         Route::post('webhook', StripeWebhook::class);
     });
 

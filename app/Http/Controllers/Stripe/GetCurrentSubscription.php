@@ -19,7 +19,7 @@ class GetCurrentSubscription extends Controller
         $data['has_payment_method'] = $user->hasDefaultPaymentMethod();
         if ($user->subscribed('default')) {
             $subscription = $user->subscription();
-            
+
             $data['subscribed'] = $subscription->stripe_status != 'canceled' ? true : false;
 
             $data['plan_id'] = $subscription->stripe_price;
@@ -37,22 +37,20 @@ class GetCurrentSubscription extends Controller
                 try {
                     $coupon = $stripeSub->discount->coupon;
                     // check the type of coupon - it can be 'fixed_amount' or 'percent_off'
-                    if($coupon->amount_off) {
+                    if ($coupon->amount_off) {
                         $discountAmount = $coupon->amount_off;
                         $finalPrice = $price - $discountAmount;
-                    } else if($coupon->percent_off) {
-                        $discountAmount = ($price * $coupon->percent_off/100);
+                    } elseif ($coupon->percent_off) {
+                        $discountAmount = ($price * $coupon->percent_off / 100);
                         $finalPrice = $price - $discountAmount;
                     }
                 } catch (\Exception $e) {
-
                 }
 
                 $data['final_price'] = $finalPrice;
                 $data['discount_amount'] = $discountAmount;
             } catch (Exception $e) {
             }
-
         } else {
             $data['subscribed'] = false;
         }

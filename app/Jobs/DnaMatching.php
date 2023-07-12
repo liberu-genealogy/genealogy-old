@@ -52,7 +52,7 @@ class DnaMatching implements ShouldQueue
             $result = exec('python3 dna.py '.$this->var_name.' '.$dna->variable_name.' '.$this->file_name.' '.$dna->file_name);
 //            $resultData = json_decode($result, true, 512, JSON_THROW_ON_ERROR);
             $resultData = json_decode($result, true);
-	        // chmod(storage_path('/app/public/dna/output/shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_'.$this->file_name.'_'.$dna->file_name), 0777);
+            // chmod(storage_path('/app/public/dna/output/shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_'.$this->file_name.'_'.$dna->file_name), 0777);
 
             $dm = new DM();
             $dm->user_id = $user->id;
@@ -63,7 +63,7 @@ class DnaMatching implements ShouldQueue
             // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'.png';
             // $dm->image = 'shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
             $dm->image = env('APP_URL').'/storage/dna/output/shared_dna_'.$this->var_name.'_'.
-					$dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
+                    $dna->variable_name.'_0p75cM_1100snps_GRCh37_HapMap2.png';
             // $dm->file1 = 'discordant_snps_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
             $dm->file1 = 'discordant_snps_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';
             // $dm->file2 = 'shared_dna_one_chrom_'.$this->var_name.'_'.$dna->variable_name.'_GRCh37.csv';

@@ -41,28 +41,28 @@ class Migration implements ShouldQueue
         tenancy()->initialize($tenants);
         $em = $this->email;
         $na = $this->name;
-        $person = $tenants->run(fn() => Person::create([
+        $person = $tenants->run(fn () => Person::create([
             'email' => $em,
             'name' => $na,
 
         ]));
 
         $user_group = 1;
-        $user_group = $tenants->run(fn() => UserGroup::create([
+        $user_group = $tenants->run(fn () => UserGroup::create([
             'name' => 'Administrators',
             'description' => 'Administrator users group',
 
         ]));
         // get role_id
 //        $role = 1;
-        $role = $tenants->run(fn() => Role::create([
+        $role = $tenants->run(fn () => Role::create([
             'name' => 'free',
             'menu_id ' => null,
             'display_name' => 'Free',
             'description' => 'Free Role.',
         ]));
         $pa = $this->password;
-        $tenants->run(fn() => User::create([
+        $tenants->run(fn () => User::create([
             'email' => $em,
             'password' => Hash::make($pa),
             'person_id' => $person->id,
