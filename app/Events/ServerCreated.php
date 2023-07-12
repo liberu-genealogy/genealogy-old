@@ -23,8 +23,7 @@ class ServerCreated implements ShouldBroadcastNow
          * The user that created the server.
          */
         public $message
-    )
-    {
+    ) {
     }
 
     /**

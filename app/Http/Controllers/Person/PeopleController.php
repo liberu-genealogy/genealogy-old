@@ -43,7 +43,7 @@ class PeopleController extends Controller
 
         return response()->json([
             'response' => [
-                'docs' => $people->map(fn($person) => [
+                'docs' => $people->map(fn ($person) => [
                     'id' => $person->id,
                     'name' => $person->name,
                     'user_name' => $person->systemPerson?->name,

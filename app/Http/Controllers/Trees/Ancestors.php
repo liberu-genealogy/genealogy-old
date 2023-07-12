@@ -63,7 +63,7 @@ class Ancestors extends Controller
 
             return true;
         }
-        $own_unions = $families->pluck('id')->map(fn($id) => 'u'.$id)->toArray();
+        $own_unions = $families->pluck('id')->map(fn ($id) => 'u'.$id)->toArray();
         $person->setAttribute('own_unions', $own_unions);
         $person['generation'] = $nest;
         $this->persons[$start_id] = $person;

@@ -16,7 +16,7 @@ class SendActivationEmail extends Notification implements ShouldQueue
      *
      * SendActivationEmail constructor.
      *
-     * @param $token
+     * @param  $token
      */
     public function __construct(protected $token)
     {
