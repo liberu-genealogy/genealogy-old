@@ -71,7 +71,7 @@ Password: `password`
 By following these steps, you will successfully download the project, configure the necessary environment variables, install dependencies, generate a key, run the project, migrate the database, customize configurations if needed, and set up the client-side application. You can then log in to the project with the specified user credentials and begin exploring its features.
 
 <!--/h-->
-## Import example data
+## Example data
 
 * Prior to proceeding, ensure that the command "php artisan queue:work" is running. This command is essential for the proper functioning of the queue system.
 
@@ -98,7 +98,7 @@ However, we understand that not everyone is comfortable with submitting code dir
 Whether through pull requests or issues, your contributions play a vital role in making our project even better. We believe in fostering an inclusive and collaborative environment where everyone's ideas are valued and respected.
 
 We look forward to your involvement, and together, we can create a vibrant and thriving project. Thank you for considering contributing to our community!
-
+<!--/h-->
 ### License
 
 This project is licensed under the MIT license, granting you the freedom to utilize it for both personal and commercial projects. The MIT license ensures that you have the flexibility to adapt, modify, and distribute the project as per your needs. Feel free to incorporate it into your own ventures, whether they are personal endeavors or part of a larger commercial undertaking. The permissive nature of the MIT license empowers you to leverage this project without any unnecessary restrictions. Enjoy the benefits of this open and accessible license as you embark on your creative and entrepreneurial pursuits.
