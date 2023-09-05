@@ -23,7 +23,7 @@ jobs:
       SENTRY_URL: ${{ secrets.SENTRY_URL }}
       SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
@@ -53,7 +53,7 @@ jobs:
   phpunit:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
@@ -65,7 +65,7 @@ jobs:
   phpcpd:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
@@ -78,7 +78,7 @@ jobs:
   php-insights:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
@@ -90,7 +90,7 @@ jobs:
   security:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
@@ -104,7 +104,7 @@ jobs:
   migration:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: mirromutth/mysql-action@v1.1
         with:
           mysql database: ${{env.DB_DATABASE}}
@@ -122,7 +122,7 @@ jobs:
     if: ${{ github.event_name == 'deployment' || github.event_name == 'push' }}
     needs: [phpunit, phpcpd, migration, yarn, security, php-insights]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: 'Trig envoyer'
         run: |
           curl ${{ secrets.DEPLOY_WEBHOOK }}
