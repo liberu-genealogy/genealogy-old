@@ -6,14 +6,14 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class ValidateTypeRequest extends FormRequest
 {
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }
 
     public function rules()
     {
-        $type = $this->route('type');
+        $this->route('type');
 
         return [
             'description' => 'required|max:50',

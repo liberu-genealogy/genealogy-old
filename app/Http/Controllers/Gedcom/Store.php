@@ -24,7 +24,7 @@ class Store extends Controller
         ]);
         $slug = $request->slug;
         $file = $request->file('file');
-        \Log::info(json_encode($request->user()->company()));
+        \Log::info(json_encode($request->user()->company(), JSON_THROW_ON_ERROR));
         $manager = Manager::fromModel($request->user()->company(), $request->user());
         $path = $manager->storage()->putFile('imports', $file);
 

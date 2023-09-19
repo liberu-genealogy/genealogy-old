@@ -6,14 +6,14 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class ValidateSourceRequest extends FormRequest
 {
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }
 
     public function rules()
     {
-        $source = $this->route('source');
+        $this->route('source');
 
         return [
             'description' => 'required|max:50',

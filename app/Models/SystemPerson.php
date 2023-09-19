@@ -6,7 +6,7 @@ class SystemPerson extends Person
 {
     protected $table = 'people';
 
-    public function getConnectionName()
+    public function getConnectionName(): string
     {
         return 'mysql';
     }

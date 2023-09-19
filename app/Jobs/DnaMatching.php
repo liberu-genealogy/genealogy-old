@@ -39,11 +39,8 @@ class DnaMatching implements ShouldQueue
         $dnas = Dna::where('variable_name', '!=', $this->var_name)->get();
         $mpath = app_path();
 
-        $output = null;
-        $retval = null;
-
         foreach ($dnas as $dna) {
-            Log::info(json_encode($dna));
+            Log::info(json_encode($dna, JSON_THROW_ON_ERROR));
             Log::info(storage_path('/app/public/dna/output/shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_'.$this->file_name.'_'.$dna->file_name));
             //            system('/usr/bin/python3 /home/genealogia/public_html/dna.py ' . $this->var_name . ' ' . $dna->variable_name . ' ' . '/home/genealogia/public_html/storage/app/dna/'. $this->file_name . ' ' . '/home/genealogia/public_html/storage/app/dna/'. $dna->file_name);
             // chdir('/home/familytree365/domains/api.familytree365.com/genealogy/app');
@@ -51,7 +48,7 @@ class DnaMatching implements ShouldQueue
             // exec('python dna.py '.$this->var_name.' '.$dna->variable_name.' '.$this->file_name.' '.$dna->file_name, $dna_output);
             $result = exec('python3 dna.py '.$this->var_name.' '.$dna->variable_name.' '.$this->file_name.' '.$dna->file_name);
 //            $resultData = json_decode($result, true, 512, JSON_THROW_ON_ERROR);
-            $resultData = json_decode($result, true);
+            $resultData = json_decode($result, true, 512, JSON_THROW_ON_ERROR);
             // chmod(storage_path('/app/public/dna/output/shared_dna_'.$this->var_name.'_'.$dna->variable_name.'_'.$this->file_name.'_'.$dna->file_name), 0777);
 
             $dm = new DM();

@@ -6,14 +6,14 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class ValidateAuthorRequest extends FormRequest
 {
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }
 
     public function rules()
     {
-        $author = $this->route('author');
+        $this->route('author');
 
         return [
             'description' => 'required|max:50',

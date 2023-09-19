@@ -19,7 +19,7 @@ class ActivationRepository
      */
     public function createTokenAndSendEmail(User $user)
     {
-        $activations = Activation::where('user_id', $user->id)
+        Activation::where('user_id', $user->id)
             ->where('created_at', '>=', Carbon::now()->subHours(config('settings.timePeriod')))
             ->count();
 

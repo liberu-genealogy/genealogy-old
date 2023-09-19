@@ -22,7 +22,7 @@ class GetPlans extends Controller
         $plans = Stripe\Plan::all();
 
         $result = [];
-        foreach ($plans as $k => $plan) {
+        foreach ($plans as $plan) {
             if (! $plan->active || $plan->amount == 0) {
                 continue;
             }
@@ -62,10 +62,10 @@ class GetPlans extends Controller
             ];
 
             foreach ($plan->metadata->toArray() as $key => $value) {
-                if (preg_match('/^feature-missing[0-9]*$/', $key)) {
+                if (preg_match('/^feature-missing\d*$/', (string) $key)) {
                     $row['features_missing'][] = $value;
                 }
-                if (preg_match('/^feature[0-9]*$/', $key)) {
+                if (preg_match('/^feature\d*$/', (string) $key)) {
                     $row['features'][] = $value;
                 }
                 if ($key == 'featured' && ($value == 1 || $value == 'true')) {

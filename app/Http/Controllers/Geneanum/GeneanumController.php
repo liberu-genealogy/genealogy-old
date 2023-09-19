@@ -9,7 +9,6 @@ class GeneanumController extends Controller
 {
     public function burials(Request $request)
     {
-        $authCode = $request->authcode;
         $client = new \GuzzleHttp\Client();
 
         $URI = 'https://static.geneanum.com/libs/grid/malte_sepulture.php';
@@ -24,8 +23,8 @@ class GeneanumController extends Controller
         ],
         ]);
 
-        $statusCode = $response->getStatusCode();
-        $content = $response->getBody();
+        $response->getStatusCode();
+        $response->getBody();
         $persons = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
 
         return response()->json($persons);
@@ -33,7 +32,6 @@ class GeneanumController extends Controller
 
     public function baptism(Request $request)
     {
-        $authCode = $request->authcode;
         $client = new \GuzzleHttp\Client();
         $URI = 'https://static.geneanum.com/libs/grid/malte_bapteme.php';
 
@@ -47,8 +45,8 @@ class GeneanumController extends Controller
         ],
         ]);
 
-        $statusCode = $response->getStatusCode();
-        $content = $response->getBody();
+        $response->getStatusCode();
+        $response->getBody();
         $persons = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
 
         return response()->json($persons);
@@ -56,7 +54,6 @@ class GeneanumController extends Controller
 
     public function mariage(Request $request)
     {
-        $authCode = $request->authcode;
         $client = new \GuzzleHttp\Client();
 
         $URI = 'https://static.geneanum.com/libs/grid/malte_mariage.php';
@@ -73,8 +70,8 @@ class GeneanumController extends Controller
         ],
         ]);
 
-        $statusCode = $response->getStatusCode();
-        $content = $response->getBody();
+        $response->getStatusCode();
+        $response->getBody();
         $persons = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
 
         return response()->json($persons);

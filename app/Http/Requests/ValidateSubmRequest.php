@@ -6,14 +6,14 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class ValidateSubmRequest extends FormRequest
 {
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }
 
     public function rules()
     {
-        $subm = $this->route('subm');
+        $this->route('subm');
 
         return [
 

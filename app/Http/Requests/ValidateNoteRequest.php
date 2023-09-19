@@ -6,14 +6,14 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class ValidateNoteRequest extends FormRequest
 {
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }
 
     public function rules()
     {
-        $note = $this->route('note');
+        $this->route('note');
 
         return [
             'name' => 'required|max:50',

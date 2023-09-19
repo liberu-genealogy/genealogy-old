@@ -6,14 +6,14 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class ValidateSourceDataEvenRequest extends FormRequest
 {
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }
 
     public function rules()
     {
-        $sourcedataeven = $this->route('sourcedataeven');
+        $this->route('sourcedataeven');
 
         return [
 

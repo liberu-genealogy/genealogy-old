@@ -32,7 +32,7 @@ class Tenant
         return config('database.connections.'.Connections::Tenant.'.database');
     }
 
-    private static function tenantId()
+    private static function tenantId(): int
     {
         return (int) Str::replaceFirst(Connections::Tenant, '', self::tenantDatabase());
     }

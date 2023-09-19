@@ -46,8 +46,6 @@ class Migration implements ShouldQueue
             'name' => $na,
 
         ]));
-
-        $user_group = 1;
         $user_group = $tenants->run(fn () => UserGroup::create([
             'name' => 'Administrators',
             'description' => 'Administrator users group',

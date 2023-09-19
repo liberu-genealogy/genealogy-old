@@ -16,7 +16,6 @@ class OpenArchController extends Controller
 
     public function searchPerson(Request $request)
     {
-        $authCode = $request->authcode;
         $client = new \GuzzleHttp\Client();
 
         $response = $client->request('POST', $this->openArchRecordsApi.'/search.json', ['query' => [
@@ -26,8 +25,8 @@ class OpenArchController extends Controller
         ],
         ]);
 
-        $statusCode = $response->getStatusCode();
-        $content = $response->getBody();
+        $response->getStatusCode();
+        $response->getBody();
         $persons = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
 
         return response()->json($persons);

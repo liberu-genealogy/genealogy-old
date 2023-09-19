@@ -94,9 +94,9 @@ class Manager
                 $this->config->set('database.default', 'tenant');
             }
 
-            return count($this->database->select(<<<SQL
+            return $this->database->select(<<<SQL
         SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '{$this->partition}';
-        SQL)) > 0;
+        SQL) !== [];
         } catch (\PDOException) {
             return false;
         }

@@ -20,8 +20,7 @@ class Multitenant
 //        Log::debug();
 
         $user = \Auth::user();
-//        Log::debug($user->role_id.'-roleId');
-        $conn = \Session::get('conn');
+\Session::get('conn');
         //$value = \Session::get('db');
         if ($user->isAdmin()) {
             $key = 'database.connections.mysql.database';
@@ -42,9 +41,8 @@ class Multitenant
 //            Log::debug('Avatar-'.$user->avatar);
 //            Log::debug($company);
         session()->put('db', $value);
-        $x = config([$key => $value]);
-        //if ($conn === 'tenant') {
-        $databaseName = \DB::connection('tenantdb')->getDatabaseName();
+        config([$key => $value]);
+        \DB::connection('tenantdb')->getDatabaseName();
         // Log::debug('DB-'.$databaseName);
 
         //Family::setConnection();
@@ -57,11 +55,5 @@ class Multitenant
             $request->request->remove('_tenantId');
         }*/
         return $next($request);
-    }
-
-    private function ownerRequestsTenant($request)
-    {
-        return $request->user()->isSupervisor();
-        // && $request->has('_tenantId');
     }
 }

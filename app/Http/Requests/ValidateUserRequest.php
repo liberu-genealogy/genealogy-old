@@ -9,7 +9,7 @@ use LaravelEnso\Core\Rules\DistinctPassword;
 
 class ValidateUserRequest extends FormRequest
 {
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }

@@ -38,10 +38,8 @@ class ServerCreated implements ShouldBroadcastNow
 
     /**
      * The event's broadcast name.
-     *
-     * @return string
      */
-    public function broadcastAs()
+    public function broadcastAs(): string
     {
         return 'TestEvent';
     }

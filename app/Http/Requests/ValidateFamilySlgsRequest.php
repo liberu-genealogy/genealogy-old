@@ -6,14 +6,14 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class ValidateFamilySlgsRequest extends FormRequest
 {
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }
 
     public function rules()
     {
-        $familyslgs = $this->route('familyslgs');
+        $this->route('familyslgs');
 
         return [
 

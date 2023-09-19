@@ -4,6 +4,4 @@
 use Illuminate\Support\Facades\Broadcast;
 
 // Broadcast::channel('user.{user}', Notification::class);
-Broadcast::channel('chat', function () {
-    return 'user';
-});
+Broadcast::channel('chat', fn(): string => 'user');

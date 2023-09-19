@@ -65,7 +65,7 @@ class Import extends Controller
         // remove temp file after importing
         Storage::delete('files/temp/'.$fileName);
 
-        if (count($errors) > 0) {
+        if ($errors !== []) {
             return ['errors' => $errors];
         }
 
@@ -78,7 +78,7 @@ class Import extends Controller
     {
         $fileName = 'temp'.uniqid().'.xml';
 
-        $file = $request->file('file')->storeAs('/files/temp', $fileName);
+        $request->file('file')->storeAs('/files/temp', $fileName);
 
         $xmlDataString = file_get_contents(storage_path('app/files/temp/'.$fileName));
         $xmlObject = simplexml_load_string($xmlDataString);

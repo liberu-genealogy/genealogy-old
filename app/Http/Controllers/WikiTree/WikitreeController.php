@@ -35,7 +35,7 @@ class WikitreeController extends Controller
         return redirect($redirectTo);
     }
 
-    public function getAuthCodeCallBack(Request $request)
+    public function getAuthCodeCallBack(Request $request): string
     {
         return 'Auth code recieved :: '.$request->authcode;
     }
@@ -76,7 +76,7 @@ class WikitreeController extends Controller
             $ancestors = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
 
             $person['ancestors'] = $ancestors;
-            array_push($newPersons, $person);
+            $newPersons[] = $person;
         }
 
         return response()->json($newPersons);

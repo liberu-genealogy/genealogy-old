@@ -28,8 +28,8 @@ class GenealogyCloudController extends Controller
             ],
         ]);
 
-        $statusCode = $response->getStatusCode();
-        $content = $response->getBody();
+        $response->getStatusCode();
+        $response->getBody();
         $persons = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
 
         return response()->json($persons);

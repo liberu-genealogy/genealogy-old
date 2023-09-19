@@ -26,6 +26,10 @@ use LaravelEnso\UserGroups\Models\UserGroup;
 
 class LoginController extends Controller
 {
+    /**
+     * @var mixed
+     */
+    public $maxAttempts;
     use AuthenticatesUsers, Logout, Login {
         Logout::logout insteadof AuthenticatesUsers;
         Login::login insteadof AuthenticatesUsers;
@@ -196,13 +200,13 @@ class LoginController extends Controller
 
     public function confirmSubscription(Request $request)
     {
-        $params = $request->all();
+        $request->all();
         $user = $this->loggableUser($request);
 
         return response()->json($user);
     }
 
-    protected function attemptLogin(Request $request)
+    protected function attemptLogin(Request $request): bool
     {
         $this->user = $this->loggableUser($request);
 
@@ -296,11 +300,6 @@ class LoginController extends Controller
          * ]);.
          */
         $company_id = $company->id;
-        $user_id = $user->id;
-        $person_name = $user->person->name;
-        $user_email = $user->email;
-
-        $db = $company_id;
         //                \Log::debug('CreateDBs----------------------'.$company);
         CreateDBs::dispatch($company);
         //                \Log::debug('Migration----------------------'.$company);
@@ -354,33 +353,29 @@ class LoginController extends Controller
                 //   if (($main_company == null||$tenants=='') && ! $user->isAdmin()) {
                 //   if ($main_company == null) {
                 $this->create_company($user);
-            } else {
-                if ($tenants && ! $user->isAdmin()) {
-                    //                    $c = DB::connection('tenantdb',$tenants->tenancy_db_name)->table('users')->count();
-                    $company = \App\Models\Company::find($main_company->id);
-                    //                    \Log::debug('Database----------------------'.$main_company->id);
-
-                    tenancy()->initialize($tenants);
-                    $tenants->run(function () use ($company, $user) {
-                        //  $company->save();
-                        $c = User::count();
-                        if ($c === 0) {
-                            //  \Log::debug('Run Migration----------------------');
-                            return Migration::dispatch($company, $user->name, $user->email, $user->password);
-                        }
-                        // \Log::debug($company->id.-'users----------------------'.$c);
-                    });
-                    tenancy()->end();
-
-                    return $user;
-                }
+            } elseif ($tenants && ! $user->isAdmin()) {
+                //                    $c = DB::connection('tenantdb',$tenants->tenancy_db_name)->table('users')->count();
+                $company = \App\Models\Company::find($main_company->id);
+                //                    \Log::debug('Database----------------------'.$main_company->id);
+                tenancy()->initialize($tenants);
+                $tenants->run(function () use ($company, $user) {
+                    //  $company->save();
+                    $c = User::count();
+                    if ($c === 0) {
+                        //  \Log::debug('Run Migration----------------------');
+                        return Migration::dispatch($company, $user->name, $user->email, $user->password);
+                    }
+                    // \Log::debug($company->id.-'users----------------------'.$c);
+                });
+                tenancy()->end();
+                return $user;
             }
         }
 
         return $user;
     }
 
-    private function loggableSocialUser($user)
+    private function loggableSocialUser($user): bool
     {
         $company = $user->person->company();
         $tenant = false;

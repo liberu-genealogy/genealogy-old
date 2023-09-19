@@ -32,10 +32,8 @@ class MessageSent implements ShouldBroadcastNow
 
     /**
      * Determine if this event should broadcast.
-     *
-     * @return bool
      */
-    public function broadcastWhen()
+    public function broadcastWhen(): bool
     {
         // return $this->conversation->status == 1;
         return true;
@@ -65,7 +63,7 @@ class MessageSent implements ShouldBroadcastNow
         return new PrivateChannel('chat');
     }
 
-    public function broadcastAs()
+    public function broadcastAs(): string
     {
         return 'MessageSent';
     }

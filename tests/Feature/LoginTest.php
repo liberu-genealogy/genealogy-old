@@ -19,8 +19,8 @@ class LoginTest extends TestCase
     private const WrongPassword = 'wrong_password';
     private const SpaUrl = 'spa.test';
 
-    private $permissionGroup = 'administration.users';
-    private $testModel;
+    private string $permissionGroup = 'administration.users';
+    private \App\Models\User $testModel;
     private $spaGuard;
 
     protected function setUp(): void

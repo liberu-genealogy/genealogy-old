@@ -30,7 +30,7 @@ class CreateDBs implements ShouldQueue
      */
     public function handle()
     {
-        $tenant = Tenants::create([
+        Tenants::create([
             'id' => $this->tenant->id,
         ]);
     }

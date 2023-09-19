@@ -473,25 +473,25 @@ use LaravelEnso\ControlPanelApi\Http\Controllers\Statistics as ControlPanelStati
 
 // use App\Http\Controllers\Families\ExportGramps as FamiliesExportGramps;
 
-Route::get('gramps-export', [ExportGramps::class, 'export']);
-Route::post('gramps-import', [ImportGramps::class, 'import']);
+Route::get('gramps-export', fn(\Illuminate\Http\Request $request) => (new \App\Http\Controllers\GrampsXml\Export())->export($request));
+Route::post('gramps-import', fn(\Illuminate\Http\Request $request) => (new \App\Http\Controllers\GrampsXml\Import())->import($request));
 
 Route::namespace('Auth')
     ->middleware('api')
     ->group(function () {
         Route::middleware('guest')->group(function () {
-            Route::get('login/{provider}', [LoginController::class, 'redirectToProvider'])->name('login.provider');
-            Route::get('login/{provider}/callback', [LoginController::class, 'handleProviderCallback'])->name('login.provider.callback');
+            Route::get('login/{provider}', fn($provider) => (new \App\Http\Controllers\Auth\LoginController())->redirectToProvider($provider))->name('login.provider');
+            Route::get('login/{provider}/callback', fn($provider): \App\Http\Controllers\Auth\JsonResponse => (new \App\Http\Controllers\Auth\LoginController())->handleProviderCallback($provider))->name('login.provider.callback');
 
-            Route::post('login', [LoginController::class, 'login'])->name('login');
+            Route::post('login', fn(\Illuminate\Http\Request $request) => (new \App\Http\Controllers\Auth\LoginController())->login($request))->name('login');
         });
 
         Route::middleware('auth')->group(function () {
-            Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+            Route::post('logout', fn(\Illuminate\Http\Request $request) => (new \App\Http\Controllers\Auth\LoginController())->logout($request))->name('logout');
         });
-        Route::post('confirm_checkout', [LoginController::class, 'confirmSubscription']);
+        Route::post('confirm_checkout', fn(\Illuminate\Http\Request $request) => (new \App\Http\Controllers\Auth\LoginController())->confirmSubscription($request));
 
-        Route::post('register', [RegisterController::class, 'create']);
+        Route::post('register', fn(\Illuminate\Http\Request $request) => (new \App\Http\Controllers\Auth\RegisterController())->create($request));
         Route::get('get-subscription-plan', [RegisterController::class, 'getSubscriptionPlan']);
         Route::post('verify', [RegisterController::class, 'verify_user']);
     });
@@ -507,25 +507,25 @@ Route::middleware(['web', 'auth', 'multitenant'])
     ->namespace('')
     ->prefix('dashboard')->as('dashboard.')
     ->group(function () {
-        Route::get('line', [ChartController::class, 'line'])
+        Route::get('line', fn() => (new \App\Http\Controllers\Dashboard\ChartController())->line())
             ->name('line');
-        Route::get('bar', [ChartController::class, 'bar'])
+        Route::get('bar', fn() => (new \App\Http\Controllers\Dashboard\ChartController())->bar())
             ->name('bar');
-        Route::get('pie', [ChartController::class, 'pie'])
+        Route::get('pie', fn() => (new \App\Http\Controllers\Dashboard\ChartController())->pie())
             ->name('pie');
-        Route::get('doughnut', [ChartController::class, 'doughnut'])
+        Route::get('doughnut', fn() => (new \App\Http\Controllers\Dashboard\ChartController())->doughnut())
             ->name('doughnut');
-        Route::get('radar', [ChartController::class, 'radar'])
+        Route::get('radar', fn() => (new \App\Http\Controllers\Dashboard\ChartController())->radar())
             ->name('radar');
-        Route::get('polar', [ChartController::class, 'polar'])
+        Route::get('polar', fn() => (new \App\Http\Controllers\Dashboard\ChartController())->polar())
             ->name('polar');
-        Route::get('bubble', [ChartController::class, 'bubble'])
+        Route::get('bubble', fn() => (new \App\Http\Controllers\Dashboard\ChartController())->bubble())
             ->name('bubble');
-        Route::post('changedb', [ChartController::class, 'changedb'])
+        Route::post('changedb', fn(\Illuminate\Http\Request $request) => (new \App\Http\Controllers\Dashboard\ChartController())->changedb($request))
             ->name('changedb');
-        Route::post('getdb', [ChartController::class, 'getDB'])
+        Route::post('getdb', fn() => (new \App\Http\Controllers\Dashboard\ChartController())->getDB())
             ->name('getdb');
-        Route::get('trial', [ChartController::class, 'trial'])
+        Route::get('trial', fn() => (new \App\Http\Controllers\Dashboard\ChartController())->trial())
             ->name('trial');
         //        Route::post('changeCompany', [ChartController::class, 'changeCompany'])
         //            ->name('changeCompany');
@@ -851,40 +851,40 @@ Route::post('gedcom/progress', '\App\Http\Controllers\Gedcom\Progress@index')->n
 Route::get('records-api/search-person', [RecordsAPIController::class, 'searchPerson'])->name('records-api.search-person');
 
 // Wikitree
-Route::get('wikitree/get-authcode', [WikitreeController::class, 'getAuthCode'])->name('wikitree.get-authcode');
-Route::get('wikitree/clientLoginResponse', [WikitreeController::class, 'getAuthCodeCallBack'])->name('wikitree.clientLoginResponse');
-Route::get('wikitree/search-person', [WikitreeController::class, 'searchPerson'])->name('wikitree.search-person');
+Route::get('wikitree/get-authcode', fn(\Illuminate\Http\Request $request) => (new \App\Http\Controllers\WikiTree\WikitreeController())->getAuthCode($request))->name('wikitree.get-authcode');
+Route::get('wikitree/clientLoginResponse', fn(\Illuminate\Http\Request $request): string => (new \App\Http\Controllers\WikiTree\WikitreeController())->getAuthCodeCallBack($request))->name('wikitree.clientLoginResponse');
+Route::get('wikitree/search-person', fn(\Illuminate\Http\Request $request) => (new \App\Http\Controllers\WikiTree\WikitreeController())->searchPerson($request))->name('wikitree.search-person');
 
 // OpenArch
 Route::prefix('open-arch')->group(function () {
-    Route::get('search-person', [OpenArchController::class, 'searchPerson'])->name('search-person');
+    Route::get('search-person', fn(\Illuminate\Http\Request $request) => (new \App\Http\Controllers\Openarch\OpenArchController())->searchPerson($request))->name('search-person');
 });
 
 // Member Tree
 Route::prefix('member-tree')->group(function () {
-    Route::get('search-person', [PeopleController::class, 'searchPerson'])->name('search-person');
+    Route::get('search-person', fn(\Illuminate\Http\Request $request) => (new \App\Http\Controllers\Person\PeopleController())->searchPerson($request))->name('search-person');
 });
 
 // OpenArch
 Route::prefix('family-search')->group(function () {
-    Route::get('search', [FamilySearchController::class, 'searchPerson'])->name('search-person');
+    Route::get('search', fn(\Illuminate\Http\Request $request) => (new \App\Http\Controllers\FamilySearch\FamilySearchController())->searchPerson($request))->name('search-person');
 });
 
 // UK national Arc
 Route::prefix('uk-national-arch')->group(function () {
-    Route::get('search-person', [NationalArchController::class, 'searchPerson'])->name('search-person');
+    Route::get('search-person', fn(\Illuminate\Http\Request $request) => (new \App\Http\Controllers\NationalArch\NationalArchController())->searchPerson($request))->name('search-person');
 });
 
 // Genealogy Cloud
 Route::prefix('genealogy-cloud')->group(function () {
-    Route::get('search-person', [GenealogyCloudController::class, 'searchPerson'])->name('search-person');
+    Route::get('search-person', fn(\Illuminate\Http\Request $request) => (new \App\Http\Controllers\GenealogyCloud\GenealogyCloudController())->searchPerson($request))->name('search-person');
 });
 
 // Geneanum
 Route::prefix('geneanum')->group(function () {
-    Route::get('search-person/{nation}/burials', [GeneanumController::class, 'burials']);
-    Route::get('search-person/{nation}/mariage', [GeneanumController::class, 'mariage']);
-    Route::get('search-person/{nation}/baptism', [GeneanumController::class, 'baptism']);
+    Route::get('search-person/{nation}/burials', fn(\Illuminate\Http\Request $request) => (new \App\Http\Controllers\Geneanum\GeneanumController())->burials($request));
+    Route::get('search-person/{nation}/mariage', fn(\Illuminate\Http\Request $request) => (new \App\Http\Controllers\Geneanum\GeneanumController())->mariage($request));
+    Route::get('search-person/{nation}/baptism', fn(\Illuminate\Http\Request $request) => (new \App\Http\Controllers\Geneanum\GeneanumController())->baptism($request));
 });
 
 Route::middleware(['api', 'auth', 'core', 'multitenant'])
@@ -1489,7 +1489,7 @@ Route::middleware(['web', 'auth'])
         Route::get('current-subscription', StripeGetCurrentSubscription::class);
         Route::get('intent', StripeGetIntent::class);
         Route::get('plans', StripeGetPlans::class);
-        Route::post('update-default-payment-method', [StripePaymentMethod::class, 'updateDefaultPaymentMethod']);
+        Route::post('update-default-payment-method', fn(\Illuminate\Http\Request $request) => (new \App\Http\Controllers\Stripe\PaymentMethod())->updateDefaultPaymentMethod($request));
         Route::post('subscribe', StripeSubscribe::class);
         Route::post('verify-coupon', StripeVerifyCoupon::class);
         Route::post('unsubscribe', StripeUnsubscribe::class);
@@ -1520,20 +1520,20 @@ Route::middleware(['web', 'auth'])
     ->prefix('subscription')
     ->as('subscription.')
     ->group(function () {
-        Route::get('plans', [PlanController::class, 'getPlans']);
+        Route::get('plans', fn(\Illuminate\Http\Request $request): \Illuminate\Http\Response => (new \App\Http\Controllers\Subscription\PlanController())->getPlans($request));
     });
 
 Route::middleware(['auth', 'api'])
     ->group(function () {
-        Route::get('get_companies', [CompanyIndex::class, 'getCompany']);
-        Route::get('get_person', [PersonaliasIndex::class, 'getPerson']);
-        Route::get('trees/options', [TreesManage::class, 'getOptions']);
+        Route::get('get_companies', fn() => (new \App\Http\Controllers\Companies\Index())->getCompany());
+        Route::get('get_person', fn() => (new \App\Http\Controllers\Personalias\Index())->getPerson());
+        Route::get('trees/options', fn(\Illuminate\Http\Request $request) => (new \App\Http\Controllers\Trees\Manage())->getOptions($request));
     });
 
 Route::middleware(['auth', 'api', 'multitenant'])
     ->group(function () {
         Route::get('persons', GetPersons::class);
-        Route::get('getPersons', [GetPersons::class, 'getPersons']);
+        Route::get('getPersons', fn() => (new \App\Http\Controllers\Person\GetPersons())->getPersons());
     });
 
 Route::namespace('')
@@ -1541,9 +1541,9 @@ Route::namespace('')
         Route::prefix('social/chats')
             ->as('social.chats.')
             ->group(function () {
-                Route::get('/', [ChatsController::class, 'fetchConnects']);
-                Route::post('/', [ChatsController::class, 'store']);
-                Route::post('/{id}', [ChatsController::class, 'sendMessage']);
+                Route::get('/', fn(): \App\Http\Controllers\Private\Connects => (new \App\Http\Controllers\Private\ChatsController())->fetchConnects());
+                Route::post('/', fn(\Illuminate\Http\Request $request): \Illuminate\Http\Response => (new \App\Http\Controllers\Private\ChatsController())->store($request));
+                Route::post('/{id}', fn(\Illuminate\Http\Request $request, $id): \App\Http\Controllers\Private\Response => (new \App\Http\Controllers\Private\ChatsController())->sendMessage($request, $id));
                 Route::get('/options', PeopleSystemOptions::class)->name('options');
             });
     });

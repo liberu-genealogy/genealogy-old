@@ -8,8 +8,6 @@ use LaravelEnso\People\Http\Requests\ValidatePerson as EnsoPerson;
 
 class ValidatePersonRequest extends EnsoPerson
 {
-    private readonly Collection $companies;
-
     public function authorize()
     {
         return $this->emailUnchagedForUser();

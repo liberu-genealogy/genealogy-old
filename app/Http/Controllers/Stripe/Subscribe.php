@@ -27,31 +27,25 @@ class Subscribe extends Controller
 
         if ($request->has('payment_method')) {
             $paymentMethod = $request->payment_method;
-
             $subscription = $user->newSubscription('default', $plan_id)
                                  ->trialDays(14);
-
             if ($couponId = $request->input('coupon_id')) {
                 $subscription->withCoupon($couponId);
             }
-
             $subscription->create($paymentMethod);
-
             $user->notify(new SubscribeSuccessfully($plan_id));
-        } else {
-            if ($user->subscribed('default')) {
-                $subscription = $user->subscription();
-                if ($subscription->stripe_status == 'canceled') {
-                    $user->newSubscription('default', $plan_id)
-                        ->trialDays(14)
-                        ->create();
-                    $user->notify(new SubscribeSuccessfully($plan_id));
-                } else {
-                    $user->subscription('default')->swap($plan_id);
-                }
+        } elseif ($user->subscribed('default')) {
+            $subscription = $user->subscription();
+            if ($subscription->stripe_status == 'canceled') {
+                $user->newSubscription('default', $plan_id)
+                    ->trialDays(14)
+                    ->create();
+                $user->notify(new SubscribeSuccessfully($plan_id));
             } else {
                 $user->subscription('default')->swap($plan_id);
             }
+        } else {
+            $user->subscription('default')->swap($plan_id);
         }
 
         return ['success' => true];

@@ -84,12 +84,12 @@ class Person extends CorePerson
         return $this->hasMany(Family::class, 'wife_id');
     }
 
-    public function fullname()
+    public function fullname(): string
     {
         return $this->givn.' '.$this->surn;
     }
 
-    public function getSex()
+    public function getSex(): string
     {
         if ($this->sex === 'F') {
             return 'Female';
@@ -174,10 +174,8 @@ class Person extends CorePerson
         }
 
         file_put_contents(storage_path('app/public/file.txt'), $this->connection);
-        if ($this->connection !== 'tenant') {
-            if (Auth::check()) {
-                $this->updated_by = Auth::id();
-            }
+        if ($this->connection !== 'tenant' && Auth::check()) {
+            $this->updated_by = Auth::id();
         }
     }
 }

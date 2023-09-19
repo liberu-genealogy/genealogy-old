@@ -20,7 +20,7 @@ class GetCurrentSubscription extends Controller
         if ($user->subscribed('default')) {
             $subscription = $user->subscription();
 
-            $data['subscribed'] = $subscription->stripe_status != 'canceled' ? true : false;
+            $data['subscribed'] = $subscription->stripe_status != 'canceled';
 
             $data['plan_id'] = $subscription->stripe_price;
             $data['trial_end'] = null;
@@ -44,12 +44,12 @@ class GetCurrentSubscription extends Controller
                         $discountAmount = ($price * $coupon->percent_off / 100);
                         $finalPrice = $price - $discountAmount;
                     }
-                } catch (\Exception $e) {
+                } catch (\Exception) {
                 }
 
                 $data['final_price'] = $finalPrice;
                 $data['discount_amount'] = $discountAmount;
-            } catch (Exception $e) {
+            } catch (Exception) {
             }
         } else {
             $data['subscribed'] = false;

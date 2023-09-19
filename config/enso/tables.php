@@ -202,7 +202,7 @@ return [
     'export' => [
         'folder' => 'exports',
         'timeout' => 60 * 60,
-        'sheetLimit' => 1000000,
+        'sheetLimit' => 1_000_000,
         'notifications' => ['mail', 'broadcast', 'database'],
     ],
 
@@ -238,7 +238,7 @@ return [
     | greatly improved. The info can still be called on demand.
      */
 
-    'fullInfoRecordLimit' => 1000000,
+    'fullInfoRecordLimit' => 1_000_000,
 
     /*
     |--------------------------------------------------------------------------

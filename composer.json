@@ -45,6 +45,7 @@
         "barryvdh/laravel-debugbar": "^3.5",
         "barryvdh/laravel-ide-helper": "^2.10",
         "brianium/paratest": "^7.1",
+        "driftingly/rector-laravel": "*",
         "fakerphp/faker": "^1.15",
         "filp/whoops": "^2.1",
         "laravel-liberu/cli": "^5.0",
@@ -54,7 +55,7 @@
         "nunomaduro/collision": "^7.1",
         "nunomaduro/phpinsights": "^2.0",
         "phpunit/phpunit": "^10.1",
-        "rector/rector": "^0.17.0",
+        "rector/rector": "*",
         "spatie/laravel-ignition": "^2.1"
     },
     "config": {

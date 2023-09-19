@@ -19,7 +19,7 @@ class Webhook extends Controller
     public function __invoke(Request $request)
     {
         Stripe\Stripe::setApiKey(\Config::get('services.stripe.secret'));
-        $plans = Stripe\Plan::all();
+        Stripe\Plan::all();
         $data = request()->all();
 
         if ($data) {
@@ -37,7 +37,7 @@ class Webhook extends Controller
                     $user = User::where('stripe_id', $data['data']['object']['customer'])->first();
                     if ($user) {
                         $plan_nickname = $data['data']['object']['plan']['nickname'];
-                        $roles = Role::where('name', strtolower($plan_nickname))->first();
+                        $roles = Role::where('name', strtolower((string) $plan_nickname))->first();
                         if ($roles) {
                             $user->role_id = $roles->id;
                             $user->save();
@@ -49,7 +49,7 @@ class Webhook extends Controller
                     $user = User::where('stripe_id', $data['data']['object']['customer'])->first();
                     if ($user) {
                         $plan_nickname = $data['data']['object']['lines']['data'][0]['plan']['nickname'];
-                        $roles = Role::where('name', strtolower($plan_nickname))->first();
+                        $roles = Role::where('name', strtolower((string) $plan_nickname))->first();
                         if ($roles) {
                             $user->role_id = $roles->id;
                             $user->save();

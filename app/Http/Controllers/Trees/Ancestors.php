@@ -56,7 +56,7 @@ class Ancestors extends Controller
         }
 
         $families = Family::where('husband_id', $start_id)->orwhere('wife_id', $start_id)->get();
-        if (! (is_countable($families) ? count($families) : 0)) {
+        if ((is_countable($families) ? count($families) : 0) === 0) {
             $person->setAttribute('own_unions', []);
             $person['generation'] = $nest;
             $this->persons[$start_id] = $person;

@@ -52,10 +52,10 @@ class ChartController extends Controller
         $male = \DB::table('people')->where('sex', 'M')->get()->count();
         $female = \DB::table('people')->where('sex', 'F')->get()->count();
         $unknown = \DB::table('people')->whereNull('sex')->get()->count();
-        $sv = \Session::get('db', env('DB_DATABASE'));
+        \Session::get('db', env('DB_DATABASE'));
         $user = Auth::user();
-        $companies = $user->person->company();
-        $current_db = \Session::get('companyId');
+        $user->person->company();
+        \Session::get('companyId');
 
         // return $current_db;
         // return $sv;
@@ -140,7 +140,7 @@ class ChartController extends Controller
         return json_encode([
             'db' => config('database.connections.tenant.database'),
             'connection' => $changeConn,
-            'changedb' => $prevConn === $changeConn ? true : false,
+            'changedb' => $prevConn === $changeConn,
             'familiesjoined' => $familiesjoined,
             'peoplesattached' => $peoplesattached,
         ], JSON_THROW_ON_ERROR);
@@ -198,7 +198,7 @@ class ChartController extends Controller
         return json_encode([
             'db' => config('database.connections.tenant.database'),
             'connection' => $changeConn,
-            'changedb' => $prevConn === $changeConn ? true : false,
+            'changedb' => $prevConn === $changeConn,
             'familiesjoined' => $familiesjoined,
             'peoplesattached' => $peoplesattached,
         ], JSON_THROW_ON_ERROR);

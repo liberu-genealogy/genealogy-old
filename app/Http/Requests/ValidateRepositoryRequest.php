@@ -6,14 +6,14 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class ValidateRepositoryRequest extends FormRequest
 {
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }
 
     public function rules()
     {
-        $repository = $this->route('repository');
+        $this->route('repository');
 
         return [
             'description' => 'required|max:50',

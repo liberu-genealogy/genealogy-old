@@ -12,7 +12,7 @@ class Index extends Controller
         return $this->getDabolvilleFormat();
     }
 
-    public function getDabolvilleFormat()
+    public function getDabolvilleFormat(): string
     {
         //1 Progenitor - $husband married $woman $year $location
         //1.1 Child - $husband married $woman $year $location

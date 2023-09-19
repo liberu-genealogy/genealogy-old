@@ -10,7 +10,7 @@ return [
     |
      */
 
-    'rowLimit' => (int) env('EXPORT_ROW_LIMIT', 1000000),
+    'rowLimit' => (int) env('EXPORT_ROW_LIMIT', 1_000_000),
 
     /*
     |--------------------------------------------------------------------------

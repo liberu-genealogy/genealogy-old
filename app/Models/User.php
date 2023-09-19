@@ -36,7 +36,7 @@ class User extends CoreUser
         return $this->person?->name;
     }
 
-    public function hasSocialLinked($service)
+    public function hasSocialLinked($service): bool
     {
         return (bool) $this->social->where('service', $service)->count();
     }

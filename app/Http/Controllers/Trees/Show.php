@@ -49,7 +49,7 @@ class Show extends Controller
         }
 
         $families = Family::where('husband_id', $start_id)->orwhere('wife_id', $start_id)->get();
-        if (! (is_countable($families) ? count($families) : 0)) {
+        if ((is_countable($families) ? count($families) : 0) === 0) {
             $person = Person::find($start_id);
 
             // do not process for null

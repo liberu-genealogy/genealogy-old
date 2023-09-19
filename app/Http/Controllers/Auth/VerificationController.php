@@ -28,46 +28,45 @@ class VerificationController extends Controller
      */
     public function verify_user(Request $request)
     {
+        $token = null;
+        $activation = null;
+        $user_id = null;
+        $user = null;
         $data = $request->all();
         $this->validator($data)->validate();
-        try {
-            $token = $request->get('token');
-            $activation = Activation::where('token', $token)->first();
-            if ($activation === null) {
-                return response()->json(
-                    [
-                        'error' => [
-                            'code' => 300,
-                            'message' => 'Send activation code again.',
-                        ],
+        $token = $request->get('token');
+        $activation = Activation::where('token', $token)->first();
+        if ($activation === null) {
+            return response()->json(
+                [
+                    'error' => [
+                        'code' => 300,
+                        'message' => 'Send activation code again.',
                     ],
-                    Response::HTTP_UNPROCESSABLE_ENTITY
-                );
-            }
-            $user_id = $activation->user_id;
-            $user = User::find($user_id);
-            if ($user === null) {
-                return response()->json(
-                    [
-                        'error' => [
-                            'code' => 301,
-                            'message' => 'There is not such user.',
-                        ],
-                    ],
-                    Response::HTTP_UNPROCESSABLE_ENTITY
-                );
-            }
-            $user->is_active = 1;
-            $user->email_verified_at = date('Y-m-d H:i:s');
-            $user->save();
-            Activation::where('user_id', $user_id)->delete();
-
-            return response()->json([
-                'csrfToken' => csrf_token(),
-            ]);
-        } catch (\Exception $e) {
-            throw $e;
+                ],
+                Response::HTTP_UNPROCESSABLE_ENTITY
+            );
         }
+        $user_id = $activation->user_id;
+        $user = User::find($user_id);
+        if ($user === null) {
+            return response()->json(
+                [
+                    'error' => [
+                        'code' => 301,
+                        'message' => 'There is not such user.',
+                    ],
+                ],
+                Response::HTTP_UNPROCESSABLE_ENTITY
+            );
+        }
+        $user->is_active = 1;
+        $user->email_verified_at = date('Y-m-d H:i:s');
+        $user->save();
+        Activation::where('user_id', $user_id)->delete();
+        return response()->json([
+            'csrfToken' => csrf_token(),
+        ]);
     }
 
     protected function validator(array $data)

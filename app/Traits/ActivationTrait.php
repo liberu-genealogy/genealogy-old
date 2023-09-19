@@ -31,11 +31,6 @@ trait ActivationTrait
     protected function validateEmail(User $user)
     {
         $validator = Validator::make(['email' => $user->email], ['email' => 'required|email']);
-
-        if ($validator->fails()) {
-            return false;
-        }
-
-        return true;
+        return !$validator->fails();
     }
 }

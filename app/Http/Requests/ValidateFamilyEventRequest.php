@@ -6,14 +6,14 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class ValidateFamilyEventRequest extends FormRequest
 {
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }
 
     public function rules()
     {
-        $familyevent = $this->route('familyevent');
+        $this->route('familyevent');
 
         return [
             'family_id' => '',

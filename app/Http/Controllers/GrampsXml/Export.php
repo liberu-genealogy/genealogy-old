@@ -27,16 +27,16 @@ class Export extends Controller
 
             foreach ($children as $child) {
                 $per = $this->getPersonDetail($child);
-                array_push($childrenArr, $per);
+                $childrenArr[] = $per;
             }
 
-            array_push($data, [
+            $data[] = [
                 'id' => $familyId,
                 'description' => $description,
                 'husband' => $husband,
                 'wife' => $wife,
                 'child' => $childrenArr,
-            ]);
+            ];
         }
 
         return XML::export(['family' => $data])->rootTag('database')

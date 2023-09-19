@@ -11,7 +11,6 @@ class VerifyCoupon extends Controller
     /**
      * Handle the incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function __invoke(Request $request)
@@ -29,14 +28,14 @@ class VerifyCoupon extends Controller
 
         try {
             foreach (\Stripe\Coupon::all()->data as $coupon) {
-                if (strtolower($coupon->name) == strtolower($couponCode) && $coupon->valid) {
+                if (strtolower((string) $coupon->name) === strtolower((string) $couponCode) && $coupon->valid) {
                     return [
                         'success' => true,
                         'coupon' => $coupon,
                     ];
                 }
             }
-        } catch (\Stripe\Exception\InvalidRequestException $e) {
+        } catch (\Stripe\Exception\InvalidRequestException) {
             return ['success' => false, 'message' => 'There was an error when checking your coupon.'];
         }
 
