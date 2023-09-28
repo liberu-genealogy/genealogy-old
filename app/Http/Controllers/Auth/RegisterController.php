@@ -39,7 +39,7 @@ class RegisterController extends Controller
         ]);
     }
 
-    protected function create(Request $request)
+    public function create(Request $request)
     {
         // try {
         // create person
