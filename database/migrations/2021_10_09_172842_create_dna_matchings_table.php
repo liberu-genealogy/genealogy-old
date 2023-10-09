@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('dna_matchings', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('image');
             $table->string('file1');
             $table->string('file2');

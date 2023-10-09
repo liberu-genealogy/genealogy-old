@@ -21,7 +21,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('slug', 20);
             $table->unsignedInteger('order')->default(0);
-            $table->unsignedInteger('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')
