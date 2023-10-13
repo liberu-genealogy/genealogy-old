@@ -4377,16 +4377,16 @@
         },
         {
             "name": "laravel-liberu/laravel-gelato",
-            "version": "v1.1.11",
+            "version": "v1.1.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/laravel-gelato.git",
-                "reference": "4393af25a76e1e58e79e063aebd66253c93216e2"
+                "reference": "01a0cc624e7167f64c9d6a3c008957e3663d5950"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/laravel-gelato/zipball/4393af25a76e1e58e79e063aebd66253c93216e2",
-                "reference": "4393af25a76e1e58e79e063aebd66253c93216e2",
+                "url": "https://api.github.com/repos/laravel-liberu/laravel-gelato/zipball/01a0cc624e7167f64c9d6a3c008957e3663d5950",
+                "reference": "01a0cc624e7167f64c9d6a3c008957e3663d5950",
                 "shasum": ""
             },
             "require": {
@@ -4425,7 +4425,7 @@
             "description": "Laravel Gelato API",
             "support": {
                 "issues": "https://github.com/laravel-liberu/laravel-gelato/issues",
-                "source": "https://github.com/laravel-liberu/laravel-gelato/tree/v1.1.11"
+                "source": "https://github.com/laravel-liberu/laravel-gelato/tree/v1.1.12"
             },
             "funding": [
                 {
@@ -4433,7 +4433,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-07-04T09:17:47+00:00"
+            "time": "2023-10-13T01:45:15+00:00"
         },
         {
             "name": "laravel-liberu/localisation",
@@ -18934,5 +18934,5 @@
         "php": ">=8.2.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
