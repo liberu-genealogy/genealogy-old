@@ -3,7 +3,7 @@
 namespace App\Forms\Builders;
 
 use App\Models\Publication;
-use LaravelEnso\Forms\Services\Form;
+use LaravelLiberu\Forms\Services\Form;
 
 class PublicationForm
 {

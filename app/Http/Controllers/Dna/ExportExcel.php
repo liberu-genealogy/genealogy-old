@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Dna;
 
 use App\Tables\Builders\DnaTable;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\Traits\Excel;
+use LaravelLiberu\Tables\Traits\Excel;
 
 class ExportExcel extends Controller
 {

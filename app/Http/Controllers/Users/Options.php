@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Users;
 use App\Models\User;
 use Illuminate\Routing\Controller;
 // use App\Http\Resources\User as Resource;
-use LaravelEnso\Select\Traits\OptionsBuilder;
+use LaravelLiberu\Select\Traits\OptionsBuilder;
 
 class Options extends Controller
 {

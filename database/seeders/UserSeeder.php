@@ -3,10 +3,10 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use LaravelEnso\People\Models\Person;
-use LaravelEnso\Roles\Models\Role;
-use LaravelEnso\UserGroups\Models\UserGroup;
-use LaravelEnso\Users\Models\User;
+use LaravelLiberu\People\Models\Person;
+use LaravelLiberu\Roles\Models\Role;
+use LaravelLiberu\UserGroups\Models\UserGroup;
+use LaravelLiberu\Users\Models\User;
 
 class UserSeeder extends Seeder
 {

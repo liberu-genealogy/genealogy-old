@@ -4,7 +4,7 @@ namespace App\Tables\Builders;
 
 use App\Models\Refn;
 use Illuminate\Database\Eloquent\Builder;
-use LaravelEnso\Tables\Contracts\Table;
+use LaravelLiberu\Tables\Contracts\Table;
 
 class RefnTable implements Table
 {

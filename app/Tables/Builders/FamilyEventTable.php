@@ -4,7 +4,7 @@ namespace App\Tables\Builders;
 
 use App\Models\FamilyEvent;
 use Illuminate\Database\Eloquent\Builder;
-use LaravelEnso\Tables\Contracts\Table;
+use LaravelLiberu\Tables\Contracts\Table;
 
 class FamilyEventTable implements Table
 {

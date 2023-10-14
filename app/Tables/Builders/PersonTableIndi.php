@@ -6,7 +6,7 @@ use App\Models\Person;
 use Auth;
 use Illuminate\Database\Eloquent\Builder;
 
-class PersonTableIndi extends \LaravelEnso\People\Tables\Builders\PersonTable
+class PersonTableIndi extends \LaravelLiberu\People\Tables\Builders\PersonTable
 {
     protected const TemplatePath = __DIR__.'/../Templates/peopleindi.json';
 

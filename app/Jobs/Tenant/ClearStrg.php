@@ -10,7 +10,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Storage;
-use LaravelEnso\Multitenancy\Traits\ConnectionStoragePath;
+use LaravelLiberu\Multitenancy\Traits\ConnectionStoragePath;
 
 class ClearStrg implements ShouldQueue
 {

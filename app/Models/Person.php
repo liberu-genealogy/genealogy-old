@@ -7,7 +7,7 @@ use App\Traits\TenantConnectionResolver;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Scout\Searchable;
-use LaravelEnso\People\Models\Person as CorePerson;
+use LaravelLiberu\People\Models\Person as CorePerson;
 
 class Person extends CorePerson
 {

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Company\Person;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Companies\Models\Company;
+use LaravelLiberu\Companies\Models\Company;
 
 class Create extends Controller
 {

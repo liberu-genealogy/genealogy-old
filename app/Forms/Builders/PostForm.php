@@ -2,8 +2,8 @@
 
 namespace App\Forms\Builders;
 
-use LaravelEnso\Discussions\Models\Discussion;
-use LaravelEnso\Forms\Services\Form;
+use LaravelLiberu\Discussions\Models\Discussion;
+use LaravelLiberu\Forms\Services\Form;
 
 class PostForm
 {

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Company;
 
 use App\Tables\Builders\CompanyTable;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\Traits\Init;
+use LaravelLiberu\Tables\Traits\Init;
 
 class InitTable extends Controller
 {

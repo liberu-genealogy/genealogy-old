@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-use LaravelEnso\Enums\Services\Enum;
+use LaravelLiberu\Enums\Services\Enum;
 
 class Privacy extends Enum
 {

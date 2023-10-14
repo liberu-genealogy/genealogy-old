@@ -4,7 +4,7 @@ namespace App\Tables\Builders;
 
 use App\Models\Chan;
 use Illuminate\Database\Eloquent\Builder;
-use LaravelEnso\Tables\Contracts\Table;
+use LaravelLiberu\Tables\Contracts\Table;
 
 class ChanTable implements Table
 {

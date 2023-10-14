@@ -3,8 +3,8 @@
 namespace App\DynamicRelations\Company;
 
 use Closure;
-use LaravelEnso\Comments\Models\Comment;
-use LaravelEnso\DynamicMethods\Contracts\Method;
+use LaravelLiberu\Comments\Models\Comment;
+use LaravelLiberu\DynamicMethods\Contracts\Method;
 
 class Comments implements Method
 {

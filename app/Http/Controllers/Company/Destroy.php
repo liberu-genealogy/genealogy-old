@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Company;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Companies\Models\Company;
+use LaravelLiberu\Companies\Models\Company;
 
 class Destroy extends Controller
 {

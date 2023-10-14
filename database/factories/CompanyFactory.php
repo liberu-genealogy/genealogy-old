@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Company;
-use LaravelEnso\Companies\Database\Factories\CompanyFactory as CoreCompanyFactory;
+use LaravelLiberu\Companies\Database\Factories\CompanyFactory as CoreCompanyFactory;
 
 class CompanyFactory extends CoreCompanyFactory
 {

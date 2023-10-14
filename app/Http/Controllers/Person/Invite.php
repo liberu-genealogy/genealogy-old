@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Person;
 use App\Models\User;
 use Illuminate\Routing\Controller;
 
-// use LaravelEnso\People\Models\Person;
+// use LaravelLiberu\People\Models\Person;
 
 class Invites extends Controller
 {

@@ -4,7 +4,7 @@ namespace App\Forms\Builders;
 
 use App\Models\Note;
 // use App\Models\Type;
-use LaravelEnso\Forms\Services\Form;
+use LaravelLiberu\Forms\Services\Form;
 
 class NoteForm
 {

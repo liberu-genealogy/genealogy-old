@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use LaravelEnso\Permissions\Models\Permission;
-use LaravelEnso\Roles\Models\Role;
+use LaravelLiberu\Permissions\Models\Permission;
+use LaravelLiberu\Roles\Models\Role;
 
 class CustomPermissionSeeder extends Seeder
 {

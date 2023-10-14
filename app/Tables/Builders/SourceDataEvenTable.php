@@ -4,7 +4,7 @@ namespace App\Tables\Builders;
 
 use App\Models\SourceDataEven;
 use Illuminate\Database\Eloquent\Builder;
-use LaravelEnso\Tables\Contracts\Table;
+use LaravelLiberu\Tables\Contracts\Table;
 
 class SourceDataEvenTable implements Table
 {

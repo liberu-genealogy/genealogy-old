@@ -7,10 +7,10 @@ use Database\Seeders\CustomPermissionsSeeder;
 use Database\Seeders\RoleSeeder;
 use Database\Seeders\UserSeeder;
 use Illuminate\Database\Seeder;
-use LaravelEnso\Countries\Database\Seeders\CountrySeeder;
-use LaravelEnso\Files\Database\Seeders\TypeSeeder;
-use LaravelEnso\Localisation\Database\Seeders\LanguageSeeder;
-use LaravelEnso\UserGroups\Database\Seeders\UserGroupSeeder;
+use LaravelLiberu\Countries\Database\Seeders\CountrySeeder;
+use LaravelLiberu\Files\Database\Seeders\TypeSeeder;
+use LaravelLiberu\Localisation\Database\Seeders\LanguageSeeder;
+use LaravelLiberu\UserGroups\Database\Seeders\UserGroupSeeder;
 
 class DatabaseSeeder extends Seeder
 {

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Types;
 
 use App\Models\Type;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Select\Traits\OptionsBuilder;
+use LaravelLiberu\Select\Traits\OptionsBuilder;
 
 class Options extends Controller
 {

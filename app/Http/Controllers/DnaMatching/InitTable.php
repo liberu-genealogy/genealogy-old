@@ -4,7 +4,7 @@ namespace App\Http\Controllers\DnaMatching;
 
 use App\Tables\Builders\DnaMatchingTable;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\Traits\Init;
+use LaravelLiberu\Tables\Traits\Init;
 
 class InitTable extends Controller
 {

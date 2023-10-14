@@ -3,10 +3,10 @@
 namespace App\Forms\Builders;
 
 // use App\Models\Person;
-use LaravelEnso\Forms\Services\Form;
-use LaravelEnso\People\Models\Person;
+use LaravelLiberu\Forms\Services\Form;
+use LaravelLiberu\People\Models\Person;
 
-class PersonForm //extends \LaravelEnso\People\Forms\Builders\PersonForm
+class PersonForm //extends \LaravelLiberu\People\Forms\Builders\PersonForm
 {
     protected const TemplatePath = __DIR__.'/../Templates/person.json';
 

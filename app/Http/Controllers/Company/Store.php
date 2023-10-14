@@ -8,8 +8,8 @@ use App\Models\Company as Company1;
 use App\Traits\TenantConnectionResolver;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Companies\Http\Requests\ValidateCompany;
-use LaravelEnso\Companies\Models\Company;
+use LaravelLiberu\Companies\Http\Requests\ValidateCompany;
+use LaravelLiberu\Companies\Models\Company;
 
 class Store extends Controller
 {

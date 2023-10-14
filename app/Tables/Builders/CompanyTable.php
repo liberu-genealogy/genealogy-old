@@ -3,8 +3,8 @@
 namespace App\Tables\Builders;
 
 use Illuminate\Database\Eloquent\Builder;
-use LaravelEnso\Companies\Models\Company as Model;
-use LaravelEnso\Tables\Contracts\Table;
+use LaravelLiberu\Companies\Models\Company as Model;
+use LaravelLiberu\Tables\Contracts\Table;
 
 class CompanyTable implements Table
 {

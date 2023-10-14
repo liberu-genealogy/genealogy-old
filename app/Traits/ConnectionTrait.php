@@ -2,7 +2,7 @@
 
 namespace App\Traits;
 
-use LaravelEnso\Multitenancy\Enums\Connections;
+use LaravelLiberu\Multitenancy\Enums\Connections;
 
 trait ConnectionTrait
 {

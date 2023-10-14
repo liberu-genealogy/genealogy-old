@@ -5,7 +5,7 @@ namespace App\Models;
 use App\Traits\TenantConnectionResolver;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Avatar extends \LaravelEnso\Avatars\Models\Avatar
+class Avatar extends \LaravelLiberu\Avatars\Models\Avatar
 {
     use HasFactory;
     use TenantConnectionResolver;

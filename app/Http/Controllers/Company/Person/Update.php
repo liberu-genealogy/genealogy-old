@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Company\Person;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Companies\Http\Requests\ValidatePersonUpdate;
-use LaravelEnso\Companies\Models\Company;
-use LaravelEnso\People\Models\Person;
+use LaravelLiberu\Companies\Http\Requests\ValidatePersonUpdate;
+use LaravelLiberu\Companies\Models\Company;
+use LaravelLiberu\People\Models\Person;
 
 class Update extends Controller
 {

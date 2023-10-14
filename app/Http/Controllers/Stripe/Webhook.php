@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-use LaravelEnso\Roles\Models\Role;
+use LaravelLiberu\Roles\Models\Role;
 use Stripe;
 
 class Webhook extends Controller

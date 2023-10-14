@@ -3,7 +3,7 @@
 namespace App\Forms\Builders;
 
 use App\Models\Place;
-use LaravelEnso\Forms\Services\Form;
+use LaravelLiberu\Forms\Services\Form;
 
 class PlaceForm
 {

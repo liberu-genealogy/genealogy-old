@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use App\Traits\CreatedBy;
-use LaravelEnso\Companies\Models\Company as CoreCompany;
+use LaravelLiberu\Companies\Models\Company as CoreCompany;
 
 class Company extends CoreCompany
 {

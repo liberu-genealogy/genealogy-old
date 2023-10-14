@@ -9,8 +9,8 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Artisan;
-use LaravelEnso\Companies\Models\Company;
-use LaravelEnso\Multitenancy\Enums\Connections;
+use LaravelLiberu\Companies\Models\Company;
+use LaravelLiberu\Multitenancy\Enums\Connections;
 
 class MigrationFresh implements ShouldQueue
 {

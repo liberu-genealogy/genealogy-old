@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Stripe;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use LaravelEnso\Roles\Models\Role;
+use LaravelLiberu\Roles\Models\Role;
 use Stripe;
 
 class GetPlans extends Controller

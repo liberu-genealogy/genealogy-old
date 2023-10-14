@@ -3,8 +3,8 @@
 namespace App\DynamicRelations\Company;
 
 use Closure;
-use LaravelEnso\Documents\Models\Document;
-use LaravelEnso\DynamicMethods\Contracts\Method;
+use LaravelLiberu\Documents\Models\Document;
+use LaravelLiberu\DynamicMethods\Contracts\Method;
 
 class Documents implements Method
 {

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Post;
 use App\Http\Requests\ValidatePostRequest;
 use App\Models\Topic;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Discussions\Models\Discussion;
+use LaravelLiberu\Discussions\Models\Discussion;
 
 class Update extends Controller
 {

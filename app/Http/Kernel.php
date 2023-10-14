@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\Kernel as HttpKernel;
 class Kernel extends HttpKernel
 {
     protected $middleware = [
-        \LaravelEnso\Core\Http\Middleware\AuthorizationCookie::class,
+        \LaravelLiberu\Core\Http\Middleware\AuthorizationCookie::class,
         // \App\Http\Middleware\TrustHosts::class,
         \App\Http\Middleware\TrustProxies::class,
         \Illuminate\Http\Middleware\HandleCors::class,
@@ -27,11 +27,11 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            \LaravelEnso\ControlPanelApi\Http\Middleware\RequestMonitor::class,
+            \LaravelLiberu\ControlPanelApi\Http\Middleware\RequestMonitor::class,
         ],
 
         'api' => [
-            \LaravelEnso\Core\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
+            \LaravelLiberu\Core\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             'throttle:api',
         ],
@@ -50,7 +50,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'multitenant' => \App\Http\Middleware\Multitenant::class,
         'verifystripewebhook' => \App\Http\Middleware\VerifyStripeWebhook::class,
-        // 'multitenant' => \LaravelEnso\Multitenancy\Http\Middleware\Multitenancy::class,
+        // 'multitenant' => \LaravelLiberu\Multitenancy\Http\Middleware\Multitenancy::class,
     ];
 
     protected $middlewarePriority = [
@@ -61,6 +61,6 @@ class Kernel extends HttpKernel
         // \Illuminate\Session\Middleware\AuthenticateSession::class,
         \Illuminate\Routing\Middleware\SubstituteBindings::class,
         \Illuminate\Auth\Middleware\Authorize::class,
-        \LaravelEnso\ControlPanelApi\Http\Middleware\RequestMonitor::class,
+        \LaravelLiberu\ControlPanelApi\Http\Middleware\RequestMonitor::class,
     ];
 }

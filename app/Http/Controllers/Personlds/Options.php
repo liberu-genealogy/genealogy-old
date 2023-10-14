@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Personlds;
 
 use App\Models\PersonLds;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Select\Traits\OptionsBuilder;
+use LaravelLiberu\Select\Traits\OptionsBuilder;
 
 class Options extends Controller
 {

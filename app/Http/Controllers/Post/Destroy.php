@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Post;
 
 use App\Models\Topic;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Discussions\Models\Discussion;
+use LaravelLiberu\Discussions\Models\Discussion;
 
 class Destroy extends Controller
 {

@@ -13,7 +13,7 @@ class Index extends Controller
         $company = $user->company();
 //        $companies[] = $company;
 
-        $my_companies = \LaravelEnso\Companies\Models\Company::where('created_by', $user->id)->orWhere('id', '=', $company->id)->get();
+        $my_companies = \LaravelLiberu\Companies\Models\Company::where('created_by', $user->id)->orWhere('id', '=', $company->id)->get();
         $invited_companies = [];
         //DB::table('company_person')
 //        ->orWhere('company_id', '!=', $company->id)

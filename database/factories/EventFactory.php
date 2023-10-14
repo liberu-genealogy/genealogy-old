@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Event;
-use LaravelEnso\Calendar\Database\Factories\EventFactory as CoreEventFactory;
+use LaravelLiberu\Calendar\Database\Factories\EventFactory as CoreEventFactory;
 
 class EventFactory extends CoreEventFactory
 {

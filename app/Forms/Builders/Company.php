@@ -4,8 +4,8 @@ namespace App\Forms\Builders;
 
 use App\Enums\Privacy;
 use App\Models\Company as Model;
-use LaravelEnso\Companies\Enums\Statuses;
-use LaravelEnso\Forms\Services\Form;
+use LaravelLiberu\Companies\Enums\Statuses;
+use LaravelLiberu\Forms\Services\Form;
 
 class Company
 {

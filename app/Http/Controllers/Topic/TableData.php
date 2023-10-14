@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Topic;
 
 use App\Tables\Builders\TopicTable;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\Traits\Data;
+use LaravelLiberu\Tables\Traits\Data;
 
 class TableData extends Controller
 {

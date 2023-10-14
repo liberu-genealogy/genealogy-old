@@ -5,10 +5,10 @@ namespace App\Upgrades;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
-use LaravelEnso\Menus\Models\Menu;
-use LaravelEnso\Permissions\Models\Permission;
-use LaravelEnso\Upgrade\Contracts\MigratesData;
-use LaravelEnso\Upgrade\Contracts\MigratesPostDataMigration;
+use LaravelLiberu\Menus\Models\Menu;
+use LaravelLiberu\Permissions\Models\Permission;
+use LaravelLiberu\Upgrade\Contracts\MigratesData;
+use LaravelLiberu\Upgrade\Contracts\MigratesPostDataMigration;
 
 class DumpActivityLog implements MigratesData, MigratesPostDataMigration
 {

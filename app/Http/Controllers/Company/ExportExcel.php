@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Company;
 
 use Illuminate\Routing\Controller;
-use LaravelEnso\Companies\Tables\Builders\Company;
-use LaravelEnso\Tables\Traits\Excel;
+use LaravelLiberu\Companies\Tables\Builders\Company;
+use LaravelLiberu\Tables\Traits\Excel;
 
 class ExportExcel extends Controller
 {

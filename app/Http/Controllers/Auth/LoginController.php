@@ -19,10 +19,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use Laravel\Socialite\Facades\Socialite;
-use LaravelEnso\Core\Events\Login as Event;
-use LaravelEnso\Core\Traits\Logout;
-use LaravelEnso\Roles\Models\Role;
-use LaravelEnso\UserGroups\Models\UserGroup;
+use LaravelLiberu\Core\Events\Login as Event;
+use LaravelLiberu\Core\Traits\Logout;
+use LaravelLiberu\Roles\Models\Role;
+use LaravelLiberu\UserGroups\Models\UserGroup;
 
 class LoginController extends Controller
 {

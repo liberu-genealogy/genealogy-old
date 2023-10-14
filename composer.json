@@ -83,7 +83,7 @@
             "Tests\\": "tests/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
-            "LaravelEnso\\Tables\\Tests\\": "vendor/laravel-liberu/tables/tests/"
+            "LaravelLiberu\\Tables\\Tests\\": "vendor/laravel-liberu/tables/tests/"
         }
     },
     "minimum-stability": "dev",

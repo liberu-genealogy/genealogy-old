@@ -8,9 +8,9 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Notification;
-use LaravelEnso\Forms\TestTraits\DestroyForm;
-use LaravelEnso\Forms\TestTraits\EditForm;
-use LaravelEnso\Tables\Traits\Tests\Datatable;
+use LaravelLiberu\Forms\TestTraits\DestroyForm;
+use LaravelLiberu\Forms\TestTraits\EditForm;
+use LaravelLiberu\Tables\Traits\Tests\Datatable;
 use Tests\TestCase;
 
 class UserTest extends TestCase

@@ -1,6 +1,6 @@
 <?php
 
-use LaravelEnso\Migrator\Database\Migration;
+use LaravelLiberu\Migrator\Database\Migration;
 
 return new class extends Migration
 {

@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Company\Person;
 
 use App\Models\User;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Companies\Http\Resources\Person as Resource;
-use LaravelEnso\Companies\Models\Company;
+use LaravelLiberu\Companies\Http\Resources\Person as Resource;
+use LaravelLiberu\Companies\Models\Company;
 
 class Index extends Controller
 {

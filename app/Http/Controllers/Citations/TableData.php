@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Citations;
 
 use App\Tables\Builders\CitationTable;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\Traits\Data;
+use LaravelLiberu\Tables\Traits\Data;
 
 class TableData extends Controller
 {

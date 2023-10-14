@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Company\Person;
 
 use App\Forms\Builders\CompaniesPerson as Form;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Companies\Models\Company;
-use LaravelEnso\People\Models\Person;
+use LaravelLiberu\Companies\Models\Company;
+use LaravelLiberu\People\Models\Person;
 
 class Edit extends Controller
 {

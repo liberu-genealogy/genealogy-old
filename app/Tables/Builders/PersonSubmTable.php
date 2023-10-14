@@ -4,7 +4,7 @@ namespace App\Tables\Builders;
 
 use App\Models\PersonSubm;
 use Illuminate\Database\Eloquent\Builder;
-use LaravelEnso\Tables\Contracts\Table;
+use LaravelLiberu\Tables\Contracts\Table;
 
 class PersonSubmTable implements Table
 {

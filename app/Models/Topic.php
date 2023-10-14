@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use LaravelEnso\Discussions\Traits\Discussable;
+use LaravelLiberu\Discussions\Traits\Discussable;
 
 class Topic extends Model
 {

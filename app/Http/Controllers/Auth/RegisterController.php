@@ -14,8 +14,8 @@ use App\Traits\ActivationTrait;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use LaravelEnso\Roles\Models\Role;
-use LaravelEnso\UserGroups\Models\UserGroup;
+use LaravelLiberu\Roles\Models\Role;
+use LaravelLiberu\UserGroups\Models\UserGroup;
 
 class RegisterController extends Controller
 {

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Topic;
 
 use App\Tables\Builders\TopicTable;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\Traits\Init;
+use LaravelLiberu\Tables\Traits\Init;
 
 class InitTable extends Controller
 {

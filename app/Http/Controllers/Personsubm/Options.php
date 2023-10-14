@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Personsubm;
 
 use App\Models\PersonSubm;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Select\Traits\OptionsBuilder;
+use LaravelLiberu\Select\Traits\OptionsBuilder;
 
 class Options extends Controller
 {

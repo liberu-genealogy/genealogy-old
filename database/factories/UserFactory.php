@@ -4,9 +4,9 @@ namespace Database\Factories;
 
 use App\Models\Person;
 use App\Models\User;
-use LaravelEnso\Roles\Models\Role;
-use LaravelEnso\UserGroups\Models\UserGroup;
-use LaravelEnso\Users\Database\Factories\UserFactory as CoreUserFactory;
+use LaravelLiberu\Roles\Models\Role;
+use LaravelLiberu\UserGroups\Models\UserGroup;
+use LaravelLiberu\Users\Database\Factories\UserFactory as CoreUserFactory;
 
 class UserFactory extends CoreUserFactory
 {

@@ -4,7 +4,7 @@ namespace App\Tables\Builders;
 
 use App\Models\PersonAsso;
 use Illuminate\Database\Eloquent\Builder;
-use LaravelEnso\Tables\Contracts\Table;
+use LaravelLiberu\Tables\Contracts\Table;
 
 class PersonAssoTable implements Table
 {

@@ -4,7 +4,7 @@ namespace App\Forms\Builders;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use LaravelEnso\Forms\Services\Form;
+use LaravelLiberu\Forms\Services\Form;
 
 class UserForm
 {

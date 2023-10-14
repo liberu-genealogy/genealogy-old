@@ -3,9 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use LaravelEnso\Companies\Enums\Statuses;
-use LaravelEnso\Companies\Models\Company;
-use LaravelEnso\People\Models\Person;
+use LaravelLiberu\Companies\Enums\Statuses;
+use LaravelLiberu\Companies\Models\Company;
+use LaravelLiberu\People\Models\Person;
 
 class CompanySeeder extends Seeder
 {

@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\Models\User;
 use Carbon\Carbon;
-use LaravelEnso\Helpers\Services\Decimals;
+use LaravelLiberu\Helpers\Services\Decimals;
 
 class ProfileBuilder
 {

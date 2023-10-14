@@ -9,11 +9,11 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Hash;
-use LaravelEnso\Companies\Models\Company;
-use LaravelEnso\People\Models\Person;
-use LaravelEnso\Roles\Models\Role;
-use LaravelEnso\UserGroups\Models\UserGroup;
-use LaravelEnso\Users\Models\User;
+use LaravelLiberu\Companies\Models\Company;
+use LaravelLiberu\People\Models\Person;
+use LaravelLiberu\Roles\Models\Role;
+use LaravelLiberu\UserGroups\Models\UserGroup;
+use LaravelLiberu\Users\Models\User;
 
 class Migration implements ShouldQueue
 {

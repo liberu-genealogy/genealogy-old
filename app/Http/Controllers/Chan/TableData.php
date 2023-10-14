@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Chan;
 
 use App\Tables\Builders\ChanTable;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\Traits\Data;
+use LaravelLiberu\Tables\Traits\Data;
 
 class TableData extends Controller
 {

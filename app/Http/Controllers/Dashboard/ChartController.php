@@ -7,15 +7,15 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
-use LaravelEnso\Charts\Factories\Bar;
-use LaravelEnso\Charts\Factories\Bubble;
-use LaravelEnso\Charts\Factories\Doughnut;
-use LaravelEnso\Charts\Factories\Line;
-use LaravelEnso\Charts\Factories\Pie;
-use LaravelEnso\Charts\Factories\Polar;
-use LaravelEnso\Charts\Factories\Radar;
+use LaravelLiberu\Charts\Factories\Bar;
+use LaravelLiberu\Charts\Factories\Bubble;
+use LaravelLiberu\Charts\Factories\Doughnut;
+use LaravelLiberu\Charts\Factories\Line;
+use LaravelLiberu\Charts\Factories\Pie;
+use LaravelLiberu\Charts\Factories\Polar;
+use LaravelLiberu\Charts\Factories\Radar;
 
-//use LaravelEnso\Multitenancy\Enums\Connections;
+//use LaravelLiberu\Multitenancy\Enums\Connections;
 
 class ChartController extends Controller
 {

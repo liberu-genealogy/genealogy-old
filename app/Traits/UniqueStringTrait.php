@@ -3,7 +3,7 @@
 namespace App\Traits;
 
 use Illuminate\Support\Str;
-use LaravelEnso\Companies\Models\Company;
+use LaravelLiberu\Companies\Models\Company;
 
 trait UniqueStringTrait
 {

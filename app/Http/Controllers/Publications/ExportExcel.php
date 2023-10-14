@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Publications;
 
 use App\Tables\Builders\PublicationTable;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\Traits\Excel;
+use LaravelLiberu\Tables\Traits\Excel;
 
 class ExportExcel extends Controller
 {

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Users;
 
 use App\Tables\Builders\UserTable;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\Traits\Data;
+use LaravelLiberu\Tables\Traits\Data;
 
 class TableData extends Controller
 {

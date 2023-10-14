@@ -10,7 +10,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\DB;
-use LaravelEnso\Multitenancy\Traits\TenantResolver;
+use LaravelLiberu\Multitenancy\Traits\TenantResolver;
 
 class DropDB implements ShouldQueue
 {

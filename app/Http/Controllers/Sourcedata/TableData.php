@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Sourcedata;
 
 use App\Tables\Builders\SourceDataTable;
 use Illuminate\Routing\Controller;
-use LaravelEnso\Tables\Traits\Data;
+use LaravelLiberu\Tables\Traits\Data;
 
 class TableData extends Controller
 {
