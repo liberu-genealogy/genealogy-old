@@ -15,21 +15,11 @@ return [
     |
     */
 
-    'paths' => ['*'],
+    'paths' => ['api/*', 'sanctum/csrf-cookie'],
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => [
-        'http://pusher.com',
-        'https://pusher.com',
-        'http://genealogy.test',
-        'http://127.0.0.1:8000',
-        'http://localhost:8000',
-        'http://localhost:3000',
-        'http://localhost:55487',
-        'https://familytree365.com',
-        'https://api.familytree365.com',
-        'https://www.familytree365.com', ],
+    'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
 
@@ -39,6 +29,6 @@ return [
 
     'max_age' => 0,
 
-    'supports_credentials' => true,
+    'supports_credentials' => false,
 
 ];

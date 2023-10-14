@@ -4,14 +4,14 @@ namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Support\Facades\App;
-use LaravelEnso\Helpers\Exceptions\EnsoException;
-use LaravelEnso\Sentry\Exceptions\Handler as Sentry;
+use LaravelLiberu\Helpers\Exceptions\LiberuException;
+use LaravelLiberu\Sentry\Exceptions\Handler as Sentry;
 use Throwable;
 
 class Handler extends ExceptionHandler
 {
     protected $dontReport = [
-        EnsoException::class,
+        LiberuException::class,
     ];
 
     protected $dontFlash = [

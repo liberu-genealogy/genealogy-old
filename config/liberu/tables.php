@@ -1,7 +1,7 @@
 <?php
 
-use LaravelEnso\Filters\Enums\ComparisonOperators;
-use LaravelEnso\Filters\Enums\SearchModes;
+use LaravelLiberu\Filters\Enums\ComparisonOperators;
+use LaravelLiberu\Filters\Enums\SearchModes;
 
 return [
     /*
@@ -30,8 +30,8 @@ return [
     'cache' => [
         'template' => 'production',
         'count' => true,
-        'prefix' => 'enso:tables',
-        'tag' => 'enso:tables',
+        'prefix' => 'liberu:tables',
+        'tag' => 'liberu:tables',
     ],
 
     /*

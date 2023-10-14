@@ -97,11 +97,11 @@ return [
     'configs' => [
         'companies' => [
             'label' => 'Companies',
-            'template' => 'vendor/laravel-enso/companies/src/Imports/Templates/companies.json',
+            'template' => 'vendor/laravel-liberu/companies/src/Imports/Templates/companies.json',
         ],
         'userGroups' => [
             'label' => 'User Groups',
-            'template' => 'vendor/laravel-enso/data-import/src/Tests/userGroups.json',
+            'template' => 'vendor/laravel-liberu/data-import/src/Tests/userGroups.json',
         ],
     ],
 ];
