@@ -4,7 +4,7 @@
     "license": "MIT",
     "require": {
         "php": ">=8.2.0",
-        "constantable/laravel-scout-sphinx": "^2.7",
+        "constantable/laravel-scout-sphinx": "^3.0",
         "doctrine/dbal": "^3.1",
         "flowgistics/laravel-xml": "^1.1",
         "guzzlehttp/guzzle": "^7.2",
