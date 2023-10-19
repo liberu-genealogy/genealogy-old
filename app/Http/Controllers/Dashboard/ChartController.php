@@ -128,7 +128,7 @@ class ChartController extends Controller
 //                $this->setConnection($key, $db);
             }
         }
-        //            $db = 'enso';
+        //            $db = 'liberu';
 //            $key = 'database.default';
 //            $this->setConnection('mysql');
 

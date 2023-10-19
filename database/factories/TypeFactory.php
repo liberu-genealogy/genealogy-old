@@ -36,7 +36,7 @@ class TypeFactory extends Factory
             'name' => $name,
             'folder' => $name->camel(),
             'model' => $model,
-            'description' => "Enso {$name}",
+            'description' => "Liberu {$name}",
         ]);
     }
 }

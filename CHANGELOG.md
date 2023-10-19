@@ -33,7 +33,7 @@ Due to these changes, most packages have had a refactor and dependency list upgr
 - fixed uploader
 
 #### mixins
-- improved `ensoFile.js`, now it's constructor receives a `File` resource instead of a filename
+- improved `liberuFile.js`, now it's constructor receives a `File` resource instead of a filename
 
 #### notifications
 - fixed transition group
@@ -51,7 +51,7 @@ Due to these changes, most packages have had a refactor and dependency list upgr
 - improved websockets
 
 #### uploader
-- cascades slot in `enso-uploader`
+- cascades slot in `liberu-uploader`
 - small refactor
 
 #### users
@@ -323,7 +323,7 @@ $table->foreign('file_id')->references('id')->on('files')
     ->onUpdate('restrict')->onDelete('restrict');
 ```
 
-* if using the `ensoFile.js` mixin locally, when instantiating the class, you should pass a file resource object instead of a filename string
+* if using the `liberuFile.js` mixin locally, when instantiating the class, you should pass a file resource object instead of a filename string
 
 * if you're sending email notifications with mailgun and inline attaching pdf files created with the `LaravelLiberu\Pdf\Services\Pdf` service, you need to use `->output()` method:
   ```
@@ -362,7 +362,7 @@ public function templatePath(): string
 
 * if using mailgun, make sure to require `symfony/mailgun-mailer` and `symfony/http-client` by using `composer require symfony/mailgun-mailer symfony/http-client`
 
-* update your `config` files, `.gitignore`, `Middleware` classes, `Providers`, `Exceptions/Handler.php` and `Http/Kernel.php` by following this merge request as an example https://github.com/laravel-enso/enso/pull/417/files 
+* update your `config` files, `.gitignore`, `Middleware` classes, `Providers`, `Exceptions/Handler.php` and `Http/Kernel.php` by following this merge request as an example https://github.com/laravel-liberu/liberu/pull/417/files 
 
 * refactor your local excel seeders by implementing the following methods
 
@@ -386,13 +386,13 @@ public function templatePath(): string
 
 * note that all all migrations have been upgraded in order to  return an anonymous class by the new Laravel 9 style. 
 
-* update the Liberu version to `5.0.0` in `config/enso/config.php`
+* update the Liberu version to `5.0.0` in `config/liberu/config.php`
 * run `composer update` in the project's root
 * run `yarn`, `yarn upgrade && yarn` in `/client` to ensure you have the latest versions and patches are applied. If necessary, update your patches
-* `php artisan enso:upgrade --before-migration`
+* `php artisan liberu:upgrade --before-migration`
 * `php artisan migrate`
-* `php artisan enso:upgrade`
-* `php artisan enso:upgrade --manual`
+* `php artisan liberu:upgrade`
+* `php artisan liberu:upgrade --manual`
 * make sure permissions are properly configured for each role and then save/refresh the roles configuration files
 * as per every release, delete any local, deprecated upgrades
 
@@ -488,19 +488,19 @@ b4bc27f updates eea for United Kingdom
       - `has-padding-medium` -> `p-2`
       - `has-margin-top-medium` -> `mt-2`
 
-- remove `[v-cloak]`, `*:focus` &  `@import 'v-tooltip/dist/v-tooltip';` from `client/src/sass/enso.scss`
+- remove `[v-cloak]`, `*:focus` &  `@import 'v-tooltip/dist/v-tooltip';` from `client/src/sass/liberu.scss`
 
-- update the Liberu version to `4.9.1` in `config/enso/config.php`
+- update the Liberu version to `4.9.1` in `config/liberu/config.php`
 
 - run `composer update` in the project's root
 
 - run `yarn`, `yarn upgrade && yarn` in `/client` to ensure you have the latest versions and patches are applied. If necessary, update your patches
 
-- `php artisan enso:upgrade --before-migration`
+- `php artisan liberu:upgrade --before-migration`
 
 - `php artisan migrate`
 
-- `php artisan enso:upgrade`
+- `php artisan liberu:upgrade`
 
 - as per every release, delete any local, deprecated upgrades
 
@@ -632,7 +632,7 @@ In order to use the migration build, it needs to be imported and configured:
                 },
             }));
     ```
-- in `client\src\js\enso.js`:
+- in `client\src\js\liberu.js`:
     ```
     Vue.configureCompat({
         RENDER_FUNCTION: false,
@@ -646,7 +646,7 @@ In order to use the migration build, it needs to be imported and configured:
 
 The package & snippets are already present in the Liberu release, but they will be commented out, so in order to enable the migration build, open the relevant files and uncomment the blocks above.
 
-Note that the compiler migration build flags belong to the `vue.config.js` file and require the restart of HMR (if using it) while all other flags belong to the `client\src\js\enso.js` file.
+Note that the compiler migration build flags belong to the `vue.config.js` file and require the restart of HMR (if using it) while all other flags belong to the `client\src\js\liberu.js` file.
 
 ### Vue Dev Tools
 For Vue3, a new browser devtools [plugin](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg?hl=en) is needed and can be installed along side the Vue2 plugin.
@@ -658,13 +658,13 @@ In addition to upgrading the Liberu UI to make it Vue3 compatible, we've also ma
     - `.babel.config.js`
     - `.eslintrc.js`
     - `vue.config.js`
-    - `client\src\js\enso.js`
+    - `client\src\js\liberu.js`
     - `client\package.json`
-    - `client\src\sass\enso.scss`
+    - `client\src\sass\liberu.scss`
 - enable the migration mode, as noted above
 - run `yarn && yarn upgrade` and start HMR
 - you should be able to login into the application and will probably have some (lots of) errors and warnings
-- the deprecated `legacyBuild` flow for building the application state has been removed entirely [store.js](https://github.com/enso-ui/ui/pull/86/files#diff-9a955348077f36a44db6037a09c7bb930a0c657685072b2e9cb4acafd1cf4e52)
+- the deprecated `legacyBuild` flow for building the application state has been removed entirely [store.js](https://github.com/liberu-ui/ui/pull/86/files#diff-9a955348077f36a44db6037a09c7bb930a0c657685072b2e9cb4acafd1cf4e52)
 - we have aimed to remove global components and instead import them for each use case
     - the `fa` component is no longer global and needs to be imported locally, where used
         ```
@@ -755,7 +755,7 @@ In addition to upgrading the Liberu UI to make it Vue3 compatible, we've also ma
 
 - if emitting/listening to global events, you should import and refactor to using the `eventBus` instead. See [docs](https://v3.vuejs.org/guide/migration/events-api.html#_2-x-syntax).
     ```
-    import eventBus from '@enso-ui/ui/scrc/core/services/eventBus';
+    import eventBus from '@liberu-ui/ui/scrc/core/services/eventBus';
     ...
     eventBus.$emit('my-event');
     eventBus.$on('my-event', this.myHandler);
@@ -817,11 +817,11 @@ In addition to upgrading the Liberu UI to make it Vue3 compatible, we've also ma
 - we've switched to the standard (non compatibility) syntax for the animate animations. You should prefix animate related classes with `animate__`.
   For example, update:
     ```
-    <enso-form class="box animated fadeIn">
+    <liberu-form class="box animated fadeIn">
     ```
   to
     ```
-    <enso-form class="box animate__animated animate__fadeIn">
+    <liberu-form class="box animate__animated animate__fadeIn">
     ```
 
   Alternatively, refactor using transition components.
@@ -848,7 +848,7 @@ you may switch from the migration build to the regular Vue3 build.
             },
         }));
     ```
-- remove the compatibility customization to `client\src\js\enso.js`
+- remove the compatibility customization to `client\src\js\liberu.js`
   ```
   Vue.configureCompat({
       RENDER_FUNCTION: false,
@@ -968,7 +968,7 @@ This aims to be the last minor release before upgrading to Vue 3 and includes ma
 - imported minimized css from `bulma-extensions`
 
 #### typesense (new)
-- typesense integration for laravel-enso
+- typesense integration for laravel-liberu
 
 #### ui
 - added `integrations.js`
@@ -1240,14 +1240,14 @@ This aims to be the last minor release before upgrading to Vue 3 and includes ma
 
 ### Upgrade steps
 
-* update the Liberu version to `4.8.2` in `config/enso/config.php`
+* update the Liberu version to `4.8.2` in `config/liberu/config.php`
 * run `composer update` in the project's root
 * remove the `bulma-extensions` patch
 * run `yarn`, `yarn upgrade && yarn` in `/client` to ensure you have the latest versions and patches are applied. If necessary, update your patches
-* after `yarn upgrade`, update `vue.config.js` by adding `@enso-ui/route-mapper` package under `transpileDependencies` key
-* `php artisan enso:upgrade --before-migration`
+* after `yarn upgrade`, update `vue.config.js` by adding `@liberu-ui/route-mapper` package under `transpileDependencies` key
+* `php artisan liberu:upgrade --before-migration`
 * `php artisan migrate`
-* `php artisan enso:upgrade`
+* `php artisan liberu:upgrade`
 * as per every release, delete any local, deprecated upgrades
 * update all models having forms with date fields, by adding the following method:  
 ```
@@ -1350,7 +1350,7 @@ For most of our frontend packages we've added router error handling.
 #### control-panel-api
 - improves middleware registration
 - extracts api middleware group in the api package
-- improves database sensor
+- improves database sliberur
 - removes digits for request monitor
 - improves request monitor
 - extracts id provider
@@ -1470,11 +1470,11 @@ To upgrade:
 
 - run `composer update`
 - run `yarn`, `yarn upgrade && yarn` to ensure you have the latest package versions and patches are applied. If necessary, update your patch files.
-- `php artisan enso:upgrade --before-migration`
+- `php artisan liberu:upgrade --before-migration`
 - `php artisan migrate`
-- `php artisan enso:upgrade` to execute the upgrades
+- `php artisan liberu:upgrade` to execute the upgrades
 - make sure permissions are properly configured for each role and then save/refresh the roles configuration files
-- update the Liberu version to `4.8.1` in `config/enso/config.php`
+- update the Liberu version to `4.8.1` in `config/liberu/config.php`
 
 ## 4.8.0
 
@@ -1634,9 +1634,9 @@ Most of the packages received a dependency list cleanup.
   database & strucure is up to date, since this release cleans up a lot of package upgrades
 * upgrade your machine to php8
 * in `composer.json` update  the following dependencies to the given versions:
-    -  `"laravel-enso/core": "^7.0",`
+    -  `"laravel-liberu/core": "^7.0",`
     -  `"sentry/sentry-laravel": "^2.0.0"`
-    -  `"laravel-enso/phpunit-pretty-print": "^1.0",`
+    -  `"laravel-liberu/phpunit-pretty-print": "^1.0",`
     -  `"nunomaduro/phpinsights": "^2.0",`
 * search & replace in your local project (including the database folder) the following namespaces:
     - `Core\Models\UserGroup` -> `UserGroups\Models\UserGroup`
@@ -1674,19 +1674,19 @@ use ObjectCalisthenics\Sniffs\NamingConventions\ElementNameMinimalLengthSniff;
     *
     !.gitignore
     ```
-  You may also remove `.gitignore` files from individual enso created, app sub-folders (except `public`)
-* check the local `config/enso/tables.php` file and if the `export.path` key is present, update it to `export.folder`
+  You may also remove `.gitignore` files from individual liberu created, app sub-folders (except `public`)
+* check the local `config/liberu/tables.php` file and if the `export.path` key is present, update it to `export.folder`
 * local state:
     - remove the local state binding from `App\Providers\AppServiceProvider`: `CoreLocalState::class => LocalState::class,`
     - remove the `App\Services\LocalState` class after moving any logic to one or more state builder services
-    - from `client/src/js/enso.js`, remove the import: `import './localState';`
+    - from `client/src/js/liberu.js`, remove the import: `import './localState';`
     - remove the file `client/src/js/localState.js`
     - if you moved logic from the old `LocalState` class, update the file `client/src/js/store/local.js` as required, otherwise you may delete it. Note that the `client/src/js/store` folder MUST be present.
-* compare `config/enso/config.php` with `vendor/laravel-enso/core/config/config.php`
+* compare `config/liberu/config.php` with `vendor/laravel-liberu/core/config/config.php`
   and remove any extra, deprecated keys
-* still in `config/enso/config.php` update the Liberu version to 4.8.0
-* compare `config/enso/addresses.php` with `vendor/laravel-enso/addresses/config/addresses.php` and remove any extra, deprecated keys
-* update the `password` `config/enso/auth.php` key as follows:
+* still in `config/liberu/config.php` update the Liberu version to 4.8.0
+* compare `config/liberu/addresses.php` with `vendor/laravel-liberu/addresses/config/addresses.php` and remove any extra, deprecated keys
+* update the `password` `config/liberu/auth.php` key as follows:
     ```
     'password' => [
             'lifetime' => env('PASSWORD_LIFETIME', 0),
@@ -1712,9 +1712,9 @@ use ObjectCalisthenics\Sniffs\NamingConventions\ElementNameMinimalLengthSniff;
 * remove `bulma-rtl` patch from `client\patches`, as is no longer needed
 * run `yarn`, `yarn upgrade && yarn` in `/client` to ensure you have the latest versions and patches are applied. If necessary, update your patches
 * `php artisan migrate`
-* `php artisan enso:upgrade`
+* `php artisan liberu:upgrade`
 * as per every release, delete any local, deprecated upgrades
-* it recommended to also run the all the enso tests to make everything is working properly; therefore, compare your local `phpunit.xml` with Liberu's and make sure that you're not missing any package tests.
+* it recommended to also run the all the liberu tests to make everything is working properly; therefore, compare your local `phpunit.xml` with Liberu's and make sure that you're not missing any package tests.
 
 ## 4.7.1
 
@@ -1722,13 +1722,13 @@ This is a patch release whose main purpose is to update localisation files.
 
 ### Upgrade steps
 
-- update the Liberu version to `4.7.1` in `config/enso/config.php`
+- update the Liberu version to `4.7.1` in `config/liberu/config.php`
 - run `composer update` in the project's root
-- publish  the updated localisation assets with `php artisan vendor:publish --tag=enso-localisation --force`
+- publish  the updated localisation assets with `php artisan vendor:publish --tag=liberu-localisation --force`
 - run `yarn`, `yarn upgrade && yarn` in `/client` to ensure you have the latest versions and patches are applied. If necessary, update your patches
-- `php artisan enso:upgrade --before-migration`
+- `php artisan liberu:upgrade --before-migration`
 - `php artisan migrate`
-- `php artisan enso:upgrade`
+- `php artisan liberu:upgrade`
 - as per every release, delete any local, deprecated upgrades
 
 ## 4.7.0
@@ -1828,12 +1828,12 @@ Most of the packages received a dependency list cleanup.
 
 #### typeahead
 - made search control hidden on mobile
-- passed enso error handler
+- passed liberu error handler
 - added `taggableoption`: can create when typing non existing options; emits keydown events to be used in different implementation scenarios; small internal refactor
 - cascaded the core typeahead clear method and made the query & loading values available in the controls slot
 
 #### ui
-- fixed `@enso-ui/auth` and `channels`
+- fixed `@liberu-ui/auth` and `channels`
 - improved logo display in navbar
 - small refactor
 
@@ -1920,7 +1920,7 @@ Most of the packages received a dependency list cleanup.
 - fixed import, style, password reset when email is wrong, notification queue and email footer
 - updated `Version.php`, `config.php`and social media icons
 - added core version,  missing key in guest state and admins & supervisors scopes on user
-- improved reset password notification and enso mail theme
+- improved reset password notification and liberu mail theme
 - replaced social media icons with svgs; improved publishing aliases
 - extended the reset storage command to take optional list of folders (comma separated)
 - removed deprecated `googleplus` and unused import
@@ -2142,12 +2142,12 @@ Most of the packages received a dependency list cleanup.
 
 ### Upgrade steps
 
-* update the Liberu version to 4.7.0 in `config/enso/config.php`
+* update the Liberu version to 4.7.0 in `config/liberu/config.php`
 * run `composer update` in the project's root
 * run `yarn`, `yarn upgrade && yarn` in `/client` to ensure you have the latest versions and patches are applied. If necessary, update your patches
-* `php artisan enso:upgrade --before-migration`
+* `php artisan liberu:upgrade --before-migration`
 * `php artisan migrate`
-* `php artisan enso:upgrade`
+* `php artisan liberu:upgrade`
 * as per every release, delete any local, deprecated upgrades
 ## 4.6.0
 
@@ -2181,7 +2181,7 @@ This release includes improvements, bug fixes, and new features.
 
 #### ui
 - announce a new release on every chunk load failed error
-- added permissions to register ref enso-ui/tasks#6
+- added permissions to register ref liberu-ui/tasks#6
 - fixed auth routes for guests
 - removed predefined websocket channels
 
@@ -2208,8 +2208,8 @@ This release includes improvements, bug fixes, and new features.
 
 #### core
 - removed `HasAvatar` trait
-- removed the `laravel-enso/teams` dependency as the package can be added if required
-- binding `Faker\Generator` in production to Dummy laravel-enso/data-export#10
+- removed the `laravel-liberu/teams` dependency as the package can be added if required
+- binding `Faker\Generator` in production to Dummy laravel-liberu/data-export#10
 - added user profile policy
 - fixed import in login controller
 - added namespace to tests
@@ -2231,7 +2231,7 @@ This release includes improvements, bug fixes, and new features.
 - fixed file path upgrade for projects that don't use data-import
 
 #### filters
-- resolves comparison operators enum from App's container for improved flexibility; ref laravel-enso/filters#4
+- resolves comparison operators enum from App's container for improved flexibility; ref laravel-liberu/filters#4
 
 #### helpers
 - added dummy
@@ -2263,7 +2263,7 @@ This release includes improvements, bug fixes, and new features.
 - added about-us page
 - added controller import
 - added limited stock limit upgrade
-- added favorites database persistent ref laravel-enso/webshop#33
+- added favorites database persistent ref laravel-liberu/webshop#33
 - removed restricted/selective mfr load
 
 #### emag
@@ -2275,18 +2275,18 @@ This release includes improvements, bug fixes, and new features.
 ### Upgrade steps
 
 To upgrade:
-- `app/Http/Controllers/Auth` was removed from enso - if not customized locally, you may remove it as well
-- websocket getter changed, and there is a channel getter instead of specific channels getter now; if you are using websocket locally, you need to change the getter(like [this](https://github.com/enso-ui/tasks/pull/7/files))
-- the `teams` package is no longer included with enso by default. If you require it, add it back:
-    - add `"laravel-enso/teams": "^3.0",` to `composer.json`
-    - add `"enso-ui/teams": "^2.0",` to `client/package.json`
-- remove `Broadcast::routes();` from `app/Providers/BroadcastServiceProvider.php` (like [this](https://github.com/laravel-enso/enso/pull/368/files#diff-f6494976ee4aafbaba31ea0568949f51d3be2681f8c50fbb2a19863fdb78796fR4-R13))
-- update the Liberu version to `4.6.0` in `config/enso/config.php`
+- `app/Http/Controllers/Auth` was removed from liberu - if not customized locally, you may remove it as well
+- websocket getter changed, and there is a channel getter instead of specific channels getter now; if you are using websocket locally, you need to change the getter(like [this](https://github.com/liberu-ui/tasks/pull/7/files))
+- the `teams` package is no longer included with liberu by default. If you require it, add it back:
+    - add `"laravel-liberu/teams": "^3.0",` to `composer.json`
+    - add `"liberu-ui/teams": "^2.0",` to `client/package.json`
+- remove `Broadcast::routes();` from `app/Providers/BroadcastServiceProvider.php` (like [this](https://github.com/laravel-liberu/liberu/pull/368/files#diff-f6494976ee4aafbaba31ea0568949f51d3be2681f8c50fbb2a19863fdb78796fR4-R13))
+- update the Liberu version to `4.6.0` in `config/liberu/config.php`
 - run `composer update` in the project's root
 - run `yarn`, `yarn upgrade && yarn` to ensure you have the latest versions and patches are applied. If necessary, update your patches
-- `php artisan enso:upgrade --before-migration`
+- `php artisan liberu:upgrade --before-migration`
 - `php artisan migrate`
-- `php artisan enso:upgrade`
+- `php artisan liberu:upgrade`
 - as per every release, delete any local, deprecated upgrades
 
 ## 4.5.0
@@ -2417,8 +2417,8 @@ The main reason for this release is the complete overhaul and refactor of the fi
 - added per sheet progress
 - allows for the cancellation of an in-progress export
 - updated the notification text & added the ability to customize the default notification
-- the `enso:data-export:purge` command is being scheduled from within the package
-- the `DataExport` model has an `expired` scope which takes into account the configuration value for `enso.exports.retainFor`
+- the `liberu:data-export:purge` command is being scheduled from within the package
+- the `DataExport` model has an `expired` scope which takes into account the configuration value for `liberu.exports.retainFor`
 
 #### data-import
 - complete re-write of the package
@@ -2504,7 +2504,7 @@ The main reason for this release is the complete overhaul and refactor of the fi
 - updated the package due to `files` refactor
 - renamed path key to folder in `config.export` array
 - improved export blade
-- added generic and enso specific export handling, including notifications
+- added generic and liberu specific export handling, including notifications
 - moved `isLiberu` getter in Config
 - added a `name` ability to Config
 - improved fetcher to memoize count
@@ -2534,25 +2534,25 @@ To upgrade:
 - run `composer update`
 - run `yarn`, `yarn upgrade && yarn` to ensure you have the latest package versions and patches are applied. If necessary, update your patch files
 - `composer dump-autoload`
-- `php artisan enso:upgrade --before-migration`
+- `php artisan liberu:upgrade --before-migration`
 - `php artisan migrate`
-- `php artisan enso:upgrade`
+- `php artisan liberu:upgrade`
 - as per every release, delete any local, old upgrades
-- if using the `calendar` package, you should remove the scheduling of the  `enso:calendar:send-reminders` local command as it's being scheduled from within the package
-- if using the `data-export` package, you should remove the scheduling of the  `enso:data-export:purge` local command as it's being scheduled from within the package
+- if using the `calendar` package, you should remove the scheduling of the  `liberu:calendar:send-reminders` local command as it's being scheduled from within the package
+- if using the `data-export` package, you should remove the scheduling of the  `liberu:data-export:purge` local command as it's being scheduled from within the package
 - for table exports, data-import & data-exports templates may have changed slightly, if using internationalized texts, you may need to update your translations
 - phpunit configuration has become more strict so ensure you have the proper path defided for the following packages:
     - `helpers`:
   ```xml
-  <directory suffix="Test.php">./vendor/laravel-enso/helpers/tests/unit</directory>
+  <directory suffix="Test.php">./vendor/laravel-liberu/helpers/tests/unit</directory>
   ```
     - `cnpvalidator`/`cnp-validator`:
   ```xml
-  <directory suffix="Test.php">./vendor/laravel-enso/cnp-validator/tests/features</directory>
+  <directory suffix="Test.php">./vendor/laravel-liberu/cnp-validator/tests/features</directory>
   ```
     - `menu-manager`/`menus`:
   ```xml
-  <directory suffix="Test.php">./vendor/laravel-enso/menus/tests/features</directory>
+  <directory suffix="Test.php">./vendor/laravel-liberu/menus/tests/features</directory>
   ```
 
 #### if running data imports programmatically
@@ -2631,7 +2631,7 @@ To upgrade:
 
 The following Liberu models use the `HasFile` trait: `Avatar`, `Brand`, `CarouselSlide`, `Company`, `DataExport`, `DataImport`, `Document`, `Picture`, `Poster`, `RejectedImport`, `Upload`, `Video`, `WebshopPage`.
 
-- the included [FilePath](https://github.com/laravel-enso/files/blob/master/src/Upgrades/FilePath.php) upgrade will handle the update of files attached to Liberu models (such as those above).
+- the included [FilePath](https://github.com/laravel-liberu/files/blob/master/src/Upgrades/FilePath.php) upgrade will handle the update of files attached to Liberu models (such as those above).
 
   However, the `Attachable` contract in concert with the `HasFile` trait allows an attachable model to specify a potentially dynamic folder name where to store files.
 
@@ -2655,7 +2655,7 @@ The following Liberu models use the `HasFile` trait: `Avatar`, `Brand`, `Carouse
     ```
 - the `LaravelLiberu\Files\Traits/Uploads.php` has been removed
 - previously, when using the `attach(...)` method on the `File` model or the any `Attachable` model, through the `HasFile` proxy method with the same name, the file was being optimized. If you are attaching files that somehow do not come through the Liberu flow, handle any needed optimization manually.
-- the `file` relationship as defined in the [HasFile](https://github.com/laravel-enso/files/blob/master/src/Traits/HasFile.php) provides a default if no file exists:
+- the `file` relationship as defined in the [HasFile](https://github.com/laravel-liberu/files/blob/master/src/Traits/HasFile.php) provides a default if no file exists:
     ```php
     public function file(): Relation
         {
@@ -2697,7 +2697,7 @@ The packages thus affected have been updated to their next respective major vers
 
 #### datepicker
 - added new 'value-updated' event on component value change
-- improved enso datepicker alt-format handling
+- improved liberu datepicker alt-format handling
 
 #### filters
 - updated eslint config
@@ -2818,10 +2818,10 @@ are also visible in the status report
 
 ### Upgrade steps
 
-As this new release cleaned up the `@enso-ui/ui` package and simplified icon and route
+As this new release cleaned up the `@liberu-ui/ui` package and simplified icon and route
 registration, a bit of cleanup is also required in the local project.
 
-Also, a new `php artisan enso:upgrade --before-migration` command is available that
+Also, a new `php artisan liberu:upgrade --before-migration` command is available that
 is meant be used to run upgrade commands **before** the `php artisan migrate` command,
 which should help with complex upgrade scenarios.
 
@@ -2835,26 +2835,26 @@ To upgrade:
     - local resources (pages, components)
     - the `client/.eslintrc.js` file
 - bump at least the following dependencies within `client\package.json`:
-    - `"@enso-ui/activity-log": "^3.0`
-    - `"@enso-ui/bulma": "^4.0",`
-    - `"@enso-ui/calendar": "^3.0",`
-    - `"@enso-ui/data-import": "^3.0",`
-    - `"@enso-ui/how-to": "^3.0",`
-    - `"@enso-ui/tasks": "^2.0",`
-    - `"@enso-ui/tutorials": "^3.0",`
-    - `"@enso-ui/ui": "^4.0",`
+    - `"@liberu-ui/activity-log": "^3.0`
+    - `"@liberu-ui/bulma": "^4.0",`
+    - `"@liberu-ui/calendar": "^3.0",`
+    - `"@liberu-ui/data-import": "^3.0",`
+    - `"@liberu-ui/how-to": "^3.0",`
+    - `"@liberu-ui/tasks": "^2.0",`
+    - `"@liberu-ui/tutorials": "^3.0",`
+    - `"@liberu-ui/ui": "^4.0",`
     - `"eslint-config-airbnb-base": "14.2.0",`
     Depending on your project requirement, the following dependencies might also need bumping:
-    - `"@enso-ui/categories": "^2.0",`
-    - `"@enso-ui/commercial": "^4.0",`
-    - `"@enso-ui/discounts": "^3.0",`
-    - `"@enso-ui/emag": "^4.0",`
-    - `"@enso-ui/financials": "^3.0",`
-    - `"@enso-ui/inventory": "^3.0",`
-    - `"@enso-ui/measurement-units": "^3.0",`
-    - `"@enso-ui/products": "^3.0",`
-    - `"@enso-ui/services": "^3.0",`
-    - `"@enso-ui/themes": "^2.0",`
+    - `"@liberu-ui/categories": "^2.0",`
+    - `"@liberu-ui/commercial": "^4.0",`
+    - `"@liberu-ui/discounts": "^3.0",`
+    - `"@liberu-ui/emag": "^4.0",`
+    - `"@liberu-ui/financials": "^3.0",`
+    - `"@liberu-ui/inventory": "^3.0",`
+    - `"@liberu-ui/measurement-units": "^3.0",`
+    - `"@liberu-ui/products": "^3.0",`
+    - `"@liberu-ui/services": "^3.0",`
+    - `"@liberu-ui/themes": "^2.0",`
 - remove any package icon imports from `client/src/js/app.js`, as they're no longer required
 - if using the dashboard page/component & menu, import the menu icon in `client/src/js/app.js`:
     ```
@@ -2865,29 +2865,29 @@ To upgrade:
 - unless using them in your local resources, you may remove package aliases from `client/vue.config.js`
 - the avatar (`Avatar.vue`) component has been moved from the `ui` package to the `users` package, if you're using it locally, update the imports.
 - within the `composer.json` `scripts/post-update-cmd` section add the command:
-    - `"php artisan enso:upgrade:status"`
+    - `"php artisan liberu:upgrade:status"`
 - the `data-import` package has been made optional, if you still require it, add it to:
-    - `composer.json` : `"laravel-enso/data-import": "^5.0",`
-    - `package.json`: `"@enso-ui/data-import": "^3.0",`
+    - `composer.json` : `"laravel-liberu/data-import": "^5.0",`
+    - `package.json`: `"@liberu-ui/data-import": "^3.0",`
 - the `tasks` package has been made optional, if you added it & still require it, add it to:
-    - `composer.json` : `"laravel-enso/tasks": "^1.0",`
-    - `package.json`: `"@enso-ui/tasks": "^2.0",`
+    - `composer.json` : `"laravel-liberu/tasks": "^1.0",`
+    - `package.json`: `"@liberu-ui/tasks": "^2.0",`
 - remove the following files as they're no longer required:
     - `client/src/js/store.js`
     - `client/src/js/router.js`
-- look within this [PR](https://github.com/laravel-enso/enso/pull/344/files) and update:
-    - `client/src/js/enso.js`
+- look within this [PR](https://github.com/laravel-liberu/liberu/pull/344/files) and update:
+    - `client/src/js/liberu.js`
     - `client/src/js/localState.js`
 - run `composer update`
 - run `yarn`, `yarn upgrade && yarn` to ensure you have the latest package versions and patches are applied. If necessary, update your patch files
 - `php artisan migrate`
 - `composer dump-autoload`
-- `php artisan enso:upgrade`
-- publish the updated localisation assets with `php artisan vendor:publish --tag=enso-localisation`
+- `php artisan liberu:upgrade`
+- publish the updated localisation assets with `php artisan vendor:publish --tag=liberu-localisation`
 and copy the `ru.json` file from the above commit into the local `resources/lang/app` folder
 - in `Envoyer` and/or during your deployment process, add the new command:
-    `php artisan enso:upgrade --before-migration`
-- update the Liberu version to `4.4.0` in `config/enso/config.php`
+    `php artisan liberu:upgrade --before-migration`
+- update the Liberu version to `4.4.0` in `config/liberu/config.php`
 - as per every release, delete the old upgrades
 
 ## 4.3.0
@@ -2924,7 +2924,7 @@ Where possible, we've kept packages backwards compatible.
 
 First and foremost, be sure the to read the official [Laravel 8 upgrade guide](https://laravel.com/docs/8.x/upgrade) to understand all implications.
 
-Since we liked the previous flow of publishing factories and customizing them, we've created a `FactoryResolver` class that is used to emulate the old behavior. Basically, when using a factory to create a model, we first search in the local project factories folder and try to find a suitable factory class, otherwise we search for a factory in the factories folder in the laravel-enso package which contains the respective model.
+Since we liked the previous flow of publishing factories and customizing them, we've created a `FactoryResolver` class that is used to emulate the old behavior. Basically, when using a factory to create a model, we first search in the local project factories folder and try to find a suitable factory class, otherwise we search for a factory in the factories folder in the laravel-liberu package which contains the respective model.
 
 The limitation for the factory naming convention is that if you have two models with the same name, with different namespaces, you'll need to customize the models' `newFactory()` method and implement your own strategy.
 
@@ -2936,7 +2936,7 @@ To upgrade:
     ```
     "fruitcake/laravel-cors": "^2.0",
     "guzzlehttp/guzzle": "^7.0.1",
-    "laravel-enso/core": "^6.0",
+    "laravel-liberu/core": "^6.0",
     "laravel/horizon": "^5.0",
     "laravel/telescope": "^4.0",
     "laravel/ui": "^3.0",
@@ -2953,13 +2953,13 @@ To upgrade:
     "Database\\Seeders\\": "database/seeders/"
     ```
     - remove the `classmap` block and its contents from the `autoload` section
-- **update where necessary** by following this [merge request](https://github.com/laravel-enso/enso/pull/338) for a list of other updated files  (local factories and seeders cleanup, config files and more).
+- **update where necessary** by following this [merge request](https://github.com/laravel-liberu/liberu/pull/338) for a list of other updated files  (local factories and seeders cleanup, config files and more).
 - run `composer update`
 - run `yarn`, `yarn upgrade && yarn` to ensure you have the latest package versions and patches are applied. If necessary, update your patch files
 - `php artisan migrate`
 - `composer dump-autoload`
-- `php artisan enso:upgrade`
-- update the Liberu version to `4.3.0` in `config/enso/config.php`
+- `php artisan liberu:upgrade`
+- update the Liberu version to `4.3.0` in `config/liberu/config.php`
 
 Remember:
 - you can delete any non customized local seeders and import them from their package
@@ -2990,7 +2990,7 @@ This release includes many improvements, bug fixes and a few new features.
 
 #### date (new)
 
-This package extracts a collection of date parsing and formatting helpers form enso-ui/ui.
+This package extracts a collection of date parsing and formatting helpers form liberu-ui/ui.
 
 #### datepicker
 - fixed flatpickr timing error when setting the datepicker value to null
@@ -3010,10 +3010,10 @@ The package creates the structure and includes the functionality for working wit
 - designed for better product management
 
 #### products
-- added `enso-ui/packaging-units` as dependency
+- added `liberu-ui/packaging-units` as dependency
 
 #### tables
-- uses the new `enso-ui/date`
+- uses the new `liberu-ui/date`
 - added the date-picker dependency
 - added ability to conditionally render row actions
 
@@ -3023,7 +3023,7 @@ The package creates the structure and includes the functionality for working wit
 - added focus
 
 #### ui
-- removed date helpers and added `enso-ui/date` dependency
+- removed date helpers and added `liberu-ui/date` dependency
 - translated hard-coded footer texts
 
 **PRIVATE REPOS:**
@@ -3084,7 +3084,7 @@ The package creates the structure and includes the functionality for working wit
 - adds DataImport Upgrade
 - added xss-sanitizer
 - removed the `Upgrade` command from `AppServiceProvider`.
-Upgrades are now entirely handled by the `laravel-enso/upgrade` package
+Upgrades are now entirely handled by the `laravel-liberu/upgrade` package
 - refactored namespace for existing upgrades to work with the new package
 - purged old upgrade classes
 
@@ -3132,7 +3132,7 @@ therefore being able to further customize which actions apply to each row
 #### upgrade
 - implemented auto discovery of local and package upgrade classes when placed in app/Upgrades or src/Upgrades
 - added the ability to set priorities for upgrades
-- added new command: `enso:upgrade:status` which show the status of upgrades
+- added new command: `liberu:upgrade:status` which show the status of upgrades
 - added `MigratesPostDataMigration` interface to `Structure`
 - added `Applicable` interface which should be used to define if an upgrade should run or not
 - added `ShouldRunManually` option
@@ -3238,14 +3238,14 @@ To upgrade:
 If necessary, update your patch files.
 - `php artisan migrate`
 - `composer dump-autoload`
-- run `php artisan enso:upgrade` to execute the upgrades
-(you may also run`php artisan enso:upgrade:status` to view the upgrades' statuses)
+- run `php artisan liberu:upgrade` to execute the upgrades
+(you may also run`php artisan liberu:upgrade:status` to view the upgrades' statuses)
 - make sure permissions are properly configured for each role and then save/refresh the roles configuration files
-- update the Liberu version to `4.2.0` in `config/enso/config.php`
+- update the Liberu version to `4.2.0` in `config/liberu/config.php`
 - in `composer.json`, in the `scripts.post-update-cmd` section add the following scripts:
     * `"php artisan telescope:publish",`
     * `"php artisan horizon:publish",`
-    * `"php artisan enso:webshop:publish",` (if applicable)
+    * `"php artisan liberu:webshop:publish",` (if applicable)
 
 ## 4.1.0
 
@@ -3430,19 +3430,19 @@ To upgrade:
 - you need to publish addresses seeders by running: `php artisan vendor:publish --tag=addresses-seeds --force`
 - publish also addresses factory: `php artisan vendor:publish --tag=addresses-factory --force`
 - if using `categories` package, you need to:
-    - update in `composer.json` the categories dependency `"laravel-enso/categories": "^2.0"`
+    - update in `composer.json` the categories dependency `"laravel-liberu/categories": "^2.0"`
     - publish factory by running: `php artisan vendor:publish --tag=categories-factory --force`
     - add the categories test suite to `phpunit.xml`:
     ```xml
         <testsuite name="categories">
-            <directory suffix="Test.php">./vendor/laravel-enso/categories/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-liberu/categories/tests</directory>
         </testsuite>
     ```
 - `php artisan migrate`
 - `composer dump-autoload`
-- `php artisan enso:upgrade`
+- `php artisan liberu:upgrade`
 - ensure that permissions are properly configured for each role and then save/refresh the roles configuration files
-- update the Liberu version to `4.1.0` in `config/enso/config.php`
+- update the Liberu version to `4.1.0` in `config/liberu/config.php`
 
 ## 4.0.1
 
@@ -3539,12 +3539,12 @@ and removed `throttle`
 To upgrade:
 - run `composer update`
 - run `yarn`, `yarn upgrade && yarn` to ensure you have the latest versions and patches are applied. If necessary, update your patch files
-- `php artisan enso:upgrade`
+- `php artisan liberu:upgrade`
 - all `Auth:onceUsingId()` uses should be updated to `Auth::setUser($user)` due to sanctum addition
 - remove `'throttle:60,1'` from `App\Http\Kernel`
 - replace tables.export.notifications `email` to `mail`
 - upgrade `"animate.css": "^4.0.0"` in package.json
-- update in `enso.scss` animate import to `animate.compat.css` instead of `animate.css`
+- update in `liberu.scss` animate import to `animate.compat.css` instead of `animate.css`
 - update `MAILGUN_ENDPOINT` in your `.env` files to `api.mailgun.net` instead of `api.eu.mailgun.net`
 - ensure that permissions are properly configured for each role and then save/refresh the roles configuration files
 
@@ -3806,7 +3806,7 @@ We've also refactored the new `toastr` uses by injecting it where needed instead
 - improved filters request to receive array or argument list
 - improved `CascadeMorphMap` to always resolve the last model binding
 - improved `Searchable` to detect changes in algolia camelCase keys also
-- updated enso exception error code to 488
+- updated liberu exception error code to 488
 
 #### history-tracker
 - updated codacy badge
@@ -3905,27 +3905,27 @@ We've also refactored the new `toastr` uses by injecting it where needed instead
 
 # upgrades steps
 ### Backend
-1. update dependencies to next major for example core ^5.0 (like [this](https://github.com/laravel-enso/enso/blob/6d98e9348bd79f203e1edcbd40732d70e083278a/composer.json))
+1. update dependencies to next major for example core ^5.0 (like [this](https://github.com/laravel-liberu/liberu/blob/6d98e9348bd79f203e1edcbd40732d70e083278a/composer.json))
 2. run `composer update`
-3. add `SANCTUM_STATEFUL_DOMAINS ` to .env (like [this](https://github.com/laravel-enso/enso/pull/316/files#diff-cbfd64a28982a1818f2b5f16e7f9d634R68))
+3. add `SANCTUM_STATEFUL_DOMAINS ` to .env (like [this](https://github.com/laravel-liberu/liberu/pull/316/files#diff-cbfd64a28982a1818f2b5f16e7f9d634R68))
 4. remove App from namespace of packages,(you can use this regex, `LaravelLiberu\\(.*)\\App\\` replace with `LaravelLiberu\\$1\\`)
-    - you need to replace `laravel-enso/(.*)/src/App/` with `laravel-enso/$1/src/` too
-5. `Comments`, `Discussions` & `Replies` traits were removed and you need remove them from `User.php` (like [this](https://github.com/laravel-enso/enso/pull/316/files#diff-4614b2d052a2cb7486640775e2bdbb55R2-R9))
+    - you need to replace `laravel-liberu/(.*)/src/App/` with `laravel-liberu/$1/src/` too
+5. `Comments`, `Discussions` & `Replies` traits were removed and you need remove them from `User.php` (like [this](https://github.com/laravel-liberu/liberu/pull/316/files#diff-4614b2d052a2cb7486640775e2bdbb55R2-R9))
 6. run `composer dump-autoload`
-7. you need to add the `AuthorizationCookie` and `EnsureFrontendRequestsAreStateful` middleware classes to middleware group (like [this](https://github.com/laravel-enso/enso/blob/f0fedbab000035b9b998290c1fd2d2af1e038e0f/app/Http/Kernel.php))
-8. if you didn't bind Core/User to the local User, you need to do this now in `AppServiceProvider` (like [this](https://github.com/laravel-enso/enso/pull/316/files#diff-80bda0ca3af455d6354e095203e0199aR11-R14) )
-9. you need to replace the `web` middleware with `api` in `RouteServiceProvider.php` and in your local `api.php` routes (like [this](https://github.com/laravel-enso/enso/pull/316/files#diff-b467cc786635bd6945b17726282f1c64R28-R34))
-10. you must update the configuration values for defaults.guard to `api` and api.driver to `sanctum` (like [this](https://github.com/laravel-enso/enso/pull/316/files#diff-3fc9d8e570780c4eb337c6f860b1e8e0))
+7. you need to add the `AuthorizationCookie` and `EnsureFrontendRequestsAreStateful` middleware classes to middleware group (like [this](https://github.com/laravel-liberu/liberu/blob/f0fedbab000035b9b998290c1fd2d2af1e038e0f/app/Http/Kernel.php))
+8. if you didn't bind Core/User to the local User, you need to do this now in `AppServiceProvider` (like [this](https://github.com/laravel-liberu/liberu/pull/316/files#diff-80bda0ca3af455d6354e095203e0199aR11-R14) )
+9. you need to replace the `web` middleware with `api` in `RouteServiceProvider.php` and in your local `api.php` routes (like [this](https://github.com/laravel-liberu/liberu/pull/316/files#diff-b467cc786635bd6945b17726282f1c64R28-R34))
+10. you must update the configuration values for defaults.guard to `api` and api.driver to `sanctum` (like [this](https://github.com/laravel-liberu/liberu/pull/316/files#diff-3fc9d8e570780c4eb337c6f860b1e8e0))
 11. we have replaced the `fillable` property with `guarded` on all of our models, so make sure to update the local models accordingly
 12. the `CompanyStatuses` enum was renamed to `Statuses`
-13. you need to add types to `LaravelLiberu/Migrator` `Migration` class fields (like [this](https://github.com/laravel-enso/enso/pull/316/files#diff-9c0e569dfec04dd81a69d88cde76a0ef))
-14. you may need to fix routes in imports and static files (like [this](https://github.com/laravel-enso/enso/pull/316/files#diff-2e0b85f74baf44e5614b951a9b21056bR100)) (you can use this pattern for searching `laravel-enso/.*/src/database`)
+13. you need to add types to `LaravelLiberu/Migrator` `Migration` class fields (like [this](https://github.com/laravel-liberu/liberu/pull/316/files#diff-9c0e569dfec04dd81a69d88cde76a0ef))
+14. you may need to fix routes in imports and static files (like [this](https://github.com/laravel-liberu/liberu/pull/316/files#diff-2e0b85f74baf44e5614b951a9b21056bR100)) (you can use this pattern for searching `laravel-liberu/.*/src/database`)
 15. publish the sanctum config `php artisan vendor:publish  --tag=sanctum-config`
 16. publish the monitoring seeder `php artisan vendor:publish  --tag=control-panel-api-seeder` (optional, if you’re using Control Panel Api)
-17. add `Broadcast::routes(['middleware' => ['auth:sanctum']]);` to `routes/api.php`(like [this](https://github.com/laravel-enso/enso/pull/316/files#diff-27c5e06ed9d12656d283f7d0c76b49bdR1-R32))
+17. add `Broadcast::routes(['middleware' => ['auth:sanctum']]);` to `routes/api.php`(like [this](https://github.com/laravel-liberu/liberu/pull/316/files#diff-27c5e06ed9d12656d283f7d0c76b49bdR1-R32))
 18. search & replace `use LaravelLiberu\Helpers\Classes\` with `use LaravelLiberu\Helpers\Services\`
-19. `companies` doesn't have `documents`, `comments`, `discussion` as dependencies anymore, if you still need them you need to install them and using `DynamicMethod` (like [dynamic-methods](https://github.com/laravel-enso/enso/tree/cf58505cec80bdc49003c0ea11d3837a60fbb4e9/app/DynamicRelations), [AppServiceProvider.php](https://github.com/laravel-enso/enso/pull/316/files#diff-80bda0ca3af455d6354e095203e0199aR16-R28), [composer.json](https://github.com/laravel-enso/enso/pull/316/files#diff-b5d0ee8c97c7abd7e3fa29b9a27d1780))
-20. `how-to`, `activity-log` & `tutorials` were removed from the `laravel-enso/core`, therefore if you need to use them you need install too (like [this](https://github.com/laravel-enso/enso/blob/6d98e9348bd79f203e1edcbd40732d70e083278a/composer.json))
+19. `companies` doesn't have `documents`, `comments`, `discussion` as dependencies anymore, if you still need them you need to install them and using `DynamicMethod` (like [dynamic-methods](https://github.com/laravel-liberu/liberu/tree/cf58505cec80bdc49003c0ea11d3837a60fbb4e9/app/DynamicRelations), [AppServiceProvider.php](https://github.com/laravel-liberu/liberu/pull/316/files#diff-80bda0ca3af455d6354e095203e0199aR16-R28), [composer.json](https://github.com/laravel-liberu/liberu/pull/316/files#diff-b5d0ee8c97c7abd7e3fa29b9a27d1780))
+20. `how-to`, `activity-log` & `tutorials` were removed from the `laravel-liberu/core`, therefore if you need to use them you need install too (like [this](https://github.com/laravel-liberu/liberu/blob/6d98e9348bd79f203e1edcbd40732d70e083278a/composer.json))
 21. `obs` field was replaced with `notes`, you need to update migrations and factories regarding this change
 22. replace the deprecated `defaultAddress()` method with `address` where necessary
 23. publish the telescope assets by running `php artisan telescope:publish`
@@ -3933,15 +3933,15 @@ We've also refactored the new `toastr` uses by injecting it where needed instead
 25. update version `4.0.0`
 
 ### FrontEnd:
-1. update dependencies to the next major version (for example `"@enso-ui/ui": "^3.0"`) except (`clipboard`, `confirmation`, `datepicker`, `directives`, `divider`, `dropdown-indicator`, `enums`, `erd`, `laravel-validation`, `money`, `progress-bar`, `progress-circle`, `route-mapper`, `strings`, `switch`, `tabs`, `textarea`, `themes`, `transitions`, `wysiwyg`, `uploader`) (like [this](https://github.com/laravel-enso/enso/blob/6d98e9348bd79f203e1edcbd40732d70e083278a/client/package.json))
+1. update dependencies to the next major version (for example `"@liberu-ui/ui": "^3.0"`) except (`clipboard`, `confirmation`, `datepicker`, `directives`, `divider`, `dropdown-indicator`, `enums`, `erd`, `laravel-validation`, `money`, `progress-bar`, `progress-circle`, `route-mapper`, `strings`, `switch`, `tabs`, `textarea`, `themes`, `transitions`, `wysiwyg`, `uploader`) (like [this](https://github.com/laravel-liberu/liberu/blob/6d98e9348bd79f203e1edcbd40732d70e083278a/client/package.json))
 2. run `yarn`, `yarn upgrade && yarn` to ensure you have the latest versions and patches are applied. If necessary, update your patch files
 3. remove the `eslintrc.js` file from the project root
 4. remove `App` from namespace of packages (you can use this regex, search for `LaravelLiberu\\(.*)\\App\\` and replace with `LaravelLiberu\\$1\\`)
-5. `how-to`, `activity-log`, `tutorials` were removed from the `enso-ui/ui`, therefore if you need to use them you should install the packages and set them up (you can look at [.eslintrc.js](https://github.com/laravel-enso/enso/blob/cf58505cec80bdc49003c0ea11d3837a60fbb4e9/client/.eslintrc.js), [app.js](https://github.com/laravel-enso/enso/blob/cf58505cec80bdc49003c0ea11d3837a60fbb4e9/client/src/js/app.js), [vue.config.js](https://github.com/laravel-enso/enso/blob/cf58505cec80bdc49003c0ea11d3837a60fbb4e9/client/vue.config.js), [router.js](https://github.com/laravel-enso/enso/blob/cf58505cec80bdc49003c0ea11d3837a60fbb4e9/client/src/js/router.js))
-6. `companies` doesn't depend on `documents`, `comments` or `discussion` anymore, if you still need them you can use patch (like [this](https://github.com/laravel-enso/enso/blob/5ea9ba20f63865105acd13c65838f79de9ac860a/client/patches/%40enso-ui%2Bcompanies%2B2.0.1.patch))
-7. toastr was changed in this version, and you need to inject it wherever you need(like [this](https://github.com/enso-ui/forms/commit/51020d02320ff184dab1fda9b5e08eee310fcc65#diff-430b1af0e264e06ed63092d6452b76f5R36-R178)) (it's optional but recommended)
-8. modal was changed and the :show property has been removed, you need to use v-if instead of :show (like [this](https://github.com/enso-ui/files/commit/e167a81b5743444c2466228db7f5bbd329efb49b#diff-19fdd3d0be7c460814ca0301e0d0c61aR1-R5) and [this](https://github.com/enso-ui/companies/commit/7d016b35ea2f580ccc035196eba5f1196183f889#diff-4cdb1f903fa4351c4fa1a92c10489760R61-R68))
-9. `documents`, `comments`, `addresses` & `discussions` were extracted from `Accessories` therefore if you need them you can import them from `@enso-ui/bulma` instead of `@enso-ui/accessories` (like [this](https://github.com/enso-ui/people/pull/8/files#diff-255683f769d6397e63c0976349f1204cR70-R72))
+5. `how-to`, `activity-log`, `tutorials` were removed from the `liberu-ui/ui`, therefore if you need to use them you should install the packages and set them up (you can look at [.eslintrc.js](https://github.com/laravel-liberu/liberu/blob/cf58505cec80bdc49003c0ea11d3837a60fbb4e9/client/.eslintrc.js), [app.js](https://github.com/laravel-liberu/liberu/blob/cf58505cec80bdc49003c0ea11d3837a60fbb4e9/client/src/js/app.js), [vue.config.js](https://github.com/laravel-liberu/liberu/blob/cf58505cec80bdc49003c0ea11d3837a60fbb4e9/client/vue.config.js), [router.js](https://github.com/laravel-liberu/liberu/blob/cf58505cec80bdc49003c0ea11d3837a60fbb4e9/client/src/js/router.js))
+6. `companies` doesn't depend on `documents`, `comments` or `discussion` anymore, if you still need them you can use patch (like [this](https://github.com/laravel-liberu/liberu/blob/5ea9ba20f63865105acd13c65838f79de9ac860a/client/patches/%40liberu-ui%2Bcompanies%2B2.0.1.patch))
+7. toastr was changed in this version, and you need to inject it wherever you need(like [this](https://github.com/liberu-ui/forms/commit/51020d02320ff184dab1fda9b5e08eee310fcc65#diff-430b1af0e264e06ed63092d6452b76f5R36-R178)) (it's optional but recommended)
+8. modal was changed and the :show property has been removed, you need to use v-if instead of :show (like [this](https://github.com/liberu-ui/files/commit/e167a81b5743444c2466228db7f5bbd329efb49b#diff-19fdd3d0be7c460814ca0301e0d0c61aR1-R5) and [this](https://github.com/liberu-ui/companies/commit/7d016b35ea2f580ccc035196eba5f1196183f889#diff-4cdb1f903fa4351c4fa1a92c10489760R61-R68))
+9. `documents`, `comments`, `addresses` & `discussions` were extracted from `Accessories` therefore if you need them you can import them from `@liberu-ui/bulma` instead of `@liberu-ui/accessories` (like [this](https://github.com/liberu-ui/people/pull/8/files#diff-255683f769d6397e63c0976349f1204cR70-R72))
 
 ## 3.9.5
 
@@ -4142,11 +4142,11 @@ To upgrade:
 
 - run `composer update` in the project's root
 - run `yarn, yarn upgrade && yarn` to ensure you have the latest versions and patches are applied. If necessary, update your patches
-- update the Liberu version to 3.9.5 in `config/enso/config.php`
-- the `Errors` class was extracted from `enso-ui/forms` to it's own package `enso-ui/laravel-validation`. If using it locally, make sure to update the imports.
-- ensure that the `php artisan enso:upgrade` command is run
+- update the Liberu version to 3.9.5 in `config/liberu/config.php`
+- the `Errors` class was extracted from `liberu-ui/forms` to it's own package `liberu-ui/laravel-validation`. If using it locally, make sure to update the imports.
+- ensure that the `php artisan liberu:upgrade` command is run
 - there is a new `localize` addresses route added, please ensure that the roles/permissions are correctly configured for your projects and then save the roles configurations
-- update the `client/src/js/enso.js` file using the package version as reference
+- update the `client/src/js/liberu.js` file using the package version as reference
 - make sure to have `vuex-router-sync` dependency in `package.json`
 
 ## 3.9.4
@@ -4220,8 +4220,8 @@ and some functionality was integrated from the ro-addresses package which will b
 
 #### avatars
 - removed the `ensureFolderExists` method call
-- updated the `Files` test folder references as the config key `enso.files.paths.testing`
-has been updated to `enso.files.testingFolder`
+- updated the `Files` test folder references as the config key `liberu.files.paths.testing`
+has been updated to `liberu.files.testingFolder`
 - the `Avatar` model now uses the `CascadesMorphMap` trait
 - `morphMap` is now used for the `Avatar` model
 
@@ -4233,8 +4233,8 @@ has been updated to `enso.files.testingFolder`
 - updated request validator due to `MapsRequestKeys` refactor
 
 #### core
-- the `php artisan enso:storage:reset` also handles the creation of missing storage folders
-- the image resources previously present in the `@enso-ui/ui` package have been moved to the this package
+- the `php artisan liberu:storage:reset` also handles the creation of missing storage folders
+- the image resources previously present in the `@liberu-ui/ui` package have been moved to the this package
 - renamed the resource publishing tag from `core-images` to `core-assets`
 - added a FilesIndex upgrade service that attempts to set and unique index
 on the `files` table to avoid any duplicates. If there are duplicated records present,
@@ -4280,8 +4280,8 @@ the upgrade will list the duplicates and skip adding the index
 
 #### files
 - refactored the paths config: now attachable models should have a `$folder` property or a `folder()` method
-- updated the `Files` test folder references as the config key `enso.files.paths.testing`
-has been updated to `enso.files.testingFolder`
+- updated the `Files` test folder references as the config key `liberu.files.paths.testing`
+has been updated to `liberu.files.testingFolder`
 - added handling logic for tests within the `HasFile` `folder()` method
 - refactored to use `mapMorphs`: the `Upload` model now uses the `CascadesMorphMap` trait
 
@@ -4309,13 +4309,13 @@ avoiding unnecessary Algolia operations
 #### localisation
 - updated language resources
 - fixed some bugs found when adding keys
-- renamed `localisation-lang-files` tag into `enso-localisation`.
+- renamed `localisation-lang-files` tag into `liberu-localisation`.
 Under this tag we're publishing only Laravel's lang files
 - removed unused localisation files from the `app` directory
 - local translations are now saved to the local `app` directory when adding or updating
-- core translations are now saved to the enso localisation package directory when adding or updating
-- local app localisation resource files are now merged with the enso package's localisation resource files
-- added `SanitizeAppKeys` class in order to remove from app localisations the keys found also in enso localisations
+- core translations are now saved to the liberu localisation package directory when adding or updating
+- local app localisation resource files are now merged with the liberu package's localisation resource files
+- added `SanitizeAppKeys` class in order to remove from app localisations the keys found also in liberu localisations
 - added some missing translations
 
 #### menus
@@ -4332,7 +4332,7 @@ Under this tag we're publishing only Laravel's lang files
 - the `Picture` model now implements `AuthorizesFileAccess` and access is allowed by default
 - added validation to disallow the selection of a parent category in the product form
 - added product pictures to the products table
-- updated publish tag & paths from `'products-resources', 'enso-resources'` to `'products-assets', 'enso-assets'`
+- updated publish tag & paths from `'products-resources', 'liberu-resources'` to `'products-assets', 'liberu-assets'`
 - updated the default image
 - removed package's `VatRates` enum and switched to using the `VatRates` from the `Helpers` package
 - updates package product factory re: measurement units, causing the creation of a new measurement unit
@@ -4368,12 +4368,12 @@ not provided
 To upgrade:
 - run `composer update` in the project's root
 - run `yarn`, `yarn upgrade && yarn` to ensure you have the latest versions and patches are applied. If necessary, update your patches
-- update the Liberu version to 3.9.4 in `config/enso/config.php`
+- update the Liberu version to 3.9.4 in `config/liberu/config.php`
 - if using the `MapsRequestKeys` trait, within the respective request validators, update the controllers to use `$request->validated()` instead of `$request->mapped()`
-- for all the enso models that use the `Addressable`, `Commentable`, `Discussable`, `Documentable` traits, we are now using `Relation::morphMap(...)`
+- for all the liberu models that use the `Addressable`, `Commentable`, `Discussable`, `Documentable` traits, we are now using `Relation::morphMap(...)`
 and short keys instead of default namespaces as this solves issues with relationships breaking when extending models which use `morph` relationships.
 For consistency, you should do the same to your local models (you may look at the Company model & companies AppServiceProvider classes as example)
-- the `files` test folder config key has been updated from `enso.files.paths.testing` to `enso.files.testingFolder`. If you are customizing the value, make sure to update the config file structure. Also make sure to update the local file after the one in the files package.
+- the `files` test folder config key has been updated from `liberu.files.paths.testing` to `liberu.files.testingFolder`. If you are customizing the value, make sure to update the config file structure. Also make sure to update the local file after the one in the files package.
 - if using the `products` package, note that the validator's `validateUnicity` method has been renamed to `validateUniqueness` - update your local validator if required
 - for this release, we've switched from using predis to using phpredis. Ensure that:
     - the phpredis extension is installed on your (live) machines
@@ -4382,22 +4382,22 @@ For consistency, you should do the same to your local models (you may look at th
     - remove the `predis` package from your `composer.json`
 - we've consolidated some assets (picture) locations and simplified the build process. You should:
     - run the `php artisan vendor:publish --tag=core-assets` command
-    - cleanup the multiple `CopyPlugin` instances and keep just the command that copies assets from `../resources/images` to `images`. Use enso's `vue.config.js` file as an example
+    - cleanup the multiple `CopyPlugin` instances and keep just the command that copies assets from `../resources/images` to `images`. Use liberu's `vue.config.js` file as an example
 - the `VatRates` enum was removed from the `financials` & `products` packages and put in the `helpers` package. If using it locally, update the namespace to `LaravelLiberu\Helpers\App\Enums\VatRates`
 - the localisation package and flow has been enhanced. To update for the new flow do the following:
-    - remove the `enso` resource directory from local language resources. From now on, when merging translations the core translations will be taken directly from the package resources
-    - run `php artisan vendor:publish --force --tag=enso-localisation`
+    - remove the `liberu` resource directory from local language resources. From now on, when merging translations the core translations will be taken directly from the package resources
+    - run `php artisan vendor:publish --force --tag=liberu-localisation`
     - remove from your local `composer.json` file `"php artisan vendor:publish --tag=localisation-lang-files"` from under the `post-update-cmd` section
-- since the email theme assets were updated, if you want to use the refreshed theme, you should publish the assets with `php artisan vendor:publish --force --tag=enso-email`
+- since the email theme assets were updated, if you want to use the refreshed theme, you should publish the assets with `php artisan vendor:publish --force --tag=liberu-email`
 - the addresses package has been refactored and updated. You should:
     - publish the package seeders with `php artisan vendor:publish --force --tag=addresses-seeds`
     - publish the `AddressFactory.php` file with `php artisan vendor:publish --force --tag=addresses-factory`
     - if present, delete the local `RoAddress` factory from the factories folder
-    - if using the `addresses` package WITHOUT the `ro-addresses` extension, make sure that the `php artisan enso:upgrade` command is run AFTER `php artisan migrate`
-    - if using the `addresses` package WITH the `ro-addresses` extension, make sure that the `php artisan enso:upgrade` command is run BEFORE `php artisan migrate`
+    - if using the `addresses` package WITHOUT the `ro-addresses` extension, make sure that the `php artisan liberu:upgrade` command is run AFTER `php artisan migrate`
+    - if using the `addresses` package WITH the `ro-addresses` extension, make sure that the `php artisan liberu:upgrade` command is run BEFORE `php artisan migrate`
     - update the local/published `addresses` config file using the package version as reference
     - since there are some new addresses routes added, please ensure that the roles/permissions are correctly configured for your projects and then save the roles configurations
-- run `php artisan enso:upgrade` considering the mentions above (in the addresses section)
+- run `php artisan liberu:upgrade` considering the mentions above (in the addresses section)
 
 
 
@@ -4512,8 +4512,8 @@ The release includes many small enhancements as well as bug fixes.
 To upgrade:
 - run `composer update` in the project's root
 - run `yarn`, `yarn upgrade && yarn` to ensure you have the latest versions and patches are applied. If necessary, update your patches
-- update the Liberu version to 3.9.3 in `config/enso/config.php`
-- if using the `categories` package, ensure that the `php artisan enso:upgrade` command is run
+- update the Liberu version to 3.9.3 in `config/liberu/config.php`
+- if using the `categories` package, ensure that the `php artisan liberu:upgrade` command is run
 
 ## 3.9.2
 
@@ -4575,7 +4575,7 @@ Front-end packages have had their `yarn.lock` file removed as it wasn't mandator
 
 #### filters
 - removed `tooltip.js` as direct dependency
-- `@enso-ui/strings` was added as a dependency as some utility methods are used  within `CoreDateFilter`
+- `@liberu-ui/strings` was added as a dependency as some utility methods are used  within `CoreDateFilter`
 
 #### forms
 - removes tiptap as dependency
@@ -4586,7 +4586,7 @@ Front-end packages have had their `yarn.lock` file removed as it wasn't mandator
 
 #### inventory
 - added addresses to the warehouse edit form as a result of adding an address relationship to the warehouse model
-- the `@enso-ui/products` dependency was updated to the new minor version
+- the `@liberu-ui/products` dependency was updated to the new minor version
 - added a github issue template to the repository
 
 #### permissions
@@ -4595,7 +4595,7 @@ Front-end packages have had their `yarn.lock` file removed as it wasn't mandator
 
 #### quick-view
 - added a github issue template to the repository
-- removes unneeded `@enso-ui/card` dependency
+- removes unneeded `@liberu-ui/card` dependency
 
 #### roles
 - updated the roles configuration component to work with the new permission module
@@ -4612,8 +4612,8 @@ Front-end packages have had their `yarn.lock` file removed as it wasn't mandator
 - added support for configurable, state persistent, general filters
 - addressed bug tooltip position bug for some tables with one or two rows
 - translation support was added the column visibility selection
-- `@enso-ui/select` was added as dependency as dropdown usage was replaced by select
-- `@enso-ui/enums` was added as dependency as Enum computation was added to the front-end
+- `@liberu-ui/select` was added as dependency as dropdown usage was replaced by select
+- `@liberu-ui/enums` was added as dependency as Enum computation was added to the front-end
 - added support for average totals
 - extracted search in its own component
 - fixed some layout problems in the top controls
@@ -4639,7 +4639,7 @@ Front-end packages have had their `yarn.lock` file removed as it wasn't mandator
 #### products
 - fixed directives requirement/import
 - added category selection to the product form as the product model now has a  category relationship
-- `@enso-ui/categories` was added as a dependency
+- `@liberu-ui/categories` was added as a dependency
 - added a github issue template to the repository
 
 #### select
@@ -4652,7 +4652,7 @@ Front-end packages have had their `yarn.lock` file removed as it wasn't mandator
 - fixes collapsed sidebar label position on scroll
 - removed `tooltip.js` as direct dep
 - fixed navbar search tag filtering
-- `@enso-ui/enums` was added as a dependency
+- `@liberu-ui/enums` was added as a dependency
 - fixed bug related to missing a background color for the menu, on mobile usage mode
 - used interpolation syntax for scss variables usage
 
@@ -4773,12 +4773,12 @@ To upgrade:
     - postcss-cssnext
 - add in client/package.json
     - postcss-preset-env
-- run `composer require --dev laravel-enso/phpunit-pretty-print
+- run `composer require --dev laravel-liberu/phpunit-pretty-print
 - add in `phpunit.xml` `printerClass="LaravelLiberu\PHPUnitPrettyPrint\PrettyPrint"`
 - run `composer update` in the project's root
 - run `yarn && yarn upgrade && yarn` to ensure you have the latest versions and patches are applied. If necessary, update your patches
-- update the Liberu version to 3.9.2 in `config/enso/config.php`
-- in `config/enso/tables.php` update the `comparisonOperator` and `searchModes` keys to:
+- update the Liberu version to 3.9.2 in `config/liberu/config.php`
+- in `config/liberu/tables.php` update the `comparisonOperator` and `searchModes` keys to:
 ```php
 'comparisonOperator' => ComparisonOperators::Like,
 'searchModes' => [
@@ -4786,24 +4786,24 @@ To upgrade:
     SearchModes::ExactMatch, SearchModes::DoesntContain,
 ],
 ```
-- in `config/enso/select.php` update the `comparisonOperator` and `searchMode` keys to:
+- in `config/liberu/select.php` update the `comparisonOperator` and `searchMode` keys to:
 ```php
 'comparisonOperator' => ComparisonOperators::Like,
 'searchMode' => SearchModes::Full,
 ```
-- in `config/enso/imports.php`:
+- in `config/liberu/imports.php`:
     - add the new companies importer under the `configs` array
     ```php
     'companies' => [
         'label' => 'Companies',
-        'template' => 'vendor/laravel-enso/companies/src/App/Imports/Templates/companies.json',
+        'template' => 'vendor/laravel-liberu/companies/src/App/Imports/Templates/companies.json',
     ],
     ```
     - update `app` namespace to `App` for userGroups' importer
 - update `resources/preferences.json` and change the `expandedMenu` key to `expandedSidebar`
 - if using the `products` package:
     - add the `LaravelLiberu\Products\App\Services\Upgrades\Products` upgrade service class to your upgrade logic and if customizing the validation/form, extending the model, ensure that the new attribute is fillable/etc as required
-    - since products now depends on the `@enso-ui/categories` package, you should also import the package's icon and routes
+    - since products now depends on the `@liberu-ui/categories` package, you should also import the package's icon and routes
 
 ## 3.9.1
 
@@ -4826,14 +4826,14 @@ The release includes many small changes both on the back-end and the front-end.
 - updated the `CheckboxItems.vue` component class
 
 #### commercial
-- updated enso date filters usage
+- updated liberu date filters usage
 
 #### contracts
 - fixed parties enum in `Index.vue`
-- updated enso date filters usage
+- updated liberu date filters usage
 
 #### financials
-- updated enso date filters usage
+- updated liberu date filters usage
 
 #### how-to
 - fixed template upload vertical alignment
@@ -4983,13 +4983,13 @@ All back-end packages have been updated due to renaming the `app` folder to `App
 - fixes failing tests when suppliers are not given
 
 #### searchable
-- implemented the new search service from laravel-enso/filters; removed local logic
+- implemented the new search service from laravel-liberu/filters; removed local logic
 
 #### select
 - refactored traits, used the new `When` helper trait for a more fluent, conditional flow
 
 #### tables
-- implemented the new search service from laravel-enso/filters; removed local logic
+- implemented the new search service from laravel-liberu/filters; removed local logic
 
 #### upgrade
 - fixed the structure migration
@@ -5009,9 +5009,9 @@ However, since the namespaces remained the same, these changes should not affect
 To upgrade:
 - run `composer update` in the project's root
 - run `yarn`, `yarn upgrade && yarn` to ensure you have the latest versions and patches are applied. If necessary, update your patches
-- update the Liberu version to 3.9.0 in `config/enso/config.php`
+- update the Liberu version to 3.9.0 in `config/liberu/config.php`
 - if using the `ExcelExport` class locally, search & replace `LaravelLiberu\Excel\App\Exports\ExcelExport` with `LaravelLiberu\Excel\App\Services\ExcelExport`
-- if directly using import templates from any of the Liberu packages, update the path to the JSON templates in `config/enso/imports.php`
+- if directly using import templates from any of the Liberu packages, update the path to the JSON templates in `config/liberu/imports.php`
 
 
 ## 3.9.0
@@ -5077,7 +5077,7 @@ Since the Laravel upgrade contains some pontetially breaking changes, you should
 - added mixin with the CSS class used for the different permission types
 
 #### roles
-- `Configure.vue` now uses the new `@enso-io/checkbox` functionality which was extracted to a distinct package that roles now depends on
+- `Configure.vue` now uses the new `@liberu-io/checkbox` functionality which was extracted to a distinct package that roles now depends on
 
 #### search-mode (new)
 - a new dependency package that permits switching between the different search modes (full, starts with, ends with)
@@ -5159,7 +5159,7 @@ Also, dependencies were updated as required.
 - updates for Laravel 7
 - removes `jessengers/date`
 - adds DB upgrade for permissions
-- adds `enso-aggregator` to composer.json
+- adds `liberu-aggregator` to composer.json
 - extracts upgrade logic in its own package
 - update due to `JsonParser` to `JsonReader` rename
 - adds companies upgrade command due to new `website` attribute
@@ -5259,31 +5259,31 @@ Also, dependencies were updated as required.
 
 ### Upgrade steps
 
-- due to the upgrade to Laravel 7, there are quite a few small changes you have to do in your local project. Take a look at this [commit](https://github.com/laravel-enso/enso/commit/963af10ed4d794baf752219b303ddcd72451d22c) and check the list of changes. You should ignore:
+- due to the upgrade to Laravel 7, there are quite a few small changes you have to do in your local project. Take a look at this [commit](https://github.com/laravel-liberu/liberu/commit/963af10ed4d794baf752219b303ddcd72451d22c) and check the list of changes. You should ignore:
    - `composer.lock`
    - `client/yarn.lock`
    - `.styleci.yaml`
    - `telescope` and `horizon` assets (you will publish these in the next steps)
 - you may safely remove the `RAVEN_DSN` key from your `.env*` files as it's no longer required
-- update `TelescopeServiceProvider` using [this](https://github.com/laravel-enso/enso/blob/c14d2d7a0c754ab8328171f9909d979e105ba832/app/Providers/TelescopeServiceProvider.php) as example
-- update the sentry config file using [this](https://github.com/laravel-enso/enso/blob/c14d2d7a0c754ab8328171f9909d979e105ba832/config/sentry.php) as example
+- update `TelescopeServiceProvider` using [this](https://github.com/laravel-liberu/liberu/blob/c14d2d7a0c754ab8328171f9909d979e105ba832/app/Providers/TelescopeServiceProvider.php) as example
+- update the sentry config file using [this](https://github.com/laravel-liberu/liberu/blob/c14d2d7a0c754ab8328171f9909d979e105ba832/config/sentry.php) as example
 - run `composer update` in the project's root
 - run `php artisan horizon:install`
 - run `php artisan telescope:install`
 - edit `client/package.json` and
-    - update `@enso-ui/ui` to `2.5.x`
+    - update `@liberu-ui/ui` to `2.5.x`
     - update `pusher-js` to `^5.0.0`
 - rename in your .env* files `MAIL_DRIVER` to `MAIL_MAILER`
 - run yarn, yarn upgrade && yarn to ensure you have the latest versions and patches are applied. If necessary, update your patches
-- update the Liberu version to 3.9.0 in `config/enso/config.php`
+- update the Liberu version to 3.9.0 in `config/liberu/config.php`
 - run `php artisan vendor:publish --tag=select-config" to publish the `select.php` config
 - note that the `type` attribute present in structure migrations has been deprecated and is no longer required - you may update your migrations, but it's not breaking if you leave it
-- the database upgrade service has been refactored and extracted to its own package. If you have upgrade logic in your local project you may need to update it. You should use as an updated example the core upgrade [here](https://github.com/laravel-enso/core/tree/master/src/app/Services/Upgrades) and [here](https://github.com/laravel-enso/core/blob/master/src/app/Commands/Upgrade.php)
+- the database upgrade service has been refactored and extracted to its own package. If you have upgrade logic in your local project you may need to update it. You should use as an updated example the core upgrade [here](https://github.com/laravel-liberu/core/tree/master/src/app/Services/Upgrades) and [here](https://github.com/laravel-liberu/core/blob/master/src/app/Commands/Upgrade.php)
 - update `config/cors.php` if your project requires it
 - update local factories
 - find any local `LaravelLiberu\Helpers\App\Classes\JsonParser` usages and update to `LaravelLiberu\Helpers\App\Classes\JsonReader`
-- note that for Permission, the name should be unique; update the factory, look [here](https://github.com/laravel-enso/enso/blob/c14d2d7a0c754ab8328171f9909d979e105ba832/database/factories/PermissionFactory.php) for example
-- update `App\Exceptions\Handler`, use [this](https://github.com/laravel-enso/enso/commit/1e8ad53994b230c2e5f65b7a82b41ad9b3570db0#diff-646a4842abf9023c975a9a1658a68b0a) as model
+- note that for Permission, the name should be unique; update the factory, look [here](https://github.com/laravel-liberu/liberu/blob/c14d2d7a0c754ab8328171f9909d979e105ba832/database/factories/PermissionFactory.php) for example
+- update `App\Exceptions\Handler`, use [this](https://github.com/laravel-liberu/liberu/commit/1e8ad53994b230c2e5f65b7a82b41ad9b3570db0#diff-646a4842abf9023c975a9a1658a68b0a) as model
 - make sure that in your composer.json you still have the following dependencies:
     - "doctrine/dbal": "^2.8",
     - "predis/predis": "^1.1",
@@ -5292,7 +5292,7 @@ Also, dependencies were updated as required.
 
 This release includes much needed UI vue-select / dropdown refactor.
 
-These changes are breaking when customizing/building upon the @enso-ui/select components.
+These changes are breaking when customizing/building upon the @liberu-ui/select components.
 
 ### front-end
 
@@ -5392,7 +5392,7 @@ Most of the packages received a dependency list cleanup.
 - general refactor & improvements
 - fixed total memory reporting
 - refactored closures
-- fixes OS sensor value
+- fixes OS sliberur value
 
 #### currencies
 - improved seeder
@@ -5468,22 +5468,22 @@ Most of the packages received a dependency list cleanup.
 - fixed manual transaction for persistent processes
 
 ### Upgrade steps:
-- edit `client/package.json` and update all @enso-ui packages to their next respective minor version
+- edit `client/package.json` and update all @liberu-ui packages to their next respective minor version
 
 ```bash
-"@enso-ui/accessories": "2.4.x",
-"@enso-ui/bulma": "2.3.x",
-"@enso-ui/calendar": "1.4.x",
-"@enso-ui/filters": "1.4.x",
-"@enso-ui/forms": "1.4.x",
-"@enso-ui/mixins": "1.1.x",
-"@enso-ui/tables": "1.4.x",
-"@enso-ui/ui": "2.4.x"
+"@liberu-ui/accessories": "2.4.x",
+"@liberu-ui/bulma": "2.3.x",
+"@liberu-ui/calendar": "1.4.x",
+"@liberu-ui/filters": "1.4.x",
+"@liberu-ui/forms": "1.4.x",
+"@liberu-ui/mixins": "1.1.x",
+"@liberu-ui/tables": "1.4.x",
+"@liberu-ui/ui": "2.4.x"
 ```
 
 - run yarn, yarn upgrade && yarn to ensure you have the latest versions and patches are applied
 - run `composer update` in the project's root
-- update the version to 3.8.2 in `config/enso/config.php`
+- update the version to 3.8.2 in `config/liberu/config.php`
 - if you have front-end customisations to Dropdown / VueSelect / LiberuSelect / Typeahead / LiberuTypeahead ensure that they're functioning okay and make changes if necessary
 - if using `rogue` columns, unless you want those columns as exportable, mark each such column as `notExportable` in the table templates meta, since they're now exportable by default
 
@@ -5647,7 +5647,7 @@ With this release, we have upgraded sass-loader to the latest version(8.0.3)
     ```
 - run `yarn upgrade && yarn` in `/client`
 - run `composer update` in project root
-- update the version to 3.8.1 in `config/enso/config.php`
+- update the version to 3.8.1 in `config/liberu/config.php`
 
 ### Note:
 Besides what's mentioned above, you should go through these files in your project and align / adapt their content with the ones from the Liberu repo:
@@ -5722,7 +5722,7 @@ Furthermore, we have also generally improved and refactored all of our packages 
  - renames `setDefault` permission to `makeDefault`
 
 #### calendar
- - overall refactors and removes `enso:calendar:send-reminders` command from AppServiceProvider. This means that notifications will no longer be sent automatically.
+ - overall refactors and removes `liberu:calendar:send-reminders` command from AppServiceProvider. This means that notifications will no longer be sent automatically.
 
 #### cli
  - makes the code DRYer
@@ -5850,22 +5850,22 @@ Furthermore, we have also generally improved and refactored all of our packages 
 
 ### Upgrade steps:
 * within `composer.json` update where necessary:
-    - `laravel-enso/calendar` to `1.5.*` ( if using this package )
-    - `laravel-enso/cli` to `3.4.*`
-    - `laravel-enso/cnp-validator` to `1.3.*` ( if using this package )
-    - `laravel-enso/control-panel-api` to `2.4.*`
-    - `laravel-enso/core` to `4.7.*`
-    - `laravel-enso/dynamic-methods` to `1.1.*` ( if using this package )
-    - `laravel-enso/enums` to `1.2.*` ( if using this package )
-    - `laravel-enso/excel` to `1.1.*`
-    - `laravel-enso/pdf` to `1.1.*`
-    - `laravel-enso/ro-addresses` to `3.3.*` ( if using this package )
-    - `laravel-enso/versions` to `1.1.*` ( if using this package )
+    - `laravel-liberu/calendar` to `1.5.*` ( if using this package )
+    - `laravel-liberu/cli` to `3.4.*`
+    - `laravel-liberu/cnp-validator` to `1.3.*` ( if using this package )
+    - `laravel-liberu/control-panel-api` to `2.4.*`
+    - `laravel-liberu/core` to `4.7.*`
+    - `laravel-liberu/dynamic-methods` to `1.1.*` ( if using this package )
+    - `laravel-liberu/enums` to `1.2.*` ( if using this package )
+    - `laravel-liberu/excel` to `1.1.*`
+    - `laravel-liberu/pdf` to `1.1.*`
+    - `laravel-liberu/ro-addresses` to `3.3.*` ( if using this package )
+    - `laravel-liberu/versions` to `1.1.*` ( if using this package )
 * update in `client/package.json`:
-    - "@enso-ui/ui": "2.3.x",
-* within `client/src/js/enso.js` update the `import ('../sass/enso.scss');` line to `import '../sass/enso.scss';`
+    - "@liberu-ui/ui": "2.3.x",
+* within `client/src/js/liberu.js` update the `import ('../sass/liberu.scss');` line to `import '../sass/liberu.scss';`
 * remove from `composer.json` the following line since it is no longer required:
-    `"LaravelLiberu\\Cli\\tests\\": "vendor/laravel-enso/cli/tests/"`,
+    `"LaravelLiberu\\Cli\\tests\\": "vendor/laravel-liberu/cli/tests/"`,
 * update your Liberu classes imports ( search the whole project for `\app\` and replace with `\App\` )
 * if you are implementing our state builder interface or extending our local state builder, make sure to update your `build()` method signature ( `build(): array`)
 * upgrade `Enums` accordingly
@@ -5876,7 +5876,7 @@ Furthermore, we have also generally improved and refactored all of our packages 
 * add the following block inside your `phpunit.xml` file:
 ```
 <testsuite name="helpers">
-    <directory suffix="Test.php">./vendor/laravel-enso/helpers/tests/units</directory>
+    <directory suffix="Test.php">./vendor/laravel-liberu/helpers/tests/units</directory>
 </testsuite>
 ```
 * if you wish to continue sending `calendar` reminders, you need to handle this in your apps `App\Console\Kernel.php`
@@ -5884,17 +5884,17 @@ Furthermore, we have also generally improved and refactored all of our packages 
 protected function schedule(Schedule $schedule)
 {
     ...
-    $schedule->command('enso:calendar:send-reminders')->everyMinute();
+    $schedule->command('liberu:calendar:send-reminders')->everyMinute();
     ...
 }
 ```
-* remove from `config/enso/imports.php` the deprecated `splittingQueue` key,
+* remove from `config/liberu/imports.php` the deprecated `splittingQueue` key,
 * run `composer update`
 * run `yarn upgrade && yarn` in `/client`
-* run `php artisan enso:upgrade`
+* run `php artisan liberu:upgrade`
 * run `php artisan migrate`
 * update telescope assets: `php artisan telescope:publish`
-* update the version to 3.8.0 in `config/enso/config.php`
+* update the version to 3.8.0 in `config/liberu/config.php`
 
 **(optional)**
 
@@ -5902,8 +5902,8 @@ In order for the local project to be syntactically consistent with our ecosystem
  * use typed properties where necessary
  * replace all `collect()` helpers with the `Collection()` facade
  * refactor closures to the new PHP7.4+ short closure syntax
- * split route files ( eg. https://github.com/laravel-enso/core/tree/master/src/routes )
- * if using `phpinsights`, don't forget to update the config file from `config/insights.php` ( https://github.com/laravel-enso/enso/blob/master/config/insights.php )
+ * split route files ( eg. https://github.com/laravel-liberu/core/tree/master/src/routes )
+ * if using `phpinsights`, don't forget to update the config file from `config/insights.php` ( https://github.com/laravel-liberu/liberu/blob/master/config/insights.php )
  * we have moved the local `User::class` from our Liberu app under `App\Models` namespace. From now on, we have decided to keep the models in all of our projects under this namespace for better readability. If you wish to adopt this structure as well, don't forget to update your `config\auth.php` file.
 ```
 'providers' => [
@@ -5913,8 +5913,8 @@ In order for the local project to be syntactically consistent with our ecosystem
     ],
 ```
 * the local factories and seeders have been updated to use short closures as well. if you wish, you can force publish the updated versions **(&nbsp;careful, this will overwrite your local customisations&nbsp;)** with:
-    - `php artisan vendor:publish --force --tag=enso-factories`
-    - `php artisan vendor:publish --force --tag=enso-seeders`
+    - `php artisan vendor:publish --force --tag=liberu-factories`
+    - `php artisan vendor:publish --force --tag=liberu-seeders`
 
 * if you wish to take advantage of the new tables feature which allows the use of custom cache keys for counts, your table builders must implement `CustomCountCacheKey()`.
 * Regarding namespace was changed, you may need to migrate namespace in polymorphic relation in the database too.
@@ -5973,7 +5973,7 @@ Apart from these updates, which are too many to list individually for each packa
 - fixed the Currency resource
 - fixed the seeder for testing cases
 - improved the converter so as to use the most recent date as fallback if there is no rate available for a given day
-- `laravel-enso/countries` is now a dependency for the package
+- `laravel-liberu/countries` is now a dependency for the package
 - the `short_name` attribute was refactored into `code`
 
 #### products
@@ -5989,8 +5989,8 @@ This is a non breaking upgrade:
 
 * run `composer update`
 * run `yarn upgrade && yarn` in `/client`
-* update the version to 3.7.4 in `config/enso/config.php`
-* if using the `currencies` package with a prior version to `1.4.0`, also run `php artisan enso:upgrade` in order to update the `short_name` table column
+* update the version to 3.7.4 in `config/liberu/config.php`
+* if using the `currencies` package with a prior version to `1.4.0`, also run `php artisan liberu:upgrade` in order to update the `short_name` table column
 
 ## 3.7.3
 
@@ -6020,7 +6020,7 @@ This is the second to final release before upgrading Liberu to PHP7.4.
 - date-filter refactor
 
 #### how-to
-- fixed the @enso-ui/uploader dependency restriction
+- fixed the @liberu-ui/uploader dependency restriction
 
 #### measurement-units (new)
 - a new package for managing measurement units
@@ -6048,12 +6048,12 @@ This is the second to final release before upgrading Liberu to PHP7.4.
 ### back-end
 
 #### core
-- added a `enso:storage:reset` command which can be ran after php artisan migrate:fresh to clear the storage (but before seeding)
+- added a `liberu:storage:reset` command which can be ran after php artisan migrate:fresh to clear the storage (but before seeding)
 
 #### countries
 - removed broken relationship
 - added currencyCode in the model's resource
-- this package is now a dependency of the new `laravel-enso/measurement-units` package
+- this package is now a dependency of the new `laravel-liberu/measurement-units` package
 
 #### cli
 - added the TableCache trait to the generated model
@@ -6070,7 +6070,7 @@ This is the second to final release before upgrading Liberu to PHP7.4.
 
 #### measurement-units
 - a new package for managing measurement units
-- this package is now a dependency of the `laravel-enso/products` package
+- this package is now a dependency of the `laravel-liberu/products` package
 
 #### localisation
 - added missing translation keys
@@ -6082,7 +6082,7 @@ This is the second to final release before upgrading Liberu to PHP7.4.
 #### products
 - extracted measurement unit functionality to a distinct package and updated related code
 - removed the `measurement_unit` column from Product and replaces it with `measurement_unit_id`
-- added the upgrade `php artisan enso:products:upgrade` console command which will migrate your products table and seed either a default `Piece` measurement unit or can use an optional Enum to seed the measurement units specified by the enum
+- added the upgrade `php artisan liberu:products:upgrade` console command which will migrate your products table and seed either a default `Piece` measurement unit or can use an optional Enum to seed the measurement units specified by the enum
 - added some missing meta attributes within the table template
 
 #### select
@@ -6106,7 +6106,7 @@ This is a non breaking upgrade:
 
 * run `composer update`
 * run `yarn upgrade && yarn` in `/client`
-* update the version to 3.7.3 in `config/enso/config.php`
+* update the version to 3.7.3 in `config/liberu/config.php`
 
 If you are not using the `products` package, there is nothing else for you to do.
 
@@ -6116,11 +6116,11 @@ Otherwise, you should run the products package's upgrade command, considering th
 - that column is dropped and replaced with a `measurment_unit_id` column which points to the `measurement_units` table
 
 If you did not customize the enum and were using the defaults, then you can simply run
-`php artisan enso:products:upgrade` and the command will handle the necessary changes.
+`php artisan liberu:products:upgrade` and the command will handle the necessary changes.
 
 If you had customized/extended the enum, then you should provide the enum as a parameter to the upgrade command, in which case it will be used to seed the new measurment units:
 
-`php artisan enso:products:upgrade --enum=App\\Enums\\MyEnum`
+`php artisan liberu:products:upgrade --enum=App\\Enums\\MyEnum`
 
 ## 3.7.2
 
@@ -6159,8 +6159,8 @@ This is a non breaking upgrade:
 
 * run `composer update`
 * run `yarn upgrade && yarn` in `/client`
-* update the version to 3.7.2 in `config/enso/config.php`
-* update the `config/enso/forms.php` configuration file and add the new key:
+* update the version to 3.7.2 in `config/liberu/config.php`
+* update the `config/liberu/forms.php` configuration file and add the new key:
 ```
 |--------------------------------------------------------------------------
 | TinyMCE Api Key
@@ -6204,7 +6204,7 @@ TINY_MCE_API_KEY=my-api-key
 ### back-end
 
 #### companies
-- added `Company::owner()` static helper method which returns the application owner company, based on the configured id (`config('enso.config.ownerCompanyId')` - more information below
+- added `Company::owner()` static helper method which returns the application owner company, based on the configured id (`config('liberu.config.ownerCompanyId')` - more information below
 
 #### core
 - changed the AppUpdated notification tooltip message
@@ -6253,7 +6253,7 @@ Since it makes sense that the Company model from the Companies package may be ex
 
 Thus, if required, you can bind your desired/local implementation to the `LaravelLiberu\Companies\app\Models\Company` class in the service provider.
 
-You may set the application owner's company id within the main Liberu configuration file (`enso.config.ownerCompanyId`).
+You may set the application owner's company id within the main Liberu configuration file (`liberu.config.ownerCompanyId`).
 
 
 ## 3.7.0
@@ -6345,7 +6345,7 @@ logged in users whenever a new application update has been deployed
 - some of the resources used during the VueCli build process have been moved to this package, namely:
     - stubs for the index page
     - images used in the emails
-- a new command (`php artisan enso:announce-app-update`)and logic has been implemented that can be used to notify currently logged in users that a new application version has been deplyed
+- a new command (`php artisan liberu:announce-app-update`)and logic has been implemented that can be used to notify currently logged in users that a new application version has been deplyed
 - the older, deprecated upgrade commands where purged
 - improved local state handling (breaking change)
 - added upgrade commands for calendar, countries & tutorials
@@ -6435,17 +6435,17 @@ hot module replacement
 
     You may then delete the `resources/images` folder (the image files provided with Liberu, such as the ones in the `emails` and `corners` have been extracted to their respective packages)
 - move any additions from within the `resources/sass` files to the `client/src/sass` files
-- once you've moved everything, the `resources` folder should look like on the Liberu repo [here](https://github.com/laravel-enso/enso/tree/master/resources)
+- once you've moved everything, the `resources` folder should look like on the Liberu repo [here](https://github.com/laravel-liberu/liberu/tree/master/resources)
 
 - remove the `webpack.mix.js` file
 - update `.gitignore` using Liberu's as example and double check `client/.gitignore`
 - within `composer.json` update:
-    - `laravel-enso/core` to `4.6.*`
-    - `laravel-enso/calendar` to `1.4.*` (if using the calendar package)
+    - `laravel-liberu/core` to `4.6.*`
+    - `laravel-liberu/calendar` to `1.4.*` (if using the calendar package)
 - run `composer update` in the project root to update the back-end packages
 - cd into the `client` folder and run `yarn` to install the front-end packages
 - make a copy of the `client/.env.example` file, name it `.env`, then edit it an set the url you're currently using with Valet, for your project
-- update the themes' configuration (`config/enso/themes`) to:
+- update the themes' configuration (`config/liberu/themes`) to:
 ```php
 return [
     'light' => 'light',
@@ -6457,7 +6457,7 @@ return [
 
 #### Liberu upgrade related steps:
 - search for any `DateAttributes` usages, remove the import and any date setters you might have added
-- when refactoring date attributes, you may use this [commit](https://github.com/laravel-enso/people/commit/15ea16132957e3ce1bea9b1066fdb3e4f079e79e) as an example
+- when refactoring date attributes, you may use this [commit](https://github.com/laravel-liberu/people/commit/15ea16132957e3ce1bea9b1066fdb3e4f079e79e) as an example
 - search and replace the `LaravelLiberu\Addresses\app\Models\Country;` namespace with `LaravelLiberu\Countries\app\Models\Country;`
 - where using the `actions` slot within forms, replace the `actions` slot with `actions-left` and/or `actions-right` slots as required
 - the local state implementation class should be bound in the service container to the `LaravelLiberu\Core\app\Services\LocalState`
@@ -6477,19 +6477,19 @@ php artisan vendor:publish --tag=countries-seeder --force
     - add the calendar test suite to `phpunit.xml`:
     ```xml
         <testsuite name="calendar">
-            <directory suffix="Test.php">./vendor/laravel-enso/calendar/tests</directory>
+            <directory suffix="Test.php">./vendor/laravel-liberu/calendar/tests</directory>
         </testsuite>
     ```
-    - add the following namespace `"LaravelLiberu\\Calendar\\tests\\features\\": "vendor/laravel-enso/calendar/tests/features/",` to `composer.json`'s `autoload-dev.psr-4`
-- in `config/enso/config.php` increment the version to 3.7.0
-- in `config/enso/forms.php` update the `dateFormat` key to `altDateFormat`
+    - add the following namespace `"LaravelLiberu\\Calendar\\tests\\features\\": "vendor/laravel-liberu/calendar/tests/features/",` to `composer.json`'s `autoload-dev.psr-4`
+- in `config/liberu/config.php` increment the version to 3.7.0
+- in `config/liberu/forms.php` update the `dateFormat` key to `altDateFormat`
 - cd into the `client` folder and serve the front-end with `yarn serve` or build it with `yarn build`
 - (optional) a new feature allows you to notify your currently logged in users that a new application update/version was deployed.
 
-    To use it, update your live deployment process and after the deploy is done, add a hook that calls `php artisan enso:announce-app-update`.
+    To use it, update your live deployment process and after the deploy is done, add a hook that calls `php artisan liberu:announce-app-update`.
     The logged in users will get a toaster message as a well a pulsing notification control in the navbar, which, when clicked, will reload the page.
 
-    Note that for the user to be notified, the current in-page version must be different from the released version, so don't forget to update the `enso.config.version` value.
+    Note that for the user to be notified, the current in-page version must be different from the released version, so don't forget to update the `liberu.config.version` value.
 
     Reloading helps avoid js errors related to the lazy loading of the front-end assets as well as any mismatches between the stale front-end and the updated back-end API.
 
@@ -6654,10 +6654,10 @@ using the available format(s), `Carbon::parse` will be used as fallback
 `php artisan vendor:publish --tag=core-seeders --force`
 - update the Liberu version within your config file to reflect the 3.6.1 version
 - if you want to install the calendar package:
-    - `composer require laravel-enso/calendar:1.3.x`, then add
-    - `yarn add @enso-ui/calendar@1.2.x`
-    - read [docs](https://docs.laravel-enso.com/backend/calendar.html#installation)
-- `php artisan enso:upgrade`
+    - `composer require laravel-liberu/calendar:1.3.x`, then add
+    - `yarn add @liberu-ui/calendar@1.2.x`
+    - read [docs](https://docs.laravel-liberu.com/backend/calendar.html#installation)
+- `php artisan liberu:upgrade`
 - `php artisan migrate`
 
 For the next release we aim to move to Vue Cli from using Laravel mix.
@@ -6784,10 +6784,10 @@ For the next release we aim to move to Vue Cli from using Laravel mix.
     - `Filter` => can be used to register local filters
     - `ComputesColumns` => can be used to register local computors
 - improves exceptions
-- adds template caching, configurable by global config or per table. Comes with a `php artisan enso:tables:clear` command that should be used on production when opting for cacheing templates
+- adds template caching, configurable by global config or per table. Comes with a `php artisan liberu:tables:clear` command that should be used on production when opting for cacheing templates
 - renamed `cache` to `countCache`. Can now be set globally in the config. The builder will notify the dev if certain models are missing the `TableCache` trait
 - makes the `buttons` attribute mandatory in templates
-- date interval filters object must now contain the `dateFormat` prop representing the FE format of the date. If the dateFormat prop is null, the `config('enso.config.dateFormat')` will be used
+- date interval filters object must now contain the `dateFormat` prop representing the FE format of the date. If the dateFormat prop is null, the `config('liberu.config.dateFormat')` will be used
 - `dbDateFormat` was removed
 - improves the strategy for auto-detecting the `model` property. The camel case of the model class short name is now used
 - determines the table's `name` property (if not provided in the template) by pluralising the `model` property (see above)
@@ -6802,38 +6802,38 @@ For the next release we aim to move to Vue Cli from using Laravel mix.
 ### Upgrade Steps
 
 - update `composer.json` dependencies to:
-    - "laravel-enso/cli": "3.3.*"
-    - "laravel-enso/core": "4.5.*"
-    - "laravel-enso/pdf": "1.0.*"
-    - "laravel-enso/excel": "1.0.*"
+    - "laravel-liberu/cli": "3.3.*"
+    - "laravel-liberu/core": "4.5.*"
+    - "laravel-liberu/pdf": "1.0.*"
+    - "laravel-liberu/excel": "1.0.*"
 - add in `composer.json` => `autoload-dev.psr-4` section:
-    - "LaravelLiberu\\Cli\\tests\\": "vendor/laravel-enso/cli/tests/"
-    - "LaravelLiberu\\Tables\\Tests\\": "vendor/laravel-enso/tables/tests/"
+    - "LaravelLiberu\\Cli\\tests\\": "vendor/laravel-liberu/cli/tests/"
+    - "LaravelLiberu\\Tables\\Tests\\": "vendor/laravel-liberu/tables/tests/"
 - update `package.json` dependencies to:
-    - "@enso-ui/accessories": "2.1.x"
-    - "@enso-ui/bulma": "2.1.x"
-    - "@enso-ui/directives": "1.0.x"
-    - "@enso-ui/mixins": "1.0.x"
-    - "@enso-ui/tables": "1.2.x"
-    - "@enso-ui/themes": "1.0.x"
-    - "@enso-ui/transitions": "1.0.x"
-    - "@enso-ui/ui": "2.1.x"
+    - "@liberu-ui/accessories": "2.1.x"
+    - "@liberu-ui/bulma": "2.1.x"
+    - "@liberu-ui/directives": "1.0.x"
+    - "@liberu-ui/mixins": "1.0.x"
+    - "@liberu-ui/tables": "1.2.x"
+    - "@liberu-ui/themes": "1.0.x"
+    - "@liberu-ui/transitions": "1.0.x"
+    - "@liberu-ui/ui": "2.1.x"
 
 - remove from `package.json`
-    - "@enso-ui/filters": "^1.1.1"
-    - "@enso-ui/forms": "~1.2.0"
-    - "@enso-ui/select": "~1.1.1"
+    - "@liberu-ui/filters": "^1.1.1"
+    - "@liberu-ui/forms": "~1.2.0"
+    - "@liberu-ui/select": "~1.1.1"
 
 - run `composer update && yarn && yarn upgrade && yarn"
-- run `php artisan enso:upgrade`
+- run `php artisan liberu:upgrade`
 
 - add in phpunit.xml the test suite for activity-log
 ```xml
 <testsuite name="activity-log">
-    <directory suffix="Test.php">./vendor/laravel-enso/activity-log/tests/units</directory>
+    <directory suffix="Test.php">./vendor/laravel-liberu/activity-log/tests/units</directory>
 </testsuite>
 ```
-- add in `config/enso/config.php` the `dateTimeFormat` key
+- add in `config/liberu/config.php` the `dateTimeFormat` key
 
 #### activity-log
 - truncate the `activity_logs` table. Or if required, you can manually migrate the old data to the new format
@@ -6861,7 +6861,7 @@ For the next release we aim to move to Vue Cli from using Laravel mix.
 
     To do this you can search the whole resources folder for `title="`. Make sure you only replace the prop for filters and not other components
 - make sure that the change in `date-filter` (described above at the front-end > filters section) does not impact your local use cases
-- whenever using date-filters with tables, remove `dbDateFormat` and make sure `dateFormat` is present in the interval object, so the back-end knows it's a date interval. `dateFormat` should reflect the ui date format. If left null, the backend will consider `config('enso.config.dateFormat')`.
+- whenever using date-filters with tables, remove `dbDateFormat` and make sure `dateFormat` is present in the interval object, so the back-end knows it's a date interval. `dateFormat` should reflect the ui date format. If left null, the backend will consider `config('liberu.config.dateFormat')`.
 
 #### helpers
 - make sure that you replace `isDisabled()` & `disable()` helpers usage with `isInactive()` & `deactivate()` and `disabled()` scope with `inactive()`
@@ -6871,7 +6871,7 @@ For the next release we aim to move to Vue Cli from using Laravel mix.
 
 #### tables
 - remove the usage of the `Datatable` trait as it no longer exists. You may search for `use LaravelLiberu\Tables\app\Traits\Datatable;` and remove any traces;
-- refactor all the table builders to implement the new `Table` contract and expose the required `query()` and `templatePath()` methods. You can follow as example the refactor of the [permissions table](https://github.com/laravel-enso/permissions/commit/707255e3a95a6e8fd87b581db689dfb623449ed5#diff-04ef87d5f506cd5a1ed3d19c5fe0c96b)
+- refactor all the table builders to implement the new `Table` contract and expose the required `query()` and `templatePath()` methods. You can follow as example the refactor of the [permissions table](https://github.com/laravel-liberu/permissions/commit/707255e3a95a6e8fd87b581db689dfb623449ed5#diff-04ef87d5f506cd5a1ed3d19c5fe0c96b)
 - the `protected $templatePath` property has become `protected const TemplatePath`;
 - if you have extended any of the core tables in your local project make sure to take into account the changes
 - add in the tables.php config file the cache key and update (if required) the notifications value' => `['email', 'broadcast', 'database']`
@@ -6915,7 +6915,7 @@ This allows much easier customisation...
 - fixes menu creation w/o model bug
 - updates table template stub
 - updates form builder stub to use `static` vs `self`
-- updates stubs for the new aliases in enso-ui 2.x
+- updates stubs for the new aliases in liberu-ui 2.x
 
 #### companies
 - makes `status` required in form validator
@@ -6944,28 +6944,28 @@ This allows much easier customisation...
 ### Upgrade Steps
 
 - update in `package.json` the following
-    - "@enso-ui/accessories": "~2.0.0",
-    - "@enso-ui/bulma": "~2.0.0",
-    - "@enso-ui/directives": "~1.0.1",
-    - "@enso-ui/filters": "^1.1.1",
-    - "@enso-ui/mixins": "~1.0.0",
-    - "@enso-ui/select": "~1.1.1",
-    - "@enso-ui/themes": "~1.0.0",
-    - "@enso-ui/transitions": "~1.0.1",
-    - "@enso-ui/ui": "~2.0.0",
+    - "@liberu-ui/accessories": "~2.0.0",
+    - "@liberu-ui/bulma": "~2.0.0",
+    - "@liberu-ui/directives": "~1.0.1",
+    - "@liberu-ui/filters": "^1.1.1",
+    - "@liberu-ui/mixins": "~1.0.0",
+    - "@liberu-ui/select": "~1.1.1",
+    - "@liberu-ui/themes": "~1.0.0",
+    - "@liberu-ui/transitions": "~1.0.1",
+    - "@liberu-ui/ui": "~2.0.0",
 - replace in `webpack.mix.js`
 
 ```js
-'@core-routes': `${__dirname}/node_modules/@enso-ui/ui/src/bulma/routes`,
-'@core-pages': `${__dirname}/node_modules/@enso-ui/ui/src/bulma/pages`,
-'@core-middleware': `${__dirname}/node_modules/@enso-ui/ui/src/middleware`,
-'@core-modules': `${__dirname}/node_modules/@enso-ui/ui/src/modules`,
+'@core-routes': `${__dirname}/node_modules/@liberu-ui/ui/src/bulma/routes`,
+'@core-pages': `${__dirname}/node_modules/@liberu-ui/ui/src/bulma/pages`,
+'@core-middleware': `${__dirname}/node_modules/@liberu-ui/ui/src/middleware`,
+'@core-modules': `${__dirname}/node_modules/@liberu-ui/ui/src/modules`,
 ```
 
 with
 
 ```js
-'@core': `${__dirname}/node_modules/@enso-ui/ui/src`,
+'@core': `${__dirname}/node_modules/@liberu-ui/ui/src`,
 ```
 
 - search and replace:
@@ -6980,7 +6980,7 @@ with
 - update your front-end patches if the case requires
 - run `yarn` (to apply the patches)
 - run `composer update`
-- run `php artisan enso:upgrade`
+- run `php artisan liberu:upgrade`
 
 Enjoy!
 
@@ -6992,7 +6992,7 @@ Enjoy!
 - adds permission checks for various document operations
 
 #### filters
-- cascades enso select event handlers in select filter
+- cascades liberu select event handlers in select filter
 - adds v-model to date filter, with value required
 - adds a `title` prop to date-filter
 - fixes tooltip in date-filter
@@ -7018,7 +7018,7 @@ Enjoy!
 - minor visual refactor
 
 #### typeahead
-- adds automatic route translation in enso-typeahead
+- adds automatic route translation in liberu-typeahead
 - cascades clear
 
 #### ui
@@ -7033,7 +7033,7 @@ Enjoy!
 #### addresses
 - removed superfluous validation
 - removes address observer
-- add laravel-enso/enums
+- add laravel-liberu/enums
 - improves form extending, removes formTemplate from config
 - adds lat and long fields in form, with custom validation rules
 - renames DefaultAddress controller to SetDefault
@@ -7046,7 +7046,7 @@ Enjoy!
 - upgrades laravolt/avatars to 3.0
 
 #### calendars
-- adds laravel-enso/enums
+- adds laravel-liberu/enums
 - adds enums service provider for registering calendars
 
 #### charts
@@ -7056,7 +7056,7 @@ Enjoy!
 - adds a package option. Now you can generate whole structure boilerplates directly in your `vendor/my-vendor/my-package` folder
 - adds session saving. You can now configure a structure, exit (or encounter an error :P) then come back and continue from where you left
 - adds unit tests
-- adds laravel-enso/enums
+- adds laravel-liberu/enums
 
 #### comments
 - removed superfluous validation
@@ -7065,7 +7065,7 @@ Enjoy!
 #### companies
 - implements dependency injection in controllers
 - adds rememberable, avoids deletion conflicts and relations traits to the company model
-- adds laravel-enso/enums
+- adds laravel-liberu/enums
 - improves form for easier customization
 - adds `fiscal_code`, `reg_com_nr` and `status` fields in table migration
 - adds `CompanyStatuses` enum
@@ -7076,7 +7076,7 @@ Enjoy!
 - refactors exceptions
 
 #### core
-- adds laravel-enso/enums
+- adds laravel-liberu/enums
 - adds `EnumServiceProvider`
 - fixes email unique validation in user form validation
 - removes duplicate trait use in UserGroup
@@ -7095,7 +7095,7 @@ Enjoy!
 #### data-import
 - small refactor
 - updates contracts (beforehook, importable, afterhook) to receive the authenticated user as well
-- adds laravel-enso/enums
+- adds laravel-liberu/enums
 - implements AuthorizesFileAccess contract
 - updates policies: view, share, destroy
 - upgrades box/spout to 3.0
@@ -7113,7 +7113,7 @@ Enjoy!
 - a set of traits that allow adding methods / relations / mutators / accessors in models from a local service provider
 
 #### enums (new)
-- Liberu Enum was moved from laravel-enso/helpers in itw own package
+- Liberu Enum was moved from laravel-liberu/helpers in itw own package
 - has an EnumServiceProvider that allows registering enums that are sent by the app state builder to the front-end. The provider can be extended in any package or locally
 
 #### files
@@ -7144,7 +7144,7 @@ Enjoy!
 - refactors exceptions
 
 #### io
-- adds laravel-enso/enums
+- adds laravel-liberu/enums
 
 #### localisation
 - refactors the `localisation` key to `language`
@@ -7165,7 +7165,7 @@ Enjoy!
 #### people
 - improves form for easier customization
 - adds AvoidsDeletionConflicts, Relations, Rememberable on Person
-- adds laravel-enso/enums
+- adds laravel-liberu/enums
 - adds EnumServiceProvider
 - adds bank and bank_account to the table's migration
 - adds uid to $queryAttributes in Option
@@ -7180,7 +7180,7 @@ Enjoy!
 
 #### roles
 - adds rememberable on Role
-- adds laravel-enso/enums
+- adds laravel-liberu/enums
 - improves form for easier customization
 - refactors exceptions
 
@@ -7197,7 +7197,7 @@ Enjoy!
 - refactores filters
 - dtRowId is now configurable and defaults to "id"
 - the box/spout dependency was upgraded to the v3 version
-- adds/uses `laravel-enso/enums`
+- adds/uses `laravel-liberu/enums`
 - now uses the Laravel 6 Arr class instead of the global helpers
 - adds `model` prop in template for customizing the model
 - refactors exceptions
@@ -7213,7 +7213,7 @@ Enjoy!
 #### tutorials
 - small refactor
 - improvements to form customization
-- adds/uses `laravel-enso/enums`
+- adds/uses `laravel-liberu/enums`
 
 #### versions (new)
 - alternative package to versioning where the version is kept on the model vs using a separate table
@@ -7229,26 +7229,26 @@ Enjoy!
 
 - update in composer.json:
     - require
-        - "laravel-enso/control-panel-api": "2.3.*", // optional, if you are using it
-        - "laravel-enso/core": "4.4.*",
-        - "laravel-enso/enums" "1.1.*",
+        - "laravel-liberu/control-panel-api": "2.3.*", // optional, if you are using it
+        - "laravel-liberu/core": "4.4.*",
+        - "laravel-liberu/enums" "1.1.*",
     - require-dev
         - "codedungeon/phpunit-result-printer": "^0.26.0",
         - "facade/ignition": "^1.4",
         - "nunomaduro/collision": "^3.0",
         - "phpunit/phpunit": "^8.0"
 - update in package.json
-    - "@enso-ui/accessories": "~1.1.0",
-    - "@enso-ui/bulma": "~1.2.0",
-    - "@enso-ui/forms": "~1.2.0",
-    - "@enso-ui/select": "~1.1.0",
-    - "@enso-ui/tables": "~1.1.0",
-    - "@enso-ui/ui": "~1.5.0",
+    - "@liberu-ui/accessories": "~1.1.0",
+    - "@liberu-ui/bulma": "~1.2.0",
+    - "@liberu-ui/forms": "~1.2.0",
+    - "@liberu-ui/select": "~1.1.0",
+    - "@liberu-ui/tables": "~1.1.0",
+    - "@liberu-ui/ui": "~1.5.0",
 - rename `structuremanager` test suite to `cli` in phpunit.xml
 - remove from the local `User` model the `Addresses` & `Documents` traits
 - update the `CompanyFactory` with the one from the github repo (of course, retain any local additions if necessary)
-- update `enso/exports.php`, `enso/tables.php`, `laravolt/avatar.php` config files with the ones from the github repo
-- delete the `enso/people.php` & `enso/companies.php` deprecated configs
+- update `liberu/exports.php`, `liberu/tables.php`, `laravolt/avatar.php` config files with the ones from the github repo
+- delete the `liberu/people.php` & `liberu/companies.php` deprecated configs
 - make sure to refactor any customisation to the people / companies forms or tables using dependency injection / binding in your `AppServiceProvider`. The old customization mechanisms which were using configs have been removed.
 - search and replace `LaravelLiberu\Helpers\app\Classes\Enum` => `LaravelLiberu\Enums\app\Services\Enum`
 - either refactor all table builders and remove the `dtRowId` alias for the id, or update your local table templates and add `"dtRowId": "dtRowId"`
@@ -7256,37 +7256,37 @@ Enjoy!
 - refactor any customizations to documents, uploads, imports, exports to make use of the `AuthorizesFileAccess` contract
 - update all importers and classes implementing the `BeforeHook`, `Importable` and `AfterHook` contracts, as the `before`, `run` and `after` method signatures have changed
 and a and `$user` parameter was added
-- add a `value` parameter to all `date-filters` or `enso-date-filters` component use
-- if you are currently using the [Versioning](https://github.com/laravel-enso/versioning) package, manually add it as a dependency in your composer.json under `require`, as it was removed as a dependency from [Core](https://github.com/laravel-enso/core)
-- run `php artisan enso:upgrade`
+- add a `value` parameter to all `date-filters` or `liberu-date-filters` component use
+- if you are currently using the [Versioning](https://github.com/laravel-liberu/versioning) package, manually add it as a dependency in your composer.json under `require`, as it was removed as a dependency from [Core](https://github.com/laravel-liberu/core)
+- run `php artisan liberu:upgrade`
 ​
 Optional:
 - now you can register/add Enums directly from your packages, to the application state, by using an `EnumServiceProvider`.
-Take a look at the `EnumServiceProvider` from the [People](https://github.com/laravel-enso/people) package as an example.
+Take a look at the `EnumServiceProvider` from the [People](https://github.com/laravel-liberu/people) package as an example.
 If using this method, you won't need to add them in the project's `LocalState`.#### Local project
 
 - update in composer.json:
     - require
-        - "laravel-enso/control-panel-api": "2.3.*", // optional, if you are using it
-        - "laravel-enso/core": "4.4.*",
-        - "laravel-enso/enums" "1.1.*",
+        - "laravel-liberu/control-panel-api": "2.3.*", // optional, if you are using it
+        - "laravel-liberu/core": "4.4.*",
+        - "laravel-liberu/enums" "1.1.*",
     - require-dev
         - "codedungeon/phpunit-result-printer": "^0.26.0",
         - "facade/ignition": "^1.4",
         - "nunomaduro/collision": "^3.0",
         - "phpunit/phpunit": "^8.0"
 - update in package.json
-    - "@enso-ui/accessories": "~1.1.0",
-    - "@enso-ui/bulma": "~1.2.0",
-    - "@enso-ui/forms": "~1.2.0",
-    - "@enso-ui/select": "~1.1.0",
-    - "@enso-ui/tables": "~1.1.0",
-    - "@enso-ui/ui": "~1.5.0",
+    - "@liberu-ui/accessories": "~1.1.0",
+    - "@liberu-ui/bulma": "~1.2.0",
+    - "@liberu-ui/forms": "~1.2.0",
+    - "@liberu-ui/select": "~1.1.0",
+    - "@liberu-ui/tables": "~1.1.0",
+    - "@liberu-ui/ui": "~1.5.0",
 - rename `structuremanager` test suite to `cli` in phpunit.xml
 - remove from the local `User` model the `Addresses` & `Documents` traits
 - update the `CompanyFactory` with the one from the github repo (of course, retain any local additions if necessary)
-- update `enso/exports.php`, `enso/tables.php`, `laravolt/avatar.php` config files with the ones from the github repo
-- delete the `enso/people.php` & `enso/companies.php` deprecated configs
+- update `liberu/exports.php`, `liberu/tables.php`, `laravolt/avatar.php` config files with the ones from the github repo
+- delete the `liberu/people.php` & `liberu/companies.php` deprecated configs
 - make sure to refactor any customisation to the people / companies forms or tables using dependency injection / binding in your `AppServiceProvider`. The old customization mechanisms which were using configs have been removed.
 - search and replace `LaravelLiberu\Helpers\app\Classes\Enum` => `LaravelLiberu\Enums\app\Services\Enum`
 - either refactor all table builders and remove the `dtRowId` alias for the id, or update your local table templates and add `"dtRowId": "dtRowId"`
@@ -7294,13 +7294,13 @@ If using this method, you won't need to add them in the project's `LocalState`.#
 - refactor any customizations to documents, uploads, imports, exports to make use of the `AuthorizesFileAccess` contract
 - update all importers and classes implementing the `BeforeHook`, `Importable` and `AfterHook` contracts, as the `before`, `run` and `after` method signatures have changed
 and a and `$user` parameter was added
-- add a `value` parameter to all `date-filters` or `enso-date-filters` component use
-- if you are currently using the [Versioning](https://github.com/laravel-enso/versioning) package, manually add it as a dependency in your composer.json under `require`, as it was removed as a dependency from [Core](https://github.com/laravel-enso/core)
-- run `php artisan enso:upgrade`
+- add a `value` parameter to all `date-filters` or `liberu-date-filters` component use
+- if you are currently using the [Versioning](https://github.com/laravel-liberu/versioning) package, manually add it as a dependency in your composer.json under `require`, as it was removed as a dependency from [Core](https://github.com/laravel-liberu/core)
+- run `php artisan liberu:upgrade`
 ​
 Optional:
 - now you can register/add Enums directly from your packages, to the application state, by using an `EnumServiceProvider`.
-Take a look at the `EnumServiceProvider` from the [People](https://github.com/laravel-enso/people) package as an example.
+Take a look at the `EnumServiceProvider` from the [People](https://github.com/laravel-liberu/people) package as an example.
 If using this method, you won't need to add them in the project's `LocalState`.
 ​
 #### Laravel 6 file changes
@@ -7543,7 +7543,7 @@ If using this method, you won't need to add them in the project's `LocalState`.
 - adds an option resource
 
 #### roles
-- updates `warning` to `warn` in `enso:roles:sync` command
+- updates `warning` to `warn` in `liberu:roles:sync` command
 
 ####  tables
 - adds `searchMode` / `searchModes` to allow full use of table indexing on huge tables
@@ -7559,7 +7559,7 @@ If using this method, you won't need to add them in the project's `LocalState`.
 
 ### Upgrade steps
 - `composer update`
-- `php artisan enso:upgrade`
+- `php artisan liberu:upgrade`
 - `yarn upgrade && yarn`
 
 Enjoy!
@@ -7694,7 +7694,7 @@ Bug fixes, small additions & refactors, dependencies updates
 - fixes excel seeder in
 - adds a small refactor in `Template.php`
 #### roles
-- fixes `enso:roles:sync` throwing error when the roles folder was missing
+- fixes `liberu:roles:sync` throwing error when the roles folder was missing
 #### tables
 - fixes multiple select filters in tables
 - fixes `filters` prop parsing
@@ -7704,11 +7704,11 @@ Bug fixes, small additions & refactors, dependencies updates
 ### FE
 
 #### forms
-- cascades `setOriginal()` helper in `vue-form` and `enso-form`
+- cascades `setOriginal()` helper in `vue-form` and `liberu-form`
 #### ui
 - adds a `disable-state` boolean prop for forms that don't need state
 - adds a toaster confirmation when writing role config files
-- adds dot separator support for date format in enso-ui
+- adds dot separator support for date format in liberu-ui
 #### tables
 - adds payload to postEvents
 - fixes `clickable` on columns hidden due to responsiveness
@@ -7729,7 +7729,7 @@ Bug fixes, small additions & refactors, dependencies updates
 - enhances the errors & changes control, adding the ability to undo
 - integrates with the new bookmark's state to hold changes
 - adds a fill helper
-- exposes dirty & fill in vue form / enso form
+- exposes dirty & fill in vue form / liberu form
 
 ### general
 - fixes small bugs
@@ -7850,8 +7850,8 @@ Below you'll find the old package name in parenthesis.
 - refactored request validators
 - added the `UserGroups` enum, bound to the app's service container under the `user-groups` alias;
 the enum is also present in the app state
-- added the `enso:rename-migrations` command
-- updated the `enso:upgrade` command for a smoother upgrade
+- added the `liberu:rename-migrations` command
+- updated the `liberu:upgrade` command for a smoother upgrade
 - web sockets is available in the app state
 - `UserGroup::Admin` constant has been removed
 
@@ -8025,12 +8025,12 @@ which provides the `ioChannel`, `privateChannel` and `pusher` configurations
     - `examples` to 1.2.* (if needed)
     - remove `laracasts/generators`
 - update in `package.json`
-    - `@enso-ui/ui` to `~1.3.0`
+    - `@liberu-ui/ui` to `~1.3.0`
 - run `composer update`
 - run `yarn upgrade && yarn` (if `patch-package` fails, you should update your patches)
-- run `php artisan enso:rename-migrations`
+- run `php artisan liberu:rename-migrations`
 - run `php artisan migrate`
-- run `php artisan enso:upgrade`
+- run `php artisan liberu:upgrade`
 - update `App\User` with the proper imports/namespaces
 - remove from your route file the `@options` action method for all select controllers that are using the `OptionsBuider` trait
 - remove from your local route file `@excel` action method if you want to keep the old style table controllers
@@ -8039,11 +8039,11 @@ which provides the `ioChannel`, `privateChannel` and `pusher` configurations
 Use a package like `tutorials` for an example of how this is achieved.
 
 - configs:
-    - remove the paths key from `config/enso/config.php`
-    - update `config/enso/files.php` according to the one from the `files` package
-    - rename `config/enso/datatable.php` => `config/enso/tables.php`
-    - update `config/enso/imports`, if necessary (example importer)
-    - update `config/enso/searchable` according to the one from the searchable package. To add your models publish and use the new `SearchServiceProvider`
+    - remove the paths key from `config/liberu/config.php`
+    - update `config/liberu/files.php` according to the one from the `files` package
+    - rename `config/liberu/datatable.php` => `config/liberu/tables.php`
+    - update `config/liberu/imports`, if necessary (example importer)
+    - update `config/liberu/searchable` according to the one from the searchable package. To add your models publish and use the new `SearchServiceProvider`
 
 - factories and seeders:
     - update `MenuFactory`
@@ -8132,7 +8132,7 @@ Enjoy!
 - copy `patches/bulma-rtl+0.7.1.patch` from Liberu's repo to your local project
 - `composer update`
 - `yarn upgrade && yarn && yarn run dev`
-- add to your `config/enso/themes/php`
+- add to your `config/liberu/themes/php`
 ```php
 'light-rtl' => '/themes-rtl/light/bulma.min.css',
 'dark-rtl' => '/themes-rtl/dark/bulma.min.css',
@@ -8141,7 +8141,7 @@ Enjoy!
 
 ## 3.2.0
 
-### Changes -> laravel-enso
+### Changes -> laravel-liberu
 
 #### ActivityLog
 - uses Liberu's `dateFormat` in interval filter
@@ -8156,7 +8156,7 @@ Enjoy!
 #### Core
 - adds RTL support, still WiP
 - adds `ioStatuses` to state enums
-- fixes `enso` mail theme
+- fixes `liberu` mail theme
 - removes the duplicate favico from index.blade.php
 - refactors/improves the password validator
 
@@ -8178,7 +8178,7 @@ Enjoy!
 - fixes the example table bugs
 
 #### FileManager
-- refactors / improves the interval filter; now enso's `dateFormat` is used
+- refactors / improves the interval filter; now liberu's `dateFormat` is used
 
 #### FormBuilder
 - fixes a bug when using custom routes
@@ -8238,7 +8238,7 @@ Enjoy!
 #### TutorialManager
 - fixed bug: tutorial background was sometimes blocking the highlighted element
 
-### Changes -> enso-ui
+### Changes -> liberu-ui
 
 #### accessories
 - changes the classes for comment dates and controls to ensure a better contract when using the dark theme
@@ -8286,21 +8286,21 @@ Enjoy!
 - refactor the deprecated FE helpers (global mixins) with the new injected ones available in v3.x:
   - `__` to `i18n`
   - `handleError` to `errorHandler`
-- refactor the `Rememberable` use according with the new [version](https://docs.laravel-enso.com/packages/rememberable.html)
+- refactor the `Rememberable` use according with the new [version](https://docs.laravel-liberu.com/packages/rememberable.html)
 - when `TableCache` trait is used you can safely drop the `protected $cachedTable = 'tableId';` property; now the trait autodetects the table's name
-- update the core dependency in `composer.json` to: `"laravel-enso/core": "4.2.*"`
-- update the ui dependency in `package.json` to: `"@enso-ui/ui": "~1.2.0",`
+- update the core dependency in `composer.json` to: `"laravel-liberu/core": "4.2.*"`
+- update the ui dependency in `package.json` to: `"@liberu-ui/ui": "~1.2.0",`
 - run the following:
   - `composer update`
   - `php artisan vendor:publish --tag=localisation-factory --force`
   - `php artisan vendor:publish --tag=dataexport-config`
-  - add the `labels` config option in `config/enso/forms.php`
-  - add the `humanReadableDates` config option in `config/enso/comments.php`
-  - rename the `buildingTypes.Comercial` to `buildingTypes.Commercial` in `config/enso/addresses.php`
-  - if you are using the `enso` theme for mails then run `php artisan vendor:publish --tag=enso-email --force`
+  - add the `labels` config option in `config/liberu/forms.php`
+  - add the `humanReadableDates` config option in `config/liberu/comments.php`
+  - rename the `buildingTypes.Comercial` to `buildingTypes.Commercial` in `config/liberu/addresses.php`
+  - if you are using the `liberu` theme for mails then run `php artisan vendor:publish --tag=liberu-email --force`
   - remove from `routes/channels.php` both `App.User.{id}` and `operations.{userId}` entries
   - if you're not using multitenancy remove from `config/databases.php` the `system` and `tenant` connections and update your env to use `mysql`
-  - `php artisan enso:upgrade`
+  - `php artisan liberu:upgrade`
   - `yarn && yarn upgrade && yarn run dev`
 
 ## 3.1.1
@@ -8324,21 +8324,21 @@ To upgrade:
 ### Changes
 
 - improves custom fields in forms (slots). Now you can use the generic `FormField` in almost all cases. If you want to use the specific fields (`SelectField`, `InputField`...) don't forget to manually add the label
-- unifies `phpDateFormat` and `jsDateFormat` in one single `dateFormat` prop, in `config/enso/config.php`
+- unifies `phpDateFormat` and `jsDateFormat` in one single `dateFormat` prop, in `config/liberu/config.php`
 - adds a new Calendar package. Note that the calendar is still WiP
 - fixes various bugs
 - fixes npm dependencies to keep track of minor versions
 
 ### Upgrade steps:
 
-- update in `package.json` all `@enso-ui/...` deps by replacing the `^` with `~` (`"@enso-ui/accessories": "~1.0.0",`)
+- update in `package.json` all `@liberu-ui/...` deps by replacing the `^` with `~` (`"@liberu-ui/accessories": "~1.0.0",`)
 - update in `package.json` the `form` and `ui` deps to
 ```
-"@enso-ui/forms": "~1.1.0",
-"@enso-ui/ui": "~1.1.0",
+"@liberu-ui/forms": "~1.1.0",
+"@liberu-ui/ui": "~1.1.0",
 ```
-- update in `composer.json` -> `"laravel-enso/core": "4.1.*"`
-- replace `phpDateFormat` and `jsDateFormat` with `dateFormat` in `config/enso/config.php`
+- update in `composer.json` -> `"laravel-liberu/core": "4.1.*"`
+- replace `phpDateFormat` and `jsDateFormat` with `dateFormat` in `config/liberu/config.php`
 - search the whole frontend by `-field` and replace all the specific fields with `form-field` in custom forms. Don't forget to also import `FormField.vue` from the same location.
 - `composer update && yarn install && yarn upgrade`
 - `php artisan migrate`
@@ -8363,7 +8363,7 @@ To upgrade:
 - fixes two bugs related to hidden rows (due to responsivity)
 - fixes closing modal on deleting from forms
 - minor other bug fixes
-- adds the `ProgressCircle` component (@enso-ui/progress-circle)
+- adds the `ProgressCircle` component (@liberu-ui/progress-circle)
 - updates all deps
 - adds a `localisation(bool)` helper in `Enum`
 - adds an `option()` helper to the `Chart` builder
@@ -8421,14 +8421,14 @@ We added friendly aliases for imports.
 
 We strived to create packages for every piece of functionality. This is still an ongoing process.
 
-All the new packages can be found under the @enso-ui organisation on both github and npmjs.
+All the new packages can be found under the @liberu-ui organisation on both github and npmjs.
 
 For the active components we went for encapsulating the front end behavior in renderless components, and creating template wrappers.
 
 ### Theming and styling
 
 As before, Liberu ships with two themes, one dark and one light.
-The themes and the overall styling have been organized better, offer the possibility of easier customization and can be found in the @enso-ui/themes package.
+The themes and the overall styling have been organized better, offer the possibility of easier customization and can be found in the @liberu-ui/themes package.
 
 It's easier to style specific components on both themes by creating a single scss file that uses variables, and place this file under the `/components` folder
 
@@ -8477,7 +8477,7 @@ automatically determining and using:
 
 ## New Packages
 
-### Accessories (@enso-ui/accessories)
+### Accessories (@liberu-ui/accessories)
 
 #### Addresses.vue, Comments.vue, Documents.vue
 - the `controls` property is no longer available
@@ -8485,7 +8485,7 @@ automatically determining and using:
 #### AddressesCard.vue, CommentsCard.vue, DocumentsCard.vue
 - the `open` property has been replaced to `collapsed`
 
-### Charts (@enso-ui/charts)
+### Charts (@liberu-ui/charts)
 
 #### Chart.vue
 - a new `formatter` property is available, type `function` used to format the datalabels values
@@ -8495,7 +8495,7 @@ automatically determining and using:
 
 #### LiberuChartCard.vue
 
-### Forms (@enso-ui/forms)
+### Forms (@liberu-ui/forms)
 
 #### VueForm.vue
 - a new `errorHandler` property is available
@@ -8508,24 +8508,24 @@ automatically determining and using:
     - `destroy`
 - the Tabs component events are cascaded
 
-### Datepicker.vue (@enso-ui/datepicker)
+### Datepicker.vue (@liberu-ui/datepicker)
 - the `name` property is no longer available
 
-### Divider.vue (@enso-ui/divider)
-- has a correspondent divider.scss in @enso-ui/themes, now looks good on the dark theme.
+### Divider.vue (@liberu-ui/divider)
+- has a correspondent divider.scss in @liberu-ui/themes, now looks good on the dark theme.
 
-### Money.vue (@enso-ui/money)
+### Money.vue (@liberu-ui/money)
 
-### VueSwitch.vue (@enso-ui/switch)
+### VueSwitch.vue (@liberu-ui/switch)
 - the `required` property is no longer available
 - the `type` & `size` props is no longer available
 - Bulma classes can be set directly on the component (`is-large is-warning`)
 
-### Wysiwyg.vue (@enso-ui/wysiwyg)
+### Wysiwyg.vue (@liberu-ui/wysiwyg)
 - `tiptap` was updated from 0.17.* to 1.7.*
 - now supports tables
 
-### Select.vue (@enso-ui/select)
+### Select.vue (@liberu-ui/select)
 
 #### VueSelect
 - the `limit` property has been renamed to `paginate`
@@ -8540,7 +8540,7 @@ automatically determining and using:
 #### LiberuSelect
 - new
 
-### Filters (@enso-ui/filters)
+### Filters (@liberu-ui/filters)
 
 #### VueFilter.vue
 - the `length` property has been replaced with `paginate`
@@ -8570,14 +8570,14 @@ automatically determining and using:
 - new
 
 #### IntervalFilter.vue
-- is located in the `@enso-ui/filters` package
+- is located in the `@liberu-ui/filters` package
 
-### Notification.vue -> Toastr.vue (@enso-ui/toastr)
+### Notification.vue -> Toastr.vue (@liberu-ui/toastr)
 - the `container` property has been removed and `toastr-notifications` is used by default
 - the `i18n` property has been removed
 - the `html` property has been added
 
-### Card.vue (@enso-ui/card)
+### Card.vue (@liberu-ui/card)
 - the `nested` property has been removed. The nesting is handled automatically
 - the `icon` & `title` properties have been removed, in favor of using the default slot of the  `CardHeader` component
 - the `search` property has been deprecated & removed
@@ -8592,7 +8592,7 @@ automatically determining and using:
 
 Note that now the card has become more modular, so instead of giving properties, you'll be using other components to build the card to your heart's desire, achieving the previous functionality and going beyond.
 
-### Dropdown.vue (@enso-ui/dropdown)
+### Dropdown.vue (@liberu-ui/dropdown)
 - added `disabled` property
 - `height` & `width` were removed and need to be managed in the wrapper component
 - `hidesManually` has been renamed to `manual`
@@ -8600,26 +8600,26 @@ Note that now the card has become more modular, so instead of giving properties,
 - built upon a renderless component
 - handles keyboard events: Esc, Tab, Enter
 
-#### DropdownIndicator.vue (@enso-ui/dropdown-indicator)
+#### DropdownIndicator.vue (@liberu-ui/dropdown-indicator)
 - reusable arrow with state
 
-### Modal (@enso-ui/modal)
+### Modal (@liberu-ui/modal)
 
-#### Modal.vue (@enso-ui/modal)
+#### Modal.vue (@liberu-ui/modal)
 - the `card` property has been removed
 - the `container` property has been replaced with `portal`
 
 #### ModalCard.vue
 - the `container` property has been replaced with `portal`
 
-#### Overlay.vue -> Loader.vue (@enso-ui/loader)
+#### Overlay.vue -> Loader.vue (@liberu-ui/loader)
 - the component has been removed and replaced with `Loader`
-- `Loader` is now located in the `@enso-ui/loader` package
+- `Loader` is now located in the `@liberu-ui/loader` package
 - the loader now has an improved animation and uses a transition for a better experience
 
-#### Popover.vue -> Confirmation.vue (@enso-ui/cofirmation)
+#### Popover.vue -> Confirmation.vue (@liberu-ui/cofirmation)
 
-### Tabs (@enso-ui/tabs)
+### Tabs (@liberu-ui/tabs)
 
 #### Tabs.vue
 - the component design has been updated under the hood, switching from event based communication to dependency injection
@@ -8642,22 +8642,22 @@ Note that now the card has become more modular, so instead of giving properties,
 
 ### Typeahead
 
-#### Typeahead.vue (@enso-ui/typeahead)
-- is now located in the `@enso-ui/typeahead` package
+#### Typeahead.vue (@liberu-ui/typeahead)
+- is now located in the `@liberu-ui/typeahead` package
 - the `length` property has been replaced with `paginate`
 - the `validator` property has been removed as now the regex validation is always used and can be customized
 
 #### LiberuTypeahead.vue
 - new
 
-### Uploader (@enso-ui/uploader)
+### Uploader (@liberu-ui/uploader)
 
 #### FileUploader.vue -> Uploader.vue
 
-#### LiberuUploader.vue (@enso-ui/uploader)
+#### LiberuUploader.vue (@liberu-ui/uploader)
 - new
 
-### ProgressBar.vue (@enso-ui/progress-bar)
+### ProgressBar.vue (@liberu-ui/progress-bar)
 - new
 
 ### Tables
@@ -8665,11 +8665,11 @@ Note that now the card has become more modular, so instead of giving properties,
 #### LiberuTable.vue
 - new
 
-#### Themes (@enso-ui/themes)
+#### Themes (@liberu-ui/themes)
 - it contains the two themes (light & dark) that come with Liberu by default.
 - it contains components scss
 
-### Transitions (@enso-ui/transitions)
+### Transitions (@liberu-ui/transitions)
 - this is a new package
 
 #### Fade
@@ -8683,7 +8683,7 @@ Note that now the card has become more modular, so instead of giving properties,
 #### SlideUp
 #### Zoom
 
-#### UI (@enso-ui/ui)
+#### UI (@liberu-ui/ui)
 - it contains the main `App.vue` component as well as all the core dependencies such as layouts, middleware, pages, filters, mixins, plugins, routes, etc.
 
 ### VueComponents
@@ -8736,16 +8736,16 @@ pagination
 
 - add the following new dependencies to `package.json` (note the new VueJS version)
 ```json
-"@enso-ui/accessories": "^1.0.0",
-"@enso-ui/bulma": "^1.0.0",
-"@enso-ui/directives": "^1.0.1",
-"@enso-ui/forms": "^1.0.1",
-"@enso-ui/mixins": "^1.0.0",
-"@enso-ui/select": "^1.0.2",
-"@enso-ui/tables": "^1.0.0",
-"@enso-ui/themes": "^1.0.0",
-"@enso-ui/transitions": "^1.0.1",
-"@enso-ui/ui": "^1.0.0",
+"@liberu-ui/accessories": "^1.0.0",
+"@liberu-ui/bulma": "^1.0.0",
+"@liberu-ui/directives": "^1.0.1",
+"@liberu-ui/forms": "^1.0.1",
+"@liberu-ui/mixins": "^1.0.0",
+"@liberu-ui/select": "^1.0.2",
+"@liberu-ui/tables": "^1.0.0",
+"@liberu-ui/themes": "^1.0.0",
+"@liberu-ui/transitions": "^1.0.1",
+"@liberu-ui/ui": "^1.0.0",
 "patch-package": "^6.0.2",
 "popper.js": "^1.14.7",
 "vue": "^2.6.8",
@@ -8771,16 +8771,16 @@ pagination
 
 - update `composer.json` by removing the following dependencies:
 ```json
-"laravel-enso/addressesmanager": "2.5.*",
-"laravel-enso/commentsmanager": "2.4.*",
-"laravel-enso/discussions": "1.1.*",
-"laravel-enso/documentsmanager": "2.4.*",
-"laravel-enso/how-to": "2.2.*",
+"laravel-liberu/addressesmanager": "2.5.*",
+"laravel-liberu/commentsmanager": "2.4.*",
+"laravel-liberu/discussions": "1.1.*",
+"laravel-liberu/documentsmanager": "2.4.*",
+"laravel-liberu/how-to": "2.2.*",
 ```
 
 - update `composer.json` by updating the following dependencies:
 ```json
-"laravel-enso/core": "4.0.*",
+"laravel-liberu/core": "4.0.*",
 "laravel/horizon": "^3.0",
 "laravel/framework": "5.8.*",
 "laravel/telescope": "^2.0",
@@ -8789,7 +8789,7 @@ pagination
 
 - remove the following commands from `post-update-cmd`
 ```json
-"php artisan vendor:publish --force --tag=enso-assets",
+"php artisan vendor:publish --force --tag=liberu-assets",
 "php artisan rolcris:update-assets"
 ```
 
@@ -8802,10 +8802,10 @@ mix
         resolve: {
             extensions: ['.js', '.vue', '.json'],
             alias: {
-                '@core-routes': `${__dirname}/node_modules/@enso-ui/ui/src/bulma/routes`,
-                '@core-pages': `${__dirname}/node_modules/@enso-ui/ui/src/bulma/pages`,
-                '@core-middleware': `${__dirname}/node_modules/@enso-ui/ui/src/middleware`,
-                '@core-modules': `${__dirname}/node_modules/@enso-ui/ui/src/modules`,
+                '@core-routes': `${__dirname}/node_modules/@liberu-ui/ui/src/bulma/routes`,
+                '@core-pages': `${__dirname}/node_modules/@liberu-ui/ui/src/bulma/pages`,
+                '@core-middleware': `${__dirname}/node_modules/@liberu-ui/ui/src/middleware`,
+                '@core-modules': `${__dirname}/node_modules/@liberu-ui/ui/src/modules`,
                 '@root': `${__dirname}/resources/js`,
                 '@pages': `${__dirname}/resources/js/pages`,
                 '@store': `${__dirname}/resources/js/store`,
@@ -8829,10 +8829,10 @@ mix
         },
     })
     .copyDirectory('resources/images', 'public/images')
-    .sass('resources/sass/enso.scss', 'public/css')
-    .sass('node_modules/@enso-ui/themes/bulma/light.scss', 'public/themes/light/bulma.min.css')
-    .sass('node_modules/@enso-ui/themes/bulma/dark.scss', 'public/themes/dark/bulma.min.css')
-    .js('resources/js/enso.js', 'public/js')
+    .sass('resources/sass/liberu.scss', 'public/css')
+    .sass('node_modules/@liberu-ui/themes/bulma/light.scss', 'public/themes/light/bulma.min.css')
+    .sass('node_modules/@liberu-ui/themes/bulma/dark.scss', 'public/themes/dark/bulma.min.css')
+    .js('resources/js/liberu.js', 'public/js')
     .extract([
         '@fortawesome/fontawesome-free', '@fortawesome/fontawesome-svg-core',
         '@fortawesome/free-brands-svg-icons', '@fortawesome/free-regular-svg-icons',
@@ -8853,22 +8853,22 @@ if (mix.inProduction()) {
 
 ```
 - The folders below must be kept until you update your app to use the new npm packages. Once you're using the new versions, you may safely delete them:
-    - `resources/js/classes/enso`
-    - `resources/js/components/enso`
+    - `resources/js/classes/liberu`
+    - `resources/js/components/liberu`
 
-- delete the following folders since the respective functionality was moved to @enso-ui/ui
+- delete the following folders since the respective functionality was moved to @liberu-ui/ui
     - `resources/js/core`
     - `resources/js/middleware`
-    - `resources/js/modules/enso`
+    - `resources/js/modules/liberu`
     - `resources/js/modules/importers`
 
-- delete the following files since the respective functionality was moved to @enso-ui/themes
+- delete the following files since the respective functionality was moved to @liberu-ui/themes
     - `resources/sass/extensions.scss`
     - `resources/sass/helpers.scss`
     - `resources/sass/flags.scss`
     - `resources/sass/v-tooltip.scss`
 
-- update - `resources/sass/enso.scss` to match the one from `laravel-enso/enso` repo
+- update - `resources/sass/liberu.scss` to match the one from `laravel-liberu/liberu` repo
 
 - delete the following `resources/js/pages` subfolders (except for customizations!!):
     - `activityLog`,
@@ -8906,7 +8906,7 @@ if (mix.inProduction()) {
     - `preferences.js`
 
 - update the following files from the `resources/js` folder:
-    - `enso.js`
+    - `liberu.js`
     - `router.js`
     - `selectExample.js`
     - `store.js`
@@ -8914,7 +8914,7 @@ if (mix.inProduction()) {
 
 - `composer install && composer update`
 
-- `php artisan enso:upgrade`
+- `php artisan liberu:upgrade`
 
 - run `php artisan horizon:install`
 
@@ -8945,11 +8945,11 @@ if (mix.inProduction()) {
 
 - replace relative routeImporer imports such as: `import routeImporter from '../modules/importers/routeImporter;` with the package import : `import routeImporter from '@core-modules/importers/routeImporter';`
 
-- replace relative date-fns imports such as: `import format from '../../../modules/enso/plugins/date-fns/format;` with the package import `import format from '@core-modules/plugins/date-fns/format';` (notably `format`, `formatDistance`)
+- replace relative date-fns imports such as: `import format from '../../../modules/liberu/plugins/date-fns/format;` with the package import `import format from '@core-modules/plugins/date-fns/format';` (notably `format`, `formatDistance`)
 
-- comment out the import of the `tiptap-extensions` from `/resources/js/components/enso/vueforms/Wysiwyg.vue`
+- comment out the import of the `tiptap-extensions` from `/resources/js/components/liberu/vueforms/Wysiwyg.vue`
 
-- in `resources/images` ensure you have `earthlink.svg` & `enso-favicon.png`
+- in `resources/images` ensure you have `earthlink.svg` & `liberu-favicon.png`
 
 - when adding your own local routes that overwrite or reuse part or the core routes, ensure that
 within the route file you expose only the `path` and the `children` properties. If you also set the `meta` property, that would result in having the core routes overwritten by your local routes vs having the local routes merged into the core routes.
@@ -8967,10 +8967,10 @@ Small bug fixes, composer & npm packages updates
 
 ### Improvements
 - adds a new system for collection missing translation keys, optimizing the number of needed server requests
-- moves the IO logic in its own package, `laravel-enso/io`
+- moves the IO logic in its own package, `laravel-liberu/io`
 - refactors / improves the IO ui
 - refactors DataImport / DataExport to make use of the new helpers available for IO Operations
-- removes the chunk option from `config/enso/datatable.php`. The chunk is determined dinamically now
+- removes the chunk option from `config/liberu/datatable.php`. The chunk is determined dinamically now
 - fixes missing header bug in VueDatatable excel exports, on every sheet
 - fixes exporting hidden columns (!visible) in vue datatable
 - fixes icon rendering bug in menu manager table when using fa icons with other prefix than `fas`
@@ -8991,12 +8991,12 @@ Beware that if you do that you will have to compile the assets in the deployment
 
 ## 2.16.0
 Starting with this version Liberu gets native multitenancy support,
-thanks to the our newest package [laravel-enso/multitenancy](https://github.com/laravel-enso/multitenancy)
+thanks to the our newest package [laravel-liberu/multitenancy](https://github.com/laravel-liberu/multitenancy)
 
 ### Improvements
 - for more information on multitenancy, take a look at the documentation
 - adds caching support for totals in tables; this can be have a great positive impact in large tables.
-For more info check the [docs](https://docs.laravel-enso.com/packages/vue-datatable.html#caching-support)
+For more info check the [docs](https://docs.laravel-liberu.com/packages/vue-datatable.html#caching-support)
 - strengthens the user -> person -> company -> userGroup -> roles policies, getting ready for MT :D
 - upgrades horizon to 2.0.x
 
@@ -9006,10 +9006,10 @@ For more info check the [docs](https://docs.laravel-enso.com/packages/vue-datata
 - other minor bug fixes
 
 ### Upgrade steps:
-- update in `composer.json`: `"laravel-enso/core": "3.7.*"`
+- update in `composer.json`: `"laravel-liberu/core": "3.7.*"`
 - update your `database.php` config file and make sure that you have a `system` connection  that is also configured as default and an optionally `tenant` connection.  Use the file from the main repository as an example.
 - run `composer update`
-- run `php artisan enso:upgrade`
+- run `php artisan liberu:upgrade`
 - update `CompanyFactory` with the one from the demo repository
 - update `.env.example` && `.env.testing` if needed
 - update the `horizon.php` & `datatable.php` configuration files with the ones from the main repository
@@ -9021,7 +9021,7 @@ For more info check the [docs](https://docs.laravel-enso.com/packages/vue-datata
 - makes `fullInfoRecordInfo` available in `vue-table` templates
 - refreshes the table example page
 - allows `Obj` properties to contain dash
-- updates the default values in `config/enso/auth.php`
+- updates the default values in `config/liberu/auth.php`
 - makes the `position` field require a company to be selected, in People
 - adds FE permissions check for company people management
 - upgrades the filters (`vue-filter`, `vue-select-filter`, `date-filter`, `date-interval-filter`, `interval-filter`)
@@ -9065,9 +9065,9 @@ Once the lifetime is configured the user will receive notifications upon login w
 
 ### Upgrade instructions
 - run `composer update`
-- run `php artisan enso:upgrade`
+- run `php artisan liberu:upgrade`
 - publish the core configs if you want to customize the auth params
-- configure in `.env` your desired password params -> see `config/enso/auth.php` for the available options
+- configure in `.env` your desired password params -> see `config/liberu/auth.php` for the available options
 
 ## 2.15.1
 In this version we focused on greatly improving the assets compiling process. With the new configuration build times dropped by ~ 75% for production.
@@ -9097,7 +9097,7 @@ In this version we focused on greatly improving the assets compiling process. Wi
 - fixes `<address-card>` refresh (`get` => `fetch`)
 
 ### Upgrade instructions
-- update in `composer.json`: `"laravel-enso/core": "3.6.*"`
+- update in `composer.json`: `"laravel-liberu/core": "3.6.*"`
 - run composer update
 - delete your local `node_modules`, `yarn.lock`, `package-lock.json`
 - update the following local files with the ones from the main repo
@@ -9108,7 +9108,7 @@ In this version we focused on greatly improving the assets compiling process. Wi
 - run `yarn`
 - compile
 - run in tinker the following command:
-    - `LaravelLiberu\PermissionManager\app\Models\Permission::where('name', 'LIKE', 'administration.companies.contacts.%')->delete();` (it was a typo in the `enso:upgrade` command)
+    - `LaravelLiberu\PermissionManager\app\Models\Permission::where('name', 'LIKE', 'administration.companies.contacts.%')->delete();` (it was a typo in the `liberu:upgrade` command)
 
 ## 2.15.0
 
@@ -9138,7 +9138,7 @@ contacts / mandataries to company people.
 - removes the deprecated `contactFormTemplate` from `companies.php` config file
 - updates the `CompanyFactory`
 - removes the deprecated `ContactFactory`
-- replaces the deprecated `/resources/js/components/enso/contacts/` components with `/resources/js/components/enso/companies/`
+- replaces the deprecated `/resources/js/components/liberu/contacts/` components with `/resources/js/components/liberu/companies/`
 - updates the implementation of `accessories` in the `Edit.vue` page
 - updates the routes
 - replaces `ContactTest` with `CompanyPeopleTest`
@@ -9190,14 +9190,14 @@ contacts / mandataries to company people.
 - updates `tabs` to emit the `selected` event when mounted
 
 ### Upgrade instructions - estimated time per project ~ 5min
-- update in `composer.json`: "laravel-enso/core": "3.5.*"
+- update in `composer.json`: "laravel-liberu/core": "3.5.*"
 - run `composer update`
 - run `php artisan migrate`
-- run `php artisan enso:upgrade`
+- run `php artisan liberu:upgrade`
 - update `CompanyFactory` and `PersonFactory` and `UserSeeder` with the ones from the packages
 - remove `ContactFactory`
-- remove `/resources/js/components/enso/contacts/`
-- remove `Contact` from `config/enso/searchable.php`
+- remove `/resources/js/components/liberu/contacts/`
+- remove `Contact` from `config/liberu/searchable.php`
 
 Note:
 If you customized the company / person form / table / pages you will have to manually update them accordingly...
@@ -9209,7 +9209,7 @@ If you customized the company / person form / table / pages you will have to man
 - fixes the role configurator
 - adds the missing searchOperator from datatable config that was breaking the table search
 - fixes tabs position in formbuilder to properly display select's dropdown
-- updates structure manager's from create / edit stubs for `enso-form`
+- updates structure manager's from create / edit stubs for `liberu-form`
 - removes a redundant test in Searchable that was causing problems on certain env's
 - prevents form submisison when used in a form for `file.vue`
 
@@ -9262,7 +9262,7 @@ This is yet another step towards our vision for Liberu and rest assured, there i
 #### FormBuilder
 - adds the `tabs` property to the form template root. If provided, it will require a `tab` property for each section, which will represent the tab's label. The sections will be grouped in tabs using their given labels
 - the delete modal has the commit button focused by default
-- exposes a series of getters/helpers from `vue-from` and `enso-form` that can be accessed via `$refs`:
+- exposes a series of getters/helpers from `vue-from` and `liberu-form` that can be accessed via `$refs`:
     - computed:
         - `data` - represents the whole object
         - `customFields` - represents  custom fields array
@@ -9276,11 +9276,11 @@ This is yet another step towards our vision for Liberu and rest assured, there i
 
 #### VueComponents
 - removes the deprecated `MorpableContainer`
-- adds a new `enso-tabs` component. The old `tabs` component is visually limited to the Bulma available options. `enso-tabs` has less props and displays the custom tabs used in the Files menu, the `accesories` component and in `vue-form` (new!)
+- adds a new `liberu-tabs` component. The old `tabs` component is visually limited to the Bulma available options. `liberu-tabs` has less props and displays the custom tabs used in the Files menu, the `accesories` component and in `vue-form` (new!)
 - adds compact mode to `accesories`
 
 #### VueDatatable
-- adds practically unlimited excel export functionality by greatly improving the table fetcher. The whole process is done in the background and uses a small amount of memory. You should consider using appropriate values for the configuration options `enso.datatable.exports.timeout` and for the `queues.connections.yourConnection.retry_after`
+- adds practically unlimited excel export functionality by greatly improving the table fetcher. The whole process is done in the background and uses a small amount of memory. You should consider using appropriate values for the configuration options `liberu.datatable.exports.timeout` and for the `queues.connections.yourConnection.retry_after`
 - improves the builder logic and reusability
 - optimizes the Builder for date / enum / translatable computing
 - renamed the `translation` template param to `translatable`
@@ -9290,15 +9290,15 @@ This is yet another step towards our vision for Liberu and rest assured, there i
 - integrates with the new background operations management system (IO) for real time progress in the FE
 
 ### Upgrade instructions - estimated time per project ~ 10-15min
-- update in `composer.json`: "laravel-enso/core": "3.4.*"
+- update in `composer.json`: "laravel-liberu/core": "3.4.*"
 - from `composer.json`, remove the packages:
-    * "laravel-enso/companies"
-    * "laravel-enso/dataimport"
+    * "laravel-liberu/companies"
+    * "laravel-liberu/dataimport"
 - run `composer update`
 - run `php artisan migrate`
 - run `yarn upgrade`
 - run `yarn run dev`
-- run `php artisan enso:upgrade`
+- run `php artisan liberu:upgrade`
 - add the new route in your `routes/channels.php` file
     ```php
     Broadcast::channel('operations.{userId}', function ($user, $operationId) {
@@ -9307,8 +9307,8 @@ This is yet another step towards our vision for Liberu and rest assured, there i
     ```
 - in your `config/queue.php` file make sure that you set `retry_after` to a higher value for the imports / exports connection (we are using 1800)
 - update the configuration files with the newly introduced options:
-    * `config/enso/imports.php` with `vendor/laravel-enso/dataimport/src/config/imports.php`
-    * `config/enso/datatable.php` with `vendor/laravel-enso/vuedatatable/src/config/datatable.php`
+    * `config/liberu/imports.php` with `vendor/laravel-liberu/dataimport/src/config/imports.php`
+    * `config/liberu/datatable.php` with `vendor/laravel-liberu/vuedatatable/src/config/datatable.php`
 - configure your `config/horizon.php` to make sure that you have the appropriate queues for both local and production envs. You can use the config from this repo as an example.
 - refactor your import classes and validators to match the new structure
 - if necessary, in your table templates, rename the attribute `translation` to `translatable`
@@ -9324,7 +9324,7 @@ To upgrade existing projects:
 - run `composer update`
 - update in your package.json `"date-fns": "^2.0.0-alpha.7"`
 - run `yarn install`
-- update in `config/enso/config.php` `jsDateFormat => 'dd-MM-yyyy'`
+- update in `config/liberu/config.php` `jsDateFormat => 'dd-MM-yyyy'`
 - read [this](https://github.com/date-fns/date-fns/blob/master/docs/unicodeTokens.md)
 - update in your code the date format [accordingly](https://date-fns.org/v2.0.0-alpha.26/docs/format)
 
@@ -9341,7 +9341,7 @@ To upgrade existing projects:
 
 #### FormBuilder
 - adds template fetching logic VueForm similar to VueTable
-- adds LiberuForm for using VueForm in the Liberu environment. VueFormSS is be deprecated and must be replaced with LiberuForm. For existing projects you can safely search & replace all instances of `vue-form-ss` with `enso-form` and `VueFormSS` with `LiberuForm`
+- adds LiberuForm for using VueForm in the Liberu environment. VueFormSS is be deprecated and must be replaced with LiberuForm. For existing projects you can safely search & replace all instances of `vue-form-ss` with `liberu-form` and `VueFormSS` with `LiberuForm`
 - adds & refactors field helpers in VueForm / LiberuForm:
     - `field(value)`
     - `param(param)`
@@ -9349,7 +9349,7 @@ To upgrade existing projects:
     - `customFields` - computed property
 
 To upgrade besides the above notes you must manually bump the core version in your composer.json:
-    - "laravel-enso/core": "3.3.*"
+    - "laravel-liberu/core": "3.3.*"
 
 Run `composer update`, `yarn upgrade`, compile and enjoy
 
@@ -9358,7 +9358,7 @@ Run `composer update`, `yarn upgrade`, compile and enjoy
 
 
 ## 2.13.15
-- fixes the default spa redirect to allow Laravel routes caching see [#169](https://github.com/laravel-enso/Liberu/issues/169)
+- fixes the default spa redirect to allow Laravel routes caching see [#169](https://github.com/laravel-liberu/Liberu/issues/169)
 
 Upgrade steps:
 
@@ -9367,14 +9367,14 @@ Upgrade steps:
 
 ```php
 Route::get('/{any}', function () {
-    return view('laravel-enso/core::index');
+    return view('laravel-liberu/core::index');
 })->where('any', '.*');
 ```
 
 to
 
 ```php
-Route::view('/{any}', 'laravel-enso/core::index')
+Route::view('/{any}', 'laravel-liberu/core::index')
     ->where('any', '.*');
 ```
 
@@ -9399,7 +9399,7 @@ For existing projects publish the `discussions-factory` and add the test suite t
 For existing projects:
 
 - run `yarn add tiptap tiptap-commands tiptap-extensions`
-- compile, including enso's light & dark themes
+- compile, including liberu's light & dark themes
 - update in telescope.php `Watchers\RequestWatcher::class => env('TELESCOPE_REQUEST_WATCHER', true),`
 
 ## 2.13.11
@@ -9409,10 +9409,10 @@ For existing projects:
 
 Upgrade steps:
 - run `composer update; yarn upgrade`
-- run `art vendor:publish --tag=enso-preferences --force`
-- manually overwrite the `config/enso/themes.php` config file with the one provided by the core package
+- run `art vendor:publish --tag=liberu-preferences --force`
+- manually overwrite the `config/liberu/themes.php` config file with the one provided by the core package
 - update `webpack.min.js` accordingly - you can use the one from this repo
-- run `php artisan enso:preferences:clear`
+- run `php artisan liberu:preferences:clear`
 - compile & enjoy (you should compile the themes at least the first time -> uncomment the two lines from webpack.js)
 
 ## 2.13.10
@@ -9430,7 +9430,7 @@ Note: temporarily disable the `RequestWatcher` in telescope.php (`Watchers\Reque
 
 ## 2.13.8
 - fixes searchable with multiple words
-- improves menu behavior laravel-enso/core#80
+- improves menu behavior laravel-liberu/core#80
 - adds telescope back for local. If you need it in production be sure that you have it in the right section in composer.json
 
 ## 2.13.7
@@ -9455,18 +9455,18 @@ Note: For existing projects replace the old ContactFactory with the one provided
 
 Steps for upgrade:
 
-- `composer remove laravel-enso/contacts`
-- update in componse.json `"laravel-enso/companies": "1.1.*",`
+- `composer remove laravel-liberu/contacts`
+- update in componse.json `"laravel-liberu/companies": "1.1.*",`
 - `composer update`
 - `php artisan migrate`
-- `rm config/enso/contacts.php`
+- `rm config/liberu/contacts.php`
 - remove the `Contacts` trait from `App\User`
 
 ## 2.13.3
 - adds Telescope and drops debugbar
 - adds `Uploads` section to the `Files` menu
 - small improvements to the `Files` menu
-- adds a `storageLimit` option in the `enso/files.php` config
+- adds a `storageLimit` option in the `liberu/files.php` config
 - droppes deprecated columns
 
 Upgrade an existing project:
@@ -9475,7 +9475,7 @@ Upgrade an existing project:
   - `composer update`
   - `php artisan telescope:install`
   - `php artisan migrate`
-  - `php artisan enso:upgrade`
+  - `php artisan liberu:upgrade`
   - if used, remove `\Debugbar::disable();` from your `AppServiceProvider`'s `boot` method
   - Add `App\Providers\TelescopeServiceProvider::class,` to the Application Service Providers in `config/app.php`
 
@@ -9546,10 +9546,10 @@ Read all the notes below before jumping to the `Upgrade steps`.
     ```
 
 ### Core
-- removed deprecated commands (`enso:update`, `enso:track-who:update`, `enso:filemanager:upgrade`)
-- renamed `enso:clear-preferences` to `enso:preferences:clear`
-- renamed `enso:update-global-preferences` to `enso:preferences:update-global`
-- added an `enso:upgrade` command for v2.13.x - update forms, pages, tables and structure migrations
+- removed deprecated commands (`liberu:update`, `liberu:track-who:update`, `liberu:filemanager:upgrade`)
+- renamed `liberu:clear-preferences` to `liberu:preferences:clear`
+- renamed `liberu:update-global-preferences` to `liberu:preferences:update-global`
+- added an `liberu:upgrade` command for v2.13.x - update forms, pages, tables and structure migrations
 - replaced `implicitMenu` with `implicitRoute` in the store
 - renamed the `core.index` route to `core.home.index`
 - refactored the frontend sidebar / menu / menuItem Vue components
@@ -9608,18 +9608,18 @@ Read all the notes below before jumping to the `Upgrade steps`.
 - the upgrade steps presented below will work only for Liberu **v2.12.8**. If you are not already at this version, make sure that you upgrade to v2.12.8 before jumping to v2.13.x
 
 #### Upgrade steps
-- update in your `composer.json`: "laravel-enso/core": "3.2.*",
+- update in your `composer.json`: "laravel-liberu/core": "3.2.*",
 - run `composer update`
 - run `php artisan vendor:publish --tag=menus-factory --force
 - run `php artisan vendor:publish --tag=roles-seeder --force
-- run `php artisan enso:upgrade`
+- run `php artisan liberu:upgrade`
 
 **search & replace**
 
 - search the whole project for `protected $permissionGroup` and remove the property from all structure migrations (optional)
 - search for `getTableData` and replace it with `tableData` in all the route files and structure migrations
 - search for `readSuffix` in your table templates and remove it if you want to use the global `dataRouteSuffix` from the config or replace it with `dataRouteSuffix` if you need a custom one
-- add the `'dataRouteSuffix' => 'tableData',` line in your `config/enso/datatable.php` config file
+- add the `'dataRouteSuffix' => 'tableData',` line in your `config/liberu/datatable.php` config file
 - search for `'link' => '` and replace it with `'route' => '` in all your structure migrations
 - search for `'id' => $` in all your crud controllers (store() methods) and update the returned array from
 `'id' => $model->id,` to `'param' => ['model' => $model->id],` where `model` will correspond to the according path segment (model name)
@@ -9637,7 +9637,7 @@ Read all the notes below before jumping to the `Upgrade steps`.
 
 UPGRADE:
 
-make sure that `config/form.php` contains the new `back` button. Look here for the format - `vendor/laravel-enso/formbuilder/src/config/forms.php`
+make sure that `config/form.php` contains the new `back` button. Look here for the format - `vendor/laravel-liberu/formbuilder/src/config/forms.php`
 
 ## 2.12.7
 
@@ -9659,7 +9659,7 @@ make sure that `config/form.php` contains the new `back` button. Look here for t
 - improved the customization for addresses
 - updated composer & npm deps
 
-To update an existing project change in `composer.json`: "laravel-enso/addressesmanager": "2.5.*"
+To update an existing project change in `composer.json`: "laravel-liberu/addressesmanager": "2.5.*"
 
 ## 2.12.5
 - improved menu's animations
@@ -9702,21 +9702,21 @@ For existing projects we created an upgrade command that will take care of most 
 Make sure you have a backup of your database before starting. If you find any problems use the issue tracker to let us know.
 
 - update `composer.json` dependencies:
-    - "laravel-enso/addressesmanager": "2.4.*",
-    - "laravel-enso/commentsmanager": "2.4.*",
-    - "laravel-enso/companies": "1.0.*",
-    - "laravel-enso/contacts": "2.3.*",
-    - "laravel-enso/dataimport": "2.5.*",
-    - "laravel-enso/discussions": "1.1.*",
-    - "laravel-enso/documentsmanager": "2.4.*",
-    - "laravel-enso/how-to": "2.2.*",
-    - "laravel-enso/teams": "1.0.*",
+    - "laravel-liberu/addressesmanager": "2.4.*",
+    - "laravel-liberu/commentsmanager": "2.4.*",
+    - "laravel-liberu/companies": "1.0.*",
+    - "laravel-liberu/contacts": "2.3.*",
+    - "laravel-liberu/dataimport": "2.5.*",
+    - "laravel-liberu/discussions": "1.1.*",
+    - "laravel-liberu/documentsmanager": "2.4.*",
+    - "laravel-liberu/how-to": "2.2.*",
+    - "laravel-liberu/teams": "1.0.*",
 - run `composer update`
-- run `php artisan enso:upgrade`
+- run `php artisan liberu:upgrade`
 - run `php artisan migrate`
-- run `php artisan enso:upgrade` (again, don't ask :) )
-- run `php artisan enso:update-global-preferences`
-- run `php artisan enso:track-who:update`
+- run `php artisan liberu:upgrade` (again, don't ask :) )
+- run `php artisan liberu:update-global-preferences`
+- run `php artisan liberu:track-who:update`
 - read the individual package changes below, and where you find upgrade instructions follow those steps.
 - run `yarn dev` / `npm run dev`
 
@@ -9759,7 +9759,7 @@ Search in the whole project for `LogActivity` and replace it with `LogsActivity`
 - the `countriesSelectOptions` route/permission was renamed to `countryOptions`
 
 #### Upgrade
-To upgrade, manually replace the provided `type` property where the front-end component is used, replacing the old alias with the mapped class from the `addresses.php` config. Afterwards, remove the `addressable` key from the config. (see [this change](https://github.com/laravel-enso/Liberu/commit/be5743c80bf028468ae5dbf30956b5c87d30c634#diff-c55ea2ae73bcf4f5d68ad75da15d5546) for an example)
+To upgrade, manually replace the provided `type` property where the front-end component is used, replacing the old alias with the mapped class from the `addresses.php` config. Afterwards, remove the `addressable` key from the config. (see [this change](https://github.com/laravel-liberu/Liberu/commit/be5743c80bf028468ae5dbf30956b5c87d30c634#diff-c55ea2ae73bcf4f5d68ad75da15d5546) for an example)
 
 ### AvatarManager
 #### Changes
@@ -9788,7 +9788,7 @@ The upgrade steps are similar to [AddressManager](#morphable)
 
 #### Installation
 It comes by default in an fresh Liberu. To install it in an existing project:
- - `composer require laravel-enso/companies`
+ - `composer require laravel-liberu/companies`
  - `php artisan migrate`
  - `php artisan vendor:publish --tag=companies-assets`
  - `yarn dev` / `npm run dev`
@@ -9839,7 +9839,7 @@ The upgrade steps are similar to [AddressManager](#morphable)
 #### Upgrade
 - replace the use of `Owner` with `UserGroup` if the case
 - replace `this.$bus` with `this.$root` where you emit/listen to events
-- remove the `ownerModel` key from `enso/config.php`
+- remove the `ownerModel` key from `liberu/config.php`
 
 ### DataExport
 - makes the `created_by` nullable
@@ -9960,7 +9960,7 @@ In order to have a consistent look search in the app for `<div class="column is-
 
 #### Installation
 It comes by default in an fresh Liberu. To install it in an existing project:
- - `composer require laravel-enso/teams`
+ - `composer require laravel-liberu/teams`
  - `php artisan migrate`
  - `php artisan vendor:publish --tag=teams-assets`
  - `yarn dev` / `npm run dev`
@@ -9995,14 +9995,14 @@ Improves history tabs. When updating existing apps use the delete button to clea
 
 ## 2.11.12
 
-After a thorough analysis we decided to slighly change the behaviour of `TrackWho`. In all the traits `auth()->user()->id` was changed to `optional(auth()->user())->id`. This way we allow easier tests, seeders, tinker playing etc., on models that use one ore more of the three traits. In conjunction with this move, all the tables that have `created_by` should update the column to be `nullable()`. For Liberu's tables we added a command for this `enso:track-who:update`
+After a thorough analysis we decided to slighly change the behaviour of `TrackWho`. In all the traits `auth()->user()->id` was changed to `optional(auth()->user())->id`. This way we allow easier tests, seeders, tinker playing etc., on models that use one ore more of the three traits. In conjunction with this move, all the tables that have `created_by` should update the column to be `nullable()`. For Liberu's tables we added a command for this `liberu:track-who:update`
 - removes unnecessary logic from `UserSeeder` and `OwnerSeeder`
 - fixes tabs/custom tabs css
 
 Upgrade steps:
 - run `composer update`
-- run `php artisan enso:track-who:update`
-- update user and owner seeders with the ones from `laravel-enso/core` if they are not customized already (optional)
+- run `php artisan liberu:track-who:update`
+- update user and owner seeders with the ones from `laravel-liberu/core` if they are not customized already (optional)
 
 ## 2.11.11
 - fixes team filtering and updating bugs
@@ -10026,7 +10026,7 @@ Upgrade steps:
 #### Core
 - improves the progress bar
 - removes opacity from `.raises-on-hover`
-- improves `GuestState`'s extensibility laravel-enso/core#69
+- improves `GuestState`'s extensibility laravel-liberu/core#69
 - adds `touch` route to excluded list for history tabs
 - updates user & owner seeders
 - updates history to false in default preferences
@@ -10041,7 +10041,7 @@ Upgrade steps:
 - automatically converts `datepicker` field types to the default (config) format if no specific format is provided in the field's `meta` array
 
 #### Impersonate
-- fixes tests laravel-enso/impersonate#5
+- fixes tests laravel-liberu/impersonate#5
 
 #### Localisation
 - removes `updated_at` from the main tables.
@@ -10060,7 +10060,7 @@ Upgrade steps:
 - fixes generation for multi word models
 
 #### TestHelper
-- removes max execution time laravel-enso/testhelper#2
+- removes max execution time laravel-liberu/testhelper#2
 
 #### VueDatatable
 - adds `notExportable` option
@@ -10088,10 +10088,10 @@ Upgrade steps:
 - makes pages layout consitent. All tables have now `class="box is-paddingless raises-on-hover is-rounded"` and all forms class="box raises-on-hover animated fadeIn"
 - tweaks navbar and aside shadow
 - removes the ` Index` termination from index pages title (fe routes)
-- fixes laravel-enso/structuremanager#10
+- fixes laravel-liberu/structuremanager#10
 - moves the following packages from core composer json to the project's composer json: "addressesmanager","commentsmanager","contacts","controlpanelapi","dataimport","discussions","documentsmanager","how-to"
 
-Upgrade: apply [these](https://github.com/laravel-enso/Liberu/commit/daa1d5b1473c800cbdde1fcbd91249765bd2acd4#diff-b5d0ee8c97c7abd7e3fa29b9a27d1780) changes to `composer.json`, followed by a `composer update`
+Upgrade: apply [these](https://github.com/laravel-liberu/Liberu/commit/daa1d5b1473c800cbdde1fcbd91249765bd2acd4#diff-b5d0ee8c97c7abd7e3fa29b9a27d1780) changes to `composer.json`, followed by a `composer update`
 
 ## 2.11.6
 
@@ -10102,7 +10102,7 @@ Upgrade: apply [these](https://github.com/laravel-enso/Liberu/commit/daa1d5b1473
 
 ## 2.11.5
 
-- adds `showQuote` to core's config (`config/enso/config.php`), a boolean flag that allows showing or disabling the home screen
+- adds `showQuote` to core's config (`config/liberu/config.php`), a boolean flag that allows showing or disabling the home screen
 - fixes history tabs title
 - minor refactors
 
@@ -10121,14 +10121,14 @@ Upgrade: apply [these](https://github.com/laravel-enso/Liberu/commit/daa1d5b1473
 - adds history tabs for the default layout. Users can control the history mode from the settings bar.
 - fixes some small bugs
 - small refactoring for the store
-- adds `enso:update-global-preferences` command
+- adds `liberu:update-global-preferences` command
 
-To upgrade an existing app after `composer update` run `php artisan enso:update-global-preferences' and you're done.
+To upgrade an existing app after `composer update` run `php artisan liberu:update-global-preferences' and you're done.
 
 ## 2.11.2
 
 - rename `/resources/js/core/structure/settings/` to `/resources/js/core/structure/menu/
-- `php artisan localisation:merge` was renamed to `php artisan enso:localisation:merge`
+- `php artisan localisation:merge` was renamed to `php artisan liberu:localisation:merge`
 Update the command signature in your `comopser.json` in `"post-update-cmd"` event.
 
 
@@ -10140,7 +10140,7 @@ Moves the remaining demo files / classes / routes into the `examples` package:
     -  `app/Classes/LocalState.php` (delete your local one if not used)
     -  `app/Http/Controllers/ChartController.php` (delete your local one if not used)
     -  `app/Http/Controllers/ChartController.php` (delete your local one if not used)
-    -  `app/Importers/*` (delete your local one if not used). If you stil want to use the example importer update in `/config/enso/imports.php` the template path to `'template' => 'vendor/laravel-enso/examples/src/app/Imports/Templates/owners.json',`
+    -  `app/Importers/*` (delete your local one if not used). If you stil want to use the example importer update in `/config/liberu/imports.php` the template path to `'template' => 'vendor/laravel-liberu/examples/src/app/Imports/Templates/owners.json',`
     - `routes/api.php` is now empty
     - dashboard Index.vue file
 
@@ -10149,11 +10149,11 @@ Finally, moves into core:
     - the dashboard structure migration (delete your local one)
     - an empty dasbhoard `Index.vue` file
 
-- after updating run `art vendor:publish --tag=enso-preferences --force`;
+- after updating run `art vendor:publish --tag=liberu-preferences --force`;
 
 ## 2.11.1
 
-This update adds the WIP touch layout. Run `php artisan enso:clear-preferences` after the update.
+This update adds the WIP touch layout. Run `php artisan liberu:clear-preferences` after the update.
 
 ## 2.11.0
 
@@ -10161,7 +10161,7 @@ This version is a step forward in the direction of abstracting Liberu from a cle
 
 Changes and upgrade instructions:
 
-- update in your `composer.json` the `core` requirement to `"laravel-enso/core": "3.1.*",`
+- update in your `composer.json` the `core` requirement to `"laravel-liberu/core": "3.1.*",`
 - the examples were moved in a dedicated `examples` package. To upgrade, remove everyting related to examples:
     - remove the files (copy everything below in one take and paste it into the terminal)
         ```
@@ -10200,7 +10200,7 @@ Changes and upgrade instructions:
         .js('resources/js/tableExample.js', 'public/js')
         .js('resources/js/selectExample.js', 'public/js')
         ```
-    - NOTE: if you still need examples in your project (the dashboard for instance) run `composer require laravel-enso/examples`, put back in `webpack.js` the two lines from the previous step and run `php artisan vendor:publish --force --tag="examples-assets"
+    - NOTE: if you still need examples in your project (the dashboard for instance) run `composer require laravel-liberu/examples`, put back in `webpack.js` the two lines from the previous step and run `php artisan vendor:publish --force --tag="examples-assets"
 - the `Owner` & `User` models were moved to `core`. To upgrade
     - remove `app/Owner.php`. If in the future you will need customization over this model you can create it locally but be sure to extend the one from core.
     - update `app/User.php` content to:
@@ -10276,7 +10276,7 @@ Changes and upgrade instructions:
     - add in your `phpunit.xml` the `core` test suite
         ```xml
         <testsuite name="core">
-            <directory suffix="Test.php">./vendor/laravel-enso/core/tests/features</directory>
+            <directory suffix="Test.php">./vendor/laravel-liberu/core/tests/features</directory>
         </testsuite>
         ```
     - remove `tests/Feature/OwnerTest.php`
@@ -10306,12 +10306,12 @@ Changes and upgrade instructions:
         ```
 - update the `Owner` namespace in the following files:
     - `app/Imports/Importers/OwnerImporter.php`
-    - `config/enso/addresses.php` (if used)
-    - `config/enso/contacts.php`  (if used)
-    - `config/enso/comments.php`  (if used)
-    - `config/enso/documents.php`  (if used)
-    - `config/enso/discussions.php`  (if used)
-    - `config/enso/config.php` (the `ownerModel`  key)
+    - `config/liberu/addresses.php` (if used)
+    - `config/liberu/contacts.php`  (if used)
+    - `config/liberu/comments.php`  (if used)
+    - `config/liberu/documents.php`  (if used)
+    - `config/liberu/discussions.php`  (if used)
+    - `config/liberu/config.php` (the `ownerModel`  key)
     - `database/factories/UserFactory.php`
     - `database/seeds/OwnerSeeder.php`
     - `database/seeds/UserSeeder.php`
@@ -10319,11 +10319,11 @@ Changes and upgrade instructions:
 
 ## 2.10.8
 
-- adds `laravel-enso/discussions`.
+- adds `laravel-liberu/discussions`.
 
 Steps for adding discussions in an existing project:
 
-- `composer require laravel-enso/discussions`
+- `composer require laravel-liberu/discussions`
 - `php artisan vendor:publish --tag="discussions-config"` and then configure your desired model.
 - `yarn add quill`
 - `yarn add vue-quill-editor`
@@ -10334,7 +10334,7 @@ Steps for adding discussions in an existing project:
 
 ### Changes
 
-- moves `FileUploader.vue` & `Uploader.vue` from `laravel-enso/vuecomponents` to `laravel-enso/filemanager`
+- moves `FileUploader.vue` & `Uploader.vue` from `laravel-liberu/vuecomponents` to `laravel-liberu/filemanager`
 - adds a new `MorphableContainer.vue` component. An use example can be seen in owner's edit page
 - renames old `Addresses.vue` to `AddressesCard.vue`. Adds new `Addresses.vue` component to work with `MorphableContainer`
 - renames old `Contacts.vue` to `ContactsCard.vue`. Adds new `Contacts.vue` component to work with `MorphableContainer`
@@ -10342,14 +10342,14 @@ Steps for adding discussions in an existing project:
 ### Upgrading existing projects:
 
 - update `/resources/js/pages/administration/owners/Edit.vue` to match the file from the repo to use the new `MorphableContainer.vue`
-- run `php artisan enso:documents:remove-deprecated-permissions`
+- run `php artisan liberu:documents:remove-deprecated-permissions`
 
 ## 2.10.6
 
 - adds the new `Files` menu. The users can see their files in a centralised way.
 - adds datatable and files integration. Your exports can now be downloaded from the app.
 - for existing projects run:
-- `composer require laravel-enso/dataexport`
+- `composer require laravel-liberu/dataexport`
 - `composer update`
 - `php artisan migrate`
 - `npm run dev`
@@ -10377,10 +10377,10 @@ Steps for adding discussions in an existing project:
 - fixes issue in user form where the encrypted password was sent to front-end
 
 ### Upgrade an existing project
-- update in `composer.json`: "laravel-enso/dataimport": "2.4.*",
+- update in `composer.json`: "laravel-liberu/dataimport": "2.4.*",
 - `composer update`
 - `npm run dev`
-- update the `config/enso/imports.php` to match the enhanced structure
+- update the `config/liberu/imports.php` to match the enhanced structure
 
 ## 2.10.4
 
@@ -10411,7 +10411,7 @@ Updating an existing project:
     - `app/Http/Middleware/VerifyCsrfToken.php`
     - `app/Providers/RouteServiceProvider.php`
     - `config/app.php`
-    - `config/enso/config.php`
+    - `config/liberu/config.php`
     - `config/hashing.php`
     - `config/logging.php`
     - `config/services.php`
@@ -10420,8 +10420,8 @@ Updating an existing project:
     - `webpack.mix.js`
 
 - update in `composer.json`
-    - `"laravel-enso/charts": "2.5.*",`
-    - `"laravel-enso/core": "2.15.*",`
+    - `"laravel-liberu/charts": "2.5.*",`
+    - `"laravel-liberu/core": "2.15.*",`
 
 ## 2.10.1
 
@@ -10442,7 +10442,7 @@ We decided to cleanup the project's root and to try to make Liberu installable o
 - replaces `nprogress` dependency with an in house progress bar implementation that is integrated in the core. Now the animation is indeed controlled and the effect more natural
 - adds a `requests` array to the app's state that tracks all the pending requests. From now on the application won't allow a second requests to the same endpoint / method before receiving the response for the initial one. Le me know your thoughs on this...
 - adds the missing `StructureManager` tests to `phpunit.xml`
-- adds desktop notifications - ref laravel-enso/enso#136
+- adds desktop notifications - ref laravel-liberu/liberu#136
 
 ### Upgrading an existing project
 
@@ -10452,8 +10452,8 @@ We decided to cleanup the project's root and to try to make Liberu installable o
 - unless you already customized the auth routes already remove from your `api.php` routes file the whole route group under the `Auth` namespace. - now they are loaded from the core package
 - replace the four auth controllers with the ones from this repo (`app/Http/Controllers/Auth/*`)
 - add to your `phpunit.xml` the test suite for `StructureManager`
-- run `php artisan enso:clear-preferences`
-- run `php artisan vendor:publish --tag=enso-preferences --force`
+- run `php artisan liberu:clear-preferences`
+- run `php artisan vendor:publish --tag=liberu-preferences --force`
 - remove `nprogress` from your `package.json` and run `yarn upgrade`
 
 ## 2.10.0
@@ -10483,7 +10483,7 @@ Among the goals:
 - drops the `getAvatarIdAttribute`.
 - adds an `created` event listener on the `User` model which automagically generates a new avatar for every created user
 - adds the `generateAvatar()` method that can be called on any User. Note, in order to use this method you will have to be authenticated because the avatar relies on the `File` model that uses the `CreatedBy` trait.
-- adds `php artisan enso:avatars:generate` - command that generates all the missing avatars
+- adds `php artisan liberu:avatars:generate` - command that generates all the missing avatars
 
 #### CommentsManager
 - adds `Comment` resource. Major backend refactor
@@ -10515,9 +10515,9 @@ Among the goals:
 - turned the `getRoleListAttribute` accessor into a getter - `rolesList()` in `HasRoles` trait. Updated the formbuilders for the models that were using this trait to use the getter instead of the accessor
 
 ### Upgrade Instructions *~ 3-5 mins*
-- update in composer.json: "laravel-enso/core": "2.14.*"
+- update in composer.json: "laravel-liberu/core": "2.14.*"
 - run `composer update`
-- run `php artisan enso:update` - this command will align some inconsistent column types and clear unused columns
+- run `php artisan liberu:update` - this command will align some inconsistent column types and clear unused columns
 - remove the `avatarId` field from the `protected $fillable` array in your `App\User` model
 - update the avatar column definition in your `app/Forms/Templates/users.json` table template to
 ```json
@@ -10545,7 +10545,7 @@ public function query()
 ```
 - replace both `app/Forms/Builders/OwnerForm.php` & `app/Forms/Builders/UserForm.php` with the ones from the repo (this is not mandatory, and must be done with care if you have already customized your local builders)
 ```
-- sync the `config/enso/config.php` keys with the keys from `vendor/laravel-enso/core/src/config/config.php`
+- sync the `config/liberu/config.php` keys with the keys from `vendor/laravel-liberu/core/src/config/config.php`
 - replace `tests/Feature/OwnerTest.php` &&  `tests/Feature/UserTest.php` with the one from the repo - or manually update if you have local changes
 - modify the slot rendering in `resources/assets/js/pages/administration/users/Index.vue` to
 ```vue
@@ -10553,7 +10553,7 @@ public function query()
     :src="avatarLink(row.avatarId)"
     v-if="row.avatarId">
 ```
-- add in 'database/seeds/UserSeeder.php` after the actual seed the following line`\Artisan::call('enso:avatars:generate');`
+- add in 'database/seeds/UserSeeder.php` after the actual seed the following line`\Artisan::call('liberu:avatars:generate');`
 
 ## 2.9.0
 
@@ -10577,29 +10577,29 @@ The trait creates a `file` `morphOne` relationship to the base model and makes a
 
 #### Seeders
 - until now the app was using migrations instead of seeders for inserting the default roles, owner and user. This version adds seeders for roles, default user, default owners, and countries (for the addresses package)
-- the seeders can be published with `php artisan vendor:publish --tag=enso-seeders`. Use the `--force` flag if needed.
+- the seeders can be published with `php artisan vendor:publish --tag=liberu-seeders`. Use the `--force` flag if needed.
 
 ### Roles
-- we have now a `php artisan enso:roles:sync` command that will help keeping the all the environments up to date.
+- we have now a `php artisan liberu:roles:sync` command that will help keeping the all the environments up to date.
 
 ### Upgrade steps for existing projects
 
 - update in composer.json the following:
-    - "laravel-enso/core": "2.13.*",
-    - "laravel-enso/dataimport": "2.3.*",
-    - "laravel-enso/documentsmanager": "2.3.*",
-    - "laravel-enso/how-to": "2.1.*",
+    - "laravel-liberu/core": "2.13.*",
+    - "laravel-liberu/dataimport": "2.3.*",
+    - "laravel-liberu/documentsmanager": "2.3.*",
+    - "laravel-liberu/how-to": "2.1.*",
 - run `composer update`
 - run `php artisan migrate`
-- run `php artisan enso:filemanager:upgrade`. This command will translate all the tables from the old format to the new one. It's recommended to make a backup of the database before the update, just to be sure that nothing goes wrong.
-- run `php artisan vendor:publish --tag=enso-seeders --force` to update the seeders (Database, Role, Owner & User) if you didn't make any customizations to the existing ones.
+- run `php artisan liberu:filemanager:upgrade`. This command will translate all the tables from the old format to the new one. It's recommended to make a backup of the database before the update, just to be sure that nothing goes wrong.
+- run `php artisan vendor:publish --tag=liberu-seeders --force` to update the seeders (Database, Role, Owner & User) if you didn't make any customizations to the existing ones.
 
 #### Files & Folders to delete
 - remove the `insert_default_owner` & `insert_default_user` migrations
 - remove the `app/storage/temp` folder, it's no longer needed
 
 #### Files that need to be replaced & edited according to the repo
-- sync the `config/enso/config.php` keys with the keys from `vendor/laravel-enso/core/src/config/config.php`
+- sync the `config/liberu/config.php` keys with the keys from `vendor/laravel-liberu/core/src/config/config.php`
 - replace `tests/Feature/OwnerTest.php` with the one from the repo.
 - replace `tests/Feature/UserTest.php` with the one from the repo.
 - replace `resources/assets/js/pages/administration/users/Index.vue` with the one from the repo.
@@ -10613,11 +10613,11 @@ The trait creates a `file` `morphOne` relationship to the base model and makes a
 
 ## 2.8.29
 - adds ability to delete individual notifications
-- for existing projects run `php artisan enso:notifications:add-missing-permissions`
+- for existing projects run `php artisan liberu:notifications:add-missing-permissions`
 
 ## 2.8.28
 - fixes a series of small bugs in stub filling for StructureMigration
-- adds "selectable" to the vue table - check the [example table](https://www.laravel-enso.com/examples/table)
+- adds "selectable" to the vue table - check the [example table](https://www.laravel-liberu.com/examples/table)
 - improves the form build when having an edit form. Now you can mutate field values for edit forms too with the `values()` method using the fluent syntax
 - updates all composer & npm dependencies
 
@@ -10627,7 +10627,7 @@ The trait creates a `file` `morphOne` relationship to the base model and makes a
 
 - adds a notifications index page that allows control over notifications from mobile devices too
 - adds an icon attribute in the notification array
-- to upgrade an existing project run `php artisan enso:notifications:add-missing-permission`
+- to upgrade an existing project run `php artisan liberu:notifications:add-missing-permission`
 
 ## 2.8.26
 
@@ -10697,7 +10697,7 @@ To upgrade an existing project you will have to copy by hand from a fresh Liberu
 
 Now you can audit your user's activity within the application from the new menu.
 
-To upgrade an existing project update in your `composer.json`: "laravel-enso/core": "2.12.*" and after the update run the migrations. If you want smarter logging for contacts, addresses, comments & documents update their configs matching the ones from a blank project.
+To upgrade an existing project update in your `composer.json`: "laravel-liberu/core": "2.12.*" and after the update run the migrations. If you want smarter logging for contacts, addresses, comments & documents update their configs matching the ones from a blank project.
 
 The documentation will be updated soon.
 
@@ -10727,8 +10727,8 @@ Meanwhile, take a look at the new `LogsActivity` trait. For examples peek at the
 
 Upgrade steps:
 - update in `composer.json`:
-    - core: `"laravel-enso/core": "2.11.*",`
-    - charts: "laravel-enso/charts": "2.4.*",
+    - core: `"laravel-liberu/core": "2.11.*",`
+    - charts: "laravel-liberu/charts": "2.4.*",
 - run composer update
 - update in your packages.json file the fontawesome deps (replace the old with):
 ```json
@@ -10750,7 +10750,7 @@ Upgrade steps:
 
 ## 2.8.14
 
-- we have just launched the new documentation [website](https://docs.laravel-enso.com)
+- we have just launched the new documentation [website](https://docs.laravel-liberu.com)
 - on touch devices the menu hides once an option is selected
 - refactor in menu drawing, the code is now DRY
 - fixes bug in dataimport for rows that were ending in null cells
@@ -10784,7 +10784,7 @@ Upgrade steps:
 - adds animated hamburger for the main menu
 - animates the notification dropdown arrow
 - moves the Owner & User Tests in the local project & updates the phpunit.xml (**NOTE** you will have to do this yourself in an existing project)
-- fixes laravel-enso/vuedatatable#67
+- fixes laravel-liberu/vuedatatable#67
 
 ## 2.8.9
 
@@ -10803,7 +10803,7 @@ NOTE: we removed the unused `writeSuffix` template attribute. Make sure that you
 
 ### StructureManager
 
-Finalizes the implementation for `php artisan enso:make:structure` - a CLI designed to help creating new ready for production Liberu structures in minutes.
+Finalizes the implementation for `php artisan liberu:make:structure` - a CLI designed to help creating new ready for production Liberu structures in minutes.
 
 From the CLI you easily generate the following files:
 
@@ -10831,7 +10831,7 @@ Adds the new system that allows roles management in development with the posibil
 
 To run the syncronization, after generating each config file run on the live instance `php artisan db:seed --class=RoleSeeder.php
 
-To use this run `php artisan enso:roles:add-missing-permission` after upgrading, and publish the [seeder]in your local project: `php artisan vendor-publish --tag=roles-seeder`
+To use this run `php artisan liberu:roles:add-missing-permission` after upgrading, and publish the [seeder]in your local project: `php artisan vendor-publish --tag=roles-seeder`
 
 ## 2.8.7
 
@@ -10878,7 +10878,7 @@ Pay attention, has one breaking change. See the upgrade section below.
 ### StructureManager
 
 - finally adds a CLI for handling new structures. This is work in progress so what you see is what you get :)
-To play with it run `php artisan enso:make:structure`.
+To play with it run `php artisan liberu:make:structure`.
 
 ### General
 
@@ -10937,7 +10937,7 @@ and do the same for `storeWithRoles`
 
 ### Core
 - adds jessenger/date as a requirement
-- adds `showQuote` flag to `config/enso/config.php` which allows disabling the qoute from the home page
+- adds `showQuote` flag to `config/liberu/config.php` which allows disabling the qoute from the home page
 - after password reset the user is redirected to the login page
 
 ### Localisation
@@ -10986,9 +10986,9 @@ Changes overview:
 For an existing project the upgrade estimated time is ~ 5min. **TESTED**
 
 To upgrade a project do the following:
-* update `composer.json` for the new core version to `2.10.*` (please double check all the enso requirements against a composer.json from a fresh project)
+* update `composer.json` for the new core version to `2.10.*` (please double check all the liberu requirements against a composer.json from a fresh project)
 * run `composer update`
-* run `php artisan enso:add-missing-permissions`
+* run `php artisan liberu:add-missing-permissions`
 * make sure to manually add to the permissions table all the FE-only permissions and attach them to the according roles
 * following is the reorganized structure (read with care!!!) of the core application layout files:
     - `js/core`
@@ -11048,14 +11048,14 @@ To upgrade a project do the following:
 - fixes the publishing path for `HowToVideo.vue`
 - fixes keys in `Documents.vue`
 - refactors CommentsManager with a breaking change.
-To update an existing project first change the composer requirement to : "laravel-enso/commentsmanager": "2.3.*", and after the update run `php artisan enso:comments:update-table`
+To update an existing project first change the composer requirement to : "laravel-liberu/commentsmanager": "2.3.*", and after the update run `php artisan liberu:comments:update-table`
 
 ## 2.7.11
 General BE refactor.
 
 Steps for upgrade:
-- update in your composer.json file the requirement for core: `"laravel-enso/core": "2.9.*"`
-- `php artisan enso:update-action-logs-table`
+- update in your composer.json file the requirement for core: `"laravel-liberu/core": "2.9.*"`
+- `php artisan liberu:update-action-logs-table`
 - `composer update`
 - `php artisan vendor:publish --tag=charts-config --force` for an updated color list.
 - optionally list of files with small refactors which can be manually replaced from a fresh project: 'UserController.php', 'UserSelectController.php', 'ValidateOwnerRequest.php', 'ValidateUserRequest.php', 'User.php'
@@ -11065,28 +11065,28 @@ We finally ported the 'How To Videos' menu from to the SPA version of Liberu.
 
 To use it in an existing project do the following steps:
 - `composer update`
-- `composer require laravel-enso/how-to`
+- `composer require laravel-liberu/how-to`
 - `php artisan vendor:publish --tag=howToVideos-storage`
 - `npm install --save vue-video-player`
 - compile
-- add in your `config/enso/config.php`, to the `paths` array the following entry: `'howToVideos' => 'howToVideos'`
+- add in your `config/liberu/config.php`, to the `paths` array the following entry: `'howToVideos' => 'howToVideos'`
 - add in `storage/app/.gitignore` => `!howToVideos/`
 
 ## 2.7.9
-- improves `laravel-enso/versioning` - read the updated documentation. It's a breaking change so be sure to update the code accordingly, and then in composer.json also update the require for `"laravel-enso/versioning": "1.1.*"`
+- improves `laravel-liberu/versioning` - read the updated documentation. It's a breaking change so be sure to update the code accordingly, and then in composer.json also update the require for `"laravel-liberu/versioning": "1.1.*"`
 - fixes a bug in auth.vue
 
 ## 2.7.8
 - improves the mail templates
-- adds to `config/enso/config.php` the following keys that are used for links in all the email notifications:
+- adds to `config/liberu/config.php` the following keys that are used for links in all the email notifications:
     - 'facebook' => ''
     - 'googleplus' => ''
     - 'twitter' => ''
 
 To make use of the new templates in an existing project do the following steps:
-    - publish the assets with `php artisan vendor:publish --tag=enso-mail-assets` (with `--force` if needed)
-    - add the keys mentioned above to the `config/enso/config.php` file
-    - update in `config/mail.php` the key `markdown.theme` from `default` to `enso`
+    - publish the assets with `php artisan vendor:publish --tag=liberu-mail-assets` (with `--force` if needed)
+    - add the keys mentioned above to the `config/liberu/config.php` file
+    - update in `config/mail.php` the key `markdown.theme` from `default` to `liberu`
 
 ## 2.7.7
 - adds the ability to set a local state in the same request that builds Liberu's state, by using the new config option `stateBuilder`. To use this feature point `stateBuilder` to a class that implements `LaravelLiberu\Core\app\Contracts\StateBuilder` contract, and then make sure that you have the `resources/assets/js/localState.js` plugin, that should look like this:
@@ -11097,41 +11097,41 @@ To make use of the new templates in an existing project do the following steps:
     ```
     where `state` is the what your local `StateBuilder` is returning.
 - refactors `GuestController` by adding a `GuestState` Response
-- adds the new laravel-enso/versioning package
+- adds the new laravel-liberu/versioning package
 - improves compatibility with PostgreSQL by renaming columns that are named with reserved words:
     - renames the "order" column to "order_index" in "menus" and "tutorials" tables
     - renames in "permissions" table the "default" column to "is_default"
 
 Upgrade instructions:
-- update `composer.json` to require `"laravel-enso/core": "2.8.*"`
+- update `composer.json` to require `"laravel-liberu/core": "2.8.*"`
 - run `composer update`
-- run `php artisan enso:db-rename-reserved` to update the database tables (`permissions`, `tutorials`, `menus`).
+- run `php artisan liberu:db-rename-reserved` to update the database tables (`permissions`, `tutorials`, `menus`).
 - update all your structure migrations (including Dashboard) / db seeders the columns accordingly `["order" => "order_index", "default" => "is_default"]`
 
 ## 2.7.6
 
 - fixes missing login redirect
-- removes the obsolete created_by column in laravel-enso/contacts
+- removes the obsolete created_by column in laravel-liberu/contacts
 
-For existing projects first update your `composer.json` to require:`"laravel-enso/contacts": "2.2.*"` and after updating run `php artisan enso:contacts:drop-created-by` to drop the fk/column.
+For existing projects first update your `composer.json` to require:`"laravel-liberu/contacts": "2.2.*"` and after updating run `php artisan liberu:contacts:drop-created-by` to drop the fk/column.
 
 ## 2.7.5
 - removes the created_by column in addressesmanager
 - upgrades the share link modal for documents
 - updates all composer / npm  packages
 
-For existing projects first update your `composer.json` to require:`"laravel-enso/addressesmanager": "2.3.*"` and after updating run `php artisan enso:addresses:drop-created-by` to drop the fk/column.
+For existing projects first update your `composer.json` to require:`"laravel-liberu/addressesmanager": "2.3.*"` and after updating run `php artisan liberu:addresses:drop-created-by` to drop the fk/column.
 
 ## 2.7.4
 - adds temporary link generation to Documents. To use this feature do the following steps:
-    - run `php artisan enso:update-documents-permissions`
+    - run `php artisan liberu:update-documents-permissions`
     - and after attach the desired roles to the new `core.documents.link` permission
     - you also have to add to the `documents.php` config file the new `linkExpiration` option
     - make sure that you have the lastest `app/Http/Kernel.php` file, or add `'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,` to the `protected $routeMiddleware` array
 - fixes localisation in auth views
 - adds `disable-clear` prop to vue-select
 - in structuremanager the created / deletion is wrapped now in transactions; adds generic exception when attribute validation in not passed
-- removes the old and unused `config/enso/labels.php`. Make sure that you seach your whole project for `config('enso.labels` and clean everything up.
+- removes the old and unused `config/liberu/labels.php`. Make sure that you seach your whole project for `config('liberu.labels` and clean everything up.
 
 ## 2.7.3
 - the new structuremanager has now validations for all properties.
@@ -11142,7 +11142,7 @@ Upgrade instructions:
 
 ## 2.7.2
 - refines the `Responsable` implementation
-- adds `config('enso.config.ownerModel')` option to the config. By default it point to `App\Owner` class
+- adds `config('liberu.config.ownerModel')` option to the config. By default it point to `App\Owner` class
 - updates all the packages to use the new `ownerModel` option in config
 - refactors the structuremanager package
 - fixes a bug in tutorial.vue
@@ -11160,11 +11160,11 @@ Upgrade instructions and detailed changes:
 ### Liberu
     - renamed the `DashboardController` to `ChartController` and shortened all the routes / methods names for charts. Copy from a fresh project the 'app\Http\Controllers\ChartController.php' and remove the old `DashboardController.php`. Copy the `resources/assets/js/pages/dashboard/Index/vue` component as well.
     - update the `routes/api.php` to reflect the changes. Check `api.php` from a fresh project to see the exact changes.
-    - update requirement in composer.json: "laravel-enso/core": "2.7.*",
-    - update requirement in composer.json: "laravel-enso/charts": "2.3.*",
+    - update requirement in composer.json: "laravel-liberu/core": "2.7.*",
+    - update requirement in composer.json: "laravel-liberu/charts": "2.3.*",
 
 ### Core
-    - run `php artisan enso:clear-preferences'
+    - run `php artisan liberu:clear-preferences'
     - publish the new preferences.json from the core package (with --force)
 
 ### Charts
@@ -11192,27 +11192,27 @@ We finally decided to start refactoring the store.
     - `navbar.js` was renamed to `menu.js`
 
 ### Upgrade steps:
-- run `php artisan enso:clear-preferences` to truncate the preferences table
-- update composer.json requirement for "laravel-enso/core" : "2.6.*"
+- run `php artisan liberu:clear-preferences` to truncate the preferences table
+- update composer.json requirement for "laravel-liberu/core" : "2.6.*"
 - run composer update
 
 ### Updates composer and npm packages.
 - Bulma 0.7.1 ;)
 
 ## 2.6.13
-- repairs the tests, closes laravel-enso/enso#97
+- repairs the tests, closes laravel-liberu/liberu#97
 - splits the factories into dedicated files
 
 ## 2.6.12
-- adds taggable to vue-select - closes laravel-enso/select#14
-- fixes laravel-enso/enso#80
-- fixes laravel-enso/dataimport#59
-- closes laravel-enso/vuedatatable#60
+- adds taggable to vue-select - closes laravel-liberu/select#14
+- fixes laravel-liberu/liberu#80
+- fixes laravel-liberu/dataimport#59
+- closes laravel-liberu/vuedatatable#60
 
 ## 2.6.11
-- adds mail templates concept - https://github.com/laravel-enso/Core/issues/56#issuecomment-387168277
-- moves the users / owners migrations from core to enso
-- closes laravel-enso/vuedatatable#59
+- adds mail templates concept - https://github.com/laravel-liberu/Core/issues/56#issuecomment-387168277
+- moves the users / owners migrations from core to liberu
+- closes laravel-liberu/vuedatatable#59
 
 ### Updates composer and npm packages.
 
@@ -11225,8 +11225,8 @@ We finally decided to start refactoring the store.
 ### Fixes
 
 - fixes disabled state for vue-select
-- fixes laravel-enso/enso#92
-- fixes laravel-enso/formbuilder#35
+- fixes laravel-liberu/liberu#92
+- fixes laravel-liberu/formbuilder#35
 - hides sections w/o visible fields in formbuilder
 - adds reactive min/max to datepicker
 - improves dataimport for some edge cases
@@ -11260,7 +11260,7 @@ Adds disabled state for `vue-select`
 ## 2.6.7
 
 ### Enhancements:
-- Adds a "view" button to `vue-form`. Please read https://github.com/laravel-enso/FormBuilder/issues/30
+- Adds a "view" button to `vue-form`. Please read https://github.com/laravel-liberu/FormBuilder/issues/30
 - improves the file uploader scoped slot
 - adds `disabled` state for tabs
 - adds `is-danger` and `is-warning` boolean props for `datepicker`
@@ -11284,7 +11284,7 @@ Fixes the permissions index table.
 Updates vuedatatable to 1.1.x. This version separates the query from the Table controller in a dedicated ModelTable class. Now the Tables folder follows the structure from the Forms folder, with two subfolders, Builder and Templates. The readme will be updated soon, meanwhile you can check examples from the project.
 
 For exising projects:
-    - update in the composer.json "laravel-enso/vuedatatable": "1.1.*"
+    - update in the composer.json "laravel-liberu/vuedatatable": "1.1.*"
     - copy the UserTableController and OwnerTableController from this repo
     - copy the app/Tables folder from this repo
     - refactor all exising tables following the new style
@@ -11300,13 +11300,13 @@ Updates composer and npm packages.
 Splits Documents.vue in two separate components. Now we have DocumentsCard as a wrapper and Documents.vue for custom implementations. The same for Comments.vue.
 
 Upgrading existing projects:
-    - Update in your composer.json: "laravel-enso/commentsmanager": "2.2.*" and "laravel-enso/documentsmanager": "2.2.*",
+    - Update in your composer.json: "laravel-liberu/commentsmanager": "2.2.*" and "laravel-liberu/documentsmanager": "2.2.*",
     - Update owners\Edit.vue from this repo, and any other views that use the updated components.
 
 ## 2.6.2
 Improves notifications for vuedatable and comment tags.
 
-Closes laravel-enso/vuedatatable#27
+Closes laravel-liberu/vuedatatable#27
 
 ## 2.6.1
 Fixes i18n import for date-fns.
@@ -11316,7 +11316,7 @@ Replaces `tightenco/ziggy` with an own implementation of the `route` helper. The
 
 Improves the mechanism for switching themes.
 
-Adds i18n support for date-fns. You can use the wrapper from `resources/assets/js/modules/enso/plugins/date-fns`.
+Adds i18n support for date-fns. You can use the wrapper from `resources/assets/js/modules/liberu/plugins/date-fns`.
 
 Removes the global filter `timeFromNow`. Use instead the `formatDistance` wrapper from the above plugins dir.
 
@@ -11330,15 +11330,15 @@ Adds a dedicated modal for dataimport.
 
 Existing projects:
     - Copy the `PermissionsUpdate` command from the latest release
-    - Run `php artisan enso:permissions:update`
+    - Run `php artisan liberu:permissions:update`
     - The new implementation for `route` should be compatible with ziggy's in most of the cases, but please test carefully after upgrade
     - don't forget to replace all occurencies of `timeFromNow`
-    - update in `composer.json`: "laravel-enso/core": "2.5.*"
+    - update in `composer.json`: "laravel-liberu/core": "2.5.*"
 
 ## 2.5.9
 Adds a global helper for the FE called `canAccess(route)` than can be used to conditionally display sensible elements in the UI. The helper returns a boolean, and matches the allowed permissions for the user's role.
 
-Allows full configuration over the theme list. You can add, remove or comment themes from `enso/themes.php`. From this version the config for themes is not merged anymore with the default one.
+Allows full configuration over the theme list. You can add, remove or comment themes from `liberu/themes.php`. From this version the config for themes is not merged anymore with the default one.
 
 Updates the default datepicker theme to light, in the clean theme.
 Improves the new `money` component.
@@ -11346,8 +11346,8 @@ Improves the new `money` component.
 Improves `vue-table` handling of `money` type.
 
 Closes:
-    - laravel-enso/vuedatatable#46
-    - laravel-enso/vuedatatable#47
+    - laravel-liberu/vuedatatable#46
+    - laravel-liberu/vuedatatable#47
 
 Existing projects:
     - run `php artisan cleanup:permissions` to remove `core.home` (not used anymore).
@@ -11359,7 +11359,7 @@ And since v2.5.8, but missed in the changelog:
 ## 2.5.8
 Upgrades the system for switching themes.
 
-Integrates the flatpickr themes with bulmaswatch, closes laravel-enso/formbuilder#25.
+Integrates the flatpickr themes with bulmaswatch, closes laravel-liberu/formbuilder#25.
 
 Refactors all old customRender functions to the new slot, in vue-table.
 
@@ -11375,11 +11375,11 @@ Changes the `__` from being defined extending the prototype to a mixin. This all
 Adds the `weekdays` prop to datepicker.
 
 Closes:
-    - laravel-enso/vuedatatable#1
-    - laravel-enso/enso#86
+    - laravel-liberu/vuedatatable#1
+    - laravel-liberu/liberu#86
 
 ## 2.5.6
-Fixes laravel-enso/localisation#38
+Fixes laravel-liberu/localisation#38
 
 ## 2.5.5
 
@@ -11396,11 +11396,11 @@ Route::get('/getMeta', function () {
 ```
 
 Bug Fixes:
-    - laravel-enso/formbuilder#24
-    - laravel-enso/contacts#10
-    - laravel-enso/permissionmanager#14
-    - laravel-enso/localisation #35
-    - laravel-enso/localisation #36
+    - laravel-liberu/formbuilder#24
+    - laravel-liberu/contacts#10
+    - laravel-liberu/permissionmanager#14
+    - laravel-liberu/localisation #35
+    - laravel-liberu/localisation #36
 
 ## 2.5.4
 Adds "php artisan vendor:publish --tag='localisation-lang-files'" to composer.json "post-update-cmd". Please add this to existing projects by hand. This is needed to publish that laravel's native lang files when new languages are added.
@@ -11416,22 +11416,22 @@ Update composer / npm packages.
 And finally adds an issue template for the github repo!
 
 ## 2.5.3
-Adds enso json lang files to the assets that are published after every composer update. Executes the localisation:merge command after each composer update.
+Adds liberu json lang files to the assets that are published after every composer update. Executes the localisation:merge command after each composer update.
 
 Updates major versions for npm / composer packages.
 
-For existing projects: be sure that you copy the "post-update-cmd" section from laravel-enso/enso/composer.json to your composer.json.
+For existing projects: be sure that you copy the "post-update-cmd" section from laravel-liberu/liberu/composer.json to your composer.json.
 
 ## 2.5.2
 Finally updates the charts lib. To upgrade run `npm install --save chartjs-plugin-datalabels file-saver`.
 
-Add to composer.json requirements: "laravel-enso/charts": "2.2.*".
+Add to composer.json requirements: "laravel-liberu/charts": "2.2.*".
 
 Copy from the demo project the updated `DashboardController`.
 
-Improves the "select" package by adding the `trackBy` property in the BE. laravel-enso/select#13.
+Improves the "select" package by adding the `trackBy` property in the BE. laravel-liberu/select#13.
 
-Fixes laravel-enso/localisation#28
+Fixes laravel-liberu/localisation#28
 
 ## 2.5.1
 Fix menu overflow-x.
@@ -11441,10 +11441,10 @@ Adds collapsible menu.
 
 Adds switch in the settings bar for menu state. The state is saved in user's preferences.
 
-Closes laravel-enso/localisation#15
+Closes laravel-liberu/localisation#15
 
 For existing projects:
-- update "composer.json" to require "laravel-enso/core" 2.4.*;
+- update "composer.json" to require "laravel-liberu/core" 2.4.*;
 - run `php artisan vendor:publish --force` and choose the following tags:
     "core-preferences", "localisation-assets", "localisation-config", "localisation-lang-files"
 - run `php artisan localisation:merge` to make sure that you have the newest lang files.
@@ -11457,8 +11457,8 @@ Changes the warning class to bulma's default.
 Updates packages.
 
 Fixes:
-    - laravel-enso/impersonate#3
-    -laravel-enso/core#46. Adds UserPolicy. For existing projects you should do the following steps:
+    - laravel-liberu/impersonate#3
+    -laravel-liberu/core#46. Adds UserPolicy. For existing projects you should do the following steps:
 
 Existing Projects:
 - copy App\Policies\UserPolicy
@@ -11471,17 +11471,17 @@ Fixes #76.
 Adds filter for missing translation in Localisation/EditTexts
 
 ## 2.4.0
-Refactors the enso.js file into dedicated modules.
+Refactors the liberu.js file into dedicated modules.
 
 Adds to the Vue prototype the `__` helper from localisation. Refactors the whole project to use the new helper - removes the mapGetters(['locale/__'])
 
 Improves VueTable, VueForm and VueSelect to autodetect if the new `__` helper is available. This way we don't need to pass the helper every time.
 
-Prepares the FE for the new auto-add-missing-key feature discussed [here](https://github.com/laravel-enso/Core/pull/45)
+Prepares the FE for the new auto-add-missing-key feature discussed [here](https://github.com/laravel-liberu/Core/pull/45)
 
 Moves the `debounce` prop for vuedatatable in the backend. Now `debounce` is a config option with a default of 100 (ms) that can be configured for everytable in its template.
 
-To upgrade be sure that in your composer.json you have "laravel-enso/core": "2.3.*",
+To upgrade be sure that in your composer.json you have "laravel-liberu/core": "2.3.*",
 
 ## 2.3.15
 Brings back the ValidateUserRequest / ValidateOwnerRequest (deleted by mistake).
@@ -11498,10 +11498,10 @@ Updates composer and npm dependecies.
 ## 2.3.13
 Adds custom layout for form sections.
 
-Fixes laravel-enso/select #11.
+Fixes laravel-liberu/select #11.
 
 ## 2.3.12
-Breaking change: Upgrades the form builder to support sections. Beware, you will have to upgrade all the templates and wrapt the current `columns` / `fields` attributes in an `sections` array with at least one object (for only one section). Please look at the template.json example to understand the new structure. [another example](https://github.com/laravel-enso/FormBuilder/issues/9#issuecomment-373896117). Don't forget to also publish the new `forms.php` config file.
+Breaking change: Upgrades the form builder to support sections. Beware, you will have to upgrade all the templates and wrapt the current `columns` / `fields` attributes in an `sections` array with at least one object (for only one section). Please look at the template.json example to understand the new structure. [another example](https://github.com/laravel-liberu/FormBuilder/issues/9#issuecomment-373896117). Don't forget to also publish the new `forms.php` config file.
 
 Fixes a bug when clearing the vuetable search field.
 
@@ -11521,8 +11521,8 @@ Small breaking change: The `$class` property from the vue select controllers is 
 Adds localisation and debounce props for the vueselect component.
 
 Fixes:
-    - laravel-enso/formbuilder#19
-    - laravel-enso/vuedatatable#38
+    - laravel-liberu/formbuilder#19
+    - laravel-liberu/vuedatatable#38
 
 Updates all npm and composer packages
 
@@ -11539,26 +11539,26 @@ Fixes lodash imports all over the project.
 ## 2.3.6
 Adds hungarian language
 
-Improves the the typeahead / laravel-enso/vuecomponents#12
+Improves the the typeahead / laravel-liberu/vuecomponents#12
 
-Fixes the dataimport layout / laravel-enso/dataimport#13
+Fixes the dataimport layout / laravel-liberu/dataimport#13
 
-Fixes the vuetable total when is crtNo is missing / laravel-enso/vuedatatable#32
+Fixes the vuetable total when is crtNo is missing / laravel-liberu/vuedatatable#32
 \
-Fixes the vuetable hidden controls when missing crtNo / laravel-enso/vuedatatable#36
+Fixes the vuetable hidden controls when missing crtNo / laravel-liberu/vuedatatable#36
 
-Adds to the vuetable ability to have a scoped slot when using the `slot` meta attribute. The slot can be accessed using the name of the column. The props available are the `column` object and the `value` / laravel-enso/vuedatatable#34
+Adds to the vuetable ability to have a scoped slot when using the `slot` meta attribute. The slot can be accessed using the name of the column. The props available are the `column` object and the `value` / laravel-liberu/vuedatatable#34
 
-Adds rogue columns to vuetable / laravel-enso/vuedatatable#33
+Adds rogue columns to vuetable / laravel-liberu/vuedatatable#33
 
-Adds tooltips for vuetable header / laravel-enso/vuedatatable#31
+Adds tooltips for vuetable header / laravel-liberu/vuedatatable#31
 
-Adds tooltips for vueform labels / laravel-enso/formbuilder#18
+Adds tooltips for vueform labels / laravel-liberu/formbuilder#18
 
 Improves the vuetable reponsiveness directive.
 
 ## 2.3.5
-Closes laravel-enso/core#43, #44.
+Closes laravel-liberu/core#43, #44.
 
 Fixes a modal and notification wrappers classes.
 
@@ -11568,19 +11568,19 @@ Improves the main modal component. Now the component uses a render function to m
 Upgrades the modal for vuedatatable and formbuilder.
 
 ## 2.3.3
-Fixes laravel-enso/enso#66
+Fixes laravel-liberu/liberu#66
 
 Adds mongolian language
 
 ## 2.3.2
-Fixes laravel-enso/enso#64
+Fixes laravel-liberu/liberu#64
 
 ## 2.3.1
-Fixes laravel-enso/vuedatatable#29.
+Fixes laravel-liberu/vuedatatable#29.
 
-Fixes laravel-enso/enso#63.
+Fixes laravel-liberu/liberu#63.
 
-Fixes laravel-enso/enso#56
+Fixes laravel-liberu/liberu#56
 
 Puts all the auth routes to the except array for `VerifyCsrfToken` middleware
 
@@ -11591,7 +11591,7 @@ protected $except = ['api/login', 'api/password/email', 'api/password/reset'];
 (you should do this step manually for existing projects)
 
 ## 2.3.0
-Please follow the upgrade [instructions](https://github.com/laravel-enso/Liberu/issues/62)
+Please follow the upgrade [instructions](https://github.com/laravel-liberu/Liberu/issues/62)
 
 ## 2.2.2
 Packages updates. Bug fixes
@@ -11605,14 +11605,14 @@ Removes vue-multiselect dependency. VueSelect has been rebuild from scratch and 
 Upgrades the whole project for VueSelect, including the example page.
 
 Fixes:
-    - laravel-enso/vuedatatable#53
-    - laravel-enso/enso#54
+    - laravel-liberu/vuedatatable#53
+    - laravel-liberu/liberu#54
     - laravel-core/core#41
 
 ## 2.1.35
 Adds `is_active` to languages table. A command will run "post-install" / "post-update".
 
-Footer is now customizable larvel-enso/enso#52.
+Footer is now customizable larvel-liberu/liberu#52.
 
 Adds Arabic Language.
 
@@ -11665,7 +11665,7 @@ Adds favicon notifications. Dont forget to npm install --save `favico.js`
 
 Refactors `vuecomponents`. We don't want to enforce unnecessary classes where we can avoid it.
 
-Adds to the `formbuilder` a new wrapper `<vue-form-ss>` that handles the ajax request for the form object. Adds a bunch of helpers methods for the builder. The documentatio will be updated soon, until then you can check any of the forms from the project. `laravel-enso/formbuilder#11'
+Adds to the `formbuilder` a new wrapper `<vue-form-ss>` that handles the ajax request for the form object. Adds a bunch of helpers methods for the builder. The documentatio will be updated soon, until then you can check any of the forms from the project. `laravel-liberu/formbuilder#11'
 
 ## 2.1.24
 Upgrades Laravel to 5.6 :). All the files from the local project are updated too.
@@ -11710,7 +11710,7 @@ Updates documentation for most of the packages.
 
 Update composer and npm packages.
 
-Note: Unfortunately we tagged wrongly "laravel-enso/menumanager" with 2.1.29 instead of 2.1.21. If you have the project already installed please correct this manually.
+Note: Unfortunately we tagged wrongly "laravel-liberu/menumanager" with 2.1.29 instead of 2.1.21. If you have the project already installed please correct this manually.
 
 ## 2.1.20
 Fixes `core.index` route.
@@ -11752,7 +11752,7 @@ The new toastr uses now Bulma's `notification` class instead of `message`.
 
 Adds collapse animation for card.
 
-Adds `extendedDocumentTitle` option to the `enso/config.php`. If this is set true it concats the app's name to the `document.title`. `document.title` is now translated.
+Adds `extendedDocumentTitle` option to the `liberu/config.php`. If this is set true it concats the app's name to the `document.title`. `document.title` is now translated.
 
 Adds `icon` and `clickable` meta attributes for vudedatatable. `icon` is for rendering fa5 icons, while `clickable` can be used to customize behaviour when clicking specific cells from the table. The docs for vuedatatable will be extended soon to cover the new options.
 
@@ -11849,7 +11849,7 @@ The separation between the M and the C in MVC is much clearer now.
 
 Routes cleanup.
 
-The vue components that were hosted in the generic `laravel-enso/vuecomponents` package and were belonging to specific packages where moved accordingly.
+The vue components that were hosted in the generic `laravel-liberu/vuecomponents` package and were belonging to specific packages where moved accordingly.
 
 The BE tests are up to date.
 
@@ -11987,7 +11987,7 @@ Finally decided to start keeping a changelog for the main project.
 
 ### Improvements
 
-- pages, routes and store are not under `enso` subfolder anymore in order to maintain coherence when extending the project
+- pages, routes and store are not under `liberu` subfolder anymore in order to maintain coherence when extending the project
 - dynamic loading for store and routes via `storeImporter` and `routeImporter` helper functions
 - lazy loading for routes
 - removed the old prototypes and refactored the code accordingly
@@ -11996,10 +11996,10 @@ Finally decided to start keeping a changelog for the main project.
 - new component: `Popup`
 - major cleanup of all components, libs, imports
 - jQuery is now used only in `Comments/Inputor.vue` until we find a js only lib to replace at.js
-- under `assets/js`, for `pages`, `routes` and `store` the intermediate `enso` folder was removed, in order to maintain coherence when extending the project
+- under `assets/js`, for `pages`, `routes` and `store` the intermediate `liberu` folder was removed, in order to maintain coherence when extending the project
 - dynamic loading for store and routes via `storeImporter` and `routeImporter` helper functions
 - lazy loading for routes
-- removes the old `modules/enso/prototypes` and refactores the code accordingly
+- removes the old `modules/liberu/prototypes` and refactores the code accordingly
 - visual refactor for `VueForm`, `VueSelect`, `Comments` and `Documents`. `Contacts` and `Addresses` will follow shortly
 - improved the Formbuilder with full validation of the template
 - new component: `Popup`

@@ -10,7 +10,7 @@ return [
     |--------------------------------------------------------------------------
     | The default trackBy attribute needed by the fronted component. You
     | can override it by specifying a differnt value when using the
-    | VueSelect / EnsoSelect in your template.
+    | VueSelect / LiberuSelect in your template.
     */
 
     'trackBy' => 'id',

@@ -20,7 +20,7 @@ class Activation extends Model
     //     $db = \Session::get('db');
     //     error_log('Activation+++++++++++++++++++++++++++++++++++'.$db);
     //     if(empty($db)) {
-    //         $db = env('DB_DATABASE', 'enso');
+    //         $db = env('DB_DATABASE', 'liberu');
     //     }
     //     if($db === env('DB_DATABASE')) {
     //         $key = 'database.connections.mysql.database';

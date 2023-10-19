@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Contracts\enso\files;
+namespace App\Contracts\liberu\files;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Relations\Relation;

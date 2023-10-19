@@ -93,10 +93,10 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Enso Authorization
+    | Liberu Authorization
     |--------------------------------------------------------------------------
     |
-    | Integrate with Enso's route / permissions
+    | Integrate with Liberu's route / permissions
     |
     */
 

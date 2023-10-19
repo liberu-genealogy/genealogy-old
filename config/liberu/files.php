@@ -8,9 +8,9 @@ use LaravelLiberu\Documents\Models\Document;
 use LaravelLiberu\Files\Models\Upload;
 use LaravelLiberu\HowTo\Models\Poster;
 use LaravelLiberu\HowTo\Models\Video;
-//use LaravelLiberu\Products\Models\Picture;
-//use LaravelLiberu\Webshop\Models\Brand;
-//use LaravelLiberu\Webshop\Models\CarouselSlide;
+use LaravelLiberu\Products\Models\Picture;
+use LaravelLiberu\Webshop\Models\Brand;
+use LaravelLiberu\Webshop\Models\CarouselSlide;
 
 return [
     'linkExpiration' => (int) env('TEMPORARY_LINK_EXPIRATION', 60 * 60 * 24),
@@ -32,9 +32,9 @@ return [
         'dataImport' => Import::class,
         'rejectedImport' => RejectedImport::class,
         'document' => Document::class,
-//        'productPicture' => Picture::class,
-//        'webshopBrand' => Brand::class,
-//        'webshopCarouselSlide' => CarouselSlide::class,
+        'productPicture' => Picture::class,
+        'webshopBrand' => Brand::class,
+        'webshopCarouselSlide' => CarouselSlide::class,
         'poster' => Poster::class,
         'video' => Video::class,
     ],

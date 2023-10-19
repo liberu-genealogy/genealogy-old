@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d74d9378b0d38a81a9eb9b87ec565b3",
+    "content-hash": "7a0ded0fbcae076d8af75f765ca99e1d",
     "packages": [
         {
             "name": "anlutro/curl",
@@ -2143,6 +2143,76 @@
             "time": "2020-06-13T08:05:20+00:00"
         },
         {
+            "name": "kitloong/laravel-app-logger",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kitloong/laravel-app-logger.git",
+                "reference": "9f62604dacc1f185ae76ddc5d2488d030792f639"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kitloong/laravel-app-logger/zipball/9f62604dacc1f185ae76ddc5d2488d030792f639",
+                "reference": "9f62604dacc1f185ae76ddc5d2488d030792f639",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "illuminate/support": "^5.8|^6.0|^7.0|^8.0|^9.0|^10.0",
+                "php": ">=7.1.3",
+                "spatie/laravel-http-logger": "^1.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.17|^3.0",
+                "mockery/mockery": "^1.0",
+                "orchestra/testbench": "^3.8|^4.0|^5.0|^6.0|^7.0|^8.0",
+                "squizlabs/php_codesniffer": "^3.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "KitLoong\\AppLogger\\AppLoggerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "KitLoong\\AppLogger\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kit Loong",
+                    "email": "kitloong1008@gmail.com"
+                }
+            ],
+            "description": "Laravel log for your application",
+            "homepage": "https://github.com/kitloong/laravel-app-logger",
+            "keywords": [
+                "laravel",
+                "log",
+                "performance",
+                "query",
+                "request"
+            ],
+            "support": {
+                "issues": "https://github.com/kitloong/laravel-app-logger/issues",
+                "source": "https://github.com/kitloong/laravel-app-logger/tree/v1.2.1"
+            },
+            "funding": [
+                {
+                    "url": "https://www.buymeacoffee.com/kitloong",
+                    "type": "custom"
+                }
+            ],
+            "time": "2023-02-18T15:35:34+00:00"
+        },
+        {
             "name": "knplabs/knp-snappy",
             "version": "v1.4.4",
             "source": {
@@ -2303,16 +2373,16 @@
         },
         {
             "name": "laravel-liberu/addresses",
-            "version": "v5.0.8",
+            "version": "v5.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/addresses.git",
-                "reference": "b85acd47fa1b854a2e567dfef261abdd2b7b7caa"
+                "reference": "4ec211bc0f6b5e771095e577286f4db7746c04c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/addresses/zipball/b85acd47fa1b854a2e567dfef261abdd2b7b7caa",
-                "reference": "b85acd47fa1b854a2e567dfef261abdd2b7b7caa",
+                "url": "https://api.github.com/repos/laravel-liberu/addresses/zipball/4ec211bc0f6b5e771095e577286f4db7746c04c6",
+                "reference": "4ec211bc0f6b5e771095e577286f4db7746c04c6",
                 "shasum": ""
             },
             "require": {
@@ -2363,7 +2433,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Addresses Manager for Laravel Enso",
+            "description": "Addresses Manager for Laravel Liberu",
             "keywords": [
                 "addresses",
                 "laravel",
@@ -2371,7 +2441,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/addresses/issues",
-                "source": "https://github.com/laravel-liberu/addresses/tree/v5.0.8"
+                "source": "https://github.com/laravel-liberu/addresses/tree/v5.0.9"
             },
             "funding": [
                 {
@@ -2379,20 +2449,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:42:10+00:00"
+            "time": "2023-10-14T08:28:03+00:00"
         },
         {
             "name": "laravel-liberu/api",
-            "version": "v1.5.9",
+            "version": "v1.5.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/api.git",
-                "reference": "43b77558d6dd4d2739234fd1dddd0539c667bd08"
+                "reference": "3dc13a2bfa9a291929beaf6d6943057840a6a1a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/api/zipball/43b77558d6dd4d2739234fd1dddd0539c667bd08",
-                "reference": "43b77558d6dd4d2739234fd1dddd0539c667bd08",
+                "url": "https://api.github.com/repos/laravel-liberu/api/zipball/3dc13a2bfa9a291929beaf6d6943057840a6a1a9",
+                "reference": "3dc13a2bfa9a291929beaf6d6943057840a6a1a9",
                 "shasum": ""
             },
             "require": {
@@ -2433,14 +2503,14 @@
                     "role": "Developer"
                 }
             ],
-            "description": "External API boilerplate for Laravel Enso",
+            "description": "External API boilerplate for Laravel Liberu",
             "keywords": [
                 "api",
                 "laravel-liberu"
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/api/issues",
-                "source": "https://github.com/laravel-liberu/api/tree/v1.5.9"
+                "source": "https://github.com/laravel-liberu/api/tree/v1.5.10"
             },
             "funding": [
                 {
@@ -2448,20 +2518,63 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T06:06:55+00:00"
+            "time": "2023-10-14T08:25:47+00:00"
         },
         {
-            "name": "laravel-liberu/avatars",
-            "version": "v4.0.17",
+            "name": "laravel-liberu/auth",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/laravel-liberu/avatars.git",
-                "reference": "1fdd613e0b7ef509f19357f735e845d5b6d680d6"
+                "url": "https://github.com/laravel-liberu/auth.git",
+                "reference": "63525c49b40f7cd57a0083f6b1f1f6de77aa29dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/avatars/zipball/1fdd613e0b7ef509f19357f735e845d5b6d680d6",
-                "reference": "1fdd613e0b7ef509f19357f735e845d5b6d680d6",
+                "url": "https://api.github.com/repos/laravel-liberu/auth/zipball/63525c49b40f7cd57a0083f6b1f1f6de77aa29dc",
+                "reference": "63525c49b40f7cd57a0083f6b1f1f6de77aa29dc",
+                "shasum": ""
+            },
+            "require-dev": {
+                "laravel/framework": "^10.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LaravelLiberu\\Auth\\": "src/",
+                    "LaravelLiberu\\Auth\\Database\\Seeders\\": "database/seeders/",
+                    "LaravelLiberu\\Auth\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Liberu",
+                    "email": "office@liberu.co.uk"
+                }
+            ],
+            "description": "Standardizes and streamlines authentication across all projects in the organization, providing a robust, customizable, and secure authentication solution",
+            "homepage": "https://github.com/laravel-liberu/auth",
+            "support": {
+                "issues": "https://github.com/laravel-liberu/auth/issues",
+                "source": "https://github.com/laravel-liberu/auth/tree/v1.0.1"
+            },
+            "time": "2023-10-19T06:56:13+00:00"
+        },
+        {
+            "name": "laravel-liberu/avatars",
+            "version": "v4.0.19",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-liberu/avatars.git",
+                "reference": "533239db1c8782bf35d2e07ff02d91e243c11227"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-liberu/avatars/zipball/533239db1c8782bf35d2e07ff02d91e243c11227",
+                "reference": "533239db1c8782bf35d2e07ff02d91e243c11227",
                 "shasum": ""
             },
             "require": {
@@ -2498,7 +2611,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "User Avatar manager dependency for Laravel Enso",
+            "description": "User Avatar manager dependency for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/avatars",
             "keywords": [
                 "avatar",
@@ -2508,7 +2621,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/avatars/issues",
-                "source": "https://github.com/laravel-liberu/avatars/tree/v4.0.17"
+                "source": "https://github.com/laravel-liberu/avatars/tree/v4.0.19"
             },
             "funding": [
                 {
@@ -2516,20 +2629,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:37:07+00:00"
+            "time": "2023-10-14T08:23:45+00:00"
         },
         {
             "name": "laravel-liberu/calendar",
-            "version": "v3.0.13",
+            "version": "v3.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/calendar.git",
-                "reference": "187ebfaabf65d7e8e3522dfdee4a10b56f9ac99f"
+                "reference": "b209ef3c503a9eaca89eb675fcc6f740488f0d5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/calendar/zipball/187ebfaabf65d7e8e3522dfdee4a10b56f9ac99f",
-                "reference": "187ebfaabf65d7e8e3522dfdee4a10b56f9ac99f",
+                "url": "https://api.github.com/repos/laravel-liberu/calendar/zipball/b209ef3c503a9eaca89eb675fcc6f740488f0d5b",
+                "reference": "b209ef3c503a9eaca89eb675fcc6f740488f0d5b",
                 "shasum": ""
             },
             "require": {
@@ -2586,7 +2699,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Enso Calendar",
+            "description": "Liberu Calendar",
             "homepage": "https://https://github.com/laravel-liberu/calendar",
             "keywords": [
                 "calendar",
@@ -2597,7 +2710,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/calendar/issues",
-                "source": "https://github.com/laravel-liberu/calendar/tree/v3.0.13"
+                "source": "https://github.com/laravel-liberu/calendar/tree/v3.0.14"
             },
             "funding": [
                 {
@@ -2605,7 +2718,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:42:30+00:00"
+            "time": "2023-10-14T08:27:45+00:00"
         },
         {
             "name": "laravel-liberu/charts",
@@ -2677,16 +2790,16 @@
         },
         {
             "name": "laravel-liberu/comments",
-            "version": "v4.2.9",
+            "version": "v4.2.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/comments.git",
-                "reference": "cc69cd6b744c2e0de6302eb39b5bca9dcd6ceee1"
+                "reference": "567a87cb2c5ecda8d9f73c7f77f55a9f278e5b75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/comments/zipball/cc69cd6b744c2e0de6302eb39b5bca9dcd6ceee1",
-                "reference": "cc69cd6b744c2e0de6302eb39b5bca9dcd6ceee1",
+                "url": "https://api.github.com/repos/laravel-liberu/comments/zipball/567a87cb2c5ecda8d9f73c7f77f55a9f278e5b75",
+                "reference": "567a87cb2c5ecda8d9f73c7f77f55a9f278e5b75",
                 "shasum": ""
             },
             "require": {
@@ -2728,7 +2841,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Comments Manager for Laravel Enso",
+            "description": "Comments Manager for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/comments",
             "keywords": [
                 "comments",
@@ -2737,7 +2850,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/comments/issues",
-                "source": "https://github.com/laravel-liberu/comments/tree/v4.2.9"
+                "source": "https://github.com/laravel-liberu/comments/tree/v4.2.10"
             },
             "funding": [
                 {
@@ -2745,20 +2858,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:40:15+00:00"
+            "time": "2023-10-14T08:29:31+00:00"
         },
         {
             "name": "laravel-liberu/companies",
-            "version": "v4.0.13",
+            "version": "v4.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/companies.git",
-                "reference": "054543e7db487cafc2e94e2b3844b2377e93aa5f"
+                "reference": "f7f98c20aafaf92b733a72038f67b1b412416021"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/companies/zipball/054543e7db487cafc2e94e2b3844b2377e93aa5f",
-                "reference": "054543e7db487cafc2e94e2b3844b2377e93aa5f",
+                "url": "https://api.github.com/repos/laravel-liberu/companies/zipball/f7f98c20aafaf92b733a72038f67b1b412416021",
+                "reference": "f7f98c20aafaf92b733a72038f67b1b412416021",
                 "shasum": ""
             },
             "require": {
@@ -2809,7 +2922,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Person management dependency for Laravel Enso",
+            "description": "Person management dependency for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/companies",
             "keywords": [
                 "companies",
@@ -2819,7 +2932,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/companies/issues",
-                "source": "https://github.com/laravel-liberu/companies/tree/v4.0.13"
+                "source": "https://github.com/laravel-liberu/companies/tree/v4.0.14"
             },
             "funding": [
                 {
@@ -2827,20 +2940,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T06:55:34+00:00"
+            "time": "2023-10-14T08:24:57+00:00"
         },
         {
             "name": "laravel-liberu/control-panel-api",
-            "version": "v3.2.13",
+            "version": "v3.2.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/control-panel-api.git",
-                "reference": "d3e90a6c80d38d10ecd793a8ed0e4945fde6440e"
+                "reference": "76b5ddc7a49967a12226a4aeeb78dd5bc76bc8dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/control-panel-api/zipball/d3e90a6c80d38d10ecd793a8ed0e4945fde6440e",
-                "reference": "d3e90a6c80d38d10ecd793a8ed0e4945fde6440e",
+                "url": "https://api.github.com/repos/laravel-liberu/control-panel-api/zipball/76b5ddc7a49967a12226a4aeeb78dd5bc76bc8dd",
+                "reference": "76b5ddc7a49967a12226a4aeeb78dd5bc76bc8dd",
                 "shasum": ""
             },
             "require": {
@@ -2887,7 +3000,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Control Panel API for Laravel Enso",
+            "description": "Control Panel API for Laravel Liberu",
             "keywords": [
                 "api",
                 "controlpanel",
@@ -2896,7 +3009,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/control-panel-api/issues",
-                "source": "https://github.com/laravel-liberu/control-panel-api/tree/v3.2.13"
+                "source": "https://github.com/laravel-liberu/control-panel-api/tree/v3.2.15"
             },
             "funding": [
                 {
@@ -2904,20 +3017,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T13:51:54+00:00"
+            "time": "2023-10-14T08:21:44+00:00"
         },
         {
             "name": "laravel-liberu/control-panel-common",
-            "version": "v2.1.8",
+            "version": "v2.1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/control-panel-common.git",
-                "reference": "8d0bf678e50ecd037897fe11f05c8dd734b5a92e"
+                "reference": "df66504dd20ba1ae89b63d38ee751778b42eda3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/control-panel-common/zipball/8d0bf678e50ecd037897fe11f05c8dd734b5a92e",
-                "reference": "8d0bf678e50ecd037897fe11f05c8dd734b5a92e",
+                "url": "https://api.github.com/repos/laravel-liberu/control-panel-common/zipball/df66504dd20ba1ae89b63d38ee751778b42eda3d",
+                "reference": "df66504dd20ba1ae89b63d38ee751778b42eda3d",
                 "shasum": ""
             },
             "require": {
@@ -2950,7 +3063,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Control Panel Common for Laravel Enso",
+            "description": "Control Panel Common for Laravel Liberu",
             "keywords": [
                 "controlpanel",
                 "laravel",
@@ -2958,7 +3071,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/control-panel-common/issues",
-                "source": "https://github.com/laravel-liberu/control-panel-common/tree/v2.1.8"
+                "source": "https://github.com/laravel-liberu/control-panel-common/tree/v2.1.10"
             },
             "funding": [
                 {
@@ -2966,20 +3079,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T13:51:37+00:00"
+            "time": "2023-10-14T08:21:27+00:00"
         },
         {
             "name": "laravel-liberu/core",
-            "version": "v8.0.21",
+            "version": "v8.0.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/core.git",
-                "reference": "835dae021c69bcfe263f51cc71bb2c7898679d8a"
+                "reference": "e03a4aa1e6218ac68e1c664c1a7b4c3868e9dd84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/core/zipball/835dae021c69bcfe263f51cc71bb2c7898679d8a",
-                "reference": "835dae021c69bcfe263f51cc71bb2c7898679d8a",
+                "url": "https://api.github.com/repos/laravel-liberu/core/zipball/e03a4aa1e6218ac68e1c664c1a7b4c3868e9dd84",
+                "reference": "e03a4aa1e6218ac68e1c664c1a7b4c3868e9dd84",
                 "shasum": ""
             },
             "require": {
@@ -3061,7 +3174,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Main requirement & dependency aggregator for Laravel Enso",
+            "description": "Main requirement & dependency aggregator for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/Core",
             "keywords": [
                 "laravel-boilerplate",
@@ -3073,7 +3186,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/core/issues",
-                "source": "https://github.com/laravel-liberu/core/tree/v8.0.21"
+                "source": "https://github.com/laravel-liberu/core/tree/v8.0.23"
             },
             "funding": [
                 {
@@ -3081,20 +3194,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:37:27+00:00"
+            "time": "2023-10-19T06:53:31+00:00"
         },
         {
             "name": "laravel-liberu/countries",
-            "version": "v2.3.10",
+            "version": "v2.3.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/countries.git",
-                "reference": "75808129a544ac80296f8593737b8b28e7bd3297"
+                "reference": "e22a242389cb286e14b2d200c5c5d22dc841c83f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/countries/zipball/75808129a544ac80296f8593737b8b28e7bd3297",
-                "reference": "75808129a544ac80296f8593737b8b28e7bd3297",
+                "url": "https://api.github.com/repos/laravel-liberu/countries/zipball/e22a242389cb286e14b2d200c5c5d22dc841c83f",
+                "reference": "e22a242389cb286e14b2d200c5c5d22dc841c83f",
                 "shasum": ""
             },
             "require": {
@@ -3142,7 +3255,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Countries for Laravel Enso",
+            "description": "Countries for Laravel Liberu",
             "keywords": [
                 "countries",
                 "laravel-liberu",
@@ -3151,7 +3264,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/countries/issues",
-                "source": "https://github.com/laravel-liberu/countries/tree/v2.3.10"
+                "source": "https://github.com/laravel-liberu/countries/tree/v2.3.11"
             },
             "funding": [
                 {
@@ -3159,20 +3272,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:34:40+00:00"
+            "time": "2023-10-14T08:33:35+00:00"
         },
         {
             "name": "laravel-liberu/data-export",
-            "version": "v3.1.17",
+            "version": "v3.1.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/data-export.git",
-                "reference": "c2802d0aa33a1dca76018fbd9b3d2c4572d29264"
+                "reference": "981a58c0a9602e8ba1b7e2ef72aec3b85ac3b538"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/data-export/zipball/c2802d0aa33a1dca76018fbd9b3d2c4572d29264",
-                "reference": "c2802d0aa33a1dca76018fbd9b3d2c4572d29264",
+                "url": "https://api.github.com/repos/laravel-liberu/data-export/zipball/981a58c0a9602e8ba1b7e2ef72aec3b85ac3b538",
+                "reference": "981a58c0a9602e8ba1b7e2ef72aec3b85ac3b538",
                 "shasum": ""
             },
             "require": {
@@ -3215,7 +3328,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Structure for holding Laravel-Enso exports",
+            "description": "Structure for holding Laravel-Liberu exports",
             "homepage": "https://github.com/laravel-liberu/data-export",
             "keywords": [
                 "data-export",
@@ -3224,7 +3337,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/data-export/issues",
-                "source": "https://github.com/laravel-liberu/data-export/tree/v3.1.17"
+                "source": "https://github.com/laravel-liberu/data-export/tree/v3.1.18"
             },
             "funding": [
                 {
@@ -3232,20 +3345,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:41:31+00:00"
+            "time": "2023-10-14T08:28:20+00:00"
         },
         {
             "name": "laravel-liberu/data-import",
-            "version": "v6.1.27",
+            "version": "v6.1.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/data-import.git",
-                "reference": "1f06810a7bb9aaef75643d38916b4e06b796bb36"
+                "reference": "03fdd5e7b3263ec8b82350197766466df275772e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/data-import/zipball/1f06810a7bb9aaef75643d38916b4e06b796bb36",
-                "reference": "1f06810a7bb9aaef75643d38916b4e06b796bb36",
+                "url": "https://api.github.com/repos/laravel-liberu/data-import/zipball/03fdd5e7b3263ec8b82350197766466df275772e",
+                "reference": "03fdd5e7b3263ec8b82350197766466df275772e",
                 "shasum": ""
             },
             "require": {
@@ -3299,7 +3412,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Excel Importer dependency for Laravel Enso",
+            "description": "Excel Importer dependency for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/data-import",
             "keywords": [
                 "data-import",
@@ -3309,7 +3422,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/data-import/issues",
-                "source": "https://github.com/laravel-liberu/data-import/tree/v6.1.27"
+                "source": "https://github.com/laravel-liberu/data-import/tree/v6.1.28"
             },
             "funding": [
                 {
@@ -3317,20 +3430,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:40:35+00:00"
+            "time": "2023-10-14T08:29:13+00:00"
         },
         {
             "name": "laravel-liberu/discussions",
-            "version": "v4.0.7",
+            "version": "v4.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/discussions.git",
-                "reference": "693870e9af29f40a23f0bf9badb4d649d05fbef7"
+                "reference": "aca506a3d8e2ea7ffd4d38b821a87774da92e69b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/discussions/zipball/693870e9af29f40a23f0bf9badb4d649d05fbef7",
-                "reference": "693870e9af29f40a23f0bf9badb4d649d05fbef7",
+                "url": "https://api.github.com/repos/laravel-liberu/discussions/zipball/aca506a3d8e2ea7ffd4d38b821a87774da92e69b",
+                "reference": "aca506a3d8e2ea7ffd4d38b821a87774da92e69b",
                 "shasum": ""
             },
             "require": {
@@ -3371,7 +3484,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Discussion board for Laravel Enso",
+            "description": "Discussion board for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/discussions",
             "keywords": [
                 "discussions",
@@ -3379,7 +3492,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/discussions/issues",
-                "source": "https://github.com/laravel-liberu/discussions/tree/v4.0.7"
+                "source": "https://github.com/laravel-liberu/discussions/tree/v4.0.8"
             },
             "funding": [
                 {
@@ -3387,20 +3500,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:40:54+00:00"
+            "time": "2023-10-14T08:28:55+00:00"
         },
         {
             "name": "laravel-liberu/documents",
-            "version": "v5.0.19",
+            "version": "v5.0.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/documents.git",
-                "reference": "69c942e1a07548fe380393d4fe22e479d2c08409"
+                "reference": "284f7f3c6787df842538518d46995e06458b0a0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/documents/zipball/69c942e1a07548fe380393d4fe22e479d2c08409",
-                "reference": "69c942e1a07548fe380393d4fe22e479d2c08409",
+                "url": "https://api.github.com/repos/laravel-liberu/documents/zipball/284f7f3c6787df842538518d46995e06458b0a0c",
+                "reference": "284f7f3c6787df842538518d46995e06458b0a0c",
                 "shasum": ""
             },
             "require": {
@@ -3442,7 +3555,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Documents Manager for Laravel Enso",
+            "description": "Documents Manager for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/documents",
             "keywords": [
                 "documents",
@@ -3452,7 +3565,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/documents/issues",
-                "source": "https://github.com/laravel-liberu/documents/tree/v5.0.19"
+                "source": "https://github.com/laravel-liberu/documents/tree/v5.0.20"
             },
             "funding": [
                 {
@@ -3460,7 +3573,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:41:13+00:00"
+            "time": "2023-10-14T08:28:38+00:00"
         },
         {
             "name": "laravel-liberu/dynamic-methods",
@@ -3595,16 +3708,16 @@
         },
         {
             "name": "laravel-liberu/excel",
-            "version": "v3.1.12",
+            "version": "v3.1.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/excel.git",
-                "reference": "d9a1344ee3921b261a134b2f0aab349a81a9cf01"
+                "reference": "2dfdc16113a8ae090ad446afc36fa94a913d277f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/excel/zipball/d9a1344ee3921b261a134b2f0aab349a81a9cf01",
-                "reference": "d9a1344ee3921b261a134b2f0aab349a81a9cf01",
+                "url": "https://api.github.com/repos/laravel-liberu/excel/zipball/2dfdc16113a8ae090ad446afc36fa94a913d277f",
+                "reference": "2dfdc16113a8ae090ad446afc36fa94a913d277f",
                 "shasum": ""
             },
             "require": {
@@ -3644,7 +3757,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Excel for Laravel Enso",
+            "description": "Excel for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/excel",
             "keywords": [
                 "excel",
@@ -3653,7 +3766,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/excel/issues",
-                "source": "https://github.com/laravel-liberu/excel/tree/v3.1.12"
+                "source": "https://github.com/laravel-liberu/excel/tree/v3.1.13"
             },
             "funding": [
                 {
@@ -3661,20 +3774,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:25:21+00:00"
+            "time": "2023-10-14T08:40:21+00:00"
         },
         {
             "name": "laravel-liberu/files",
-            "version": "v5.2.16",
+            "version": "v5.2.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/files.git",
-                "reference": "af4e8cdc1a7e6968fc3f3cac632fed803946ab45"
+                "reference": "a1c51ff99f532cf34b82326a3374eb72da1a862d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/files/zipball/af4e8cdc1a7e6968fc3f3cac632fed803946ab45",
-                "reference": "af4e8cdc1a7e6968fc3f3cac632fed803946ab45",
+                "url": "https://api.github.com/repos/laravel-liberu/files/zipball/a1c51ff99f532cf34b82326a3374eb72da1a862d",
+                "reference": "a1c51ff99f532cf34b82326a3374eb72da1a862d",
                 "shasum": ""
             },
             "require": {
@@ -3716,7 +3829,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "File manager dependency for Laravel Enso",
+            "description": "File manager dependency for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/files",
             "keywords": [
                 "file-manager",
@@ -3726,7 +3839,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/files/issues",
-                "source": "https://github.com/laravel-liberu/files/tree/v5.2.16"
+                "source": "https://github.com/laravel-liberu/files/tree/v5.2.17"
             },
             "funding": [
                 {
@@ -3734,7 +3847,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:36:48+00:00"
+            "time": "2023-10-14T08:32:28+00:00"
         },
         {
             "name": "laravel-liberu/filters",
@@ -3797,16 +3910,16 @@
         },
         {
             "name": "laravel-liberu/forms",
-            "version": "v4.5.5",
+            "version": "v4.5.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/forms.git",
-                "reference": "15e7d7c6116383b891822d8b915d3dcaa7cefab1"
+                "reference": "a83d265e8ac2312ac9f37ddec841352a92ce683b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/forms/zipball/15e7d7c6116383b891822d8b915d3dcaa7cefab1",
-                "reference": "15e7d7c6116383b891822d8b915d3dcaa7cefab1",
+                "url": "https://api.github.com/repos/laravel-liberu/forms/zipball/a83d265e8ac2312ac9f37ddec841352a92ce683b",
+                "reference": "a83d265e8ac2312ac9f37ddec841352a92ce683b",
                 "shasum": ""
             },
             "require": {
@@ -3844,7 +3957,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Form builder for Laravel Enso",
+            "description": "Form builder for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/forms",
             "keywords": [
                 "Forms",
@@ -3854,7 +3967,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/forms/issues",
-                "source": "https://github.com/laravel-liberu/forms/tree/v4.5.5"
+                "source": "https://github.com/laravel-liberu/forms/tree/v4.5.6"
             },
             "funding": [
                 {
@@ -3862,7 +3975,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:31:14+00:00"
+            "time": "2023-10-14T08:35:51+00:00"
         },
         {
             "name": "laravel-liberu/google",
@@ -3937,16 +4050,16 @@
         },
         {
             "name": "laravel-liberu/helpers",
-            "version": "2.9.9",
+            "version": "2.9.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/helpers.git",
-                "reference": "cd206cbcada6e621f1cc4067b397446091dcd53a"
+                "reference": "bd2f98f16889dfc3a35fb121a43c5ec890578243"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/helpers/zipball/cd206cbcada6e621f1cc4067b397446091dcd53a",
-                "reference": "cd206cbcada6e621f1cc4067b397446091dcd53a",
+                "url": "https://api.github.com/repos/laravel-liberu/helpers/zipball/bd2f98f16889dfc3a35fb121a43c5ec890578243",
+                "reference": "bd2f98f16889dfc3a35fb121a43c5ec890578243",
                 "shasum": ""
             },
             "require": {
@@ -3960,7 +4073,7 @@
             "extra": {
                 "laravel": {
                     "aliases": {
-                        "EnsoException": "LaravelLiberu\\Helpers\\Exceptions\\EnsoException"
+                        "LiberuException": "LaravelLiberu\\Helpers\\Exceptions\\LiberuException"
                     }
                 }
             },
@@ -3981,7 +4094,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Helper classes dependency for Laravel Enso",
+            "description": "Helper classes dependency for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/helpers",
             "keywords": [
                 "helpers",
@@ -3989,7 +4102,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/helpers/issues",
-                "source": "https://github.com/laravel-liberu/helpers/tree/2.9.9"
+                "source": "https://github.com/laravel-liberu/helpers/tree/2.9.10"
             },
             "funding": [
                 {
@@ -3997,20 +4110,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T14:48:51+00:00"
+            "time": "2023-10-14T08:24:03+00:00"
         },
         {
             "name": "laravel-liberu/history-tracker",
-            "version": "v2.1.7",
+            "version": "v2.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/history-tracker.git",
-                "reference": "83e81b58d29bd519c91acd27b5fb53329ada9f54"
+                "reference": "0fec835088433ff0790347327f909322847d5e60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/history-tracker/zipball/83e81b58d29bd519c91acd27b5fb53329ada9f54",
-                "reference": "83e81b58d29bd519c91acd27b5fb53329ada9f54",
+                "url": "https://api.github.com/repos/laravel-liberu/history-tracker/zipball/0fec835088433ff0790347327f909322847d5e60",
+                "reference": "0fec835088433ff0790347327f909322847d5e60",
                 "shasum": ""
             },
             "require": {
@@ -4038,7 +4151,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Model history tracking dependency for Laravel Enso",
+            "description": "Model history tracking dependency for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/history-tracker",
             "keywords": [
                 "history-tracker",
@@ -4046,7 +4159,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/history-tracker/issues",
-                "source": "https://github.com/laravel-liberu/history-tracker/tree/v2.1.7"
+                "source": "https://github.com/laravel-liberu/history-tracker/tree/v2.1.8"
             },
             "funding": [
                 {
@@ -4054,20 +4167,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:32:09+00:00"
+            "time": "2023-10-14T08:35:16+00:00"
         },
         {
             "name": "laravel-liberu/how-to",
-            "version": "v5.0.11",
+            "version": "v5.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/how-to.git",
-                "reference": "f3d54e3b9cb6397e875437b35d7a1732f2e0b141"
+                "reference": "3478f2a92fd4bd68ff395a06f6844e81cf8a9d50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/how-to/zipball/f3d54e3b9cb6397e875437b35d7a1732f2e0b141",
-                "reference": "f3d54e3b9cb6397e875437b35d7a1732f2e0b141",
+                "url": "https://api.github.com/repos/laravel-liberu/how-to/zipball/3478f2a92fd4bd68ff395a06f6844e81cf8a9d50",
+                "reference": "3478f2a92fd4bd68ff395a06f6844e81cf8a9d50",
                 "shasum": ""
             },
             "require": {
@@ -4105,7 +4218,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "How to video manager for Laravel Enso",
+            "description": "How to video manager for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/how-to",
             "keywords": [
                 "HowTo",
@@ -4115,7 +4228,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/how-to/issues",
-                "source": "https://github.com/laravel-liberu/how-to/tree/v5.0.11"
+                "source": "https://github.com/laravel-liberu/how-to/tree/v5.0.12"
             },
             "funding": [
                 {
@@ -4123,20 +4236,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:24:45+00:00"
+            "time": "2023-10-14T08:40:53+00:00"
         },
         {
             "name": "laravel-liberu/image-transformer",
-            "version": "v2.1.7",
+            "version": "v2.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/image-transformer.git",
-                "reference": "c9ad552992331d96f06049ceed2683c1bb7da96a"
+                "reference": "c4bf8b3875e6ac6fc026c7cd528fc772ad5202e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/image-transformer/zipball/c9ad552992331d96f06049ceed2683c1bb7da96a",
-                "reference": "c9ad552992331d96f06049ceed2683c1bb7da96a",
+                "url": "https://api.github.com/repos/laravel-liberu/image-transformer/zipball/c4bf8b3875e6ac6fc026c7cd528fc772ad5202e5",
+                "reference": "c4bf8b3875e6ac6fc026c7cd528fc772ad5202e5",
                 "shasum": ""
             },
             "require": {
@@ -4173,7 +4286,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Image transformer dependency for Laravel Enso",
+            "description": "Image transformer dependency for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/image-transformer",
             "keywords": [
                 "image-optimizer",
@@ -4183,7 +4296,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/image-transformer/issues",
-                "source": "https://github.com/laravel-liberu/image-transformer/tree/v2.1.7"
+                "source": "https://github.com/laravel-liberu/image-transformer/tree/v2.1.8"
             },
             "funding": [
                 {
@@ -4191,20 +4304,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:34:21+00:00"
+            "time": "2023-10-14T08:33:52+00:00"
         },
         {
             "name": "laravel-liberu/impersonate",
-            "version": "v3.2.7",
+            "version": "v3.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/impersonate.git",
-                "reference": "e46e418592e5772a9d3982d8f16eba90565ca223"
+                "reference": "4e7efa8133452fe5730392c79a7abf2686b739b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/impersonate/zipball/e46e418592e5772a9d3982d8f16eba90565ca223",
-                "reference": "e46e418592e5772a9d3982d8f16eba90565ca223",
+                "url": "https://api.github.com/repos/laravel-liberu/impersonate/zipball/4e7efa8133452fe5730392c79a7abf2686b739b6",
+                "reference": "4e7efa8133452fe5730392c79a7abf2686b739b6",
                 "shasum": ""
             },
             "require": {
@@ -4242,7 +4355,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "User impersonation dependency for Laravel Enso",
+            "description": "User impersonation dependency for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/impersonate",
             "keywords": [
                 "impersonate",
@@ -4251,7 +4364,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/impersonate/issues",
-                "source": "https://github.com/laravel-liberu/impersonate/tree/v3.2.7"
+                "source": "https://github.com/laravel-liberu/impersonate/tree/v3.2.8"
             },
             "funding": [
                 {
@@ -4259,20 +4372,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:30:18+00:00"
+            "time": "2023-10-14T08:36:44+00:00"
         },
         {
             "name": "laravel-liberu/io",
-            "version": "v2.4.7",
+            "version": "v2.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/io.git",
-                "reference": "c787a3e28544db5d5a6468039a659f1459da4f99"
+                "reference": "b6c5a13d5537b979cdb7d5a3edf209223468b43c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/io/zipball/c787a3e28544db5d5a6468039a659f1459da4f99",
-                "reference": "c787a3e28544db5d5a6468039a659f1459da4f99",
+                "url": "https://api.github.com/repos/laravel-liberu/io/zipball/b6c5a13d5537b979cdb7d5a3edf209223468b43c",
+                "reference": "b6c5a13d5537b979cdb7d5a3edf209223468b43c",
                 "shasum": ""
             },
             "require": {
@@ -4310,7 +4423,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "IO process monitoring dependency for Laravel-Enso",
+            "description": "IO process monitoring dependency for Laravel-Liberu",
             "homepage": "https://github.com/laravel-liberu/io",
             "keywords": [
                 "io",
@@ -4319,7 +4432,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/io/issues",
-                "source": "https://github.com/laravel-liberu/io/tree/v2.4.7"
+                "source": "https://github.com/laravel-liberu/io/tree/v2.4.8"
             },
             "funding": [
                 {
@@ -4327,7 +4440,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:25:39+00:00"
+            "time": "2023-10-14T08:40:03+00:00"
         },
         {
             "name": "laravel-liberu/laravel-gedcom",
@@ -4444,16 +4557,16 @@
         },
         {
             "name": "laravel-liberu/localisation",
-            "version": "v5.0.14",
+            "version": "v5.0.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/localisation.git",
-                "reference": "36a96c570f026267a9672aec9555ba94f3c0d0ed"
+                "reference": "ded2e746b36f667caaa34b3de98eb554f50aa014"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/localisation/zipball/36a96c570f026267a9672aec9555ba94f3c0d0ed",
-                "reference": "36a96c570f026267a9672aec9555ba94f3c0d0ed",
+                "url": "https://api.github.com/repos/laravel-liberu/localisation/zipball/ded2e746b36f667caaa34b3de98eb554f50aa014",
+                "reference": "ded2e746b36f667caaa34b3de98eb554f50aa014",
                 "shasum": ""
             },
             "require": {
@@ -4496,14 +4609,14 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Localisation management dependency for Laravel Enso",
+            "description": "Localisation management dependency for Laravel Liberu",
             "keywords": [
                 "laravel-liberu",
                 "localisation"
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/localisation/issues",
-                "source": "https://github.com/laravel-liberu/localisation/tree/v5.0.14"
+                "source": "https://github.com/laravel-liberu/localisation/tree/v5.0.15"
             },
             "funding": [
                 {
@@ -4511,20 +4624,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T06:20:04+00:00"
+            "time": "2023-10-14T08:25:29+00:00"
         },
         {
             "name": "laravel-liberu/logs",
-            "version": "v4.1.7",
+            "version": "v4.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/logs.git",
-                "reference": "6467842ea7f3b7c0213c88f5fd137c84a5bc0b35"
+                "reference": "bc8fd37524b4b3f67b6290a6d24ba67f0ac81643"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/logs/zipball/6467842ea7f3b7c0213c88f5fd137c84a5bc0b35",
-                "reference": "6467842ea7f3b7c0213c88f5fd137c84a5bc0b35",
+                "url": "https://api.github.com/repos/laravel-liberu/logs/zipball/bc8fd37524b4b3f67b6290a6d24ba67f0ac81643",
+                "reference": "bc8fd37524b4b3f67b6290a6d24ba67f0ac81643",
                 "shasum": ""
             },
             "require": {
@@ -4561,7 +4674,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Log management dependency for Laravel Enso",
+            "description": "Log management dependency for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/logs",
             "keywords": [
                 "laravel-liberu",
@@ -4571,7 +4684,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/logs/issues",
-                "source": "https://github.com/laravel-liberu/logs/tree/v4.1.7"
+                "source": "https://github.com/laravel-liberu/logs/tree/v4.1.8"
             },
             "funding": [
                 {
@@ -4579,20 +4692,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:30:37+00:00"
+            "time": "2023-10-14T08:36:27+00:00"
         },
         {
             "name": "laravel-liberu/menus",
-            "version": "v5.0.9",
+            "version": "v5.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/menus.git",
-                "reference": "f82e564126d45acded693c1400b487dd441d0006"
+                "reference": "b0a95c52cfb8c24e2348cfb36fe6f1fed995d82f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/menus/zipball/f82e564126d45acded693c1400b487dd441d0006",
-                "reference": "f82e564126d45acded693c1400b487dd441d0006",
+                "url": "https://api.github.com/repos/laravel-liberu/menus/zipball/b0a95c52cfb8c24e2348cfb36fe6f1fed995d82f",
+                "reference": "b0a95c52cfb8c24e2348cfb36fe6f1fed995d82f",
                 "shasum": ""
             },
             "require": {
@@ -4633,7 +4746,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Menu Manager dependency for Laravel Enso",
+            "description": "Menu Manager dependency for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/Menus",
             "keywords": [
                 "breadcrumbs",
@@ -4644,7 +4757,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/menus/issues",
-                "source": "https://github.com/laravel-liberu/menus/tree/v5.0.9"
+                "source": "https://github.com/laravel-liberu/menus/tree/v5.0.11"
             },
             "funding": [
                 {
@@ -4652,20 +4765,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:38:23+00:00"
+            "time": "2023-10-14T08:31:17+00:00"
         },
         {
             "name": "laravel-liberu/migrator",
-            "version": "v2.1.7",
+            "version": "v2.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/migrator.git",
-                "reference": "5b4317aea07dde9c7eb0fa280c7c83f70e97bf84"
+                "reference": "59128f88232bc4f6b89038638332ca7b80c7c056"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/migrator/zipball/5b4317aea07dde9c7eb0fa280c7c83f70e97bf84",
-                "reference": "5b4317aea07dde9c7eb0fa280c7c83f70e97bf84",
+                "url": "https://api.github.com/repos/laravel-liberu/migrator/zipball/59128f88232bc4f6b89038638332ca7b80c7c056",
+                "reference": "59128f88232bc4f6b89038638332ca7b80c7c056",
                 "shasum": ""
             },
             "require": {
@@ -4694,7 +4807,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Structure Migrator dependency for Laravel Enso",
+            "description": "Structure Migrator dependency for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/migrator",
             "keywords": [
                 "Structures",
@@ -4704,7 +4817,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/migrator/issues",
-                "source": "https://github.com/laravel-liberu/migrator/tree/v2.1.7"
+                "source": "https://github.com/laravel-liberu/migrator/tree/v2.1.9"
             },
             "funding": [
                 {
@@ -4712,7 +4825,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:31:33+00:00"
+            "time": "2023-10-14T08:44:19+00:00"
         },
         {
             "name": "laravel-liberu/notifications",
@@ -4849,16 +4962,16 @@
         },
         {
             "name": "laravel-liberu/pdf",
-            "version": "v2.1.11",
+            "version": "v2.1.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/pdf.git",
-                "reference": "b1217c9fe7390a4591edc84361396a0573447d84"
+                "reference": "7c441da2dd8504afc858189c367224352ecc353e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/pdf/zipball/b1217c9fe7390a4591edc84361396a0573447d84",
-                "reference": "b1217c9fe7390a4591edc84361396a0573447d84",
+                "url": "https://api.github.com/repos/laravel-liberu/pdf/zipball/7c441da2dd8504afc858189c367224352ecc353e",
+                "reference": "7c441da2dd8504afc858189c367224352ecc353e",
                 "shasum": ""
             },
             "require": {
@@ -4904,7 +5017,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "PDF for Laravel Enso",
+            "description": "PDF for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/pdf",
             "keywords": [
                 "laravel",
@@ -4913,7 +5026,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/pdf/issues",
-                "source": "https://github.com/laravel-liberu/pdf/tree/v2.1.11"
+                "source": "https://github.com/laravel-liberu/pdf/tree/v2.1.12"
             },
             "funding": [
                 {
@@ -4921,20 +5034,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:36:30+00:00"
+            "time": "2023-10-14T08:32:46+00:00"
         },
         {
             "name": "laravel-liberu/people",
-            "version": "v4.3.3",
+            "version": "v4.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/people.git",
-                "reference": "8e5d811c983550bab90d70f0a633fdc1bc0f3126"
+                "reference": "abdcfec98a20fc529948bdef1bf7fe5132d2eabe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/people/zipball/8e5d811c983550bab90d70f0a633fdc1bc0f3126",
-                "reference": "8e5d811c983550bab90d70f0a633fdc1bc0f3126",
+                "url": "https://api.github.com/repos/laravel-liberu/people/zipball/abdcfec98a20fc529948bdef1bf7fe5132d2eabe",
+                "reference": "abdcfec98a20fc529948bdef1bf7fe5132d2eabe",
                 "shasum": ""
             },
             "require": {
@@ -4981,7 +5094,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Person management dependency for Laravel Enso",
+            "description": "Person management dependency for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/People",
             "keywords": [
                 "laravel-liberu",
@@ -4990,7 +5103,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/people/issues",
-                "source": "https://github.com/laravel-liberu/people/tree/v4.3.3"
+                "source": "https://github.com/laravel-liberu/people/tree/v4.3.4"
             },
             "funding": [
                 {
@@ -4998,20 +5111,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:37:46+00:00"
+            "time": "2023-10-14T08:31:52+00:00"
         },
         {
             "name": "laravel-liberu/permissions",
-            "version": "v5.0.11",
+            "version": "v5.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/permissions.git",
-                "reference": "3ea43dd2d435656ee83fae4c87c3a75d5849f2a3"
+                "reference": "77c5244b62a768fb87f8ad3c9e4fc72c347f622e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/permissions/zipball/3ea43dd2d435656ee83fae4c87c3a75d5849f2a3",
-                "reference": "3ea43dd2d435656ee83fae4c87c3a75d5849f2a3",
+                "url": "https://api.github.com/repos/laravel-liberu/permissions/zipball/77c5244b62a768fb87f8ad3c9e4fc72c347f622e",
+                "reference": "77c5244b62a768fb87f8ad3c9e4fc72c347f622e",
                 "shasum": ""
             },
             "require": {
@@ -5052,7 +5165,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Permissions dependency for Laravel Enso",
+            "description": "Permissions dependency for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/permissions",
             "keywords": [
                 "laravel-liberu",
@@ -5061,7 +5174,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/permissions/issues",
-                "source": "https://github.com/laravel-liberu/permissions/tree/v5.0.11"
+                "source": "https://github.com/laravel-liberu/permissions/tree/v5.0.12"
             },
             "funding": [
                 {
@@ -5069,7 +5182,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:38:42+00:00"
+            "time": "2023-10-14T08:30:59+00:00"
         },
         {
             "name": "laravel-liberu/php-gedcom",
@@ -5179,16 +5292,16 @@
         },
         {
             "name": "laravel-liberu/rememberable",
-            "version": "v3.3.7",
+            "version": "v3.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/rememberable.git",
-                "reference": "fe20fa81da4ac4febeb33c416dfd7ebb2f95b531"
+                "reference": "8f6e1c18ea1eed4010a1d1254d22d12ecfccff8c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/rememberable/zipball/fe20fa81da4ac4febeb33c416dfd7ebb2f95b531",
-                "reference": "fe20fa81da4ac4febeb33c416dfd7ebb2f95b531",
+                "url": "https://api.github.com/repos/laravel-liberu/rememberable/zipball/8f6e1c18ea1eed4010a1d1254d22d12ecfccff8c",
+                "reference": "8f6e1c18ea1eed4010a1d1254d22d12ecfccff8c",
                 "shasum": ""
             },
             "require": {
@@ -5224,7 +5337,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Model caching dependency for Laravel Enso",
+            "description": "Model caching dependency for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/rememberable",
             "keywords": [
                 "laravel-cache",
@@ -5234,7 +5347,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/rememberable/issues",
-                "source": "https://github.com/laravel-liberu/rememberable/tree/v3.3.7"
+                "source": "https://github.com/laravel-liberu/rememberable/tree/v3.3.8"
             },
             "funding": [
                 {
@@ -5242,20 +5355,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:33:06+00:00"
+            "time": "2023-10-14T08:34:27+00:00"
         },
         {
             "name": "laravel-liberu/roles",
-            "version": "v5.1.14",
+            "version": "v5.1.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/roles.git",
-                "reference": "4683d44c97c43cbc34d27c1bd7dc29ffda51154f"
+                "reference": "2c790256a7ec4b710a379f4be803224ca72b540a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/roles/zipball/4683d44c97c43cbc34d27c1bd7dc29ffda51154f",
-                "reference": "4683d44c97c43cbc34d27c1bd7dc29ffda51154f",
+                "url": "https://api.github.com/repos/laravel-liberu/roles/zipball/2c790256a7ec4b710a379f4be803224ca72b540a",
+                "reference": "2c790256a7ec4b710a379f4be803224ca72b540a",
                 "shasum": ""
             },
             "require": {
@@ -5301,7 +5414,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Role Manager dependency for Laravel Enso",
+            "description": "Role Manager dependency for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/Roles",
             "keywords": [
                 "laravel-liberu",
@@ -5311,7 +5424,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/roles/issues",
-                "source": "https://github.com/laravel-liberu/roles/tree/v5.1.14"
+                "source": "https://github.com/laravel-liberu/roles/tree/v5.1.15"
             },
             "funding": [
                 {
@@ -5319,20 +5432,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:39:00+00:00"
+            "time": "2023-10-14T08:30:42+00:00"
         },
         {
             "name": "laravel-liberu/searchable",
-            "version": "v2.3.6",
+            "version": "v2.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/searchable.git",
-                "reference": "c88b5a87558b1c5114d06e26a983552d1bfe7ae7"
+                "reference": "78d3f94f254935eef43e5baabaed5adf4cc0cf7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/searchable/zipball/c88b5a87558b1c5114d06e26a983552d1bfe7ae7",
-                "reference": "c88b5a87558b1c5114d06e26a983552d1bfe7ae7",
+                "url": "https://api.github.com/repos/laravel-liberu/searchable/zipball/78d3f94f254935eef43e5baabaed5adf4cc0cf7d",
+                "reference": "78d3f94f254935eef43e5baabaed5adf4cc0cf7d",
                 "shasum": ""
             },
             "require": {
@@ -5373,7 +5486,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Searchable dependency for Laravel Enso",
+            "description": "Searchable dependency for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/searchable",
             "keywords": [
                 "laravel-liberu",
@@ -5381,7 +5494,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/searchable/issues",
-                "source": "https://github.com/laravel-liberu/searchable/tree/v2.3.6"
+                "source": "https://github.com/laravel-liberu/searchable/tree/v2.3.7"
             },
             "funding": [
                 {
@@ -5389,20 +5502,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:30:55+00:00"
+            "time": "2023-10-14T08:36:09+00:00"
         },
         {
             "name": "laravel-liberu/select",
-            "version": "v4.2.8",
+            "version": "v4.2.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/select.git",
-                "reference": "d54369d73f8a3a347c28e47d9d470976a193437a"
+                "reference": "d60691b853dafafdab74198a351bbe0888cb3cd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/select/zipball/d54369d73f8a3a347c28e47d9d470976a193437a",
-                "reference": "d54369d73f8a3a347c28e47d9d470976a193437a",
+                "url": "https://api.github.com/repos/laravel-liberu/select/zipball/d60691b853dafafdab74198a351bbe0888cb3cd1",
+                "reference": "d60691b853dafafdab74198a351bbe0888cb3cd1",
                 "shasum": ""
             },
             "require": {
@@ -5450,7 +5563,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/select/issues",
-                "source": "https://github.com/laravel-liberu/select/tree/v4.2.8"
+                "source": "https://github.com/laravel-liberu/select/tree/v4.2.9"
             },
             "funding": [
                 {
@@ -5458,20 +5571,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:20:26+00:00"
+            "time": "2023-10-14T08:43:47+00:00"
         },
         {
             "name": "laravel-liberu/sentry",
-            "version": "v1.2.7",
+            "version": "v1.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/sentry.git",
-                "reference": "3a88194ad4aff6ded0770739c5f02fe0534d7538"
+                "reference": "2e182505b6e5d4a6e8f5418b38f0ac8e7427682a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/sentry/zipball/3a88194ad4aff6ded0770739c5f02fe0534d7538",
-                "reference": "3a88194ad4aff6ded0770739c5f02fe0534d7538",
+                "url": "https://api.github.com/repos/laravel-liberu/sentry/zipball/2e182505b6e5d4a6e8f5418b38f0ac8e7427682a",
+                "reference": "2e182505b6e5d4a6e8f5418b38f0ac8e7427682a",
                 "shasum": ""
             },
             "require": {
@@ -5512,7 +5625,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Main requirement & dependency aggregator for Laravel Enso",
+            "description": "Main requirement & dependency aggregator for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/Sentry",
             "keywords": [
                 "laravel-liberu",
@@ -5522,7 +5635,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/sentry/issues",
-                "source": "https://github.com/laravel-liberu/sentry/tree/v1.2.7"
+                "source": "https://github.com/laravel-liberu/sentry/tree/v1.2.8"
             },
             "funding": [
                 {
@@ -5530,20 +5643,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:33:25+00:00"
+            "time": "2023-10-14T08:34:10+00:00"
         },
         {
             "name": "laravel-liberu/tables",
-            "version": "v4.16.2",
+            "version": "v4.16.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/tables.git",
-                "reference": "8a90821d536933a866e452771a110630342d87eb"
+                "reference": "9847decc8e4aac839f0be5072e62018e5d16ae86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/tables/zipball/8a90821d536933a866e452771a110630342d87eb",
-                "reference": "8a90821d536933a866e452771a110630342d87eb",
+                "url": "https://api.github.com/repos/laravel-liberu/tables/zipball/9847decc8e4aac839f0be5072e62018e5d16ae86",
+                "reference": "9847decc8e4aac839f0be5072e62018e5d16ae86",
                 "shasum": ""
             },
             "require": {
@@ -5591,7 +5704,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/tables/issues",
-                "source": "https://github.com/laravel-liberu/tables/tree/v4.16.2"
+                "source": "https://github.com/laravel-liberu/tables/tree/v4.16.3"
             },
             "funding": [
                 {
@@ -5599,20 +5712,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T06:22:17+00:00"
+            "time": "2023-10-14T09:03:34+00:00"
         },
         {
             "name": "laravel-liberu/tasks",
-            "version": "v2.0.9",
+            "version": "v2.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/tasks.git",
-                "reference": "d6494e6ad8c6cd5203b2d69fad3f7f2a92a4f30a"
+                "reference": "2ef6d5400eb21da4bcfca849fd0637e70c8e43e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/tasks/zipball/d6494e6ad8c6cd5203b2d69fad3f7f2a92a4f30a",
-                "reference": "d6494e6ad8c6cd5203b2d69fad3f7f2a92a4f30a",
+                "url": "https://api.github.com/repos/laravel-liberu/tasks/zipball/2ef6d5400eb21da4bcfca849fd0637e70c8e43e8",
+                "reference": "2ef6d5400eb21da4bcfca849fd0637e70c8e43e8",
                 "shasum": ""
             },
             "require": {
@@ -5661,7 +5774,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Task management dependency for Laravel Enso",
+            "description": "Task management dependency for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/tasks",
             "keywords": [
                 "Tasks",
@@ -5670,7 +5783,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/tasks/issues",
-                "source": "https://github.com/laravel-liberu/tasks/tree/v2.0.9"
+                "source": "https://github.com/laravel-liberu/tasks/tree/v2.0.10"
             },
             "funding": [
                 {
@@ -5678,20 +5791,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:42:48+00:00"
+            "time": "2023-10-14T08:27:28+00:00"
         },
         {
             "name": "laravel-liberu/teams",
-            "version": "v4.0.8",
+            "version": "v4.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/teams.git",
-                "reference": "bf5a8678164184bdd301b0dcf331564ba554ca0a"
+                "reference": "7ecd20ded3baaacf15009a815dd76510ae9a9df5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/teams/zipball/bf5a8678164184bdd301b0dcf331564ba554ca0a",
-                "reference": "bf5a8678164184bdd301b0dcf331564ba554ca0a",
+                "url": "https://api.github.com/repos/laravel-liberu/teams/zipball/7ecd20ded3baaacf15009a815dd76510ae9a9df5",
+                "reference": "7ecd20ded3baaacf15009a815dd76510ae9a9df5",
                 "shasum": ""
             },
             "require": {
@@ -5731,7 +5844,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Team management dependency for Laravel Enso",
+            "description": "Team management dependency for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/teams",
             "keywords": [
                 "Teams",
@@ -5740,7 +5853,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/teams/issues",
-                "source": "https://github.com/laravel-liberu/teams/tree/v4.0.8"
+                "source": "https://github.com/laravel-liberu/teams/tree/v4.0.9"
             },
             "funding": [
                 {
@@ -5748,20 +5861,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:39:38+00:00"
+            "time": "2023-10-14T08:30:07+00:00"
         },
         {
             "name": "laravel-liberu/track-who",
-            "version": "v2.1.7",
+            "version": "v2.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/track-who.git",
-                "reference": "6f61947d040f7ede248c1877a66d4cb7e92212e9"
+                "reference": "9e408be9778991227a888aaef6974c70c165638f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/track-who/zipball/6f61947d040f7ede248c1877a66d4cb7e92212e9",
-                "reference": "6f61947d040f7ede248c1877a66d4cb7e92212e9",
+                "url": "https://api.github.com/repos/laravel-liberu/track-who/zipball/9e408be9778991227a888aaef6974c70c165638f",
+                "reference": "9e408be9778991227a888aaef6974c70c165638f",
                 "shasum": ""
             },
             "require": {
@@ -5789,7 +5902,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Create, update and delete authoring tracking dependency for Laravel Enso",
+            "description": "Create, update and delete authoring tracking dependency for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/track-who",
             "keywords": [
                 "laravel-liberu",
@@ -5797,7 +5910,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/track-who/issues",
-                "source": "https://github.com/laravel-liberu/track-who/tree/v2.1.7"
+                "source": "https://github.com/laravel-liberu/track-who/tree/v2.1.8"
             },
             "funding": [
                 {
@@ -5805,20 +5918,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:32:47+00:00"
+            "time": "2023-10-14T08:34:44+00:00"
         },
         {
             "name": "laravel-liberu/tutorials",
-            "version": "v5.0.9",
+            "version": "v5.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/tutorials.git",
-                "reference": "deef2aab58e8ce1905ecfa09ca4700f3a8073b0f"
+                "reference": "edfb86a02afef454b46308d17b5a76291aef0f68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/tutorials/zipball/deef2aab58e8ce1905ecfa09ca4700f3a8073b0f",
-                "reference": "deef2aab58e8ce1905ecfa09ca4700f3a8073b0f",
+                "url": "https://api.github.com/repos/laravel-liberu/tutorials/zipball/edfb86a02afef454b46308d17b5a76291aef0f68",
+                "reference": "edfb86a02afef454b46308d17b5a76291aef0f68",
                 "shasum": ""
             },
             "require": {
@@ -5861,7 +5974,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Tutorial management dependency for Laravel Enso",
+            "description": "Tutorial management dependency for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/Tutorials",
             "keywords": [
                 "bootstrap-tour",
@@ -5871,7 +5984,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/tutorials/issues",
-                "source": "https://github.com/laravel-liberu/tutorials/tree/v5.0.9"
+                "source": "https://github.com/laravel-liberu/tutorials/tree/v5.0.10"
             },
             "funding": [
                 {
@@ -5879,20 +5992,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:39:56+00:00"
+            "time": "2023-10-14T08:29:48+00:00"
         },
         {
             "name": "laravel-liberu/upgrade",
-            "version": "v2.7.12",
+            "version": "v2.7.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/upgrade.git",
-                "reference": "0e6fc50bea7876d05518aaf02affab7ee81252b4"
+                "reference": "eef77a6afc25e180da1d38a7aacc1bb3d1bb5257"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/upgrade/zipball/0e6fc50bea7876d05518aaf02affab7ee81252b4",
-                "reference": "0e6fc50bea7876d05518aaf02affab7ee81252b4",
+                "url": "https://api.github.com/repos/laravel-liberu/upgrade/zipball/eef77a6afc25e180da1d38a7aacc1bb3d1bb5257",
+                "reference": "eef77a6afc25e180da1d38a7aacc1bb3d1bb5257",
                 "shasum": ""
             },
             "require": {
@@ -5931,7 +6044,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Helper classes dependency for Laravel Enso",
+            "description": "Helper classes dependency for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/upgrade",
             "keywords": [
                 "laravel-liberu",
@@ -5939,7 +6052,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/upgrade/issues",
-                "source": "https://github.com/laravel-liberu/upgrade/tree/v2.7.12"
+                "source": "https://github.com/laravel-liberu/upgrade/tree/v2.7.13"
             },
             "funding": [
                 {
@@ -5947,20 +6060,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:35:00+00:00"
+            "time": "2023-10-14T08:33:17+00:00"
         },
         {
             "name": "laravel-liberu/user-groups",
-            "version": "v2.0.9",
+            "version": "v2.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/user-groups.git",
-                "reference": "20be8d86c57a0d51014b278ba7938d42acc8c8cc"
+                "reference": "af9731c3db8286583ee93ba3b9ffda1297cb1e38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/user-groups/zipball/20be8d86c57a0d51014b278ba7938d42acc8c8cc",
-                "reference": "20be8d86c57a0d51014b278ba7938d42acc8c8cc",
+                "url": "https://api.github.com/repos/laravel-liberu/user-groups/zipball/af9731c3db8286583ee93ba3b9ffda1297cb1e38",
+                "reference": "af9731c3db8286583ee93ba3b9ffda1297cb1e38",
                 "shasum": ""
             },
             "require": {
@@ -6016,7 +6129,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "User groups dependency for Laravel Enso",
+            "description": "User groups dependency for Laravel Liberu",
             "homepage": "https://www.laravel-liberu.com",
             "keywords": [
                 "laravel-liberu",
@@ -6026,7 +6139,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/user-groups/issues",
-                "source": "https://github.com/laravel-liberu/user-groups/tree/v2.0.9"
+                "source": "https://github.com/laravel-liberu/user-groups/tree/v2.0.10"
             },
             "funding": [
                 {
@@ -6034,20 +6147,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:38:04+00:00"
+            "time": "2023-10-14T08:31:35+00:00"
         },
         {
             "name": "laravel-liberu/users",
-            "version": "v2.2.11",
+            "version": "v2.2.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/users.git",
-                "reference": "7271452a7109aa1708d0f001b1b9c6fc5da5662e"
+                "reference": "369e2705422008fd2604b85ea6b781620d85f3a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/users/zipball/7271452a7109aa1708d0f001b1b9c6fc5da5662e",
-                "reference": "7271452a7109aa1708d0f001b1b9c6fc5da5662e",
+                "url": "https://api.github.com/repos/laravel-liberu/users/zipball/369e2705422008fd2604b85ea6b781620d85f3a0",
+                "reference": "369e2705422008fd2604b85ea6b781620d85f3a0",
                 "shasum": ""
             },
             "require": {
@@ -6108,7 +6221,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Users dependency for Laravel Enso",
+            "description": "Users dependency for Laravel Liberu",
             "homepage": "https://www.laravel-liberu.com",
             "keywords": [
                 "laravel-liberu",
@@ -6118,7 +6231,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/users/issues",
-                "source": "https://github.com/laravel-liberu/users/tree/v2.2.11"
+                "source": "https://github.com/laravel-liberu/users/tree/v2.2.12"
             },
             "funding": [
                 {
@@ -6126,7 +6239,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:39:20+00:00"
+            "time": "2023-10-14T08:30:24+00:00"
         },
         {
             "name": "laravel/cashier",
@@ -7454,16 +7567,16 @@
         },
         {
             "name": "league/mime-type-detection",
-            "version": "1.13.0",
+            "version": "1.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/mime-type-detection.git",
-                "reference": "a6dfb1194a2946fcdc1f38219445234f65b35c96"
+                "reference": "b6a5854368533df0295c5761a0253656a2e52d9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/a6dfb1194a2946fcdc1f38219445234f65b35c96",
-                "reference": "a6dfb1194a2946fcdc1f38219445234f65b35c96",
+                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/b6a5854368533df0295c5761a0253656a2e52d9e",
+                "reference": "b6a5854368533df0295c5761a0253656a2e52d9e",
                 "shasum": ""
             },
             "require": {
@@ -7494,7 +7607,7 @@
             "description": "Mime-type detection for Flysystem",
             "support": {
                 "issues": "https://github.com/thephpleague/mime-type-detection/issues",
-                "source": "https://github.com/thephpleague/mime-type-detection/tree/1.13.0"
+                "source": "https://github.com/thephpleague/mime-type-detection/tree/1.14.0"
             },
             "funding": [
                 {
@@ -7506,7 +7619,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-08-05T12:09:49+00:00"
+            "time": "2023-10-17T14:13:20+00:00"
         },
         {
             "name": "league/oauth1-client",
@@ -9528,16 +9641,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.11.21",
+            "version": "v0.11.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "bcb22101107f3bf770523b65630c9d547f60c540"
+                "reference": "128fa1b608be651999ed9789c95e6e2a31b5802b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/bcb22101107f3bf770523b65630c9d547f60c540",
-                "reference": "bcb22101107f3bf770523b65630c9d547f60c540",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/128fa1b608be651999ed9789c95e6e2a31b5802b",
+                "reference": "128fa1b608be651999ed9789c95e6e2a31b5802b",
                 "shasum": ""
             },
             "require": {
@@ -9566,7 +9679,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "0.11.x-dev"
+                    "dev-0.11": "0.11.x-dev"
                 },
                 "bamarni-bin": {
                     "bin-links": false,
@@ -9602,9 +9715,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.11.21"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.11.22"
             },
-            "time": "2023-09-17T21:15:54+00:00"
+            "time": "2023-10-14T21:56:36+00:00"
         },
         {
             "name": "pusher/pusher-php-server",
@@ -9666,6 +9779,79 @@
                 "source": "https://github.com/pusher/pusher-http-php/tree/7.2.3"
             },
             "time": "2023-05-17T16:00:06+00:00"
+        },
+        {
+            "name": "rakutentech/laravel-request-docs",
+            "version": "v2.25",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rakutentech/laravel-request-docs.git",
+                "reference": "33076795d3b4424060c12d3088c689429a487501"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rakutentech/laravel-request-docs/zipball/33076795d3b4424060c12d3088c689429a487501",
+                "reference": "33076795d3b4424060c12d3088c689429a487501",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "illuminate/contracts": "^8.37|^9.0|^10.0",
+                "kitloong/laravel-app-logger": "^1.0",
+                "php": "^7.4|^8.0|^8.1|^8.2",
+                "spatie/laravel-package-tools": "^1.4.3"
+            },
+            "require-dev": {
+                "barryvdh/laravel-ide-helper": "^2.12|dev-master",
+                "brianium/paratest": "^6.2",
+                "friendsofphp/php-cs-fixer": "^3.5",
+                "nunomaduro/collision": "^5.3|^6.0",
+                "nunomaduro/larastan": "^1.0|^2.4",
+                "orchestra/testbench": "^6.15|^7.0|^8.0",
+                "phpunit/phpunit": "^9.3",
+                "spatie/laravel-ray": "^1.23",
+                "squizlabs/php_codesniffer": "^3.6",
+                "vimeo/psalm": "^4.8|^5.6"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Rakutentech\\LaravelRequestDocs\\LaravelRequestDocsServiceProvider"
+                    ],
+                    "aliases": {
+                        "LaravelRequestDocs": "Rakutentech\\LaravelRequestDocs\\LaravelRequestDocsFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Rakutentech\\LaravelRequestDocs\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pulkit Kathuria",
+                    "email": "pulkit.kathuria@rakuten.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Automatically generate Laravel docs from request rules, controllers and routes",
+            "homepage": "https://github.com/rakutentech/laravel-request-docs",
+            "keywords": [
+                "laravel",
+                "laravel-request-docs",
+                "rakutentech"
+            ],
+            "support": {
+                "issues": "https://github.com/rakutentech/laravel-request-docs/issues",
+                "source": "https://github.com/rakutentech/laravel-request-docs/tree/v2.25"
+            },
+            "time": "2023-10-02T01:47:32+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -10259,6 +10445,72 @@
             "time": "2023-07-27T07:57:32+00:00"
         },
         {
+            "name": "spatie/laravel-http-logger",
+            "version": "1.10.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-http-logger.git",
+                "reference": "28b10af8e17baeb114bdc9385b2badf363378c08"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-http-logger/zipball/28b10af8e17baeb114bdc9385b2badf363378c08",
+                "reference": "28b10af8e17baeb114bdc9385b2badf363378c08",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^8.0|^9.0|^10.0",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0|^7.0|^8.0",
+                "pestphp/pest": "^1.22",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\HttpLogger\\HttpLoggerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\HttpLogger\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brent Roose",
+                    "email": "brent@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Laravel package to log HTTP requests",
+            "homepage": "https://github.com/spatie/laravel-http-logger",
+            "keywords": [
+                "laravel-http-logger",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-http-logger/issues",
+                "source": "https://github.com/spatie/laravel-http-logger/tree/1.10.2"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                }
+            ],
+            "time": "2023-07-24T15:41:14+00:00"
+        },
+        {
             "name": "spatie/laravel-image-optimizer",
             "version": "1.7.1",
             "source": {
@@ -10325,6 +10577,66 @@
                 }
             ],
             "time": "2023-01-24T23:44:33+00:00"
+        },
+        {
+            "name": "spatie/laravel-package-tools",
+            "version": "1.16.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-package-tools.git",
+                "reference": "cc7c991555a37f9fa6b814aa03af73f88026a83d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/cc7c991555a37f9fa6b814aa03af73f88026a83d",
+                "reference": "cc7c991555a37f9fa6b814aa03af73f88026a83d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^9.28|^10.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.5",
+                "orchestra/testbench": "^7.7|^8.0",
+                "pestphp/pest": "^1.22",
+                "phpunit/phpunit": "^9.5.24",
+                "spatie/pest-plugin-test-time": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\LaravelPackageTools\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Tools for creating Laravel packages",
+            "homepage": "https://github.com/spatie/laravel-package-tools",
+            "keywords": [
+                "laravel-package-tools",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-package-tools/issues",
+                "source": "https://github.com/spatie/laravel-package-tools/tree/1.16.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-08-23T09:04:39+00:00"
         },
         {
             "name": "spatie/laravel-ray",
@@ -15588,16 +15900,16 @@
         },
         {
             "name": "laravel-liberu/cli",
-            "version": "v5.0.7",
+            "version": "v5.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/cli.git",
-                "reference": "f953cdad3fb8fbb6fb31278c0e41e43dff7b8c7c"
+                "reference": "9ee2da49d9e022448dbbf33e60bda398fbcef940"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/cli/zipball/f953cdad3fb8fbb6fb31278c0e41e43dff7b8c7c",
-                "reference": "f953cdad3fb8fbb6fb31278c0e41e43dff7b8c7c",
+                "url": "https://api.github.com/repos/laravel-liberu/cli/zipball/9ee2da49d9e022448dbbf33e60bda398fbcef940",
+                "reference": "9ee2da49d9e022448dbbf33e60bda398fbcef940",
                 "shasum": ""
             },
             "require": {
@@ -15637,7 +15949,7 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Cli dependency for Laravel Enso",
+            "description": "Cli dependency for Laravel Liberu",
             "homepage": "https://github.com/laravel-liberu/cli",
             "keywords": [
                 "cli",
@@ -15646,7 +15958,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-liberu/cli/issues",
-                "source": "https://github.com/laravel-liberu/cli/tree/v5.0.7"
+                "source": "https://github.com/laravel-liberu/cli/tree/v5.0.11"
             },
             "funding": [
                 {
@@ -15654,7 +15966,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-13T01:20:44+00:00"
+            "time": "2023-10-14T09:39:44+00:00"
         },
         {
             "name": "laravel-liberu/phpunit-pretty-print",
@@ -15868,16 +16180,16 @@
         },
         {
             "name": "maximebf/debugbar",
-            "version": "v1.19.0",
+            "version": "v1.19.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/maximebf/php-debugbar.git",
-                "reference": "30f65f18f7ac086255a77a079f8e0dcdd35e828e"
+                "reference": "03dd40a1826f4d585ef93ef83afa2a9874a00523"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/30f65f18f7ac086255a77a079f8e0dcdd35e828e",
-                "reference": "30f65f18f7ac086255a77a079f8e0dcdd35e828e",
+                "url": "https://api.github.com/repos/maximebf/php-debugbar/zipball/03dd40a1826f4d585ef93ef83afa2a9874a00523",
+                "reference": "03dd40a1826f4d585ef93ef83afa2a9874a00523",
                 "shasum": ""
             },
             "require": {
@@ -15928,9 +16240,9 @@
             ],
             "support": {
                 "issues": "https://github.com/maximebf/php-debugbar/issues",
-                "source": "https://github.com/maximebf/php-debugbar/tree/v1.19.0"
+                "source": "https://github.com/maximebf/php-debugbar/tree/v1.19.1"
             },
-            "time": "2023-09-19T19:53:10+00:00"
+            "time": "2023-10-12T08:10:52+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -16606,16 +16918,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.10.38",
+            "version": "1.10.39",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "5302bb402c57f00fb3c2c015bac86e0827e4b691"
+                "reference": "d9dedb0413f678b4d03cbc2279a48f91592c97c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/5302bb402c57f00fb3c2c015bac86e0827e4b691",
-                "reference": "5302bb402c57f00fb3c2c015bac86e0827e4b691",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/d9dedb0413f678b4d03cbc2279a48f91592c97c4",
+                "reference": "d9dedb0413f678b4d03cbc2279a48f91592c97c4",
                 "shasum": ""
             },
             "require": {
@@ -16664,7 +16976,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-10-06T14:19:14+00:00"
+            "time": "2023-10-17T15:46:26+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -18126,35 +18438,35 @@
         },
         {
             "name": "spatie/flare-client-php",
-            "version": "1.4.2",
+            "version": "1.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/flare-client-php.git",
-                "reference": "5f2c6a7a0d2c1d90c12559dc7828fd942911a544"
+                "reference": "5db2fdd743c3ede33f2a5367d89ec1a7c9c1d1ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/flare-client-php/zipball/5f2c6a7a0d2c1d90c12559dc7828fd942911a544",
-                "reference": "5f2c6a7a0d2c1d90c12559dc7828fd942911a544",
+                "url": "https://api.github.com/repos/spatie/flare-client-php/zipball/5db2fdd743c3ede33f2a5367d89ec1a7c9c1d1ec",
+                "reference": "5db2fdd743c3ede33f2a5367d89ec1a7c9c1d1ec",
                 "shasum": ""
             },
             "require": {
-                "illuminate/pipeline": "^8.0|^9.0|^10.0",
+                "illuminate/pipeline": "^8.0|^9.0|^10.0|^11.0",
                 "nesbot/carbon": "^2.62.1",
                 "php": "^8.0",
                 "spatie/backtrace": "^1.5.2",
-                "symfony/http-foundation": "^5.0|^6.0",
-                "symfony/mime": "^5.2|^6.0",
-                "symfony/process": "^5.2|^6.0",
-                "symfony/var-dumper": "^5.2|^6.0"
+                "symfony/http-foundation": "^5.2|^6.0|^7.0",
+                "symfony/mime": "^5.2|^6.0|^7.0",
+                "symfony/process": "^5.2|^6.0|^7.0",
+                "symfony/var-dumper": "^5.2|^6.0|^7.0"
             },
             "require-dev": {
-                "dms/phpunit-arraysubset-asserts": "^0.3.0",
-                "pestphp/pest": "^1.20",
+                "dms/phpunit-arraysubset-asserts": "^0.5.0",
+                "pestphp/pest": "^1.20|^2.0",
                 "phpstan/extension-installer": "^1.1",
                 "phpstan/phpstan-deprecation-rules": "^1.0",
                 "phpstan/phpstan-phpunit": "^1.0",
-                "spatie/phpunit-snapshot-assertions": "^4.0"
+                "spatie/phpunit-snapshot-assertions": "^4.0|^5.0"
             },
             "type": "library",
             "extra": {
@@ -18184,7 +18496,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/flare-client-php/issues",
-                "source": "https://github.com/spatie/flare-client-php/tree/1.4.2"
+                "source": "https://github.com/spatie/flare-client-php/tree/1.4.3"
             },
             "funding": [
                 {
@@ -18192,20 +18504,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-07-28T08:07:24+00:00"
+            "time": "2023-10-17T15:54:07+00:00"
         },
         {
             "name": "spatie/ignition",
-            "version": "1.11.2",
+            "version": "1.11.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/ignition.git",
-                "reference": "48b23411ca4bfbc75c75dfc638b6b36159c375aa"
+                "reference": "3d886de644ff7a5b42e4d27c1e1f67c8b5f00044"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/ignition/zipball/48b23411ca4bfbc75c75dfc638b6b36159c375aa",
-                "reference": "48b23411ca4bfbc75c75dfc638b6b36159c375aa",
+                "url": "https://api.github.com/repos/spatie/ignition/zipball/3d886de644ff7a5b42e4d27c1e1f67c8b5f00044",
+                "reference": "3d886de644ff7a5b42e4d27c1e1f67c8b5f00044",
                 "shasum": ""
             },
             "require": {
@@ -18214,19 +18526,19 @@
                 "php": "^8.0",
                 "spatie/backtrace": "^1.5.3",
                 "spatie/flare-client-php": "^1.4.0",
-                "symfony/console": "^5.4|^6.0",
-                "symfony/var-dumper": "^5.4|^6.0"
+                "symfony/console": "^5.4|^6.0|^7.0",
+                "symfony/var-dumper": "^5.4|^6.0|^7.0"
             },
             "require-dev": {
-                "illuminate/cache": "^9.52",
+                "illuminate/cache": "^9.52|^10.0|^11.0",
                 "mockery/mockery": "^1.4",
-                "pestphp/pest": "^1.20",
+                "pestphp/pest": "^1.20|^2.0",
                 "phpstan/extension-installer": "^1.1",
                 "phpstan/phpstan-deprecation-rules": "^1.0",
                 "phpstan/phpstan-phpunit": "^1.0",
                 "psr/simple-cache-implementation": "*",
-                "symfony/cache": "^6.0",
-                "symfony/process": "^5.4|^6.0",
+                "symfony/cache": "^5.4|^6.0|^7.0",
+                "symfony/process": "^5.4|^6.0|^7.0",
                 "vlucas/phpdotenv": "^5.5"
             },
             "suggest": {
@@ -18275,7 +18587,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-09-19T15:29:52+00:00"
+            "time": "2023-10-18T14:09:40+00:00"
         },
         {
             "name": "spatie/laravel-ignition",

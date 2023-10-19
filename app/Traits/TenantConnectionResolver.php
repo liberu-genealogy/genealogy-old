@@ -13,7 +13,7 @@ trait TenantConnectionResolver
             $user = \Auth::user();
             $role_id = $user->role_id;
             if ($user->isAdmin()) {
-                return env('DB_DATABASE', 'genealogy'); //'enso');
+                return env('DB_DATABASE', 'genealogy'); //'liberu');
             }
             if (session()->get('db')) {
                 return 'tenantdb';

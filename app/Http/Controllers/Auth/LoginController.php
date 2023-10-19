@@ -43,7 +43,7 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
 
-        $this->maxAttempts = config('enso.auth.maxLoginAttempts');
+        $this->maxAttempts = config('liberu.auth.maxLoginAttempts');
     }
 
     public function redirect($service)

@@ -8,6 +8,7 @@
         "doctrine/dbal": "^3.1",
         "flowgistics/laravel-xml": "^1.1",
         "guzzlehttp/guzzle": "^7.2",
+        "laravel-liberu/auth": "*",
         "laravel-liberu/calendar": "^3.0",
         "laravel-liberu/comments": "^4.0",
         "laravel-liberu/control-panel-api": "^3.0",
@@ -33,6 +34,7 @@
         "laravel/ui": "^4.0",
         "leifermendez/laravel-paypal-subscription": "^1.0",
         "predis/predis": "^2.1",
+        "rakutentech/laravel-request-docs": "^2.25",
         "sentry/sentry-laravel": "^3.0",
         "spatie/laravel-ray": "^1.26",
         "srmklive/paypal": "^3.0",
@@ -101,10 +103,10 @@
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
-            "php artisan enso:localisation:merge",
+            "php artisan liberu:localisation:merge",
             "php artisan telescope:publish",
             "php artisan horizon:publish",
-            "php artisan enso:upgrade:status"
+            "php artisan liberu:upgrade:status"
         ]
     }
 }

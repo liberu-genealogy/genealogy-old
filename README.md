@@ -23,7 +23,7 @@
 
 6. To set up the database tables and seed them with initial data, run the command `php artisan migrate --seed`
 
-7. If needed, you can customize the configuration files located in config/enso/*.php according to your requirements.
+7. If needed, you can customize the configuration files located in config/liberu/*.php according to your requirements.
 
 8. For certain configurations, you may need to set up sanctum stateful domains and session domain in the `.env` file. Additionally, add your domains to the `config/cors.php` file.
 

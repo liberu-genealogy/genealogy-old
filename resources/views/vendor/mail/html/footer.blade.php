@@ -4,18 +4,18 @@
             <tr>
                 <td class="content-cell" align="center">
                     <p>
-                    @if(config('enso.config.facebook'))
-                        <a href="{{ config('enso.config.facebook') }}">
+                    @if(config('liberu.config.facebook'))
+                        <a href="{{ config('liberu.config.facebook') }}">
                             <img src="{{ url('images/emails/facebook.gif') }}" alt="facebook">
                         </a>
                     @endif
-                    @if(config('enso.config.googleplus'))
-                        <a href="{{ config('enso.config.googleplus') }}">
+                    @if(config('liberu.config.googleplus'))
+                        <a href="{{ config('liberu.config.googleplus') }}">
                             <img src="{{ url('images/emails/googleplus.gif') }}" alt="googleplus">
                         </a>
                     @endif
-                    @if(config('enso.config.twitter'))
-                        <a href="{{ config('enso.config.twitter') }}">
+                    @if(config('liberu.config.twitter'))
+                        <a href="{{ config('liberu.config.twitter') }}">
                             <img src="{{ url('images/emails/twitter.gif') }}" alt="twitter">
                         </a>
                     @endif

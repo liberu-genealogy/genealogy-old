@@ -4,9 +4,9 @@ namespace App\Http\Requests;
 
 use Illuminate\Support\Collection;
 use Illuminate\Validation\Rule;
-use LaravelLiberu\People\Http\Requests\ValidatePerson as EnsoPerson;
+use LaravelLiberu\People\Http\Requests\ValidatePerson as LiberuPerson;
 
-class ValidatePersonRequest extends EnsoPerson
+class ValidatePersonRequest extends LiberuPerson
 {
     public function authorize()
     {

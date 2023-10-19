@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-// use App\Models\enso\companies\Company;
+// use App\Models\liberu\companies\Company;
 
 class Multitenant
 {
@@ -24,7 +24,7 @@ class Multitenant
         //$value = \Session::get('db');
         if ($user->isAdmin()) {
             $key = 'database.connections.mysql.database';
-            $value = env('DB_DATABASE', 'enso');
+            $value = env('DB_DATABASE', 'liberu');
         } else {
             $key = 'database.connections.tenantdb.database';
             if (session()->get('db')) {

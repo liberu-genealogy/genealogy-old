@@ -195,8 +195,8 @@ return [
     |--------------------------------------------------------------------------
     | Path where the temporary files are stored within storage/app folder; timeout
     | limit for jobs; entry limit for each sheet; push notification channels.
-    | Note: while using Enso the users will receive a download link by email,
-    | while in non Enso environments the whole export file will be emailed.
+    | Note: while using Liberu the users will receive a download link by email,
+    | while in non Liberu environments the whole export file will be emailed.
      */
 
     'export' => [
