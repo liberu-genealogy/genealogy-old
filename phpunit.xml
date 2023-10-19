@@ -13,7 +13,6 @@
       <directory suffix="Test.php">./vendor/laravel-liberu/helpers/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-liberu/history-tracker/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-liberu/impersonate/tests</directory>
-      <directory suffix="Test.php">./vendor/laravel-liberu/localisation/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-liberu/logs/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-liberu/menus/tests</directory>
       <directory suffix="Test.php">./vendor/laravel-liberu/notifications/tests</directory>
