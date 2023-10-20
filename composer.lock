@@ -2522,16 +2522,16 @@
         },
         {
             "name": "laravel-liberu/auth",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-liberu/auth.git",
-                "reference": "63525c49b40f7cd57a0083f6b1f1f6de77aa29dc"
+                "reference": "66df4383e13321b6880af9fb39791d633d00403f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-liberu/auth/zipball/63525c49b40f7cd57a0083f6b1f1f6de77aa29dc",
-                "reference": "63525c49b40f7cd57a0083f6b1f1f6de77aa29dc",
+                "url": "https://api.github.com/repos/laravel-liberu/auth/zipball/66df4383e13321b6880af9fb39791d633d00403f",
+                "reference": "66df4383e13321b6880af9fb39791d633d00403f",
                 "shasum": ""
             },
             "require-dev": {
@@ -2559,9 +2559,9 @@
             "homepage": "https://github.com/laravel-liberu/auth",
             "support": {
                 "issues": "https://github.com/laravel-liberu/auth/issues",
-                "source": "https://github.com/laravel-liberu/auth/tree/v1.0.1"
+                "source": "https://github.com/laravel-liberu/auth/tree/v1.0.2"
             },
-            "time": "2023-10-19T06:56:13+00:00"
+            "time": "2023-10-19T22:54:27+00:00"
         },
         {
             "name": "laravel-liberu/avatars",
@@ -19186,5 +19186,5 @@
         "php": ">=8.2.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.3.0"
 }
